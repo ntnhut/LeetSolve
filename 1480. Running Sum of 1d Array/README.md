@@ -1,6 +1,6 @@
 # 1480. Running Sum of 1d Array
 
-## [Problem statement](https://leetcode.com/problems/running-sum-of-1d-array/)
+## Problem statement
 
 Given an array `nums`. We define a running sum of an array as `runningSum[i] = sum(nums[0]…nums[i])`.
 
@@ -121,3 +121,8 @@ Output:
 ### Complexity
 * Runtime: `O(N)`, where `N = nums.length`.
 * Extra space: `O(1)`.
+
+
+## References
+* [https://leetcode.com/problems/running-sum-of-1d-array/](https://leetcode.com/problems/running-sum-of-1d-array/)
+* [https://github.com/ntnhut/LeetSolve](https://github.com/ntnhut/LeetSolve/tree/main/1480.%20Running%20Sum%20of%201d%20Array)
