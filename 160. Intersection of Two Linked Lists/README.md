@@ -38,10 +38,7 @@ Output: No intersection.
 * The number of nodes of `listA` is in the `m`.
 * The number of nodes of `listB` is in the `n`.
 * `1 <= m, n <= 3 * 10^4`.
-* `1 <= Node.val <= 10^5`.
-* `0 <= skipA < m`.
-* `0 <= skipB < n`:
- 
+* `1 <= Node.val <= 10^5`. 
 
 **Follow up**: Could you write a solution that runs in `O(m + n)` time and use only `O(1)` memory?
 
@@ -50,7 +47,7 @@ Output: No intersection.
 You can store all nodes of `listA` then iterate `listB` to determine which node is the intersection. If none is found, the two lists have no intersection.
 
 ### Example 1
-* Store all nodes of `listA` in a map.
+* Store all nodes of `listA = [4,1,8,4,5]` in a map.
 * Iterate `listB` and found node `'8'` was stored.
 * Return `'8'`.
 
@@ -144,7 +141,7 @@ Output:
 * Runtime: `O(m + n)`, where `m, n` are the number of nodes of `listA` and `listB`.
 * Extra space: `O(m)`.
 
-## Solution 2: Reiterating the two lists the same time
+## Solution 2: Reiterating the two lists at the same time
 
 If the two lists do not share the same tail, they have no intersection. Otherwise, they must intersect at some node.
 
@@ -154,9 +151,9 @@ After iterating to find the tail node, you know the length of the two lists. Tha
 * After iterating `listA = [4,1,8,4,5]`, you find the tail node is `'5'` and `listA.length = 5`. 
 * After iterating `listB = [5,6,1,8,4,5]`, you find the tail node is the last `'5'` and `listB.length = 6`.
 * The two lists share the same tail. They must intersect at some node.
-* To find that intersection node, you have to reiterate the two nodes.
+* To find that intersection node, you have to reiterate the two lists.
 * Since `listB.length = 6 > 5 = listA.length`, you can start iterating `listB` first until the number of its remaining nodes is the same as `listA`. In this case, it is the node `'6'` of `listB`.
-* Now the two lists have the same length, you can iterate them the same time to find which node is shared.
+* Now you can iterate them at the same time to find which node is shared.
 * Found and return the intersection node `'8'`.
 
 ### Code
