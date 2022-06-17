@@ -106,7 +106,8 @@ If you look at the final result after removing duplication, the **expected** `nu
 ```plain
 nums[i] > nums[i-2] for 2 <= i < nums.length.
 ```
-You can use this invariant to **reassign** the array `nums` only the satisified elements. 
+You can use this invariant to **reassign** the array `nums` only the satisified elements.
+ 
 ### Code
 ```cpp
 #include <vector>
