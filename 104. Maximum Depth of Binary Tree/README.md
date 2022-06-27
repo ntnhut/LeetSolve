@@ -1,5 +1,4 @@
 # 104. Maximum Depth of Binary Tree
-Tag: easy, binary tree
 
 ## Problem statement
 
@@ -74,3 +73,4 @@ Output:
 
 ## References
 * [https://leetcode.com/problems/maximum-depth-of-binary-tree/](https://leetcode.com/problems/maximum-depth-of-binary-tree/)
+* [https://www.leetsolve.com/104-maximum-depth-of-binary-tree](https://www.leetsolve.com/104-maximum-depth-of-binary-tree)
