@@ -154,3 +154,4 @@ Output:
 
 ## References
 * [https://leetcode.com/problems/best-time-to-buy-and-sell-stock/](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
+* [https://www.leetsolve.com/121-best-time-to-buy-and-sell-stock](https://www.leetsolve.com/121-best-time-to-buy-and-sell-stock)
