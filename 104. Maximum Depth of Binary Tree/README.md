@@ -69,7 +69,7 @@ Output:
 ```
 ### Complexity
 * Runtime: `O(N)`, where `N` is the number of nodes.
-* Extra space: `O(1)`.
+* Extra space: `O(N)`.
 
 ## References
 * [https://leetcode.com/problems/maximum-depth-of-binary-tree/](https://leetcode.com/problems/maximum-depth-of-binary-tree/)

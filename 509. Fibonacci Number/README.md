@@ -64,7 +64,7 @@ Output:
 
 ### Complexity
 * Runtime: `O(2^n)`.
-* Extra space: `O(n)`.
+* Extra space: `O(2^n)`.
 
 ## Solution 2: Dynamic programming
 ```cpp

@@ -92,7 +92,7 @@ Output:
 
 ### Complexity
 * Runtime: `O(2^m + 2^n)`, where `m*n` is the size of the grid.
-* Extra space: `O(1)`.
+* Extra space: `O(2^m + 2^n)`.
 
 ## Solution 2: Dynamic programming
 The recursive implementation repeats a lot of computations.
