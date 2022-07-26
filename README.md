@@ -4,6 +4,6 @@ This is a **programming blog for coding learners**. We focus on **readable code,
 
 Contact us at [contact@leetsolve.com](mailto:contact@leetsolve.com)
 
-[Get our Book *10 Classic Coding Challenges for FREE*](https://creative-creator-6041.ck.page/3027ddcccc).
+[Get our Book *10 Classic Coding Challenges for FREE*](https://creative-creator-6041.ck.page/31814b2494).
 
 Hope you enjoy our blog.
