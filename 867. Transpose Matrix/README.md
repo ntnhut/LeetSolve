@@ -79,3 +79,4 @@ Output:
 ## References
 
 * [https://leetcode.com/problems/transpose-matrix/](https://leetcode.com/problems/transpose-matrix/)
+* [https://www.leetsolve.com/867-transpose-matrix/](https://www.leetsolve.com/867-transpose-matrix/)

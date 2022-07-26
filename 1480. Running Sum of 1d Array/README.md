@@ -125,4 +125,4 @@ Output:
 
 ## References
 * [https://leetcode.com/problems/running-sum-of-1d-array/](https://leetcode.com/problems/running-sum-of-1d-array/)
-* [https://github.com/ntnhut/LeetSolve](https://github.com/ntnhut/LeetSolve/tree/main/1480.%20Running%20Sum%20of%201d%20Array)
+* [https://www.leetsolve.com/1480-running-sum-of-1d-array/](https://www.leetsolve.com/1480-running-sum-of-1d-array/)

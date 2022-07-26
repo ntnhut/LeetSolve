@@ -265,3 +265,4 @@ Output:
 
 ## References
 * [https://leetcode.com/problems/intersection-of-two-linked-lists/](https://leetcode.com/problems/intersection-of-two-linked-lists/)
+* [https://www.leetsolve.com/160-intersection-of-two-linked-lists/](https://www.leetsolve.com/160-intersection-of-two-linked-lists/)
