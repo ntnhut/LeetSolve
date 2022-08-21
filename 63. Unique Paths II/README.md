@@ -95,5 +95,5 @@ Output:
 * Extra space: `O(m*n)`.
 
 ### References
-* [(https://leetcode.com/problems/unique-paths-ii/)](https://leetcode.com/problems/unique-paths-ii/)
+* [https://leetcode.com/problems/unique-paths-ii/](https://leetcode.com/problems/unique-paths-ii/)
 * [https://www.leetsolve.com/63-unique-paths-ii](https://www.leetsolve.com/63-unique-paths-ii)
