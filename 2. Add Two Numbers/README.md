@@ -1,14 +1,14 @@
-# 2. Add Two Numbers
+## 2. Add Two Numbers
 Tag: medium, linked list
 
-## Problem statement
+### Problem statement
 
 You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.
 
 You may assume the two numbers do not contain any leading zero, except the number 0 itself.
 
 
-### Example 1
+#### Example 1
 ![Example 1](2_addtwonumber1.jpg)
 ```plain
 Input: l1 = [2,4,3], l2 = [5,6,4]
@@ -16,30 +16,30 @@ Output: [7,0,8]
 Explanation: 342 + 465 = 807.
 ```
 
-### Example 2
+#### Example 2
 ```plain
 Input: l1 = [0], l2 = [0]
 Output: [0]
 ```
 
-### Example 3
+#### Example 3
 ```plain
 Input: l1 = [9,9,9,9,9,9,9], l2 = [9,9,9,9]
 Output: [8,9,9,9,0,0,0,1]
 ```
 
-### Constraints
+#### Constraints
 
 * The number of nodes in each linked list is in the range `[1, 100]`.
 * `0 <= Node.val <= 9`.
 * It is guaranteed that the list represents a number that does not have leading zeros.
 
-## Solution: Addition With Remember
+### Solution: Addition With Remember
 Perform the school addition calculation and store the result in one of the lists. 
 
 Without loss of generality, let us store the result in `l1`. Then you might need to extend it when `l2` is longer than `l1` and when the result requires one additional node (Example 3).
 
-### Code
+#### Code
 ```cpp
 #include <iostream>
 struct ListNode {
@@ -124,10 +124,10 @@ Output:
 [8,9,9,9,0,0,0,1,]
 ```
 
-### Complexity
+#### Complexity
 * Runtime: `O(N)`, where `N = max(l1.length, l2.length)`.
 * Extra space: `O(1)`.
 
-## References
+### References
 * [https://leetcode.com/problems/add-two-numbers/](https://leetcode.com/problems/add-two-numbers/)
 * [https://www.leetsolve.com/2-add-two-numbers](https://www.leetsolve.com/2-add-two-numbers)
