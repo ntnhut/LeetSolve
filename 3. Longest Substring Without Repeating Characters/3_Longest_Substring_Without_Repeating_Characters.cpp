@@ -5,13 +5,13 @@ using namespace std;
 int lengthOfLongestSubstring(string s) {
     unordered_map<char, int> position;
     int maxLen = 0;
-    int start = 0;
+    int start = -1;
     for (int i = 0; i < s.length(); i++) {
         if (position.find(s[i]) != position.end()) {
-            start = max(start, position[s[i]] + 1);
+            start = max(start, position[s[i]]);
         }
         position[s[i]] = i;
-        maxLen = max(maxLen, i - start + 1);
+        maxLen = max(maxLen, i - start);
     }
     return maxLen;
 }
