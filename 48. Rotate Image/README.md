@@ -28,7 +28,12 @@ Output: [[15,13,2,5],[14,3,4,1],[12,6,8,9],[16,7,10,11]]
 * `1 <= n <= 20`.
 * `-1000 <= matrix[i][j] <= 1000`.
 
-### Solution: Doing the math
+### Solution: The math behind
+
+For any square matrix, the rotation 90 degrees clockwise can be peformed by two steps:
+
+1. Transpose the matrix.
+2. Mirror the matrix vertically.
 
 ### Code
 ```cpp
