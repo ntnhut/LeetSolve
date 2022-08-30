@@ -3,9 +3,9 @@
 
 ### Problem statement
 
-You are given an n x n 2D matrix representing an image. Rotate the image by 90 degrees (clockwise).
+You are given an `n x n` 2D `matrix` representing an image. Rotate the image by 90 degrees (clockwise).
 
-You have to rotate the image in-place, which means you have to modify the input 2D matrix directly. DO NOT allocate another 2D matrix and do the rotation.
+You have to rotate the image [in-place](https://en.wikipedia.org/wiki/In-place_algorithm), which means you have to modify the input 2D matrix directly. DO NOT allocate another 2D matrix and do the rotation.
 
 
 #### Example 1
@@ -30,7 +30,7 @@ Output: [[15,13,2,5],[14,3,4,1],[12,6,8,9],[16,7,10,11]]
 
 ### Solution: The math behind
 
-For any square matrix, the rotation 90 degrees clockwise can be peformed by two steps:
+For any square matrix, the rotation 90 degrees clockwise can be performed by two steps:
 
 1. Transpose the matrix.
 2. Mirror the matrix vertically.
