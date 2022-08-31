@@ -1,6 +1,6 @@
-# 120. Triangle
+## 120. Triangle
 
-## Problem statement
+### Problem statement
 
 Given a `triangle` array, return the minimum path sum from top to bottom.
 
@@ -8,7 +8,7 @@ For each step, you may move to an adjacent number of the row below. More formall
 
  
 
-### Example 1
+#### Example 1
 ```plain
 Input: triangle = [[2],[3,4],[6,5,7],[4,1,8,3]]
 Output: 11
@@ -20,13 +20,13 @@ Explanation: The triangle looks like:
 The minimum path sum from top to bottom is 2 + 3 + 5 + 1 = 11 (underlined above).
 ```
 
-### Example 2
+#### Example 2
 ```plain
 Input: triangle = [[-10]]
 Output: -10
 ``` 
 
-### Constraints
+#### Constraints
 
 * `1 <= triangle.length <= 200`.
 * `triangle[0].length == 1`.
@@ -36,7 +36,7 @@ Output: -10
 
 **Follow up**: Could you do this using only `O(n)` extra space, where `n` is the total number of rows in the triangle?
 
-## Solution 1: Store all minimum paths
+### Solution 1: Store all minimum paths
 
 You can store all minimum paths at every positions `(i,j)` so you can compute the next ones with this relationship.
 
@@ -44,7 +44,7 @@ You can store all minimum paths at every positions `(i,j)` so you can compute th
 minTotal[i][j] = triangle[i][j] + min(minTotal[i - 1][j - 1], minTotal[i - 1][j]);
 ```
 
-### Code
+#### Code
 ```cpp
 #include <iostream>
 #include <vector>
@@ -81,15 +81,15 @@ Output:
 -10
 ```
 
-### Complexity
+#### Complexity
 * Runtime: `O(n*n/2)`, where `n = triangle.length`.
 * Extra space: `O(n*n/2)`.
 
-## Solution 2: Store only the minimum paths of each row
+### Solution 2: Store only the minimum paths of each row
 
 You do not need to store all paths for all rows. The computation of the next row only depends on its previous one.
 
-### Code
+#### Code
 ```cpp
 #include <iostream>
 #include <vector>
@@ -120,10 +120,10 @@ Output:
 -10
 ```
 
-### Complexity
+#### Complexity
 * Runtime: `O(n*n/2)`, where `n = triangle.length`.
 * Extra space: `O(n)`.
 
-## References
+### References
 * [https://leetcode.com/problems/triangle/](https://leetcode.com/problems/triangle/)
 * [https://www.leetsolve.com/120-triangle](https://www.leetsolve.com/120-triangle)
