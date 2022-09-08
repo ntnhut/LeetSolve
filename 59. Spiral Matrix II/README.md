@@ -1,12 +1,12 @@
-# 59. Spiral Matrix II
+## 59. Spiral Matrix II
 Tag: medium
 
-## Problem statement
+### Problem statement
 
 Given a positive integer `n`, generate an `n x n` matrix filled with elements from `1` to `n^2` in spiral order.
 
 
-### Example 1
+#### Example 1
 
 ![Example 1](59_spiraln.jpg)
 
@@ -14,23 +14,23 @@ Given a positive integer `n`, generate an `n x n` matrix filled with elements fr
 Input: n = 3
 Output: [[1,2,3],[8,9,4],[7,6,5]]
 ```
-### Example 2
+#### Example 2
 ```plain
 Input: n = 1
 Output: [[1]]
 ``` 
 
-### Constraints
+#### Constraints
 
 * `1 <= n <= 20`.
 
-## Solution 
+### Solution 
 
 1. Starting from the top left of the matrix.
 2. Going along the spiral direction. 
 3. Put the value to the matrix, starting from `1`.
 
-### Code
+#### Code
 
 ```cpp
 #include <vector>
@@ -114,11 +114,11 @@ Output:
 [[1,]]
 ```
 
-### Complexity
+#### Complexity
 
 * Runtime: `O(n^2)`, where `n x n` is the size of the matrix.
 * Extra space: `O(1)`.
 
-## References
+### References
 * [https://leetcode.com/problems/spiral-matrix-ii/](https://leetcode.com/problems/spiral-matrix-ii/)
 * [https://www.leetsolve.com/59-spiral-matrix-ii](https://www.leetsolve.com/59-spiral-matrix-ii)
