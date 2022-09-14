@@ -1,6 +1,6 @@
-# 1354. Construct Target Array With Multiple Sums
+## 1354. Construct Target Array With Multiple Sums
 
-## Problem statement
+### Problem statement
 You are given an array `target` of `n` integers. From a starting array `arr` consisting of `n` 1's, you may perform the following procedure:
 
 * Let `x` be the sum of all elements currently in your array `arr`.
@@ -10,7 +10,7 @@ You are given an array `target` of `n` integers. From a starting array `arr` con
 Return `true` if it is possible to construct the `target` array from `arr`, otherwise, return `false`.
  
 
-### Example 1
+#### Example 1
 ```plain
 Input: target = [9,3,5]
 Output: true
@@ -21,32 +21,32 @@ Explanation: Start with arr = [1, 1, 1]
 [9, 3, 5] Done
 ```
 
-### Example 2
+#### Example 2
 ```plain
 Input: target = [1,1,1,2]
 Output: false
 Explanation: Impossible to create target array from [1,1,1,1].
 ```
 
-### Example 3
+#### Example 3
 ```plain
 Input: target = [8,5]
 Output: true
 ``` 
 
-### Constraints
+#### Constraints
 
 * `n == target.length`.
 * `1 <= n <= 5 * 10^4`.
 * `1 <= target[i] <= 10^9`.
 
-## Solution 1: Going backward
+### Solution 1: Going backward
 
 If you start from `arr = [1,1,...,1]` and follow the required procedure, the new element `x` you get for the next state is always the max element of `arr`. 
 
 To solve this problem, you can start from the max element of the given `target` to compute its previous state until you get the `arr = [1,1,...,1]`.
 
-### Example 1
+#### Example 1
 For `target = [9,3,5]`:
 
 * The max element is `9`, subtract it from the remaining sum: `9 - (3 + 5) = 1`, you get `target = [1,3,5]`.
@@ -54,11 +54,11 @@ For `target = [9,3,5]`:
 * The max element is `3`, subtract it from the remaining sum: `3 - (1 + 1) = 1`, you get `target = [1,1,1]`.
 * Return `true`.
 
-### Notes
+#### Notes
 * If `target = [m,1]` or `target = [1,m]` for any `m >= 1`, you can always turn it to `arr = [1,1]`.
 * If the changed value after the subtraction is still the max element of the previous state, you need to redo the subtraction at the same position. In this case, the modulo might be used instead of subtraction.
 
-### Code
+#### Code
 ```cpp
 #include <iostream>
 #include <numeric>
@@ -105,17 +105,17 @@ Output:
 1
 ```
 
-### Complexity
+#### Complexity
 * Runtime: `O(logN)`, where `N = max(target)`.
 * Extra space: `O(1)`.
 
-## Solution 2: Using priority_queue
+### Solution 2: Using priority_queue
 
 In the solution above, the position of the max element in each state is not so important as long as you update exactly it, not the other ones.
 
 That might lead to the usage of the [std::priority_queue](https://en.cppreference.com/w/cpp/container/priority_queue).
 
-### Code
+#### Code
 ```cpp
 #include <iostream>
 #include <numeric>
@@ -162,10 +162,10 @@ Output:
 1
 ```
 
-### Complexity
+#### Complexity
 * Runtime: `O(logN)`, where `N = max(target)`.
 * Extra space: `O(n)`, where `n = target.length`.
 
-## References
+### References
 * [https://leetcode.com/problems/construct-target-array-with-multiple-sums/](https://leetcode.com/problems/construct-target-array-with-multiple-sums/)
 * [https://www.leetsolve.com/1354-construct-target-array-with-multiple-sums](https://www.leetsolve.com/1354-construct-target-array-with-multiple-sums)
