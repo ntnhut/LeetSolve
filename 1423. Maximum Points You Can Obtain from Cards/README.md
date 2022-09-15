@@ -1,6 +1,6 @@
-# 1423. Maximum Points You Can Obtain from Cards
+## 1423. Maximum Points You Can Obtain from Cards
 
-## Problem statement
+### Problem statement
 
 There are several cards arranged in a row, and each card has an associated number of points. The points are given in the integer array `cardPoints`.
 
@@ -12,34 +12,34 @@ Given the integer array `cardPoints` and the integer `k`, return the maximum sco
 
  
 
-### Example 1
+#### Example 1
 ```plain
 Input: cardPoints = [1,2,3,4,5,6,1], k = 3
 Output: 12
 Explanation: After the first step, your score will always be 1. However, choosing the rightmost card first will maximize your total score. The optimal strategy is to take the three cards on the right, giving a final score of 1 + 6 + 5 = 12.
 ```
 
-### Example 2
+#### Example 2
 ```plain
 Input: cardPoints = [2,2,2], k = 2
 Output: 4
 Explanation: Regardless of which two cards you take, your score will always be 4.
 ```
 
-### Example 3
+#### Example 3
 ```plain
 Input: cardPoints = [9,7,7,9,7,7,9], k = 7
 Output: 55
 Explanation: You have to take all the cards. Your score is the sum of points of all cards.
 ``` 
 
-### Constraints
+#### Constraints
 
 * `1 <= cardPoints.length <= 10^5`.
 * `1 <= cardPoints[i] <= 10^4`.
 * `1 <= k <= cardPoints.length`.
 
-## Solution 1: Compute the sums of `k` consecutive cards of interest
+### Solution 1: Compute the sums of `k` consecutive cards of interest
 
 Assume there are `N` cards in `cardPoints`. You might be interested in only `2k` cards in this problem. 
 
@@ -47,12 +47,12 @@ Any card you take is either in the first `k` cards `cardPoints[0, ..., k-1]` or 
 
 If you concatenate the last part with the first one like this `cardPoints[N-k, ..., N-1, 0, ..., k-1]`, the problem turns into computing the maximum sum of the `k` consecutive cards in that new array.
 
-### Example 1
+#### Example 1
 For `cardPoints = [1,2,3,4,5,6,1]` and `k = 3`, concatenating the last `3` cards with the first `3` cards you get the array `[5,6,1,1,2,3,4]`.
 
 The maximum sum of the `3` consecutive cards is `sum([5,6,1]) = 12`.
 
-### Code
+#### Code
 ```cpp
 #include <iostream>
 #include <vector>
@@ -86,11 +86,11 @@ Output:
 55
 ```
 
-### Complexity
+#### Complexity
 * Runtime: `O(k^2)`.
 * Extra space: `O(2k)`.
 
-## Solution 2: Improve the performance
+### Solution 2: Improve the performance
 
 When `k` is large (it can equal `cardPoints.length`), the solution above is slow due to runtime complexity `O(k^2)`.
 
@@ -98,7 +98,7 @@ It is because there are many recomputations when computing the `sum` of each `k`
 
 You can save this runtime by keeping the common `(k-1)`-sum between two neighbor `k`-sums.
 
-### Example 1
+#### Example 1
 The sum `6 + 1` are computed in both sums `5 + 6 + 1` and `6 + 1 + 1` in the array `[5,6,1,1,2,3,4]`.
 
 Assume you have computed the sum `5 + 6 + 1 = 12`. To compute the next sum `6 + 1 + 1`, keep the sum `6 + 1` from previous one by subtracting `12 - 5 = 7`. Then add it with the new card's points `7 + 1 = 8`.
@@ -107,7 +107,7 @@ The value `k` in this example is not too large to see the effect but I believe y
 
 On the other hand, you do not have to use extra space for the concatenation. You can use the modulo operator `%` on the indices.
 
-### Code
+#### Code
 ```cpp
 #include <iostream>
 #include <vector>
@@ -143,10 +143,10 @@ Output:
 55
 ```
 
-### Complexity
+#### Complexity
 * Runtime: `O(k)`.
 * Extra space: `O(1)`.
 
-## References
+### References
 * [https://leetcode.com/problems/maximum-points-you-can-obtain-from-cards/](https://leetcode.com/problems/maximum-points-you-can-obtain-from-cards/)
 * [https://www.leetsolve.com/1423-maximum-points-you-can-obtain-from-cards](https://www.leetsolve.com/1423-maximum-points-you-can-obtain-from-cards)
