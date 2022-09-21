@@ -1,37 +1,37 @@
-# 169. Majority Element
+## 169. Majority Element
 Tag: easy
 
-## Problem statement
+### Problem statement
 
 Given an array `nums` of size `n`, return the majority element.
 
 The majority element is the element that appears more than `⌊n / 2⌋` times. You may assume that the majority element always exists in the array.
 
-### Example 1
+#### Example 1
 ```plain
 Input: nums = [3,2,3]
 Output: 3
 ```
 
-### Example 2
+#### Example 2
 ```plain
 Input: nums = [2,2,1,1,1,2,2]
 Output: 2
 ``` 
 
-### Constraints
+#### Constraints
 
 * `n == nums.length`.
 * `1 <= n <= 5 * 10^4`.
 * `-2^31 <= nums[i] <= 2^31 - 1`.
  
 
-### Follow-up: 
+#### Follow-up: 
 Could you solve the problem in linear time and in `O(1)` space?
 
-## Solution 1: Counting the frequency
+### Solution 1: Counting the frequency
 
-### Code
+#### Code
 ```cpp
 #include <vector>
 #include <iostream>
@@ -61,13 +61,13 @@ Output:
 2
 ```
 
-### Complexity
+#### Complexity
 * Runtime: `O(n)`, where `n = nums.length`.
 * Extra space: `O(n)`.
 
-## Solution 2: Sorting and picking the middle element
+### Solution 2: Sorting and picking the middle element
 
-### Code
+#### Code
 ```cpp
 #include <vector>
 #include <iostream>
@@ -90,10 +90,10 @@ Output:
 2
 ```
 
-### Complexity
+#### Complexity
 * Runtime: `O(nlogn)`, where `n = nums.length`.
 * Extra space: `O(1)`.
 
-## References
+### References
 * [https://leetcode.com/problems/majority-element/](https://leetcode.com/problems/majority-element/)
 * [https://www.leetsolve.com/169-majority-element](https://www.leetsolve.com/169-majority-element)
