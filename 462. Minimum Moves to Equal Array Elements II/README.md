@@ -1,13 +1,13 @@
-# 462. Minimum Moves to Equal Array Elements II
+## 462. Minimum Moves to Equal Array Elements II
 
 
-## Problem statement
+### Problem statement
 
 Given an integer array `nums` of size `n`, return the minimum number of moves required to make all array elements equal.
 
 In one move, you can increment or decrement an element of the array by `1`.
 
-### Example 1
+#### Example 1
 ```plain
 Input: nums = [1,2,3]
 Output: 2
@@ -16,19 +16,19 @@ Only two moves are needed (remember each move increments or decrements one eleme
 [1,2,3]  =>  [2,2,3]  =>  [2,2,2]
 ```
 
-### Example 2
+#### Example 2
 ```plain
 Input: nums = [1,10,2,9]
 Output: 16
 ``` 
 
-### Constraints
+#### Constraints
 
 * `n == nums.length`.
 * `1 <= nums.length <= 10^5`.
 * `-10^9 <= nums[i] <= 10^9`.
 
-## Solution: Median - The math behind the problem
+### Solution: Median - The math behind the problem
 
 You are asked to move all elements of an array to the same value `M`. The problem can be reduced to identifying what `M` is.
 
@@ -48,12 +48,12 @@ In fact, if you choose `M = nums[n/2] + x`, where `x > 0`, then:
 
 The same arguments apply for `x < 0`.
 
-### Example 3
+#### Example 3
 For `nums = [0,1,2,2,10]`. Its median is `2`. The minimum number of moves is `2 + 1 + 0 + 0 + 8 = 11`.
 
 If you choose `M = 3` (the average value, the mean), the total number of moves is `3 + 2 + 1 + 1 + 7 = 14`. 
 
-### Code
+#### Code
 ```cpp
 #include <iostream>
 #include <vector>
@@ -81,10 +81,10 @@ Output:
 16
 ```
 
-### Complexity
+#### Complexity
 * Runtime: `O(nlogn)`, where `n = nums.length`.
 * Extra space: `O(1)`.
 
-## References
+### References
 * [https://leetcode.com/problems/minimum-moves-to-equal-array-elements-ii/](https://leetcode.com/problems/minimum-moves-to-equal-array-elements-ii/)
 * [https://www.leetsolve.com/462-minimum-moves-to-equal-array-elements-ii](https://www.leetsolve.com/462-minimum-moves-to-equal-array-elements-ii)
