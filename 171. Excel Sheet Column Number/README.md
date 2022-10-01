@@ -1,7 +1,7 @@
-# 171. Excel Sheet Column Number
+## 171. Excel Sheet Column Number
 Tag: easy, string
 
-## Problem statement
+### Problem statement
 
 Given a string `columnTitle` that represents the column title as appears in an Excel sheet, return its corresponding column number.
 
@@ -17,31 +17,31 @@ AB -> 28
 ...
 ``` 
 
-### Example 1
+#### Example 1
 ```plain
 Input: columnTitle = "A"
 Output: 1
 ```
 
-### Example 2
+#### Example 2
 ```plain
 Input: columnTitle = "AB"
 Output: 28
 ```
 
-### Example 3
+#### Example 3
 ```plain
 Input: columnTitle = "ZY"
 Output: 701
 ``` 
 
-### Constraints
+#### Constraints
 
 * `1 <= columnTitle.length <= 7`.
 * `columnTitle` consists only of uppercase English letters.
 * `columnTitle` is in the range `["A", "FXSHRXW"]`.
 
-## Solution: Finding The Pattern
+### Solution: Finding The Pattern
 
 Let us write down some other `columnTitle` strings and its value.
 ```plain
@@ -81,7 +81,7 @@ where `a, b, c, d` are some uppercase English letters `A, ..., Z`.
 
 Longer `columnTitle`s will have bigger leading exponents of `26`.
 
-### Code
+#### Code
 ```cpp
 #include <iostream>
 using namespace std;
@@ -105,11 +105,11 @@ Output:
 28
 701
 ```
-### Complexity
+#### Complexity
 * Runtime: `O(N)`, where `N = columnTitle.length`.
 * Extra space: `O(1)`.
 
-### Implementation notes
+#### Implementation notes
 1. There are many ways to compute the series
     ```plain
     26^3*a + 26^2*b + 26*c + d.
@@ -123,6 +123,6 @@ Output:
 2. To map `'A' = 1, ..., 'Z' = 26`, you can use their ASCII values (`'A' = 65, ..., 'Z' = 90`) minus `64`.
 3. The parentheses around `(c - 64)` is needed. Otherwise the value of `columnTitle = "FXSHRXW"` makes `26*column + c` exceed the limit of `int` before it substracts `64`. 
 
-## References
+### References
 * [https://leetcode.com/problems/excel-sheet-column-number/](https://leetcode.com/problems/excel-sheet-column-number/)
 * [https://www.leetsolve.com/171-excel-sheet-column-number](https://www.leetsolve.com/171-excel-sheet-column-number)
