@@ -1,7 +1,7 @@
-# 287. Find the Duplicate Number
+## 287. Find the Duplicate Number
 
 
-## Problem statement
+### Problem statement
 
 Given an array of integers `nums` containing `n + 1` integers where each integer is in the range `[1, n]` inclusive.
 
@@ -11,19 +11,19 @@ You must solve the problem without modifying the array `nums` and uses only cons
 
  
 
-### Example 1
+#### Example 1
 ```plain
 Input: nums = [1,3,4,2,2]
 Output: 2
 ```
 
-### Example 2
+#### Example 2
 ```plain
 Input: nums = [3,1,3,4,2]
 Output: 3
 ``` 
 
-### Constraints
+#### Constraints
 
 * `1 <= n <= 10^5`.
 * `nums.length == n + 1`.
@@ -37,7 +37,7 @@ Output: 3
 * Can you solve the problem in linear runtime complexity?
 
 
-## Solution 1: Sorting
+### Solution 1: Sorting
 
 ```cpp
 #include <vector>
@@ -66,24 +66,24 @@ Output:
 3
 ```
 
-### Complexity
+#### Complexity
 * Runtime: `O(NlogN)`, where `N = nums.length`.
 * Extra space: `O(1)`.
 
-## Follow up
+### Follow up
 
-### How can we prove that at least one duplicate number must exist in `nums`?
+#### How can we prove that at least one duplicate number must exist in `nums`?
 
 Due to [Pigeonhole principle](https://en.wikipedia.org/wiki/Pigeonhole_principle):
 
 Here there are `n + 1` pigeons in `n` holes. The pigeonhole principle says that at least one hole has more than one pigeon.
 
-### Can you solve the problem in linear runtime complexity?
+#### Can you solve the problem in linear runtime complexity?
 Here are a few solutions.
 
-## Solution 2: Marking the visited numbers
+### Solution 2: Marking the visited numbers
 
-### Code
+#### Code
 ```cpp
 #include <vector>
 #include <iostream>
@@ -111,15 +111,15 @@ Output:
 3
 ```
 
-### Complexity
+#### Complexity
 * Runtime: `O(N)`, where `N = nums.length`.
 * Extra space: `O(1)`. [`std::vector<bool>`](https://en.cppreference.com/w/cpp/container/vector_bool) is optimized for space-efficient. 
 
-## Solution 3: Marking with `std::bitset`
+### Solution 3: Marking with `std::bitset`
 
 Since `n <= 10^5`, you can use this size for a [`std::bitset`](https://en.cppreference.com/w/cpp/utility/bitset) to do the marking. 
 
-### Code
+#### Code
 ```cpp
 #include <vector>
 #include <iostream>
@@ -148,11 +148,11 @@ Output:
 3
 ```
 
-### Complexity
+#### Complexity
 * Runtime: `O(N)`, where `N = nums.length`.
 * Extra space: `O(1)`. 
 
-## References
+### References
 
 * [https://leetcode.com/problems/find-the-duplicate-number/](https://leetcode.com/problems/find-the-duplicate-number/)
 * [https://www.leetsolve.com/287-find-the-duplicate-number](https://www.leetsolve.com/287-find-the-duplicate-number)
