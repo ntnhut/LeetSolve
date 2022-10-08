@@ -1,5 +1,4 @@
 #include <iostream>
-
 #include <vector>
 #include <algorithm>
 using namespace std;
@@ -21,7 +20,6 @@ int maximumUnits(vector<vector<int>>& boxTypes, int truckSize) {
     }
     return maxUnits;
 }
-
 int main() {
     vector<vector<int>> boxTypes{{1,3},{2,2},{3,1}};
     cout << maximumUnits(boxTypes, 4) << endl;

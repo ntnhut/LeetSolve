@@ -1,7 +1,7 @@
-# 1710. Maximum Units on a Truck
+## 1710. Maximum Units on a Truck
 
 
-## Problem statement
+### Problem statement
 
 You are assigned to put some amount of boxes onto one truck. You are given a 2D array `boxTypes`, where `boxTypes[i] = [numberOfBoxes_i, numberOfUnitsPerBox_i]`:
 
@@ -14,7 +14,7 @@ Return the maximum total number of units that can be put on the truck.
 
  
 
-### Example 1
+#### Example 1
 ```plain
 Input: boxTypes = [[1,3],[2,2],[3,1]], truckSize = 4
 Output: 8
@@ -26,21 +26,21 @@ You can take all the boxes of the first and second types, and one box of the thi
 The total number of units will be = (1 * 3) + (2 * 2) + (1 * 1) = 8.
 ```
 
-### Example 2
+#### Example 2
 ```plain
 Input: boxTypes = [[5,10],[2,5],[4,7],[3,9]], truckSize = 10
 Output: 91
 ``` 
 
-### Constraints
+#### Constraints
 
 * `1 <= boxTypes.length <= 1000`.
 * `1 <= numberOfBoxes_i, numberOfUnitsPerBox_i <= 1000`.
 * `1 <= truckSize <= 10^6`.
 
-## Solution: Greedy algorithm
+### Solution: Greedy algorithm
 
-### Code
+#### Code
 ```cpp
 #include <iostream>
 #include <vector>
@@ -77,10 +77,10 @@ Output:
 91
 ```
 
-### Complexity
+#### Complexity
 * Runtime: `O(NlogN)`, where `N = boxTypes.length`.
 * Extra space: `O(1)`.
 
-## References
+### References
 * [https://leetcode.com/problems/maximum-units-on-a-truck/](https://leetcode.com/problems/maximum-units-on-a-truck/)
 * [https://www.leetsolve.com/1710-maximum-units-on-a-truck](https://www.leetsolve.com/1710-maximum-units-on-a-truck)
