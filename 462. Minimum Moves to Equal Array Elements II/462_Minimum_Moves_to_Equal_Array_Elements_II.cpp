@@ -1,8 +1,14 @@
 #include <iostream>
-
 #include <vector>
 #include <algorithm>
 using namespace std;
+
+//! @return the minimum number of moves 
+//!         required to make all array elements equal.
+//! @note   In one move, you can increment or 
+//!         decrement an element of the array by 1.
+//! @param nums an array of integers
+//! @author Nhut Nguyen
 int minMoves2(vector<int>& nums) {
     sort(nums.begin(), nums.end());
     const int median = nums[nums.size() / 2];
