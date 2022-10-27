@@ -90,10 +90,52 @@ Output:
 2
 ```
 
+### Solution 3: Partial sort
+
+Since you are interested in only the middle element after sorting, the partial sorting algorithm [`std::nth_element`](https://en.cppreference.com/w/cpp/algorithm/nth_element) can be used in this case to reduce the cost of the full sorting.
+
+#### Code
+```cpp
+#include <vector>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+int majorityElement(vector<int>& nums) {
+    const int mid = nums.size() / 2;    
+    std::nth_element(nums.begin(), nums.begin() + mid, nums.end());
+    return nums[mid];
+}
+int main() {
+    vector<int> nums{3,2,3};
+    cout << majorityElement(nums) << endl; // 3
+    nums = {2,2,1,1,1,2,2};
+    cout << majorityElement(nums) << endl; // 2
+}
+```
+```plain
+Output:
+3
+2
+```
+
 #### Complexity
-* Runtime: `O(nlogn)`, where `n = nums.length`.
+* Runtime: `O(n)`, where `n = nums.length`.
 * Extra space: `O(1)`.
+
+
+### Modern C++ notes
+
+In the code of Solution 3, the partial sorting algorithm `std::nth_element` will make sure for all indices `i` and `j` that satisfy `0 <= i <= mid <= j < nums.length`,
+
+```plain
+nums[i] <= nums[mid] <= nums[j].
+```
+
+In other words, `nums[mid]` divides the array `nums` into two groups: all elements that are less than or equal to `nums[mid]` and the ones that are greater than or equal to `nums[mid]`. 
+
+Those two groups are unsorted. That is why the algorithm is called *partial* sorting. 
 
 ### References
 * [https://leetcode.com/problems/majority-element/](https://leetcode.com/problems/majority-element/)
 * [https://www.leetsolve.com/169-majority-element](https://www.leetsolve.com/169-majority-element)
+* [https://en.cppreference.com/w/cpp/algorithm/nth_element](https://en.cppreference.com/w/cpp/algorithm/nth_element)
