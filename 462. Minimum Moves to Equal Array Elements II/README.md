@@ -28,7 +28,7 @@ Output: 16
 * `1 <= nums.length <= 10^5`.
 * `-10^9 <= nums[i] <= 10^9`.
 
-### Solution: Median - The math behind the problem
+### Solution 1: Median - The math behind the problem
 
 You are asked to move all elements of an array to the same value `M`. The problem can be reduced to identifying what `M` is.
 
@@ -85,6 +85,57 @@ Output:
 * Runtime: `O(nlogn)`, where `n = nums.length`.
 * Extra space: `O(1)`.
 
+
+### Solution 2: Using `std::nth_element` to compute the median
+
+What you only need in the Solution 1 is the median value. Computing the total number of moves in the `for` loop does not require the array `nums` to be fully sorted. 
+
+In this case, you can use [`std::nth_element`](https://en.cppreference.com/w/cpp/algorithm/nth_element) to reduce the runtime complexity.
+
+#### Code
+```cpp
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+int minMoves2(vector<int>& nums) {
+    const int mid = nums.size() / 2;    
+    std::nth_element(nums.begin(), nums.begin() + mid, nums.end());
+    const int median = nums[mid];
+    int moves = 0;
+    for (int& a: nums) {
+        moves += abs(a - median);
+    }
+    return moves;
+}
+int main() {
+    vector<int> nums{1,2,3};
+    cout << minMoves2(nums) << endl;
+    nums = {1,10,2,9};
+    cout << minMoves2(nums) << endl;
+}
+```
+```plain
+Output:
+2
+16
+```
+
+#### Complexity
+* Runtime: `O(n)`, where `n = nums.length`.
+* Extra space: `O(1)`.
+
+### Modern C++ notes
+
+In the code of Solution 2, the partial sorting algorithm `std::nth_element` will make sure for all indices `i` and `j` that satisfy `0 <= i <= mid <= j < nums.length`,
+
+```plain
+nums[i] <= nums[mid] <= nums[j].
+```
+
+With this property, if `mid = nums.length / 2` then the value of `nums[mid]` is unchanged no matter how `nums` is sorted or not.
+
 ### References
 * [https://leetcode.com/problems/minimum-moves-to-equal-array-elements-ii/](https://leetcode.com/problems/minimum-moves-to-equal-array-elements-ii/)
 * [https://www.leetsolve.com/462-minimum-moves-to-equal-array-elements-ii](https://www.leetsolve.com/462-minimum-moves-to-equal-array-elements-ii)
+* [https://en.cppreference.com/w/cpp/algorithm/nth_element](https://en.cppreference.com/w/cpp/algorithm/nth_element)

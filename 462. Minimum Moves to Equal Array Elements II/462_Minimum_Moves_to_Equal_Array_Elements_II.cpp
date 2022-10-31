@@ -10,8 +10,9 @@ using namespace std;
 //! @param nums an array of integers
 //! @author Nhut Nguyen
 int minMoves2(vector<int>& nums) {
-    sort(nums.begin(), nums.end());
-    const int median = nums[nums.size() / 2];
+    const int mid = nums.size() / 2;    
+    std::nth_element(nums.begin(), nums.begin() + mid, nums.end());
+    const int median = nums[mid];
     int moves = 0;
     for (int& a: nums) {
         moves += abs(a - median);
