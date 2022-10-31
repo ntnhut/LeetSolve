@@ -45,21 +45,23 @@ First, let us list some first values of `n`.
 Look at `n = 3`, you can see the relationship between the decimal value of `"11011"` and the one of `"110"` (of `n = 2`) is:
 
 ```plain
-Dec("11011") = Dec("110") * 2^2 + 3.
+27 = 6 * 2^2 + 3
+Dec("11011") = Dec("110") * 2^num_bits("11") + Dec("11")
+Result(3) = Result(2) * 2^num_bits(3) + 3.
 ```
 
 The same equation for `n = 2`:
 
 ```plain
-Dec("110") = Dec("1") * 2^2 + 2.
+6 = 1 * 2^2 + 2
+Dec("110") = Dec("1") * 2^num_bits("10") + Dec("10")
+Result(2) = Result(1) * 2^num_bits(2) + 2.
 ```
-
-The exponents `2` of `2^2` in the relationships above are the number of bits of `n = 3` and `n = 2`.
 
 In general, the recursive relationship between `n` and `n - 1` is:
 
 ```plain
-Dec("Bin(1)..Bin(n)") = Dec("Bin(1).. Bin(n - 1)") * 2^num_bits(n) + n.
+Result(n) = Result(n - 1) * 2^num_bits(n) + n.
 ```
 
 #### Code
@@ -69,8 +71,8 @@ Dec("Bin(1)..Bin(n)") = Dec("Bin(1).. Bin(n - 1)") * 2^num_bits(n) + n.
 int concatenatedBinary(int n) {
     unsigned long long result = 1;
     for (int i = 2; i <= n; i++) {
-        const int bits = std::log2(i) + 1;        
-        result = ((result << bits) + i) % 1000000007;
+        const int num_bits = std::log2(i) + 1;        
+        result = ((result << num_bits) + i) % 1000000007;
     }
     return result;
 }
