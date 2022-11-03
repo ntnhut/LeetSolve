@@ -8,6 +8,10 @@ struct ListNode {
     ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
 using namespace std;
+
+//! @return the new head after removing the n-th node from the end of the list.
+//! @param head the head of a linked list. 
+//! @author Nhut Nguyen
 ListNode* removeNthFromEnd(ListNode* head, int n) {
     ListNode* fast = head;
     for (int i = 0; i < n; i++) {
@@ -25,6 +29,7 @@ ListNode* removeNthFromEnd(ListNode* head, int n) {
     slow->next = slow->next->next;
     return head;
 }
+
 void printList(ListNode *head) {
     ListNode* node = head;
     cout << "[";
