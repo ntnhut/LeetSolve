@@ -2,6 +2,12 @@
 #include <iostream>
 using namespace std;
 
+//! @return an array answer such that answer[i] is equal to the product of
+//!         all the elements of nums except nums[i].
+//! @param nums an array of integers
+//! @cond  You must write an algorithm that runs in O(n) time and 
+//!        without using the division operation.
+//! @author Nhut Nguyen
 vector<int> productExceptSelf(vector<int>& nums) {
     const int n = nums.size();
     vector<int> answer(n);
