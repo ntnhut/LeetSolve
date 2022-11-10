@@ -1,30 +1,30 @@
-# 448. Find All Numbers Disappeared in an Array
+## 448. Find All Numbers Disappeared in an Array
 
-## Problem statement
+### Problem statement
 Given an array `nums` of `n` integers where `nums[i]` is in the range `[1, n]`, return an array of all the integers in the range `[1, n]` that do not appear in `nums`.
 
-### Example 1
+#### Example 1
 ```plain
 Input: nums = [4,3,2,7,8,2,3,1]
 Output: [5,6]
 ```
 
-### Example 2
+#### Example 2
 ```plain
 Input: nums = [1,1]
 Output: [2]
 ```
 
-### Constraints
+#### Constraints
 * `n == nums.length`.
 * `1 <= n <= 10^5`.
 * `1 <= nums[i] <= n`.
  
 
-### Follow up
+#### Follow up
 Could you do it without extra space and in `O(n)` runtime? You may assume the returned list does not count as extra space.
 
-## Solution: Marking the appearances
+### Solution: Marking the appearances
 
 ```cpp
 #include <vector>
@@ -65,9 +65,10 @@ Output:
 [2,]
 ```
 
-### Complexity
+#### Complexity
 * Runtime: `O(N)`, where `N = nums.length`.
 * Extra space: `O(1)` ([`vector<bool>`](https://en.cppreference.com/w/cpp/container/vector_bool) is optimized for space efficiency).
 
-## References
+### References
 * [https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/](https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/)
+* [https://www.leetsolve.com/448-find-all-numbers-disappeared-in-an-array](https://www.leetsolve.com/448-find-all-numbers-disappeared-in-an-array)

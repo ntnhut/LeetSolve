@@ -2,6 +2,9 @@
 #include <iostream>
 using namespace std;
 
+//! @return all the integers in the range [1, n] that do not appear in nums.
+//! @param nums an array of n integers where nums[i] is in the range [1, n].
+//! @author Nhut Nguyen
 vector<int> findDisappearedNumbers(vector<int>& nums) {        
     vector<bool> exist(nums.size() + 1, false);        
     for (auto& i : nums) {
