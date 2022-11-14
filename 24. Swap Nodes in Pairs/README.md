@@ -5,10 +5,7 @@ Tags: Linklist, medium
 Given a linked list, swap every two adjacent nodes and return its head. You must solve the problem without modifying the values in the list's nodes (i.e., only nodes themselves may be changed.)
  
 #### Example 1
-
-
-![24_swap_ex1.jpg](https://cdn.hashnode.com/res/hashnode/image/upload/v1668456597866/X1_POMiZC.jpg align="left")
-
+![The link list in Example 1](24_swap_ex1.jpg)
 ```plain
 Input: head = [1,2,3,4]
 Output: [2,1,4,3]
@@ -34,8 +31,7 @@ Output: [1]
 
 Draw a picture of the swapping to identify the correct order of the update.
 
-
-![24_drawing_1.png](https://cdn.hashnode.com/res/hashnode/image/upload/v1668456662106/kliQJ9qzj.png align="left")
+![Swapping steps](24_drawing_1.png)
 
 Denote `(cur, next)` the pair of nodes you want to swap and `prev` be the previous node that links to `cur`. Here are the steps you need to perform for the swapping.
 1. Update the links between nodes.
