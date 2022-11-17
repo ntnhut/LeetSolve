@@ -1,6 +1,5 @@
 ## 1710. Maximum Units on a Truck
 
-
 ### Problem statement
 
 You are assigned to put some amount of boxes onto one truck. You are given a 2D array `boxTypes`, where `boxTypes[i] = [numberOfBoxes_i, numberOfUnitsPerBox_i]`:
@@ -11,8 +10,6 @@ You are assigned to put some amount of boxes onto one truck. You are given a 2D 
 You are also given an integer `truckSize`, which is the maximum number of boxes that can be put on the truck. You can choose any boxes to put on the truck as long as the number of boxes does not exceed `truckSize`.
 
 Return the maximum total number of units that can be put on the truck.
-
- 
 
 #### Example 1
 ```plain
@@ -30,6 +27,7 @@ The total number of units will be = (1 * 3) + (2 * 2) + (1 * 1) = 8.
 ```plain
 Input: boxTypes = [[5,10],[2,5],[4,7],[3,9]], truckSize = 10
 Output: 91
+Explanation: (5 * 10) + (3 * 9) + (2 * 7) = 91.
 ``` 
 
 #### Constraints
@@ -39,6 +37,7 @@ Output: 91
 * `1 <= truckSize <= 10^6`.
 
 ### Solution: Greedy algorithm
+Put the boxes having more units first.
 
 #### Code
 ```cpp
@@ -47,7 +46,8 @@ Output: 91
 #include <algorithm>
 using namespace std;
 int maximumUnits(vector<vector<int>>& boxTypes, int truckSize) {
-    sort(boxTypes.begin(), boxTypes.end(), [](const vector<int>& a, const vector<int>& b){
+    // sort for the boxes based on their number of units
+    sort(boxTypes.begin(), boxTypes.end(), [](const vector<int>& a, const vector<int>& b) {
         return a[1] > b[1];
     });
     int maxUnits = 0;
@@ -81,6 +81,13 @@ Output:
 * Runtime: `O(NlogN)`, where `N = boxTypes.length`.
 * Extra space: `O(1)`.
 
+### Modern C++ STL notes
+Note that two `vector`s can be compared. That is why you can sort them.
+
+But in this case you want to sort them based on the number of units. That is why you need to define the comparison function like the code above. Otherwise, the `sort` algorithm will use the dictionary order to sort them by default.  
+
 ### References
 * [https://leetcode.com/problems/maximum-units-on-a-truck/](https://leetcode.com/problems/maximum-units-on-a-truck/)
 * [https://www.leetsolve.com/1710-maximum-units-on-a-truck](https://www.leetsolve.com/1710-maximum-units-on-a-truck)
+* [https://en.cppreference.com/w/cpp/container/vector](https://en.cppreference.com/w/cpp/container/vector)
+* [https://en.cppreference.com/w/cpp/algorithm/sort](https://en.cppreference.com/w/cpp/algorithm/sort)

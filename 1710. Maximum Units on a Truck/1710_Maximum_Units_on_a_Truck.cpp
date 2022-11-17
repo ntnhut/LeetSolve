@@ -2,8 +2,13 @@
 #include <vector>
 #include <algorithm>
 using namespace std;
+//! @return the maximum total number of units that can be put on the truck
+//! @param truckSize maximum number of boxes can be put on the truck
+//! @param boxTypes an array of boxTypes[i] = {numberOfBoxes_i, numberOfUnitsPerBox_i}.
+//! @author Nhut Nguyen
 int maximumUnits(vector<vector<int>>& boxTypes, int truckSize) {
-    sort(boxTypes.begin(), boxTypes.end(), [](const vector<int>& a, const vector<int>& b){
+    // sort for the boxes based on their number of units
+    sort(boxTypes.begin(), boxTypes.end(), [](const vector<int>& a, const vector<int>& b) {
         return a[1] > b[1];
     });
     int maxUnits = 0;
