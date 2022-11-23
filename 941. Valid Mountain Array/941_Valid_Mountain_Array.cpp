@@ -1,6 +1,9 @@
 #include <vector>
 #include <iostream>
 using namespace std;
+//! @return true if the array forms a valid mountain
+//! @param arr an array of integers
+//! @author Nhut Nguyen
 bool validMountainArray(vector<int>& arr) {
     if (arr.size() < 3) {
         return false;
