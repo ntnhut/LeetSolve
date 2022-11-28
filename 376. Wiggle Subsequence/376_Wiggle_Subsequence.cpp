@@ -1,8 +1,9 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-
-
+//! @return the length of the longest wiggle subsequence of nums
+//! @param nums an array of non-negative integers
+//! @author Nhut Nguyen
 int wiggleMaxLength(vector<int>& nums) {
     // nums[0] is always the first extremum
     // start to find the second extremum
@@ -27,8 +28,6 @@ int wiggleMaxLength(vector<int>& nums) {
     }
     return count;
 }
-
-
 int main() {
     vector<int> nums{1,7,4,9,2,5};
     cout << wiggleMaxLength(nums) << endl;
