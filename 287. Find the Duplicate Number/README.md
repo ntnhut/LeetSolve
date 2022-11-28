@@ -113,7 +113,7 @@ Output:
 
 #### Complexity
 * Runtime: `O(N)`, where `N = nums.length`.
-* Extra space: `O(1)`. [`std::vector<bool>`](https://en.cppreference.com/w/cpp/container/vector_bool) is optimized for space-efficient. 
+* Extra space: `O(logN)`. [`std::vector<bool>`](https://en.cppreference.com/w/cpp/container/vector_bool) is optimized for space-efficient. 
 
 ### Solution 3: Marking with `std::bitset`
 

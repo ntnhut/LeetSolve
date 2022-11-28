@@ -67,7 +67,7 @@ Output:
 
 #### Complexity
 * Runtime: `O(N)`, where `N = nums.length`.
-* Extra space: `O(1)` ([`vector<bool>`](https://en.cppreference.com/w/cpp/container/vector_bool) is optimized for space efficiency).
+* Extra space: `O(logN)` ([`vector<bool>`](https://en.cppreference.com/w/cpp/container/vector_bool) is optimized for space efficiency).
 
 ### References
 * [https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/](https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/)

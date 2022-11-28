@@ -148,7 +148,7 @@ Output:
 
 #### Complexity
 * Runtime: `O(1)`.
-* Extra space: `O(1)` because [`std::vector<bool>`](https://en.cppreference.com/w/cpp/container/vector_bool) was optimized for space efficiency.
+* Extra space: `O(1)`.
 
 ### References
 * [https://leetcode.com/problems/design-hashset/](https://leetcode.com/problems/design-hashset/)

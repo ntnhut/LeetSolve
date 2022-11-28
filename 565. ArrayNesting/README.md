@@ -102,7 +102,7 @@ Output:
 
 ### Complexity
 * Runtime: `O(N)`, where `N = nums.length`.
-* Extra space: `O(1)`.
+* Extra space: `O(logN)`.
 
 ## Implementation note
 In the code above we can skip visited elements because in a permutation distinct cycles are disjoint.
