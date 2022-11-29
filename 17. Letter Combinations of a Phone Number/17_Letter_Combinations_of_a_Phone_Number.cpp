@@ -2,16 +2,15 @@
 #include <iostream>
 #include <unordered_map>
 using namespace std;
-
 void combination(string& digits, unordered_map<char, vector<char> >& m, 
-        int i, vector<string>& result) {
+                 int i, vector<string>& result) {
     if (i >= digits.length()) {
         return;
     }
-    vector<string> newResult;
     if (result.empty()) {
-        result= {""};
+        result = {""};
     }
+    vector<string> newResult;
     for (string& s : result) {
         for (auto c : m[digits[i]]) {
             newResult.push_back(s + c);
@@ -20,17 +19,19 @@ void combination(string& digits, unordered_map<char, vector<char> >& m,
     result.swap(newResult);
     combination(digits, m, i + 1, result);
 }
-
+//! @return all possible letter combinations that the number could represent
+//! @example "23" produces ["ad","ae","af","bd","be","bf","cd","ce","cf"]
+//! @param digits a string containing digits from 2 to 9 on the telephone buttons.
+//! @author Nhut Nguyen
 vector<string> letterCombinations(string digits) {
-    unordered_map<char, vector<char> > m;
-    m['2'] = {'a', 'b', 'c'};
-    m['3'] = {'d', 'e', 'f'};
-    m['4'] = {'g', 'h', 'i'};
-    m['5'] = {'j', 'k', 'l'};
-    m['6'] = {'m', 'n', 'o'};
-    m['7'] = {'p', 'q', 'r', 's'};
-    m['8'] = {'t', 'u', 'v'};
-    m['9'] = {'w', 'x', 'y', 'z'};
+    unordered_map<char, vector<char> > m{{'2', {'a', 'b', 'c'}},
+                                         {'3', {'d', 'e', 'f'}},
+                                         {'4', {'g', 'h', 'i'}},
+                                         {'5', {'j', 'k', 'l'}},
+                                         {'6', {'m', 'n', 'o'}},
+                                         {'7', {'p', 'q', 'r', 's'}},
+                                         {'8', {'t', 'u', 'v'}},
+                                         {'9', {'w', 'x', 'y', 'z'}}};
     vector<string> result;
     combination(digits, m, 0, result);
     return result;
