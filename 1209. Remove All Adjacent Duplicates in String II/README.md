@@ -46,7 +46,7 @@ Construct a stack of strings that has adjacent equal letters and perform the rem
 For `s = "deeedbbcccbdaa"` and `k = 3`:
 
 * The first built string is `"d"`.
-* Then `"eee"` with exact length `k`, remove this string.
+* Then `"eee"` with the exact length `k`, remove this string.
 * The next character is `'d'`, which equals the last character of the last string `"d"`, merge them together. The first string becomes `"dd"`.
 * The next string is `"bb"`.
 * Then `"ccc"` is removed.
@@ -96,6 +96,7 @@ int main() {
 }
 ```
 ```plain
+Output:
 abcd
 aa
 ps
@@ -108,7 +109,7 @@ ps
 ### Implementation notes
 The data structure `stk` you might need to solve this problem is a stack. But here are the reasons you had better use [`std::vector`](https://en.cppreference.com/w/cpp/container/vector):
 
-* `std::vector` has also methods [`push_back(value)`](https://en.cppreference.com/w/cpp/container/vector/push_back) and [`pop_back()`](https://en.cppreference.com/w/cpp/container/vector/pop_back) like the ones in stack.
+* `std::vector` also has methods [`push_back(value)`](https://en.cppreference.com/w/cpp/container/vector/push_back) and [`pop_back()`](https://en.cppreference.com/w/cpp/container/vector/pop_back) like the ones in a stack.
 * On the other hand, it is faster for a vector to perform the string concatenation at the end.
 
 ### References
