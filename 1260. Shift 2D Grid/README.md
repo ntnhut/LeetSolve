@@ -46,7 +46,7 @@ Output: [[1,2,3],[4,5,6],[7,8,9]]
 * `-1000 <= grid[i][j] <= 1000`.
 * `0 <= k <= 100`.
 
-### Solution: Convert a 2D array into an 1D one
+### Solution: Convert a 2D array into a 1D one
 
 Convert the 2D `grid` into 1D vector `v` to perform the shifting easier. The first element of the result now starts from `v[v.size() - k]`.
 
