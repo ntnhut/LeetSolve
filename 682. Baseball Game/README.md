@@ -15,7 +15,7 @@ Return the sum of all the scores on the record.
 
  
 
-#### Example 1:
+#### Example 1
 ```plain
 Input: ops = ["5","2","C","D","+"]
 Output: 30
