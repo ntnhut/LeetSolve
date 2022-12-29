@@ -1,6 +1,9 @@
 #include <iostream>
 #include <vector>
 using namespace std;
+
+//! @brief Rotate the square matrix by 90 degrees (clockwise).
+//! @author Nhut Nguyen
 void rotate(vector<vector<int>>& matrix) {
     const int n = matrix.size();
     // transpose
@@ -16,6 +19,7 @@ void rotate(vector<vector<int>>& matrix) {
         }
     }
 }
+
 void printMatrix(vector<vector<int>>& matrix) {
     cout << "[";
     for (auto& row: matrix) {

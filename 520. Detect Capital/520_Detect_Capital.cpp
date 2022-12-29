@@ -8,6 +8,9 @@ bool isValidCase(const char& c, const bool isLower) {
     }
     return 'A' <= c && c <= 'Z';
 }
+//! @return true if if the usage of capitals in it is right
+//! @param word a string
+//! @author Nhut Nguyen
 bool detectCapitalUse(string word) {
     if (word.length() == 1) {
         return true;
@@ -23,6 +26,7 @@ bool detectCapitalUse(string word) {
     }
     return true;
 }
+
 int main() {
     cout << detectCapitalUse("USA") << endl;
     cout << detectCapitalUse("FlaG") << endl;
