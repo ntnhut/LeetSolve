@@ -2,6 +2,9 @@
 #include <vector>
 using namespace std;
 
+//! @brief merge them into a sorted nums1.
+//! @param nums1, m, nums2, n two sorted vectors of integers and their length
+//! @author Nhut Nguyen
 void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {    
     int k = m + n - 1;
     int i = m - 1;

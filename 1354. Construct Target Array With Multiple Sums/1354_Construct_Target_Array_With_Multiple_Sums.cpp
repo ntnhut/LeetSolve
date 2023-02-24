@@ -4,6 +4,10 @@
 #include <vector>
 using namespace std;
 
+//! @return true if you can construct the target from a vector arr of n numbers 1
+//!         by repeatedly replacing any element with the sum of arr. 
+//! @param target a vector of n positive integers.
+//! @author Nhut Nguyen
 bool isPossible(vector<int>& target) {
     priority_queue<int> q(target.begin(), target.end());
     unsigned long sum = accumulate(target.begin(), target.end(), (unsigned long) 0);

@@ -6,7 +6,10 @@ struct ListNode {
     ListNode(int x) : val(x), next(nullptr) {}
     ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
- 
+
+//! @return the head of the sorted merged linked list 
+//! @param list1, list2 the heads of two sorted linked lists
+//! @author Nhut Nguyen 
 ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
     if (list1 == nullptr) {
         return list2;
