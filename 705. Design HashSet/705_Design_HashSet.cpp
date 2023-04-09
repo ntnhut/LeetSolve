@@ -2,6 +2,8 @@
 #include <vector>
 using namespace std;
 
+//! @brief Design a HashSet without using any built-in hash table libraries.
+//! @author Nhut Nguyen
 class MyHashSet {
     vector<bool> _v;
 public:
