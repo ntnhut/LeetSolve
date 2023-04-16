@@ -1,7 +1,8 @@
 #include <iostream>
 #include <vector>
 
-
+//! @return the n-th number of the Fibonacci sequence
+//! @author Nhut Nguyen
 int fib(int n) {
     if (n <= 1) {
         return n;
