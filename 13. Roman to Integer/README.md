@@ -22,7 +22,7 @@ Roman numerals are usually written from largest to smallest from left to right. 
 * `X` can be placed before `L` (`50`) and `C` (`100`) to make `40` and `90`. 
 * `C` can be placed before `D` (`500`) and `M` (`1000`) to make `400` and `900`.
 
-Given a roman numeral, convert it to an integer.
+Given a Roman numeral, convert it to an integer.
 
  
 
@@ -36,7 +36,7 @@ Explanation: III = 3.
 ```plain
 Input: s = "LVIII"
 Output: 58
-Explanation: L = 50, V= 5, III = 3.
+Explanation: L = 50, V = 5, III = 3.
 ```
 
 #### Example 3
@@ -54,7 +54,7 @@ Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
 
 ### Solution: Mapping and summing the values
 
-To treat the subtraction cases easier you can iterate the string `s` backward.
+And to treat the subtraction cases easier, you can iterate the string `s` backward.
 
 #### Code
 ```cpp
@@ -71,9 +71,14 @@ int romanToInt(string s) {
         {'D', 500},
         {'M', 1000}
     };
-    int result = value[s.back()];
-    for (int i = s.length() - 2; i >= 0; i--) {
-        result = value[s[i]] < value[s[i+1]] ? result - value[s[i]] : result + value[s[i]];
+    int i = s.length() - 1;
+    int result = value[s[i--]];
+    while (i >= 0) {
+        if (value[s[i]] < value[s[i+1]]) {
+            result -= value[s[i--]]; 
+        } else {
+            result += value[s[i--]];
+        }
     }
     return result;
 }
@@ -94,6 +99,10 @@ Output:
 * Runtime: `O(N)` where `N = s.length`.
 * Extra space: `O(1)` (the map `value` is very small).
 
-### References
-* [https://leetcode.com/problems/roman-to-integer/](https://leetcode.com/problems/roman-to-integer/)
-* [https://www.leetsolve.com/13-roman-to-integer](https://www.leetsolve.com/13-roman-to-integer)
+### Conclusion
+
+As the problem is about encoding/decoding between a string and an integer, you could you an [unordered_map](https://en.cppreference.com/w/cpp/container/unordered_map) here.
+
+This is a very interesting problem since it is about history and mathematics. You can read more about it on [Wikipedia](https://en.wikipedia.org/wiki/Roman_numerals).
+
+What is your solution to this problem? Check the correction and the performance of your code at [leetcode.com](https://leetcode.com/problems/roman-to-integer/).
