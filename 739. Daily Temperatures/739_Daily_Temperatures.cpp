@@ -2,6 +2,11 @@
 #include <iostream>
 using namespace std;
 
+//! @return an array answer such that answer[i] is the number of days
+//!         you have to wait after the i-th day to get a warmer temperature. 
+//!         If there is no future day for which this is possible, keep answer[i] = 0.
+//! @param temperatures an array of daily temperatures
+//! @author Nhut Nguyen
 vector<int> dailyTemperatures(vector<int>& temperatures) {
     vector<int> answer(temperatures.size(), 0);
     for (int i = temperatures.size() - 2; i >= 0 ; i--) {
