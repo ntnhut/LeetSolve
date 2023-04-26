@@ -2,26 +2,26 @@
 #include <unordered_map>
 using namespace std;
 
+const unordered_map<char, int> value = {
+    {'I', 1},
+    {'V', 5},
+    {'X', 10},
+    {'L', 50},
+    {'C', 100},
+    {'D', 500},
+    {'M', 1000}
+};
 //! @return the integer value of s, e.g. 58.
 //! @param s a roman numeral, e.g. s = "LVIII" 
 //! @author Nhut Nguyen
 int romanToInt(string s) {
-    unordered_map<char, int> value = {
-        {'I', 1},
-        {'V', 5},
-        {'X', 10},
-        {'L', 50},
-        {'C', 100},
-        {'D', 500},
-        {'M', 1000}
-    };
     int i = s.length() - 1;
-    int result = value[s[i--]];
+    int result = value.at(s[i--]);
     while (i >= 0) {
-        if (value[s[i]] < value[s[i+1]]) {
-            result -= value[s[i--]]; 
+        if (value.at(s[i]) < value.at(s[i+1])) {
+            result -= value.at(s[i--]); 
         } else {
-            result += value[s[i--]];
+            result += value.at(s[i--]);
         }
     }
     return result;

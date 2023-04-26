@@ -24,7 +24,6 @@ Roman numerals are usually written from largest to smallest from left to right. 
 
 Given a Roman numeral, convert it to an integer.
 
- 
 
 #### Example 1
 ```plain
@@ -52,7 +51,7 @@ Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
 * `s` contains only the characters `'I'`, `'V'`, `'X'`, `'L'`, `'C'`, `'D'`, `'M'`.
 * It is guaranteed that `s` is a valid roman numeral in the range `[1, 3999]`.
 
-### Solution: Mapping and summing the values
+### Solution 1: Mapping and summing the values
 
 And to treat the subtraction cases easier, you can iterate the string `s` backward.
 
@@ -98,6 +97,56 @@ Output:
 #### Complexity
 * Runtime: `O(N)` where `N = s.length`.
 * Extra space: `O(1)` (the map `value` is very small).
+
+### Solution 2: Move the unchanged map out of the function
+
+Whenever `romanToInt()` is called for each value of `s`, the same map `value` is recreated. You should only create it one time if you call `romanToInt()` many times. 
+
+#### Code
+```cpp
+#include <iostream>
+#include <unordered_map>
+using namespace std;
+const unordered_map<char, int> value = {
+    {'I', 1},
+    {'V', 5},
+    {'X', 10},
+    {'L', 50},
+    {'C', 100},
+    {'D', 500},
+    {'M', 1000}
+};
+int romanToInt(string s) {
+    int i = s.length() - 1;
+    int result = value.at(s[i--]);
+    while (i >= 0) {
+        if (value.at(s[i]) < value.at(s[i+1])) {
+            result -= value.at(s[i--]); 
+        } else {
+            result += value.at(s[i--]);
+        }
+    }
+    return result;
+}
+int main() {
+    cout << romanToInt("III") << endl;
+    cout << romanToInt("LVIII") << endl;
+    cout << romanToInt("MCMXCIV") << endl;
+}
+```
+```plain
+Output:
+3
+58
+1994
+```
+
+#### Complexity
+* Runtime: `O(N)` where `N = s.length`.
+* Extra space: `O(1)`.
+
+### C++ notes
+* Because the map `value` is unchanged, it should be `const`. Then you must use method `at()` to access its `const` values. See the notes of its operator [`[]`](https://en.cppreference.com/w/cpp/container/unordered_map/operator_at).
 
 ### Conclusion
 
