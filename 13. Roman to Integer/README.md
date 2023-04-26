@@ -146,7 +146,7 @@ Output:
 * Extra space: `O(1)`.
 
 ### C++ notes
-* Because the map `value` is unchanged, it should be `const`. Then you must use method `at()` to access its `const` values. See the notes of its operator [`[]`](https://en.cppreference.com/w/cpp/container/unordered_map/operator_at).
+* Because the map `value` is unchanged, it should be `const`. Then you must use method `at()` to access its `const` values (see the notes of its operator [`[]`](https://en.cppreference.com/w/cpp/container/unordered_map/operator_at)).
 
 ### Conclusion
 
