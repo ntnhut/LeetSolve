@@ -1,20 +1,21 @@
 #include <iostream>
+#include <unordered_map>
 using namespace std;
 
+//! @return true if t is an anagram of s, 
+//!         i.e. each of its letters was reordered.
+//! @author Nhut Nguyen
 bool isAnagram(string s, string t) {
     if (s.length() != t.length()) {
         return false;
     }
-    int alphabet[26];
-    for (int i = 0; i < 26; i++) {
-        alphabet[i] = 0;
-    }
+    unordered_map<char, int> alphabet;
     for (char& c : s) {
-        alphabet[c - 'a']++;
+        alphabet[c]++;
     }
     for (char& c : t) {
-        alphabet[c - 'a']--;
-        if (alphabet[c - 'a'] < 0) {
+        alphabet[c]--;
+        if (alphabet[c] < 0) {
             return false;
         }
     }
@@ -22,6 +23,6 @@ bool isAnagram(string s, string t) {
 }
 
 int main() {
-    cout << isAnagram("anagram", "nagaram") << endl;
+    cout << isAnagram("anagæam", "nagaæam") << endl;
     cout << isAnagram("rat", "car") << endl;
 }

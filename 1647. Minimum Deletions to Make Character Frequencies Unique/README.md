@@ -1,4 +1,5 @@
 ## 1647. Minimum Deletions to Make Character Frequencies Unique
+Tags: Microsoft, string, hash table, sorting
 
 ### Problem statement
 
