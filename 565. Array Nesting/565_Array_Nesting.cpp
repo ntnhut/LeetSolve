@@ -3,6 +3,9 @@
 #include <algorithm>
 using namespace std;
 
+//! @return the length of the longest cycle of nums
+//! @param nums a permutation of [0, nums.length - 1]
+//! @author Nhut Nguyen
 int arrayNesting(vector<int>& nums) {
     int maxLen(0);
     vector<bool> visited(nums.size());
