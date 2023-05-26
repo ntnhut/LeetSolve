@@ -30,7 +30,7 @@ Output: [[15,13,2,5],[14,3,4,1],[12,6,8,9],[16,7,10,11]]
 
 ### Solution: The math behind
 
-For any square matrix, the rotation 90 degrees clockwise can be performed by two steps:
+For any square matrix, the rotation 90 degrees clockwise can be performed in two steps:
 
 1. Transpose the matrix.
 2. Mirror the matrix vertically.
@@ -85,6 +85,12 @@ Output:
 * Runtime: `O(n^2)`, where `n = matrix.length`.
 * Extra space: `O(1)`.
 
-### References
-* [https://leetcode.com/problems/rotate-image/](https://leetcode.com/problems/rotate-image/)
-* [https://www.leetsolve.com/48-rotate-image](https://www.leetsolve.com/48-rotate-image)
+### Implementation notes
+1. The function [`std::swap`](https://en.cppreference.com/w/cpp/algorithm/swap) can be used to exchange two values.
+2. When doing the transpose or mirroring, you could visit over one-half of the matrix.
+
+***
+
+*Thanks for reading. Feel free to share your thought about my content and check out my FREE book [10 Classic Coding Challenges](https://store.nhutnguyen.com/l/10_classic).*
+
+*What is your approach? The problem was picked from [leetcode.com](https://leetcode.com/problems/rotate-image/). You can submit your solution in any programming language and check the performance.*

@@ -103,7 +103,7 @@ Output:
 ```
 
 #### Complexity
-* Runtime: `O(N)`, where `N = nums.length`.
+* Runtime: `O(n)`, where `n = nums.length`.
 * Extra space: much less than `O(N)` since [`vector<bool>`](https://en.cppreference.com/w/cpp/container/vector_bool) is optimized for space efficiency.
 
 ***
