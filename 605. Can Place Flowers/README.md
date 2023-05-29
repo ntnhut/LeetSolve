@@ -31,6 +31,7 @@ A new flower can be planted at position `i` only if
 ```plain
 flowerbed[i - 1] == 0 && flowerbed[i] == 0 && flowerbed[i + 1] == 0.
 ```
+If the condition is satisfied, the flower can be planted at position `i`. `flowerbed[i]` is now assigned to `1`. Then you can skip checking the rule for the position `i + 1` and go directly to position `i + 2`. 
 
 #### Code
 ```cpp
@@ -45,16 +46,15 @@ bool canPlaceFlowers(vector<int>& flowerbed, int n) {
     flowerbed.push_back(0);
     int i = 1;
     while (i < flowerbed.size() - 1) {
-        if (flowerbed[i - 1] + flowerbed[i] + flowerbed[i + 1] == 0) {
+        if (flowerbed[i - 1] == 0 && flowerbed[i] == 0 && flowerbed[i + 1] == 0) {
             flowerbed[i] = 1;
             n--;
-            if (n == 0) {
-                return true;
-            }
+            i+=2;
+        } else {
+            i++;
         }
-        i++;
     }
-    return false;
+    return n <= 0;
 }
 int main() {
     vector<int> flowerbed{1,0,0,0,1};
@@ -75,7 +75,10 @@ Output:
 
 ### Implementation note
 * In this implementation, you could insert element `0` to the front and the back of vector `flowerbed` to avoid writing extra code for checking the no-adjacent-flowers rule at `i = 0` and `i = flowerbed.size() - 1`.
+* There are a few ways to insert an element to a vector. Here you can see an example of using the methods [`insert`](https://en.cppreference.com/w/cpp/container/vector/insert) and [`push_back`](https://en.cppreference.com/w/cpp/container/vector/push_back) of a [`std::vector`](https://en.cppreference.com/w/cpp/container/vector).
 
-### References
-* [https://leetcode.com/problems/can-place-flowers/](https://leetcode.com/problems/can-place-flowers/)
-* [https://www.leetsolve.com/605-can-place-flowers](https://www.leetsolve.com/605-can-place-flowers)
+***
+
+*What is your approach? The problem was picked from [leetcode.com](https://leetcode.com/problems/can-place-flowers/). You can submit your solution in any programming language and check the performance.*
+
+*Thanks for reading. Feel free to share your thought about my content and check out my FREE book [10 Classic Coding Challenges](https://store.nhutnguyen.com/l/10_classic).*
