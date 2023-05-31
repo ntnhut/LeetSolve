@@ -85,6 +85,9 @@ Output:
 * Runtime: `O(N)`, where `N = arr.length`.
 * Extra space: `O(1)`.
 
-### References
-* [https://leetcode.com/problems/valid-mountain-array/](https://leetcode.com/problems/valid-mountain-array/)
-* [https://www.leetsolve.com/941-valid-mountain-array](https://www.leetsolve.com/941-valid-mountain-array)
+
+***
+
+*Thanks for reading. Feel free to share your thought about my content and check out my FREE book [10 Classic Coding Challenges](https://store.nhutnguyen.com/l/10_classic).*
+
+*What is your approach? The problem was picked from [leetcode.com](https://leetcode.com/problems/valid-mountain-array/). You can submit your solution in any programming language and check the performance.*

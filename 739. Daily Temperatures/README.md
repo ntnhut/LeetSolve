@@ -176,6 +176,8 @@ In some computations, you could improve the performance by using the knowledge o
 
 In this particular problem, it can be achieved by doing it in the reversed order.
 
-### References
-* [https://leetcode.com/problems/daily-temperatures/](https://leetcode.com/problems/daily-temperatures/)
-* [https://www.leetsolve.com/739-daily-temperatures](https://www.leetsolve.com/739-daily-temperatures)
+***
+
+*Thanks for reading. Feel free to share your thought about my content and check out my FREE book [10 Classic Coding Challenges](https://store.nhutnguyen.com/l/10_classic).*
+
+*What is your approach? The problem was picked from [leetcode.com](https://leetcode.com/problems/daily-temperatures/). You can submit your solution in any programming language and check the performance.*

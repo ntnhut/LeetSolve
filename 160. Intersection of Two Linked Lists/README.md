@@ -1,6 +1,6 @@
-# 160. Intersection of Two Linked Lists
+## 160. Intersection of Two Linked Lists
 
-## Problem statement
+### Problem statement
 
 Given the heads of two singly linked-lists `headA` and `headB`, return the node at which the two lists intersect. If the two linked lists have no intersection at all, return `null`.
 
@@ -12,28 +12,28 @@ The test cases are generated such that there are no cycles anywhere in the entir
 
 Note that the linked lists must retain their original structure after the function returns.
 
-### Example 1
+#### Example 1
 ![Example 1](160_example_1_1.png)
 ```plain
 Input: listA = [4,1,8,4,5], listB = [5,6,1,8,4,5].
 Output: Intersected at '8'
 ```
 
-### Example 2
+#### Example 2
 ![Example 2](160_example_2.png)
 ```plain
 Input: listA = [1,9,1,2,4], listB = [3,2,4]
 Output: Intersected at '2'
 ```
 
-### Example 3
+#### Example 3
 ![Example 3](160_example_3.png)
 ```plain
 Input: listA = [2,6,4], listB = [1,5]
 Output: No intersection.
 ``` 
 
-### Constraints
+#### Constraints
 
 * The number of nodes of `listA` is in the `m`.
 * The number of nodes of `listB` is in the `n`.
@@ -42,16 +42,16 @@ Output: No intersection.
 
 **Follow up**: Could you write a solution that runs in `O(m + n)` time and use only `O(1)` memory?
 
-## Solution 1: Store the nodes
+### Solution 1: Store the nodes
 
 You can store all nodes of `listA` then iterate `listB` to determine which node is the intersection. If none is found, the two lists have no intersection.
 
-### Example 1
+#### Example 1
 * Store all nodes of `listA = [4,1,8,4,5]` in a map.
 * Iterate `listB` and found node `'8'` was stored.
 * Return `'8'`.
 
-### Code
+#### Code
 ```cpp
 #include <iostream>
 #include <unordered_map>
@@ -137,17 +137,17 @@ Output:
 1
 ```
 
-### Complexity
+#### Complexity
 * Runtime: `O(m + n)`, where `m, n` are the number of nodes of `listA` and `listB`.
 * Extra space: `O(m)`.
 
-## Solution 2: Reiterating the two lists at the same time
+### Solution 2: Reiterating the two lists at the same time
 
 If the two lists do not share the same tail, they have no intersection. Otherwise, they must intersect at some node.
 
 After iterating to find the tail node, you know the length of the two lists. That information gives you a hint of how to reiterate to find the intersection node. 
 
-### Example 1
+#### Example 1
 * After iterating `listA = [4,1,8,4,5]`, you find the tail node is `'5'` and `listA.length = 5`. 
 * After iterating `listB = [5,6,1,8,4,5]`, you find the tail node is the last `'5'` and `listB.length = 6`.
 * The two lists share the same tail. They must intersect at some node.
@@ -156,7 +156,7 @@ After iterating to find the tail node, you know the length of the two lists. Tha
 * Now you can iterate them at the same time to find which node is shared.
 * Found and return the intersection node `'8'`.
 
-### Code
+#### Code
 ```cpp
 #include <iostream>
 #include <unordered_map>
@@ -258,11 +258,15 @@ Output:
 1
 ```
 
-### Complexity
+#### Complexity
 * Runtime: `O(m + n)`, where `m, n` are the number of nodes of `listA` and `listB`.
 * Extra space: `O(1)`.
 
+### Implementation note
+The technique used in Solution 2 is known as the *Two-pointer* technique since you use two pointers to iterate the list at the same time.
 
-## References
-* [https://leetcode.com/problems/intersection-of-two-linked-lists/](https://leetcode.com/problems/intersection-of-two-linked-lists/)
-* [https://www.leetsolve.com/160-intersection-of-two-linked-lists/](https://www.leetsolve.com/160-intersection-of-two-linked-lists/)
+***
+
+*Thanks for reading. Feel free to share your thought about my content and check out my FREE book [10 Classic Coding Challenges](https://store.nhutnguyen.com/l/10_classic).*
+
+*What is your approach? The problem was picked from [leetcode.com](https://leetcode.com/problems/intersection-of-two-linked-lists/). You can submit your solution in any programming language and check the performance.*

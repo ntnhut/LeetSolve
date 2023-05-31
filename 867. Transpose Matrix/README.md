@@ -1,6 +1,6 @@
-# 867. Transpose Matrix
+## 867. Transpose Matrix
 
-## Problem statement
+### Problem statement
 
 Given a 2D integer array `matrix`, return the transpose of `matrix`.
 
@@ -10,19 +10,19 @@ The transpose of a matrix is the matrix flipped over its main diagonal, switchin
 ![transpose matrix](867_hint_transpose.png)
  
 
-### Example 1
+#### Example 1
 ```plain
 Input: matrix = [[1,2,3],[4,5,6],[7,8,9]]
 Output: [[1,4,7],[2,5,8],[3,6,9]]
 ```
 
-### Example 2
+#### Example 2
 ```plain
 Input: matrix = [[1,2,3],[4,5,6]]
 Output: [[1,4],[2,5],[3,6]]
 ``` 
 
-### Constraints
+#### Constraints
 
 * `m == matrix.length`.
 * `n == matrix[i].length`.
@@ -30,9 +30,9 @@ Output: [[1,4],[2,5],[3,6]]
 * `1 <= m * n <= 10^5`.
 * `-10^9 <= matrix[i][j] <= 10^9`.
 
-## Solution
+### Solution
 
-### Code
+#### Code
 ```cpp
 #include <iostream>
 #include <vector>
@@ -72,11 +72,15 @@ Output:
 [[1,4,][2,5,][3,6,]]
 ```
 
-### Complexity
+#### Complexity
 * Runtime: `O(m*n)`, where `m = matrix.length`, `n = matrix[i].length`.
 * Extra space: `O(1)`.
 
-## References
+### Implementation note
+Note that the matrix might not be square, you cannot just swap the elements using for example the function [`std::swap`](https://en.cppreference.com/w/cpp/algorithm/swap).
 
-* [https://leetcode.com/problems/transpose-matrix/](https://leetcode.com/problems/transpose-matrix/)
-* [https://www.leetsolve.com/867-transpose-matrix/](https://www.leetsolve.com/867-transpose-matrix/)
+***
+
+*Thanks for reading. Feel free to share your thought about my content and check out my FREE book [10 Classic Coding Challenges](https://store.nhutnguyen.com/l/10_classic).*
+
+*What is your approach? The problem was picked from [leetcode.com](https://leetcode.com/problems/transpose-matrix). You can submit your solution in any programming language and check the performance.*
