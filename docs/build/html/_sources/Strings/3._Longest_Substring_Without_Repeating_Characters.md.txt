@@ -6,21 +6,21 @@ Tag: string
 Given a string `s`, find the length of the longest substring without repeating characters.
 
 #### Example 1
-```plain
+```text
 Input: s = "abcabcbb"
 Output: 3
 Explanation: The answer is "abc", with a length of 3.
 ```
 
 #### Example 2
-```plain
+```text
 Input: s = "bbbbb"
 Output: 1
 Explanation: The answer is "b", with the length of 1.
 ```
 
 #### Example 3
-```plain
+```text
 Input: s = "pwwkew"
 Output: 3
 Explanation: The answer is "wke", with a length of 3.
@@ -50,7 +50,7 @@ For the string `s = "babba"`:
 
 Example 4 shows the starting position `start` for the substring of interest `"s[i]...s[j - 1]"` should be:
 
-```plain
+```text
 this_start = max(previous_start, i).
 ```
 
@@ -78,7 +78,7 @@ int main() {
     cout << lengthOfLongestSubstring("pwwkew") << endl;
 }
 ```
-```plain
+```text
 Output:
 3
 1

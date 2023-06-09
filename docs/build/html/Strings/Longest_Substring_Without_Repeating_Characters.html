@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Longest Substring Without Repeating Characters &mdash; LeetSolve  documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="Strings" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            LeetSolve
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../Arrays/index.html">Arrays</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Strings</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Longest Substring Without Repeating Characters</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#problem-statement">Problem statement</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#example-1">Example 1</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example-2">Example 2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example-3">Example 3</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#constraints">Constraints</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#solution-store-the-position-of-the-visited-characters">Solution: Store the position of the visited characters</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#example-4">Example 4</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#code">Code</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#complexity">Complexity</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#references">References</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">LeetSolve</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Strings</a></li>
+      <li class="breadcrumb-item active">Longest Substring Without Repeating Characters</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/Strings/Longest_Substring_Without_Repeating_Characters.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="longest-substring-without-repeating-characters">
+<h1>Longest Substring Without Repeating Characters<a class="headerlink" href="#longest-substring-without-repeating-characters" title="Permalink to this heading"></a></h1>
+<p>Tag: string</p>
+<section id="problem-statement">
+<h2>Problem statement<a class="headerlink" href="#problem-statement" title="Permalink to this heading"></a></h2>
+<p>Given a string <code class="docutils literal notranslate"><span class="pre">s</span></code>, find the length of the longest substring without repeating characters.</p>
+<section id="example-1">
+<h3>Example 1<a class="headerlink" href="#example-1" title="Permalink to this heading"></a></h3>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Input: s = &quot;abcabcbb&quot;
+Output: 3
+Explanation: The answer is &quot;abc&quot;, with a length of 3.
+</pre></div>
+</div>
+</section>
+<section id="example-2">
+<h3>Example 2<a class="headerlink" href="#example-2" title="Permalink to this heading"></a></h3>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Input: s = &quot;bbbbb&quot;
+Output: 1
+Explanation: The answer is &quot;b&quot;, with the length of 1.
+</pre></div>
+</div>
+</section>
+<section id="example-3">
+<h3>Example 3<a class="headerlink" href="#example-3" title="Permalink to this heading"></a></h3>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Input: s = &quot;pwwkew&quot;
+Output: 3
+Explanation: The answer is &quot;wke&quot;, with a length of 3.
+Notice that the answer must be a substring, &quot;pwke&quot; is a subsequence and not a substring.
+</pre></div>
+</div>
+</section>
+<section id="constraints">
+<h3>Constraints<a class="headerlink" href="#constraints" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">&lt;=</span> <span class="pre">s.length</span> <span class="pre">&lt;=</span> <span class="pre">5</span> <span class="pre">*</span> <span class="pre">10^4</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">s</span></code> consists of English letters, digits, symbols and spaces.</p></li>
+</ul>
+</section>
+</section>
+<section id="solution-store-the-position-of-the-visited-characters">
+<h2>Solution: Store the position of the visited characters<a class="headerlink" href="#solution-store-the-position-of-the-visited-characters" title="Permalink to this heading"></a></h2>
+<p>Whenever you meet a visited character <code class="docutils literal notranslate"><span class="pre">s[i]</span> <span class="pre">==</span> <span class="pre">s[j]</span></code> for some <code class="docutils literal notranslate"><span class="pre">0</span> <span class="pre">&lt;=</span> <span class="pre">i</span> <span class="pre">&lt;</span> <span class="pre">j</span> <span class="pre">&lt;</span> <span class="pre">s.length</span></code>, the substring <code class="docutils literal notranslate"><span class="pre">&quot;s[i]...s[j</span> <span class="pre">-</span> <span class="pre">1]&quot;</span></code> might be valid, i.e. it consist of only nonrepeating characters.</p>
+<p>But in case you meet another visited character <code class="docutils literal notranslate"><span class="pre">s[x]</span> <span class="pre">==</span> <span class="pre">s[y]</span></code> where <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">&lt;</span> <span class="pre">i</span> <span class="pre">&lt;</span> <span class="pre">j</span> <span class="pre">&lt;</span> <span class="pre">y</span></code>, the substring <code class="docutils literal notranslate"><span class="pre">&quot;s[x]...s[y</span> <span class="pre">-</span> <span class="pre">1]&quot;</span></code> is not valid because it consists of repeated character <code class="docutils literal notranslate"><span class="pre">s[i]</span> <span class="pre">==</span> <span class="pre">s[j]</span></code>.</p>
+<p>That shows the substring <code class="docutils literal notranslate"><span class="pre">&quot;s[i]...s[j</span> <span class="pre">-</span> <span class="pre">1]&quot;</span></code> is not always a valid one. You might need to find the right starting position <code class="docutils literal notranslate"><span class="pre">start</span> <span class="pre">&gt;=</span> <span class="pre">i</span></code> for the valid substring <code class="docutils literal notranslate"><span class="pre">&quot;s[start]...s[j</span> <span class="pre">-</span> <span class="pre">1]&quot;</span></code>.</p>
+<section id="example-4">
+<h3>Example 4<a class="headerlink" href="#example-4" title="Permalink to this heading"></a></h3>
+<p>For the string <code class="docutils literal notranslate"><span class="pre">s</span> <span class="pre">=</span> <span class="pre">&quot;babba&quot;</span></code>:</p>
+<ul class="simple">
+<li><p>When you visit the second letter <code class="docutils literal notranslate"><span class="pre">'b'</span></code>, the substring <code class="docutils literal notranslate"><span class="pre">&quot;ba&quot;</span></code> is a valid one.</p></li>
+<li><p>When you visit the third letter <code class="docutils literal notranslate"><span class="pre">'b'</span></code>, the substring of interest should be started by the second letter <code class="docutils literal notranslate"><span class="pre">'b'</span></code>. It gives you the substring <code class="docutils literal notranslate"><span class="pre">&quot;b&quot;</span></code>.</p></li>
+<li><p>When you visit the second letter <code class="docutils literal notranslate"><span class="pre">'a'</span></code>, the substring <code class="docutils literal notranslate"><span class="pre">&quot;abb&quot;</span></code> is not a valid one since <code class="docutils literal notranslate"><span class="pre">'b'</span></code> is repeated. To ensure no repetition, the starting position for this substring should be the latter <code class="docutils literal notranslate"><span class="pre">'b'</span></code>, which leads to the valid substring <code class="docutils literal notranslate"><span class="pre">&quot;b&quot;</span></code>.</p></li>
+<li><p>The final longest valid substring is <code class="docutils literal notranslate"><span class="pre">&quot;ba&quot;</span></code> with length 2.</p></li>
+</ul>
+<p>Example 4 shows the starting position <code class="docutils literal notranslate"><span class="pre">start</span></code> for the substring of interest <code class="docutils literal notranslate"><span class="pre">&quot;s[i]...s[j</span> <span class="pre">-</span> <span class="pre">1]&quot;</span></code> should be:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>this_start = max(previous_start, i).
+</pre></div>
+</div>
+</section>
+<section id="code">
+<h3>Code<a class="headerlink" href="#code" title="Permalink to this heading"></a></h3>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;unordered_map&gt;</span>
+<span class="k">using</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">std</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">lengthOfLongestSubstring</span><span class="p">(</span><span class="n">string</span><span class="w"> </span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="kt">char</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="o">&gt;</span><span class="w"> </span><span class="n">position</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">maxLen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">start</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">-1</span><span class="p">;</span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="n">length</span><span class="p">();</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">position</span><span class="p">.</span><span class="n">find</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">])</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="n">position</span><span class="p">.</span><span class="n">end</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">start</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">max</span><span class="p">(</span><span class="n">start</span><span class="p">,</span><span class="w"> </span><span class="n">position</span><span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]]);</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">        </span><span class="n">position</span><span class="p">[</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">i</span><span class="p">;</span>
+<span class="w">        </span><span class="n">maxLen</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">max</span><span class="p">(</span><span class="n">maxLen</span><span class="p">,</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">start</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">maxLen</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">lengthOfLongestSubstring</span><span class="p">(</span><span class="s">&quot;abcabcbb&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">lengthOfLongestSubstring</span><span class="p">(</span><span class="s">&quot;bbbbb&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<span class="w">    </span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">lengthOfLongestSubstring</span><span class="p">(</span><span class="s">&quot;pwwkew&quot;</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">endl</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>Output:
+3
+1
+3
+</pre></div>
+</div>
+</section>
+<section id="complexity">
+<h3>Complexity<a class="headerlink" href="#complexity" title="Permalink to this heading"></a></h3>
+<ul class="simple">
+<li><p>Runtime: <code class="docutils literal notranslate"><span class="pre">O(N)</span></code>, where <code class="docutils literal notranslate"><span class="pre">N</span> <span class="pre">=</span> <span class="pre">s.length</span></code>.</p></li>
+<li><p>Extra space: <code class="docutils literal notranslate"><span class="pre">O(N)</span></code>.</p></li>
+</ul>
+</section>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://leetcode.com/problems/longest-substring-without-repeating-characters/">https://leetcode.com/problems/longest-substring-without-repeating-characters/</a></p></li>
+<li><p><a class="reference external" href="https://www.leetsolve.com/3-longest-substring-without-repeating-characters">https://www.leetsolve.com/3-longest-substring-without-repeating-characters</a></p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Strings" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Nhut Nguyen.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
