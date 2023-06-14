@@ -1,1 +1,3 @@
 site_name: LeetSolve
+theme:
+  name: material
