@@ -51,8 +51,16 @@ You get the new result `["ad","ae","af","bd","be","bf","cd","ce","cf"]`.
 #include <iostream>
 #include <unordered_map>
 using namespace std;
-void combination(string& digits, unordered_map<char, vector<char> >& m, 
-                 int i, vector<string>& result) {
+const unordered_map<char, vector<char> > m{{'2', {'a', 'b', 'c'}},
+                                        {'3', {'d', 'e', 'f'}},
+                                        {'4', {'g', 'h', 'i'}},
+                                        {'5', {'j', 'k', 'l'}},
+                                        {'6', {'m', 'n', 'o'}},
+                                        {'7', {'p', 'q', 'r', 's'}},
+                                        {'8', {'t', 'u', 'v'}},
+                                        {'9', {'w', 'x', 'y', 'z'}}};
+
+void combination(const string_view& digits, int i, vector<string>& result) {
     if (i >= digits.length()) {
         return;
     }
@@ -61,24 +69,16 @@ void combination(string& digits, unordered_map<char, vector<char> >& m,
     }
     vector<string> newResult;
     for (string& s : result) {
-        for (auto c : m[digits[i]]) {
+        for (auto& c : m.at(digits[i])) {
             newResult.push_back(s + c);
         }
     }
     result.swap(newResult);
-    combination(digits, m, i + 1, result);
+    combination(digits, i + 1, result);
 }
 vector<string> letterCombinations(string digits) {
-    unordered_map<char, vector<char> > m{{'2', {'a', 'b', 'c'}},
-                                         {'3', {'d', 'e', 'f'}},
-                                         {'4', {'g', 'h', 'i'}},
-                                         {'5', {'j', 'k', 'l'}},
-                                         {'6', {'m', 'n', 'o'}},
-                                         {'7', {'p', 'q', 'r', 's'}},
-                                         {'8', {'t', 'u', 'v'}},
-                                         {'9', {'w', 'x', 'y', 'z'}}};
     vector<string> result;
-    combination(digits, m, 0, result);
+    combination(digits, 0, result);
     return result;
 }
 void printResult(vector<string>& result) {
