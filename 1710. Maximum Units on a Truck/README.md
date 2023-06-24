@@ -82,12 +82,12 @@ Output:
 * Extra space: `O(1)`.
 
 ### Modern C++ STL notes
-Note that two `vector`s can be compared. That is why you can sort them.
+Note that two [`vector`s](https://en.cppreference.com/w/cpp/container/vector) can be compared. That is why you can sort them.
 
-But in this case you want to sort them based on the number of units. That is why you need to define the comparison function like the code above. Otherwise, the `sort` algorithm will use the dictionary order to sort them by default.  
+But in this case you want to sort them based on the number of units. That is why you need to define the comparison function like the code above. Otherwise, the [`sort`](https://en.cppreference.com/w/cpp/algorithm/sort) algorithm will use the dictionary order to sort them by default.  
 
-### References
-* [https://leetcode.com/problems/maximum-units-on-a-truck/](https://leetcode.com/problems/maximum-units-on-a-truck/)
-* [https://www.leetsolve.com/1710-maximum-units-on-a-truck](https://www.leetsolve.com/1710-maximum-units-on-a-truck)
-* [https://en.cppreference.com/w/cpp/container/vector](https://en.cppreference.com/w/cpp/container/vector)
-* [https://en.cppreference.com/w/cpp/algorithm/sort](https://en.cppreference.com/w/cpp/algorithm/sort)
+***
+
+*What is your approach? The problem was picked from [leetcode.com](https://leetcode.com/problems/maximum-units-on-a-truck/). You can submit your solution in any programming language and check the performance.*
+
+*Thanks for reading. Feel free to share your thought about my content and check out my FREE book [10 Classic Coding Challenges](https://store.nhutnguyen.com/l/10_classic).*
