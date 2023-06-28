@@ -134,6 +134,9 @@ The final number of strings is
 
 ![The formula of the final solution](09_MTH_1641_solution.jpg)
 
+$$
+z=\sqrt{x^2+y^2}
+$$
 
 ### Code
 ```cpp
