@@ -16,9 +16,7 @@ You have to rotate the image [in-place](https://en.wikipedia.org/wiki/In-place_a
 4 & 5 & 6 \\
 7 & 8 & 9
 \end{bmatrix}
-
 \longrightarrow
-
 \begin{bmatrix}
 7 & 4 & 1 \\
 8 & 5 & 2 \\
@@ -40,9 +38,7 @@ Output: [[7,4,1],[8,5,2],[9,6,3]]
 13 & 3 & 6 & 7 \\
 15 & 14 & 12 & 16
 \end{bmatrix}
-
 \longrightarrow
-
 \begin{bmatrix}
 15 & 13 & 2 & 5 \\
 14 & 3 & 4 & 1 \\

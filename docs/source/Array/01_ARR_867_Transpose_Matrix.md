@@ -13,9 +13,7 @@ The transpose of a matrix is the matrix flipped over its main diagonal, switchin
 4 & 5 & 6 \\
 7 & 8 & 9
 \end{bmatrix}
-
 \longrightarrow
-
 \begin{bmatrix}
 1 & 4 & 7 \\
 2 & 5 & 8 \\

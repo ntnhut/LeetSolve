@@ -50,6 +50,7 @@ html_theme_options = {
     # 'logo_only': True,
     "sidebar_hide_name": True,
     # 'nosidebar': True,
+    "announcement": "Get the LATEST eBook for FREE <a href='https://store.nhutnguyen.com/l/leetsolve'  target='_blank'>here</a>!", 
 }
 
 source_suffix = {

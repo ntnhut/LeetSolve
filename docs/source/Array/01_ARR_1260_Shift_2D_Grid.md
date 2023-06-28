@@ -20,9 +20,7 @@ Return the 2D grid after applying shift operation `k` times.
 4 & 5 & 6 \\
 7 & 8 & 9
 \end{bmatrix}
-
 \longrightarrow
-
 \begin{bmatrix}
 9 & 1 & 2 \\
 3 & 4 & 5 \\
@@ -43,18 +41,14 @@ Output: [[9,1,2],[3,4,5],[6,7,8]]
 4 & 6 & 11 & 10 \\
 12 & 0 & 21 & 13
 \end{bmatrix}
-
 \rightarrow
-
 \begin{bmatrix}
 13 & 3 & 8 & 1 \\
 9 & 19 & 7 & 2 \\
 5 & 4 & 6 & 11 \\
 10 & 12 & 0 & 21
 \end{bmatrix}
-
 \rightarrow
-
 \begin{bmatrix}
 21 & 13 & 3 & 8 \\
 1 & 9 & 19 & 7 \\
@@ -62,26 +56,21 @@ Output: [[9,1,2],[3,4,5],[6,7,8]]
 11 & 10 & 12 & 0 
 \end{bmatrix} \\
 \end{equation*}
-
 \begin{equation*}
 \rightarrow
-
 \begin{bmatrix}
 0 & 21 & 13 & 3 \\
 8 & 1 & 9 & 19 \\
 7 & 2 & 5 & 4 \\
 6 & 11 & 10 & 12
 \end{bmatrix}
-
 \rightarrow
-
 \begin{bmatrix}
 12 & 0 & 21 & 13 \\
 3 & 8 & 1 & 9 \\
 19 & 7 & 2 & 5 \\
 4 & 6 & 11 & 10
 \end{bmatrix}
-
 \end{equation*}
 
 ```text
