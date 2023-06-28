@@ -6,9 +6,23 @@ Given a 2D integer array `matrix`, return the transpose of `matrix`.
 
 The transpose of a matrix is the matrix flipped over its main diagonal, switching the matrix's row and column indices.
 
-
-![The transpose of a matrix](01_ARR_867_hint_transpose.png)
  
+\begin{equation*}
+\begin{bmatrix}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+7 & 8 & 9
+\end{bmatrix}
+
+\longrightarrow
+
+\begin{bmatrix}
+1 & 4 & 7 \\
+2 & 5 & 8 \\
+3 & 6 & 9
+\end{bmatrix}
+\end{equation*}
+
 
 ### Example 1
 ```text

@@ -113,14 +113,17 @@ Here are the cases.
 1. If `n` is a perfect square, `numSquares(n) = 1`.
 2. There is another theorem, [Legendre's Three-Square Theorem](https://en.wikipedia.org/wiki/Legendre%27s_three-square_theorem), which states that
 `numSquares(n)` cannot be 1, 2, or 3 if `n` can be expressed as
-    ```text
-    n = 4^a(8*b + 7),
-    ```
-    where `a, b` are nonnegative integers. 
-    In other words, `numSquares(n) = 4` if `n` is of this form.
+
+$$
+n = 4^a(8\cdot b + 7),
+$$
+
+where $a$, $b$ are nonnegative integers. 
+
+In other words, `numSquares(n) = 4` if `n` is of this form.
 
 ### Example 3
-`n = 7 = 4^0(8*0 + 7)`. It can only be written as `7 = 4 + 1 + 1 + 1`.
+$n = 7 = 4^0(8\cdot 0 + 7)$. It can only be written as `7 = 4 + 1 + 1 + 1`.
 
 ### Code
 ```cpp
@@ -166,20 +169,25 @@ Output:
 * Extra space: `O(1)`.
 
 ## Solution 3: Further performance improvement
+
 Lagrange's Four-Square Theorem and Legendre's Three-Square Theorem are so powerful to solve this problem. But you can still do a little more algebra to improve further the runtime of the implementation above.
 
 Instead of looping over `sqrt(n)` in the final `for` loop, we will prove that this loop over `sqrt(m)` is enough. That will improve runtime a lot since `m` is much less than `n`.
 
 Let `m` be the reduced value of `n` after the Legendre's `while` loop. It satisfies
-```text
-n = 4^a * m.
-```
+
+$$
+n = 4^a \cdot m.
+$$
+
 We will prove that `numSquares(n) = numSquares(m)`.
 
-In fact, if `m` is written as `m = x^2 + y^2 + z^2`, where `x, y, z` are nonnegative integers. Then
-```text
-n = 4^a * m = (2^a)^2 * m = (2^a * x)^2 + (2^a * y)^2 + (2^a * z)^2.
-```
+In fact, if `m` is written as $m = x^2 + y^2 + z^2$, where $x$, $y$, $z$ are nonnegative integers. Then
+
+$$
+n = 4^a \cdot m = (2^a)^2 \cdot m = (2^a \cdot x)^2 + (2^a \cdot y)^2 + (2^a \cdot z)^2.
+$$
+
 In other words, `numSquares(n) = numSquares(m)`.
 
 Now you can change directly the value `n` during the Legendre's `while` loop without affecting the final result. 

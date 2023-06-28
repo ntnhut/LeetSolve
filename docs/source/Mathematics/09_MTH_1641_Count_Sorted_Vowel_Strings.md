@@ -126,16 +126,17 @@ s = "aa..a|ee..e|ii..i|oo..o|uu..u",
 the problem becomes counting how many ways of putting those 4 separators `'|'` to form a string of length `n + 4`. 
 
 
-In combinatorics, the solution is `(n + 4 choose 4)`, where `(n choose k)` is the [binomial coefficient](https://en.wikipedia.org/wiki/Binomial_coefficient):
+In combinatorics, the solution is $\binom{n + 4}{4}$, where $\binom{n}{k}$ is the [binomial coefficient](https://en.wikipedia.org/wiki/Binomial_coefficient):
 
-![The formula of the binomial coefficient](09_MTH_1641_binomialcoef.jpg)
+$$
+\binom{n}{k} = \frac{n!}{k!(n-k)!}.
+$$
 
 The final number of strings is
 
-![The formula of the final solution](09_MTH_1641_solution.jpg)
 
 $$
-z=\sqrt{x^2+y^2}
+\binom{n + 4}{4} = \frac{(n + 4)!}{4!n!} = \frac{(n+1)(n+2)(n+3)(n+4)}{24}.
 $$
 
 ### Code

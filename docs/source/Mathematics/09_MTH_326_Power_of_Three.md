@@ -66,11 +66,11 @@ Output:
 
 ## Solution 2: Mathematics and the constraints of the problem
 
-A power of three must divide another bigger one, i.e. `3^x | 3^y` where `0 <= x <= y`.
+A power of three must divide another bigger one, i.e. $3^x | 3^y$ where $0 \leq x \leq y$.
 
-Because the constraint of the problem is `n <= 2^31 - 1`, you can choose the biggest power of three in this range to test the others.
+Because the constraint of the problem is $n \leq 2^{31} - 1$, you can choose the biggest power of three in this range to test the others.
 
-It is `3^19 = 1162261467`. The next power will exceed `2^31 = 2147483648`.
+It is $3^{19} = 1162261467$. The next power will exceed $2^{31} = 2147483648$.
 
 ### Code
 ```cpp
@@ -95,7 +95,3 @@ Output:
 ### Complexity
 * Runtime: `O(1)`.
 * Extra space: `O(1)`.
-
-
-
-

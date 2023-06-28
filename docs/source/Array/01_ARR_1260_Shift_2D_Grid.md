@@ -14,7 +14,21 @@ Return the 2D grid after applying shift operation `k` times.
 
 ### Example 1
 
-![The grid of Example 1 and its shifting](01_ARR_1260_e1.jpg)
+\begin{equation*}
+\begin{bmatrix}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+7 & 8 & 9
+\end{bmatrix}
+
+\longrightarrow
+
+\begin{bmatrix}
+9 & 1 & 2 \\
+3 & 4 & 5 \\
+6 & 7 & 8
+\end{bmatrix}
+\end{equation*}
 
 ```text
 Input: grid = [[1,2,3],[4,5,6],[7,8,9]], k = 1
@@ -22,8 +36,53 @@ Output: [[9,1,2],[3,4,5],[6,7,8]]
 ```
 
 ### Example 2
+\begin{equation*}
+\begin{bmatrix}
+3 & 8 & 1 & 9 \\
+19 & 7 & 2 & 5 \\
+4 & 6 & 11 & 10 \\
+12 & 0 & 21 & 13
+\end{bmatrix}
 
-![The grid of Example 2 and its shifting](01_ARR_1260_e2.jpg)
+\rightarrow
+
+\begin{bmatrix}
+13 & 3 & 8 & 1 \\
+9 & 19 & 7 & 2 \\
+5 & 4 & 6 & 11 \\
+10 & 12 & 0 & 21
+\end{bmatrix}
+
+\rightarrow
+
+\begin{bmatrix}
+21 & 13 & 3 & 8 \\
+1 & 9 & 19 & 7 \\
+2 & 5 & 4 & 6  \\
+11 & 10 & 12 & 0 
+\end{bmatrix} \\
+\end{equation*}
+
+\begin{equation*}
+\rightarrow
+
+\begin{bmatrix}
+0 & 21 & 13 & 3 \\
+8 & 1 & 9 & 19 \\
+7 & 2 & 5 & 4 \\
+6 & 11 & 10 & 12
+\end{bmatrix}
+
+\rightarrow
+
+\begin{bmatrix}
+12 & 0 & 21 & 13 \\
+3 & 8 & 1 & 9 \\
+19 & 7 & 2 & 5 \\
+4 & 6 & 11 & 10
+\end{bmatrix}
+
+\end{equation*}
 
 ```text
 Input: grid = [[3,8,1,9],[19,7,2,5],[4,6,11,10],[12,0,21,13]], k = 4
