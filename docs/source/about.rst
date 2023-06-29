@@ -20,4 +20,4 @@ Nhut Nguyen, Ph.D.
 
 .. note::
 
-   I keep this book be always up-to-date as it is a website. If you have any comment, please email me at nhut@nhutnguyen.com. Thanks for your feedback!
+   We always love to have quality content. If you have any comment on this book, please contact me at nhut@nhutnguyen.com. Thanks for your feedback! I will send you a copy for free whenever it releases a new version. 
