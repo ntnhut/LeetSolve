@@ -39,16 +39,16 @@ Note that we only care about characters that are still in the string at the end 
 ## Solution: Delete the frequencies in sorted order
 Your goal is to make all the frequencies be different.
 
-One way of doing that is sorting the frequencies and performing the deletion.
+One way of doing that is by sorting the frequencies and performing the deletion.
 
 ### Example 4
 For `s = "ceaacbb"`, the frequencies of the characters are: `freq['a'] = 2, freq['b'] = 2, freq['c'] = 2` and `freq['e'] = 1`. They are already in sorted order.
 
 * Let the current frequency be the first frequency `freq['a'] = 2`.
 * The next frequency is `freq['b'] = 2`, equal to the current frequency. Delete one appearance to make the current frequency be `1`.
-* The next frequency is `freq['c'] = 2`, bigger than the current frequency. Delete two appearances to make the current frequency to be `0`.
+* The next frequency is `freq['c'] = 2`, bigger than the current frequency. Delete two appearances to make the current frequency be `0`.
 * Because the current frequency is `0`, delete all appearances of the remaining frequencies, which is `freq['e'] = 1`.
-* In total there are `4` deletions.
+* In total, there are `4` deletions.
 
 ### Code
 ```cpp
