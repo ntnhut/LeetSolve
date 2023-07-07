@@ -6,7 +6,7 @@ Welcome to LeetSolve!
 .. toctree::
    :maxdepth: 2
 
-   about
+   intro
 
 
 .. toctree::
@@ -35,3 +35,10 @@ Welcome to LeetSolve!
    Two_Pointers/index
    Mathematics/index
    
+
+.. toctree::
+   :maxdepth: 2
+
+   conclude
+   thanks
+   about
