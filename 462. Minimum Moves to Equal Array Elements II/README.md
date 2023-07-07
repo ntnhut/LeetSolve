@@ -8,6 +8,7 @@ Given an integer array `nums` of size `n`, return the minimum number of moves re
 In one move, you can increment or decrement an element of the array by `1`.
 
 #### Example 1
+
 ```plain
 Input: nums = [1,2,3]
 Output: 2
@@ -17,16 +18,20 @@ Only two moves are needed (remember each move increments or decrements one eleme
 ```
 
 #### Example 2
+
 ```plain
 Input: nums = [1,10,2,9]
 Output: 16
-``` 
+```
 
 #### Constraints
 
 * `n == nums.length`.
+    
 * `1 <= nums.length <= 10^5`.
+    
 * `-10^9 <= nums[i] <= 10^9`.
+    
 
 ### Solution 1: Median - The math behind the problem
 
@@ -36,24 +41,29 @@ First, moving elements of an unsorted array and moving a sorted one are the same
 
 Second, `M` must be in between the minimum element and the maximum one. Apparently!
 
-We will prove that `M` will be the [median](https://en.wikipedia.org/wiki/Median) of `nums`, which is `nums[n/2]` of the sorted `nums`. 
+We will prove that `M` will be the [median](https://en.wikipedia.org/wiki/Median) of `nums`, which is `nums[n/2]` of the sorted `nums`.
 
-In other words, we will prove that if you choose `M` a value different from `nums[n/2]` then the number of moves will be increased.
+In other words, we will prove that if you choose `M` a value different from `nums[n/2]`, then the number of moves will be increased.
 
 In fact, if you choose `M = nums[n/2] + x`, where `x > 0`, then:
 
-* Each element `nums[i]` that is less than `M` needs more `x` moves, while each `nums[j]` that is greater than `M` can reduce `x` moves. 
+* Each element `nums[i]` that is less than `M` needs more `x` moves, while each `nums[j]` that is greater than `M` can reduce `x` moves.
+    
 * But the number of `nums[i]` is bigger than the number of `nums[j]`.
+    
 * So the total number of moves is bigger.
+    
 
 The same arguments apply for `x < 0`.
 
 #### Example 3
+
 For `nums = [0,1,2,2,10]`. Its median is `2`. The minimum number of moves is `2 + 1 + 0 + 0 + 8 = 11`.
 
-If you choose `M = 3` (the average value, the mean), the total number of moves is `3 + 2 + 1 + 1 + 7 = 14`. 
+If you choose `M = 3` (the average value, the mean), the total number of moves is `3 + 2 + 1 + 1 + 7 = 14`.
 
 #### Code
+
 ```cpp
 #include <iostream>
 #include <vector>
@@ -75,6 +85,7 @@ int main() {
     cout << minMoves2(nums) << endl;
 }
 ```
+
 ```plain
 Output:
 2
@@ -82,17 +93,20 @@ Output:
 ```
 
 #### Complexity
-* Runtime: `O(nlogn)`, where `n = nums.length`.
-* Extra space: `O(1)`.
 
+* Runtime: `O(nlogn)`, where `n = nums.length`.
+    
+* Extra space: `O(1)`.
+    
 
 ### Solution 2: Using `std::nth_element` to compute the median
 
-What you only need in the Solution 1 is the median value. Computing the total number of moves in the `for` loop does not require the array `nums` to be fully sorted. 
+What you only need in Solution 1 is the median value. Computing the total number of moves in the `for` loop does not require the array `nums` to be fully sorted.
 
 In this case, you can use [`std::nth_element`](https://en.cppreference.com/w/cpp/algorithm/nth_element) to reduce the runtime complexity.
 
 #### Code
+
 ```cpp
 #include <iostream>
 #include <vector>
@@ -115,6 +129,7 @@ int main() {
     cout << minMoves2(nums) << endl;
 }
 ```
+
 ```plain
 Output:
 2
@@ -122,8 +137,11 @@ Output:
 ```
 
 #### Complexity
+
 * Runtime: `O(n)`, where `n = nums.length`.
+    
 * Extra space: `O(1)`.
+    
 
 ### Modern C++ notes
 
@@ -133,9 +151,10 @@ In the code of Solution 2, the partial sorting algorithm `std::nth_element` will
 nums[i] <= nums[mid] <= nums[j].
 ```
 
-With this property, if `mid = nums.length / 2` then the value of `nums[mid]` is unchanged no matter how `nums` is sorted or not.
+With this property, if `mid = nums.length / 2`, then the value of `nums[mid]` is unchanged no matter how `nums` is sorted or not.
 
-### References
-* [https://leetcode.com/problems/minimum-moves-to-equal-array-elements-ii/](https://leetcode.com/problems/minimum-moves-to-equal-array-elements-ii/)
-* [https://www.leetsolve.com/462-minimum-moves-to-equal-array-elements-ii](https://www.leetsolve.com/462-minimum-moves-to-equal-array-elements-ii)
-* [https://en.cppreference.com/w/cpp/algorithm/nth_element](https://en.cppreference.com/w/cpp/algorithm/nth_element)
+---
+
+*What is your approach? The problem was picked from* [*leetcode.com*](https://leetcode.com/problems/minimum-moves-to-equal-array-elements-ii/)*. You can submit your solution in any programming language and check the performance.*
+
+*Thanks for reading. Feel free to share your thought about my content and check out my FREE book* [*10 Classic Coding Challenges*](https://store.nhutnguyen.com/l/10_classic)*.*

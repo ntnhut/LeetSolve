@@ -88,6 +88,10 @@ Output:
 * Runtime: `O(m*n)`, where `m = matrix.length`, `n = matrix[i].length`.
 * Extra space: `O(1)`.
 
-## Implementation note
+
+```{admonition} Implementation note
+:class: note
+
 Note that the matrix might not be square, you cannot just swap the elements using for example the function [`std::swap`](https://en.cppreference.com/w/cpp/algorithm/swap).
 
+```

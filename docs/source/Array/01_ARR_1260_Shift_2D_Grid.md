@@ -165,6 +165,12 @@ Output:
 * Runtime: `O(mn)` (the nested `for` loops), where `m = grid.length`, `n = grid[i].length`.
 * Extra space: `O(mn)` (the vector `v`).
 
-## C++ notes
+
+```{admonition} C++ notes
+:class: tip
+
 1. To convert a 2D matrix into a 1D vector, you can use the vector's function [`insert()`](https://en.cppreference.com/w/cpp/container/vector/insert).
+
 2. The modulo operator `%` is usually used to index an array to ensure the index is inbound.
+
+```

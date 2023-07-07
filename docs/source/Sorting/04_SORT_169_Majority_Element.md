@@ -122,16 +122,15 @@ Output:
 * Extra space: `O(1)`.
 
 
-## Modern C++ notes
+```{admonition} Modern C++ tips
+:class: tip
 
 In the code of Solution 3, the partial sorting algorithm [`std::nth_element`](https://en.cppreference.com/w/cpp/algorithm/nth_element) will make sure for all indices `i` and `j` that satisfy `0 <= i <= mid <= j < nums.length`,
 
-```text
-nums[i] <= nums[mid] <= nums[j].
-```
+    nums[i] <= nums[mid] <= nums[j].
 
 In other words, `nums[mid]` divides the array `nums` into two groups: all elements that are less than or equal to `nums[mid]` and the ones that are greater than or equal to `nums[mid]`. 
 
 Those two groups are unsorted. That is why the algorithm is called *partial* sorting. 
 
-
+```

@@ -82,7 +82,11 @@ Output:
 * Runtime: `O(NlogN)`, where `N = boxTypes.length`.
 * Extra space: `O(1)`.
 
-## Modern C++ STL notes
+```{admonition} Modern C++ STL notes
+:class: tip
+
 Note that two [`vector`s](https://en.cppreference.com/w/cpp/container/vector) can be compared. That is why you can sort them.
 
 But in this case you want to sort them based on the number of units. That is why you need to define the comparison function like the code above. Otherwise, the [`sort`](https://en.cppreference.com/w/cpp/algorithm/sort) algorithm will use the dictionary order to sort them by default.  
+
+```

@@ -99,7 +99,11 @@ Output:
 * Runtime: `O(n)`, where `n = graph.length`.
 * Extra space: `O(n)`.
 
-## Implementation note
-- This is the non-recursive implementation of DFS algorithm where you could use the stack data structure to avoid the recursion.
-- The stack's methods needed in the DFS algorithm are only `push` and `pop`. There are similar ones in [`std::vector`](https://en.cppreference.com/w/cpp/container/vector), which are [`push_back`](https://en.cppreference.com/w/cpp/container/vector/push_back) and [`pop_back`](https://en.cppreference.com/w/cpp/container/vector/pop_back) which you could use well.
+```{admonition} Implementation tips
+:class: tip
 
+* This is the non-recursive implementation of DFS algorithm where you could use the stack data structure to avoid the recursion.
+
+* The stack's methods needed in the DFS algorithm are only `push` and `pop`. There are similar ones in [`std::vector`](https://en.cppreference.com/w/cpp/container/vector). They are [`push_back`](https://en.cppreference.com/w/cpp/container/vector/push_back) and [`pop_back`](https://en.cppreference.com/w/cpp/container/vector/pop_back) which you could use well in this case.
+
+```

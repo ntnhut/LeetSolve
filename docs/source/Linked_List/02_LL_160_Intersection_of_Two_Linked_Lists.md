@@ -263,7 +263,9 @@ Output:
 * Extra space: `O(1)`.
 
 
-## Implementation note
-The technique used in Solution 2 is known as the *Two-pointer* technique since you use two pointers to iterate the list at the same time.
 
+```{admonition} Implementation tip
+:class: tip
+The technique used in Solution 2 is known as the *Two-pointer* technique since you use two pointers to iterate the list at the same time.
+```
 

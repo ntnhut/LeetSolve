@@ -106,8 +106,12 @@ ps
 * Runtime: `O(N)`, where `N = s.length`.
 * Extra space: `O(N)`.
 
-## Implementation notes
+```{admonition} Implementation tips
+:class: tip
+
 The data structure `stk` you might need to solve this problem is a stack. But here are the reasons you had better use [`std::vector`](https://en.cppreference.com/w/cpp/container/vector):
 
 * `std::vector` also has methods [`push_back(value)`](https://en.cppreference.com/w/cpp/container/vector/push_back) and [`pop_back()`](https://en.cppreference.com/w/cpp/container/vector/pop_back) like the ones in a stack.
 * On the other hand, it is faster for a vector to perform the string concatenation at the end.
+
+```

@@ -115,6 +115,10 @@ Output:
 * Runtime: `O(n^2)`, where `n = matrix.length`.
 * Extra space: `O(1)`.
 
-## Implementation notes
+```{admonition} Implementation tips
+:class: tip
 1. The function [`std::swap`](https://en.cppreference.com/w/cpp/algorithm/swap) can be used to exchange two values.
+
 2. When doing the transpose or mirroring, you could visit over one-half of the matrix.
+
+```

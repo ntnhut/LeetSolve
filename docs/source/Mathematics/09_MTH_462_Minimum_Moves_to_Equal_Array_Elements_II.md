@@ -38,7 +38,7 @@ Second, `M` must be in between the minimum element and the maximum one. Apparent
 
 We will prove that `M` will be the [median](https://en.wikipedia.org/wiki/Median) of `nums`, which is `nums[n/2]` of the sorted `nums`. 
 
-In other words, we will prove that if you choose `M` a value different from `nums[n/2]` then the number of moves will be increased.
+In other words, we will prove that if you choose `M` a value different from `nums[n/2]`, then the number of moves will be increased.
 
 In fact, if you choose `M = nums[n/2] + x`, where `x > 0`, then:
 
@@ -88,7 +88,7 @@ Output:
 
 ## Solution 2: Using `std::nth_element` to compute the median
 
-What you only need in the Solution 1 is the median value. Computing the total number of moves in the `for` loop does not require the array `nums` to be fully sorted. 
+What you only need in Solution 1 is the median value. Computing the total number of moves in the `for` loop does not require the array `nums` to be fully sorted. 
 
 In this case, you can use [`std::nth_element`](https://en.cppreference.com/w/cpp/algorithm/nth_element) to reduce the runtime complexity.
 
@@ -125,16 +125,14 @@ Output:
 * Runtime: `O(n)`, where `n = nums.length`.
 * Extra space: `O(1)`.
 
-## Modern C++ notes
+```{admonition} Modern C++ tips
+:class: tip
 
-In the code of Solution 2, the partial sorting algorithm [`std::nth_element`](https://en.cppreference.com/w/cpp/algorithm/nth_element) will make sure for all indices `i` and `j` that satisfy `0 <= i <= mid <= j < nums.length`,
+In the code of Solution 2, the partial sorting algorithm [`std::nth_element`](https://en.cppreference.com/w/cpp/algorithm/nth_element) will make sure for all indices `i` and `j` that satisfy `0 <= i <= mid <= j < nums.length`, then
 
-```text
-nums[i] <= nums[mid] <= nums[j].
+    nums[i] <= nums[mid] <= nums[j].
+
+With this property, if `mid = nums.length / 2`, then the value of `nums[mid]` is unchanged no matter how `nums` is sorted or not.
 ```
-
-With this property, if `mid = nums.length / 2` then the value of `nums[mid]` is unchanged no matter how `nums` is sorted or not.
-
-
 
 
