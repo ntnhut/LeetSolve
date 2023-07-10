@@ -16,8 +16,8 @@ project = 'LeetSolve'
 copyright = '2023, Nhut Nguyen'
 author = 'Nhut Nguyen'
 
-release = '0.7'
-version = '0.7.0'
+release = '0.8'
+version = '0.8.0'
 
 # -- General configuration
 
@@ -62,6 +62,7 @@ latex_elements = {
     # The paper size ('letterpaper' or 'a4paper').
     #
     'papersize': 'a4paper',
+    'sphinxsetup': 'hmargin={1.2in,1.2in}, vmargin={1.2in,1.2in}',
 
     # The font size ('10pt', '11pt' or '12pt').
     #
@@ -69,7 +70,12 @@ latex_elements = {
 
     # Additional stuff for the LaTeX preamble.
     #
-    'preamble': r'\addto\captionsenglish{\renewcommand{\contentsname}{Contents}}',
+    'preamble': r'''
+                    \usepackage{charter}
+                    \usepackage[defaultsans]{lato}
+                    \usepackage{inconsolata}
+                    \addto\captionsenglish{\renewcommand{\contentsname}{Contents}}
+                ''',
 
     # Latex figure (float) alignment
     #
