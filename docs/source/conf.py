@@ -50,7 +50,7 @@ html_theme_options = {
     # 'logo_only': True,
     "sidebar_hide_name": True,
     # 'nosidebar': True,
-    "announcement": "Support my work by Paying What You Want to get the PDF version of this book <a href='https://store.nhutnguyen.com/l/leetsolve'  target='_blank'>here</a>!", 
+    "announcement": "Support my work by buying this book <a href='https://store.nhutnguyen.com/l/leetsolve'  target='_blank'>here</a>!", 
 }
 
 source_suffix = {
