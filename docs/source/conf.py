@@ -17,7 +17,7 @@ copyright = '2023, Nhut Nguyen'
 author = 'Nhut Nguyen'
 
 release = '0.8'
-version = '0.8.0'
+version = '0.8.1'
 
 # -- General configuration
 
