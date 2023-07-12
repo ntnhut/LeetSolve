@@ -2,7 +2,7 @@
 
 Welcome to the world of **coding challenges**, where you'll learn how to solve exciting problems to improve your **programming skills**. Whether you're a beginner or an experienced programmer, this book will help you to **enhance your coding skills**.
 
-> *I started to solve the first challenge in this book when changing my job in the summer of 2021. And I continued to solve at least once a week for two years. Today, I still sometimes pick one to solve for fun.*
+> *I started solving one of the challenges in this book when changing my job during the summer of 2021. And I continued to solve at least once a week for two years. Today, I still sometimes pick a new one from LeetCode to solve for fun.*
 
 Coding challenges are a great way to practice **problem-solving**, **algorithm development**, and **logical thinking**. They showcase your **creativity** and **innovation** while improving your **coding techniques**. This book offers diverse coding challenges to help you develop your skills.
 
@@ -10,7 +10,7 @@ Coding challenges could be **programming puzzles** or **mathematical problems** 
 
 As you work through the coding challenges in this book, you'll **learn new skills**, **improve your problem-solving abilities**, and **develop your confidence as a programmer**. 
 
-The challenges in this book are picked from **leetcode.com**. I keep the challenges' titles unchanged so you can easily find it there. I chose the ones that are not too difficult and do not require much effort and determination to solve. Each challenge comes with a detailed solution, explaining the logic behind the solution and how to implement it in C++. You can also read this book online at [leetsolve.com](https://leetsolve.com).
+The challenges in this book are picked from **leetcode.com**. I keep the challenges' titles unchanged so you can easily find it there. I chose the ones that are not too difficult and do not require much effort and determination to solve. Each challenge comes with a detailed solution, explaining the logic behind the solution and how to implement it in C++.
 
 ## Leetcode
 

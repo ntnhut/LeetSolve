@@ -2,15 +2,16 @@
 
 # -- Project information
 
-from sphinx.highlighting import PygmentsBridge
-from pygments.formatters.latex import LatexFormatter
+# If you want smaller code font size
+# from sphinx.highlighting import PygmentsBridge
+# from pygments.formatters.latex import LatexFormatter
 
-class CustomLatexFormatter(LatexFormatter):
-    def __init__(self, **options):
-        super(CustomLatexFormatter, self).__init__(**options)
-        self.verboptions = r"formatcom=\footnotesize"
+# class CustomLatexFormatter(LatexFormatter):
+#     def __init__(self, **options):
+#         super(CustomLatexFormatter, self).__init__(**options)
+#         self.verboptions = r"formatcom=\footnotesize"
 
-PygmentsBridge.latex_formatter = CustomLatexFormatter
+# PygmentsBridge.latex_formatter = CustomLatexFormatter
 
 project = 'LeetSolve'
 copyright = '2023, Nhut Nguyen'
@@ -50,7 +51,7 @@ html_theme_options = {
     # 'logo_only': True,
     "sidebar_hide_name": True,
     # 'nosidebar': True,
-    "announcement": "Support my work by buying this book <a href='https://store.nhutnguyen.com/l/leetsolve'  target='_blank'>here</a>!", 
+    # "announcement": "Support my work by buying this book <a href='https://store.nhutnguyen.com/l/leetsolve'  target='_blank'>here</a>!", 
 }
 
 source_suffix = {
@@ -61,7 +62,7 @@ source_suffix = {
 latex_elements = {
     # The paper size ('letterpaper' or 'a4paper').
     #
-    'papersize': 'a4paper',
+    'papersize': 'letterpaper',
     'sphinxsetup': 'hmargin={1.2in,1.2in}, vmargin={1.2in,1.2in}',
 
     # The font size ('10pt', '11pt' or '12pt').
