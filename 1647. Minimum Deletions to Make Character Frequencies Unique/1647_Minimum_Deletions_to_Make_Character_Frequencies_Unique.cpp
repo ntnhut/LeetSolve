@@ -14,15 +14,15 @@ int minDeletions(string s) {
     }
     sort(freq.begin(), freq.end(), greater<int>());
     int deletion = 0;
-    int currentFreq = freq[0];
-    for (int i = 1; i < freq.size() && freq[i] > 0; i++) {
+    int currentFreq = freq.at(0);
+    for (int i = 1; i < freq.size() && freq.at(i) > 0; i++) {
         if (currentFreq == 0) {
-            deletion += freq[i];
+            deletion += freq.at(i);
         } else if (freq[i] >= currentFreq) {
-            deletion += freq[i] - currentFreq + 1;
+            deletion += freq.at(i) - currentFreq + 1;
             currentFreq--;
         } else {
-            currentFreq = freq[i];
+            currentFreq = freq.at(i);
         }
     }
     return deletion;

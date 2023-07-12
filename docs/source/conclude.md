@@ -1,6 +1,6 @@
 # Conclusion
 
-Congratulations, you have made it to the end of this book! I hope you have enjoyed and learned from the **coding challenges** and **solutions** presented in this book.
+Congratulations! You have made it to the end of this book! I hope you have enjoyed and learned from the **coding challenges** and **solutions** presented in this book.
 
 Through these challenges, you have not only improved your **coding skills** but also your **problem-solving abilities**, **logical thinking**, and **creativity**. You have been exposed to different **programming techniques** and **algorithms**, which have broadened your understanding of the programming world. These skills and knowledge will undoubtedly benefit you in your future coding endeavors.
 
