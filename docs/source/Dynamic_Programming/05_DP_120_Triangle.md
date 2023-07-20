@@ -34,7 +34,7 @@ Output: -10
 * `-10^4 <= triangle[i][j] <= 10^4`.
  
 
-**Follow up**: Could you do this using only `O(n)` extra space, where `n` is the total number of rows in the triangle?
+**Follow up**: Could you do this using only $O(n)$ extra space, where $n$ is the total number of rows in the triangle?
 
 ## Solution 1: Store all minimum paths
 
@@ -82,8 +82,8 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(n*n/2)`, where `n = triangle.length`.
-* Extra space: `O(n*n/2)`.
+* Runtime: $O(n^2/2)$, where $n$ is `triangle.length`.
+* Extra space: $O(n^2/2)$.
 
 ## Solution 2: Store only the minimum paths of each row
 
@@ -121,7 +121,7 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(n*n/2)`, where `n = triangle.length`.
-* Extra space: `O(n)`.
+* Runtime: $O(n^2/2)$, where $n$ is `triangle.length`.
+* Extra space: $O(n)$.
 
 

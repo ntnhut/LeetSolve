@@ -95,7 +95,7 @@ Output:
 [5,]
 ```
 ### Complexity
-* Runtime: `O(N)`, where `N` is the number of nodes.
-* Extra space: `O(1)`.
+* Runtime: $O(N)$, where $N$ is the number of nodes.
+* Extra space: $O(1)$.
 
 

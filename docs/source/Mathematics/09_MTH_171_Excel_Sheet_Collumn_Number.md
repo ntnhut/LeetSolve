@@ -105,8 +105,8 @@ Output:
 701
 ```
 ### Complexity
-* Runtime: `O(N)`, where `N = columnTitle.length`.
-* Extra space: `O(1)`.
+* Runtime: $O(N)$, where $N$ is `columnTitle.length`.
+* Extra space: $O(1)$.
 
 ### Implementation notes
 1. There are many ways to compute the series

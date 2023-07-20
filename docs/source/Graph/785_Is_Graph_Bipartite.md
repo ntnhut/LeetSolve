@@ -96,8 +96,8 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(n)`, where `n = graph.length`.
-* Extra space: `O(n)`.
+* Runtime: $O(n)$, where $n$ is `graph.length`.
+* Extra space: $O(n)$.
 
 ```{admonition} Implementation tips
 :class: tip

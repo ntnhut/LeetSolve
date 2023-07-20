@@ -101,7 +101,7 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(N^2)`, where `N = graph.length`.
-* Extra space: `O(N)`.
+* Runtime: $O(N^2)$, where $N$ is `graph.length`.
+* Extra space: $O(N)$.
 
 

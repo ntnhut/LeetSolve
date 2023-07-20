@@ -95,8 +95,8 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(sz)`, where `sz` is the number of nodes in the list.
-* Extra space: `O(sz)`.
+* Runtime: $O(sz)$, where $sz$ is the number of nodes in the list.
+* Extra space: $O(sz)$.
 
 ## Solution 2: Two pointers
 
@@ -166,8 +166,8 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(sz)`, where `sz` is the number of nodes in the list.
-* Extra space: `O(1)`.
+* Runtime: $O(sz)$, where $sz$ is the number of nodes in the list.
+* Extra space: $O(1)$.
 
 
 

@@ -68,7 +68,7 @@ Output:
 2
 ```
 ### Complexity
-* Runtime: `O(N)`, where `N` is the number of nodes.
-* Extra space: `O(N)`.
+* Runtime: $O(N)$, where $N$ is the number of nodes.
+* Extra space: $O(N)$.
 
 

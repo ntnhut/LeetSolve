@@ -63,8 +63,8 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(2^n)`.
-* Extra space: `O(2^n)`.
+* Runtime: $O(2^n)$.
+* Extra space: $O(2^n)$.
 
 ## Solution 2: Dynamic programming
 ```cpp
@@ -96,8 +96,8 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(n)`.
-* Extra space: `O(n)`.
+* Runtime: $O(n)$.
+* Extra space: $O(n)$.
 
 ## Solution 3: Reduce space for dynamic programming
 
@@ -132,7 +132,7 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(n)`.
-* Extra space: `O(1)`.
+* Runtime: $O(n)$.
+* Extra space: $O(1)$.
 
 

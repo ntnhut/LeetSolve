@@ -91,8 +91,8 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(NlogN)`, where `N = nums.length`.
-* Extra space: `O(1)`.
+* Runtime: $O(n\log n)$, where $n$ is `nums.length`.
+* Extra space: $O(1)$.
 
 ## Solution 2: Priority queue
 
@@ -146,7 +146,7 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(N)`, where `N = nums.length`.
-* Extra space: `O(1)`.
+* Runtime: $O(n)$, where $n$ is `nums.length`.
+* Extra space: $O(1)$.
 
 

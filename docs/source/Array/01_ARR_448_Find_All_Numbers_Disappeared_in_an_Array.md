@@ -22,7 +22,7 @@ Output: [2]
  
 
 ### Follow up
-Could you do it without extra space and in `O(n)` runtime? You may assume the returned list does not count as extra space.
+Could you do it without extra space and in $O(n)$ runtime? You may assume the returned list does not count as extra space.
 
 ## Solution 1: Marking the appearances
 
@@ -71,9 +71,9 @@ Output:
 
 ### Complexity
 
-* Runtime: `O(n)`, where `n = nums.length`.
+* Runtime: $O(n)$, where $n$ is `nums.length`.
     
-* Extra space: much less than `O(n)`. [`vector<bool>`](https://en.cppreference.com/w/cpp/container/vector_bool) is optimized for space efficiency; it stores single bits.
+* Extra space: much less than $O(n)$. [`vector<bool>`](https://en.cppreference.com/w/cpp/container/vector_bool) is optimized for space efficiency; it stores single bits.
     
 
 ## Solution 2: Follow up
@@ -127,8 +127,8 @@ Output:
 
 ### Complexity
 
-* Runtime: `O(N)`, where `N = nums.length`.
-* Extra space: `O(1)` (the returned list does not count as extra space).
+* Runtime: $O(n)$, where $n$ is `nums.length`.
+* Extra space: $O(1)$ (the returned list does not count as extra space).
 
 ## Conclusion
 

@@ -86,7 +86,7 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(N*M)`, where `N = words.length` and `M = words[i].length`.
-* Extra space: `O(N)`.
+* Runtime: $O(NM)$, where $N$ is `words.length` and $M$ is `words[i].length`.
+* Extra space: $O(N)$.
 
 

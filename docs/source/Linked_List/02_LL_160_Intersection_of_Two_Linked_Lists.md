@@ -40,7 +40,7 @@ Output: No intersection.
 * `1 <= m, n <= 3 * 10^4`.
 * `1 <= Node.val <= 10^5`. 
 
-**Follow up**: Could you write a solution that runs in `O(m + n)` time and use only `O(1)` memory?
+**Follow up**: Could you write a solution that runs in $O(m + n)$ time and use only $O(1)$ memory?
 
 ## Solution 1: Store the nodes
 
@@ -138,8 +138,8 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(m + n)`, where `m, n` are the number of nodes of `listA` and `listB`.
-* Extra space: `O(m)`.
+* Runtime: $O(m + n)$, where $m$, $n$ are the number of nodes of `listA` and `listB`.
+* Extra space: $O(m)$.
 
 ## Solution 2: Reiterating the two lists at the same time
 
@@ -259,8 +259,8 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(m + n)`, where `m, n` are the number of nodes of `listA` and `listB`.
-* Extra space: `O(1)`.
+* Runtime: $O(m + n)$, where $m$, $n$ are the number of nodes of `listA` and `listB`.
+* Extra space: $O(1)$.
 
 
 

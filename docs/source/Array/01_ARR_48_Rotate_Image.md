@@ -112,8 +112,8 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(n^2)`, where `n = matrix.length`.
-* Extra space: `O(1)`.
+* Runtime: $O(n^2)$, where $n$ is `matrix.length`.
+* Extra space: $O(1)$.
 
 ```{admonition} Implementation tips
 :class: tip

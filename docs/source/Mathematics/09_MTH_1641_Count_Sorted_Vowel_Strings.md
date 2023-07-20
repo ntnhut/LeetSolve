@@ -103,8 +103,8 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(n)`.
-* Extra space: `O(1)`.
+* Runtime: $O(n)$.
+* Extra space: $O(1)$.
 
 ## Solution 2: The math behind the problem 
 
@@ -160,8 +160,8 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(1)`.
-* Extra space: `O(1)`.
+* Runtime: $O(1)$.
+* Extra space: $O(1)$.
 
 
 

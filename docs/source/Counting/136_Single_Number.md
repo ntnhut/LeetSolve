@@ -68,8 +68,8 @@ Output:
 1
 ```
 ### Complexity
-* Runtime: `O(N)`, where `N = nums.length`.
-* Extra space: `O(N)` (not constant, need another solution).
+* Runtime: $O(N)$, where $NS$ is `nums.length`.
+* Extra space: $O(N)$ (not constant, need another solution).
 
 ## Solution 2: Bitwise exclusive OR
 You can also use the bitwise XOR operator to cancel out the duplicated elements in the array. The remain element is the single one.
@@ -105,5 +105,5 @@ Output:
 1
 ```
 ### Complexity
-* Runtime: `O(N)`, where `N = nums.length`.
-* Extra space: `O(1)`.
+* Runtime: $O(N)$, where $N$ is `nums.length`.
+* Extra space: $O(1)$.

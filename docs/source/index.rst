@@ -29,6 +29,11 @@ Welcome to LeetSolve!
    Counting/index
    Prefix_Sum/index
    Two_Pointers/index
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Mathematics
+
    Mathematics/index
    
 

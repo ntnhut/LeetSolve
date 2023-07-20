@@ -54,8 +54,8 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(1)`.
-* Extra space: `O(1)`.
+* Runtime: $O(1)$.
+* Extra space: $O(1)$.
 
 
 

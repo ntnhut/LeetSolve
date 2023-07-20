@@ -66,5 +66,5 @@ Output:
 ```
 
 ### Complexity
-* Runtime `O(N)`, where `N = nums.length`.
-* Memory `O(1)`.
+* Runtime $O(n)$, where $n$ is `nums.length`.
+* Memory $O(1)$.

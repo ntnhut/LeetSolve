@@ -96,8 +96,8 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(N*L)`, where `N = words.length` and `L = pattern.length`.
-* Extra space: `O(1)` if `N` or `L` is very larger than 26. The maps `w_to_p` and `p_to_w` just map between 26 lowercase English letters.
+* Runtime: $O(NL)$, where $N$ is `words.length` and $L$ is `pattern.length`.
+* Extra space: $O(52)$. The maps `w_to_p` and `p_to_w` just map between 26 lowercase English letters.
 
 
 

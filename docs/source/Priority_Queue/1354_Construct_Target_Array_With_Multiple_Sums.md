@@ -106,8 +106,8 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(logN)`, where `N = max(target)`.
-* Extra space: `O(1)`.
+* Runtime: $O(\log N)$, where $N$ is `max(target)`.
+* Extra space: $O(1)$.
 
 ## Solution 2: Using priority_queue
 
@@ -163,7 +163,7 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(logN)`, where `N = max(target)`.
-* Extra space: `O(n)`, where `n = target.length`.
+* Runtime: $O(\log N)$, where $N$ is `max(target)`.
+* Extra space: $O(n)$, where $n$ is `target.length`.
 
 

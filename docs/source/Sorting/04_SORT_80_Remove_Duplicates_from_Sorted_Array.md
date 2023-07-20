@@ -7,7 +7,7 @@ Since it is impossible to change the length of the array in some languages, you 
 
 Return `k` after placing the final result in the first `k` slots of `nums`.
 
-Do **not** allocate extra space for another array. You must do this by **modifying the input array in-place** with `O(1)` extra memory.
+Do **not** allocate extra space for another array. You must do this by **modifying the input array in-place** with $O(1)$ extra memory.
 
 ### Example 1
 ```text
@@ -75,13 +75,13 @@ Output:
 ```
 ### Complexity
 * Runtime: 
-    * Worst case `O(N*N/3)`, where `N = nums.size()`. The complexity of the [`erase()`](https://en.cppreference.com/w/cpp/container/vector/erase) method is linear in `N`. The worst case is when `erase()` is called maximum `N/3` times.
+    * Worst case $O(N^2/3)$, where $N$ is `nums.size()`. The complexity of the [`erase()`](https://en.cppreference.com/w/cpp/container/vector/erase) method is linear in $N$. The worst case is when `erase()` is called maximum $N/3$ times.
     ```text
     Example of the worst case:
     nums = [1,1,1,2,2,2,3,3,3,4,4,4,5,5,5,6,6,6].
     ```
-    * On average `O(N)` since the number of `erase()` calls is `O(1)`.
-* Extra space `O(1)`.
+    * On average $O(N)$ since the number of `erase()` calls is $O(1)$.
+* Extra space $O(1)$.
 
 ## Solution 2: Reassigning the satisfying elements
 You might need to avoid the `erase()` method in the solution above to reduce the complexity. Moreover, the problem only cares about the first `k` elements of the array `nums` after removing the duplicates.
@@ -132,8 +132,8 @@ Output:
 7, [0,0,1,1,2,3,3,]
 ```
 ### Complexity
-* Runtime: `O(N)`, where `N = nums.size()`.
-* Extra space: `O(1)`.
+* Runtime: $O(N)$, where $N$ is `nums.size()`.
+* Extra space: $O(1)$.
 
 
 

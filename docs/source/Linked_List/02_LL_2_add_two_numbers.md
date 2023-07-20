@@ -125,7 +125,7 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(N)`, where `N = max(l1.length, l2.length)`.
-* Extra space: `O(1)`.
+* Runtime: $O(N)$, where $N$ is `max(l1.length, l2.length)`.
+* Extra space: $O(1)$.
 
 

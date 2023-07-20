@@ -64,8 +64,8 @@ Output:
 3
 ```
 ### Complexity
-* Runtime: `O(N^2)`, where `N = nums.length`.
-* Extra space: `O(1)`.
+* Runtime: $O(n^2)$, where $n$ is `nums.length`.
+* Extra space: $O(1)$.
 
 ## Solution 2: Prefix sum
 In the solution above, many sums can be deducted from the previous ones.
@@ -118,8 +118,8 @@ Output:
 3
 ```
 ### Complexity
-* Runtime: `O(N^2)`, where `N = nums.length`.
-* Extra space: `O(N)`.
+* Runtime: $O(n^2)$, where $n$ is `nums.length`.
+* Extra space: $O(n)$.
 
 ## Solution 3: Faster lookup
 
@@ -168,6 +168,6 @@ Output:
 3
 ```
 ### Complexity
-* Runtime: `O(N)`, where `N = nums.length`.
-* Extra space: `O(N)`.
+* Runtime: $O(n)$, where $n$ is `nums.length`.
+* Extra space: $O(n)$.
 

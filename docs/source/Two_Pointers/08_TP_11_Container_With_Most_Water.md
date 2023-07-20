@@ -67,8 +67,8 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(N^2)`, where `N = height.length`.
-* Extra space: `O(1)`.
+* Runtime: $O(N^2)$, where $N$ is `height.length`.
+* Extra space: $O(1)$.
 
 ## Solution 2: Two pointers
 
@@ -131,8 +131,8 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(N)`, where `N = height.length`.
-* Extra space: `O(1)`.
+* Runtime: $O(N)$, where $N$ is `height.length`.
+* Extra space: $O(1)$.
 
 
 

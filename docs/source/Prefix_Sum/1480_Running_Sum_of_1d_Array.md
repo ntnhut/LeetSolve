@@ -75,8 +75,8 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(N)`, where `N = nums.length`.
-* Extra space: `O(1)`.
+* Runtime: $O(n)$, where $n$ is `nums.length`.
+* Extra space: $O(1)$.
 
 ## Solution 2: Change `nums`
 
@@ -120,7 +120,7 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(N)`, where `N = nums.length`.
-* Extra space: `O(1)`.
+* Runtime: $O(n)$, where $n$ is `nums.length`.
+* Extra space: $O(1)$.
 
 

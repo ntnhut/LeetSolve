@@ -97,9 +97,9 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(N*M^2)`, where `N = emails.length`, `M = max(emails[i].length)`. 
-    Explanation: you loop over `N` emails. Then you might loop over the length of each email, `O(M)`, to remove the character `'.'`. The removal might cost `O(M)`.
-* Extra space: `O(N*M)` (the set of emails).
+* Runtime: $O(NM^2)$, where $N$ is `emails.length` and $M$ is `max(emails[i].length)`. 
+    Explanation: you loop over $N$ emails. Then you might loop over the length of each email, $O(M)$, to remove the character `'.'`. The removal might cost $O(M)$.
+* Extra space: $O(NM)$ (the set of emails).
 
 ## Solution 2: Building the clean email addresses from scratch
 The runtime of removing characters in `std::string` is not constant. To avoid that complexity you can build up the clean email addresses from scratch.
@@ -151,31 +151,30 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(N*M)`, where `N = emails.length`, `M = max(emails[i].length)`.
-* Extra space: `O(N*M)`.
+* Runtime: $O(NM)$, where $N$ is `emails.length` and $M$ is `max(emails[i].length)`.
+* Extra space: $O(NM)$.
 
-```{admonition} C++ Notes
-:class: tip
+## C++ Notes
 
 * A `string` can be concatenated with a `char` and another `string` by `+` operator.
 
-    std::string address = "name";
-
-    address += '@';             // "name@"
-
-    address += "domain.com";    // "name@domain.com"
-
+```cpp
+std::string address = "name";
+address += '@';             // "name@"
+address += "domain.com";    // "name@domain.com"
+```
 * [string::substr(pos = 0, count = npos)](https://en.cppreference.com/w/cpp/string/basic_string/substr) returns the substring of length `count` starting from the position `pos` of the string `string`.
 
-    std::string address = "name@domain.com";
-
-    cout << address.substr(address.find('.'));      // ".com"
-    
-    cout << address.substr(0, address.find('@'));   // "name"
+```cpp
+std::string address = "name@domain.com";
+cout << address.substr(address.find('.'));      // ".com"
+cout << address.substr(0, address.find('@'));   // "name"
+```
 
 * [string::find(char, pos=0)](https://en.cppreference.com/w/cpp/string/basic_string/find) returns the position of the first `char` which appears in the string `string` starting from `pos`.
 
-**High-performance C++**
+```{admonition} High-performance C++
+:class: tip
 
 * Do not use `std::set` or `std::map` unless you want the keys to be *in order* (*sorted*). Use *unordered containers* like [std::unordered_set](https://en.cppreference.com/w/cpp/container/unordered_set) or [std::unordered_map](https://en.cppreference.com/w/cpp/container/unordered_map) instead. They use hashed keys for faster lookup.
 

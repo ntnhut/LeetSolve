@@ -82,8 +82,8 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(N^3)`, where `N = intervals.length`.
-* Extra space: `O(1)`.
+* Runtime: $O(N^3)$, where $N$ is `intervals.length`.
+* Extra space: $O(1)$.
 
 ## Solution 2: Using dictionary order
 You might know how to look up words in a dictionary. 
@@ -143,8 +143,8 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(NlogN)`, where `N = intervals.length`.
-* Extra space: `O(1)`.
+* Runtime: $O(N\log N)$, where $N$ is `intervals.length`.
+* Extra space: $O(1)$.
 
 ## Key takeaway
 * Two `std::vector`s can be compared using dictionary order.

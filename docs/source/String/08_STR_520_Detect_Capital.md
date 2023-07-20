@@ -76,8 +76,8 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(N)`, where `N = word.length`.
-* Extra space: `O(1)`.
+* Runtime: $O(N)$, where $N$ is `word.length`.
+* Extra space: $O(1)$.
 
 
 

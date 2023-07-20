@@ -36,7 +36,7 @@ Explanation: There is no cycle in this linked list.
 * `-10^5 <= Node.val <= 10^5`.
  
 
-**Follow up:** Can you solve it using `O(1)` (i.e. constant) memory?
+**Follow up:** Can you solve it using $O(1)$ (i.e. constant) memory?
 
 ## Solution 1: Storing the visited nodes
 
@@ -93,8 +93,8 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(N)`, where `N` is the length of the linked list.
-* Extra space: `O(N)`.
+* Runtime: $O(N)$, where $N$ is the length of the linked list.
+* Extra space: $O(N)$.
 
 ## Solution 2: Fast and slow runners
 Imagine there are two runners both start to run along the linked list from the `head`. One runs twice faster than the other. 
@@ -163,8 +163,8 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(N)`, where `N` is the length of the linked list.
-* Extra space: `O(1)`.
+* Runtime: $O(N)$, where $N$ is the length of the linked list.
+* Extra space: $O(1)$.
 
 
 

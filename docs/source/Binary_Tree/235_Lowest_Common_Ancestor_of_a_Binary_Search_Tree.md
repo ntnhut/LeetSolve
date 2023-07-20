@@ -95,7 +95,7 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(logN)` (the height of the tree), where `N` is the number of nodes.
-* Extra space: `O(1)`.
+* Runtime: $O(\log N)$ (the height of the tree), where $N$ is the number of nodes.
+* Extra space: $O(1)$.
 
 

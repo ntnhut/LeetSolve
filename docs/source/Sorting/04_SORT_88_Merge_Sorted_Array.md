@@ -44,7 +44,7 @@ Note that because m = 0, there are no elements in nums1. The 0 is only there to 
 * `-10^9 <= nums1[i], nums2[j] <= 10^9`.
  
 
-**Follow up**: Can you come up with an algorithm that runs in `O(m + n)` time?
+**Follow up**: Can you come up with an algorithm that runs in $O(m + n)$ time?
 
 ## Solution 1: Store the result in a new container
 
@@ -98,8 +98,8 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(m + n)`, where `m + n = nums1.length, n = nums2.length`.
-* Extra space: `O(m + n)`.
+* Runtime: $O(m + n)$, where $m + n$ is `nums1.length` and $n$ is `nums2.length`.
+* Extra space: $O(m + n)$.
 
 ## Solution 2: Reassigning `nums1` backward
 
@@ -153,8 +153,8 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(m + n)`, where `m + n = nums1.length, n = nums2.length`.
-* Extra space: `O(1)`.
+* Runtime: $O(m + n)$, where $m + n$ is `nums1.length` and $n$ is `nums2.length`.
+* Extra space: $O(1)$.
 
 
 

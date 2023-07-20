@@ -60,8 +60,8 @@ Output:
 0
 ```
 ### Complexity
-* Runtime: `O(N^2)`, where `N = prices.length`.
-* Extra space: `O(1)`.
+* Runtime: $O(N^2)$, where $N$ is `prices.length`.
+* Extra space: $O(1)$.
 
 ## Solution 2: Smallest and largest prices
 
@@ -109,8 +109,8 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(N)`, where `N = prices.length`.
-* Extra space: `O(1)`.
+* Runtime: $O(N)$, where $N$ is `prices.length`.
+* Extra space: $O(1)$.
 
 ## Solution 3: Only the smallest price
 
@@ -149,8 +149,8 @@ Output:
 2
 ```
 ### Complexity
-* Runtime: `O(N)`, where `N = prices.length`.
-* Extra space: `O(1)`.
+* Runtime: $O(N)$, where $N$ is `prices.length`.
+* Extra space: $O(1)$.
 
 
 

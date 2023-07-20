@@ -67,8 +67,8 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(NlogN)`, where `N = nums.length`.
-* Extra space: `O(1)`.
+* Runtime: $O(n\log n)$.
+* Extra space: $O(1)$.
 
 ## Follow up
 
@@ -112,8 +112,8 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(N)`, where `N = nums.length`.
-* Extra space: `O(logN)`. [`std::vector<bool>`](https://en.cppreference.com/w/cpp/container/vector_bool) is optimized for space-efficient. 
+* Runtime: $O(n)$.
+* Extra space: much less than $O(n)$. [`std::vector<bool>`](https://en.cppreference.com/w/cpp/container/vector_bool) is optimized for space-efficient. 
 
 ## Solution 3: Marking with `std::bitset`
 
@@ -149,8 +149,8 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(N)`, where `N = nums.length`.
-* Extra space: `O(1)`. 
+* Runtime: $O(n)$.
+* Extra space: $O(1)$. 
 
 
 

@@ -26,7 +26,7 @@ Output: 2
  
 
 ### Follow-up: 
-Could you solve the problem in linear time and in `O(1)` space?
+Could you solve the problem in linear time and in $O(1)$ space?
 
 ## Solution 1: Counting the frequency
 
@@ -61,8 +61,8 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(n)`, where `n = nums.length`.
-* Extra space: `O(n)`.
+* Runtime: $O(n)$, where $n$ is `nums.length`.
+* Extra space: $O(n)$.
 
 ## Solution 2: Sorting and picking the middle element
 
@@ -88,6 +88,10 @@ Output:
 3
 2
 ```
+
+### Complexity
+* Runtime: $O(n\log n)$, where $n$ is `nums.length`.
+* Extra space: $1$.
 
 ## Solution 3: Partial sort
 
@@ -118,8 +122,8 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(n)`, where `n = nums.length`.
-* Extra space: `O(1)`.
+* Runtime: $O(n)$, where $n$ is `nums.length`.
+* Extra space: $O(1)$.
 
 
 ```{admonition} Modern C++ tips

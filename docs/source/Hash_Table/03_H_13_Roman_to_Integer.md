@@ -91,8 +91,8 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(N)` where `N = s.length`.
-* Extra space: `O(1)` (the map `value` is very small).
+* Runtime: $O(N)$ where $N$ is `s.length`.
+* Extra space: $O(7)$.
 
 
 

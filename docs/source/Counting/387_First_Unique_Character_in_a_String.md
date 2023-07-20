@@ -60,8 +60,8 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(N)`, where `N = s.length`.
-* Extra space: `O(1)` if `N` is very larger than `26`.
+* Runtime: $O(N)$, where $N$ is `s.length`.
+* Extra space: $O(26)$.
 
 ## Solution 2: Using vector to store the appearances
 
@@ -96,7 +96,7 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(N)`, where `N = s.length`.
-* Extra space: `O(1)` if `N` is very larger than `26`.
+* Runtime: $O(N)$, where $N$ is `s.length`.
+* Extra space: $O(26)$.
 
 

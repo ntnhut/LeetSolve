@@ -80,8 +80,8 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(2^N)`, where `N = nums.length`.
-* Extra space: `O(2^N)`.
+* Runtime: $O(2^N)$, where $N$ is `nums.length`.
+* Extra space: $O(2^N)$.
 
 
 

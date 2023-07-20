@@ -94,8 +94,8 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(N)`, where `N = ops.length`.
-* Extra space: `O(N)`.
+* Runtime: $O(N)$, where $N$ is `ops.length`.
+* Extra space: $O(N)$.
 
 ```{admonition} Implementation tips
 :class: tip

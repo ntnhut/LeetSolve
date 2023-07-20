@@ -90,8 +90,8 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(n)`.
-* Extra space: `O(1)`.
+* Runtime: $O(n)$.
+* Extra space: $O(1)$.
 
 
 

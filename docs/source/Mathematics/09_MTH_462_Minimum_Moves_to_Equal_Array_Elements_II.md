@@ -82,8 +82,8 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(nlogn)`, where `n = nums.length`.
-* Extra space: `O(1)`.
+* Runtime: $O(n\log n)$, where $n$ is `nums.length`.
+* Extra space: $O(1)$.
 
 
 ## Solution 2: Using `std::nth_element` to compute the median
@@ -122,8 +122,8 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(n)`, where `n = nums.length`.
-* Extra space: `O(1)`.
+* Runtime: $O(n)$, where $n$ is `nums.length`.
+* Extra space: $O(1)$.
 
 ```{admonition} Modern C++ tips
 :class: tip

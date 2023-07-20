@@ -92,8 +92,8 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(2^m + 2^n)`, where `m*n` is the size of the grid.
-* Extra space: `O(2^m + 2^n)`.
+* Runtime: $O(2^m + 2^n)$, where $m \times n$ is the size of the grid.
+* Extra space: $O(2^m + 2^n)$.
 
 ## Solution 2: Dynamic programming
 The recursive implementation repeats a lot of computations.
@@ -134,8 +134,8 @@ Output:
 ```
 ### Complexity
 
-* Runtime: `O(m*n)`, where `m*n` is the size of the grid.
-* Extra space: `O(m*n)`.
+* Runtime: $O(mn)$, where $m \times n$ is the size of the grid.
+* Extra space: $O(mn)$.
 
 ## Solution 3: Reduced dynamic programming
 You can rephrase the relationship inside the loop like this:
@@ -175,8 +175,8 @@ Output:
 ```
 
 ### Complexity
-* Runtime `O(m*n)`.
-* Memory `O(n)`.
+* Runtime $O(mn)$.
+* Memory $O(n)$.
 
 ## Final thought
 I am wondering if there is some mathematics behind this problem. Please share your finding if you find a formula for the solution to this problem.

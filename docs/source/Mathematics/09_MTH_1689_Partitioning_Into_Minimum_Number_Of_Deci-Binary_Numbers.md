@@ -77,8 +77,8 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(N)`, where `N = n.length`.
-* Extra space: `O(1)`.
+* Runtime: $O(N)$, where $N$ is `n.length`.
+* Extra space: $O(1)$.
 
 
 

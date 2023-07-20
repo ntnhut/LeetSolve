@@ -79,6 +79,6 @@ Output:
 ```
 
 ### Complexity:
-* Runtime: `O(N)`, where `N = s.length`.
-* Extra space: `O(N/2)`.
+* Runtime: $O(N)$, where $N$ is `s.length`.
+* Extra space: $O(N/2)$.
 

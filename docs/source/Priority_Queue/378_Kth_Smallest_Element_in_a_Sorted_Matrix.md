@@ -5,7 +5,7 @@ Given an `n x n` matrix where each of the rows and columns is sorted in ascendin
 
 Note that it is the `k-th` smallest element in the sorted order, not the `k-th` distinct element.
 
-You must find a solution with a memory complexity better than `O(n^2)`.
+You must find a solution with a memory complexity better than $O(n^2)$.
 
  
 
@@ -33,8 +33,8 @@ Output: -5
 
 ### Follow up
 
-* Could you solve the problem with a constant memory (i.e., `O(1)` memory complexity)?
-* Could you solve the problem in `O(n)` time complexity? The solution may be too advanced for an interview but you may find reading [this paper](http://www.cse.yorku.ca/~andy/pubs/X+Y.pdf) fun.
+* Could you solve the problem with a constant memory (i.e., $O(1)$ memory complexity)?
+* Could you solve the problem in $O(n)$ time complexity? The solution may be too advanced for an interview but you may find reading [this paper](http://www.cse.yorku.ca/~andy/pubs/X+Y.pdf) fun.
 
 ## Solution 1: Transform the 2-D matrix into an 1-D vector then sort
 
@@ -69,8 +69,8 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(n^2*logn)`, where `n x n` is the size of the matrix. Note that `log(n^2) = 2logn`.
-* Extra space: `O(n^2)`.
+* Runtime: $O(n^2\log n)$, where $n \times n$ is the size of the matrix. Note that $\log(n^2) = 2\log n$.
+* Extra space: $O(n^2)$.
 
 ## Solution 2: Build the max heap and keep it ungrown
 
@@ -110,8 +110,8 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(n^2*logk)`, where `n x n` is the size of the matrix.
-* Extra space: `O(k)`.
+* Runtime: $O(n^2\log k)$, where $n \times n$ is the size of the matrix.
+* Extra space: $O(k)$.
 
 ## Solution 3: Binary search
 
@@ -159,7 +159,7 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(nlognlogM)`, where `n x n` is the size of the matrix, `M` is the difference between the maximum element and the minimum element of the matrix.
-* Extra space: `O(1)`.
+* Runtime: $O(n\log n \log M)$, where $n \times  n$ is the size of the matrix, $M$ is the difference between the maximum element and the minimum element of the matrix.
+* Extra space: $O(1)$.
 
 

@@ -72,8 +72,8 @@ Output:
 1
 ```
 ### Complexity
-* Runtime: `O(N)`, where `N = _events.length`.
-* Extra space: `O(N)`.
+* Runtime: $O(n)$, where $n$ is `_events.length`.
+* Extra space: $O(n)$.
 
 ## Solution 2: Set
 
@@ -116,8 +116,8 @@ Output:
 1
 ```
 ### Complexity
-* Runtime: `O(logN)`, where `N = _events.length`.
-* Extra space: `O(N)`.
+* Runtime: $O(\log n)$, where $n$ is `_events.length`.
+* Extra space: $O(n)$.
 
 
 

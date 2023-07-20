@@ -55,8 +55,8 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(NlogN)`, where `N = s.length`.
-* Extra space: `O(1)`.
+* Runtime: $O(N\log N)$, where $N$ is `s.length`.
+* Extra space: $O(1)$.
 
 
 ## Solution 2: Count the appearances of each letter
@@ -96,8 +96,8 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(N)`, where `N = s.length`.
-* Extra space: `O(1)`.
+* Runtime: $O(N)$, where $N$ is `s.length`.
+* Extra space: $O(1)$.
 
 ## Solution 3: If the inputs contain Unicode characters
 
@@ -136,8 +136,8 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(N)`, where `N = s.length`.
-* Extra space: `O(1)`.
+* Runtime: $O(N)$, where $N$ is `s.length`.
+* Extra space: $O(1)$.
 
 
 

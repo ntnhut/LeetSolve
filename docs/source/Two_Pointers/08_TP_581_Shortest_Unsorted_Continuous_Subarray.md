@@ -31,7 +31,7 @@ Output: 0
 * `1 <= nums.length <= 10^4`.
 * `-10^5 <= nums[i] <= 10^5`.
 
-**Follow up**: Can you solve it in `O(n)` time complexity?
+**Follow up**: Can you solve it in $O(n)$ time complexity?
 
 ## Solution 1: Sort and compare the difference
 
@@ -78,8 +78,8 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(nlogn)`, where `n = nums.length` because of the sorting algorithm.
-* Extra space: `O(n)`.
+* Runtime: $O(n\log n)$, where $n$ is `nums.length` because of the sorting algorithm.
+* Extra space: $O(n)$.
 
 ## Solution 2: Comparing only maximum and minimum elements
 
@@ -136,13 +136,13 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(n)`, where `n = nums.length`.
-* Extra space: `O(1)`.
+* Runtime: $O(n)$, where $n$ is `nums.length`.
+* Extra space: $O(1)$.
 
 ## Conclusion
 Solution 2 helped you identify the shortest subarray (by the `left` and `right` indices) needed to be sorted in order to sort the whole array.
 
-That means in some cases you can sort an array with complexity `O(N + mlogm) < O(NlogN)` where `N` is the length of the whole array and `m` is the length of the shortest subarray.
+That means in some cases you can sort an array with complexity $O(N + m\log m) < O(N\log N)$ where $N$ is the length of the whole array and $m$ is the length of the shortest subarray.
 
 
 

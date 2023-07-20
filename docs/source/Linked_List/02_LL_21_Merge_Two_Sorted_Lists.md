@@ -117,8 +117,8 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(N)`, where `N = list1.length + list2.length`.
-* Extra space: `O(1)`.
+* Runtime: $O(N)$, where $N$ is `list1.length + list2.length`.
+* Extra space: $O(1)$.
 
 
 

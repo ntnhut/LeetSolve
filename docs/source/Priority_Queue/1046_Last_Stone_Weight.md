@@ -79,8 +79,8 @@ Output:
 
 ### Complexity
 
-* Runtime: worst case `O(NlogN)`, on average `O(N)`, where `N = stones.length`.   
-* Extra space: `O(N)`.
+* Runtime: worst case $O(n\log n)$, on average $O(n)$, where $n$ is `stones.length`.   
+* Extra space: $O(n)$.
     
     
     

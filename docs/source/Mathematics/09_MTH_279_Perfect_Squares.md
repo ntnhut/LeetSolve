@@ -90,8 +90,8 @@ Output:
 2
 ```
 ### Complexity
-* Runtime: `O(n^2)`.
-* Extra space: `O(n)`
+* Runtime: $O(n^2)$.
+* Extra space: $O(n)$.
 
 ## Solution 2: Number Theory
 The dynamic programming solution above is good enough. But for those who are interested in Algorithmic Number Theory, there is a very interesting theorem that can solve the problem directly without recursion.
@@ -165,8 +165,8 @@ Output:
 2
 ```
 ### Complexity
-* Runtime: `O(logn)`.
-* Extra space: `O(1)`.
+* Runtime: $O(\log n)$.
+* Extra space: $O(1)$.
 
 ## Solution 3: Further performance improvement
 
@@ -232,8 +232,8 @@ Output:
 2
 ```
 ### Complexity
-* Runtime: `O(logn)`.
-* Extra space: `O(1)`.
+* Runtime: $O(\log n)$.
+* Extra space: $O(1)$.
 
 ## Conclusion
 - The title of this coding challenge (*Perfect squares*) gives you a hint it is more about mathematics than coding technique.

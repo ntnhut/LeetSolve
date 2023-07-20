@@ -90,8 +90,8 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(N)`, where `N = s.length`;
-* Extra space: `O(1)` since `26` is not a big number.
+* Runtime: $O(N)$, where $N$ is `s.length`;
+* Extra space: $O(26)$.
 
 
 

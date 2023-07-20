@@ -81,5 +81,5 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(N)`, where `N = arr.length`.
-* Extra space: `O(1)`.
+* Runtime: $O(N)$, where $N$ is `arr.length`.
+* Extra space: $O(1)$.

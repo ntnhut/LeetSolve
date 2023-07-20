@@ -79,8 +79,8 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(NlogN)`, where `N = boxTypes.length`.
-* Extra space: `O(1)`.
+* Runtime: $O(N\log N)$, where $N$ is `boxTypes.length`.
+* Extra space: $O(1)$.
 
 ```{admonition} Modern C++ STL notes
 :class: tip

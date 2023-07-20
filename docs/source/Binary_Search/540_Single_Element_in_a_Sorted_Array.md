@@ -6,7 +6,7 @@ You are given a sorted array consisting of only integers where every element app
 
 *Return the single element that appears only once.*
 
-Your solution must run in `O(log n)` time and `O(1)` space.
+Your solution must run in $O(\log n)$ time and $O(1)$ space.
 
  
 
@@ -58,8 +58,8 @@ Output:
 ```
 
 ### Complexity
-* Runtime `O(n/2)`, where `n = nums.length`.
-* Memory `O(1)`.
+* Runtime $O(n/2)$, where $n$ is `nums.length`.
+* Memory $O(1)$.
 
 ## Solution 2: Binary search
 Since `nums` is sorted, you can perform a binary search on it.
@@ -112,7 +112,7 @@ Output:
 3
 ```
 ### Complexity
-* Runtime `O(logn)`, where `n = nums.length`.
-* Memory `O(1)`.
+* Runtime $O(\log n)$, where $n$ is `nums.length`.
+* Memory $O(1)$.
 
 

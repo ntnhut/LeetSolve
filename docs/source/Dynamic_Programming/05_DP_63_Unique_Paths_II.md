@@ -90,8 +90,8 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(m*n)`, where `m x n` is the size of the `grid`.
-* Extra space: `O(m*n)`.
+* Runtime: $O(mn)$, where $m \times n$ is the size of the `grid`.
+* Extra space: $O(mn)$.
 
 
 

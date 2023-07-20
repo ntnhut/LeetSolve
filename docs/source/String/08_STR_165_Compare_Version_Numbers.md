@@ -122,8 +122,8 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(N)` where `N = max(version1.length, version2.length)`.
-* Extra space: `O(N)`.
+* Runtime: $O(N)$ where $N$ is `max(version1.length, version2.length)`.
+* Extra space: $O(N)$.
 
 ## C++ Notes
 * [`std::stoi(string)`](https://en.cppreference.com/w/cpp/string/basic_string/stol) is used to convert a `string` to an `int`. It ignores the leading zeros for you.

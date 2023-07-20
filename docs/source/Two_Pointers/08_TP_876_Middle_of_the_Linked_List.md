@@ -83,8 +83,8 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(N + N/2)`, where `N` is the number of nodes.
-* Extra space: `O(1)`.
+* Runtime: $O(N + N/2)$, where $N$ is the number of nodes.
+* Extra space: $O(1)$.
 
 ## Solution 2: Slow and fast pointers
 Use two pointers to go through the linked list. 
@@ -141,8 +141,8 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(N/2)`, where `N` is the number of nodes.
-* Extra space: `O(1)`.
+* Runtime: $O(N/2)$, where $N$ is the number of nodes.
+* Extra space: $O(1)$.
 
 ## OBS!
 * The approach using slow and fast pointers looks very nice and faster. But it is not suitable to generalize this problem to any relative position (one-third, a quarter, etc.). Moreover, long expressions like `fast->next->...->next` are not recommended. 

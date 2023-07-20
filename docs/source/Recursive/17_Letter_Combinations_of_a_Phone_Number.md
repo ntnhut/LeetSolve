@@ -105,8 +105,8 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(3^N)`, where `N = digits.length`. In this problem, `N` is very small (`N <= 4`).
-* Extra space: `O(1)` (the small map).
+* Runtime: $O(3^N)$, where $N$ is `digits.length`. In this problem, $N$ is very small ($N \leq 4$).
+* Extra space: $O(1)$ (the small map).
 
 ## Implementation notes
 You can use the assignment operator `'='` for `result.swap(newResult)`, i.e. `result = newResult`. 

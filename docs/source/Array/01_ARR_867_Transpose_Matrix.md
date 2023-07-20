@@ -85,8 +85,8 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(m*n)`, where `m = matrix.length`, `n = matrix[i].length`.
-* Extra space: `O(1)`.
+* Runtime: $O(mn)$, where $m$ is `matrix.length` and $n$ is `matrix[i].length`.
+* Extra space: $O(1)$.
 
 
 ```{admonition} Implementation note

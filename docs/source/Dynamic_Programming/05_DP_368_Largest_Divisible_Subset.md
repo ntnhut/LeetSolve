@@ -126,8 +126,8 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(2^N)`, where `N = nums.length`.
-* Extra space: `O(N^2)`.
+* Runtime: $O(2^N)$, where $N$ is `nums.length`.
+* Extra space: $O(N^2)$.
 
 ## Solution 2: Store only the representative of the `maxSubset`
 In the brute-force solution above, you used a big `map` to log all `maxSubset[i]` though you need only the largest one at the end.
@@ -214,8 +214,8 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(N^2)`, where `N = nums.length`.
-* Extra space: `O(N)`.
+* Runtime: $O(N^2)$, where $N$ is `nums.length`.
+* Extra space: $O(N)$.
 
 ## Key takeaway
 In this interesting problem, we use index mapping to simplify everything. That improves the performance in both runtime and memory.

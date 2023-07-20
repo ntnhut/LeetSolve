@@ -58,8 +58,8 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(logn)`.
-* Extra space: `O(1)`.
+* Runtime: $O(\log n)$.
+* Extra space: $O(1)$.
 
 ## Solution 2: Binary representation
 
@@ -110,7 +110,7 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(1)`.
-* Extra space: `O(1)`.
+* Runtime: $O(1)$.
+* Extra space: $O(1)$.
 
 

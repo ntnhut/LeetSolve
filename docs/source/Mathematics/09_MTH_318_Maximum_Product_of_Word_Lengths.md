@@ -81,8 +81,8 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(N^2**M)`, where `N = words.length`, `M = avg(words[i].length)`.
-* Extra space: `O(1)`.
+* Runtime: $O(N^2 \cdot M)$, where $N$ is `words.length` and $M$ is `avg(words[i].length)`.
+* Extra space: $O(1)$.
 
 ## Solution 2: Checking common letters using bit masking
 
@@ -140,8 +140,8 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(N^2)`, where `N = words.length`.
-* Extra space: `O(N)`.
+* Runtime: $O(N^2)$, where $N$ is `words.length`.
+* Extra space: $O(N)$.
 
 
 

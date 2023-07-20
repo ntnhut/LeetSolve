@@ -106,8 +106,8 @@ Output:
 []
 ```
 ### Complexity
-* Runtime: `O(N)`, where `N` is the number of nodes.
-* Memory: `O(1)`.
+* Runtime: $O(N)$, where $N$ is the number of nodes.
+* Memory: $O(1)$.
 
 ## Solution 2: Create a previous dummy node for head
 `head` has no `pre`. You can create a dummy node for `head.pre`. 
@@ -173,8 +173,8 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(N)`, where `N` is the number of nodes.
-* Memory: `O(1)`.
+* Runtime: $O(N)$, where $N$ is the number of nodes.
+* Memory: $O(1)$.
 
 ### Attention!
 Depending on your real situation, in practice, you might need to deallocate memory for the removed nodes; especially when they were allocated by the `new` operator.

@@ -85,12 +85,12 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(N^2)`, where `N = temperatures.length`.
-* Extra space: `O(1)`.
+* Runtime: $O(N^2)$, where $N$ is `temperatures.length`.
+* Extra space: $O(1)$.
 
 ## Solution 2: Starting from the last day
 
-The straightforward solution above is easy to understand, but the complexity is `O(N^2)`. 
+The straightforward solution above is easy to understand, but the complexity is $O(N^2)$. 
 
 The way starting from the first day to the last day does not make use of the knowledge of the `answer[i]` values. 
 
@@ -171,8 +171,8 @@ In these cases, the resulting `answer[i]` will be either `0` or a big value `j -
 
 The value `0` would help the `while` loop terminates very soon. On the other hand, the big value `j - i` would help the `while` loop skips the days `j` very quickly.
 
-* Runtime: `O(NlogN)`, where `N = temperatures.length`. 
-* Extra space: `O(1)`.
+* Runtime: $O(N\log N)$, where $N$ is `temperatures.length`. 
+* Extra space: $O(1)$.
 
 ## Key takeaway
 In some computations, you could improve the performance by using the knowledge of the results you have computed. 

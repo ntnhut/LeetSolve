@@ -162,8 +162,8 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(mn)` (the nested `for` loops), where `m = grid.length`, `n = grid[i].length`.
-* Extra space: `O(mn)` (the vector `v`).
+* Runtime: $O(mn)$ (the nested `for` loops), where $m$ is `grid.length` and $n$ is `grid[i].length`.
+* Extra space: $O(mn)$ (the vector `v`).
 
 
 ```{admonition} C++ notes

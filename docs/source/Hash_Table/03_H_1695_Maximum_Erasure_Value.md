@@ -71,7 +71,7 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(N)`, where `N = nums.length`.
-* Extra space: `O(N)`.
+* Runtime: $O(N)$, where $N$ is `nums.length`.
+* Extra space: $O(N)$.
 
 
