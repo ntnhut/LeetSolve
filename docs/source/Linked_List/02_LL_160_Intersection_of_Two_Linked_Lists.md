@@ -6,28 +6,28 @@ Given the heads of two singly linked-lists `headA` and `headB`, return the node 
 
 For example, the following two linked lists begin to intersect at node `c1`:
 
-![Two linked lists A and B intersect at node c1](02_LL_160_statement.png)
+<!-- ![Two linked lists A and B intersect at node c1](02_LL_160_statement.png) -->
 
 The test cases are generated such that there are no cycles anywhere in the entire linked structure.
 
 Note that the linked lists must retain their original structure after the function returns.
 
 ### Example 1
-![Two linked lists A and B intersect at node 8](02_LL_160_example_1_1.png)
+<!-- ![Two linked lists A and B intersect at node 8](02_LL_160_example_1_1.png) -->
 ```text
 Input: listA = [4,1,8,4,5], listB = [5,6,1,8,4,5].
 Output: Intersected at '8'
 ```
 
 ### Example 2
-![Two linked lists A and B intersect at node 2](02_LL_160_example_2.png)
+<!-- ![Two linked lists A and B intersect at node 2](02_LL_160_example_2.png) -->
 ```text
 Input: listA = [1,9,1,2,4], listB = [3,2,4]
 Output: Intersected at '2'
 ```
 
 ### Example 3
-![Two linked lists A and B do not intersect](02_LL_160_example_3.png)
+<!-- ![Two linked lists A and B do not intersect](02_LL_160_example_3.png) -->
 ```text
 Input: listA = [2,6,4], listB = [1,5]
 Output: No intersection.
