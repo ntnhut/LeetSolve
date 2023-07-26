@@ -5,12 +5,6 @@ Welcome to LeetSolve!
 
 .. toctree::
    :maxdepth: 2
-
-   intro
-
-
-.. toctree::
-   :maxdepth: 2
    :caption: Data Structures
 
    Array/index
@@ -36,10 +30,3 @@ Welcome to LeetSolve!
 
    Mathematics/index
    
-
-.. toctree::
-   :maxdepth: 2
-
-   conclude
-   thanks
-   about
