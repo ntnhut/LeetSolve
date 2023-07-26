@@ -1,14 +1,13 @@
 # Valid Mountain Array
 
 ## [Problem statement](https://leetcode.com/problems/valid-mountain-array/)
-Given an array of integers `arr`, return `true` if and only if it is a valid *mountain array*.
 
-Recall that arr is a **mountain array** if and only if:
+You are given an array of integers `arr`, and your task is to determine whether it is a valid *mountain array*.
 
-* `arr.length >= 3`
-* There exists some `i` with `0 < i < arr.length - 1` such that:
-  * `arr[0] < arr[1] < ... < arr[i - 1] < arr[i]`
-  * `arr[i] > arr[i + 1] > ... > arr[arr.length - 1]`
+A valid *mountain array* must meet the following conditions:
+
+1. The length of `arr` should be greater than or equal to `3`.
+2. There should exist an index `i` such that `0 < i < arr.length - 1`, and the elements up to `i` (`arr[0]` to `arr[i]`) should be in strictly ascending order, while the elements starting from `i` (`arr[i]` to `arr[arr.length-1]`) should be in strictly descending order.
 
 ![Mountain array](01_ARR_941_hint_valid_mountain_array.png)
 

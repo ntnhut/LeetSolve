@@ -1,10 +1,10 @@
 # Can Place Flowers
 
 ## [Problem statement](https://leetcode.com/problems/can-place-flowers/)
-You have a long flowerbed in which some of the plots are planted, and some are not. However, flowers cannot be planted in **adjacent** plots.
 
-Given an integer array `flowerbed` containing `0`'s and `1`'s, where `0` means empty and `1` means not empty, and an integer `n`, return `true` if `n` new flowers can be planted in the `flowerbed` without violating the no-adjacent-flowers rule.
+You are presented with a long flowerbed containing plots, some of which are planted with flowers (denoted by `1`) and some are empty (denoted by `0`). Flowers cannot be planted in **adjacent** plots. You are given an integer array `flowerbed` representing the layout of the flowerbed, and an integer `n` representing the number of new flowers you want to plant.
 
+Your task is to determine if it is possible to plant `n` new flowers in the `flowerbed` without violating the rule of no-adjacent-flowers. If it is possible, return `true`; otherwise, return `false`.
 
 ### Example 1
 ```text

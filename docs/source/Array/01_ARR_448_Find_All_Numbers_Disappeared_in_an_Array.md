@@ -1,7 +1,8 @@
 # Find All Numbers Disappeared in an Array
 
 ## [Problem statement](https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/)
-Given an array `nums` of `n` integers where `nums[i]` is in the range `[1, n]`, return an array of all the integers in the range `[1, n]` that do not appear in `nums`.
+
+You are given an array `nums` of `n` integers, where each integer `nums[i]` falls within the range `[1, n]`. Your task is to find and return an array containing all the integers in the range `[1, n]` that are not present in the given array `nums`.
 
 ### Example 1
 ```text
@@ -22,10 +23,10 @@ Output: [2]
  
 
 ### Follow up
-Could you do it without extra space and in $O(n)$ runtime? You may assume the returned list does not count as extra space.
+
+Can you solve the problem without using additional memory and achieve a linear runtime complexity? You can assume that the list you return does not count as extra space.
 
 ## Solution 1: Marking the appearances
-
 You can use a vector of `bool` to mark which value appeared in the array.
 
 ### Code

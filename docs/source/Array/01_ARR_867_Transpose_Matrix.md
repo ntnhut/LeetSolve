@@ -2,10 +2,9 @@
 
 ## [Problem statement](https://leetcode.com/problems/transpose-matrix/)
 
-Given a 2D integer array `matrix`, return the transpose of `matrix`.
+You are given a 2D integer array `matrix`, and your objective is to find the transpose of the given matrix.
 
-The transpose of a matrix is the matrix flipped over its main diagonal, switching the matrix's row and column indices.
-
+The transpose of a matrix involves flipping the matrix over its main diagonal, effectively swapping its row and column indices.
  
 \begin{equation*}
 \begin{bmatrix}
