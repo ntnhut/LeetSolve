@@ -1,7 +1,8 @@
 # Roman to Integer
 
 ## [Problem statement](https://leetcode.com/problems/roman-to-integer/)
-Roman numerals are represented by seven symbols: `I`, `V`, `X`, `L`, `C`, `D`, and `M`.
+
+Roman numerals utilize seven symbols: `I`, `V`, `X`, `L`, `C`, `D`, and `M` to represent numbers. 
 
 ```text
 Symbol       Value
@@ -14,17 +15,15 @@ D             500
 M             1000
 ```
 
-For example, `2` is written as `II` in Roman numeral, just two ones added together. `12` is written as `XII`, which is simply `X + II`. The number `27` is written as `XXVII`, which is `XX + V + II`.
+For example, `2` is denoted as `II`, which is essentially two ones added together. Similarly, `12` is represented as `XII`, indicating `X + II`. The number `27` is written as `XXVII`, which stands for `XX + V + II`.
 
-Roman numerals are usually written from largest to smallest from left to right. However, the numeral for four is not `IIII`. Instead, the number four is written as `IV`. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as `IX`. There are six instances where subtraction is used:
+Roman numerals are generally written from the largest value to the smallest value, moving from left to right. However, there are exceptions to this pattern. For instance, the numeral for `4` is `IV` instead of `IIII`, where `I` is placed before `V` to subtract `1` from `5`. Similarly, `9` is `IX`, representing the subtraction of `1` from `10`. There are six such subtraction instances:
 
-* `I` can be placed before `V` (`5`) and `X` (`10`) to make `4` and `9`. 
-* `X` can be placed before `L` (`50`) and `C` (`100`) to make `40` and `90`. 
-* `C` can be placed before `D` (`500`) and `M` (`1000`) to make `400` and `900`.
+- `I` before `V` (`5`) or `X` (`10`) forms `4` and `9`.
+- `X` before `L` (`50`) or `C` (`100`) forms `40` and `90`.
+- `C` before `D` (`500`) or `M` (`1000`) forms `400` and `900`.
 
-Given a roman numeral, convert it to an integer.
-
- 
+Your task is to convert a given Roman numeral into its equivalent integer value. 
 
 ### Example 1
 ```text

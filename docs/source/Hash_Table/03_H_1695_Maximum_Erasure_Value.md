@@ -2,13 +2,11 @@
 
 ## [Problem statement](https://leetcode.com/problems/maximum-erasure-value/)
 
-You are given an array of positive integers `nums` and want to erase a subarray containing unique elements. The score you get by erasing the subarray is equal to the sum of its elements.
+You have an array of positive integers called `nums`, and you wish to remove a subarray from it that consists of distinct elements. The score you achieve by removing this subarray is the sum of its elements.
 
-Return the maximum score you can get by erasing exactly one subarray.
+Your goal is to determine the highest possible score attainable by erasing exactly one subarray from the provided array.
 
-An array `b` is called to be a subarray of `a` if it forms a contiguous subsequence of `a`, that is, if it is equal to `a[l],a[l+1],...,a[r]` for some `(l,r)`.
-
- 
+A subarray, denoted as `b`, is considered part of another array, `a`, if it appears consecutively within `a`, i.e., if it is equivalent to `a[l], a[l+1], ..., a[r]` for some indices `(l, r)`.
 
 ### Example 1
 ```text

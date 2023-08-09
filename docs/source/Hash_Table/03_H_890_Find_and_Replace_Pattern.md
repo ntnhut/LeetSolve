@@ -2,13 +2,11 @@
 
 ## [Problem statement](https://leetcode.com/problems/find-and-replace-pattern/)
 
-Given a list of strings `words` and a string `pattern`, return a list of `words[i]` that match `pattern`. You may return the answer in any order.
+You are provided with a list of strings named `words` and a string named `pattern`. Your task is to find the strings from `words` that match the given `pattern`. The order in which you return the answers does not matter.
 
-A word matches the pattern if there exists a permutation of letters `p` so that after replacing every letter `x` in the pattern with `p(x)`, we get the desired word.
+A word is considered to match the pattern if there is a mapping `p` of the letters such that, when each letter `x` in the pattern is replaced with `p(x)`, the word is formed.
 
-Recall that a permutation of letters is a bijection from letters to letters: every letter maps to another letter, and no two letters map to the same letter.
-
- 
+Keep in mind that a permutation of letters is a one-to-one correspondence from letters to letters, where each letter is mapped to a distinct letter, and no two letters are mapped to the same letter. 
 
 ### Example 1
 ```text
