@@ -2,15 +2,14 @@
 
 ## [Problem statement](https://leetcode.com/problems/intersection-of-two-linked-lists/)
 
-Given the heads of two singly linked-lists `headA` and `headB`, return the node at which the two lists intersect. If the two linked lists have no intersection at all, return `null`.
+You are provided with the starting nodes of two singly linked lists, `headA` and `headB`. Your task is to find the node where these two lists intersect. If there is no point of intersection, return `null`. 
 
 For example, the following two linked lists begin to intersect at node `c1`:
 
-<!-- ![Two linked lists A and B intersect at node c1](02_LL_160_statement.png) -->
+![Two linked lists A and B intersect at node c1](02_LL_160_statement.png)
 
-The test cases are generated such that there are no cycles anywhere in the entire linked structure.
+Note that the linked lists do not have any cycles, and you must ensure that the original structure of the linked lists remains unchanged after solving this problem.
 
-Note that the linked lists must retain their original structure after the function returns.
 
 ### Example 1
 <!-- ![Two linked lists A and B intersect at node 8](02_LL_160_example_1_1.png) -->

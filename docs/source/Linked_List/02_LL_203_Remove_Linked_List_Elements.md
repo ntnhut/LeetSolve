@@ -1,7 +1,8 @@
 # Remove Linked List Elements
 
 ## [Problem statement](https://leetcode.com/problems/remove-linked-list-elements/)
-Given the `head` of a linked list and an integer `val`, remove all the nodes of the linked list that has `Node.val == val`, and return *the new head*.
+
+You are given the starting node, `head`, of a linked list, and an integer `val`. Your task is to eliminate all nodes from the linked list that have a value equal to `val`. After removing these nodes, return the new starting node of the modified linked list.
 
 ### Example 1
 
