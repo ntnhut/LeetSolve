@@ -1,15 +1,14 @@
 # Detect Capital 
 
 ## [Problem statement](https://leetcode.com/problems/detect-capital/)
-We define the usage of capitals in a word to be right when one of the following cases holds:
 
-- All letters in this word are capitals, like `"USA"`.
-- All letters in this word are not capitals, like `"leetcode"`.
-- Only the first letter in this word is capital, like `"Google"`.
+The task is to determine if the usage of capital letters in a given string, `word`, is correct according to the following rules:
 
-Given a string `word`, return `true` if the usage of capitals in it is right.
+1. All letters in the word are capital, like "USA".
+2. All letters in the word are not capital, like "leetcode".
+3. Only the first letter in the word is capital, like "Google".
 
- 
+If the capitalization in the given word adheres to these rules, the function should return `true`; otherwise, it should return `false`. 
 
 ### Example 1
 ```text

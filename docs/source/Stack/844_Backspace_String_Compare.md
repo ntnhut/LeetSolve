@@ -1,11 +1,10 @@
 # Backspace String Compare
 
 ## [Problem statement](https://leetcode.com/problems/backspace-string-compare/)
-Given two strings `s` and `t`, return `true` if they are equal when both are typed into empty text editors. `'#'` means a backspace character.
 
-Note that after backspacing an empty text, the text will continue empty.
+You are provided with two strings, `s` and `t`. Your task is to determine if these two strings are equal when typed into an empty text editor, where the character `'#'` represents a backspace action.
 
- 
+Note that applying a backspace action to an empty text does not change the text; it remains empty. Your function should return `true` if the two strings become equal after considering the backspace actions, otherwise return `false`. 
 
 ### Example 1
 ```text

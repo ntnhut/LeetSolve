@@ -2,22 +2,21 @@
 
 ## [Problem statement](https://leetcode.com/problems/unique-email-addresses/)
 
-Every valid email consists of a local name and a domain name, separated by the `'@'` sign. Besides lowercase letters, the email may contain one or more `'.'` or `'+'`.
+Each valid email address is composed of a local name and a domain name, separated by the `'@'` sign. The local name may contain lowercase letters, one or more `'.'` characters, and a plus `'+'` sign. However, the rules for dots and the plus sign do not apply to the domain name.
 
-For example, in `"alice@leetcode.com"`, `"alice"` is the local name, and `"leetcode.com"` is the domain name.
+For example, in the email `"alice@leetcode.com"`, `"alice"` is the local name, and `"leetcode.com"` is the domain name.
 
-If you add periods `'.'` between some characters in the local name part of an email address, mail sent there will be forwarded to the same address without dots in the local name. Note that this rule does not apply to domain names.
+If you insert periods `'.'` between certain characters in the local name, the email will still be forwarded to the same address without the dots in the local name. This rule does not apply to the domain name.
 
-For example, `"alice.z@leetcode.com"` and `"alicez@leetcode.com"` forward to the same email address.
+For example, `"alice.z@leetcode.com"` and `"alicez@leetcode.com"` both forward to the same email address.
 
-If you add a plus `'+'` in the local name, everything after the first plus sign will be ignored. This allows certain emails to be filtered. Note that this rule does not apply to domain names.
+If you include a plus `'+'` sign in the local name, everything after the first plus sign is ignored, allowing for email filtering. This rule also does not apply to the domain name.
 
 For example, `"m.y+name@email.com"` will be forwarded to `"my@email.com"`.
 
 It is possible to use both of these rules at the same time.
 
-Given an array of strings `emails` where we send one email to each `emails[i]`, return the number of different addresses that actually receive mails.
-
+Given an array of strings `emails`, where each element is an email address to which an email is sent, your task is to determine the number of different addresses that will actually receive the emails after applying the rules described above.
  
 ### Example 1
 ```text

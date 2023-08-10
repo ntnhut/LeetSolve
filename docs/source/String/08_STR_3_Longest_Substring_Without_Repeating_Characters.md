@@ -2,7 +2,7 @@
 
 ## [Problem statement](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
 
-Given a string `s`, find the length of the longest substring without repeating characters.
+Given a string `s`, your task is to determine the length of the longest substring within `s` that does not contain any repeating characters.
 
 ### Example 1
 ```text

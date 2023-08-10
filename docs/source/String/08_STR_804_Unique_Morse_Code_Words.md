@@ -2,13 +2,11 @@
 
 ## [Problem statement](https://leetcode.com/problems/unique-morse-code-words/)
 
-International Morse Code defines a standard encoding where each letter is mapped to a series of dots and dashes, as follows:
+The problem involves International Morse Code, which defines a standard way to encode letters with dots and dashes. Each English letter corresponds to a specific sequence in Morse Code, and a full table mapping each letter is provided.
 
-* `'a'` maps to `".-"`,
-* `'b'` maps to `"-..."`,
-* `'c'` maps to `"-.-."`, and so on.
+For instance, `'a'` is encoded as `".-"`, `'b'` as `"-..."`, and so on.
 
-For convenience, the full table for the `26` letters of the English alphabet is given below:
+The full table for the `26` letters of the English alphabet is given below:
 
 ```text
 [".-", "-...", "-.-.", "-..", ".", "..-.", "--.",
@@ -17,13 +15,9 @@ For convenience, the full table for the `26` letters of the English alphabet is 
 "...-", ".--", "-..-", "-.--", "--.."]
 ```
 
-Given an array of strings `words` where each word can be written as a concatenation of the Morse code of each letter.
+You are given an array of strings named `words`, where each word can be represented as a concatenation of the Morse code for each of its letters. For example, the word `"cab"` can be represented as `"-.-..--..."`, which is the concatenation of `"-.-."`, `".-"`, and `"-..."`. This concatenated Morse code representation is referred to as the "transformation" of a word.
 
-* For example, `"cab"` can be written as `"-.-..--..."`, which is the concatenation of `"-.-."`, `".-"`, and `"-..."`. We will call such a concatenation the transformation of a word.
-
-Return the number of different transformations among all words we have.
-
- 
+Your task is to count the number of different transformations that can be obtained from all the words in the given array.
 
 ### Example 1
 ```text
