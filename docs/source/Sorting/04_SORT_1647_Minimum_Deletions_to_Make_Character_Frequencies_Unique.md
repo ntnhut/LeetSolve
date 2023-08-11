@@ -2,11 +2,11 @@
 
 ## [Problem statement](https://leetcode.com/problems/minimum-deletions-to-make-character-frequencies-unique/)
 
-A string `s` is called good if there are no two different characters in `s` that have the same frequency.
+A string `s` is considered "good" if there are no two different characters in the string that have the same frequency, meaning each character appears a unique number of times.
 
-Given a string `s`, return the minimum number of characters you need to delete to make `s` good.
+You're given a string `s`, and your task is to determine the minimum number of characters you need to delete from `s` to make it a "good" string.
 
-The frequency of a character in a string is the number of times it appears in the string. For example, in the string `"aab"`, the frequency of `'a'` is `2`, while the frequency of `'b'` is `1`.
+The frequency of a character in a string is the count of times that character appears in the string. For instance, in the string `"aab"`, the frequency of `'a'` is `2`, and the frequency of `'b'` is `1`.
 
 ### Example 1
 ```text

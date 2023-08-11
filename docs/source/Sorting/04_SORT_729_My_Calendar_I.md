@@ -2,17 +2,17 @@
 
 
 ## [Problem statement](https://leetcode.com/problems/my-calendar-i/)
-You are implementing a program to use as your calendar. We can add a new event if adding the event will not cause a double booking.
 
-A double booking happens when two events have some non-empty intersection (i.e., some moment is common to both events.).
+You're creating a program to use as your calendar. You can add new events to the calendar, but only if adding the event will not lead to a double booking.
 
-The event can be represented as a pair of integers `start` and `end` that represents a booking on the half-open interval `[start, end)`, the range of real numbers `x` such that `start <= x < end`.
+A double booking occurs when two events have some time overlap, meaning there's a shared time period between them.
 
-Implement the `MyCalendar` class:
+An event is represented as a pair of integers: `start` and `end`, which represent the booking on a half-open interval `[start, end)`. This interval includes all real numbers `x` such that `start <= x < end`.
 
-* `MyCalendar()` Initializes the calendar object.
-* `boolean book(int start, int end)` Returns `true` if the event can be added to the calendar successfully without causing a double booking. Otherwise, return `false` and do not add the event to the calendar.
- 
+You need to implement the `MyCalendar` class, which has the following functions:
+
+1. `MyCalendar()`: Initializes the calendar object.
+2. `boolean book(int start, int end)`: This function checks if the event with the given `start` and `end` can be added to the calendar without causing a double booking. If it's possible to add the event without a double booking, the function returns `true`. Otherwise, it returns `false`, and the event is not added to the calendar. 
 
 ### Example 1
 ```text

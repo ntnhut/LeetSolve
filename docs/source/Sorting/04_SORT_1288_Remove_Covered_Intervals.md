@@ -2,11 +2,11 @@
 
 ## [Problem statement](https://leetcode.com/problems/remove-covered-intervals/)
 
-Given an array `intervals` where `intervals[i] = [li, ri]` represent the interval `[li, ri)`, remove all intervals that are covered by another interval in the list.
+You're given an array called `intervals`, where each element `intervals[i]` is a pair `[li, ri]` representing a half-open interval `[li, ri)`.
 
-The interval `[a, b)` is covered by the interval `[c, d)` if and only if `c <= a` and `b <= d`.
+Your task is to remove all intervals from the list that are completely covered by another interval. An interval `[a, b)` is considered covered by the interval `[c, d)` if and only if `c` is less than or equal to `a`, and `b` is less than or equal to `d`.
 
-Return the number of remaining intervals.
+After removing the covered intervals, you need to return the number of remaining intervals.
 
 ### Example 1
 ```text

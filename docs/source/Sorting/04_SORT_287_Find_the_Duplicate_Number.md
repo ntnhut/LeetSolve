@@ -3,13 +3,11 @@
 
 ## [Problem statement](https://leetcode.com/problems/find-the-duplicate-number/)
 
-Given an array of integers `nums` containing `n + 1` integers where each integer is in the range `[1, n]` inclusive.
+You have an array of integers called `nums` that contains `n + 1` integers. Each integer in the array falls within the range `[1, n]` inclusive.
 
-There is only one repeated number in `nums`, return this repeated number.
+Within this array, there is only one number that appears more than once. Your task is to find and return this repeated number.
 
-You must solve the problem without modifying the array `nums` and uses only constant extra space.
-
- 
+Importantly, you must solve this problem without making any modifications to the original array `nums`, and you are only allowed to use a constant amount of extra space. 
 
 ### Example 1
 ```text

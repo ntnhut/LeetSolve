@@ -1,13 +1,14 @@
 # Remove Duplicates from Sorted Array II
 
 ## [Problem statement](https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/)
-Given an integer array `nums` sorted in **non-decreasing order**, remove some duplicates [in-place](https://en.wikipedia.org/wiki/In-place_algorithm) such that each unique element appears **at most twice**. The **relative order** of the elements should be kept the **same**.
 
-Since it is impossible to change the length of the array in some languages, you must instead have the result be placed in the **first part** of the array `nums`. More formally, if there are `k` elements after removing the duplicates, then the first `k` elements of `nums` should hold the final result. It does not matter what you leave beyond the first `k` elements.
+Given an integer array `nums` that is already sorted in non-decreasing order, you need to remove duplicates from it such that each unique element appears at most twice. The relative order of the elements should remain unchanged.
 
-Return `k` after placing the final result in the first `k` slots of `nums`.
+Since it's impossible to change the length of the array in some programming languages, you must place the result in the first part of the `nums` array. In other words, if there are `k` elements after removing the duplicates, the first `k` elements of `nums` should contain the final result. Anything beyond the first `k` elements is not important.
 
-Do **not** allocate extra space for another array. You must do this by **modifying the input array in-place** with $O(1)$ extra memory.
+You should return the value of `k` after placing the final result in the first `k` slots of the `nums` array.
+
+The key requirement is that you must accomplish this task without using extra space for another array. It must be done by modifying the input array `nums` in-place, using only $O(1)$ extra memory.
 
 ### Example 1
 ```text

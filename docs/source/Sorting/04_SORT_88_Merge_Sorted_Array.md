@@ -2,13 +2,14 @@
 
 ## [Problem statement](https://leetcode.com/problems/merge-sorted-array/)
 
-You are given two integer arrays `nums1` and `nums2`, sorted in non-decreasing order, and two integers `m` and `n`, representing the number of elements in `nums1` and `nums2` respectively.
+You're given two integer arrays, `nums1` and `nums2`, both sorted in non-decreasing order. Additionally, you have two integers, `m` and `n`, representing the number of elements in `nums1` and `nums2`, respectively.
 
-Merge `nums1` and `nums2` into a single array sorted in non-decreasing order.
+Your task is to merge the elements from `nums2` into `nums1` in a way that the resulting array is sorted in non-decreasing order.
 
-The final sorted array should not be returned by the function, but instead be stored inside the array `nums1`. To accommodate this, `nums1` has a length of `m + n`, where the first `m` elements denote the elements that should be merged, and the last `n` elements are set to `0` and should be ignored. `nums2` has a length of `n`.
+However, the sorted array should not be returned as a separate result. Instead, the merged elements should be stored inside the `nums1` array. Here's the setup for that purpose: 
 
- 
+* `nums1` has a total length of `m + n`, where the first `m` elements represent the elements that should be merged, and the last `n` elements are initialized to `0` and should be ignored. 
+* The `nums2` array has a length of `n`, representing the elements to be merged from `nums2` into the final `nums1` array. 
 
 ### Example 1
 ```text
