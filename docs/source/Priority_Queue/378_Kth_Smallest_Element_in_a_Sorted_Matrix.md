@@ -1,13 +1,12 @@
 # Kth Smallest Element in a Sorted Matrix
 
 ## [Problem statement](https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/)
-Given an `n x n` matrix where each of the rows and columns is sorted in ascending order, return the `k-th` smallest element in the matrix.
 
-Note that it is the `k-th` smallest element in the sorted order, not the `k-th` distinct element.
+You are given an `n x n` matrix where each row and column is sorted in ascending order. Your task is to find the `k-th` smallest element in this matrix.
 
-You must find a solution with a memory complexity better than $O(n^2)$.
+Please note that we are looking for the `k-th` smallest element based on its position in the sorted order, and not counting distinct elements.
 
- 
+Additionally, it is required to find a solution with a memory complexity better than $O(n^2)$. 
 
 ### Example 1
 ```text

@@ -1,14 +1,13 @@
 # Construct Target Array With Multiple Sums
 
 ## [Problem statement](https://leetcode.com/problems/construct-target-array-with-multiple-sums/)
-You are given an array `target` of `n` integers. From a starting array `arr` consisting of `n` 1's, you may perform the following procedure:
-
-* Let `x` be the sum of all elements currently in your array `arr`.
-* Choose any index `i` such that `0 <= i < n` and set the value `arr[i] = x`.
-* You may repeat this procedure as many times as needed.
-
-Return `true` if it is possible to construct the `target` array from `arr`, otherwise, return `false`.
  
+You are provided with an array of integers called `target` with `n` elements. You start with another array, `arr`, consisting of `n` elements, all initialized to `1`. You have the ability to perform the following operation:
+
+1. Calculate the sum of all elements in your current array `arr`, let's call it `x`.
+2. Choose an index `i` where `0 <= i < n`, and update the value at index `i` in `arr` to be `x`.
+
+You can repeat this operation as many times as needed. Your task is to determine whether it's possible to transform the initial array `arr` into the given `target` array using this operation. If it's possible, return `true`; otherwise, return `false`.
 
 ### Example 1
 ```text

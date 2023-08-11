@@ -2,17 +2,14 @@
 
 ## [Problem statement](https://leetcode.com/problems/last-stone-weight/)
 
-You are given an array of integers `stones` where `stones[i]` is the weight of the `i-th` stone.
+You are given an array of integers called `stones`, where each `stones[i]` represents the weight of the `i-th` stone.
 
-We are playing a game with the stones. On each turn, we choose the heaviest two stones and smash them together. Suppose the heaviest two stones have weights `x` and `y` with `x <= y`. The result of this smash is:
+A game is played with these stones as follows: In each turn, we choose the two heaviest stones and smash them together. Let us say the weights of the two heaviest stones are `x` and `y`, where `x <= y`. The outcome of this smash operation is:
 
-* If `x == y`, both stones are destroyed, and
-* If `x != y`, the stone of weight `x` is destroyed, and the stone of weight `y` has new weight `y - x`.
-    
+1. If `x` is equal to `y`, both stones are destroyed.
+2. If `x` is not equal to `y`, the stone with weight `x` is destroyed, and the stone with weight `y` now has a new weight of `y - x`.
 
-At the end of the game, there is at most one stone left.
-
-Return the smallest possible weight of the left stone. If there are no stones left, return `0`.
+The game continues until there is at most one stone left. Your task is to determine the smallest possible weight of the remaining stone after the game ends. If there are no stones left, return `0`.
 
 ### Example 1
 
