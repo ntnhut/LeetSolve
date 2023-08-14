@@ -2,15 +2,13 @@
 
 ## [Problem statement](https://leetcode.com/problems/unique-paths-ii/)
 
-You are given an `m x n` integer array `grid`. There is a robot initially located at the top-left corner (i.e., `grid[0][0]`). The robot tries to move to the bottom-right corner (i.e., `grid[m-1][n-1]`). The robot can only move either down or right at any point in time.
+You're given an `m x n` grid represented as an integer array called `grid`. In this grid, there is a robot initially located at the top-left corner (i.e., `grid[0][0]`). The robot's goal is to move to the bottom-right corner (i.e., `grid[m-1][n-1]`). The robot is allowed to move only downwards or to the right at any given point.
 
-An obstacle and space are marked as `1` or `0` respectively in `grid`. A path that the robot takes cannot include any square that is an obstacle.
+The grid contains obstacles and empty spaces, which are marked as `1` or `0` respectively. The robot cannot pass through squares marked as obstacles.
 
-Return the number of possible unique paths that the robot can take to reach the bottom-right corner.
+Your task is to determine the number of unique paths the robot can take to reach the bottom-right corner while avoiding obstacles.
 
-The test cases are generated so that the answer will be less than or equal to `2 * 10^9`.
-
- 
+It's important to note that the test cases are designed in such a way that the answer will always be less than or equal to `2 * 10^9`. 
 
 ### Example 1
 ![The obstacle grid of Example 1](05_DP_63_robot1.jpg)

@@ -2,11 +2,9 @@
 
 ## [Problem statement](https://leetcode.com/problems/triangle/)
 
-Given a `triangle` array, return the minimum path sum from top to bottom.
+You're provided with a `triangle` array. Your goal is to find the smallest possible sum of a path from the top of the triangle to the bottom.
 
-For each step, you may move to an adjacent number of the row below. More formally, if you are on index `i` on the current row, you may move to either index `i` or index `i + 1` on the next row.
-
- 
+At each step, you have the option to move to an adjacent number in the row below. Specifically, if you're at index `i` in the current row, you can move to either index `i` or index `i + 1` in the next row. 
 
 ### Example 1
 ```text

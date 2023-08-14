@@ -2,9 +2,9 @@
 
 ## [Problem statement](https://leetcode.com/problems/single-number/)
 
-Given a non-empty array of integers `nums`, every element appears twice except for one. Find that single one.
+You're provided with a non-empty array of integers called `nums`. In this array, every element occurs twice except for one element that appears only once. Your task is to identify and find that unique element.
 
-You must implement a solution with a linear runtime complexity and use only constant extra space.
+To solve this problem, your solution needs to have a linear runtime complexity and utilize only a constant amount of extra space.
 
 ### Example 1
 ```

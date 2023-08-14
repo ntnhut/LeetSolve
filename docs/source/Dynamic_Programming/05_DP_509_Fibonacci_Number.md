@@ -2,16 +2,14 @@
 
 ## [Problem statement](https://leetcode.com/problems/fibonacci-number/)
 
-The Fibonacci numbers, commonly denoted `F(n)` form a sequence, called the Fibonacci sequence, such that each number is the sum of the two preceding ones, starting from `0` and `1`. That is,
+The Fibonacci numbers make up a sequence denoted as `F(n)`, known as the Fibonacci sequence. Each number in this sequence is the sum of the two preceding numbers, with the sequence starting from `0` and `1`. In other words:
 
 ```text
 F(0) = 0, F(1) = 1
 F(n) = F(n - 1) + F(n - 2), for n > 1.
 ```
 
-Given `n`, calculate `F(n)`.
-
- 
+Your task is to calculate the value of `F(n)` given an integer `n`. 
 
 ### Example 1
 ```text

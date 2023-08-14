@@ -2,12 +2,12 @@
 
 ## [Problem statement](https://leetcode.com/problems/largest-divisible-subset/)
 
-Given a set of **distinct** positive integers `nums`, return the largest subset `answer` such that every pair `(answer[i], answer[j])` of elements in this subset satisfies:
+You have a collection of positive integers called `nums`, where each integer is distinct. Your task is to find the largest subset `answer` from this collection, such that for every pair of elements `(answer[i], answer[j])` within this subset:
 
-* `answer[i] % answer[j] == 0`, or
-* `answer[j] % answer[i] == 0`.
+* Either `answer[i]` is a multiple of `answer[j]` (i.e., `answer[i] % answer[j] == 0`), or
+* `answer[j]` is a multiple of `answer[i]` (i.e., `answer[j] % answer[i] == 0`).
 
-If there are multiple solutions, return any of them.
+If there are multiple possible solutions, you can return any of them.
 
 ### Example 1
 ```text

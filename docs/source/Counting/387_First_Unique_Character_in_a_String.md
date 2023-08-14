@@ -2,7 +2,7 @@
 
 ## [Problem statement](https://leetcode.com/problems/first-unique-character-in-a-string/)
 
-Given a string `s`, find the first non-repeating character in it and return its index. If it does not exist, return `-1`.
+You have a string called `s`. Your objective is to locate the index of the first character in the string that does not repeat anywhere else in the string. If such a character doesn't exist, return `-1`.
 
 ### Example 1
 ```text
