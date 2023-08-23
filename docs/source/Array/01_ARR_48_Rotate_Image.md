@@ -62,7 +62,7 @@ For any square matrix, the rotation 90 degrees clockwise can be performed in two
 1. Transpose the matrix.
 2. Mirror the matrix vertically.
 
-## Code
+### Code
 ```cpp
 #include <iostream>
 #include <vector>
@@ -107,6 +107,9 @@ Output:
 [[7,4,1,],[8,5,2,],[9,6,3,],]
 [[15,13,2,5,],[14,3,4,1,],[12,6,8,9,],[16,7,10,11,],]
 ```
+### Code explanation
+
+The first nested loop transposes the matrix by swapping the opposite elements through the main diagonal. Then the next nested one does the vertical mirroring by swapping the opposite elements through the middle vertical line.
 
 ### Complexity
 * Runtime: $O(n^2)$, where $n$ is `matrix.length`.
@@ -116,6 +119,6 @@ Output:
 :class: tip
 1. The function [`std::swap`](https://en.cppreference.com/w/cpp/algorithm/swap) can be used to exchange two values.
 
-2. When doing the transpose or mirroring, you could visit over one-half of the matrix.
+2. When doing the transpose or mirroring, you could visit over only one-half of the matrix.
 
 ```

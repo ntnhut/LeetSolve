@@ -26,7 +26,8 @@ Output: [2]
 
 Can you solve the problem without using additional memory and achieve a linear runtime complexity? You can assume that the list you return does not count as extra space.
 
-## Solution 1: Marking the appearances
+## Solution 1: Marking the appearances by `bool`
+
 You can use a vector of `bool` to mark which value appeared in the array.
 
 ### Code
@@ -42,7 +43,7 @@ vector<int> findDisappearedNumbers(vector<int>& nums) {
     }
     vector<int> result;
     for (int i = 1; i <= nums.size(); i++) {
-        if (!exist[i]) {
+        if (!exist.at(i)) {
             result.push_back(i);
         }
     }
@@ -70,6 +71,11 @@ Output:
 [2,]
 ```
 
+### Code explanation
+
+The code declares a vector named `exist` of type `bool` and initializes all of its values to `false`. Its size is declared as `n + 1` where `n = nums.size()` so it can mark the values ranged from `1` to `n`.
+Then it performs the marking of all `nums`'s elements to `true`. The ones that are `false` will belong to the result.
+
 ### Complexity
 
 * Runtime: $O(n)$, where $n$ is `nums.length`.
@@ -77,9 +83,9 @@ Output:
 * Extra space: much less than $O(n)$. [`vector<bool>`](https://en.cppreference.com/w/cpp/container/vector_bool) is optimized for space efficiency; it stores single bits.
     
 
-## Solution 2: Follow up
+## Solution 2: Marking the appearances by sign
 
-You could use the indices of the array `nums` to mark the appearances of its elements because they are identical (`[1, n]` vs. `[0, n-1]`).
+You could use the indices of the array `nums` to mark the appearances of its elements because they are just a shift (`[1, n]` vs. `[0, n-1]`).
 
 One way of marking the appearance of an index `j` is making the element `nums[j]` to be negative. Then the indices `j`'s whose `nums[j]` are unchanged (still positive) are the ones that do not appear in `nums`.
 
@@ -92,12 +98,12 @@ using namespace std;
 vector<int> findDisappearedNumbers(vector<int>& nums) {
     int j;
     for (int i{0}; i < nums.size(); i++) {
-        j = abs(nums[i]);
-        nums[j - 1] = -abs(nums[j - 1]);
+        j = abs(nums.at(i));
+        nums[j - 1] = -abs(nums.at(j - 1));
     }
     vector<int> result;
     for (int i{1}; i <= nums.size(); i++) {
-        if (nums[i - 1] > 0) {
+        if (nums.at(i - 1) > 0) {
             result.push_back(i);
         }
     }
@@ -131,8 +137,10 @@ Output:
 * Runtime: $O(n)$, where $n$ is `nums.length`.
 * Extra space: $O(1)$ (the returned list does not count as extra space).
 
-## Conclusion
-
+```{admonition} Readable code
+:class: tip
 * Solution 2 helps to avoid allocating extra memory but it is not straightforward to understand.
     
 * Though Solution 1 requires some extra space, that memory is not much since `vector<bool>` is optimized for space efficiency. Moreover, it is easier to understand than Solution 2.
+
+```
