@@ -17,8 +17,8 @@ project = 'LeetSolve'
 copyright = '2023, Nhut Nguyen'
 author = 'Nhut Nguyen'
 
-release = '0.9'
-version = '0.9.0'
+release = '1.0'
+version = '1.0.0'
 
 # -- General configuration
 
