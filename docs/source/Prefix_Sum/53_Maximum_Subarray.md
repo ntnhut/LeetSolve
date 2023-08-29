@@ -2,9 +2,7 @@
 
 ## [Problem statement](https://leetcode.com/problems/maximum-subarray/)
 
-Given an integer array `nums`, find the contiguous subarray (containing at least one number) which has the largest sum and return *its sum*.
-
-A **subarray** is a **contiguous** part of an array.
+You're provided with an array of integers called `nums`. Your task is to identify a subarray (a consecutive sequence of numbers) that has the highest sum. Once you find this subarray, return the sum of its elements.
 
 ### Example 1
 ```text
@@ -28,7 +26,7 @@ Output: 23
 ### Constraints
 
 * `1 <= nums.length <= 10^5`.
-* `-10^4<= nums[i] <= 10^4`.
+* `-10^4 <= nums[i] <= 10^4`.
  
 ## Solution
 
@@ -65,6 +63,29 @@ Output:
 23
 ```
 
+### Code explanation
+
+* `maxSum` is initialized to a very small value (in this case, `-10000`) to ensure that any positive sum encountered during the loop will be considered as the new maximum sum.
+
+* `currSum` is initialized to zero. This variable will be used to keep track of the sum of the current subarray being considered.
+
+* The `for` loop iterates through each element `num` in the `nums` array.
+
+* Inside the loop, the code checks whether the current sum `currSum` is negative. If it is negative, it means that including the current element in the subarray would result in a smaller sum. So, the current element `num` is taken as the new starting point for the subarray.
+
+* If `currSum` is not negative, it means that including the current element in the subarray would increase the sum. So, `currSum` is updated by adding the current element num to it.
+
+* After updating `currSum`, the code compares it with the current `maxSum` using the `max` function. This ensures that `maxSum` always holds the maximum subarray sum encountered so far.
+
+* The loop continues to iterate through the array, updating both `currSum` and `maxSum` as needed.
+
+* Once the loop completes, the function returns the final value of `maxSum`, which represents the maximum sum of a subarray within the given `nums` array.
+
 ### Complexity
 * Runtime $O(n)$, where $n$ is `nums.length`.
 * Memory $O(1)$.
+
+
+## Conclusion
+
+In summary, this code demonstrates [Kadane's algorithm](https://en.wikipedia.org/wiki/Maximum_subarray_problem#Kadane's_algorithm) to find the maximum sum of a contiguous subarray in the given array nums. The algorithm efficiently handles negative and positive values, ensuring that it finds the optimal subarray sum.
