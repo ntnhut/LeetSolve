@@ -10,7 +10,7 @@ Coding challenges could be **programming puzzles** or **mathematical problems** 
 
 As you work through the coding challenges in this book, you'll **learn new skills**, **improve your problem-solving abilities**, and **develop your confidence as a programmer**. 
 
-The challenges in this book are picked from **leetcode.com**. I keep the challenges' titles unchanged so you can easily find it there. I chose the ones that are not too difficult and do not require much effort and determination to solve. Each challenge comes with a detailed solution, explaining the logic behind the solution and how to implement it in C++.
+The challenges in this book are picked from **leetcode.com**. I keep the challenges' titles unchanged so you can easily find them there. I chose the ones that are not too difficult and do not require much effort and determination to solve. Each challenge comes with a detailed solution, explaining the logic behind the solution and how to implement it in C++.
 
 ## Leetcode
 
