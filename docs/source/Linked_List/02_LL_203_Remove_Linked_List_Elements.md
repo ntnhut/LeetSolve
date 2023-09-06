@@ -69,43 +69,22 @@ ListNode* removeElements(ListNode* head, int val) {
     }
     return head;
 }
-void print(ListNode* head) {
-    ListNode* node = head;
-    std::cout << "[";
-    while (node) {
-        std::cout << node->val << ",";
-        node = node->next;
-    }
-    std::cout << "]\n";
-}
-int main() {
-    ListNode sixb(6);
-    ListNode five(5, &sixb);
-    ListNode four(4, &five);
-    ListNode three(3, &four);
-    ListNode sixa(6, &three);
-    ListNode two(2, &sixa);
-    ListNode head(1, &two);
-    ListNode* newHead = removeElements(&head, 6);
-    print(newHead);
-
-    newHead = removeElements(nullptr, 1);
-    print(newHead);
-
-    ListNode seven4(7);
-    ListNode seven3(7, &seven4);
-    ListNode seven2(7, &seven3);
-    ListNode seven1(7, &seven2);
-    newHead = removeElements(&seven1, 7);
-    print(newHead);
-}
 ```
-```text
-Output:
-[1,2,3,4,5,]
-[]
-[]
-```
+
+### Code explanation
+
+1. The first loop removes consecutive nodes with the specified `val` at the beginning of the linked list.
+
+2. After the first loop, if `head` becomes `nullptr`, it means that all nodes with the specified `val` have been removed from the beginning of the linked list. In this case, the function returns `nullptr` to indicate that the linked list is now empty.
+
+3. If `head` is not `nullptr` (indicating that there are still nodes in the linked list after removal of consecutive nodes with the specified `val` at the beginning), the code initializes a pointer `pre` to `head`. This pointer will be used to traverse the remaining nodes in the linked list.
+
+4. The second loop checks if the `val` of the next node (`pre->next->val`) matches the specified `val`. If it does, the code removes the node with the specified `val` by updating `pre->next` to point to the node after the next node (`pre->next->next`). This effectively skips the node with the specified `val`. If the `val` of the next node does not match, the `pre` pointer is simply moved to the next node in the linked list.
+
+5. Finally, the function returns `head`, which now points to the modified linked list with all nodes containing the specified `val` removed.
+
+In summary, this code efficiently removes nodes with a specified value `val` from a linked list by using two pointers (`head` and `pre`) to traverse the list and update the `next` pointers to bypass nodes with the specified value. 
+
 ### Complexity
 * Runtime: $O(N)$, where $N$ is the number of nodes.
 * Memory: $O(1)$.
@@ -115,14 +94,6 @@ Output:
 
 ### Code
 ```cpp
-#include <iostream>
-struct ListNode {
-    int val;
-    ListNode *next;
-    ListNode() : val(0), next(nullptr) {}
-    ListNode(int x) : val(x), next(nullptr) {}
-    ListNode(int x, ListNode *next) : val(x), next(next) {}
-};
 ListNode* removeElements(ListNode* head, int val) {
     ListNode preHead(2023, head);
     ListNode* pre = &preHead;
@@ -135,43 +106,14 @@ ListNode* removeElements(ListNode* head, int val) {
     }
     return preHead.next;
 }
-void print(ListNode* head) {
-    ListNode* node = head;
-    std::cout << "[";
-    while (node) {
-        std::cout << node->val << ",";
-        node = node->next;
-    }
-    std::cout << "]\n";
-}
-int main() {
-    ListNode sixb(6);
-    ListNode five(5, &sixb);
-    ListNode four(4, &five);
-    ListNode three(3, &four);
-    ListNode sixa(6, &three);
-    ListNode two(2, &sixa);
-    ListNode head(1, &two);
-    ListNode* newHead = removeElements(&head, 6);
-    print(newHead);
-
-    newHead = removeElements(nullptr, 1);
-    print(newHead);
-
-    ListNode seven4(7);
-    ListNode seven3(7, &seven4);
-    ListNode seven2(7, &seven3);
-    ListNode seven1(7, &seven2);
-    newHead = removeElements(&seven1, 7);
-    print(newHead);
-}
 ```
-```text
-Output:
-[1,2,3,4,5,]
-[]
-[]
-```
+### Code explanation
+
+The code creates a `preHead` node with a value of `2023` (an arbitrary value) and sets its `next` pointer to point to the original `head` of the linked list. 
+
+The purpose of this `preHead` node is to serve as the dummy or sentinel node at the beginning of the linked list. Having a `preHead` node simplifies the code because it eliminates the need to handle the special case of removing nodes from the beginning of the list separately.
+
+The remaining code is the same.
 
 ### Complexity
 * Runtime: $O(N)$, where $N$ is the number of nodes.
@@ -196,6 +138,7 @@ ListNode* removeElements(ListNode* head, int val) {
     return preHead.next;
 }
 ```
+
 ## Key takeaway
 * In some linked list problems where `head` needs to be treated as a special case, you can create a previous dummy node for it to adapt the general algorithm.
 * Be careful with memory leak when removing nodes of the linked list containing pointers. 

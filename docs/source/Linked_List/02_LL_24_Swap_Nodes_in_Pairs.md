@@ -41,7 +41,6 @@ Denote `(cur, next)` the pair of nodes you want to swap and `prev` be the previo
 
 ### Code
 ```cpp
-#include <iostream>
 struct ListNode {
     int val;
     ListNode *next;
@@ -71,32 +70,30 @@ ListNode* swapPairs(ListNode* head) {
     }
     return head;
 }
-void print(ListNode* head) {
-    ListNode* node = head;
-    std::cout << "[";
-    while (node != nullptr) {
-        std::cout << node->val << ",";
-        node = node->next;
-    }
-    std::cout << "]" << std::endl;
-}
-int main() {
-    ListNode four(4);
-    ListNode three(3, &four);
-    ListNode two(2, &three);
-    ListNode one(1, &two);    
-    print(swapPairs(&one));
-    ListNode five(5);
-    print(swapPairs(nullptr));
-    print(swapPairs(&five));
-}
 ```
-```text
-Output:
-[2,1,4,3,]
-[]
-[5,]
-```
+
+### Code explanation
+
+1. The function begins with a base case to handle situations where the linked list is either empty or contains only one node:
+   - If `head` is `nullptr` (indicating an empty list) or `head->next` is `nullptr` (indicating only one node in the list), there is nothing to swap, so the function immediately returns `head` without any modifications.
+
+2. Three pointers are initialized to manage the swapping process:
+   - `preNode` keeps track of the previous node to connect the swapped nodes correctly.
+   - `curNode` initially points to the first node to be swapped.
+   - `nextNode` initially points to the second node to be swapped.
+
+3. The code updates the `head` pointer to point to the second node in the original list. This step is crucial because after the swap, the second node will become the new head of the list.
+
+4. The main swapping process is performed using a `while` loop. Inside the loop, the code performs the following steps for each pair of nodes:
+    - `curNode->next = nextNode->next;`: This updates the `next` pointer of `curNode` to point to the node after `nextNode`. This effectively removes `nextNode` from the list and connects `curNode` to the following node.
+    - `nextNode->next = curNode;`: This updates the `next` pointer of `nextNode` to point to `curNode`. This step swaps the positions of `curNode` and `nextNode` in the list.
+    - If `preNode` is not `nullptr` (indicating that we are not at the beginning of the list), it updates the `next` pointer of `preNode` to point to `nextNode`. This step connects the previous pair (if any) to the newly swapped pair.
+    - The `preNode` pointer is updated to `curNode` because it will be used in the next iteration to connect the next pair.
+
+5. After the loop completes, the linked list has been modified by swapping adjacent nodes.
+
+6. Finally, the function returns `head`, which now points to the head of the linked list with adjacent nodes swapped.
+
 ### Complexity
 * Runtime: $O(N)$, where $N$ is the number of nodes.
 * Extra space: $O(1)$.
