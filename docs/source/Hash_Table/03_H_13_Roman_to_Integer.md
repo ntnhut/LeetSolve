@@ -57,11 +57,8 @@ To treat the subtraction cases easier you can iterate the string `s` backward.
 
 ### Code
 ```cpp
-#include <iostream>
-#include <unordered_map>
-using namespace std;
 int romanToInt(string s) {
-    unordered_map<char, int> value = {
+    std::unordered_map<char, int> value = {
         {'I', 1},
         {'V', 5},
         {'X', 10},
@@ -76,18 +73,25 @@ int romanToInt(string s) {
     }
     return result;
 }
-int main() {
-    cout << romanToInt("III") << endl;
-    cout << romanToInt("LVIII") << endl;
-    cout << romanToInt("MCMXCIV") << endl;
-}
 ```
-```text
-Output:
-3
-58
-1994
-```
+
+### Code explanation
+
+1. This code initializes an unordered map called `value` that maps Roman numeral characters to their integer values. Each key-value pair represents a Roman numeral character and its corresponding integer value.
+
+2. It initializes the `result` variable with the integer value of the last character in the Roman numeral string `s`. This serves as the starting point for the total value.
+
+3. The main processing is done in a `for` loop that iterates through the Roman numeral string from the second-to-last character (index `s.length() - 2`) and goes backwards to the beginning of the string (index `0`).
+
+4. Inside the loop, the code compares the value of the current Roman numeral character (`s[i]`) with the value of the next Roman numeral character (`s[i+1]`):
+   - If the value of the current character is less than the value of the next character, it means that the current character represents a subtractive combination (e.g., IV for 4 or IX for 9). In this case, subtract the value of the current character from the `result`.
+   - If the value of the current character is greater than or equal to the value of the next character, it means that the current character represents an additive combination (e.g., III for 3 or XX for 20). In this case, add the value of the current character to the `result`.
+
+5. The result is updated in each iteration of the loop based on the comparison, and the loop continues until it processes all characters in the string.
+
+6. Finally, the function returns the `result`, which contains the total integer value corresponding to the Roman numeral string.
+
+In summary, this code efficiently converts a Roman numeral string into an integer by iterating through the string from right to left and applying the rules of Roman numerals, where subtractive combinations are subtracted and additive combinations are added to calculate the total value. The unordered map is used to look up the values of Roman numerals. 
 
 ### Complexity
 * Runtime: $O(N)$ where $N$ is `s.length`.

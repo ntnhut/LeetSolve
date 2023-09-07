@@ -46,7 +46,6 @@ Removing a node `A` in a linked list means instead of connecting the previous no
 
 ### Code
 ```cpp
-#include <iostream>
 struct ListNode {
     int val;
     ListNode *next;
