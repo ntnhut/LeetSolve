@@ -86,10 +86,10 @@ Output: [[1,2,3],[4,5,6],[7,8,9]]
 
 ### Constraints
 
-* `1` $\leq$ `grid.length` $\leq$ `50`.
-* `1` $\leq$ `grid[i].length` $\leq$ `50`.
-* `-1000` $\leq$ `grid[i][j]` $\leq$ `1000`.
-* `0` $\leq$ `k` $\leq$ `100`.
+* `1 <= grid.length <= 50`.
+* `1 <= grid[i].length <= 50`.
+* `-1000 <= grid[i][j] <= 1000`.
+* `0 <= k <= 100`.
 
 ## Solution: Convert a 2D array into a 1D one
 

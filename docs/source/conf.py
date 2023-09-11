@@ -32,7 +32,7 @@ extensions = [
     'sphinx.ext.mathjax',
 ]
 
-myst_enable_extensions = ["dollarmath", "amsmath"]
+myst_enable_extensions = ["dollarmath", "amsmath", "smartquotes"]
 
 intersphinx_mapping = {
     'python': ('https://docs.python.org/3/', None),
