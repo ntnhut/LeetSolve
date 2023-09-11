@@ -18,7 +18,7 @@ Output: [2]
 
 ### Constraints
 * `n == nums.length`.
-* `1 <= n <= 10^5`.
+* `1 <= n <= 10`{sup}`5`.
 * `1 <= nums[i] <= n`.
  
 
@@ -55,9 +55,9 @@ Then it performs the marking of all `nums`'s elements to `true`. The ones that a
 
 ### Complexity
 
-* Runtime: $O(n)$, where $n$ is `nums.length`.
+* Runtime: `O(n)`, where `n` is `nums.length`.
     
-* Extra space: much less than $O(n)$. [`vector<bool>`](https://en.cppreference.com/w/cpp/container/vector_bool) is optimized for space efficiency; it stores single bits.
+* Extra space: much less than `O(n)`. [`vector<bool>`](https://en.cppreference.com/w/cpp/container/vector_bool) is optimized for space efficiency; it stores single bits.
     
 
 ## Solution 2: Marking the appearances by sign
@@ -87,8 +87,8 @@ vector<int> findDisappearedNumbers(vector<int>& nums) {
 
 ### Complexity
 
-* Runtime: $O(n)$, where $n$ is `nums.length`.
-* Extra space: $O(1)$ (the returned list does not count as extra space).
+* Runtime: `O(n)`, where `n` is `nums.length`.
+* Extra space: `O(1)` (the returned list does not count as extra space).
 
 ```{admonition} Readable code
 :class: tip
