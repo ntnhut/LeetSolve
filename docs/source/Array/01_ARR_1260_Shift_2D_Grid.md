@@ -6,9 +6,9 @@ You are given a 2D `grid` with dimension `m x n` and an integer `k`. Your task i
 
 In each shift operation:
 
-* The element at `grid[i][j]` moves to `grid[i][j + 1]`.
-* The element at `grid[i][n - 1]` moves to `grid[i + 1][0]`.
-* The element at `grid[m - 1][n - 1]` moves to `grid[0][0]`.
+* The element at `grid[i][j]` moves to `grid[i][j+1]`.
+* The element at `grid[i][n-1]` moves to `grid[i+1][0]`.
+* The element at `grid[m-1][n-1]` moves to `grid[0][0]`.
 
 After performing `k` shift operations, return the updated 2D grid.
 
@@ -86,10 +86,10 @@ Output: [[1,2,3],[4,5,6],[7,8,9]]
 
 ### Constraints
 
-* `1 <= grid.length <= 50`.
-* `1 <= grid[i].length <= 50`.
-* `-1000 <= grid[i][j] <= 1000`.
-* `0 <= k <= 100`.
+* $1 \leq \texttt{grid.length} \leq 50$.
+* $1 \leq \texttt{grid[i].length} \leq 50$.
+* $-1000 \leq \texttt{grid[i][j]} \leq 1000$.
+* $0 \leq \texttt{k} \leq 100$.
 
 ## Solution: Convert a 2D array into a 1D one
 
@@ -132,7 +132,7 @@ vector<vector<int>> shiftGrid(vector<vector<int>>& grid, int k) {
 
 1. The code declares a 1D vector `v` which will be used to flatten the 2D grid into a 1D vector so that shifting the elements becomes easier.
 
-2. The first loop iterates over each row `r` in the input 2D grid `grid`. It uses the `insert` function to add all the elements in the row `r` to the end of the 1D vector `v`. This effectively flattens the 2D grid into a 1D vector.
+2. The first loop iterates over each row `r` in the input 2D grid `grid`. It uses the `std::vector`'s `insert` function to add all the elements in the row `r` to the end of the 1D vector `v`. This effectively flattens the 2D grid into a 1D vector.
 
 3. Two constant variables `m` and `n` are used to store the number of rows and columns in the input grid, respectively.
 
@@ -149,15 +149,15 @@ vector<vector<int>> shiftGrid(vector<vector<int>>& grid, int k) {
 In summary, this code flattens a 2D grid into a 1D vector, shifts the elements of the vector to the right by `k` positions while wrapping around, and then reshapes the 1D vector back into the original 2D grid. The result is a grid that has been shifted to the right by `k` positions.
 
 ### Complexity
-* Runtime: $O(mn)$ (the nested `for` loops), where $m$ is `grid.length` and $n$ is `grid[i].length`.
-* Extra space: $O(mn)$ (the vector `v`).
+* Runtime: $O(\texttt{mn})$ (the nested `for` loops), where `m` is `grid.length` and `n` is `grid[i].length`.
+* Extra space: $O(\texttt{mn})$ (the vector `v`).
 
 
-```{admonition} C++ notes
+```{admonition} Key takeaway
 :class: tip
 
-1. To convert a 2D matrix into a 1D vector, you can use the vector's function [`insert()`](https://en.cppreference.com/w/cpp/container/vector/insert).
+1. To convert a 2D matrix into a 1D vector, you can use the `std::vector`'s function [`insert()`](https://en.cppreference.com/w/cpp/container/vector/insert).
 
-2. The modulo operator `%` is usually used to index an array to ensure the index is inbound.
+2. The modulo operator `%` is usually used to ensure the index is inbound.
 
 ```
