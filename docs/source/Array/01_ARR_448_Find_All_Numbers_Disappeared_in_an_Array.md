@@ -18,7 +18,7 @@ Output: [2]
 
 ### Constraints
 * `n == nums.length`.
-* `1 <= n <= 10`{sup}`5`.
+* `1 <= n <= 10{sup}5`.
 * `1 <= nums[i] <= n`.
  
 
