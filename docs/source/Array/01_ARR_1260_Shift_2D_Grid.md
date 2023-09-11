@@ -86,10 +86,10 @@ Output: [[1,2,3],[4,5,6],[7,8,9]]
 
 ### Constraints
 
-* $1 \leq \texttt{grid.length} \leq 50$.
-* $1 \leq \texttt{grid[i].length} \leq 50$.
-* $-1000 \leq \texttt{grid[i][j]} \leq 1000$.
-* $0 \leq \texttt{k} \leq 100$.
+* $1 \leq \textsf{grid.length} \leq 50$.
+* $1 \leq \textsf{grid[i].length} \leq 50$.
+* $-1000 \leq \textsf{grid[i][j]} \leq 1000$.
+* $0 \leq \textsf{k} \leq 100$.
 
 ## Solution: Convert a 2D array into a 1D one
 
@@ -149,8 +149,8 @@ vector<vector<int>> shiftGrid(vector<vector<int>>& grid, int k) {
 In summary, this code flattens a 2D grid into a 1D vector, shifts the elements of the vector to the right by `k` positions while wrapping around, and then reshapes the 1D vector back into the original 2D grid. The result is a grid that has been shifted to the right by `k` positions.
 
 ### Complexity
-* Runtime: $O(\texttt{mn})$ (the nested `for` loops), where `m` is `grid.length` and `n` is `grid[i].length`.
-* Extra space: $O(\texttt{mn})$ (the vector `v`).
+* Runtime: $O(\textsf{mn})$ (the nested `for` loops), where `m` is `grid.length` and `n` is `grid[i].length`.
+* Extra space: $O(\textsf{mn})$ (the vector `v`).
 
 
 ```{admonition} Key takeaway
