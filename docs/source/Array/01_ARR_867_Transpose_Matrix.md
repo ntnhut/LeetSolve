@@ -73,8 +73,8 @@ vector<vector<int>> transpose(vector<vector<int>>& matrix) {
 In summary, this code computes the transpose of a given 2D matrix by creating a new matrix with swapped dimensions (rows become columns and vice versa) and copying values from the original matrix to the transposed matrix in the appropriate positions. The resulting transposed matrix is then returned.
 
 ### Complexity
-* Runtime: $O(mn)$, where $m$ is `matrix.length` and $n$ is `matrix[i].length`.
-* Extra space: $O(1)$.
+* Runtime: `O(m*n)`, where `m = matrix.length` and `n = matrix[i].length`.
+* Extra space: `O(1)`.
 
 
 ```{admonition} Implementation note

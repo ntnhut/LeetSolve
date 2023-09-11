@@ -85,8 +85,8 @@ void rotate(vector<vector<int>>& matrix) {
 The first nested loop transposes the matrix by swapping the opposite elements through the main diagonal. Then the next nested one does the vertical mirroring by swapping the opposite elements through the middle vertical line.
 
 ### Complexity
-* Runtime: $O(n^2)$, where $n$ is `matrix.length`.
-* Extra space: $O(1)$.
+* Runtime: `O(n^2)`, where `n = matrix.length`.
+* Extra space: `O(1)`.
 
 ```{admonition} Implementation tips
 :class: tip

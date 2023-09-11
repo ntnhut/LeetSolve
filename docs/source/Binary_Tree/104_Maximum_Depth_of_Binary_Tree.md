@@ -33,7 +33,6 @@ maxDepth(root) = max(maxDepth(root->left), maxDepth(root->right))
 ### Code
 
 ```cpp
-#include <iostream>
 struct TreeNode {
     int val;
     TreeNode *left;
@@ -49,26 +48,26 @@ int maxDepth(TreeNode* root) {
     }
     return 1 + std::max(maxDepth(root->left), maxDepth(root->right));
 }
+```
 
-int main() {
-    TreeNode fifteen(15);
-    TreeNode seven(7);
-    TreeNode twenty(20, &fifteen, &seven);
-    TreeNode nine(9);
-    TreeNode three(3, &nine, &twenty);
-    std::cout << maxDepth(&three) << std::endl;
-    TreeNode two(2);
-    TreeNode one(1, nullptr, &two);
-    std::cout << maxDepth(&one) << std::endl;
-}
-```
-```text
-Output:
-3
-2
-```
+### Code explanation
+
+1. At the beginning of the function, there is a base case check. This condition checks if the current node, represented by `root`, is a null pointer. If it is, it means that the tree is empty (or a subtree is empty), and the depth at this point is zero. So, the function returns `0` to indicate that the depth of the current subtree is zero.
+
+2. If the current node is not null (i.e., it's a valid node in the tree), the code proceeds to calculate the maximum depth of the left and right subtrees.
+
+3. `maxDepth(root->left)` and `maxDepth(root->right)` are recursive function calls that calculate the maximum depth of the left and right subtrees, respectively.
+
+4. The `std::max` function is used to find the maximum depth among the left and right subtrees. Adding `1` to this maximum depth represents the depth of the current node in the tree.
+
+5. This recursive calculation repeats for each node in the tree until it reaches the base case of a null node, and the recursion unwinds, returning depth values for each subtree.
+
+6. Ultimately, the function returns the maximum depth of the entire binary tree rooted at the given `root` node.
+
+In summary, this code uses a recursive algorithm to calculate the maximum depth of a binary tree. It starts from the root node and recursively calculates the maximum depth of the left and right subtrees, returning the maximum depth among them. This process continues until it reaches the leaf nodes of the tree. 
+
 ### Complexity
-* Runtime: $O(N)$, where $N$ is the number of nodes.
-* Extra space: $O(N)$.
+* Runtime: `O(n)`, where `n` is the number of nodes.
+* Extra space: `O(h)`, where `h` is the height of the tree.
 
 

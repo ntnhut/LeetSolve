@@ -18,7 +18,7 @@ Output: [2]
 
 ### Constraints
 * `n == nums.length`.
-* `1 <= n <= 10{sup}5`.
+* `1 <= n <= 10^5`.
 * `1 <= nums[i] <= n`.
  
 
@@ -55,7 +55,7 @@ Then it performs the marking of all `nums`'s elements to `true`. The ones that a
 
 ### Complexity
 
-* Runtime: `O(n)`, where `n` is `nums.length`.
+* Runtime: `O(n)`, where `n = nums.length`.
     
 * Extra space: much less than `O(n)`. [`vector<bool>`](https://en.cppreference.com/w/cpp/container/vector_bool) is optimized for space efficiency; it stores single bits.
     
@@ -85,9 +85,25 @@ vector<int> findDisappearedNumbers(vector<int>& nums) {
 }
 ```
 
+### Code explanation
+
+1. The code declares an integer `j` which will be used to store the absolute value of elements in the `nums` array.
+
+2. Inside the first loop, the code modifies the element at index `j - 1` of the `nums` array by negating its absolute value. This step marks the presence of the number `j`. If the number at index `j - 1` is positive, it means that `j` is present in the array. If it's negative, it means `j` is missing.
+
+3. After the first loop completes, the `nums` array contains negative values in positions where corresponding numbers are present and positive values where numbers are missing.
+
+4. A new vector called `result` is created to store the disappeared numbers: `vector<int> result;`.
+
+5. Inside the second loop, the code checks if the number at index `i - 1` in the `nums` array is positive. If it is, it means that the number `i` is missing because the corresponding position wasn't marked during the first loop. In this case, the code adds `i` to the `result` vector using `result.push_back(i);`.
+
+6. Finally, the function returns the `result` vector, which contains all the disappeared numbers in the `nums` array.
+
+In summary, this code efficiently finds the disappeared numbers in an array by using the sign of elements to mark their presence or absence. It leverages the fact that the array contains numbers in the range of `1` to `n`, and it avoids using additional data structures.
+
 ### Complexity
 
-* Runtime: `O(n)`, where `n` is `nums.length`.
+* Runtime: `O(n)`, where `n = nums.length`.
 * Extra space: `O(1)` (the returned list does not count as extra space).
 
 ```{admonition} Readable code

@@ -76,5 +76,5 @@ bool validMountainArray(vector<int>& arr) {
 In summary, this code iteratively checks for the two slopes of a mountain array, ensuring that the elements to the left are in strictly increasing order and the elements to the right are in strictly decreasing order. If both conditions are met, the function returns `true`, indicating that the input array is a valid mountain array; otherwise, it returns `false`.
 
 ### Complexity
-* Runtime: $O(N)$, where $N$ is `arr.length`.
-* Extra space: $O(1)$.
+* Runtime: `O(N)`, where `N = arr.length`.
+* Extra space: `O(1)`.

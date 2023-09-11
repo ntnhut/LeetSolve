@@ -76,8 +76,8 @@ vector<int> dailyTemperatures(vector<int>& temperatures) {
 In summary, this code uses two nested loops to compare each day's temperature with the temperatures of the subsequent days to find the next warmer day. It calculates and stores the waiting period in the `answer` vector and returns it as the result. 
 
 ### Complexity
-* Runtime: $O(N^2)$, where $N$ is `temperatures.length`.
-* Extra space: $O(1)$.
+* Runtime: `O(N^2)`, where `N = temperatures.length`.
+* Extra space: `O(1)`.
 
 ## Solution 2: Starting from the last day
 
@@ -151,8 +151,8 @@ In these cases, the resulting `answer[i]` will be either `0` or a big value `j -
 
 The value `0` would help the `while` loop terminates very soon. On the other hand, the big value `j - i` would help the `while` loop skips the days `j` very quickly.
 
-* Runtime: $O(N)$, where $N$ is `temperatures.length`. 
-* Extra space: $O(1)$.
+* Runtime: `O(N)`, where `N = temperatures.length`. 
+* Extra space: `O(1)`.
 
 
 ```{admonition} Tips

@@ -149,7 +149,7 @@ vector<vector<int>> shiftGrid(vector<vector<int>>& grid, int k) {
 In summary, this code flattens a 2D grid into a 1D vector, shifts the elements of the vector to the right by `k` positions while wrapping around, and then reshapes the 1D vector back into the original 2D grid. The result is a grid that has been shifted to the right by `k` positions.
 
 ### Complexity
-* Runtime: `O(m*n)` (the nested `for` loops), where `m` is `grid.length` and `n` is `grid[i].length`.
+* Runtime: `O(m*n)` (the nested `for` loops), where `m = grid.length` and `n = grid[i].length`.
 * Extra space: `O(m*n)` (the vector `v`).
 
 

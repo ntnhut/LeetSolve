@@ -76,8 +76,8 @@ bool canPlaceFlowers(vector<int>& flowerbed, int n) {
 In summary, this code efficiently iterates through the flowerbed, planting flowers wherever possible while adhering to the constraints. It returns `true` if it's possible to plant all the required flowers and `false` otherwise.
 
 ### Complexity
-* Runtime: $O(N)$, where $N$ is `flowerbed.length`.
-* Extra space: $O(1)$.
+* Runtime: `O(N)`, where `N = flowerbed.length`.
+* Extra space: `O(1)`.
 
 ```{admonition} Implementation tips
 :class: tip
