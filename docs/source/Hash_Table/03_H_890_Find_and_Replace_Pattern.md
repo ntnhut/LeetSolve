@@ -98,8 +98,8 @@ vector<string> findAndReplacePattern(vector<string>& words, string pattern) {
 In summary, this code efficiently finds and returns words from a vector of strings that match a given pattern in terms of character bijection. It uses two unordered maps to establish and maintain the bijection while iterating through the characters of the words and the pattern. 
 
 ### Complexity
-* Runtime: $O(NL)$, where $N$ is `words.length` and $L$ is `pattern.length`.
-* Extra space: $O(52)$. The maps `w_to_p` and `p_to_w` just map between 26 lowercase English letters.
+* Runtime: `O(NL)`, where `N = words.length` and `L = pattern.length`.
+* Extra space: `O(1)`. The maps `w_to_p` and `p_to_w` just map between 26 lowercase English letters.
 
 
 

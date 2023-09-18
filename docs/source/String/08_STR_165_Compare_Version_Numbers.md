@@ -63,12 +63,6 @@ If all revisions of the shorter version are equal to the corresponding revisions
 ### Code
 
 ```cpp
-#include <iostream>
-#include <vector>
-#include <string>
-#include <numeric>
-using namespace std;
-
 vector<int> toVector(const string& version) {
     vector<int> revisions;
     string revision;
@@ -106,23 +100,34 @@ int compareVersion(string version1, string version2) {
     }
     return 0;
 }
-int main() {
-    cout << compareVersion("1.01", "1.001") << endl;
-    cout << compareVersion("1.0", "1.0.0") << endl;
-    cout << compareVersion("0.1", "1.1") << endl;
-}
 ```
 
-```text
-Output:
-0
-0
--1
-```
+### Code explanation
+
+1. The function **`toVector`** is responsible for converting a version string into a vector of integers. It takes a version string as input and returns a vector of integers, where each integer corresponds to a segment of the version string separated by periods.
+
+    - It initializes an empty vector `revisions` to store the integer segments.
+    - It iterates through the characters of the input `version` string.
+    - When it encounters a character that is not a period ('.'), it appends that character to the `revision` string.
+    - When it encounters a period, it converts the `revision` string to an integer using `stoi` and appends it to the `revisions` vector. Then, it resets `revision` to an empty string.
+    - Finally, it appends any remaining `revision` (if the string ends with digits and not a period) to the `revisions` vector.
+
+2. The function **`compareVersion`** is the main part of the code that compares two version strings.
+
+    - It calls the `toVector` function to convert both `version1` and `version2` into vectors of integers.
+    - It initializes an index `i` to traverse both vectors simultaneously.
+    - It enters a `while` loop to compare the corresponding integers at the same position in both vectors.
+        - If `revisions1[i]` is less than `revisions2[i]`, it returns -1, indicating that `version1` is less than `version2`.
+        - If `revisions1[i]` is greater than `revisions2[i]`, it returns 1, indicating that `version1` is greater than `version2`.
+        - If they are equal, it increments `i` to move on to the next segment.
+    - After comparing the common segments, it calculates the sum of the remaining segments in both vectors using `accumulate`.
+    - It then compares the remaining sums, returning -1, 1, or 0, based on whether `version1` is less than, greater than, or equal to `version2` in terms of the remaining segments.
+
+In summary, this code first converts the version strings into vectors of integers, segment by segment. Then, it compares the corresponding segments and handles the remaining segments separately. The result is -1 if `version1` is less than `version2`, 1 if `version1` is greater than `version2`, and 0 if they are equal. This code effectively handles version comparison in a format like "1.2.3" and works well for most common versioning schemes.
 
 ### Complexity
-* Runtime: $O(N)$ where $N$ is `max(version1.length, version2.length)`.
-* Extra space: $O(N)$.
+* Runtime: `O(N)` where `N = max(version1.length, version2.length)`.
+* Extra space: `O(N)`.
 
 ## C++ Notes
 * [`std::stoi(string)`](https://en.cppreference.com/w/cpp/string/basic_string/stol) is used to convert a `string` to an `int`. It ignores the leading zeros for you.

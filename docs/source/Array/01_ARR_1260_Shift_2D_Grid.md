@@ -2,7 +2,7 @@
 
 ## [Problem statement](https://leetcode.com/problems/shift-2d-grid/)
 
-You are given a 2D `grid` with dimension `m x n` and an integer `k`. Your task is to perform `k` shift operations on the grid.
+You are given a 2D `grid` with dimension `mxn` and an integer `k`. Your task is to perform `k` shift operations on the grid.
 
 In each shift operation:
 
@@ -96,14 +96,14 @@ Output: [[1,2,3],[4,5,6],[7,8,9]]
 You can convert the 2D `grid` into a 1D vector `v` to perform the shifting easier. One way of doing this is concatenating the rows of the matrix.
 
 * If you shift the grid `k = i*N` times where `N = v.size()` and `i` is any non-negative integer, you go back to the original grid; i.e. you did not shift it.
-* If you shift the grid `k` times with `0 < k < N`, the first element of the result starts from `v[N - k]`.
+* If you shift the grid `k` times with `0 < k < N`, the first element of the result starts from `v[N-k]`.
 * In general, the first element of the result starts from `v[N - k%N]`.
 
 ### Example 1
 For `grid = [[1,2,3],[4,5,6],[7,8,9]]`:
 
 * It can be converted into a 1D vector `v = [1,2,3,4,5,6,7,8,9]` of size `m*n = 9`.
-* With `k = 1` the shifted `grid` now starts from `v[9 - 1] = 9`.
+* With `k = 1` the shifted `grid` now starts from `v[9-1] = 9`.
 * The final result is `grid = [[9,1,2][3,4,5][6,7,8]]`.
 
 ### Code

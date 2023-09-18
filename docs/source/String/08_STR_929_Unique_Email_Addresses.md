@@ -51,11 +51,6 @@ Do exactly the steps the problem describes:
 
 ### Code
 ```cpp
-#include<string>
-#include<iostream>
-#include<vector>
-#include <unordered_set>
-using namespace std;
 int numUniqueEmails(vector<string>& emails) {
     unordered_set<string> s;
     for (auto e: emails) {
@@ -77,39 +72,35 @@ int numUniqueEmails(vector<string>& emails) {
     }
     return s.size();
 }
-int main() {
-    vector<string> emails{"test.email+alex@leetcode.com",
-                        "test.e.mail+bob.cathy@leetcode.com",
-                        "testemail+david@lee.tcode.com"};
-    cout << numUniqueEmails(emails) << endl;
-    emails = {"a@leetcode.com","b@leetcode.com","c@leetcode.com"};
-    cout << numUniqueEmails(emails) << endl;
-    emails = {"test.email+alex@leetcode.com","test.email.leet+alex@code.com"};
-    cout << numUniqueEmails(emails) << endl;
-}
-```
-```text
-Output:
-2
-3
-2
 ```
 
+### Code explanation
+
+1. The code uses an `unordered_set<string> s` to store unique email addresses. Sets automatically ensure that only unique elements are stored.
+
+2. The code iterates through each email address in the `emails` vector. Inside the loop, it finds the position of the at-symbol (`'@'`) in the current email address and stores it in the variable `apos`. This position is used to separate the local name from the domain.
+
+3. The code extracts the local name of the email address using `e.substr(0, apos)`. The local name is the part of the email address before the `'@'` symbol.
+
+4. It further processes the local name to remove characters after the plus sign (`'+'`). It uses `local.find('+')` to find the position of the plus sign within the local name and then truncates the local name to exclude characters after the plus sign using `local = local.substr(0, local.find('+'))`.
+
+5. The code removes periods (`'.'`) from the local name. It initializes an iterator `it` to find the position of periods within the local name and then enters a loop that continues until no more periods are found. Inside the loop, it uses `local.erase(it, 1)` to remove each period from the local name.
+
+6. After normalizing the local name, the code combines it with the domain name using `s.insert(local + e.substr(apos))` and inserts the result into the set `s`. This effectively combines the normalized local name with the domain name and adds it to the set of unique email addresses.
+
+7. After processing all the email addresses, the code returns the size of the set `s`. The size of the set represents the number of unique email addresses after applying the normalization rules.
+
+In summary, this code parses a list of email addresses, normalizes each email address by removing periods and ignoring characters after the plus sign in the local name, and then counts the number of unique email addresses. The use of an unordered set ensures that only unique email addresses are counted.
+
 ### Complexity
-* Runtime: $O(NM^2)$, where $N$ is `emails.length` and $M$ is `max(emails[i].length)`. 
-    Explanation: you loop over $N$ emails. Then you might loop over the length of each email, $O(M)$, to remove the character `'.'`. The removal might cost $O(M)$.
-* Extra space: $O(NM)$ (the set of emails).
+* Runtime: `O(NM^2)`, where `N = emails.length` and `M = max(emails[i].length)`. Explanation: you loop over `N` emails. Then you might loop over the length of each email, `O(M)`, to remove the character `'.'`. The removal might cost `O(M)`.
+* Extra space: `O(NM)` (the set of emails).
 
 ## Solution 2: Building the clean email addresses from scratch
 The runtime of removing characters in `std::string` is not constant. To avoid that complexity you can build up the clean email addresses from scratch.
 
 ### Code
 ```cpp
-#include<string>
-#include<iostream>
-#include<vector>
-#include <unordered_set>
-using namespace std;
 int numUniqueEmails(vector<string>& emails) {
     unordered_set<string> s;
     for (auto e: emails) {
@@ -130,28 +121,33 @@ int numUniqueEmails(vector<string>& emails) {
     }        
     return s.size();
 }
-int main() {
-    vector<string> emails{"test.email+alex@leetcode.com",
-                        "test.e.mail+bob.cathy@leetcode.com",
-                        "testemail+david@lee.tcode.com"};
-    cout << numUniqueEmails(emails) << endl;
-    emails = {"a@leetcode.com","b@leetcode.com","c@leetcode.com"};
-    cout << numUniqueEmails(emails) << endl;
-    emails = {"test.email+alex@leetcode.com","test.email.leet+alex@code.com"};
-    cout << numUniqueEmails(emails) << endl;
-}
 ```
 
-```text
-Output:
-2
-3
-2
-```
+### Code explanation
+
+1. The code uses an `unordered_set<string> s` to store unique email addresses. Sets automatically ensure that only unique elements are stored.
+
+2. The code iterates through each email address in the `emails` vector. Inside the loop, it initializes an empty string `address` to store the normalized email address.
+
+   - It also initializes an integer `i` to 0, which represents the current character position in the email address string `e`.
+
+   - The code then enters a loop that continues until it encounters the at-symbol (`'@'`) or a plus sign (`'+'`). This loop serves to process the local name and exclude periods (`'.'`) from it.
+
+   - Inside the loop, it first checks if the current character is a period (`'.'`). If it is, the code continues to the next character, effectively ignoring the period.
+
+   - If the current character is not a period, it adds the character to the `address` string and increments the character position `i`.
+
+   - After the loop, the `address` string contains the normalized local name.
+
+3. After normalizing the local name, the code combines it with the domain name using `address += e.substr(e.find('@', i))`. This effectively combines the normalized local name with the domain name and adds it to the set `s`.
+
+4. After processing all the email addresses, the code returns the size of the set `s`. The size of the set represents the number of unique email addresses after applying the normalization rules.
+
+In summary, this code parses a list of email addresses, normalizes each email address by removing periods and ignoring characters after the plus sign in the local name, and then counts the number of unique email addresses. The use of an unordered set ensures that only unique email addresses are counted. This solution achieves the same result as the previous solution but uses a different approach to process the email addresses.
 
 ### Complexity
-* Runtime: $O(NM)$, where $N$ is `emails.length` and $M$ is `max(emails[i].length)`.
-* Extra space: $O(NM)$.
+* Runtime: `O(NM)`, where `N = emails.length` and `M = max(emails[i].length)`.
+* Extra space: `O(NM)`.
 
 ## C++ Notes
 

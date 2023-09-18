@@ -6,7 +6,7 @@ In this chapter, we'll explore the basics of **arrays** - collections of element
 
 Along the way, we'll tackle challenging problems like **searching**, **sorting**, and **subarray** problems, using a structured approach to break down complex tasks into manageable steps.
 
-What This Chapter Covers:
+What this chapter covers:
 
 1. **Fundamentals of Arrays:** Gain a solid understanding of arrays, their properties, and how to access and manipulate elements efficiently.
 

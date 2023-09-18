@@ -84,7 +84,7 @@ Here's a step-by-step explanation of how the code works:
 In summary, this code efficiently finds the maximum sum of a subarray with unique elements using a sliding window approach and prefix sums. 
 
 ### Complexity
-* Runtime: $O(N)$, where $N$ is `nums.length`.
-* Extra space: $O(N)$.
+* Runtime: `O(N)`, where `N = nums.length`.
+* Extra space: `O(N)`.
 
 

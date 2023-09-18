@@ -55,9 +55,6 @@ this_start = max(previous_start, i).
 
 ### Code
 ```cpp
-#include <iostream>
-#include <unordered_map>
-using namespace std;
 int lengthOfLongestSubstring(string s) {
     unordered_map<char, int> position;
     int maxLen = 0;
@@ -71,22 +68,30 @@ int lengthOfLongestSubstring(string s) {
     }
     return maxLen;
 }
-int main() {
-    cout << lengthOfLongestSubstring("abcabcbb") << endl;
-    cout << lengthOfLongestSubstring("bbbbb") << endl;
-    cout << lengthOfLongestSubstring("pwwkew") << endl;
-}
-```
-```text
-Output:
-3
-1
-3
 ```
 
+### Code explanation
+
+1. **Initialization**:
+   - An unordered map `position` is used to store the most recent position (index) where each character in the string `s` was seen.
+   - `maxLen` is initialized to 0, representing the maximum substring length found so far.
+   - `start` is initialized to -1. This variable will be used to keep track of the starting index of the current substring.
+
+2. The code iterates through each character of the input string `s`. Inside the loop, the code checks whether the current character `s[i]` is already present in the `position` map. If the character is found in the map, it means that the character has occurred previously in the current substring.
+
+3. If the character is found in the map (indicating a repeating character), the code updates the `start` index to the maximum of its current value (`start`) and the position of the character in the map (`position[s[i]]`). This step effectively "slides" the window to the right, excluding the repeating character and any characters before it.
+
+4. The code updates the `position` map with the current character's position by setting `position[s[i]] = i`. This keeps track of the most recent position of each character.
+
+5. At each iteration, the code calculates the length of the current substring (`i - start`) and updates `maxLen` to be the maximum of its current value and the calculated length. This ensures that `maxLen` always stores the maximum length encountered during the traversal.
+
+5. After the loop completes, `maxLen` contains the length of the longest substring without repeating characters in the input string `s`. It is then returned as the result.
+
+In summary, this solution efficiently finds the length of the longest substring without repeating characters by using a sliding window approach and an unordered map to track character positions. It iterates through the string, updates the window, and calculates the maximum length as it goes. 
+
 ### Complexity
-* Runtime: $O(N)$, where $N$ is `s.length`.
-* Extra space: $O(N)$.
+* Runtime: `O(N)`, where `N = s.length`.
+* Extra space: `O(N)`.
 
 
 

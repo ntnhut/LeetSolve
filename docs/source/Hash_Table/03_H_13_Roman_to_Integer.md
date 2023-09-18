@@ -94,8 +94,8 @@ int romanToInt(string s) {
 In summary, this code efficiently converts a Roman numeral string into an integer by iterating through the string from right to left and applying the rules of Roman numerals, where subtractive combinations are subtracted and additive combinations are added to calculate the total value. The unordered map is used to look up the values of Roman numerals. 
 
 ### Complexity
-* Runtime: $O(N)$ where $N$ is `s.length`.
-* Extra space: $O(7)$.
+* Runtime: `O(N)` where `N = s.length`.
+* Extra space: `O(1)`.
 
 
 

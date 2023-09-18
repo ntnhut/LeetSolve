@@ -35,9 +35,6 @@ Otherwise, the rest is always lowercase.
 
 ### Code
 ```cpp
-#include <string>
-#include <iostream>
-using namespace std;
 bool isValidCase(const char& c, const bool isLower) {
     if (isLower) {
         return 'a' <= c && c <= 'z';
@@ -59,24 +56,27 @@ bool detectCapitalUse(string word) {
     }
     return true;
 }
-int main() {
-    cout << detectCapitalUse("USA") << endl;
-    cout << detectCapitalUse("FlaG") << endl;
-    cout << detectCapitalUse("leetcode") << endl;
-    cout << detectCapitalUse("Google") << endl;
-}
-```
-```text
-Output:
-1
-0
-1
-1
 ```
 
+### Code explanation
+
+1. The function **`isValidCase`** is used to check whether a given character `c` is a valid uppercase or lowercase letter based on the value of the `isLower` parameter.
+
+2. The function **`detectCapitalUse`** begins by checking if the length of the input string `word` is 1. If the word has only one character, it is considered valid (as it doesn't violate any capitalization rule), and the function returns `true`.
+
+3. The `isLower` variable is initialized to `true`, assuming that all letters in `word` are initially lowercase.
+
+4. The code then examines the first two characters of the word (if they exist). If both characters are uppercase, it sets `isLower` to `false` since this indicates that the word follows rule 1 (all uppercase).
+   
+5. The loop then iterates through the rest of the characters in the word, starting from the third character (if it exists). Within the loop, for each character at position `i`, it calls the `isValidCase` function to check if the character `word[i]` is valid for the current capitalization type (`isLower`).
+   
+6. If the character is found to be invalid based on the current capitalization type, the function returns `false` immediately, indicating that the word doesn't adhere to the capitalization rule. If the loop completes without finding any violations, it means that the word adheres to one of the capitalization rules, and the function returns `true`.
+
+In summary, this solution efficiently checks whether a given word follows one of the specified capitalization rules by iterating through the characters of the word and using the `isValidCase` function to validate each character's capitalization based on the current capitalization type (`isLower`). If no violations are found, the word is considered valid, and the function returns `true`. 
+
 ### Complexity
-* Runtime: $O(N)$, where $N$ is `word.length`.
-* Extra space: $O(1)$.
+* Runtime: `O(N)`, where `N = word.length`.
+* Extra space: `O(1)`.
 
 
 

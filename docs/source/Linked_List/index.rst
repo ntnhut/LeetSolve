@@ -8,7 +8,7 @@ Unlike *arrays*, linked lists do not impose a fixed size or continuous memory bl
 
 Our exploration of linked lists will encompass a variety of variations and intricacies, including singly-linked lists. By delving into these lists, you'll discover how they empower us to tackle problems that may initially appear complicated.
 
-What This Chapter Covers:
+What this chapter covers:
 
 1. **Introduction to Linked Lists:** Gain a comprehensive understanding of linked lists, their advantages, and their role in problem-solving.
 
