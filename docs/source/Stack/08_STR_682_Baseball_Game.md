@@ -59,11 +59,6 @@ Output: 1
 
 ### Code
 ```cpp
-#include <vector>
-#include <iostream>
-#include <string>
-#include <numeric>
-using namespace std;
 int calPoints(vector<string>& ops) {
     vector<int> stk;
     for (string& s : ops) {
@@ -79,22 +74,29 @@ int calPoints(vector<string>& ops) {
     }
     return accumulate(stk.begin(), stk.end(), 0);
 }
-int main() {
-    vector<string> ops{"5","2","C","D","+"};
-    cout << calPoints(ops) << endl;
-    ops = {"5","-2","4","C","D","9","+","+"};
-    cout << calPoints(ops) << endl;
-}
-```
-```text
-Output:
-30
-27
 ```
 
+### Code explanation
+
+1. The code uses a stack data structure, represented by the `vector<int> stk`, to keep track of the points earned in each round.
+
+2. The code iterates through each operation in the `ops` vector.
+
+   - If the current operation is `"C"` (cancel), the code pops the last valid round's score from the stack. This effectively removes the most recent round's score.
+
+   - If the current operation is `"D"` (double), the code calculates the score for the current round by doubling the score of the previous round. It pushes this doubled score onto the stack.
+
+   - If the current operation is `"+"` (addition), the code calculates the score for the current round by adding the scores of the last two valid rounds. It pushes this sum onto the stack.
+
+   - If the current operation is not `"C"`, `"D"`, or `"+"`, it is assumed to be a valid integer string representing the score of a round. The code converts this string to an integer using `stoi(s)` and pushes the integer score onto the stack.
+
+3. After processing all the operations, the code calculates the final sum of valid points by using the `accumulate` function. It sums all the elements in the `stk` vector, starting from the beginning (0 as the initial sum). The code returns the final sum as the result.
+
+In summary, this code simulates the baseball game by processing each round's operation and maintaining a stack of valid points. It accurately calculates the final sum of valid points based on the given operations. 
+
 ### Complexity
-* Runtime: $O(N)$, where $N$ is `ops.length`.
-* Extra space: $O(N)$.
+* Runtime: `O(N)`, where `N = ops.length`.
+* Extra space: `O(N)`.
 
 ```{admonition} Implementation tips
 :class: tip

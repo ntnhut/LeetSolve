@@ -101,8 +101,8 @@ ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
 5. Finally, the function returns `head`, which points to the head of the merged sorted linked list.
 
 ### Complexity
-* Runtime: $O(N)$, where $N$ is `list1.length + list2.length`.
-* Extra space: $O(1)$.
+* Runtime: `O(N)`, where `N = list1.length + list2.length`.
+* Extra space: `O(1)`.
 
 
 

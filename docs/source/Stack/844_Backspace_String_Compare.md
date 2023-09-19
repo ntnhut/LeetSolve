@@ -39,9 +39,6 @@ Explanation: s becomes "c" while t becomes "b".
 
 ### Code
 ```cpp
-#include <iostream>
-#include <vector>
-using namespace std;
 string cleanString(string &s) {
     vector<char> v;
     for (int i = 0; i < s.length(); i++) {
@@ -58,22 +55,27 @@ string cleanString(string &s) {
 bool backspaceCompare(string s, string t) {
     return cleanString(s) == cleanString(t);
 }
-int main() {
-    cout << backspaceCompare("ab#c", "ad#c") << endl;
-    cout << backspaceCompare("ab##", "c#d#") << endl;
-    cout << backspaceCompare("a#c", "b") << endl;
-}
-```
-```text
-Output:
-1
-1
-0
 ```
 
+### Code explanation
+
+1. The code defines a helper function `cleanString(string &s)` that takes an input string `s` and returns a "cleaned" version of the string. In the cleaned string, all backspace characters (`'#'`) are processed to remove the characters that precede them.
+
+2. To achieve this, the code uses a `vector<char>` called `v` to simulate the construction of the cleaned string. It iterates through the characters of the input string `s`.
+
+   - If the current character `s[i]` is not a backspace (`'#'`), it is considered a regular character, and the code appends it to the `v` vector. This effectively constructs the cleaned string without any backspaces.
+   - If the current character `s[i]` is a backspace (`'#'`), the code checks if the `v` vector is not empty (i.e., there are characters to remove).
+   - If `v` is not empty, it means there is a character to remove, so the code pops the last character from the `v` vector, effectively "undoing" the previous character.
+
+3. The `cleanString` function is called for both input strings `s` and `t` to obtain their cleaned versions.
+
+4. Finally, the code compares the cleaned strings obtained from `s` and `t`. If the cleaned strings are equal, it means that the original strings are equivalent after processing backspaces, and the function returns `true`. Otherwise, it returns `false`.
+
+In summary, this code effectively handles backspace characters (`'#'`) in input strings `s` and `t` by constructing cleaned versions of the strings and then comparing the cleaned strings for equality.
+
 ### Complexity
-* Runtime: $O(n)$, where $n$ is `max(s.length, t.length)`.
-* Extra space: $O(n)$. 
+* Runtime: `O(n)`, where `n = max(s.length, t.length)`.
+* Extra space: `O(n)`. 
 
 ```{admonition} Implementation notes
 :class: tip

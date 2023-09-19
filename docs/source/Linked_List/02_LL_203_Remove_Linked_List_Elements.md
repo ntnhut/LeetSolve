@@ -85,8 +85,8 @@ ListNode* removeElements(ListNode* head, int val) {
 In summary, this code efficiently removes nodes with a specified value `val` from a linked list by using two pointers (`head` and `pre`) to traverse the list and update the `next` pointers to bypass nodes with the specified value. 
 
 ### Complexity
-* Runtime: $O(N)$, where $N$ is the number of nodes.
-* Memory: $O(1)$.
+* Runtime: `O(N)`, where `N` is the number of nodes.
+* Memory: `O(1)`.
 
 ## Solution 2: Create a previous dummy node for head
 `head` has no `pre`. You can create a dummy node for `head.pre`. 
@@ -115,8 +115,8 @@ The purpose of this `preHead` node is to serve as the dummy or sentinel node at 
 The remaining code is the same.
 
 ### Complexity
-* Runtime: $O(N)$, where $N$ is the number of nodes.
-* Memory: $O(1)$.
+* Runtime: `O(N)`, where `N` is the number of nodes.
+* Memory: `O(1)`.
 
 ### Attention!
 Depending on your real situation, in practice, you might need to deallocate memory for the removed nodes; especially when they were allocated by the `new` operator.

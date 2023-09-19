@@ -39,7 +39,7 @@ Output: No intersection.
 * `1 <= m, n <= 3 * 10^4`.
 * `1 <= Node.val <= 10^5`. 
 
-**Follow up**: Could you write a solution that runs in $O(m + n)$ time and use only $O(1)$ memory?
+**Follow up**: Could you write a solution that runs in `O(m + n)` time and use only `O(1)` memory?
 
 ## Solution 1: Store the nodes
 
@@ -90,8 +90,8 @@ ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
 In summary, this code uses an unordered map to store the nodes of `headA` while traversing it. Then, it traverses `headB` and checks if each node in `headB` exists in the map of nodes from `headA`. If a common node is found, it returns that node as the intersection point; otherwise, it returns `nullptr` to indicate no intersection. 
 
 ### Complexity
-* Runtime: $O(m + n)$, where $m$, $n$ are the number of nodes of `listA` and `listB`.
-* Extra space: $O(m)$.
+* Runtime: `O(m + n)`, where `m`, `n` are the number of nodes of `listA` and `listB`.
+* Extra space: `O(m)`.
 
 ## Solution 2: Reiterating the two lists at the same time
 
@@ -163,8 +163,8 @@ ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
 In summary, this improved solution finds the intersection of two linked lists by first determining their lengths and adjusting the pointers so that they start from the same relative position to the intersection point. Then, it iterates through both linked lists until it finds the common intersection node. 
 
 ### Complexity
-* Runtime: $O(m + n)$, where $m$, $n$ are the number of nodes of `listA` and `listB`.
-* Extra space: $O(1)$.
+* Runtime: `O(m + n)`, where `m`, `n` are the number of nodes of `listA` and `listB`.
+* Extra space: `O(1)`.
 
 
 

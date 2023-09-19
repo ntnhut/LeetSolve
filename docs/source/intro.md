@@ -30,7 +30,7 @@ In summary, LeetCode is a valuable resource for programmers and software enginee
 
 **Algorithm complexity**, also known as **runtime complexity**, is a measure of how the running time of an algorithm increases as the input size grows. It is an essential concept in computer science, as it helps programmers evaluate and optimize their algorithms' performance.
 
-The complexity of an algorithm is usually measured in terms of its **Big O notation**, which describes the upper bound of the algorithm's running time as a function of the input size. For example, an algorithm with a time complexity of $O(n)$ will have a running time proportional to the input size. In contrast, an algorithm with a time complexity of $O(n^2)$ will have a running time proportional to the square of the input size.
+The complexity of an algorithm is usually measured in terms of its **Big O notation**, which describes the upper bound of the algorithm's running time as a function of the input size. For example, an algorithm with a time complexity of `O(n)` will have a running time proportional to the input size. In contrast, an algorithm with a time complexity of `O(n^2)` will have a running time proportional to the square of the input size.
 
 Algorithm complexity is important because it helps programmers determine their algorithms' **efficiency** and **scalability**. In general, algorithms with lower complexity are more efficient, as they require less time and resources to process larger inputs. By analyzing the time complexity of an algorithm, programmers can identify potential performance bottlenecks and optimize their code accordingly.
 

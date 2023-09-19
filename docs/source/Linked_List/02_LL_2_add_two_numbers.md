@@ -111,7 +111,7 @@ ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
 In summary, this code efficiently adds two numbers represented as linked lists by iterating through both linked lists, digit by digit, and calculating the sum and carry. It also handles different scenarios for the lengths of the input lists and any remaining carry values. 
 
 ### Complexity
-* Runtime: $O(N)$, where $N$ is `max(l1.length, l2.length)`.
-* Extra space: $O(1)$.
+* Runtime: `O(N)`, where `N = max(l1.length, l2.length)`.
+* Extra space: `O(1)`.
 
 

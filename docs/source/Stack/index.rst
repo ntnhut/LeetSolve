@@ -6,7 +6,7 @@ In this section, we'll explore the **stack** data structure, which is a useful t
 
 Stacks in programming are like a stack of books where you add and remove books from the top. They provide a structured way to manage data, making them ideal for handling temporary information, tracking function calls, and solving various algorithmic challenges.
 
-What This Chapter Covers:
+What this chapter covers:
 
 1. **Introduction to Stacks:** Begin by understanding the core principles of stacks, their fundamental operations, and their real-world applications.
 

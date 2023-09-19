@@ -81,7 +81,7 @@ In summary, this code uses two nested loops to compare each day's temperature wi
 
 ## Solution 2: Starting from the last day
 
-The straightforward solution above is easy to understand, but the complexity is $O(N^2)$. 
+The straightforward solution above is easy to understand, but the complexity is `O(N^2)`. 
 
 The way starting from the first day to the last day does not make use of the knowledge of the `answer[i]` values. 
 
@@ -142,7 +142,7 @@ vector<int> dailyTemperatures(vector<int>& temperatures) {
 
 6. Finally, the `answer` vector is returned, which contains the number of days to wait for a warmer temperature for each day in the `temperatures` vector.
 
-This improved solution reduces the time complexity to $O(N)$ as it iterates through the `temperatures` vector only once, resulting in a more efficient algorithm for finding the waiting periods for each day.
+This improved solution reduces the time complexity to `O(N)` as it iterates through the `temperatures` vector only once, resulting in a more efficient algorithm for finding the waiting periods for each day.
 
 ### Complexity
 Worse cases for the `while` loop are when most `temperatures[j]` in their chain are cooler than `temperatures[i]`. 

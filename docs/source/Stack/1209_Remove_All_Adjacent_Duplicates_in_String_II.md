@@ -53,9 +53,6 @@ For `s = "deeedbbcccbdaa"` and `k = 3`:
 
 ### Code
 ```cpp
-#include <iostream>
-#include <vector>
-using namespace std;
 string removeDuplicates(string s, int k) {
     vector<string> stk;
     int i = 0;
@@ -86,22 +83,34 @@ string removeDuplicates(string s, int k) {
     }
     return s;
 }
-int main() {
-    cout << removeDuplicates("abcd", 2) << endl;
-    cout << removeDuplicates("deeedbbcccbdaa", 3) << endl;
-    cout << removeDuplicates("pbbcggttciiippooaais", 2) << endl;
-}
-```
-```text
-Output:
-abcd
-aa
-ps
 ```
 
+### Code explanation
+
+1. The code uses a `vector<string>` called `stk` to simulate a stack, where each element represents a substring of consecutive duplicate characters.
+
+2. Within the outer loop, the code starts by defining an empty string `a` to store adjacent equal letters, which will form a substring of consecutive duplicates.
+
+   - If the stack is not empty and the current character `s[i]` is the same as the last character of the top string in the stack (`stk.back().back()`), it means that the current character belongs to the same group of consecutive duplicates as the top string in the stack. In this case, the code performs a merge by moving the top string from the stack to `a` and then removing it from the stack.
+   
+3. The code enters another `while` loop that iterates as long as the characters are the same as `s[i]`. During this loop, the code appends the current character `s[j]` to the `a` string.
+
+   - While building the substring, if the length of `a` becomes equal to `k`, it means that `a` represents a substring of length `k` that consists of consecutive duplicate characters. In this case, the code sets `a` to an empty string to remove the `k`-duplicate.
+   - The loop continues to process consecutive characters until a different character is encountered.
+
+4. If the `a` string is not empty after processing, it means that it represents a substring of consecutive characters that may be shorter than `k` (if `k` consecutive duplicates were not found). The code pushes this substring onto the stack `stk`.
+
+5. After processing a group of consecutive duplicate characters, the index `i` is updated to the value of `j`, which points to the next character in the string that needs to be processed.
+
+6. After processing the entire input string `s`, the code constructs the result string `s` by iterating through the `stk` vector and appending each string in the vector to the result.
+
+7. The code returns the final result string `s`, which contains the input string with `k` consecutive duplicates removed.
+
+In summary, this code efficiently removes substrings of consecutive duplicate characters of length `k` from a given string by using a stack to keep track of the adjacent characters. 
+
 ### Complexity
-* Runtime: $O(N)$, where $N$ is `s.length`.
-* Extra space: $O(N)$.
+* Runtime: `O(N)`, where `N = s.length`.
+* Extra space: `O(N)`.
 
 ```{admonition} Implementation tips
 :class: tip

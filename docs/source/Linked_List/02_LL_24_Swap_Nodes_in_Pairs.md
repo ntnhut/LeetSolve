@@ -95,7 +95,7 @@ ListNode* swapPairs(ListNode* head) {
 6. Finally, the function returns `head`, which now points to the head of the linked list with adjacent nodes swapped.
 
 ### Complexity
-* Runtime: $O(N)$, where $N$ is the number of nodes.
-* Extra space: $O(1)$.
+* Runtime: `O(N)`, where `N` is the number of nodes.
+* Extra space: `O(1)`.
 
 
