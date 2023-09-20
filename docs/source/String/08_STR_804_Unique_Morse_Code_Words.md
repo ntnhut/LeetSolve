@@ -47,6 +47,10 @@ Output: 1
 
 ### Code
 ```cpp
+#include <iostream>
+#include <vector>
+#include <unordered_set>
+using namespace std;
 int uniqueMorseRepresentations(vector<string>& words) {
     vector<string> morse{".-", "-...", "-.-.", "-..", ".", "..-.", "--.",
                         "....", "..", ".---", "-.-", ".-..", "--", "-.",
@@ -62,6 +66,17 @@ int uniqueMorseRepresentations(vector<string>& words) {
     }
     return transformations.size();
 }
+int main() {
+    vector<string> words{"gin","zen","gig","msg"};
+    cout << uniqueMorseRepresentations(words) << endl;
+    words = {"a"};
+    cout << uniqueMorseRepresentations(words) << endl;
+}
+```
+```text
+Output:
+2
+1
 ```
 
 ### Code explanation

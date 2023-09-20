@@ -63,6 +63,11 @@ If all revisions of the shorter version are equal to the corresponding revisions
 ### Code
 
 ```cpp
+#include <iostream>
+#include <vector>
+#include <string>
+#include <numeric>
+using namespace std;
 vector<int> toVector(const string& version) {
     vector<int> revisions;
     string revision;
@@ -100,8 +105,18 @@ int compareVersion(string version1, string version2) {
     }
     return 0;
 }
+int main() {
+    cout << compareVersion("1.01", "1.001") << endl;
+    cout << compareVersion("1.0", "1.0.0") << endl;
+    cout << compareVersion("0.1", "1.1") << endl;
+}
 ```
-
+```text
+Output:
+0
+0
+-1
+```
 ### Code explanation
 
 1. The function **`toVector`** is responsible for converting a version string into a vector of integers. It takes a version string as input and returns a vector of integers, where each integer corresponds to a segment of the version string separated by periods.

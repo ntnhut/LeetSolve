@@ -53,6 +53,9 @@ For `s = "deeedbbcccbdaa"` and `k = 3`:
 
 ### Code
 ```cpp
+#include <iostream>
+#include <vector>
+using namespace std;
 string removeDuplicates(string s, int k) {
     vector<string> stk;
     int i = 0;
@@ -83,6 +86,17 @@ string removeDuplicates(string s, int k) {
     }
     return s;
 }
+int main() {
+    cout << removeDuplicates("abcd", 2) << endl;
+    cout << removeDuplicates("deeedbbcccbdaa", 3) << endl;
+    cout << removeDuplicates("pbbcggttciiippooaais", 2) << endl;
+}
+```
+```text
+Output:
+abcd
+aa
+ps
 ```
 
 ### Code explanation

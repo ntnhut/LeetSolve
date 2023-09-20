@@ -46,6 +46,7 @@ Removing a node `A` in a linked list means instead of connecting the previous no
 
 ### Code
 ```cpp
+#include <iostream>
 struct ListNode {
     int val;
     ListNode *next;
@@ -68,6 +69,40 @@ ListNode* removeElements(ListNode* head, int val) {
     }
     return head;
 }
+void print(ListNode* head) {
+    ListNode* node = head;
+    std::cout << "[";
+    while (node) {
+        std::cout << node->val << ",";
+        node = node->next;
+    }
+    std::cout << "]\n";
+}
+int main() {
+    ListNode sixb(6);
+    ListNode five(5, &sixb);
+    ListNode four(4, &five);
+    ListNode three(3, &four);
+    ListNode sixa(6, &three);
+    ListNode two(2, &sixa);
+    ListNode head(1, &two);
+    ListNode* newHead = removeElements(&head, 6);
+    print(newHead);
+    newHead = removeElements(nullptr, 1);
+    print(newHead);
+    ListNode seven4(7);
+    ListNode seven3(7, &seven4);
+    ListNode seven2(7, &seven3);
+    ListNode seven1(7, &seven2);
+    newHead = removeElements(&seven1, 7);
+    print(newHead);
+}
+```
+```text
+Output:
+[1,2,3,4,5,]
+[]
+[]
 ```
 
 ### Code explanation
@@ -93,6 +128,14 @@ In summary, this code efficiently removes nodes with a specified value `val` fro
 
 ### Code
 ```cpp
+#include <iostream>
+struct ListNode {
+    int val;
+    ListNode *next;
+    ListNode() : val(0), next(nullptr) {}
+    ListNode(int x) : val(x), next(nullptr) {}
+    ListNode(int x, ListNode *next) : val(x), next(next) {}
+};
 ListNode* removeElements(ListNode* head, int val) {
     ListNode preHead(2023, head);
     ListNode* pre = &preHead;
@@ -105,6 +148,42 @@ ListNode* removeElements(ListNode* head, int val) {
     }
     return preHead.next;
 }
+void print(ListNode* head) {
+    ListNode* node = head;
+    std::cout << "[";
+    while (node) {
+        std::cout << node->val << ",";
+        node = node->next;
+    }
+    std::cout << "]\n";
+}
+int main() {
+    ListNode sixb(6);
+    ListNode five(5, &sixb);
+    ListNode four(4, &five);
+    ListNode three(3, &four);
+    ListNode sixa(6, &three);
+    ListNode two(2, &sixa);
+    ListNode head(1, &two);
+    ListNode* newHead = removeElements(&head, 6);
+    print(newHead);
+
+    newHead = removeElements(nullptr, 1);
+    print(newHead);
+
+    ListNode seven4(7);
+    ListNode seven3(7, &seven4);
+    ListNode seven2(7, &seven3);
+    ListNode seven1(7, &seven2);
+    newHead = removeElements(&seven1, 7);
+    print(newHead);
+}
+```
+```text
+Output:
+[1,2,3,4,5,]
+[]
+[]
 ```
 ### Code explanation
 

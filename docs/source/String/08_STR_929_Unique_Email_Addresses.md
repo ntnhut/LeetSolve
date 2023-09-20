@@ -51,6 +51,11 @@ Do exactly the steps the problem describes:
 
 ### Code
 ```cpp
+#include<string>
+#include<iostream>
+#include<vector>
+#include <unordered_set>
+using namespace std;
 int numUniqueEmails(vector<string>& emails) {
     unordered_set<string> s;
     for (auto e: emails) {
@@ -72,6 +77,22 @@ int numUniqueEmails(vector<string>& emails) {
     }
     return s.size();
 }
+int main() {
+    vector<string> emails{"test.email+alex@leetcode.com",
+                        "test.e.mail+bob.cathy@leetcode.com",
+                        "testemail+david@lee.tcode.com"};
+    cout << numUniqueEmails(emails) << endl;
+    emails = {"a@leetcode.com","b@leetcode.com","c@leetcode.com"};
+    cout << numUniqueEmails(emails) << endl;
+    emails = {"test.email+alex@leetcode.com","test.email.leet+alex@code.com"};
+    cout << numUniqueEmails(emails) << endl;
+}
+```
+```text
+Output:
+2
+3
+2
 ```
 
 ### Code explanation
@@ -101,6 +122,11 @@ The runtime of removing characters in `std::string` is not constant. To avoid th
 
 ### Code
 ```cpp
+#include<string>
+#include<iostream>
+#include<vector>
+#include <unordered_set>
+using namespace std;
 int numUniqueEmails(vector<string>& emails) {
     unordered_set<string> s;
     for (auto e: emails) {
@@ -121,6 +147,22 @@ int numUniqueEmails(vector<string>& emails) {
     }        
     return s.size();
 }
+int main() {
+    vector<string> emails{"test.email+alex@leetcode.com",
+                        "test.e.mail+bob.cathy@leetcode.com",
+                        "testemail+david@lee.tcode.com"};
+    cout << numUniqueEmails(emails) << endl;
+    emails = {"a@leetcode.com","b@leetcode.com","c@leetcode.com"};
+    cout << numUniqueEmails(emails) << endl;
+    emails = {"test.email+alex@leetcode.com","test.email.leet+alex@code.com"};
+    cout << numUniqueEmails(emails) << endl;
+}
+```
+```text
+Output:
+2
+3
+2
 ```
 
 ### Code explanation

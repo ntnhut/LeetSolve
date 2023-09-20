@@ -53,7 +53,9 @@ You can store all nodes of `listA` then iterate `listB` to determine which node 
 ### Code
 
 ```cpp
+#include <iostream>
 #include <unordered_map>
+using namespace std;
 struct ListNode {
     int val;
     ListNode *next;
@@ -61,7 +63,7 @@ struct ListNode {
 };
 
 ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
-    std::unordered_map<ListNode*, bool> m;
+    unordered_map<ListNode*, bool> m;
     ListNode *node = headA;
     while (node != nullptr) {
         m[node] = true;
@@ -76,6 +78,62 @@ ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
     }
     return nullptr;
 }
+int main() {
+    {   // Example 1
+        ListNode five(5);
+        ListNode four(4);
+        four.next = &five;
+        ListNode eight(8);
+        eight.next = &four;
+
+        ListNode one1(1);
+        one1.next = &eight;
+        ListNode four1(4);
+        four1.next = &one1;
+
+        ListNode one2(1);
+        one2.next = &eight;
+        ListNode six2(6);
+        six2.next = &one2;
+        ListNode five2(5);
+        five2.next = &six2;
+        cout << (getIntersectionNode(&four1, &five2) == &eight) << endl;
+    }
+    {   // Example 2
+        ListNode four(4);
+        ListNode two(2);
+        two.next = &four;
+
+        ListNode one12(1);
+        one12.next = &two;
+        ListNode nine1(9);
+        nine1.next = &one12;
+        ListNode one11(1);
+        one11.next = &nine1;
+
+        ListNode three2(3);
+        three2.next = &two;
+        cout << (getIntersectionNode(&one11, &three2) == &two) << endl;
+    }
+    {   // Example 3
+        ListNode four(4);
+        ListNode six(6);
+        six.next = &four;
+        ListNode two(2);
+        two.next = &six;
+
+        ListNode five(5);
+        ListNode one(1);
+        one.next = &five;
+        cout << (getIntersectionNode(&two, &one) == nullptr) << endl;
+    }
+}
+```
+```text
+Output:
+1
+1
+1
 ```
 ### Code explanation
 
@@ -110,6 +168,14 @@ After iterating to find the tail node, you know the length of the two lists. Tha
 
 ### Code
 ```cpp
+#include <iostream>
+#include <unordered_map>
+using namespace std;
+struct ListNode {
+    int val;
+    ListNode *next;
+    ListNode(int x) : val(x), next(NULL) {}
+};
 ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
     int lengthA = 0;
     ListNode *nodeA = headA;
@@ -142,6 +208,62 @@ ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
     }
     return nodeA;
 }
+int main() {
+    {   // Example 1
+        ListNode five(5);
+        ListNode four(4);
+        four.next = &five;
+        ListNode eight(8);
+        eight.next = &four;
+
+        ListNode one1(1);
+        one1.next = &eight;
+        ListNode four1(4);
+        four1.next = &one1;
+
+        ListNode one2(1);
+        one2.next = &eight;
+        ListNode six2(6);
+        six2.next = &one2;
+        ListNode five2(5);
+        five2.next = &six2;
+        cout << (getIntersectionNode(&four1, &five2) == &eight) << endl;
+    }
+    {   // Example 2
+        ListNode four(4);
+        ListNode two(2);
+        two.next = &four;
+
+        ListNode one12(1);
+        one12.next = &two;
+        ListNode nine1(9);
+        nine1.next = &one12;
+        ListNode one11(1);
+        one11.next = &nine1;
+
+        ListNode three2(3);
+        three2.next = &two;
+        cout << (getIntersectionNode(&one11, &three2) == &two) << endl;
+    }
+    {   // Example 3
+        ListNode four(4);
+        ListNode six(6);
+        six.next = &four;
+        ListNode two(2);
+        two.next = &six;
+
+        ListNode five(5);
+        ListNode one(1);
+        one.next = &five;
+        cout << (getIntersectionNode(&two, &one) == nullptr) << endl;
+    }
+}
+```
+```text
+Output:
+1
+1
+1
 ```
 
 ### Code explanation

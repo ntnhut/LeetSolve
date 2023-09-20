@@ -35,6 +35,9 @@ Otherwise, the rest is always lowercase.
 
 ### Code
 ```cpp
+#include <string>
+#include <iostream>
+using namespace std;
 bool isValidCase(const char& c, const bool isLower) {
     if (isLower) {
         return 'a' <= c && c <= 'z';
@@ -56,6 +59,19 @@ bool detectCapitalUse(string word) {
     }
     return true;
 }
+int main() {
+    cout << detectCapitalUse("USA") << endl;
+    cout << detectCapitalUse("FlaG") << endl;
+    cout << detectCapitalUse("leetcode") << endl;
+    cout << detectCapitalUse("Google") << endl;
+}
+```
+```text
+Output:
+1
+0
+1
+1
 ```
 
 ### Code explanation

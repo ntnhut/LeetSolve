@@ -108,6 +108,9 @@ For `grid = [[1,2,3],[4,5,6],[7,8,9]]`:
 
 ### Code
 ```cpp
+#include <vector>
+#include <iostream>
+using namespace std;
 vector<vector<int>> shiftGrid(vector<vector<int>>& grid, int k) {
     vector<int> v;
     for (auto& r : grid) {
@@ -126,6 +129,34 @@ vector<vector<int>> shiftGrid(vector<vector<int>>& grid, int k) {
     }
     return grid;
 }
+void printResult(vector<vector<int>>& grid) {
+    cout << "[";
+    for (auto& r : grid) {
+        cout << "[";
+        for (int a: r) {
+            cout << a << ",";
+        }
+        cout << "]";
+    }
+    cout << "]\n";
+}
+int main() {
+    vector<vector<int>> grid{{1,2,3},{4,5,6},{7,8,9}};
+    auto result = shiftGrid(grid, 1);
+    printResult(result);
+    grid = {{3,8,1,9},{19,7,2,5},{4,6,11,10},{12,0,21,13}};
+    result = shiftGrid(grid, 4);
+    printResult(result);
+    grid = {{1,2,3},{4,5,6},{7,8,9}};
+    result = shiftGrid(grid, 9);
+    printResult(result);
+}
+```
+```text
+Output:
+[[9,1,2,][3,4,5,][6,7,8,]]
+[[12,0,21,13,][3,8,1,9,][19,7,2,5,][4,6,11,10,]]
+[[1,2,3,][4,5,6,][7,8,9,]]
 ```
 
 ### Code explanation

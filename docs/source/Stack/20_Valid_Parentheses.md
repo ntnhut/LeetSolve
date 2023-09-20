@@ -42,6 +42,9 @@ For each character `c` of `s`:
 
 ### Code
 ```cpp
+#include <iostream>
+#include <stack>
+using namespace std;
 bool isValid(string s) {
     stack<char> stk;
     for (char c : s) {
@@ -59,6 +62,19 @@ bool isValid(string s) {
     }
     return stk.empty();
 }
+int main() {
+    cout << isValid("()") << endl;
+    cout << isValid("(){}[]") << endl;
+    cout << isValid("(]") << endl;
+    cout << isValid("([)]") << endl;
+}
+```
+```text
+Output:
+1
+1
+0
+0
 ```
 
 ### Code explanation

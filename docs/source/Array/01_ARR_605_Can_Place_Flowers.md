@@ -35,6 +35,9 @@ If the condition is satisfied, the flower can be planted at position `i`. `flowe
 
 ### Code
 ```cpp
+#include <iostream>
+#include <vector>
+using namespace std;
 bool canPlaceFlowers(vector<int>& flowerbed, int n) {
     if (n == 0) {
         return true;
@@ -53,6 +56,17 @@ bool canPlaceFlowers(vector<int>& flowerbed, int n) {
     }
     return n <= 0;
 }
+int main() {
+    vector<int> flowerbed{1,0,0,0,1};
+    cout << canPlaceFlowers(flowerbed, 1) << endl;
+    flowerbed = {1,0,0,0,1};
+    cout << canPlaceFlowers(flowerbed, 2) << endl;
+}
+```
+```text
+Output:
+1
+0
 ```
 
 ### Code explanation

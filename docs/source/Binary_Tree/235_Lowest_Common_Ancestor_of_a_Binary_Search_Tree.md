@@ -46,6 +46,8 @@ It lets you know which branch (left or right) of the `root` the nodes `p` and `q
 
 ### Code
 ```cpp
+#include <iostream>
+using namespace std;
 struct TreeNode {
     int val;
     TreeNode *left;
@@ -60,6 +62,35 @@ TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
     }
     return root;
 }
+int main() {
+    TreeNode zero(0);
+    TreeNode three(3);
+    TreeNode five(5);
+    TreeNode four(4);
+    four.left = &three;
+    four.right = &five;
+    TreeNode two(2);
+    two.left = &zero;
+    two.right = &four;
+    TreeNode seven(7);
+    TreeNode nine(9);
+    TreeNode eight(8);
+    eight.left = &seven;
+    eight.right = &nine;
+    TreeNode six(6);
+    six.left = &two;
+    six.right = &eight;
+
+    cout << lowestCommonAncestor(&six, &two, &eight)->val << endl;
+    cout << lowestCommonAncestor(&six, &two, &four)->val << endl;
+    cout << lowestCommonAncestor(&two, &two, &zero)->val << endl;
+}
+```
+```text
+Output:
+6
+2
+2
 ```
 
 ### Code explanation

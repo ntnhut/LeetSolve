@@ -40,6 +40,9 @@ Following the conditions, we have the following implementation.
 
 ### Code
 ```cpp
+#include <vector>
+#include <iostream>
+using namespace std;
 bool validMountainArray(vector<int>& arr) {
     if (arr.size() < 3) {
         return false;
@@ -57,6 +60,23 @@ bool validMountainArray(vector<int>& arr) {
     }
     return i == N;
 }
+int main() {
+    vector<int> arr{2,1};
+    cout << validMountainArray(arr) << endl;
+    arr = {3,5,5};   
+    cout << validMountainArray(arr) << endl;
+    arr = {0,3,2,1};   
+    cout << validMountainArray(arr) << endl;
+    arr = {9,8,7,6,5,4,3,2,1,0};
+    cout << validMountainArray(arr) << endl;
+}
+```
+```text
+Output:
+0
+0
+1
+0
 ```
 
 ### Code explanation

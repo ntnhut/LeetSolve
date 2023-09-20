@@ -41,6 +41,7 @@ Denote `(cur, next)` the pair of nodes you want to swap and `prev` be the previo
 
 ### Code
 ```cpp
+#include <iostream>
 struct ListNode {
     int val;
     ListNode *next;
@@ -70,6 +71,31 @@ ListNode* swapPairs(ListNode* head) {
     }
     return head;
 }
+void print(ListNode* head) {
+    ListNode* node = head;
+    std::cout << "[";
+    while (node != nullptr) {
+        std::cout << node->val << ",";
+        node = node->next;
+    }
+    std::cout << "]" << std::endl;
+}
+int main() {
+    ListNode four(4);
+    ListNode three(3, &four);
+    ListNode two(2, &three);
+    ListNode one(1, &two);    
+    print(swapPairs(&one));
+    ListNode five(5);
+    print(swapPairs(nullptr));
+    print(swapPairs(&five));
+}
+```
+```text
+Output:
+[2,1,4,3,]
+[]
+[5,]
 ```
 
 ### Code explanation

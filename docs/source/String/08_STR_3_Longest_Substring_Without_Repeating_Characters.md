@@ -55,6 +55,9 @@ this_start = max(previous_start, i).
 
 ### Code
 ```cpp
+#include <iostream>
+#include <unordered_map>
+using namespace std;
 int lengthOfLongestSubstring(string s) {
     unordered_map<char, int> position;
     int maxLen = 0;
@@ -68,6 +71,17 @@ int lengthOfLongestSubstring(string s) {
     }
     return maxLen;
 }
+int main() {
+    cout << lengthOfLongestSubstring("abcabcbb") << endl;
+    cout << lengthOfLongestSubstring("bbbbb") << endl;
+    cout << lengthOfLongestSubstring("pwwkew") << endl;
+}
+```
+```text
+Output:
+3
+1
+3
 ```
 
 ### Code explanation

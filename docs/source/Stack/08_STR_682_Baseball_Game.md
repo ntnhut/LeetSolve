@@ -59,6 +59,11 @@ Output: 1
 
 ### Code
 ```cpp
+#include <vector>
+#include <iostream>
+#include <string>
+#include <numeric>
+using namespace std;
 int calPoints(vector<string>& ops) {
     vector<int> stk;
     for (string& s : ops) {
@@ -74,6 +79,17 @@ int calPoints(vector<string>& ops) {
     }
     return accumulate(stk.begin(), stk.end(), 0);
 }
+int main() {
+    vector<string> ops{"5","2","C","D","+"};
+    cout << calPoints(ops) << endl;
+    ops = {"5","-2","4","C","D","9","+","+"};
+    cout << calPoints(ops) << endl;
+}
+```
+```text
+Output:
+30
+27
 ```
 
 ### Code explanation

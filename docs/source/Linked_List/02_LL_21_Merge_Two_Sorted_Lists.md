@@ -38,6 +38,7 @@ For each pair of nodes between the two lists, pick the node having smaller value
 
 ### Code
 ```cpp
+#include <iostream>
 struct ListNode {
     int val;
     ListNode *next;
@@ -78,6 +79,37 @@ ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
     }
     return head;
 }
+void printResult(ListNode* head) {
+    std::cout << "[";
+    while (head) {
+        std::cout << head->val << ",";
+        head = head->next;
+    }
+    std::cout << "]\n";
+}
+int main() {   
+    ListNode four1(4);
+    ListNode two1(2, &four1);
+    ListNode one1(1, &two1);
+    ListNode four2(4);
+    ListNode three2(3, &four2);
+    ListNode one2(1, &three2);
+    auto newOne = mergeTwoLists(&one1, &one2);
+    printResult(newOne);
+
+    auto empty = mergeTwoLists(nullptr, nullptr);
+    printResult(empty);
+
+    ListNode zero(0);
+    auto z = mergeTwoLists(nullptr, &zero);
+    printResult(z);
+}
+```
+```text
+Output:
+[1,1,2,3,4,4,]
+[]
+[0,]
 ```
 
 ### Code explanation

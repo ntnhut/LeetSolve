@@ -30,6 +30,9 @@ Output: false
 
 ### Code
 ```cpp
+#include <iostream>
+#include <algorithm>
+using namespace std;
 bool isAnagram(string s, string t) {
     if (s.length() != t.length()) {
         return false;
@@ -38,6 +41,15 @@ bool isAnagram(string s, string t) {
     sort(t.begin(), t.end());
     return s == t;
 }
+int main() {
+    cout << isAnagram("anagram", "nagaram") << endl;
+    cout << isAnagram("rat", "car") << endl;
+}
+```
+```text
+Output:
+1
+0
 ```
 
 ### Code explanation
@@ -59,6 +71,8 @@ In summary, this code determines if two strings are anagrams by comparing their 
 
 ### Code
 ```cpp
+#include <iostream>
+using namespace std;
 bool isAnagram(string s, string t) {
     if (s.length() != t.length()) {
         return false;
@@ -78,6 +92,15 @@ bool isAnagram(string s, string t) {
     }
     return true;    
 }
+int main() {
+    cout << isAnagram("anagram", "nagaram") << endl;
+    cout << isAnagram("rat", "car") << endl;
+}
+```
+```text
+Output:
+1
+0
 ```
 
 ### Code explanation
@@ -102,6 +125,9 @@ Replace the array `alphabet` in Solution 2 with a map.
 
 ### Code
 ```cpp
+#include <iostream>
+#include <unordered_map>
+using namespace std;
 bool isAnagram(string s, string t) {
     if (s.length() != t.length()) {
         return false;
@@ -118,6 +144,15 @@ bool isAnagram(string s, string t) {
     }
     return true;    
 }
+int main() {
+    cout << isAnagram("anagram", "nagaram") << endl;
+    cout << isAnagram("rat", "car") << endl;
+}
+```
+```text
+Output:
+1
+0
 ```
 
 ### Code explanation

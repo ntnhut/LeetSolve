@@ -30,6 +30,9 @@ Output: 10
 
 ### Code
 ```cpp
+#include <vector>
+#include <iostream>
+using namespace std;
 int singleNonDuplicate(vector<int>& nums) {
     for (int i = 0; i < nums.size() - 1; i += 2) {
         if (nums[i] != nums[i + 1]) {
@@ -38,6 +41,20 @@ int singleNonDuplicate(vector<int>& nums) {
     }
     return nums[0];
 }
+int  main() {
+    vector<int> nums{1,1,2,3,3,4,4,8,8};
+    cout << singleNonDuplicate(nums) << endl;
+    nums = {3,3,7,7,10,11,11};
+    cout << singleNonDuplicate(nums) << endl;
+    nums = {3};
+    cout << singleNonDuplicate(nums) << endl;
+}
+```
+```text
+Output:
+2
+10
+3
 ```
 
 ### Code explanation
@@ -79,6 +96,9 @@ For `nums = [1,1,2,3,3,4,4,8,8]`:
 
 ### Code
 ```cpp
+#include <vector>
+#include <iostream>
+using namespace std;
 int singleNonDuplicate(vector<int>& nums) {
     int left = 0;
     int right = nums.size() - 1;
@@ -92,6 +112,20 @@ int singleNonDuplicate(vector<int>& nums) {
     }
     return nums[right];
 }
+int  main() {
+    vector<int> nums{1,1,2,3,3,4,4,8,8};
+    cout << singleNonDuplicate(nums) << endl;
+    nums = {3,3,7,7,10,11,11};
+    cout << singleNonDuplicate(nums) << endl;
+    nums = {3};
+    cout << singleNonDuplicate(nums) << endl;
+}
+```
+```text
+Output:
+2
+10
+3
 ```
 
 ### Code explanation

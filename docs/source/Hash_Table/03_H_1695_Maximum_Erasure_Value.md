@@ -34,6 +34,10 @@ You can use a map to store the position of the elements of `nums`. Then when ite
 
 ### Code
 ```cpp
+#include <iostream>
+#include <unordered_map>
+#include <vector>
+using namespace std;
 int maximumUniqueSubarray(vector<int>& nums) {
     vector<int> sum(nums.size(), 0);
     sum[0] = nums[0];    
@@ -51,6 +55,17 @@ int maximumUniqueSubarray(vector<int>& nums) {
     }
     return maxSum;
 }
+int main() {
+    vector<int> nums{4,2,4,5,6};
+    cout << maximumUniqueSubarray(nums) << endl;
+    nums = {5,2,1,2,5,2,1,2,5};
+    cout << maximumUniqueSubarray(nums) << endl;
+}
+```
+```text
+Output:
+17
+8
 ```
 
 ### Code explanation

@@ -33,6 +33,7 @@ maxDepth(root) = max(maxDepth(root->left), maxDepth(root->right))
 ### Code
 
 ```cpp
+#include <iostream>
 struct TreeNode {
     int val;
     TreeNode *left;
@@ -48,6 +49,22 @@ int maxDepth(TreeNode* root) {
     }
     return 1 + std::max(maxDepth(root->left), maxDepth(root->right));
 }
+int main() {
+    TreeNode fifteen(15);
+    TreeNode seven(7);
+    TreeNode twenty(20, &fifteen, &seven);
+    TreeNode nine(9);
+    TreeNode three(3, &nine, &twenty);
+    std::cout << maxDepth(&three) << std::endl;
+    TreeNode two(2);
+    TreeNode one(1, nullptr, &two);
+    std::cout << maxDepth(&one) << std::endl;
+}
+```
+```text
+Output:
+3
+2
 ```
 
 ### Code explanation

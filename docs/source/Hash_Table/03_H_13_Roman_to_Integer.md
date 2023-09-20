@@ -57,8 +57,11 @@ To treat the subtraction cases easier you can iterate the string `s` backward.
 
 ### Code
 ```cpp
+#include <iostream>
+#include <unordered_map>
+using namespace std;
 int romanToInt(string s) {
-    std::unordered_map<char, int> value = {
+    unordered_map<char, int> value = {
         {'I', 1},
         {'V', 5},
         {'X', 10},
@@ -73,6 +76,17 @@ int romanToInt(string s) {
     }
     return result;
 }
+int main() {
+    cout << romanToInt("III") << endl;
+    cout << romanToInt("LVIII") << endl;
+    cout << romanToInt("MCMXCIV") << endl;
+}
+```
+```text
+Output:
+3
+58
+1994
 ```
 
 ### Code explanation

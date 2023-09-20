@@ -33,6 +33,10 @@ Output: ["a","b","c"]
 ### Code
 
 ```cpp
+#include <iostream>
+#include <vector>
+#include <unordered_map>
+using namespace std;
 vector<string> findAndReplacePattern(vector<string>& words, string pattern) {
     vector<string> result;  
     // need two maps for the bijection
@@ -67,6 +71,26 @@ vector<string> findAndReplacePattern(vector<string>& words, string pattern) {
     }
     return result;
 }
+void printResult(const vector<string>& result) {
+    cout << "[";
+    for (const string& s : result) {
+        cout << s << ",";
+    }
+    cout << "]\n";
+}
+int main() {
+    vector<string> words{"abc","deq","mee","aqq","dkd","ccc"};
+    auto result = findAndReplacePattern(words, "abb");
+    printResult(result);
+    words = {"a", "b", "c"};
+    result = findAndReplacePattern(words, "abb");
+    printResult(result);
+}
+```
+```text
+Output:
+[mee,aqq,]
+[a,b,c,]
 ```
 
 ### Code explanation
