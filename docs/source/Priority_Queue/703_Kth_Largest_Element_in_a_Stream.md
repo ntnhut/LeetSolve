@@ -89,9 +89,25 @@ Output:
 8
 ```
 
+### Code explanation
+
+1. The constructor takes two parameters, `k` and `nums`, where `k` is the target `k`-th largest value, and `nums` is the initial vector of integers. Inside the constructor, it sorts the `_nums` vector in non-ascending order using `std::greater()` as the comparison function. This ensures that the largest elements are at the beginning of the vector, making it easier to find the `k`-th largest element later.
+
+2. The `add` method takes an integer `val` as its parameter, representing the value to be added to the collection. It inserts `val` into the `_nums` vector while maintaining the sorted order. It uses an iterator `it` to traverse the vector until it finds the correct position to insert `val`. After inserting `val`, the method returns the `k`-th largest element, which is now located at the `_k - 1` index in the sorted vector.
+
+Here's how the `KthLargest` class works:
+
+- When you create an instance of `KthLargest`, it sorts the initial `nums` vector in non-ascending order.
+- When you call the `add` method with a new integer, it inserts the integer into the sorted `_nums` vector while keeping it sorted.
+- After each insertion, the method returns the `k`-th largest element from the sorted vector.
+
+This implementation allows you to efficiently find the `k`-th largest element in the collection with each `add` operation, as the vector is maintained in a sorted order.
+
+The time complexity of adding an element in this implementation is O(N), where N is the number of elements in the vector. However, finding the `k`-th largest element (after adding) is an O(1) operation, as you are directly accessing the `k`-th largest element from the sorted vector.
+
 ### Complexity
-* Runtime: $O(n\log n)$, where $n$ is `nums.length`.
-* Extra space: $O(1)$.
+* Runtime: for the constructor `O(n*logn)`, where `n = nums.length`. For the `add` method, `O(n)`.
+* Extra space: `O(1)`.
 
 ## Solution 2: Priority queue
 
@@ -144,8 +160,28 @@ Output:
 8
 ```
 
+### Code explanation
+
+1. The constructor takes two parameters, `k` and `nums`, where `k` is the target `k`-th largest value, and `nums` is the initial vector of integers. Inside the constructor, it initializes a `priority_queue` `_q` using the elements from the `nums` vector. This priority queue is configured to store elements in ascending order, so the smallest elements will be at the top of the queue.
+
+2. The `add` method takes an integer `val` as its parameter, representing the value to be added to the collection. It pushes `val` onto the priority queue `_q`, which maintains the elements in ascending order. Then, it checks the size of the priority queue. If the size exceeds `_k`, it pops elements from the front of the priority queue until the size is reduced to `_k`. Finally, it returns the top element of the priority queue, which is the `k`-th largest element in the collection.
+
+Here's how the `KthLargest` class works:
+
+- When you create an instance of `KthLargest`, it initializes a priority queue with the elements from the `nums` vector, ensuring that the smallest elements are at the top of the queue.
+
+- When you call the `add` method with a new integer, it pushes the integer onto the priority queue, maintaining the ascending order.
+
+- After each insertion, the method checks the size of the priority queue. If the size exceeds `_k`, it removes elements from the front of the queue until the size is reduced to `_k`.
+
+- Finally, the method returns the top element of the priority queue, which is the `k`-th largest element in the collection.
+
+This implementation allows you to efficiently find the `k`-th largest element in the collection with each `add` operation, as the priority queue is maintained in ascending order, and unnecessary elements are removed to keep the size at `_k`.
+
+The time complexity of adding an element is O(log N), where N is the number of elements in the priority queue. Finding the `k`-th largest element (after adding) is an O(1) operation, as you are directly accessing the top element of the priority queue.
+
 ### Complexity
-* Runtime: $O(n)$, where $n$ is `nums.length`.
-* Extra space: $O(1)$.
+* Runtime: for the constructor, `O(n*logn)`, where `n = nums.length`. For the `add` method, `O(logn)`.
+* Extra space: `O(1)`.
 
 

@@ -6,7 +6,7 @@ This chapter explores **priority queues**, a fascinating data structure designed
 
 Think of a priority queue as a line at a theme park, where individuals with priority passes are served before others. Similarly, a priority queue ensures that elements with higher priority are processed ahead of those with lower priority, enabling us to address a wide range of problems that involve ordering and selection.
 
-**What This Chapter Covers:**
+**What this chapter covers:**
 
 1. **Understanding Priority Queues:** Begin by grasping the essence of priority queues, their underlying mechanisms, and the significance of their unique ordering.
 

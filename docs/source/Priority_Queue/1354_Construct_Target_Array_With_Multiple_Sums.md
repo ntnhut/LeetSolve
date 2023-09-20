@@ -104,9 +104,33 @@ Output:
 1
 ```
 
+### Code explanation
+
+1. Calculate the sum of all elements in the `target` array using the `accumulate` function and store it in the variable `sum`. This sum represents the total value of the elements in the array.
+
+2. Find the maximum element in the `target` array and store its iterator in the variable `pmax`.
+
+3. Enter a loop that continues until the maximum element in the array becomes 1. The loop's purpose is to reduce the maximum element to 1 or determine if it's impossible to do so.
+
+4. In each iteration of the loop:
+   - Subtract the value of `*pmax` from `sum`. This simulates the operation of reducing the maximum element.
+   - Check if `sum` has become 1. If it has, return `true` because you can always turn the array `[m,1]` into `[1,1]` by reducing `m` to 1.
+   - Check if the maximum element `*pmax` is less than or equal to `sum`. If this condition is met, return `false` because you cannot reduce `*pmax` further without going below 1.
+   - Check if `sum` has become 0. If it has, return `false` because you cannot reach an array of all 1s when the sum is zero.
+   - Modify the maximum element `*pmax` by taking its modulus with `sum`. This reduces `*pmax` to a value smaller than the current maximum, allowing you to continue the process.
+   - Add the modified `*pmax` back to `sum` to reflect the new total value of the array.
+
+5. Update the maximum element `pmax` to point to the new maximum element in the modified `target` array.
+
+6. After the loop ends, check if `sum` is equal to the size of the `target` array. If it is, return `true` because all elements in the array are now 1.
+
+7. If none of the previous conditions are met, return `false` to indicate that it's impossible to obtain an array of all 1s.
+
+In summary, this solution iteratively reduces the maximum element in the `target` array while keeping track of the total sum. It checks various conditions to determine whether it's possible to reach an array consisting of only 1s. If all conditions are satisfied, it returns `true`; otherwise, it returns `false`.
+
 ### Complexity
-* Runtime: $O(\log N)$, where $N$ is `max(target)`.
-* Extra space: $O(1)$.
+* Runtime: `O(log N)`, where `N = max(target)`.
+* Extra space: `O(1)`.
 
 ## Solution 2: Using priority_queue
 
@@ -161,8 +185,32 @@ Output:
 1
 ```
 
+### Code explanation
+
+1. Initialize a max heap (priority queue) `q` with the elements from the `target` array. The max heap is used to efficiently find and process the maximum element.
+
+2. Calculate the sum of all elements in the `target` array using the `accumulate` function and store it in the variable `sum`. This sum represents the total value of the elements in the array.
+
+3. Enter a loop that continues until the maximum element in the `q` heap becomes 1. The loop's purpose is to reduce the maximum element to 1 or determine if it's impossible to do so.
+
+4. In each iteration of the loop:
+   - Subtract the value of `q.top()` (the maximum element in the heap) from `sum`. This simulates the operation of reducing the maximum element.
+   - Check if `sum` has become 1. If it has, return `true` because you can always turn the array `[m,1]` into `[1,1]` by reducing `m` to 1.
+   - Check if `q.top()` is less than or equal to `sum`. If this condition is met, return `false` because you cannot reduce `q.top()` further without going below 1.
+   - Check if `sum` has become 0. If it has, return `false` because you cannot reach an array of all 1s when the sum is zero.
+   - Calculate the remainder `pre` when `q.top()` is divided by `sum`. This represents the amount left after subtracting `q.top()` from `sum`.
+   - Pop the maximum element `q.top()` from the heap.
+   - Push the value `pre` back into the heap, as it represents the updated value of the maximum element.
+   - Add `pre` to `sum` to reflect the new total value of the array.
+
+5. After the loop ends, check if `sum` is equal to the size of the `target` array. If it is, return `true` because all elements in the array are now 1.
+
+6. If none of the previous conditions are met, return `false` to indicate that it's impossible to obtain an array of all 1s.
+
+In summary, this solution uses a max heap (`priority_queue`) to efficiently find and process the maximum element in the `target` array while keeping track of the total sum. It checks various conditions to determine whether it's possible to reach an array consisting of only 1s. If all conditions are satisfied, it returns `true`; otherwise, it returns `false`.
+
 ### Complexity
-* Runtime: $O(\log N)$, where $N$ is `max(target)`.
-* Extra space: $O(n)$, where $n$ is `target.length`.
+* Runtime: `O(logN)`, where `N = max(target)`.
+* Extra space: `O(n)`, where `n = target.length`.
 
 
