@@ -64,9 +64,22 @@ Output:
 3
 ```
 
+### Code explanation
+
+1. The code sorts the `nums` vector in ascending order.
+
+2. It iterates through the sorted vector, comparing each element with the one next to it.
+
+3. If it finds two adjacent elements that are equal, it returns that element as it is the duplicate.
+
+4. If no duplicate is found during the loop, it returns 0 as a default value.
+
+
 ### Complexity
-* Runtime: $O(n\log n)$.
-* Extra space: $O(1)$.
+The code relies on sorting to bring duplicate elements together, making it easy to identify them during the linear pass. The time complexity is `O(n*logn)` due to the sorting operation.
+
+* Runtime: `O(n*logn)`.
+* Extra space: `O(1)`.
 
 ## Follow up
 
@@ -89,7 +102,7 @@ using namespace std;
 int findDuplicate(vector<int>& nums) {
     vector<bool> visited(nums.size());
     for (int a : nums) {
-        if (visited[a]) {
+        if (visited.at(a)) {
             return a;
         }
         visited[a] = true;
@@ -109,9 +122,19 @@ Output:
 3
 ```
 
+### Code explanation
+
+1. The code creates a Boolean vector `visited` with the same size as the `nums` vector to keep track of visited elements.
+
+2. For each element `a` in the `nums` vector, it checks if the corresponding index in the `visited` vector is already marked as `true`. If it is, it returns `a` as it is the duplicate.
+
+3. If the element is not marked as visited, it sets the corresponding index in the `visited` vector to `true` to mark it as visited.
+
+4. If no duplicates are found during the loop, it returns 0 as a default value.
+
 ### Complexity
-* Runtime: $O(n)$.
-* Extra space: much less than $O(n)$. [`std::vector<bool>`](https://en.cppreference.com/w/cpp/container/vector_bool) is optimized for space-efficient. 
+* Runtime: `O(n)`.
+* Extra space: much less than `O(n)`. [`std::vector<bool>`](https://en.cppreference.com/w/cpp/container/vector_bool) is optimized for space-efficient. 
 
 ## Solution 3: Marking with `std::bitset`
 
@@ -146,9 +169,18 @@ Output:
 3
 ```
 
+### Code explanation
+
+1. The code creates a `bitset` named `visited` with a size of 100001, which is large enough to accommodate the possible values in the `nums` vector.
+
+2. For each element `a` in `nums`, it checks if the corresponding bit in the `visited` `bitset` is set (1). If it is, the code returns `a` as it is the duplicate.
+
+3. If the bit is not set, the code sets the corresponding bit in the `visited` `bitset` to 1 to mark it as visited.
+
+4. If no duplicates are found during the loop, it returns 0 as a default value.
+
 ### Complexity
-* Runtime: $O(n)$.
-* Extra space: $O(1)$. 
+This code efficiently uses a bitset to keep track of visited elements and quickly detects any duplicate element encountered during the iteration. The time complexity is `O(n)` because it makes a single pass through the input vector.
 
-
-
+* Runtime: `O(n)`.
+* Extra space: `O(1)`. 

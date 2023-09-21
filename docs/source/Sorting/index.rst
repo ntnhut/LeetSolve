@@ -6,7 +6,7 @@ The arrangement of the elements in an array can hold the key to improved efficie
 
 Sorting is similar to putting puzzle pieces to reveal the overall structure. Rearranging elements makes it possible to retrieve data more quickly, conduct searches more quickly, and even discover patterns and linkages that might otherwise go unnoticed.
 
-What This Chapter Covers:
+What this chapter covers:
 
 1. **Introduction to Sorting:** Establish a strong foundation by understanding the significance of sorting, its impact on algorithmic performance, and the role of ordering in data analysis.
 

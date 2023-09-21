@@ -62,9 +62,24 @@ Output:
 2
 ```
 
+### Code explanation
+
+1. The coe initializes an unordered map `freq` to keep track of the frequency of each unique integer in the `nums` array. Also, it defines a constant `HALF` as half the size of the `nums` array. This value represents the threshold for an element to be considered a majority element.
+
+2. It iterates through the `nums` array using a for-each loop, processing each integer `a`:
+
+   * It increments the frequency count of integer `a` in the `freq` map by 1.
+
+   * It checks if the frequency count of `a` in the `freq` map is greater than `HALF`. If it is, this means `a` appears more than n/2 times, and it returns `a` as the majority element.
+
+3. If the loop completes without finding a majority element, it returns the first element of the `nums` array (assuming there is always a majority element present).
+
+The code effectively counts the occurrences of each integer in the array and checks if any integer appears more than `n/2` times. If so, it returns that integer as the majority element; otherwise, it defaults to the first element of the array.
+
+
 ### Complexity
-* Runtime: $O(n)$, where $n$ is `nums.length`.
-* Extra space: $O(n)$.
+* Runtime: `O(n)`, where `n = nums.length`.
+* Extra space: `O(n)`.
 
 ## Solution 2: Sorting and picking the middle element
 
@@ -91,9 +106,19 @@ Output:
 2
 ```
 
+### Code explanation
+
+1. The code sorts the `nums` vector in ascending order using the `sort` function. This step rearranges the elements so that identical elements are adjacent to each other.
+
+2. After sorting, the majority element (if it exists) will be in the middle of the sorted vector because it appears more than `n/2` times, where `n` is the size of the vector.
+
+3. It returns the element at the middle index of the sorted vector, which is `nums[nums.size() / 2]`. This element is the majority element.
+
+This code leverages the property of a majority element, which guarantees that it occupies the middle position in the sorted list of elements. Sorting the array allows us to easily access this middle element. 
+
 ### Complexity
-* Runtime: $O(n\log n)$, where $n$ is `nums.length`.
-* Extra space: $1$.
+* Runtime: `O(n*logn)`, where `n = nums.length`.
+* Extra space: `O(1)`.
 
 ## Solution 3: Partial sort
 
@@ -123,9 +148,19 @@ Output:
 2
 ```
 
+### Code explanation
+
+1. The code calculates the index `mid`, which represents the approximate middle index of the `nums` vector. This is done by dividing the size of the vector by 2.
+
+2. It uses the `std::nth_element` function to rearrange the elements in the `nums` vector such that the element at index `mid` will be in its correct sorted position, and all elements before it will be less than or equal to it, while all elements after it will be greater than or equal to it.
+
+3. It returns the element at index `mid`. This element is the majority element.
+
 ### Complexity
-* Runtime: $O(n)$, where $n$ is `nums.length`.
-* Extra space: $O(1)$.
+By using `std::nth_element`, the code avoids fully sorting the entire vector, which makes it more efficient. 
+
+* Runtime: `O(n)`, where `n = nums.length`.
+* Extra space: `O(1)`.
 
 
 ```{admonition} Modern C++ tips
