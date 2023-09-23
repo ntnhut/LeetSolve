@@ -4,7 +4,7 @@ Dynamic Programming
 
 This chapter explains **dynamic programming**, a method for solving complex problems with strategic optimization. By breaking down problems into smaller subproblems and using memorization and recursion, elegant and efficient solutions can be found. It's like solving a puzzle by solving smaller pieces and putting them together to form the larger picture.
 
-What This Chapter Covers:
+What this chapter covers:
 
 1. **Introduction to Dynamic Programming:** Establish a solid foundation by understanding the core principles of dynamic programming, its advantages, and the problems it best suits.
 

@@ -79,9 +79,22 @@ Output:
 -10
 ```
 
+### Code explanation
+
+This solution finds the minimum path sum from the top to the bottom of a triangle, represented as a vector of vectors. It uses dynamic programming to efficiently calculate the minimum path sum.
+
+The algorithm initializes a `minTotal` vector of vectors to store the minimum path sum for each element in the `triangle`. It starts by setting the first row of `minTotal` to be the same as the first row of the `triangle`.
+
+Then, it iterates through the rows of the `triangle` starting from the second row. For each element in the current row, it calculates the minimum path sum by considering the two possible paths from the previous row that lead to that element. It takes the minimum of the two paths and adds the value of the current element. This way, it accumulates the minimum path sum efficiently.
+
+The algorithm continues this process until it reaches the last row of the `triangle`. Finally, it returns the minimum element from the last row of `minTotal`, which represents the minimum path sum from top to bottom.
+
+
 ### Complexity
-* Runtime: $O(n^2/2)$, where $n$ is `triangle.length`.
-* Extra space: $O(n^2/2)$.
+The time complexity of this solution is `O(n^2)`, where `n` is the number of rows in the `triangle`. It iterates through each element in the triangle and computes the minimum path sum efficiently using dynamic programming.
+
+* Runtime: `O(n^2)`.
+* Extra space: `O(n^2)`.
 
 ## Solution 2: Store only the minimum paths of each row
 
@@ -118,8 +131,21 @@ Output:
 -10
 ```
 
+### Code explanation
+
+This solution aims to find the minimum path sum from the top to the bottom of a triangle, represented as a vector of vectors. It employs dynamic programming to efficiently calculate and store the minimum path sums for each element in the triangle.
+
+The algorithm initializes a `minTotal` vector to store the minimum path sums for each row of the triangle. It starts by setting the first element of `minTotal` to the value of the top element of the triangle.
+
+Then, it iterates through the rows of the triangle starting from the second row. For each element in the current row, it calculates the minimum path sum by considering two possible paths from the previous row that lead to that element. It takes the minimum of the two paths and adds the value of the current element. It updates the `minTotal` vector as it progresses.
+
+The algorithm continues this process until it reaches the last row of the triangle. Finally, it returns the minimum element from the `minTotal` vector, which represents the minimum path sum from top to bottom.
+
+
 ### Complexity
-* Runtime: $O(n^2/2)$, where $n$ is `triangle.length`.
-* Extra space: $O(n)$.
+The time complexity of this solution is `O(n^2)`, where `n` is the number of rows in the triangle. It iterates through each element in the triangle and computes the minimum path sum efficiently using dynamic programming.
+
+* Runtime: `O(n^2)`.
+* Extra space: `O(n)`.
 
 

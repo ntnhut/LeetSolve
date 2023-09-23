@@ -87,9 +87,21 @@ Output:
 1
 ```
 
+### Code explanation
+
+This solution computes the number of unique paths in an `m x n` grid with obstacles using dynamic programming. It initializes a 2D vector `np` of the same size as `obstacleGrid` to store the number of unique paths for each cell.
+
+First, it initializes the top row and left column of `np`. If there are no obstacles in the top row or left column of `obstacleGrid`, it sets the corresponding cells in `np` to 1 because there's only one way to reach any cell in the top row or left column.
+
+Then, it iterates through the grid starting from the second row and second column (i.e., indices (1, 1)). For each cell, if there's no obstacle (`obstacleGrid[i][j] == 0`), it updates the value in `np` by summing up the values from the cell directly above it and the cell to the left of it. This step efficiently accumulates the number of unique paths while avoiding obstacles.
+
+Finally, the value at `np[row-1][col-1]` contains the total number of unique paths to reach the bottom-right corner of the grid, which is returned as the result.
+
 ### Complexity
-* Runtime: $O(mn)$, where $m \times n$ is the size of the `grid`.
-* Extra space: $O(mn)$.
+The time complexity of this solution is `O(m*n)`, where `m` and `n` are the dimensions of the grid, as it iterates through all cells of the grid once to compute the unique paths efficiently. The use of dynamic programming avoids redundant calculations and makes this solution efficient even for large grids.
+
+* Runtime: `O(m*n)`.
+* Extra space: `O(m*n)`.
 
 
 
