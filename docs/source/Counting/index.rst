@@ -6,7 +6,7 @@ In this chapter, we will explore the benefits of counting elements and how it ca
 
 Counting elements is like organizing a messy room. When you categorize items, it becomes easier to access and make decisions. In algorithms, counting allows you to optimize processes, by identifying the most frequent elements or solving complex problems more efficiently.
 
-What This Chapter Covers:
+What this chapter covers:
 
 1. **Introduction to Counting:** Lay the foundation by understanding the significance of counting elements, its role in performance enhancement, and the various scenarios where counting is crucial.
 

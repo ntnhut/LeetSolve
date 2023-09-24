@@ -81,9 +81,11 @@ Output:
 
 6. Ultimately, the function returns the maximum depth of the entire binary tree rooted at the given `root` node.
 
-In summary, this code uses a recursive algorithm to calculate the maximum depth of a binary tree. It starts from the root node and recursively calculates the maximum depth of the left and right subtrees, returning the maximum depth among them. This process continues until it reaches the leaf nodes of the tree. 
 
 ### Complexity
+
+This solution uses a recursive algorithm to calculate the maximum depth of a binary tree. It starts from the root node and recursively calculates the maximum depth of the left and right subtrees, returning the maximum depth among them. This process continues until it reaches the leaf nodes of the tree. 
+
 * Runtime: `O(n)`, where `n` is the number of nodes.
 * Extra space: `O(h)`, where `h` is the height of the tree.
 

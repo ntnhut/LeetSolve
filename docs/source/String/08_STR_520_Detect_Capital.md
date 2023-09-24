@@ -88,9 +88,10 @@ Output:
    
 6. If the character is found to be invalid based on the current capitalization type, the function returns `false` immediately, indicating that the word doesn't adhere to the capitalization rule. If the loop completes without finding any violations, it means that the word adheres to one of the capitalization rules, and the function returns `true`.
 
-In summary, this solution efficiently checks whether a given word follows one of the specified capitalization rules by iterating through the characters of the word and using the `isValidCase` function to validate each character's capitalization based on the current capitalization type (`isLower`). If no violations are found, the word is considered valid, and the function returns `true`. 
 
 ### Complexity
+This solution efficiently checks whether a given word follows one of the specified capitalization rules by iterating through the characters of the word and using the `isValidCase` function to validate each character's capitalization based on the current capitalization type (`isLower`). If no violations are found, the word is considered valid, and the function returns `true`. 
+
 * Runtime: `O(N)`, where `N = word.length`.
 * Extra space: `O(1)`.
 

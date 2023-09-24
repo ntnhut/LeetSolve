@@ -282,9 +282,10 @@ Output:
 
 6. Finally, the function returns `nodeA` (or `nodeB`, which will also be the same at this point) as the intersection node.
 
-In summary, this improved solution finds the intersection of two linked lists by first determining their lengths and adjusting the pointers so that they start from the same relative position to the intersection point. Then, it iterates through both linked lists until it finds the common intersection node. 
 
 ### Complexity
+This improved solution finds the intersection of two linked lists by first determining their lengths and adjusting the pointers so that they start from the same relative position to the intersection point. Then, it iterates through both linked lists until it finds the common intersection node. 
+
 * Runtime: `O(m + n)`, where `m`, `n` are the number of nodes of `listA` and `listB`.
 * Extra space: `O(1)`.
 

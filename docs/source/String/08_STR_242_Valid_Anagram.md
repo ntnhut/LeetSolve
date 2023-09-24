@@ -161,9 +161,10 @@ Instead of relying on a fixed-size array like the ASCII-based solutions, this so
 
 Unicode characters can have variable lengths in terms of bytes or code points, and their values are not restricted to a specific range. The `unordered_map` approach accommodates this variability by allowing any character to be a key.
 
-In summary, this solution is Unicode-friendly because it relies on the flexible `unordered_map` data structure to count character frequencies and doesn't make any assumptions about the character encoding or specific character ranges. It's a general and robust approach that can handle a wide range of character sets, including Unicode.
 
 ### Complexity
+This solution is Unicode-friendly because it relies on the flexible `unordered_map` data structure to count character frequencies and doesn't make any assumptions about the character encoding or specific character ranges. It's a general and robust approach that can handle a wide range of character sets, including Unicode.
+
 * Runtime: `O(N)`, where `N = s.length`.
 * Extra space: `O(c)` where `c` represents the number of unique characters present in both strings `s` and `t`.
 

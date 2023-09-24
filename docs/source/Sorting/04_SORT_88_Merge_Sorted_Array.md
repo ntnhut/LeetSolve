@@ -115,11 +115,12 @@ Output:
 
 5. Finally, it replaces the contents of `nums1` with the contents of the `result` vector using the `swap` method, effectively updating `nums1` with the merged and sorted values.
 
-In summary, this solution merges two sorted arrays `nums1` and `nums2` into `nums1` while maintaining sorted order. It iterates through both arrays, comparing elements and adding them to a temporary `result` vector. After the merging is complete, it replaces the contents of `nums1` with the merged result. 
 
 ### Complexity
-* Runtime: `O(m + n)`, where `m = nums1.length` and `n = nums2.length`.
-* Extra space: `O(m + n)`.
+This solution merges two sorted arrays `nums1` and `nums2` into `nums1` while maintaining sorted order. It iterates through both arrays, comparing elements and adding them to a temporary `result` vector. After the merging is complete, it replaces the contents of `nums1` with the merged result. 
+
+* Runtime: `O(m+n)`, where `m = nums1.length` and `n = nums2.length`.
+* Extra space: `O(m+n)`.
 
 ## Solution 2: Reassigning `nums1` backward
 
@@ -191,8 +192,9 @@ Output:
 
 4. When the while loop completes, `nums1` contains the merged and sorted elements of both `nums1` and `nums2`.
 
-In summary, this solution efficiently merges two sorted arrays, `nums1` and `nums2`, into `nums1` while preserving the sorted order. It uses three pointers (`k`, `i`, and `j`) to perform the merge in reverse order, which helps avoid the need for additional space. 
 
 ### Complexity
-* Runtime: `O(m + n)`, where `m = nums1.length` and `n = nums2.length`.
+In summary, this solution efficiently merges two sorted arrays, `nums1` and `nums2`, into `nums1` while preserving the sorted order. It uses three pointers (`k`, `i`, and `j`) to perform the merge in reverse order, which helps avoid the need for additional space. 
+
+* Runtime: `O(m+n)`, where `m = nums1.length` and `n = nums2.length`.
 * Extra space: `O(1)`.

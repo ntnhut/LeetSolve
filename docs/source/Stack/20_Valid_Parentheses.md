@@ -92,9 +92,10 @@ Output:
 
 3. After processing all characters in the input string, the code checks if the stack is empty. If the stack is empty, it means that all opening brackets have been successfully matched with closing brackets, and the input string is considered valid. If the stack is not empty, there are unmatched opening brackets remaining, and the input string is considered invalid.
 
-In summary, this code efficiently checks the validity of a string of parentheses, brackets, and curly braces by using a stack to ensure that each opening bracket is correctly matched with its corresponding closing bracket. 
 
 ### Complexity:
+This solution efficiently checks the validity of a string of parentheses, brackets, and curly braces by using a stack to ensure that each opening bracket is correctly matched with its corresponding closing bracket. 
+
 * Runtime: `O(N)`, where `N = s.length`.
 * Extra space: `O(N)`.
 

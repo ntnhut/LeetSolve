@@ -88,9 +88,9 @@ Output:
 
 4. After the loop ends, we check if the priority queue is empty. If it is, it means all stones have been smashed and no stones are left, so we return 0. Otherwise, we return the weight of the last stone remaining, which is at the top of the priority queue.
 
-This solution efficiently simulates the process of smashing stones and finding the last remaining stone by using a max-heap (priority queue) to always select the heaviest stones to smash together.
 
 ### Complexity
+This solution efficiently simulates the process of smashing stones and finding the last remaining stone by using a max-heap (priority queue) to always select the heaviest stones to smash together.
 
 * Runtime: `O(n*logn)`, where `n = stones.length`.   
 * Extra space: `O(n)`.

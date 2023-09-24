@@ -114,9 +114,10 @@ Output:
 
 3. It returns the element at the middle index of the sorted vector, which is `nums[nums.size() / 2]`. This element is the majority element.
 
-This code leverages the property of a majority element, which guarantees that it occupies the middle position in the sorted list of elements. Sorting the array allows us to easily access this middle element. 
 
 ### Complexity
+This code leverages the property of a majority element, which guarantees that it occupies the middle position in the sorted list of elements. Sorting the array allows us to easily access this middle element. 
+
 * Runtime: `O(n*logn)`, where `n = nums.length`.
 * Extra space: `O(1)`.
 

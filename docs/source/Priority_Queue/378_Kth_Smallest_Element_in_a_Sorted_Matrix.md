@@ -75,10 +75,11 @@ Output:
 
 3. Finally, the code returns the `k`-th smallest element from the sorted `m` vector. Since the vector is 0-based indexed, the `k`-th smallest element corresponds to the element at index `k - 1` in the sorted vector.
 
-The core idea behind this solution is to transform the 2D matrix into a 1D sorted array, making it easier to find the `k`-th smallest element efficiently. The time complexity of this solution is dominated by the sorting step, which is O(N*log(N)), where N is the total number of elements in the matrix.
 
 ### Complexity
-* Runtime: `O(NlogN)`, where `N = n^2` is the total number of elements in the matrix.
+The core idea behind this solution is to transform the 2D matrix into a 1D sorted array, making it easier to find the `k`-th smallest element efficiently. The time complexity of this solution is dominated by the sorting step, which is `O(N*logN)`, where `N` is the total number of elements in the matrix.
+
+* Runtime: `O(N*logN)`, where `N = n^2` is the total number of elements in the matrix.
 * Extra space: `O(N)`.
 
 ## Solution 2: Build the max heap and keep it ungrown
@@ -130,10 +131,11 @@ Output:
 
 5. After processing all elements in the matrix, the priority queue `q` will contain the smallest `k` elements, with the `k`-th smallest element at the top of the priority queue. The code returns the top element of the priority queue using `q.top()`, which is the `k`-th smallest element in the matrix.
 
-The key idea behind this solution is to maintain a priority queue of size `k`, allowing it to efficiently keep track of the `k`-th smallest element encountered while iterating through the matrix. This approach is particularly useful for large matrices, as it doesn't require sorting the entire matrix. 
 
 ### Complexity
-* Runtime: `O(Nlogk)`, where `N = n^2` is the total number of elements of the matrix.
+The key idea behind this solution is to maintain a priority queue of size `k`, allowing it to efficiently keep track of the `k`-th smallest element encountered while iterating through the matrix. This approach is particularly useful for large matrices, as it doesn't require sorting the entire matrix. 
+
+* Runtime: `O(N*logk)`, where `N = n^2` is the total number of elements of the matrix.
 * Extra space: `O(k)`.
 
 ## Solution 3: Binary search
@@ -205,13 +207,13 @@ The binary search in the `kthSmallest` function efficiently narrows down the sea
 
 2. In each iteration of the binary search, the `countLessOrEqual` function is called. This function iterates through each row of the matrix and performs an `upper_bound` operation on that row. The `upper_bound` operation has a time complexity of `O(logn)` for each row, where `n` is the number of elements in a row. The worst-case time complexity of the `countLessOrEqual` function is `O(n*logn)` for a single call.
 
-4. In the binary search, the search range is continuously halved with each iteration. Therefore, the number of binary search iterations required to converge to the final answer is `O(log(max - min))`, where `max` and `min` are the maximum and minimum possible values in the matrix.
+4. In the binary search, the search range is continuously halved with each iteration. Therefore, the number of binary search iterations required to converge to the final answer is `O(log(max-min))`, where `max` and `min` are the maximum and minimum possible values in the matrix.
 
-5. Combining the above points, the overall time complexity of the `kthSmallest` function is `O(log(max - min)) * O(n*logn)`.
+5. Combining the above points, the overall time complexity of the `kthSmallest` function is `O(log(max-min)) * O(n*logn)`.
 
 In summary:
 
-* Runtime: `O(n * logn * log(max -min))`, where `n` is the number of rows/columns of the matrix, `max` and `min` are the maximum and minimum possible values in the matrix..
+* Runtime: `O(n*logn* log(max -min))`, where `n` is the number of rows/columns of the matrix, `max` and `min` are the maximum and minimum possible values in the matrix..
 * Extra space: `O(1)`.
 
 

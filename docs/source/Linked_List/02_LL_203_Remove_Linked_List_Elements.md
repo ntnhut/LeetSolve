@@ -117,9 +117,10 @@ Output:
 
 5. Finally, the function returns `head`, which now points to the modified linked list with all nodes containing the specified `val` removed.
 
-In summary, this code efficiently removes nodes with a specified value `val` from a linked list by using two pointers (`head` and `pre`) to traverse the list and update the `next` pointers to bypass nodes with the specified value. 
 
 ### Complexity
+This solution efficiently removes nodes with a specified value `val` from a linked list by using two pointers (`head` and `pre`) to traverse the list and update the `next` pointers to bypass nodes with the specified value. 
+
 * Runtime: `O(N)`, where `N` is the number of nodes.
 * Memory: `O(1)`.
 

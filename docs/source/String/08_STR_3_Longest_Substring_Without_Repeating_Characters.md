@@ -101,9 +101,10 @@ Output:
 
 5. After the loop completes, `maxLen` contains the length of the longest substring without repeating characters in the input string `s`. It is then returned as the result.
 
-In summary, this solution efficiently finds the length of the longest substring without repeating characters by using a sliding window approach and an unordered map to track character positions. It iterates through the string, updates the window, and calculates the maximum length as it goes. 
 
 ### Complexity
+This solution efficiently finds the length of the longest substring without repeating characters by using a sliding window approach and an unordered map to track character positions. It iterates through the string, updates the window, and calculates the maximum length as it goes. 
+
 * Runtime: `O(N)`, where `N = s.length`.
 * Extra space: `O(N)`.
 

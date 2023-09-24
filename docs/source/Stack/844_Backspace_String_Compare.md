@@ -85,9 +85,10 @@ Output:
 
 4. Finally, the code compares the cleaned strings obtained from `s` and `t`. If the cleaned strings are equal, it means that the original strings are equivalent after processing backspaces, and the function returns `true`. Otherwise, it returns `false`.
 
-In summary, this code effectively handles backspace characters (`'#'`) in input strings `s` and `t` by constructing cleaned versions of the strings and then comparing the cleaned strings for equality.
 
 ### Complexity
+This solution effectively handles backspace characters (`'#'`) in input strings `s` and `t` by constructing cleaned versions of the strings and then comparing the cleaned strings for equality.
+
 * Runtime: `O(n)`, where `n = max(s.length, t.length)`.
 * Extra space: `O(n)`. 
 

@@ -207,9 +207,10 @@ Output:
 
 6. If none of the previous conditions are met, return `false` to indicate that it's impossible to obtain an array of all 1s.
 
-In summary, this solution uses a max heap (`priority_queue`) to efficiently find and process the maximum element in the `target` array while keeping track of the total sum. It checks various conditions to determine whether it's possible to reach an array consisting of only 1s. If all conditions are satisfied, it returns `true`; otherwise, it returns `false`.
-
 ### Complexity
+
+This solution uses a max heap (`priority_queue`) to efficiently find and process the maximum element in the `target` array while keeping track of the total sum. It checks various conditions to determine whether it's possible to reach an array consisting of only 1s. If all conditions are satisfied, it returns `true`; otherwise, it returns `false`.
+
 * Runtime: `O(logN)`, where `N = max(target)`.
 * Extra space: `O(n)`, where `n = target.length`.
 

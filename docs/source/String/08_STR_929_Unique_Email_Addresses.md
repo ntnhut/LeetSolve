@@ -114,8 +114,8 @@ Output:
 In summary, this code parses a list of email addresses, normalizes each email address by removing periods and ignoring characters after the plus sign in the local name, and then counts the number of unique email addresses. The use of an unordered set ensures that only unique email addresses are counted.
 
 ### Complexity
-* Runtime: `O(NM^2)`, where `N = emails.length` and `M = max(emails[i].length)`. Explanation: you loop over `N` emails. Then you might loop over the length of each email, `O(M)`, to remove the character `'.'`. The removal might cost `O(M)`.
-* Extra space: `O(NM)` (the set of emails).
+* Runtime: `O(N*M^2)`, where `N = emails.length` and `M = max(emails[i].length)`. Explanation: you loop over `N` emails. Then you might loop over the length of each email, `O(M)`, to remove the character `'.'`. The removal might cost `O(M)`.
+* Extra space: `O(N*M)` (the set of emails).
 
 ## Solution 2: Building the clean email addresses from scratch
 The runtime of removing characters in `std::string` is not constant. To avoid that complexity you can build up the clean email addresses from scratch.
@@ -185,11 +185,12 @@ Output:
 
 4. After processing all the email addresses, the code returns the size of the set `s`. The size of the set represents the number of unique email addresses after applying the normalization rules.
 
-In summary, this code parses a list of email addresses, normalizes each email address by removing periods and ignoring characters after the plus sign in the local name, and then counts the number of unique email addresses. The use of an unordered set ensures that only unique email addresses are counted. This solution achieves the same result as the previous solution but uses a different approach to process the email addresses.
 
 ### Complexity
-* Runtime: `O(NM)`, where `N = emails.length` and `M = max(emails[i].length)`.
-* Extra space: `O(NM)`.
+In summary, this code parses a list of email addresses, normalizes each email address by removing periods and ignoring characters after the plus sign in the local name, and then counts the number of unique email addresses. The use of an unordered set ensures that only unique email addresses are counted. This solution achieves the same result as the previous solution but uses a different approach to process the email addresses.
+
+* Runtime: `O(N*M)`, where `N = emails.length` and `M = max(emails[i].length)`.
+* Extra space: `O(N*M)`.
 
 ## C++ Notes
 

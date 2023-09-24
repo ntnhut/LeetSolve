@@ -78,6 +78,28 @@ Output:
 1
 ```
 
+### Code explanation
+
+1. The code initializes an unordered map `m` where keys represent the values in the array `nums`, and values represent the frequency (count) of each value.
+
+2. It also initializes a variable `count` to keep track of the count of valid pairs of elements.
+
+3. The loop then iterates through the elements of the `nums` array. For each element `a` encountered:
+
+   - It increments the count of `a` in the `m` map to keep track of its frequency.
+   
+   - It checks if there exists a complementary element (`k - a`) in the map `m` with a count greater than 0. If such an element exists:
+   
+     - It verifies if `a` is not equal to `k - a` (to ensure distinct elements) or if there are at least two occurrences of `a` in the array.
+     
+     - If either of the above conditions is met, it means a valid pair `(a, k - a)` can be formed. In this case, it increments the `count` and decrements the counts of both `a` and `k - a` in the map `m`. This indicates that these elements have been used in a pair.
+     
+4. After iterating through the entire array, the function returns the final count, which represents the maximum number of valid pairs of elements that sum up to `k`.
+
+
 ### Complexity
-* Runtime: `O(N)`, where `N = nums.length`.
-* Extra space: `O(N)`.
+This solution has a time complexity of `O(n)`, where `n` is the number of elements in the `nums` array, as it iterates through the array once. The use of the unordered map allows efficient lookup of complementary elements. The space complexity is also `O(n)` because, in the worst case, all unique elements in `nums` are stored in the `m` map.
+
+
+* Runtime: `O(n)`.
+* Extra space: `O(n)`.

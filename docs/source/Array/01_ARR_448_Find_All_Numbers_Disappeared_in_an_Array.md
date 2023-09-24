@@ -145,9 +145,9 @@ Output:
 
 6. Finally, the function returns the `result` vector, which contains all the disappeared numbers in the `nums` array.
 
-In summary, this code efficiently finds the disappeared numbers in an array by using the sign of elements to mark their presence or absence. It leverages the fact that the array contains numbers in the range of `1` to `n`, and it avoids using additional data structures.
-
 ### Complexity
+
+This solution efficiently finds the disappeared numbers in an array by using the sign of elements to mark their presence or absence. It leverages the fact that the array contains numbers in the range of `1` to `n`, and it avoids using additional data structures.
 
 * Runtime: `O(n)`, where `n = nums.length`.
 * Extra space: `O(1)` (the returned list does not count as extra space).

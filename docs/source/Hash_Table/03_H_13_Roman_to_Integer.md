@@ -105,9 +105,10 @@ Output:
 
 6. Finally, the function returns the `result`, which contains the total integer value corresponding to the Roman numeral string.
 
-In summary, this code efficiently converts a Roman numeral string into an integer by iterating through the string from right to left and applying the rules of Roman numerals, where subtractive combinations are subtracted and additive combinations are added to calculate the total value. The unordered map is used to look up the values of Roman numerals. 
 
 ### Complexity
+This solution efficiently converts a Roman numeral string into an integer by iterating through the string from right to left and applying the rules of Roman numerals, where subtractive combinations are subtracted and additive combinations are added to calculate the total value. The unordered map is used to look up the values of Roman numerals. 
+
 * Runtime: `O(N)` where `N = s.length`.
 * Extra space: `O(1)`.
 

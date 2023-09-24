@@ -120,9 +120,10 @@ ps
 
 7. The code returns the final result string `s`, which contains the input string with `k` consecutive duplicates removed.
 
-In summary, this code efficiently removes substrings of consecutive duplicate characters of length `k` from a given string by using a stack to keep track of the adjacent characters. 
 
 ### Complexity
+This solution efficiently removes substrings of consecutive duplicate characters of length `k` from a given string by using a stack to keep track of the adjacent characters. 
+
 * Runtime: `O(N)`, where `N = s.length`.
 * Extra space: `O(N)`.
 

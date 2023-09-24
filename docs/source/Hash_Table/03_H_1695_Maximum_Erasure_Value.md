@@ -96,9 +96,10 @@ Here's a step-by-step explanation of how the code works:
 
 11. Finally, the function returns `maxSum`, which contains the maximum sum of a subarray with unique elements.
 
-In summary, this code efficiently finds the maximum sum of a subarray with unique elements using a sliding window approach and prefix sums. 
 
 ### Complexity
+This solution efficiently finds the maximum sum of a subarray with unique elements using a sliding window approach and prefix sums. 
+
 * Runtime: `O(N)`, where `N = nums.length`.
 * Extra space: `O(N)`.
 

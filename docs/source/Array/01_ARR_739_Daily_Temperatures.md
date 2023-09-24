@@ -100,9 +100,10 @@ Output:
 
 8. Finally, the `answer` vector is returned, which contains the number of days to wait for a warmer temperature for each day in the `temperatures` vector.
 
-In summary, this code uses two nested loops to compare each day's temperature with the temperatures of the subsequent days to find the next warmer day. It calculates and stores the waiting period in the `answer` vector and returns it as the result. 
 
 ### Complexity
+This solution uses two nested loops to compare each day's temperature with the temperatures of the subsequent days to find the next warmer day. It calculates and stores the waiting period in the `answer` vector and returns it as the result. 
+
 * Runtime: `O(N^2)`, where `N = temperatures.length`.
 * Extra space: `O(1)`.
 

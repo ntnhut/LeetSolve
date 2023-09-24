@@ -87,9 +87,10 @@ Output:
 
 8. Finally, after the loop has processed all positions in the flowerbed, the code checks whether `n` has become less than or equal to zero. If `n` is less than or equal to zero, it means that all required flowers have been planted successfully, and the function returns `true`. Otherwise, it returns `false`, indicating that it was not possible to plant all the required flowers in the flowerbed while following the given constraints.
 
-In summary, this code efficiently iterates through the flowerbed, planting flowers wherever possible while adhering to the constraints. It returns `true` if it's possible to plant all the required flowers and `false` otherwise.
 
 ### Complexity
+This solution efficiently iterates through the flowerbed, planting flowers wherever possible while adhering to the constraints. It returns `true` if it's possible to plant all the required flowers and `false` otherwise.
+
 * Runtime: `O(N)`, where `N = flowerbed.length`.
 * Extra space: `O(1)`.
 

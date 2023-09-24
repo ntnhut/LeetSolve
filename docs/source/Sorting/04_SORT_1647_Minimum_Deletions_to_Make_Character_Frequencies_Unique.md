@@ -109,9 +109,10 @@ Output:
 
 6. It returns the `deletion` value, which represents the minimum number of character deletions required to make all character frequencies unique.
 
-In summary, the code calculates the frequencies of characters in the input string, sorts them in descending order, and then iterates through them to determine the minimum deletions needed to achieve unique frequencies. 
 
 ### Complexity
+This solution calculates the frequencies of characters in the input string, sorts them in descending order, and then iterates through them to determine the minimum deletions needed to achieve unique frequencies. 
+
 * Runtime: `O(N)`, where `N = s.length`;
 * Extra space: `O(1)`.
 

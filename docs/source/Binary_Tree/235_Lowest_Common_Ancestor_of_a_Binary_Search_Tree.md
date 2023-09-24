@@ -107,9 +107,10 @@ Output:
 
 6. The recursion continues until it finds the LCA or reaches a null node (indicating that one of the nodes `p` or `q` was not found in the subtree). In the latter case, the code returns `root`, which might be a valid LCA if one of the nodes is present in the subtree or `nullptr` if both nodes are not in the tree.
 
-In summary, this code leverages the properties of a BST, where the left subtree contains nodes with values less than the root, and the right subtree contains nodes with values greater than the root, to efficiently find the lowest common ancestor of two nodes `p` and `q`. 
 
 ### Complexity
+This solution leverages the properties of a BST, where the left subtree contains nodes with values less than the root, and the right subtree contains nodes with values greater than the root, to efficiently find the lowest common ancestor of two nodes `p` and `q`. 
+
 * Runtime: `O(h)`, where `h` is the height of the tree. In a balanced BST, this height is typically `log(N)` for `N` nodes.
 * Extra space: `O(1)`.
 

@@ -93,9 +93,10 @@ Output:
 
 6. After processing all the words, the size of the `transformations` set is returned as the result. The size of the set corresponds to the number of unique Morse code representations generated from the input words.
 
-In summary, this solution converts each word into Morse code based on a predefined mapping and uses an unordered set to keep track of unique representations. By inserting each representation into the set, it automatically filters out duplicates. The final result is the size of the set, which represents the number of unique Morse code representations among the input words. 
 
 ### Complexity
+This solution converts each word into Morse code based on a predefined mapping and uses an unordered set to keep track of unique representations. By inserting each representation into the set, it automatically filters out duplicates. The final result is the size of the set, which represents the number of unique Morse code representations among the input words. 
+
 * Runtime: `O(NM)`, where `N = words.length` and `M = words[i].length`.
 * Extra space: `O(N)`.
 

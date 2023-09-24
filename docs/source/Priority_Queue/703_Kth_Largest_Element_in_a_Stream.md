@@ -103,10 +103,11 @@ Here's how the `KthLargest` class works:
 
 This implementation allows you to efficiently find the `k`-th largest element in the collection with each `add` operation, as the vector is maintained in a sorted order.
 
-The time complexity of adding an element in this implementation is O(N), where N is the number of elements in the vector. However, finding the `k`-th largest element (after adding) is an O(1) operation, as you are directly accessing the `k`-th largest element from the sorted vector.
 
 ### Complexity
-* Runtime: for the constructor `O(n*logn)`, where `n = nums.length`. For the `add` method, `O(n)`.
+The time complexity of adding an element in this implementation is `O(N)`, where `N` is the number of elements in the vector. However, finding the `k`-th largest element (after adding) is an `O(1)` operation, as you are directly accessing the `k`-th largest element from the sorted vector.
+
+* Runtime: for the constructor `O(N*logN)`, where `N = nums.length`. For the `add` method, `O(N)`.
 * Extra space: `O(1)`.
 
 ## Solution 2: Priority queue
@@ -178,10 +179,9 @@ Here's how the `KthLargest` class works:
 
 This implementation allows you to efficiently find the `k`-th largest element in the collection with each `add` operation, as the priority queue is maintained in ascending order, and unnecessary elements are removed to keep the size at `_k`.
 
-The time complexity of adding an element is O(log N), where N is the number of elements in the priority queue. Finding the `k`-th largest element (after adding) is an O(1) operation, as you are directly accessing the top element of the priority queue.
 
 ### Complexity
-* Runtime: for the constructor, `O(n*logn)`, where `n = nums.length`. For the `add` method, `O(logn)`.
+The time complexity of adding an element is `O(logN)`, where `N` is the number of elements in the priority queue. Finding the `k`-th largest element (after adding) is an `O(1)` operation, as you are directly accessing the top element of the priority queue.
+
+* Runtime: for the constructor, `O(N*logN)`, where `N = nums.length`. For the `add` method, `O(logN)`.
 * Extra space: `O(1)`.
-
-
