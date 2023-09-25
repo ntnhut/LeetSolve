@@ -6,7 +6,7 @@ This chapter will introduce you to a technique called **prefix sums**. This tech
 
 Prefix sums are like building blocks that can be used to create many different algorithms. They make it easier to handle cumulative values and allow you to solve complex problems much more efficiently than before.
 
-What This Chapter Covers:
+What this chapter covers:
 
 1. **Introduction to Prefix Sums:** Establish the groundwork by understanding the essence of prefix sums, their role in performance enhancement, and the scenarios where they shine.
 

@@ -66,9 +66,23 @@ Output:
 1
 ```
 
+### Code explanation
+
+1. The code initializes a variable `maxA` to keep track of the maximum area found. Initially, `maxA` is set to 0.
+
+2. The solution employs two nested loops to iterate through pairs of vertical lines. The outer loop (`i`) iterates from the first vertical line to the second-to-last vertical line (up to `height.size() - 1`), and the inner loop (`j`) iterates from the second vertical line to the last vertical line.
+
+3. For each pair of vertical lines at indices `i` and `j`, it calculates the area formed by these lines. The area is determined by taking the minimum height between `height[i]` and `height[j]` (as the shorter line limits the height of the rectangle) and multiplying it by the distance between the lines, which is `(j - i)`.
+
+4. In each iteration of the inner loop, it updates `maxA` to store the maximum area encountered so far by comparing it with the calculated area. This ensures that `maxA` always holds the maximum area among all possible pairs of vertical lines.
+
+5. After both loops have completed, the function returns the final value of `maxA`, which represents the maximum area that can be enclosed by two vertical lines from the `height` vector.
+
 ### Complexity
-* Runtime: $O(N^2)$, where $N$ is `height.length`.
-* Extra space: $O(1)$.
+This solution has a time complexity of `O(n^2)`, where `n` is the number of elements in the `height` vector. This is because it checks all possible pairs of vertical lines, resulting in a quadratic time complexity. The space complexity is `O(1)`, as it only uses a constant amount of extra space to store the `maxA` variable.
+
+* Runtime: `O(n^2)`, where `n = height.length`.
+* Extra space: `O(1)`.
 
 ## Solution 2: Two pointers
 
@@ -130,10 +144,27 @@ Output:
 1
 ```
 
+### Code explanation
+
+1. The code initializes a variable `maxA` to keep track of the maximum area found. Initially, `maxA` is set to 0.
+
+2. Two pointers, `i` and `j`, are initialized at the beginning and end of the `height` vector, respectively. These pointers represent the left and right vertical lines currently under consideration.
+
+3. While `i` is less than `j`, the algorithm continues to evaluate pairs of vertical lines. This is because moving the pointers closer together will reduce the width of the rectangle and can potentially increase the height of the lines.
+
+4. In each iteration, the algorithm compares the heights of the lines at indices `i` and `j`. It calculates the area formed by these lines, considering the height of the shorter line (as the shorter line limits the height of the rectangle) and the width between the lines, which is `(j - i)`.
+
+5. The algorithm updates `maxA` to store the maximum area encountered so far by comparing it with the calculated area. This ensures that `maxA` always holds the maximum area achievable with the current positions of the pointers.
+
+6. Depending on the comparison of heights at indices `i` and `j`, one of the pointers (`i` or `j`) is moved towards the other pointer. The pointer corresponding to the shorter line is moved because moving it may lead to a higher line in the future, potentially increasing the area.
+
+7. The loop continues until `i` is no longer less than `j`, meaning that all possible pairs of vertical lines have been evaluated.
+
+8. After the loop completes, the function returns the final value of `maxA`, which represents the maximum area that can be enclosed by two vertical lines from the `height` vector.
+
+
 ### Complexity
-* Runtime: $O(N)$, where $N$ is `height.length`.
-* Extra space: $O(1)$.
+This solution has a time complexity of `O(n)`, where `n` is the number of elements in the `height` vector. It iterates through the elements once using the two-pointer approach, resulting in a linear time complexity. The space complexity is `O(1)`, as it only uses a constant amount of extra space to store the `maxA`, `i`, and `j` variables.
 
-
-
-
+* Runtime: `O(n)`, where `n = height.length`.
+* Extra space: `O(1)`.

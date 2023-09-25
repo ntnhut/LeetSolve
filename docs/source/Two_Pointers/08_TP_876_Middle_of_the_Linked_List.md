@@ -82,9 +82,25 @@ Output:
 [4,5,6,]
 ```
 
+### Code explanation
+
+1. The code initialize a `node` pointer to the `head` of the linked list and a `count` variable to 0. These will be used to traverse the list and count the number of nodes.
+
+2. It traverses the linked list using a `while` loop. In each iteration, it increments the `count` variable by 1 and moves the `node` pointer to the next node (`node = node->next`).
+
+3. After the first loop, you have the total count of nodes in the linked list stored in the `count` variable.
+
+4. The code initializes an integer variable `i` to 1 and resets the `node` pointer to the `head` of the linked list.
+
+5. It starts a second `while` loop that runs until `i` is less than or equal to `count/2`. In each iteration, it increments `i` by 1 and moves the `node` pointer to the next node (`node = node->next`). This loop effectively moves the `node` pointer to the middle node of the linked list.
+
+6. Finally, it returns the `node` pointer, which now points to the middle node of the linked list.
+
 ### Complexity
-* Runtime: $O(N + N/2)$, where $N$ is the number of nodes.
-* Extra space: $O(1)$.
+This solution first counts the total number of nodes in the linked list, and then it iterates to the middle node using the `count` variable. It has a time complexity of `O(N)`, where `N` is the number of nodes in the linked list, as it performs two passes through the list. The space complexity is `O(1)` because it uses a constant amount of additional space regardless of the size of the linked list.
+
+* Runtime: `O(N)`.
+* Extra space: `O(1)`.
 
 ## Solution 2: Slow and fast pointers
 Use two pointers to go through the linked list. 
@@ -140,13 +156,24 @@ Output:
 [4,5,6,]
 ```
 
+### Code explanation
+
+This solution finds the middle node of a singly linked list using a two-pointer approach (slow and fast pointers). Here's a brief explanation of how it works:
+
+1. The code initializes two pointers, `slow` and `fast`, both initially pointing to the `head` of the linked list.
+
+2. It uses a `while` loop to traverse the linked list. In each iteration, it moves the `slow` pointer one step forward (by `slow = slow->next`) and the `fast` pointer two steps forward (by `fast = fast->next->next`).
+
+3. The code continues this process until the `fast` pointer reaches the end of the linked list (i.e., `fast` becomes `nullptr`) or the node just before the end (in case of an even-length list). At this point, the `slow` pointer will be exactly at the middle node of the linked list.
+
+4. Finally, it returns the `slow` pointer, which now points to the middle node of the linked list.
+
 ### Complexity
-* Runtime: $O(N/2)$, where $N$ is the number of nodes.
-* Extra space: $O(1)$.
+This solution effectively finds the middle node in a single pass through the linked list, making it more efficient than the previous solution. It has a time complexity of `O(N)`, where `N` is the number of nodes in the linked list, and a space complexity of `O(1)` since it uses only two pointers regardless of the list's size.
+
+* Runtime: `O(N)`.
+* Extra space: `O(1)`.
 
 ## OBS!
 * The approach using slow and fast pointers looks very nice and faster. But it is not suitable to generalize this problem to any relative position (one-third, a quarter, etc.). Moreover, long expressions like `fast->next->...->next` are not recommended. 
 * Though the counting nodes approach does not seem optimized, it is more readable, scalable and maintainable.
-
-
-

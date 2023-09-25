@@ -6,7 +6,7 @@ In this chapter, we will explore the **Two Pointers** technique, a strategic app
 
 The Two Pointers technique is like exploring a cryptic map from both ends to find the treasure. It can enhance your problem-solving skills and help you tackle intricate challenges with a broader perspective.
 
-What This Chapter Covers:
+What this chapter covers:
 
 1. **Introduction to Two Pointers:** Lay the foundation by understanding the essence of the Two Pointers technique, its adaptability, and its role in unraveling complex problems.
 
