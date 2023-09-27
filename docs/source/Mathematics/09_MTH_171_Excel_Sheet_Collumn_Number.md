@@ -104,9 +104,30 @@ Output:
 28
 701
 ```
+
+### Code explanation
+
+1. The code initializes an integer variable `column` to store the column number. This variable starts at 0 and will be updated as we process each character in `columnTitle`.
+
+2. It iterates through each character `c` in the `columnTitle` string using a range-based for loop.
+
+3. Inside the loop, it calculates the numeric value associated with the current character `c`. This is done using the formula `(c - 64)`. Here's why:
+   - The ASCII value of `'A'` is 65.
+   - To convert `'A'` to 1, `'B'` to 2, and so on, you need to subtract 64 from the ASCII value of the character.
+
+4. The code multiplies the current value of `column` by 26 and then adds the calculated numeric value of the character. This step effectively accumulates the values for each character from left to right.
+
+5. Once the loop finishes, the `column` variable will contain the numeric representation of the entire column title.
+
+7. The code returns the `column` value, which represents the corresponding column number.
+
+This algorithm works because Excel column titles follow a base-26 numbering system, where `'A'` corresponds to 1, `'B'` to 2, ..., `'Z'` to 26, `'AA'` to 27, `'AB'` to 28, and so on. 
+
 ### Complexity
-* Runtime: $O(N)$, where $N$ is `columnTitle.length`.
-* Extra space: $O(1)$.
+The code efficiently calculates the decimal representation of the Excel column title by processing each character and updating the result. It has a time complexity of `O(N)`, where `N` is the length of `columnTitle`, as it iterates through the characters once, and a space complexity of `O(1)` since it uses a constant amount of extra space.
+
+* Runtime: `O(N)`, where `N = columnTitle.length`.
+* Extra space: `O(1)`.
 
 ### Implementation notes
 1. There are many ways to compute the series

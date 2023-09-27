@@ -99,9 +99,25 @@ Output:
 2
 ```
 
+### Code explanation
+
+1. The code initializes `i` to 1 and iterates while `i` is within the bounds of the `nums` array and while `nums[i]` is equal to `nums[i - 1]`. This loop is used to skip consecutive equal elements at the beginning of the array, ensuring that we start with a sequence where the first two elements are not equal.
+
+2. After exiting the above loop, it checks if `i` has reached the end of the array (`i == nums.size()`). If it has, that means all elements in the array are equal, and we consider this as a valid wiggle subsequence of length 1. So, we return 1.
+
+3. The code then initializes the `sign` variable based on whether `nums[i]` is greater than `nums[i - 1]`. If `nums[i] > nums[i - 1]`, set `sign` to 1; otherwise, set it to -1. This is done to determine whether we are currently increasing or decreasing in the wiggle subsequence.
+
+4. It starts iterating from `i` again and check if `(nums[i] - nums[i - 1]) * sign < 0`. This condition checks if the difference between the current element and the previous element has changed the direction of the wiggle subsequence. If it has, we increment the `count` and reverse the `sign` (from 1 to -1 or from -1 to 1) to indicate the change in direction.
+
+5. The code continues iterating through the rest of the array, repeating step 4 for each element.
+
+6. Finally, it returns the `count`, which represents the maximum length of the wiggle subsequence.
+
+In essence, the code identifies consecutive equal elements at the beginning, sets the initial direction, and then counts the number of times the direction changes to determine the length of the wiggle subsequence.
+
 ### Complexity
-* Runtime: $O(n)$, where $n$ is `nums.length`.
-* Extra space: $O(1)$.
+* Runtime: `O(n)`, where `n = nums.length`.
+* Extra space: `O(1)`.
 
 
 

@@ -6,7 +6,7 @@ In this chapter, we'll explore how mathematics and programming work together to 
 
 Mathematics and programming complement each other and can lead to innovative outcomes. By applying mathematical principles, you can refine algorithms, identify patterns, streamline processes, and gain a deeper understanding of your code's underlying logic.
 
-What This Chapter Covers:
+What this chapter covers:
 
 1. **Introduction to Mathematics in Coding:** Set the stage by understanding the symbiotic relationship between mathematics and programming and how mathematical concepts enrich your coding toolkit.
 

@@ -101,7 +101,27 @@ Output:
 3
 ```
 
+### Code explanation
+
+1. The code initializes two variables: `maxLen` to store the maximum length of the array nesting sequence found so far (initialized to 0), and a boolean vector `visited` of the same size as `nums` to keep track of visited indices.
+
+2. It then iterates through each element `i` in the `nums` array.
+
+3. For each element `i`, it checks if `i` has been visited before (i.e., if `visited[i]` is true). If it has been visited, this means that we've already determined the length of the array nesting sequence starting from `i`, so we continue to the next element.
+
+4. If `i` has not been visited, it starts a new array nesting sequence. It initializes a variable `len` to 0 to keep track of the length of the current sequence.
+
+5. Within a `while` loop, it repeatedly follows the value at the current index `i` (i.e., `i = nums[i]`) and marks each visited index as `visited[i] = true`. This process continues until it reaches an index that has already been visited, which indicates the end of the current sequence.
+
+6. After exiting the loop, it updates the `maxLen` variable to be the maximum between the current `len` and the previously stored `maxLen`. This ensures that `maxLen` always stores the length of the longest array nesting sequence found so far.
+
+7. The code continues this process for all elements in the `nums` array.
+
+8. Finally, it returns the `maxLen`, which represents the length of the longest array nesting sequence within the `nums` array.
+
 ### Complexity
-* Runtime: $O(n)$, where $n$ is `nums.length`.
-* Extra space: much less than $O(n)$ since [`vector<bool>`](https://en.cppreference.com/w/cpp/container/vector_bool) is optimized for space efficiency.
+This solution efficiently identifies and calculates the length of array nesting sequences within the given array `nums`. It uses a boolean array `visited` to avoid revisiting elements, and its time complexity is `O(n)` where `n` is the size of the `nums` array.
+
+* Runtime: `O(n)`.
+* Extra space: much less than `O(n)` since [`vector<bool>`](https://en.cppreference.com/w/cpp/container/vector_bool) is optimized for space efficiency.
 

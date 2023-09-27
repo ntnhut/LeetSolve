@@ -81,9 +81,25 @@ Output:
 16
 ```
 
+### Code explanation
+
+1. The code starts by sorting the `nums` array in ascending order using `sort(nums.begin(), nums.end())`. Sorting the array allows us to find the median, which is an element that divides the sorted array into two equal halves.
+
+2. After sorting, the code calculates the median as `const int median = nums[nums.size() / 2];`. If the number of elements in `nums` is odd, the median will be the middle element of the sorted array. If it's even, it will be the average of the two middle elements.
+
+3. It initializes a variable `moves` to keep track of the total number of moves needed to make all elements equal.
+
+4. The code then iterates through each element `a` in the sorted `nums` array.
+
+5. For each element `a`, it calculates the absolute difference between `a` and the median (`abs(a - median)`) and adds this difference to the `moves` variable. This represents the number of moves required to make `a` equal to the median.
+
+6. Finally, the code returns the `moves` variable, which contains the minimum number of moves needed to equalize all elements.
+
 ### Complexity
-* Runtime: $O(n\log n)$, where $n$ is `nums.length`.
-* Extra space: $O(1)$.
+The code leverages the concept of the median to minimize the total absolute differences between each element and the median, resulting in the minimum number of moves to equalize the array. The time complexity of this code is `O(n*logn)` due to the sorting step, where `n` is the number of elements in the `nums` array.
+
+* Runtime: `O(n*logn)`.
+* Extra space: `O(1)`.
 
 
 ## Solution 2: Using `std::nth_element` to compute the median
@@ -121,9 +137,24 @@ Output:
 16
 ```
 
+### Code explanation
+
+1. The code starts by calculating the median of the `nums` array without fully sorting it. The median is found by using the `std::nth_element` function, which rearranges elements such that the element at the `mid` position (where `mid` is the index of the middle element after sorting) is the median. This step has a time complexity of `O(n)`.
+
+2. After finding the median, it initializes a variable `moves` to keep track of the total number of moves needed to make all elements equal.
+
+3. The code then iterates through each element `a` in the `nums` array.
+
+4. For each element `a`, it calculates the absolute difference between `a` and the median (`abs(a - median)`) and adds this difference to the `moves` variable. This represents the number of moves required to make `a` equal to the median.
+
+5. Finally, the code returns the `moves` variable, which contains the minimum number of moves needed to equalize all elements.
+
+
 ### Complexity
-* Runtime: $O(n)$, where $n$ is `nums.length`.
-* Extra space: $O(1)$.
+This code efficiently finds the median of the `nums` array in linear time using `std::nth_element` and then calculates the minimum number of moves to make all elements equal to this median. The overall time complexity of this code is `O(n)`.
+
+* Runtime: `O(n)`, where `n = nums.length`.
+* Extra space: `O(1)`.
 
 ```{admonition} Modern C++ tips
 :class: tip

@@ -59,9 +59,30 @@ Output:
 5
 0
 ```
+### Code explanation
+
+1. The code initializes a variable `maxProfit` to 0. This variable will be used to store the maximum profit that can be achieved.
+
+2. The outer loop (indexed by `i`) iterates through the `prices` array from the beginning, representing the day of purchase.
+
+3. The inner loop (indexed by `j`) iterates through the `prices` array starting from the day after the current day (`i+1`), representing the day of sale.
+
+4. The code checks if the price on day `j` is greater than the price on day `i`. If it is, it means a profit can be made by buying on day `i` and selling on day `j`.
+
+5. It calculates the profit by subtracting the price on day `i` from the price on day `j`.
+
+6. The code updates the `maxProfit` variable with the maximum of its current value and the profit calculated in step 5.
+
+7. It continues the inner loop to consider all possible selling days for the given buying day (`i`) and continues the outer loop to consider all possible buying days.
+
+8. Once both loops are complete, the code returns the `maxProfit`, which represents the maximum profit achievable by buying and selling the stock.
+
+
 ### Complexity
-* Runtime: $O(N^2)$, where $N$ is `prices.length`.
-* Extra space: $O(1)$.
+This code essentially uses a brute force approach to find the maximum profit. It compares the profit obtained by buying on each day with selling on all subsequent days and keeps track of the maximum profit found. The time complexity of this code is `O(N^2)`, where `N` is the number of days (elements in `prices`), because it involves nested loops. The space complexity is `O(1)` as it uses a constant amount of extra space.
+
+* Runtime: `O(N^2)`, where `N = prices.length`.
+* Extra space: `O(1)`.
 
 ## Solution 2: Smallest and largest prices
 
@@ -108,9 +129,31 @@ Output:
 2
 ```
 
+### Code explanation
+
+1. The code initializes a variable `maxProfit` to 0. This variable will be used to store the maximum profit that can be achieved.
+
+2. It starts a `while` loop that continues as long as the current day `i` is within the bounds of the `prices` array.
+
+3. Within the loop, there is an inner `while` loop that finds the local minimum point for buying the stock. It checks if the current price (`prices[i]`) is greater than or equal to the price of the next day (`prices[i + 1]`). If so, it increments `i` to move to the next day. This inner loop helps to skip over periods of decreasing stock prices.
+
+4. Once a potential buying day is found (where the price is less than the next day), it searches for the optimal selling day by using `max_element` and `min_element` functions. It looks for the maximum price (`imax`) after the buying day and the minimum price (`imin`) between the buying day and the maximum price.
+
+5. The code calculates the profit that can be obtained by subtracting the minimum price (`*imin`) from the maximum price (`*imax`) found in the range.
+
+6. It updates the `maxProfit` variable with the maximum of its current value and the profit calculated in step 6.
+
+7. The code updates `i` to the index of the maximum price (`imax`) plus 1 to avoid considering overlapping intervals.
+
+8. It continues the outer `while` loop to find other potential buying days and calculate profits.
+
+9. Once the outer loop is complete, the code returns the `maxProfit`, which represents the maximum profit achievable by buying and selling the stock.
+
 ### Complexity
-* Runtime: $O(N)$, where $N$ is `prices.length`.
-* Extra space: $O(1)$.
+This code optimally finds the maximum profit by iterating through the array only once, avoiding the need for nested loops. The time complexity of this code is `O(N)`, where `N` is the number of days (elements in `prices`), making it more efficient than the brute force approach. The space complexity is `O(1)` as it uses only a constant amount of extra space.
+
+* Runtime: `O(N)`, where `N = prices.length`.
+* Extra space: `O(1)`.
 
 ## Solution 3: Only the smallest price
 
@@ -148,9 +191,28 @@ Output:
 6
 2
 ```
+
+### Code explanation
+
+1. The code initializes `maxProfit` to 0. This variable will store the maximum profit that can be achieved.
+
+2. It initializes `minPrice` to the first element of the `prices` array. `minPrice` represents the minimum price of the stock encountered so far.
+
+3. The code iterates through the `prices` array starting from the second element (index 1) and continuing until the last element.
+
+4. For each element at index `i`, it updates `minPrice` to be the minimum of its current value (`minPrice`) and the stock price at index `i`. This step ensures that `minPrice` always tracks the lowest price seen so far.
+
+5. The code calculates the potential profit that can be obtained on the current day by subtracting `minPrice` (the buying price) from the stock price at index `i`.
+
+6. It updates `maxProfit` to be the maximum of its current value (`maxProfit`) and the profit calculated in step 5. This step keeps track of the maximum profit seen so far.
+
+7. After the loop completes, `maxProfit` will contain the maximum profit that can be achieved by buying and selling the stock within the given array.
+
 ### Complexity
-* Runtime: $O(N)$, where $N$ is `prices.length`.
-* Extra space: $O(1)$.
+This code has a time complexity of `O(N)`, where `N` is the number of days (elements in `prices`). It efficiently computes the maximum profit by iterating through the array only once, maintaining the minimum buying price and updating the maximum profit accordingly. The space complexity is `O(1)` as it uses only a constant amount of extra space to store the variables `maxProfit` and `minPrice`.
+
+* Runtime: `O(N)`, where `N = prices.length`.
+* Extra space: `O(1)`.
 
 
 

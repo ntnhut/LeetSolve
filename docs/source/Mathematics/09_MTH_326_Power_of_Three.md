@@ -45,7 +45,6 @@ bool isPowerOfThree(int n) {
         n /= 3;
     }
     return n == 1;
-
 }
 int main() {
     cout << isPowerOfThree(27) << endl;
@@ -59,10 +58,17 @@ Output:
 0
 0
 ```
+### Code explanation
+
+1. The code enters a while loop that continues as long as `n` is greater than zero and divisible by 3 (`n % 3 == 0`).
+2. In each iteration of the loop, it divides `n` by 3 (`n /= 3`) to reduce it towards 1.
+3. Finally, after exiting the loop, it checks if `n` is equal to 1. If `n` is 1, it means that the original input was a power of three, and the function returns `true`. Otherwise, it returns `false`.
+
+Essentially, this code repeatedly divides the input by 3 until it either becomes 1 (indicating that it was a power of three) or cannot be divided further by 3.
 
 ### Complexity
-* Runtime: $O(\log n)$.
-* Extra space: $O(1)$.
+* Runtime: `O(logn)`.
+* Extra space: `O(1)`.
 
 ## Solution 2: Mathematics and the constraints of the problem
 
@@ -92,6 +98,16 @@ Output:
 0
 ```
 
+### Code explanation
+
+1. `n > 0`: This condition ensures that we are only considering positive integers. Powers of three are positive integers, so this is a necessary condition.
+
+2. `1162261467 % n == 0`: This part of the condition is where the magic happens. The number `1162261467` is the largest power of three that can be represented using 32 bits (`3^19`). 
+
+   When we take any power of three less than or equal to this value and calculate the modulus with it (`1162261467 % n`), the result will be zero if and only if `n` is a power of three. This is because powers of three have no factors other than 3 in their prime factorization.
+
+So, the code effectively checks whether `n` is a power of three by verifying if it is a divisor of the largest power of three that fits within 32 bits. If the condition is met, it returns `true`, indicating that `n` is a power of three; otherwise, it returns `false`.
+
 ### Complexity
-* Runtime: $O(1)$.
-* Extra space: $O(1)$.
+* Runtime: `O(1)`.
+* Extra space: `O(1)`.

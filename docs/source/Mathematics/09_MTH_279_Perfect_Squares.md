@@ -89,9 +89,26 @@ Output:
 3
 2
 ```
+
+### Code explanation
+
+1. `int nsq(int n, unordered_map<int, int>& ns)` is a recursive helper function that calculates the minimum number of perfect square numbers that sum up to the given integer `n`. It uses dynamic programming and memoization to avoid redundant calculations.
+
+2. Inside `nsq`, the function first checks if the result for the value `n` is already calculated and stored in the `unordered_map` `ns`. If it is, the function returns the stored result directly, avoiding redundant calculations.
+
+3. If the result for `n` is not found in `ns`, the function proceeds to calculate it. It does this by iterating through all the perfect square numbers starting from 1 (i.e., 1^2, 2^2, 3^2, ...) up to the largest perfect square less than or equal to `n`. For each perfect square number `i^2`, it recursively calls `nsq` with the remaining value `n - i^2`.
+
+4. The function keeps track of the minimum number of perfect squares required to sum up to `n`. This minimum is initially set to `n`, as it can be represented by `n` perfect squares of 1.
+
+5. After iterating through all possible perfect squares, the function stores the calculated minimum in the `ns` map for future reference and returns it plus 1. This `+1` represents the perfect square value that was subtracted to reach the minimum.
+
+6. `int numSquares(int n)` is the main function that initializes an `unordered_map` called `ns` to store computed results and calls the helper function `nsq` with the given input `n`.
+
 ### Complexity
-* Runtime: $O(n^2)$.
-* Extra space: $O(n)$.
+The key idea of this algorithm is to build the solution incrementally, starting from the smallest perfect squares, and use memoization to store and retrieve intermediate results. By doing this, it efficiently finds the minimum number of perfect squares required to sum up to `n`. The time complexity of this solution is `O(n*sqrt(n))` due to the nested loops and recursive calls, and the space complexity is `O(n)` for the memoization map `ns`.
+
+* Runtime: `O(n*sqrt(n)) = O(n^(3/2))`.
+* Extra space: `O(n)`.
 
 ## Solution 2: Number Theory
 The dynamic programming solution above is good enough. But for those who are interested in Algorithmic Number Theory, there is a very interesting theorem that can solve the problem directly without recursion.
@@ -164,9 +181,27 @@ Output:
 3
 2
 ```
+### Code explanation
+
+1. `bool isSquare(int n)` is a helper function that checks if an integer `n` is a perfect square. It calculates the square root of `n` using `sqrt(n)` and checks if the product of the square root (`sq`) with itself (`sq * sq`) equals `n`. If they are equal, it returns `true`, indicating that `n` is a perfect square; otherwise, it returns `false`.
+
+2. In the `numSquares(int n)` function:
+   - It first checks if the input `n` itself is a perfect square by calling the `isSquare` function. If `n` is a perfect square, the function returns `1` because it takes only one perfect square to represent `n`.
+
+   - If `n` is not a perfect square, it proceeds to apply Legendre's three-square theorem to simplify the problem:
+     - It initializes an integer `m` with the same value as `n`.
+     - It repeatedly divides `m` by `4` as long as `m` is divisible by `4`. This step is based on Legendre's three-square theorem, which states that a positive integer can be represented as the sum of three perfect squares if and only if it is not in the form `4^a * (8b + 7)` for non-negative integers `a` and `b`. By dividing `m` by `4`, it ensures that `m` is not of the form `4^a * (8b + 7)`.
+     - If `m` becomes `7` modulo `8`, it returns `4`. This is another condition from Legendre's three-square theorem, which states that if `m` leaves a remainder of `7` when divided by `8`, it cannot be represented as the sum of fewer than four perfect squares.
+
+   - If neither of the above conditions is met, it proceeds with a loop from `1` to the integer square root of `n` (`sq`). Inside the loop, it checks if `n - i*i` is a perfect square by calling the `isSquare` function. If it finds such a perfect square, it returns `2` because `n` can be represented as the sum of two perfect squares (`i*i` and the perfect square found). This covers the case where `n` can be represented as `1 + 1 + ... + 1` (with `i` ones) plus a perfect square.
+
+3. If none of the above conditions are met, it returns `3`. This means that `n` cannot be represented as the sum of fewer than three perfect squares and falls back to the default case.
+
 ### Complexity
-* Runtime: $O(\log n)$.
-* Extra space: $O(1)$.
+In summary, the code efficiently finds the minimum number of perfect squares required to sum up to the given integer `n` by first applying mathematical properties and Legendre's three-square theorem to simplify the problem and then using a loop to find possible combinations of two perfect squares. The time complexity of this solution is `O(sqrt(n))`, and it does not require dynamic programming or memoization.
+
+* Runtime: `O(sqrt(n)) = O(n^(1/2))`.
+* Extra space: `O(1)`.
 
 ## Solution 3: Further performance improvement
 
@@ -232,15 +267,15 @@ Output:
 2
 ```
 ### Complexity
-* Runtime: $O(\log n)$.
-* Extra space: $O(1)$.
+* Runtime: `O(sqrt(n)) = O(n^(1/2))`.
+* Extra space: `O(1)`.
 
 ## Conclusion
 - The title of this coding challenge (*Perfect squares*) gives you a hint it is more about mathematics than coding technique.
 - It is amazing from Lagrange's Four-Square Theorem there are only four possibilities for the answer to the problem. Not many people knowing it.
 - You can get an optimal solution to a coding problem when you know something about the mathematics behind it.
 
-Hope you learn something from this code challenge.
+Hope you learn something interesting from this code challenge.
 
 *Have fun with coding and mathematics!*
 
