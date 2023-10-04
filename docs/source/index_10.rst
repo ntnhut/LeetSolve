@@ -2,7 +2,7 @@ Content
 =======
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    Binary_Tree/104_Maximum_Depth_of_Binary_Tree
    Two_Pointers/08_TP_11_Container_With_Most_Water
