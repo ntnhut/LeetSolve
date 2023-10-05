@@ -91,8 +91,8 @@ latex_show_urls = 'footnote'
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (master_doc, 'leetsolve.tex', '10 Classic Coding Challenges',
-     'Nhut Nguyen, Ph. D.', 'book'),
+     'Nhut Nguyen, Ph. D.', 'howto'),
 ]
-latex_docclass = {
-   'book': 'book',
-}
+# latex_docclass = {
+#    'book': 'book',
+# }
