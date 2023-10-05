@@ -14,4 +14,6 @@ Content
    Sorting/04_SORT_287_Find_the_Duplicate_Number
    Array/59_Spiral_Matrix_II
    Dynamic_Programming/05_DP_62_Unique_Paths
+   thanks
+   about
 
