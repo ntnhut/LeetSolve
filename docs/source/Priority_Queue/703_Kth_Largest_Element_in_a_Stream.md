@@ -53,24 +53,30 @@ For `nums = [4, 5, 8, 2]` and `k = 3`.
 #include <algorithm>
 #include <iostream>
 using namespace std;
-class KthLargest {
+class KthLargest 
+{
     vector<int> _nums;
     int _k;
 public:
-    KthLargest(int k, vector<int>& nums) : _nums(nums), _k(k) {   
+    KthLargest(int k, vector<int>& nums) 
+    : _nums(nums), _k(k) 
+    {   
         sort(_nums.begin(), _nums.end(), std::greater());
     }
     
-    int add(int val) {
+    int add(int val) 
+    {
         auto it = _nums.begin();
-        while (it != _nums.end() &&  val < *it) {
+        while (it != _nums.end() &&  val < *it) 
+        {
             it++;
         }
         _nums.insert(it, val);
         return *(_nums.begin() + _k - 1);
     }
 };
-int main() {
+int main() 
+{
     vector<int> nums{4,5,8,2};
     KthLargest a(3, nums);
     cout << a.add(3) << endl;
@@ -126,23 +132,28 @@ If you want the top one is always the smallest element, you can use the comparis
 #include <queue>
 #include <iostream>
 using namespace std;
-class KthLargest {
+class KthLargest 
+{
     priority_queue<int, vector<int>, greater<int>> _q;
     int _k;
 public:
-    KthLargest(int k, vector<int>& nums) : 
-        _q(nums.begin(), nums.end()), _k(k) {
+    KthLargest(int k, vector<int>& nums) 
+    : _q(nums.begin(), nums.end()), _k(k) 
+    {
     }
     
-    int add(int val) {
+    int add(int val) 
+    {
         _q.push(val);
-        while (_q.size() > _k) {
+        while (_q.size() > _k) 
+        {
             _q.pop();
         }
         return _q.top();
     }
 };
-int main() {
+int main() 
+{
     vector<int> nums{4,5,8,2};
     KthLargest a(3, nums);
     cout << a.add(3) << endl;

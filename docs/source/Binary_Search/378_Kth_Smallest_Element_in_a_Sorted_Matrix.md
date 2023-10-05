@@ -46,13 +46,15 @@ You can implement exactly what Example 1 has explained.
 #include <vector>
 #include <algorithm>
 using namespace std;
-int kthSmallest(vector<vector<int>>& matrix, int k) {
+int kthSmallest(vector<vector<int>>& matrix, int k) 
+{
     vector<int> m;
-    for (auto& row : matrix) {
+    for (auto& row : matrix) 
+    {
         m.insert(m.end(), row.begin(), row.end());
     }
     sort(m.begin(), m.end());
-    return m[k - 1];
+    return m.at(k - 1);
 }
 int main() {
     vector<vector<int>> matrix{{1,5,9},{10,11,13},{12,13,15}};
@@ -94,12 +96,16 @@ Since you need only the `k-th` smallest element, [`std::priority_queue`](https:/
 #include <vector>
 #include <queue>
 using namespace std;
-int kthSmallest(vector<vector<int>>& matrix, int k) {
+int kthSmallest(vector<vector<int>>& matrix, int k) 
+{
     priority_queue<int> q;
-    for (int row = 0; row < matrix.size(); row++) {
-        for (int col = 0; col < matrix[row].size(); col++) {
+    for (int row = 0; row < matrix.size(); row++) 
+    {
+        for (int col = 0; col < matrix[row].size(); col++) 
+        {
             q.push(matrix[row][col]);
-            if (q.size() > k) {
+            if (q.size() > k) 
+            {
                 q.pop();
             }
         }
@@ -150,21 +156,28 @@ But the criteria for the searching is not the value of the element `x` of intere
 #include <vector>
 #include <algorithm>
 using namespace std;
-int countLessOrEqual(const vector<vector<int>>& matrix, int x) {
+int countLessOrEqual(const vector<vector<int>>& matrix, int x) 
+{
     int count = 0;
-    for (const auto& row : matrix) {
+    for (const auto& row : matrix) 
+    {
         count += upper_bound(row.begin(), row.end(), x) - row.begin();
     }
     return count;
 }
-int kthSmallest(vector<vector<int>>& matrix, int k) {   
+int kthSmallest(vector<vector<int>>& matrix, int k) 
+{   
     int left = matrix.front().front();
     int right = matrix.back().back();
-    while (left <= right) {
+    while (left <= right) 
+    {
         int mid = left + (right - left) / 2;
-        if (countLessOrEqual(matrix, mid) >= k) {
+        if (countLessOrEqual(matrix, mid) >= k) 
+        {
             right = mid - 1;
-        } else {
+        } 
+        else 
+        {
             left = mid + 1; 
         }
     }

@@ -84,20 +84,20 @@ vector<int> toVector(const string& version) {
 }
 
 int compareVersion(string version1, string version2) { 
-    vector<int> revisions1 = toVector(version1);    
-    vector<int> revisions2 = toVector(version2);
+    vector<int> r1 = toVector(version1);    
+    vector<int> r2 = toVector(version2);
 
     int i = 0;
-    while (i < revisions1.size() && i < revisions2.size()) {
-        if (revisions1[i] < revisions2[i]) {
+    while (i < r1.size() && i < r2.size()) {
+        if (r1[i] < r2[i]) {
             return -1;
-        } else if (revisions1[i] > revisions2[i]) {
+        } else if (r1[i] > r2[i]) {
             return 1;
         }
         i++;
     }
-    int remain1 = accumulate(revisions1.begin() + i, revisions1.end(), 0);
-    int remain2 = accumulate(revisions2.begin() + i, revisions2.end(), 0);
+    int remain1 = accumulate(r1.begin() + i, r1.end(), 0);
+    int remain2 = accumulate(r2.begin() + i, r2.end(), 0);
     if (remain1 < remain2) {
         return -1;
     } else if (remain1 > remain2) {
@@ -132,8 +132,8 @@ Output:
     - It calls the `toVector` function to convert both `version1` and `version2` into vectors of integers.
     - It initializes an index `i` to traverse both vectors simultaneously.
     - It enters a `while` loop to compare the corresponding integers at the same position in both vectors.
-        - If `revisions1[i]` is less than `revisions2[i]`, it returns -1, indicating that `version1` is less than `version2`.
-        - If `revisions1[i]` is greater than `revisions2[i]`, it returns 1, indicating that `version1` is greater than `version2`.
+        - If `r1[i]` is less than `r2[i]`, it returns -1, indicating that `version1` is less than `version2`.
+        - If `r1[i]` is greater than `r2[i]`, it returns 1, indicating that `version1` is greater than `version2`.
         - If they are equal, it increments `i` to move on to the next segment.
     - After comparing the common segments, it calculates the sum of the remaining segments in both vectors using `accumulate`.
     - It then compares the remaining sums, returning -1, 1, or 0, based on whether `version1` is less than, greater than, or equal to `version2` in terms of the remaining segments.
