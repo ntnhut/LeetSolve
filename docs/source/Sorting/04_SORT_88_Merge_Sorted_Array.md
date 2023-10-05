@@ -45,7 +45,7 @@ Note that because m = 0, there are no elements in nums1. The 0 is only there to 
 * `-10^9 <= nums1[i], nums2[j] <= 10^9`.
  
 
-**Follow up**: Can you come up with an algorithm that runs in $O(m + n)$ time?
+**Follow up**: Can you come up with an algorithm that runs in `O(m + n)` time?
 
 ## Solution 1: Store the result in a new container
 

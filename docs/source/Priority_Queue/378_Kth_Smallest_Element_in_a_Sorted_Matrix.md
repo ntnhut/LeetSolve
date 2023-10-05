@@ -32,8 +32,8 @@ Output: -5
 
 ### Follow up
 
-* Could you solve the problem with a constant memory (i.e., $O(1)$ memory complexity)?
-* Could you solve the problem in $O(n)$ time complexity? The solution may be too advanced for an interview but you may find reading [this paper](http://www.cse.yorku.ca/~andy/pubs/X+Y.pdf) fun.
+* Could you solve the problem with a constant memory (i.e., `O(1)` memory complexity)?
+* Could you solve the problem in `O(n)` time complexity? The solution may be too advanced for an interview but you may find reading [this paper](http://www.cse.yorku.ca/~andy/pubs/X+Y.pdf) fun.
 
 ## Solution 1: Transform the 2-D matrix into an 1-D vector then sort
 

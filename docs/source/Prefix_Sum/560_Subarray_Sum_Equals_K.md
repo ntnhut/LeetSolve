@@ -88,8 +88,8 @@ Output:
 In summary, this code employs a brute-force approach by considering all possible subarrays and checking whether their sum equals the target `k`. The time complexity of this solution is relatively high due to the nested loops, resulting in an inefficient algorithm for larger input sizes.
 
 ### Complexity
-* Runtime: $O(n^2)$, where $n$ is `nums.length`.
-* Extra space: $O(1)$.
+* Runtime: `O(n^2)`, where `n = nums.length`.
+* Extra space: `O(1)`.
 
 ## Solution 2: Prefix sum
 In the solution above, many sums can be deducted from the previous ones.
@@ -163,8 +163,8 @@ Output:
 In summary, this code uses the concept of prefix sum to efficiently calculate the sum of subarrays. It then iterates through the array to find subarrays with a sum equal to `k`, and the nested loop helps in calculating the sum of various subarray ranges. The time complexity of this solution is improved compared to the brute-force approach.
 
 ### Complexity
-* Runtime: $O(n^2)$, where $n$ is `nums.length`.
-* Extra space: $O(n)$.
+* Runtime: `O(n^2)`, where `n = nums.length`.
+* Extra space: `O(n)`.
 
 ## Solution 3: Faster lookup
 
@@ -236,6 +236,6 @@ Output:
 In summary, this improved code uses an unordered map to efficiently track the frequency of cumulative sums. It utilizes the concept of complement sums to identify subarrays with the desired sum and adds their counts to the overall count. This approach significantly improves the time complexity compared to the brute-force solution.
 
 ### Complexity
-* Runtime: $O(n)$, where $n$ is `nums.length`.
-* Extra space: $O(n)$.
+* Runtime: `O(n)`, where `n = nums.length`.
+* Extra space: `O(n)`.
 

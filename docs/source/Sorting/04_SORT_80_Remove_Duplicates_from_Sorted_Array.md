@@ -8,7 +8,7 @@ Since it's impossible to change the length of the array in some programming lang
 
 You should return the value of `k` after placing the final result in the first `k` slots of the `nums` array.
 
-The key requirement is that you must accomplish this task without using extra space for another array. It must be done by modifying the input array `nums` in-place, using only $O(1)$ extra memory.
+The key requirement is that you must accomplish this task without using extra space for another array. It must be done by modifying the input array `nums` in-place, using only `O(1)` extra memory.
 
 ### Example 1
 ```text

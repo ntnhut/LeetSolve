@@ -90,8 +90,8 @@ Output:
 In summary, this solution iterates through the input array `nums`, calculates the running sum at each step, and appends the running sums to a result vector. This approach efficiently computes the running sums in a single pass through the array.
 
 ### Complexity
-* Runtime: $O(n)$, where $n$ is `nums.length`.
-* Extra space: $O(1)$.
+* Runtime: `O(n)`, where `n = nums.length`.
+* Extra space: `O(1)`.
 
 ## Solution 2: Change `nums`
 
@@ -149,7 +149,7 @@ Output:
 In summary, this solution directly modifies the input array `nums` to store the running sums by iteratively updating each element with the cumulative sum of the previous elements. This approach efficiently calculates the running sums in a single pass through the array.
 
 ### Complexity
-* Runtime: $O(n)$, where $n$ is `nums.length`.
-* Extra space: $O(1)$.
+* Runtime: `O(n)`, where `n = nums.length`.
+* Extra space: `O(1)`.
 
 

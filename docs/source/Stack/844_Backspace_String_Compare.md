@@ -33,7 +33,7 @@ Explanation: s becomes "c" while t becomes "b".
 * `s` and `t` only contain lowercase letters and `'#'` characters.
  
 
-**Follow up**: Can you solve it in $O(n)$ time and $O(1)$ space?
+**Follow up**: Can you solve it in `O(n)` time and `O(1)` space?
 
 ## Solution: Build and clean the string using the `stack`'s behaviors
 
@@ -103,7 +103,7 @@ But [`vector`](https://en.cppreference.com/w/cpp/container/vector) has also such
 
 On the other hand, using `vector` it is easier to construct a `string` by constructor than using `stack` after cleaning.
 
-**Can you solve it in $O(n)$ time and $O(1)$ space?**
+**Can you solve it in `O(n)` time and `O(1)` space?**
 
 Yes, you can. 
 

@@ -36,7 +36,7 @@ Explanation: There is no cycle in this linked list.
 * `-10^5 <= Node.val <= 10^5`.
  
 
-**Follow up:** Can you solve it using $O(1)$ (i.e. constant) memory?
+**Follow up:** Can you solve it using `O(1)` (i.e. constant) memory?
 
 ## Solution 1: Storing the visited nodes
 

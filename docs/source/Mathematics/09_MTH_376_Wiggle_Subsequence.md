@@ -39,7 +39,7 @@ Output: 2
 * `0 <= nums[i] <= 1000`.
  
 
-**Follow up**: Could you solve this in $O(n)$ time?
+**Follow up**: Could you solve this in `O(n)` time?
 
 ## Solution: Counting the local extrema of `nums`
 

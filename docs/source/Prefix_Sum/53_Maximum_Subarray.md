@@ -85,8 +85,8 @@ Output:
 * Once the loop completes, the function returns the final value of `maxSum`, which represents the maximum sum of a subarray within the given `nums` array.
 
 ### Complexity
-* Runtime $O(n)$, where $n$ is `nums.length`.
-* Memory $O(1)$.
+* Runtime `O(n)`, where `n = nums.length`.
+* Memory `O(1)`.
 
 
 ## Conclusion
