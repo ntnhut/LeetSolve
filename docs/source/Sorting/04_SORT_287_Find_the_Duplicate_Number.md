@@ -37,6 +37,8 @@ Output: 3
 
 ## Solution 1: Sorting
 
+### Code
+
 ```cpp
 #include <vector>
 #include <iostream>
