@@ -34,20 +34,27 @@ maxDepth(root) = max(maxDepth(root->left), maxDepth(root->right))
 
 ```cpp
 #include <iostream>
+using namespace std;
 struct TreeNode {
     int val;
     TreeNode *left;
     TreeNode *right;
-    TreeNode() : val(0), left(nullptr), right(nullptr) {}
-    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
-    TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+    TreeNode() 
+    : val(0), left(nullptr), right(nullptr) {        
+    }
+    TreeNode(int x) 
+    : val(x), left(nullptr), right(nullptr) {        
+    }
+    TreeNode(int x, TreeNode *left, TreeNode *right)
+    : val(x), left(left), right(right) {        
+    }
 };
 
 int maxDepth(TreeNode* root) {
     if (root == nullptr) {
         return 0;
     }
-    return 1 + std::max(maxDepth(root->left), maxDepth(root->right));
+    return 1 + max(maxDepth(root->left), maxDepth(root->right));
 }
 int main() {
     TreeNode fifteen(15);
@@ -55,10 +62,10 @@ int main() {
     TreeNode twenty(20, &fifteen, &seven);
     TreeNode nine(9);
     TreeNode three(3, &nine, &twenty);
-    std::cout << maxDepth(&three) << std::endl;
+    cout << maxDepth(&three) << endl;
     TreeNode two(2);
     TreeNode one(1, nullptr, &two);
-    std::cout << maxDepth(&one) << std::endl;
+    cout << maxDepth(&one) << endl;
 }
 ```
 ```text

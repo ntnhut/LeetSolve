@@ -64,7 +64,7 @@ Output:
 
 ### Code explanation
 
-1. The coe initializes an unordered map `freq` to keep track of the frequency of each unique integer in the `nums` array. Also, it defines a constant `HALF` as half the size of the `nums` array. This value represents the threshold for an element to be considered a majority element.
+1. The code initializes an unordered map `freq` to keep track of the frequency of each unique integer in the `nums` array. Also, it defines a constant `HALF` as half the size of the `nums` array. This value represents the threshold for an element to be considered a majority element.
 
 2. It iterates through the `nums` array using a for-each loop, processing each integer `a`:
 
