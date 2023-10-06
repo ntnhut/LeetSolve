@@ -30,6 +30,12 @@ Content
 
 .. toctree::
    :maxdepth: 2
+   :caption: Mics
+
+   Mics/index_int
+   
+.. toctree::
+   :maxdepth: 2
    :caption: Mathematics
 
    Mathematics/index_int
