@@ -2,7 +2,7 @@
 Array
 =========
 
-In this chapter, we'll explore the basics of **arrays** - collections of elements organized in a sequence. While they may seem simple, there are many concepts and techniques you can learn from arrays to improve your coding skills. We'll cover topics like **indexing**, **iteration**, and **manipulation**, as well as dynamic arrays (``std::vector``) and time/space complexity. 
+This chapter will explore the basics of **arrays** - collections of elements organized in a sequence. While they may seem simple, you can learn many concepts and techniques from arrays to improve your coding skills. We'll cover topics like **indexing**, **iteration**, and **manipulation**, as well as dynamic arrays (``std::vector``) and time/space complexity. 
 
 Along the way, we'll tackle challenging problems like **searching**, **sorting**, and **subarray** problems, using a structured approach to break down complex tasks into manageable steps.
 

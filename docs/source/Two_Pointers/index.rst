@@ -2,7 +2,7 @@
 Two Pointers
 ===================
 
-In this chapter, we will explore the **Two Pointers** technique, a strategic approach that can help solve complex problems quickly and effectively. We'll show you how to use simultaneous traversal to streamline operations, optimize algorithms, and extract solutions from complicated scenarios.
+This chapter will explore the **Two Pointers** technique, a strategic approach that can help solve complex problems quickly and effectively. We'll show you how to use simultaneous traversal to streamline operations, optimize algorithms, and extract solutions from complicated scenarios.
 
 The Two Pointers technique is like exploring a cryptic map from both ends to find the treasure. It can enhance your problem-solving skills and help you tackle intricate challenges with a broader perspective.
 

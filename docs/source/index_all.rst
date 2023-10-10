@@ -27,6 +27,7 @@ nhut@nhutnguyen.com
    Hash_Table/index
    String/index
    Stack/index
+   Priority_Queue/index
    Binary_Tree/index
 
 .. toctree::
@@ -37,8 +38,11 @@ nhut@nhutnguyen.com
    Binary_Search/index
    Greedy/index
    Recursive/index
+   Dynamic_Programming/index   
    Counting/index
    Prefix_Sum/index
+   Two_Pointers/index
+   Bit_Manipulation/index
    Graph/index
 
 .. toctree::

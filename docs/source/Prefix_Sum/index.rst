@@ -2,9 +2,9 @@
 Prefix Sums
 =========
 
-This chapter will introduce you to a technique called **prefix sums**. This technique can make calculations much faster and efficient. The chapter will explain how cumulative aggregation works and how it can help you optimize your operations. 
+This chapter will introduce you to a technique called **prefix sums**. This technique can make calculations much faster and more efficient. The chapter will explain how cumulative aggregation works and can help optimize your operations. 
 
-Prefix sums are like building blocks that can be used to create many different algorithms. They make it easier to handle cumulative values and allow you to solve complex problems much more efficiently than before.
+Prefix sums are like building blocks that can create many different algorithms. They make it easier to handle cumulative values and allow you to solve complex problems much more efficiently than before.
 
 What this chapter covers:
 

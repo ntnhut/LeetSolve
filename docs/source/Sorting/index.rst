@@ -10,7 +10,7 @@ What this chapter covers:
 
 1. **Introduction to Sorting:** Establish a strong foundation by understanding the significance of sorting, its impact on algorithmic performance, and the role of ordering in data analysis.
 
-2. **Stability and Uniqueness:** Learn about the concepts of stability and uniqueness in sorting, and how they can impact the integrity and usefulness of sorted data.
+2. **Stability and Uniqueness:** Learn about the concepts of stability and uniqueness in sorting and how they can impact the integrity and usefulness of sorted data.
 
 3. **Insights through Sorting:** Discover scenarios where sorted data provides valuable insights, such as identifying trends, anomalies, or patterns that inform decision-making.
 
