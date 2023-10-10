@@ -29,6 +29,7 @@ Here's what you can expect to delve into during this chapter:
 10. **Exercises and Problems**: Reinforce your understanding of graphs with exercises and LeetCode problems covering a wide range of graph-related challenges. Practice is essential for mastering this topic.
 
 By the end of this chapter, you'll have a solid grasp of graph theory and be equipped with the skills to model, analyze, and solve complex problems using graphs. So, let's embark on this exciting journey into graphs and discover how they can help you navigate the intricacies of data and relationships in the digital age!
+
 .. toctree::
     :glob:
     :maxdepth: 1

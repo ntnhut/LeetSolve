@@ -27,6 +27,7 @@ In this chapter, we'll dive deep into the world of greedy algorithms, learning h
 10. **Exercises and Problems**: Reinforce your understanding of greedy algorithms with exercises and LeetCode problems covering a wide range of greedy-based challenges. Practice is essential for mastering this problem-solving technique.
 
 By the end of this chapter, you'll have a comprehensive understanding of greedy algorithms and the ability to apply them to a wide range of problems, from scheduling and data compression to optimization and search. Greedy algorithms are valuable tools in your problem-solving toolkit, and this chapter will equip you with the skills needed to confidently tackle complex optimization challenges. So, let's dive in and explore the world of greedy algorithms!
+
 .. toctree::
     :glob:
     :maxdepth: 1

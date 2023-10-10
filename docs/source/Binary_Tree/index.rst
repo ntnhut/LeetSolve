@@ -27,6 +27,7 @@ In this chapter, we will explore:
 9. **Exercises and Problems**: Practice is essential for mastering these concepts. We'll provide exercises and LeetCode problems to reinforce your understanding and problem-solving skills.
 
 By the end of this chapter, you'll have a solid grasp of Binary Trees and the skills to tackle a wide range of tree-related problems. So, let's embark on this exciting journey into the world of Binary Trees and discover the beauty and complexity of these fundamental data structures!
+
 .. toctree::
     :glob:
     :maxdepth: 1
