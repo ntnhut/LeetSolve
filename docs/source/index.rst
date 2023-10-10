@@ -23,23 +23,12 @@ nhut@nhutnguyen.com
    :caption: Data Structures
 
    Array/index
-   Linked_List/index
-   Hash_Table/index
-   String/index
-   Stack/index
-   Binary_Tree/index
 
 .. toctree::
    :maxdepth: 2
    :caption: Algorithms
 
    Sorting/index
-   Binary_Search/index
-   Greedy/index
-   Recursive/index
-   Counting/index
-   Prefix_Sum/index
-   Graph/index
 
 .. toctree::
    :maxdepth: 2
