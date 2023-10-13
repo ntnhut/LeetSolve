@@ -17,8 +17,8 @@ project = 'LeetSolve'
 copyright = '2023, Nhut Nguyen'
 author = 'Nhut Nguyen'
 
-release = '0.9'
-version = '0.9.0'
+release = '1.2'
+version = '1.2.3'
 
 # -- General configuration
 
@@ -42,9 +42,7 @@ intersphinx_disabled_domains = ['std']
 
 templates_path = ['_templates']
 
-master_doc = 'index'
-exclude_patterns = ['*/index_*.rst']
-
+master_doc = 'index_10'
 # -- Options for HTML output
 
 html_theme = "furo"
@@ -90,9 +88,9 @@ latex_show_urls = 'footnote'
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'leetsolve.tex', 'The Problem Solver\'s Guide To Coding',
-     'Nhut Nguyen, Ph. D.', 'book'),
+    (master_doc, 'leetsolve.tex', '10 Classic Coding Challenges',
+     'Nhut Nguyen, Ph. D.', 'howto'),
 ]
-latex_docclass = {
-   'book': 'book',
-}
+# latex_docclass = {
+#    'book': 'book',
+# }
