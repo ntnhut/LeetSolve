@@ -119,11 +119,8 @@ amount of extra space to store the ``maxA`` variable.
 -  Runtime: ``O(n^2)``, where ``n = height.length``.
 -  Extra space: ``O(1)``.
 
-Solution 2: Two pointers
+Solution 2: :index:`Two pointers`
 ------------------------
-
-:index:`Two pointers`
-
 
 Any container has left line ``i`` and right line ``j`` satisfying
 ``0 <= i < j < height.length``. The biggest container you want to find
@@ -138,21 +135,32 @@ Depending on which line is higher, you can decide which one to move
 next. Since you want a bigger container, you should move the shorter
 line.
 
-.. _example-1-1:
-
 Example 1
 ~~~~~~~~~
 
-For ``height = [1,8,6,2,5,4,8,3,7]``: \* Starting with ``i = 0`` and
-``j = 8``.
-``text     area = min(height[i], height[j]) * (j - i) = min(1, 7) * (8 - 0) = 8.     maxArea = 8.``
-\* ``height[i] = 1 < 7 = height[j]``, move ``i`` to ``1``.
-``text     area = min(8, 7) * (8 - 1) = 49.     maxArea = 49.`` \*
-``height[i] = 8 > 7 = height[j]``, move ``j`` to ``7``.
-``text     area = min(8, 3) * (7 - 1) = 18.     maxArea = 49.`` \* So on
-and so on. Final ``maxArea = 49``.
+For ``height = [1,8,6,2,5,4,8,3,7]``: 
+- Starting with ``i = 0`` and ``j = 8``.
 
-.. _code-1:
+.. code:: text
+
+   area = min(height[i], height[j]) * (j - i) = min(1, 7) * (8 - 0) = 8.
+   maxArea = 8.
+
+- ``height[i] = 1 < 7 = height[j]``, move ``i`` to ``1``.
+
+.. code:: text
+
+   area = min(8, 7) * (8 - 1) = 49.     
+   maxArea = 49.
+
+- ``height[i] = 8 > 7 = height[j]``, move ``j`` to ``7``.
+
+.. code:: text
+
+   area = min(8, 3) * (7 - 1) = 18.
+   maxArea = 49.
+
+- So on and so on. Final ``maxArea = 49``.
 
 Code
 ~~~~
@@ -189,8 +197,6 @@ Code
    Output:
    49
    1
-
-.. _code-explanation-1:
 
 Code explanation
 ~~~~~~~~~~~~~~~~
@@ -231,7 +237,6 @@ Code explanation
    ``maxA``, which represents the maximum area that can be enclosed by
    two vertical lines from the ``height`` vector.
 
-.. _complexity-1:
 
 Complexity
 ~~~~~~~~~~
