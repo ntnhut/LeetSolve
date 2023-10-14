@@ -84,7 +84,7 @@ This solution has a time complexity of `O(n^2)`, where `n` is the number of elem
 * Runtime: `O(n^2)`, where `n = height.length`.
 * Extra space: `O(1)`.
 
-## Solution 2: Two pointers
+## Solution 2: {index}`Two pointers`
 
 Any container has left line `i` and right line `j` satisfying `0 <= i < j < height.length`. The biggest container you want to find satisfies that condition too.
 
@@ -94,24 +94,28 @@ Depending on which line is higher, you can decide which one to move next. Since 
 
 ### Example 1
 For `height = [1,8,6,2,5,4,8,3,7]`:
-* Starting with `i = 0` and `j = 8`.
+- Starting with `i = 0` and `j = 8`.
+
     ```text
     area = min(height[i], height[j]) * (j - i) = min(1, 7) * (8 - 0) = 8.
     maxArea = 8.
     ```
-* `height[i] = 1 < 7 = height[j]`, move `i` to `1`.
+- `height[i] = 1 < 7 = height[j]`, move `i` to `1`.
+
     ```text
     area = min(8, 7) * (8 - 1) = 49.
     maxArea = 49.
     ```
-* `height[i] = 8 > 7 = height[j]`, move `j` to `7`.
+- `height[i] = 8 > 7 = height[j]`, move `j` to `7`.
+
     ```text
     area = min(8, 3) * (7 - 1) = 18.
     maxArea = 49.
     ```
-* So on and so on. Final `maxArea = 49`.
+- So on and so on. Final `maxArea = 49`.
 
 ### Code
+
 ```cpp
 #include <iostream>
 #include <vector>
@@ -164,6 +168,7 @@ Output:
 
 
 ### Complexity
+
 This solution has a time complexity of `O(n)`, where `n` is the number of elements in the `height` vector. It iterates through the elements once using the two-pointer approach, resulting in a linear time complexity. The space complexity is `O(1)`, as it only uses a constant amount of extra space to store the `maxA`, `i`, and `j` variables.
 
 * Runtime: `O(n)`, where `n = height.length`.
