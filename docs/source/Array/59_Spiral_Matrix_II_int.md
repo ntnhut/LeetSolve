@@ -36,7 +36,8 @@ Output: [[1]]
 #include <iostream>
 using namespace std;
 enum Direction {RIGHT, DOWN, LEFT, UP};
-vector<vector<int>> generateMatrix(int n) {
+vector<vector<int>> generateMatrix(int n) 
+{
     vector<vector<int>> m(n, vector<int>(n));
     int bottom = n - 1;
     int right = n - 1;
@@ -46,42 +47,56 @@ vector<vector<int>> generateMatrix(int n) {
     int col = 0;
     Direction d = RIGHT;
     int a = 1;
-    while (top <= bottom && left <= right) {
+    while (top <= bottom && left <= right) 
+    {
         m[row][col] = a++;
-        switch (d) {
+        switch (d) 
+        {
             case RIGHT:
-                if (col == right) {
+                if (col == right) 
+                {
                     top++;
                     d = DOWN;
                     row++;
-                } else {
+                } 
+                else 
+                {
                     col++;
                 }
                 break;
             case DOWN:
-                if (row == bottom) {
+                if (row == bottom) 
+                {
                     right--;
                     d = LEFT;
                     col--;
-                } else {
+                } 
+                else 
+                {
                     row++;
                 }
                 break;
             case LEFT:
-                if (col == left) {
+                if (col == left) 
+                {
                     bottom--;
                     d = UP;
                     row--;
-                } else {
+                } 
+                else 
+                {
                     col--;
                 }
                 break;
             case UP:
-                if (row == top) {
+                if (row == top) 
+                {
                     left++;
                     d = RIGHT;
                     col++;
-                } else {
+                } 
+                else 
+                {
                     row--;
                 }
                 break;
@@ -89,18 +104,22 @@ vector<vector<int>> generateMatrix(int n) {
     }
     return m;
 }
-void printResult(vector<vector<int>>& m) {
+void printResult(vector<vector<int>>& m) 
+{
     cout << "[";
-    for (auto& r : m) {
+    for (auto& r : m) 
+    {
         cout << "[";
-        for (int a : r) {
+        for (int a : r) 
+        {
             cout << a << ",";
         }
         cout << "]";
     }
     cout << "]\n";
 }
-int main() {
+int main() 
+{
     auto m = generateMatrix(3);
     printResult(m);
     m = generateMatrix(1);
@@ -129,7 +148,7 @@ Output:
 
 7. Inside the loop, it fills the current position `(row, col)` in the matrix with the value `a` and increment `a` by 1.
 
-8. The code uses a `switch` statement based on the current direction `d` to determine the next move:
+8. The code uses a {index}`switch` statement based on the current direction `d` to determine the next move:
    - If `d` is RIGHT, it checks if `col` has reached the `right` boundary. If it has, it moves to the next direction (`DOWN`) and update `row` accordingly; otherwise, increment `col`.
    - Similar logic is applied for the `DOWN`, `LEFT`, and `UP` directions, adjusting `row` and `col` accordingly and changing direction when needed.
 

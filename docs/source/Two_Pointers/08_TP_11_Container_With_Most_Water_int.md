@@ -44,16 +44,20 @@ For each line `i`, find the line `j > i` such that it gives the maximum amount o
 #include <iostream>
 #include <vector>
 using namespace std;
-int maxArea(vector<int>& height) {
+int maxArea(vector<int>& height) 
+{
     int maxA = 0;
-    for (int i = 0; i < height.size() - 1; i++) {
-        for (int j = i + 1; j < height.size(); j++) {
-            maxA = max(maxA, min(height[i], height[j]) * (j - i) );
+    for (int i = 0; i < height.size() - 1; i++) 
+    {
+        for (int j = i + 1; j < height.size(); j++) 
+        {
+            maxA = max(maxA, min(height[i], height[j]) * (j - i));
         }
     }
     return maxA;
 }
-int main() {
+int main() 
+{
     vector<int> height{1,8,6,2,5,4,8,3,7};
     cout << maxArea(height) << endl;
     height = {1,1};
@@ -120,22 +124,28 @@ For `height = [1,8,6,2,5,4,8,3,7]`:
 #include <iostream>
 #include <vector>
 using namespace std;
-int maxArea(vector<int>& height) {
+int maxArea(vector<int>& height) 
+{
     int maxA = 0;
     int i = 0;
     int j = height.size() - 1;
-    while (i < j) {
-        if (height[i] < height[j]) {
+    while (i < j) 
+    {
+        if (height[i] < height[j]) 
+        {
             maxA = max(maxA, height[i] * (j - i) );
             i++;
-        } else {
+        } 
+        else 
+        {
             maxA = max(maxA, height[j] * (j - i) );
             j--;
         }
     }
     return maxA;
 }
-int main() {
+int main() 
+{
     vector<int> height{1,8,6,2,5,4,8,3,7};
     cout << maxArea(height) << endl;
     height = {1,1};

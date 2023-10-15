@@ -35,7 +35,7 @@ Output: 3
 * Can you solve the problem in linear runtime complexity?
 
 
-## Solution 1: Sorting
+## Solution 1: {index}`Sorting`
 
 ### Code
 
@@ -44,16 +44,20 @@ Output: 3
 #include <iostream>
 #include <algorithm>
 using namespace std;
-int findDuplicate(vector<int>& nums) {
+int findDuplicate(vector<int>& nums) 
+{
     sort(nums.begin(), nums.end());
-    for (int i = 0; i < nums.size() - 1; i++) {
-        if (nums[i] == nums[i + 1]) {
+    for (int i = 0; i < nums.size() - 1; i++) 
+    {
+        if (nums[i] == nums[i + 1]) 
+        {
             return nums[i];
         }
     }
     return 0;
 }
-int main() {
+int main() 
+{
     vector<int> nums{1,3,4,2,2};
     cout << findDuplicate(nums) << endl;
     nums = {3,1,3,4,2};
@@ -101,17 +105,21 @@ Here are a few solutions.
 #include <vector>
 #include <iostream>
 using namespace std;
-int findDuplicate(vector<int>& nums) {
+int findDuplicate(vector<int>& nums) 
+{
     vector<bool> visited(nums.size());
-    for (int a : nums) {
-        if (visited.at(a)) {
+    for (int a : nums) 
+    {
+        if (visited.at(a)) 
+        {
             return a;
         }
         visited[a] = true;
     }
     return 0;
 }
-int main() {
+int main() 
+{
     vector<int> nums{1,3,4,2,2};
     cout << findDuplicate(nums) << endl;
     nums = {3,1,3,4,2};
@@ -136,9 +144,9 @@ Output:
 
 ### Complexity
 * Runtime: `O(n)`.
-* Extra space: much less than `O(n)`. [`std::vector<bool>`](https://en.cppreference.com/w/cpp/container/vector_bool) is optimized for space-efficient. 
+* Extra space: much less than `O(n)`. [{index}`std::vector<bool>`](https://en.cppreference.com/w/cpp/container/vector_bool) is optimized for space-efficient. 
 
-## Solution 3: Marking with `std::bitset`
+## Solution 3: Marking with {index}`std::bitset`
 
 Since `n <= 10^5`, you can use this size for a [`std::bitset`](https://en.cppreference.com/w/cpp/utility/bitset) to do the marking. 
 
@@ -148,17 +156,21 @@ Since `n <= 10^5`, you can use this size for a [`std::bitset`](https://en.cppref
 #include <iostream>
 #include <bitset>
 using namespace std;
-int findDuplicate(vector<int>& nums) {
+int findDuplicate(vector<int>& nums) 
+{
     bitset<100001> visited;
-    for (int a : nums) {
-        if (visited[a]) {
+    for (int a : nums) 
+    {
+        if (visited[a]) 
+        {
             return a;
         }
         visited[a] = 1;
     }
     return 0;
 }
-int main() {
+int main() 
+{
     vector<int> nums{1,3,4,2,2};
     cout << findDuplicate(nums) << endl;
     nums = {3,1,3,4,2};

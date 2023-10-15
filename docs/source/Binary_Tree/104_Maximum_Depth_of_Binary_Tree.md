@@ -2,7 +2,7 @@
 
 ## [Problem statement](https://leetcode.com/problems/maximum-depth-of-binary-tree/)
 
-Given the `root` of a binary tree, return its maximum depth.
+Given the `root` of a {index}`binary tree`, return its maximum depth.
 
 A binary tree's maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.
 
@@ -24,7 +24,7 @@ Output: 2
 * `-100 <= Node.val <= 100`.
 
 ## Solution
-You have the following recursive relationship between the `root` and its children.
+You have the following {index}`recursive` relationship between the `root` and its children.
 
 ```text
 maxDepth(root) = max(maxDepth(root->left), maxDepth(root->right))
@@ -35,28 +35,33 @@ maxDepth(root) = max(maxDepth(root->left), maxDepth(root->right))
 ```cpp
 #include <iostream>
 using namespace std;
-struct TreeNode {
+struct TreeNode 
+{
     int val;
     TreeNode *left;
     TreeNode *right;
-    TreeNode() 
-    : val(0), left(nullptr), right(nullptr) {        
+    TreeNode() : val(0), left(nullptr), right(nullptr) 
+    {        
     }
-    TreeNode(int x) 
-    : val(x), left(nullptr), right(nullptr) {        
+    TreeNode(int x) : val(x), left(nullptr), right(nullptr) 
+    {        
     }
     TreeNode(int x, TreeNode *left, TreeNode *right)
-    : val(x), left(left), right(right) {        
+    : val(x), left(left), right(right) 
+    {        
     }
 };
 
-int maxDepth(TreeNode* root) {
-    if (root == nullptr) {
+int maxDepth(TreeNode* root) 
+{
+    if (root == nullptr) 
+    {
         return 0;
     }
     return 1 + max(maxDepth(root->left), maxDepth(root->right));
 }
-int main() {
+int main() 
+{
     TreeNode fifteen(15);
     TreeNode seven(7);
     TreeNode twenty(20, &fifteen, &seven);

@@ -84,15 +84,18 @@ Longer `columnTitle`s will have bigger leading exponents of `26`.
 ```cpp
 #include <iostream>
 using namespace std;
-int titleToNumber(string columnTitle) {
+int titleToNumber(string columnTitle) 
+{
     int column = 0; 
-    for (char c : columnTitle) {
+    for (char c : columnTitle) 
+    {
         // The ASCII value of 'A' is 65.
         column = 26*column + (c - 64); 
     }
     return column;
 }
-int main() {
+int main() 
+{
     cout << titleToNumber("A") << endl;
     cout << titleToNumber("AB") << endl;
     cout << titleToNumber("ZY") << endl;
@@ -112,7 +115,7 @@ Output:
 2. It iterates through each character `c` in the `columnTitle` string using a range-based for loop.
 
 3. Inside the loop, it calculates the numeric value associated with the current character `c`. This is done using the formula `(c - 64)`. Here's why:
-   - The ASCII value of `'A'` is 65.
+   - The {index}`ASCII` value of `'A'` is 65.
    - To convert `'A'` to 1, `'B'` to 2, and so on, you need to subtract 64 from the ASCII value of the character.
 
 4. The code multiplies the current value of `column` by 26 and then adds the calculated numeric value of the character. This step effectively accumulates the values for each character from left to right.

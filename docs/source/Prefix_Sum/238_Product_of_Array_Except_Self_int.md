@@ -39,31 +39,38 @@ To avoid division operation, you can compute the prefix product and the suffix o
 #include <vector>
 #include <iostream>
 using namespace std;
-vector<int> productExceptSelf(vector<int>& nums) {
+vector<int> productExceptSelf(vector<int>& nums) 
+{
     const int n = nums.size();
     vector<int> prefix(n);
     prefix[0] = 1;
-    for (int i = 1; i < n; i++) {
+    for (int i = 1; i < n; i++) 
+    {
         prefix[i] = prefix[i - 1] * nums[i - 1];
     }
     vector<int> suffix(n);        
     suffix[n - 1] = 1;
-    for (int i = n - 2; i >= 0; i--) {
+    for (int i = n - 2; i >= 0; i--) 
+    {
         suffix[i] = suffix[i + 1] * nums[i + 1];
     }
     vector<int> answer(n);
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++) 
+    {
         answer[i] = prefix[i] * suffix[i];
     }
     return answer;
 }
-void print(vector<int>& nums) {
-    for (auto& v : nums) {
+void print(vector<int>& nums) 
+{
+    for (auto& v : nums) 
+    {
         cout << v << " ";
     }
     cout << endl;
 }
-int main() {
+int main() 
+{
     vector<int> nums = {1, 2, 3, 4};
     auto answer = productExceptSelf(nums);
     print(answer);
@@ -114,27 +121,33 @@ In the solution above you can use directly vector `answer` for `prefix` and merg
 #include <vector>
 #include <iostream>
 using namespace std;
-vector<int> productExceptSelf(vector<int>& nums) {
+vector<int> productExceptSelf(vector<int>& nums) 
+{
     const int n = nums.size();
     vector<int> answer(n);
     answer[0] = 1;
-    for (int i = 1; i < n; i++) {
+    for (int i = 1; i < n; i++) 
+    {
         answer[i] = answer[i - 1] * nums[i - 1];
     }
     int suffix = 1;
-    for (int i = n - 2; i >= 0; i--) {
+    for (int i = n - 2; i >= 0; i--) 
+    {
         suffix *= nums[i + 1];
         answer[i] *= suffix;
     }
     return answer;
 }
-void print(vector<int>& nums) {
-    for (auto& v : nums) {
+void print(vector<int>& nums) 
+{
+    for (auto& v : nums) 
+    {
         cout << v << " ";
     }
     cout << endl;
 }
-int main() {
+int main() 
+{
     vector<int> nums = {1, 2, 3, 4};
     auto answer = productExceptSelf(nums);
     print(answer);
