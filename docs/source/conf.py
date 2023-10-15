@@ -90,14 +90,14 @@ latex_show_urls = 'footnote'
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
-# latex_documents = [
-#     (master_doc, 'leetsolve.tex', '10 Classic Coding Challenges',
-#      'Nhut Nguyen, Ph. D.', 'howto'),
-# ]
 latex_documents = [
-    (master_doc, 'leetsolve.tex', 'The Problem Solver\'s Guide To Coding',
-     'Nhut Nguyen, Ph. D.', 'book'),
+    (master_doc, 'leetsolve.tex', '10 Classic Coding Challenges',
+     'Nhut Nguyen, Ph. D.', 'howto'),
 ]
-latex_docclass = {
-   'book': 'book',
-}
+# latex_documents = [
+#     (master_doc, 'leetsolve.tex', 'The Problem Solver\'s Guide To Coding',
+#      'Nhut Nguyen, Ph. D.', 'book'),
+# ]
+# latex_docclass = {
+#    'book': 'book',
+# }
