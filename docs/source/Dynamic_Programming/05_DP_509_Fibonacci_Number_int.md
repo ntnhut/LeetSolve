@@ -41,13 +41,16 @@ Explanation: F(4) = F(3) + F(2) = 2 + 1 = 3.
 ### Code
 ```cpp
 #include <iostream>
-int fib(int n) {
-    if (n <= 1) {
+int fib(int n) 
+{
+    if (n <= 1) 
+    {
         return n;
     } 
     return fib(n - 1) + fib(n - 2);
 }
-int main() {
+int main() 
+{
     std::cout << fib(2) << std::endl;
     std::cout << fib(3) << std::endl;
     std::cout << fib(4) << std::endl;
@@ -85,14 +88,17 @@ Therefore, the space complexity is linearly related to the input value `n`, maki
 ```cpp
 #include <iostream>
 #include <vector>
-int fib(int n) {
-    if (n <= 1) {
+int fib(int n) 
+{
+    if (n <= 1) 
+    {
         return n;
     }
     std::vector<int> f(n + 1);
     f[0] = 0;
     f[1] = 1;
-    for (int i = 2; i <= n; i++) {
+    for (int i = 2; i <= n; i++) 
+    {
         f[i] = f[i - 1] + f[i - 2];
     }
     return f[n];
@@ -135,21 +141,24 @@ This solution uses dynamic programming to avoid redundant calculations by storin
 ### Code
 ```cpp
 #include <iostream>
-#include <vector>
-int fib(int n) {
-    if (n <= 1) {
+int fib(int n) 
+{
+    if (n <= 1) 
+    {
         return n;
     }
     int f0 = 0;
     int f1 = 1;
-    for (int i = 2; i <= n; i++) {
+    for (int i = 2; i <= n; i++) 
+    {
         int f2 = f1 + f0;
         f0 = f1;
         f1 = f2;
     }
     return f1;
 }
-int main() {
+int main() 
+{
     std::cout << fib(2) << std::endl;
     std::cout << fib(3) << std::endl;
     std::cout << fib(4) << std::endl;
