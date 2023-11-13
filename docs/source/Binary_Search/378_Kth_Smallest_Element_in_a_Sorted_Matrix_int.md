@@ -35,7 +35,7 @@ Output: -5
 * Could you solve the problem with a constant memory (i.e., `O(1)` memory complexity)?
 * Could you solve the problem in `O(n)` time complexity? The solution may be too advanced for an interview but you may find reading [this paper](http://www.cse.yorku.ca/~andy/pubs/X+Y.pdf) fun.
 
-## Solution 1: Transform the 2-D matrix into an 1-D vector then sort
+## Solution 1: Transform the 2-D matrix into a 1-D vector then sort
 
 You can implement exactly what Example 1 has explained.
 
@@ -56,7 +56,8 @@ int kthSmallest(vector<vector<int>>& matrix, int k)
     sort(m.begin(), m.end());
     return m.at(k - 1);
 }
-int main() {
+int main() 
+{
     vector<vector<int>> matrix{{1,5,9},{10,11,13},{12,13,15}};
     cout << kthSmallest(matrix, 8) << endl;
     matrix = {{-5}};
@@ -112,7 +113,8 @@ int kthSmallest(vector<vector<int>>& matrix, int k)
     }
     return q.top();
 }
-int main() {
+int main() 
+{
     vector<vector<int>> matrix{{1,5,9},{10,11,13},{12,13,15}};
     cout << kthSmallest(matrix, 8) << endl;
     matrix = {{-5}};
@@ -129,7 +131,7 @@ Output:
 
 1. The code initializes a `priority_queue` named `q`, which is a min-heap. This min-heap will be used to keep track of the smallest `k` elements encountered in the matrix.
 
-2. The code uses two nested loops to iterate through the elements of the matrix. The outer loop iterates over each row, and the inner loop iterates over each column within the row.
+2. The code uses two nested loops to iterate through the matrix elements. The outer loop iterates over each row, and the inner loop iterates over each column within the row.
 
 3. For each element in the matrix (represented by `matrix[row][col]`), the code pushes it into the priority queue `q`. This operation effectively adds the element to the heap while maintaining the heap property (smallest element at the top).
 
@@ -139,16 +141,16 @@ Output:
 
 
 ### Complexity
-The key idea behind this solution is to maintain a priority queue of size `k`, allowing it to efficiently keep track of the `k`-th smallest element encountered while iterating through the matrix. This approach is particularly useful for large matrices, as it doesn't require sorting the entire matrix. 
+The key idea behind this solution is to maintain a priority queue of size `k`, allowing it to efficiently keep track of the `k`-th smallest element encountered while iterating through the matrix. This approach is handy for large matrices, as it doesn't require sorting the entire matrix. 
 
 * Runtime: `O(N*logk)`, where `N = n^2` is the total number of elements of the matrix.
 * Extra space: `O(k)`.
 
 ## Solution 3: Binary search
 
-Since the matrix is somehow sorted, you can perform the binary search algorithm on it. 
+Since the matrix is somehow sorted, you can perform the binary search algorithm. 
 
-But the criteria for the searching is not the value of the element `x` of interest; it is the number of elements that less than or equal to `x` must be exactly `k`. You can use [`std::upper_bound`](https://en.cppreference.com/w/cpp/algorithm/upper_bound) for this purpose.
+But the criteria for the search is not the value of the element `x` of interest; it is the number of elements that are less than or equal to `x` must be exactly `k`. You can use [`std::upper_bound`](https://en.cppreference.com/w/cpp/algorithm/upper_bound) for this purpose.
 
 ### Code
 ```cpp
@@ -183,7 +185,8 @@ int kthSmallest(vector<vector<int>>& matrix, int k)
     }
     return left;
 }
-int main() {
+int main() 
+{
     vector<vector<int>> matrix{{1,5,9},{10,11,13},{12,13,15}};
     cout << kthSmallest(matrix, 8) << endl;
     matrix = {{-5}};
@@ -212,7 +215,7 @@ Output:
    - The binary search continues until `left` is greater than `right`, at which point it has found the kth smallest element.
    - It returns `left` as the `k`-th smallest element.
 
-The binary search in the `kthSmallest` function efficiently narrows down the search range based on the count of elements less than or equal to the mid-point value. This is a highly efficient approach for large matrices.
+The binary search in the `kthSmallest` function efficiently narrows the search range based on the count of elements less than or equal to the mid-point value. This is a highly efficient approach for large matrices.
 
 ### Complexity
 
@@ -226,7 +229,5 @@ The binary search in the `kthSmallest` function efficiently narrows down the sea
 
 In summary:
 
-* Runtime: `O(n*logn* log(max -min))`, where `n` is the number of rows/columns of the matrix, `max` and `min` are the maximum and minimum possible values in the matrix..
+* Runtime: `O(n*logn*log(max -min))`, where `n` is the number of rows/columns of the matrix, `max` and `min` are the maximum and minimum possible values in the matrix..
 * Extra space: `O(1)`.
-
-

@@ -139,7 +139,7 @@ Output:
 
 ### Code explanation
 
-This solution aims to find the largest divisible subset of a given vector of integers. It utilizes dynamic programming and recursive functions to efficiently identify and store the largest divisible subsets.
+This solution utilizes dynamic programming and recursive functions to efficiently identify and store the largest divisible subsets.
 
 Here's how the code works:
 
@@ -252,7 +252,7 @@ Output:
 
 ### Code explanation
 
-1. The cose starts by sorting the input vector `nums` in ascending order. Sorting simplifies the process of finding divisibility relationships and allows us to build the largest divisible subset incrementally.
+1. The code starts by sorting the input vector `nums` in ascending order. Sorting simplifies the process of finding divisibility relationships and allows us to build the largest divisible subset incrementally.
 
 2. The algorithm initializes some variables:
    - `maxSize` represents the size of the largest divisible subset encountered.
