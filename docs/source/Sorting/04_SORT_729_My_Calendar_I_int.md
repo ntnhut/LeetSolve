@@ -43,14 +43,20 @@ You can store the booked events in a vector and check the intersection condition
 #include <iostream>
 #include <vector>
 using namespace std;
-class MyCalendar {
+class MyCalendar 
+{
     private:
     vector<pair<int,int>> _events;
 public:
-    MyCalendar() {}
-    bool book(int start, int end) {
-        for (auto& e : _events) {
-            if (!(e.second <= start || end <= e.first)) {
+    MyCalendar() 
+    {
+    }
+    bool book(int start, int end) 
+    {
+        for (auto& e : _events) 
+        {
+            if (!(e.second <= start || end <= e.first)) 
+            {
                 return false;
             }
         }
@@ -58,7 +64,8 @@ public:
         return true;
     }
 };
-int main() {
+int main() 
+{
     MyCalendar c;
     std::cout << c.book(10, 20) << std::endl;
     std::cout << c.book(15, 25) << std::endl;
@@ -74,13 +81,13 @@ Output:
 
 ### Code explanation
 
-1. The private member `_events` is a vector of pairs, where each pair represents an event with a start and end time.
+1. The private member `_events` is a vector of pairs, each representing an event with a start and end time.
 
 2. The constructor `MyCalendar()` initializes an empty `_events` vector when an instance of the class is created.
 
 3. The `book` method is used to book events. It takes two integers, `start` and `end`, representing the start and end times of the event to be booked.
 
-4. Inside the `book` method, there's a loop that iterates through the `_events` vector. For each existing event represented by `e`, it checks if there is any overlap between the new event (given by `start` and `end`) and the existing event. If any overlap is detected, it returns `false`, indicating that the booking is not possible.
+4. Inside the `book` method, there's a loop that iterates through the `_events` vector. For each existing event represented by `e`, it checks if there is any overlap between the new event (given by `start` and `end`) and the existing event. If any overlap is detected, it returns `false`, indicating that the booking is impossible.
 
 5. If there is no overlap with any existing events, the new event (represented by the pair `{start, end}`) is added to the `_events` vector, and the method returns `true` to indicate a successful booking.
 
@@ -103,22 +110,29 @@ With that in mind, you can use [`std::set`](https://en.cppreference.com/w/cpp/co
 #include <set>
 using namespace std;
 using Event = pair<int,int>;
-struct EventCmp {
-    bool operator()(const Event& lhs, const Event& rhs) const { 
+struct EventCmp 
+{
+    bool operator()(const Event& lhs, const Event& rhs) const 
+    { 
         return lhs.second <= rhs.first; 
     }
 };
-class MyCalendar {
+class MyCalendar 
+{
     private:
     set<Event, EventCmp> _events;
 public:
-    MyCalendar() {}
-    bool book(int start, int end) {
+    MyCalendar() 
+    {
+    }
+    bool book(int start, int end) 
+    {
         auto result = _events.insert({start, end});
         return result.second;
     }
 };
-int main() {
+int main() 
+{
     MyCalendar c;
     std::cout << c.book(10, 20) << std::endl;
     std::cout << c.book(15, 25) << std::endl;
@@ -134,7 +148,7 @@ Output:
 
 ### Code explanation
 
-1. The `Event` type is defined as a pair of integers representing the start and end times of an event.
+1. The `Event` type is defined as a pair of integers representing an event's start and end times.
 
 2. The `EventCmp` struct defines a custom comparison function for events. It compares events based on their end times. If the end time of one event is less than or equal to the start time of another event, they are considered non-overlapping.
 
@@ -153,6 +167,3 @@ This solution efficiently handles event bookings by maintaining a sorted set of 
 For the `book` method:
 * Runtime: `O(logn)`, where `n = _events.length`.
 * Extra space: `O(1)`.
-
-
-

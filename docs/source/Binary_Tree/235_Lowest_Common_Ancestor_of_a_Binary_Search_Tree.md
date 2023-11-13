@@ -48,21 +48,29 @@ It lets you know which branch (left or right) of the `root` the nodes `p` and `q
 ```cpp
 #include <iostream>
 using namespace std;
-struct TreeNode {
+struct TreeNode 
+{
     int val;
     TreeNode *left;
     TreeNode *right;
-    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+    TreeNode(int x) : val(x), left(nullptr), right(nullptr) 
+    {
+    }
 };
-TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
-    if (p->val < root->val && q->val < root->val) {
+TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) 
+{
+    if (p->val < root->val && q->val < root->val) 
+    {
         return lowestCommonAncestor(root->left, p, q);
-    } else if (root->val < p->val && root->val < q->val) {
+    } 
+    else if (root->val < p->val && root->val < q->val) 
+    {
         return lowestCommonAncestor(root->right, p, q);
     }
     return root;
 }
-int main() {
+int main() 
+{
     TreeNode zero(0);
     TreeNode three(3);
     TreeNode five(5);
