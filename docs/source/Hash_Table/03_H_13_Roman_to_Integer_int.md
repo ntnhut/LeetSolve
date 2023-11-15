@@ -49,7 +49,7 @@ Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
 
 * `1 <= s.length <= 15`.
 * `s` contains only the characters `'I'`, `'V'`, `'X'`, `'L'`, `'C'`, `'D'`, `'M'`.
-* It is guaranteed that `s` is a valid roman numeral in the range `[1, 3999]`.
+* It is guaranteed that `s` is a valid Roman numeral in the range `[1, 3999]`.
 
 ## Solution: Mapping and summing the values
 
@@ -60,7 +60,8 @@ To treat the subtraction cases easier you can iterate the string `s` backward.
 #include <iostream>
 #include <unordered_map>
 using namespace std;
-int romanToInt(string s) {
+int romanToInt(string s) 
+{
     unordered_map<char, int> value = {
         {'I', 1},
         {'V', 5},
@@ -71,12 +72,21 @@ int romanToInt(string s) {
         {'M', 1000}
     };
     int result = value[s.back()];
-    for (int i = s.length() - 2; i >= 0; i--) {
-        result = value[s[i]] < value[s[i+1]] ? result - value[s[i]] : result + value[s[i]];
+    for (int i = s.length() - 2; i >= 0; i--) 
+    {
+        if (value[s[i]] < value[s[i+1]])
+        {
+            result -= value[s[i]];
+        }
+        else
+        {
+            result += value[s[i]];
+        }
     }
     return result;
 }
-int main() {
+int main() 
+{
     cout << romanToInt("III") << endl;
     cout << romanToInt("LVIII") << endl;
     cout << romanToInt("MCMXCIV") << endl;
@@ -91,11 +101,11 @@ Output:
 
 ### Code explanation
 
-1. This code initializes an unordered map called `value` that maps Roman numeral characters to their integer values. Each key-value pair represents a Roman numeral character and its corresponding integer value.
+1. This code initializes an unordered map `value` that maps Roman numeral characters to their integer values. Each key-value pair represents a Roman numeral character and its corresponding integer value.
 
 2. It initializes the `result` variable with the integer value of the last character in the Roman numeral string `s`. This serves as the starting point for the total value.
 
-3. The main processing is done in a `for` loop that iterates through the Roman numeral string from the second-to-last character (index `s.length() - 2`) and goes backwards to the beginning of the string (index `0`).
+3. The main processing is done in a `for` loop that iterates through the Roman numeral string from the second-to-last character (index `s.length() - 2`) and goes backward to the beginning of the string (index `0`).
 
 4. Inside the loop, the code compares the value of the current Roman numeral character (`s[i]`) with the value of the next Roman numeral character (`s[i+1]`):
    - If the value of the current character is less than the value of the next character, it means that the current character represents a subtractive combination (e.g., IV for 4 or IX for 9). In this case, subtract the value of the current character from the `result`.

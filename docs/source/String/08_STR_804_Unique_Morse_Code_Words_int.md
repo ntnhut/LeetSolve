@@ -2,7 +2,7 @@
 
 ## [Problem statement](https://leetcode.com/problems/unique-morse-code-words/)
 
-The problem involves International Morse Code, which defines a standard way to encode letters with dots and dashes. Each English letter corresponds to a specific sequence in Morse Code, and a full table mapping each letter is provided.
+The problem involves the International Morse Code, which defines a standard way to encode letters with dots and dashes. Each English letter corresponds to a specific sequence in Morse Code, and a full table mapping each letter is provided.
 
 For instance, `'a'` is encoded as `".-"`, `'b'` as `"-..."`, and so on.
 
@@ -51,22 +51,28 @@ Output: 1
 #include <vector>
 #include <unordered_set>
 using namespace std;
-int uniqueMorseRepresentations(vector<string>& words) {
-    vector<string> morse{".-", "-...", "-.-.", "-..", ".", "..-.", "--.",
-                        "....", "..", ".---", "-.-", ".-..", "--", "-.",
-                        "---", ".--.", "--.-", ".-.", "...", "-", "..-",
-                        "...-", ".--", "-..-", "-.--", "--.."};
+int uniqueMorseRepresentations(vector<string>& words) 
+{
+    vector<string> morse{
+        ".-", "-...", "-.-.", "-..", ".", "..-.", "--.",
+        "....", "..", ".---", "-.-", ".-..", "--", "-.",
+        "---", ".--.", "--.-", ".-.", "...", "-", "..-",
+        "...-", ".--", "-..-", "-.--", "--.."
+    };
     unordered_set<string> transformations;
-    for (string& w : words) {
+    for (string& w : words) 
+    {
         string s{""};
-        for (char& c : w) {
+        for (char& c : w) 
+        {
             s += morse[c - 'a'];
         }
         transformations.insert(s);
     }
     return transformations.size();
 }
-int main() {
+int main() 
+{
     vector<string> words{"gin","zen","gig","msg"};
     cout << uniqueMorseRepresentations(words) << endl;
     words = {"a"};
@@ -97,7 +103,5 @@ Output:
 ### Complexity
 This solution converts each word into Morse code based on a predefined mapping and uses an unordered set to keep track of unique representations. By inserting each representation into the set, it automatically filters out duplicates. The final result is the size of the set, which represents the number of unique Morse code representations among the input words. 
 
-* Runtime: `O(NM)`, where `N = words.length` and `M = words[i].length`.
+* Runtime: `O(N*M)`, where `N = words.length` and `M = words[i].length`.
 * Extra space: `O(N)`.
-
-

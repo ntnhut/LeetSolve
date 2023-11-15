@@ -27,26 +27,31 @@ Output: -1
 * `1 <= s.length <= 10^5`.
 * `s` consists of only lowercase English letters.
 
-## Solution 1: Using map to store the appearances
+## Solution 1: Using a map to store the appearances
 
 ### Code
 ```cpp
 #include <iostream>
 #include <unordered_map>
 using namespace std;
-int firstUniqChar(string s) {
+int firstUniqChar(string s) 
+{
     unordered_map<char, int> count;
-    for (char& c : s) {
+    for (char& c : s) 
+    {
         count[c]++;
     }
-    for (int i = 0; i < s.length(); i++) {
-        if (count[s[i]] == 1) {
+    for (int i = 0; i < s.length(); i++) 
+    {
+        if (count[s[i]] == 1) 
+        {
             return i;
         }
     }
     return -1;
 }
-int main() {
+int main() 
+{
     cout << firstUniqChar("leetcode") << endl;
     cout << firstUniqChar("loveleetcode") << endl;
     cout << firstUniqChar("aabb") << endl;
@@ -80,26 +85,32 @@ It also has a space complexity of `O(k)`, where `k` is the number of distinct ch
 * Runtime: `O(n)`.
 * Extra space: `O(1)`.
 
-## Solution 2: Using vector to store the appearances
+## Solution 2: Using an array to store the appearances
 
 ### Code
 ```cpp
 #include <iostream>
 #include <vector>
 using namespace std;
-int firstUniqChar(string s) {
-    vector<int> count(26);
-    for (char& c : s) {
+int firstUniqChar(string s) 
+{
+    // initializes an array of 26 elements, all set to zero
+    std::array<int, 26> count{};
+    for (char& c : s) 
+    {
         count[c - 'a']++;
     }
-    for (int i = 0; i < s.length(); i++) {
-        if (count[s[i] - 'a'] == 1) {
+    for (int i = 0; i < s.length(); i++) 
+    {
+        if (count[s[i] - 'a'] == 1) 
+        {
             return i;
         }
     }
     return -1;
 }
-int main() {
+int main() 
+{
     cout << firstUniqChar("leetcode") << endl;
     cout << firstUniqChar("loveleetcode") << endl;
     cout << firstUniqChar("aabb") << endl;
@@ -113,7 +124,7 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(N)`, where `N = s.length`.
+* Runtime: `O(n)`, where `n = s.length`.
 * Extra space: `O(1)`.
 
 
