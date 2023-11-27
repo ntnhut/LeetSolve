@@ -44,34 +44,55 @@ Without loss of generality, let us store the result in `l1`. Then you might need
 ### Code
 ```cpp
 #include <iostream>
-struct ListNode {
+struct ListNode 
+{
     int val;
     ListNode *next;
-    ListNode() : val(0), next(nullptr) {}
-    ListNode(int x) : val(x), next(nullptr) {}
-    ListNode(int x, ListNode *next) : val(x), next(next) {}
+    ListNode() 
+    : val(0)
+    , next(nullptr) 
+    {        
+    }
+    ListNode(int x)
+    : val(x)
+    , next(nullptr) 
+    {        
+    }
+    ListNode(int x, ListNode *next) 
+    : val(x)
+    , next(next) 
+    {        
+    }
 };
 
-ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
+ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) 
+{
     ListNode prehead;     // dummy node to hook the head of the list
     ListNode* node = l1;  // store result on l1
     prehead.next = node;
     int sum = 0;
-    while (node) {
-        if (l1) {
+    while (node) 
+    {
+        if (l1) 
+        {
             sum += l1->val;
             l1 = l1->next;
         }
-        if (l2) {
+        if (l2) 
+        {
             sum += l2->val;
             l2 = l2->next;
         }
         node->val = sum % 10;
         sum /= 10;
-        if (!l1) {        // l1 ends
-            if (l2) {     // l1 is shorter than l2
+        if (!l1) // l1 ends
+        {        
+            if (l2) // l1 is shorter than l2
+            {     
                 node->next = l2;
-            } else if (sum == 1) {  
+            } 
+            else if (sum == 1) 
+            {  
                 // both l1 and l2 end but the remember is not zero 
                 ListNode* newNode = new ListNode(sum);
                 node->next = newNode;
@@ -81,15 +102,18 @@ ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
     }
     return prehead.next;
 }
-void printResult(ListNode* l) {
+void printResult(ListNode* l) 
+{
     std::cout << "[";
-    while (l) {
+    while (l) 
+    {
         std::cout << l->val << ",";
         l = l->next;
     }
     std::cout << "]\n";
 }
-int main() {
+int main() 
+{
     {
         ListNode three(3);
         ListNode four1(4, &three);
@@ -129,11 +153,11 @@ Output:
 
 ### Code explanation
 
-1. The code creates a dummy `prehead` node, which serves as the starting point of the result linked list. The `prehead` node is used to simplify the code for handling the first node and to ensure that the final result can be easily accessed.
+1. The code creates a dummy `prehead` node, which serves as the starting point of the resulting linked list. The `prehead` node is used to simplify the code for handling the first node and to ensure that the final result can be easily accessed.
 
-2. A pointer `node` is initialized to point to the `l1` list. This pointer will be used to construct the result linked list, and `l1` will be updated to store the result.
+2. A pointer `node` is initialized to point to the `l1` list. This pointer will be used to construct the resulting linked list, and `l1` will be updated to store the result.
 
-3. The code sets the `next` pointer of the `prehead` node to point to the `node` (i.e., `l1`). This effectively hooks the result linked list to the `prehead` node.
+3. The code sets the `next` pointer of the `prehead` node to point to the `node` (i.e., `l1`). This effectively hooks the resulting linked list to the `prehead` node.
 
 4. Inside the main loop:
    - A condition checks if `l1` is not `nullptr`. If it's not `nullptr`, it means there are more digits in `l1` to process. The code adds the value of the current node in `l1` to the `sum` and advances `l1` to the next node.
@@ -147,11 +171,11 @@ Output:
    - If `l1` has reached its end (i.e., `l1` is `nullptr`), it means `l1` is shorter than `l2` or both `l1` and `l2` have ended. In this case, the code checks if `l2` still has remaining digits. If `l2` has remaining digits, it appends the remaining part of `l2` to the result by updating the `next` pointer of the current `node` to point to `l2`.
    - If both `l1` and `l2` have ended, but there is a carry value of 1, a new `ListNode` is created with a value of 1, and it's appended to the result by updating the `next` pointer of the current `node`.
 
-8. The `node` pointer is moved to the next node in the result linked list for the next iteration of the loop.
+8. The `node` pointer is moved to the next node in the resulting linked list for the next iteration of the loop.
 
-9. After the loop completes, the result linked list, starting from the `prehead`, contains the sum of the two input numbers represented as linked lists.
+9. After the loop completes, the resulting linked list, starting from the `prehead`, contains the sum of the two input numbers represented as linked lists.
 
-10. The function returns `prehead.next`, which is the head of the result linked list.
+10. The function returns `prehead.next`, which is the head of the resulting linked list.
 
 
 ### Complexity

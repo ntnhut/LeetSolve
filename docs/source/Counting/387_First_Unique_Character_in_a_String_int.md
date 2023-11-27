@@ -87,6 +87,8 @@ It also has a space complexity of `O(k)`, where `k` is the number of distinct ch
 
 ## Solution 2: Using an array to store the appearances
 
+From the constraints "`s` consists of only lowercase English letters", you can use an array of 26 elements to store the counts.
+
 ### Code
 ```cpp
 #include <iostream>
@@ -125,6 +127,6 @@ Output:
 
 ### Complexity
 * Runtime: `O(n)`, where `n = s.length`.
-* Extra space: `O(1)`.
+* Extra space: `O(1)` as the array is fixed regardless of how big `n` is.
 
 
