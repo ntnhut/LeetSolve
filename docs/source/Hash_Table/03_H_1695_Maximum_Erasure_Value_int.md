@@ -40,18 +40,25 @@ You can use a map to store the position of the elements of `nums`. Then when ite
 using namespace std;
 int maximumUniqueSubarray(vector<int>& nums) {
     vector<int> sum(nums.size(), 0);
-    sum[0] = nums[0];    
-    int maxSum = sum[0];
+    sum[0] = nums.at(0);
+    int maxSum = sum.at(0);
     unordered_map<int, int> position;
-    position[nums[0]] = 0;
+    position[nums.at(0)] = 0;
     int start = -1;
     for (int i = 1; i < nums.size(); i++) {
-        sum[i] = sum[i - 1] + nums[i];
-        if (position.find(nums[i]) != position.end()) {
-            start = max(start, position[nums[i]]);
+        sum[i] = sum.at(i - 1) + nums.at(i);
+        auto it = position.find(nums.at(i));
+        if (it != position.end()) {
+            start = max(start, it->second);
+            it->second = i;
+        } else {
+            position.insert({nums.at(i), i});
+        }            
+        if (start == -1) {
+            maxSum = sum.at(i);
+        } else {
+            maxSum = max(maxSum, sum.at(i) - sum.at(start));
         }
-        position[nums[i]] = i;
-        maxSum = (start == -1) ? sum[i] : max(maxSum, sum[i] - sum[start]);
     }
     return maxSum;
 }
@@ -70,7 +77,7 @@ Output:
 
 ### Code explanation
 
-This C++ code defines a function called `maximumUniqueSubarray` that finds the maximum sum of a subarray in the given vector `nums` with the constraint that all elements in the subarray must be unique. It uses two key techniques: prefix sums and a sliding window approach.
+This C++ code defines a function `maximumUniqueSubarray` that finds the maximum sum of a subarray in the given vector `nums` with the constraint that all elements must be unique. It uses two key techniques: prefix sums and a sliding window approach.
 
 Here's a step-by-step explanation of how the code works:
 
@@ -78,17 +85,17 @@ Here's a step-by-step explanation of how the code works:
 
 2. It initializes the `maxSum` variable to the value of `sum[0]`, which represents the maximum sum found so far.
 
-3. An unordered map called `position` is created to store the position (index) of each element in `nums`. This map is used to keep track of the most recent position where each element was encountered.
+3. An unordered map `position` is created to store the position (index) of each element in `nums`. This map keeps track of the most recent position where each element was encountered.
 
 4. The initial position of the first element, `nums[0]`, is set to `0` in the `position` map.
 
-5. The `start` variable is initialized to `-1`, which will be used to keep track of the starting index of the subarray with unique elements.
+5. The variable `start` is initialized to `-1`, which will be used to keep track of the starting index of the subarray with unique elements.
 
 6. The code enters a loop that iterates for each element in `nums` except the first one.
 
-7. The `sum` vector is updated with the cumulative sum up to the current element `nums[i]`. This is done to efficiently calculate the sum of any subarray later.
+7. The `sum` vector is updated with the cumulative sum up to the current element `nums[i]`. This is done to calculate the sum of any subarray later efficiently.
 
-8. Inside the loop, the code checks if the current element `nums[i]` is already in the `position` map. If `nums[i]` is found in the `position` map, it means that this element has been encountered before. In this case, the code updates the `start` variable to be the maximum of its current value and the position of `nums[i]` from the `position` map. This is the sliding window technique to ensure that the subarray only contains unique elements.
+8. Inside the loop, the code checks if the current element `nums[i]` is already in the `position` map. If `nums[i]` is found in the `position` map, it means that this element has been encountered before. In this case, the code updates the `start` variable to be the maximum of its current value and the position of `nums[i]` from the `position` map. This sliding window technique ensures that the subarray only contains unique elements.
 
 9. The current position of `nums[i]` is updated in the `position` map.
 
