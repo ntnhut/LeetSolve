@@ -3,20 +3,20 @@
 #include <algorithm>
 using namespace std;
 
-//! @return the length of the longest substring without repeating characters
-//!         of a given string s.
+//! @return the length of the longest substring without 
+//!         repeating characters of a given string s.
 //! @author Nhut Nguyen
 int lengthOfLongestSubstring(string s) {
-    unordered_map<char, int> last_visit;
+    unordered_map<char, int> position;
     int maxLen = 0;
     int start = -1;
     for (int i = 0; i < s.length(); i++) {
-        auto it = last_visit.find(s.at(i));
-        if (it != last_visit.end()) {
+        auto it = position.find(s.at(i));
+        if (it != position.end()) {
             start = max(start, it->second);
             it->second = i;
         } else {
-            last_visit.insert({s.at(i), i});
+            position.insert({s.at(i), i});
         }
         maxLen = max(maxLen, i - start);
     }

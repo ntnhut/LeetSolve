@@ -3,5 +3,8 @@
         "unordered_map": "cpp",
         "ostream": "cpp",
         "vector": "cpp"
-    }
+    },
+    "cSpell.ignoreWords": [
+        "Nhut"
+    ]
 }

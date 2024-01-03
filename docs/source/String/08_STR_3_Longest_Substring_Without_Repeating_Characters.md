@@ -33,7 +33,7 @@ Notice that the answer must be a substring, "pwke" is a subsequence and not a su
 
 ## Solution: Store the position of the visited characters
 
-Whenever you meet a visited character `s[i] == s[j]` for some `0 <= i < j < s.length`, the substring `"s[i]...s[j - 1]"` might be valid, i.e. it consist of only nonrepeating characters.
+Whenever you meet a visited character `s[i] == s[j]` for some `0 <= i < j < s.length`, the substring `"s[i]...s[j - 1]"` might be valid, i.e., it consists of only nonrepeating characters.
 
 But in case you meet another visited character `s[x] == s[y]` where `x < i < j < y`, the substring `"s[x]...s[y - 1]"` is not valid because it consists of repeated character `s[i] == s[j]`. 
 
@@ -63,10 +63,13 @@ int lengthOfLongestSubstring(string s) {
     int maxLen = 0;
     int start = -1;
     for (int i = 0; i < s.length(); i++) {
-        if (position.find(s[i]) != position.end()) {
-            start = max(start, position[s[i]]);
+        auto it = position.find(s.at(i));
+        if (it != position.end()) {
+            start = max(start, it->second);
+            it->second = i;
+        } else {
+            position.insert({s.at(i), i});
         }
-        position[s[i]] = i;
         maxLen = max(maxLen, i - start);
     }
     return maxLen;
@@ -91,11 +94,11 @@ Output:
    - `maxLen` is initialized to 0, representing the maximum substring length found so far.
    - `start` is initialized to -1. This variable will be used to keep track of the starting index of the current substring.
 
-2. The code iterates through each character of the input string `s`. Inside the loop, the code checks whether the current character `s[i]` is already present in the `position` map. If the character is found in the map, it means that the character has occurred previously in the current substring.
+2. The code iterates through each character of the input string `s`. Inside the loop, the code checks whether the current character `s.at(i)` is already in the `position` map. If the character is found in the map, it means that it has occurred previously in the current substring.
 
-3. If the character is found in the map (indicating a repeating character), the code updates the `start` index to the maximum of its current value (`start`) and the position of the character in the map (`position[s[i]]`). This step effectively "slides" the window to the right, excluding the repeating character and any characters before it.
+3. If the character is found in the map (indicating a repeating character), the code updates the `start` index to the maximum of its current value (`start`) and the position of the character in the map (`it->second` is `position[s.at(i)]`). This step effectively "slides" the window to the right, excluding the repeating character and any characters before it.
 
-4. The code updates the `position` map with the current character's position by setting `position[s[i]] = i`. This keeps track of the most recent position of each character.
+4. The code updates the `position` map with the current character's position by `position.insert({s.at(i), i})` which means setting `position[s.at(i)] = i`. This keeps track of the most recent position of each character.
 
 5. At each iteration, the code calculates the length of the current substring (`i - start`) and updates `maxLen` to be the maximum of its current value and the calculated length. This ensures that `maxLen` always stores the maximum length encountered during the traversal.
 
@@ -103,7 +106,7 @@ Output:
 
 
 ### Complexity
-This solution efficiently finds the length of the longest substring without repeating characters by using a sliding window approach and an unordered map to track character positions. It iterates through the string, updates the window, and calculates the maximum length as it goes. 
+This solution efficiently finds the length of the longest substring without repeating characters by using a sliding window approach and an unordered map to track character positions. It iterates through the string, updates the window, and calculates the maximum length. 
 
 * Runtime: `O(N)`, where `N = s.length`.
 * Extra space: `O(N)`.
