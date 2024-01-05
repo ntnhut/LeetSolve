@@ -10,9 +10,9 @@ Coding challenges could be **programming puzzles** or **mathematical problems** 
 
 As you work through the coding challenges in this book, you'll **learn new skills**, **improve your problem-solving abilities**, and **develop your confidence as a programmer**. 
 
-The challenges in this book are picked from **leetcode.com**. I keep the challenges' titles unchanged so you can easily find them there. I chose the ones that are not too difficult and do not require much effort and determination to solve. Each challenge comes with a detailed solution, explaining the logic behind the solution and how to implement it in C++.
+The challenges in this book are picked from **leetcode.com**. You can find their links in the footnote. I chose the ones that are not too difficult and do not require much effort and determination to solve. Each challenge comes with a detailed solution, explaining the logic behind the solution and how to implement it in C++.
 
-## Leetcode
+## Why Leetcode?
 
 [LeetCode.com](https://leetcode.com) is a popular online platform for programmers and software engineers that provides many coding challenges and problems. The website was launched in 2015 and has since grown to become one of the go-to resources for **coding practice**, **technical interview preparation**, and **skills enhancement**.
 
@@ -26,7 +26,7 @@ LeetCode has become a popular resource for **technical interview** preparation, 
 
 In summary, LeetCode is a valuable resource for programmers and software engineers looking to improve their coding skills, prepare for technical interviews, and advance their careers. Its extensive collection of coding challenges, community discussion forums, and premium services make it an all-in-one platform for coding practice and skills enhancement.
 
-## Algorithm complexity
+## A brief about algorithm complexity
 
 **Algorithm complexity**, also known as **runtime complexity**, is a measure of how the running time of an algorithm increases as the input size grows. It is an essential concept in computer science, as it helps programmers evaluate and optimize their algorithms' performance.
 
@@ -41,7 +41,8 @@ While it is important to optimize the performance of algorithms, it is also impo
 In summary, algorithm complexity is an essential concept in computer science that helps programmers evaluate and optimize their algorithms' performance. By analyzing an algorithm's time and space complexity, programmers can identify potential performance bottlenecks and optimize their code to improve efficiency and scalability.
 
 
-## Readable code
+## Why readable code?
+
 **Readable code** is code that is **easy to understand**, **maintain**, and **modify**. It is an essential aspect of programming, as it ensures that code is accessible to other programmers and helps to prevent errors and bugs. Readable code is important for several reasons.
 
 Firstly, readable code makes it easier for other programmers to **understand and modify** it. This is particularly important in collaborative projects where multiple programmers work on the same codebase. If the code is not readable, it can lead to confusion and errors, making it difficult for others to work on it.
