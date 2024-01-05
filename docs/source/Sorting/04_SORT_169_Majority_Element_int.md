@@ -172,8 +172,7 @@ By using `std::nth_element`, the code avoids fully sorting the entire vector, wh
 * Extra space: `O(1)`.
 
 
-```{admonition} Modern C++ tips
-:class: tip
+## Modern C++ tips
 
 In the code of Solution 3, the partial sorting algorithm [`std::nth_element`](https://en.cppreference.com/w/cpp/algorithm/nth_element) will make sure for all indices `i` and `j` that satisfy `0 <= i <= mid <= j < nums.length`,
 
@@ -183,4 +182,3 @@ In other words, `nums[mid]` divides the array `nums` into two groups: all elemen
 
 Those two groups are unsorted. That is why the algorithm is called *partial* sorting. 
 
-```

@@ -140,7 +140,7 @@ Output:
 
 3. The code initializes `row` and `col` to 0, representing the current position in the matrix.
 
-4. It creates an enumeration `Direction` to represent the current direction of movement (`RIGHT`, `DOWN`, `LEFT`, `UP`). It initializes `d` to `RIGHT` to start moving to the right.
+4. It creates an {index}`enum` `Direction` to represent the current direction of movement (`RIGHT`, `DOWN`, `LEFT`, `UP`). It initializes `d` to `RIGHT` to start moving to the right.
 
 5. The code initializes an integer `a` to 1, which will be used to fill the matrix with incrementing values.
 

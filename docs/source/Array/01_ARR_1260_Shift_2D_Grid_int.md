@@ -111,7 +111,8 @@ For `grid = [[1,2,3],[4,5,6],[7,8,9]]`:
 #include <vector>
 #include <iostream>
 using namespace std;
-vector<vector<int>> shiftGrid(vector<vector<int>>& grid, int k) {
+vector<vector<int>> shiftGrid(vector<vector<int>>& grid, int k) 
+{
     vector<int> v;
     for (auto& r : grid) {
         v.insert(v.end(), r.begin(), r.end());
@@ -184,11 +185,8 @@ In summary, this code flattens a 2D grid into a 1D vector, shifts the elements o
 * Extra space: `O(m*n)` (the vector `v`).
 
 
-```{admonition} Key takeaway
-:class: tip
+## Key takeaway
 
 1. To convert a 2D matrix into a 1D vector, you can use the `std::vector`'s function [`insert()`](https://en.cppreference.com/w/cpp/container/vector/insert).
 
 2. The modulo operator `%` is usually used to ensure the index is inbound.
-
-```

@@ -124,7 +124,7 @@ This solution efficiently removes nodes with a specified value `val` from a link
 * Runtime: `O(N)`, where `N` is the number of nodes.
 * Memory: `O(1)`.
 
-## Solution 2: Create a previous dummy node for head
+## Solution 2: Create a previous {index}`dummy node` for head
 `head` has no `pre`. You can create a dummy node for `head.pre`. 
 
 ### Code

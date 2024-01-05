@@ -12,21 +12,21 @@ Note that the linked lists do not have any cycles, and you must ensure that the 
 
 
 ### Example 1
-<!-- ![Two linked lists A and B intersect at node 8](02_LL_160_example_1_1.png) -->
+![Two linked lists A and B intersect at node 8](02_LL_160_example_1_1.png)
 ```text
 Input: listA = [4,1,8,4,5], listB = [5,6,1,8,4,5].
 Output: Intersected at '8'
 ```
 
 ### Example 2
-<!-- ![Two linked lists A and B intersect at node 2](02_LL_160_example_2.png) -->
+![Two linked lists A and B intersect at node 2](02_LL_160_example_2.png)
 ```text
 Input: listA = [1,9,1,2,4], listB = [3,2,4]
 Output: Intersected at '2'
 ```
 
 ### Example 3
-<!-- ![Two linked lists A and B do not intersect](02_LL_160_example_3.png) -->
+![Two linked lists A and B do not intersect](02_LL_160_example_3.png)
 ```text
 Input: listA = [2,6,4], listB = [1,5]
 Output: No intersection.
@@ -176,7 +176,8 @@ struct ListNode {
     ListNode *next;
     ListNode(int x) : val(x), next(NULL) {}
 };
-ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
+ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) 
+{
     int lengthA = 0;
     ListNode *nodeA = headA;
     while (nodeA->next != nullptr) {

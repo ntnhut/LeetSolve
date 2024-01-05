@@ -37,7 +37,8 @@ Output: ["a","b","c"]
 #include <vector>
 #include <unordered_map>
 using namespace std;
-vector<string> findAndReplacePattern(vector<string>& words, string pattern) {
+vector<string> findAndReplacePattern(vector<string>& words, string pattern) 
+{
     vector<string> result;  
     // need two maps for the bijection
     unordered_map<char,char> w_to_p, p_to_w;

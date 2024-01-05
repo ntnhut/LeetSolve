@@ -43,12 +43,16 @@ For `temperatures = [73,74,75,71,69,72,76,73]`:
 #include <vector>
 #include <iostream>
 using namespace std;
-vector<int> dailyTemperatures(vector<int>& temperatures) {
+vector<int> dailyTemperatures(vector<int>& temperatures) 
+{
     vector<int> answer(temperatures.size());
-    for (int i = 0; i < temperatures.size(); i++) {
+    for (int i = 0; i < temperatures.size(); i++) 
+    {
         answer[i] = 0;
-        for (int j = i + 1; j < temperatures.size(); j++) {
-            if (temperatures[j] > temperatures[i]) {
+        for (int j = i + 1; j < temperatures.size(); j++) 
+        {
+            if (temperatures[j] > temperatures[i]) 
+            {
                 answer[i] = j - i;
                 break;
             }
@@ -137,13 +141,15 @@ To compute `answer[i = 2]` for `temperatures[2] = 75`, you need to compare it wi
 #include <vector>
 #include <iostream>
 using namespace std;
-vector<int> dailyTemperatures(vector<int>& temperatures) {
+vector<int> dailyTemperatures(vector<int>& temperatures) 
+{
     vector<int> answer(temperatures.size(), 0);
-    for (int i = temperatures.size() - 2; i >= 0 ; i--) {
+    for (int i = temperatures.size() - 2; i >= 0 ; i--) 
+    {
         int j = i + 1;
         while (j < temperatures.size() && 
                temperatures[j] <= temperatures[i]) {
-            // there is some temperature bigger than temperatures[j], 
+            // some temperature is bigger than temperatures[j], 
             // go to that value 
             if (answer[j] > 0) { 
                 j += answer[j];
@@ -210,11 +216,8 @@ The value `0` would help the `while` loop terminates very soon. On the other han
 * Extra space: `O(1)`.
 
 
-```{admonition} Tips
-:class: tip
+## Tips
 
 In some computations, you could improve the performance by using the knowledge of the results you have computed. 
 
 In this particular problem, it can be achieved by doing it in the reversed order.
-
-```

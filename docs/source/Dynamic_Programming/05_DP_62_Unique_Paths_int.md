@@ -134,9 +134,6 @@ The space complexity is `O(max(m,n))` due to the call stack.
 
 In summary, the complexities are:
 
-- Time complexity: O(2^max(m,n))
-- Space complexity: O(max(m,n))
-
 * Runtime: `O(2^max(m,n)`, where `m x n` is the size of the grid.
 * Extra space: `O(max(m,n)`.
 

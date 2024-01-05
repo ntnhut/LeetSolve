@@ -95,7 +95,7 @@ For the `book` method:
 
 Since the events have no intersection, they can be sorted. You can also consider two events to be the same if they intersect.
 
-With that in mind, you can use [`std::set`](https://en.cppreference.com/w/cpp/container/set) to store the sorted unique events.
+With that in mind, you can use {index}`std::set`[](https://en.cppreference.com/w/cpp/container/set) to store the sorted unique events.
 
 ### Code
 ```cpp

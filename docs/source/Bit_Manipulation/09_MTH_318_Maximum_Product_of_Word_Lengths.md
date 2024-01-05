@@ -100,7 +100,7 @@ The code efficiently compares pairs of words to find the maximum product of thei
 * Runtime: `O(n^2 * m)`.
 * Extra space: `O(1)`.
 
-## Solution 2: Checking common letters using bit masking
+## Solution 2: Checking common letters using {index}`bit masking`
 
 You can map a `words[i]` to the bit representation of an integer `n` by their characters like the following:
 
@@ -179,7 +179,4 @@ By using bit masking to represent the presence of letters in words, this code av
 
 * Runtime: `O(n^2)`.
 * Extra space: `O(n)`.
-
-
-
 

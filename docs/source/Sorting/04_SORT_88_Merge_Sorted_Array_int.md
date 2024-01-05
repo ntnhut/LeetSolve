@@ -54,7 +54,8 @@ Note that because m = 0, there are no elements in nums1. The 0 is only there to 
 #include <iostream>
 #include <vector>
 using namespace std;
-void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
+void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) 
+{
     vector<int> result;
     int i = 0;
     int j = 0;
@@ -63,8 +64,10 @@ void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
             result.push_back(nums1[i++]);
         } else if (i == m) {
             result.push_back(nums2[j++]);
+        } else if (nums1[i] < nums2[j]) {
+            result.push_back(nums1[i++]);
         } else {
-            result.push_back(nums1[i] < nums2[j] ? nums1[i++] : nums2[j++]);
+            result.push_back(nums2[j++]);
         }
     }
     nums1.swap(result);
@@ -130,7 +133,8 @@ This solution merges two sorted arrays `nums1` and `nums2` into `nums1` while ma
 #include <iostream>
 #include <vector>
 using namespace std;
-void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {    
+void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) 
+{    
     int k = m + n - 1;
     int i = m - 1;
     int j = n - 1;
@@ -139,8 +143,10 @@ void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
             nums1[k--] = nums1[i--];
         } else if (i < 0) {
             nums1[k--] = nums2[j--];
+        } else if (nums1[i] > nums2[j]) {
+            nums1[k--] = nums1[i--]; 
         } else {
-            nums1[k--] = nums1[i] > nums2[j] ? nums1[i--] : nums2[j--]; 
+            nums1[k--] = nums2[j--]; 
         }
     }
 }

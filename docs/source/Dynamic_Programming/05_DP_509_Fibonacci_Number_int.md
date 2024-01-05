@@ -1,4 +1,4 @@
-# Fibonacci Number
+# {index}`Fibonacci Number`
 
 ## [Problem statement](https://leetcode.com/problems/fibonacci-number/)
 

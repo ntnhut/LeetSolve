@@ -88,7 +88,7 @@ The core idea behind this solution is to transform the 2D matrix into a 1D sorte
 
 Instead of sorting after building the vector in Solution 1, you can do the other way around. It means building up the vector from scratch and keeping it sorted. 
 
-Since you need only the `k-th` smallest element, [`std::priority_queue`](https://en.cppreference.com/w/cpp/container/priority_queue) can be used for this purpose.
+Since you need only the `k-th` smallest element, {index}`std::priority_queue`[](https://en.cppreference.com/w/cpp/container/priority_queue) can be used for this purpose.
 
 ### Code
 ```cpp
@@ -148,7 +148,7 @@ The key idea behind this solution is to maintain a priority queue of size `k`, a
 
 Since the matrix is somehow sorted, you can perform the binary search algorithm on it. 
 
-But the criteria for the searching is not the value of the element `x` of interest; it is the number of elements that less than or equal to `x` must be exactly `k`. You can use [`std::upper_bound`](https://en.cppreference.com/w/cpp/algorithm/upper_bound) for this purpose.
+But the criteria for the searching is not the value of the element `x` of interest; it is the number of elements that less than or equal to `x` must be exactly `k`. You can use {index}`std::upper_bound`[](https://en.cppreference.com/w/cpp/algorithm/upper_bound) for this purpose.
 
 ### Code
 ```cpp

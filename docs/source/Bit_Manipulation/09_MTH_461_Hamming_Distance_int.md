@@ -28,7 +28,7 @@ Output: 1
 * `0 <= x, y <= 2^31`.
 
 ## Solution: Using bitwise operator XOR
-You could use bit operator ^ (XOR) to get the bit positions where `x` and `y` are different. Then use bit operator & (AND) at each position to count them.
+You could use {index}`bitwise XOR` (`^`) to get the bit positions where `x` and `y` are different. Then use {index}`bitwise AND` operator (`&`) at each position to count them.
 
 ### Code
 ```cpp

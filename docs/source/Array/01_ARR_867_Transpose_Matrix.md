@@ -48,8 +48,10 @@ Output: [[1,4],[2,5],[3,6]]
 #include <iostream>
 #include <vector>
 using namespace std;
-vector<vector<int>> transpose(vector<vector<int>>& matrix) {
-    vector<vector<int>> mt(matrix[0].size(), vector<int>(matrix.size()));
+vector<vector<int>> transpose(vector<vector<int>>& matrix) 
+{
+    vector<vector<int>> mt(matrix[0].size(), 
+                           vector<int>(matrix.size()));
     for (int i = 0; i < mt.size(); i++) {
         for (int j = 0; j < mt[i].size(); j++) {
             mt[i][j] = matrix[j][i];
@@ -104,9 +106,7 @@ In summary, this code computes the transpose of a given 2D matrix by creating a 
 * Extra space: `O(1)`.
 
 
-```{admonition} Implementation note
-:class: note
+## Implementation note
 
 Note that the matrix might not be square, you cannot just swap the elements using for example the function [`std::swap`](https://en.cppreference.com/w/cpp/algorithm/swap).
 
-```

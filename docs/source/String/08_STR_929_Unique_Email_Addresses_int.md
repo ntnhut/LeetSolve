@@ -211,12 +211,9 @@ cout << address.substr(0, address.find('@'));   // "name"
 
 * [string::find(char, pos=0)](https://en.cppreference.com/w/cpp/string/basic_string/find) returns the position of the first `char` which appears in the string `string` starting from `pos`.
 
-```{admonition} High-performance C++
-:class: tip
+## High-performance C++
 
 * Do not use `std::set` or `std::map` unless you want the keys to be *in order* (*sorted*). Use *unordered containers* like [std::unordered_set](https://en.cppreference.com/w/cpp/container/unordered_set) or [std::unordered_map](https://en.cppreference.com/w/cpp/container/unordered_map) instead. They use hashed keys for faster lookup.
 
 * Do not blindly/lazily use `string.find(something)`. If you know where to start the search, use `string.find(something, pos)` with a **specific** `pos`.
-
-```
 

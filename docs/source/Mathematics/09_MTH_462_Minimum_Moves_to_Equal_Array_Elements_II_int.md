@@ -139,7 +139,7 @@ Output:
 
 ### Code explanation
 
-1. The code starts by calculating the median of the `nums` array without fully sorting it. The median is found by using the `std::nth_element` function, which rearranges elements such that the element at the `mid` position (where `mid` is the index of the middle element after sorting) is the median. This step has a time complexity of `O(n)`.
+1. The code starts by calculating the median of the `nums` array without fully sorting it. The median is found by using the {index}`std::nth_element` function, which rearranges elements such that the element at the `mid` position (where `mid` is the index of the middle element after sorting) is the median. This step has a time complexity of `O(n)`.
 
 2. After finding the median, it initializes a variable `moves` to keep track of the total number of moves needed to make all elements equal.
 
