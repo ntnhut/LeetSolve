@@ -11,7 +11,7 @@ There is an undirected graph with `n` nodes, where each node is numbered between
 
 A graph is **bipartite** if the nodes can be partitioned into two independent sets `A` and `B` such that every edge in the graph connects a node in set `A` and a node in set `B`.
 
-Return `true` if and only if it is bipartite.
+Return `true` if and only if it is a {index}`bipartite graph`.
 
  
 
@@ -46,7 +46,7 @@ Explanation: We can partition the nodes into two sets: {0, 2} and {1, 3}.
 * All the values of `graph[u]` are unique.
 * If `graph[u]` contains `v`, then `graph[v]` contains `u`.
 
-## Solution: Coloring the nodes by Depth First Search
+## Solution: Coloring the nodes by {index}`Depth First Search`
 
 You could color the nodes in set A with one color and those in B with another color. Then two ends of every edge have different colors.
 
@@ -99,11 +99,9 @@ Output:
 * Runtime: `O(n)`, where `n = graph.length`.
 * Extra space: `O(n)`.
 
-```{admonition} Implementation tips
-:class: tip
+## Implementation tips
 
 * This is the non-recursive implementation of DFS algorithm where you could use the stack data structure to avoid the recursion.
 
 * The stack's methods needed in the DFS algorithm are only `push` and `pop`. There are similar ones in [`std::vector`](https://en.cppreference.com/w/cpp/container/vector). They are [`push_back`](https://en.cppreference.com/w/cpp/container/vector/push_back) and [`pop_back`](https://en.cppreference.com/w/cpp/container/vector/pop_back) which you could use well in this case.
 
-```

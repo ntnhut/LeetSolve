@@ -49,11 +49,12 @@ using namespace std;
 int maximumUnits(vector<vector<int>>& boxTypes, int truckSize) 
 {
     // sort for the boxes based on their number of units
-    sort(boxTypes.begin(), boxTypes.end(), 
-        [](const vector<int>& a, const vector<int>& b) 
-        {
+    sort(boxTypes.begin(), 
+         boxTypes.end(), 
+         [](const vector<int>& a, const vector<int>& b) 
+         {
             return a[1] > b[1];
-        });
+         });
     int maxUnits = 0;
     int i = 0;
     while (truckSize > 0 && i < boxTypes.size()) 
@@ -115,11 +116,9 @@ In summary, the code optimally loads boxes onto a truck to maximize the total nu
 * Runtime: `O(N*logN)`, where `N = boxTypes.length`.
 * Extra space: `O(1)`.
 
-```{admonition} Modern C++ STL notes
-:class: tip
+## Modern C++ STL notes
 
 Note that two [`vector`s](https://en.cppreference.com/w/cpp/container/vector) can be compared. That is why you can sort them.
 
-But in this case you want to sort them based on the number of units. That is why you need to define the comparison function like the code above. Otherwise, the [`sort`](https://en.cppreference.com/w/cpp/algorithm/sort) algorithm will use the dictionary order to sort them by default.  
+But in this case you want to sort them based on the number of units. That is why you need to define the comparison function like the code above. Otherwise, the {index}`std::sort`[](https://en.cppreference.com/w/cpp/algorithm/sort) algorithm will use the dictionary order to sort them by default.  
 
-```

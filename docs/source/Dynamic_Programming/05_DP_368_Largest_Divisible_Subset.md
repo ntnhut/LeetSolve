@@ -199,18 +199,25 @@ vector<int> largestDivisibleSubset(vector<int>& nums) {
         return nums; 
     }
     sort(nums.begin(), nums.end());
-    int maxSize = 0;    // the size of the resulting subset
-    int maxindex = 0;   // nums[maxindex] is the largest value of the resulting subset
-    vector<int> subsetSize(nums.size(), 1); // subsetSize[i] stores the size 
-                                            // of the largest subset having 
-                                            // biggest number nums[i]
-    vector<int> pre(nums.size(), -1);       // pre[i] stores the previous 
-                                            // index of i in their largest subset
+    // the size of the resulting subset
+    int maxSize = 0;    
+
+    // nums[maxindex] is the largest value of the resulting subset
+    int maxindex = 0;   
+
+    // subsetSize[i] stores the size of the largest subset
+    // having the biggest number nums[i]
+    vector<int> subsetSize(nums.size(), 1); 
+
+    // pre[i] stores the previous index of i in their largest subset
+    vector<int> pre(nums.size(), -1);       
     for (int i = 0; i < nums.size(); i++) {
         // find the previous nums[j] that make subsetSize[i] largest
         for (int j = i - 1; j >= 0; j--) {
 
-            if (nums[i] % nums[j] == 0 && subsetSize[j] + 1 > subsetSize[i]) {
+            if (nums[i] % nums[j] == 0 && 
+                subsetSize[j] + 1 > subsetSize[i]) 
+            {
                 subsetSize[i] = subsetSize[j] + 1;
                 pre[i] = j;
             }

@@ -115,6 +115,3 @@ This solution calculates the frequencies of characters in the input string, sort
 
 * Runtime: `O(N)`, where `N = s.length`;
 * Extra space: `O(1)`.
-
-
-

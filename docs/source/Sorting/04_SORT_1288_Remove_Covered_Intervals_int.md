@@ -108,7 +108,7 @@ This solution effectively removes covered intervals and retains only those that 
 * Runtime: `O(N^3)`, where `N = intervals.length`.
 * Extra space: `O(1)`.
 
-## Solution 2: Using dictionary order
+## Solution 2: Using {index}`dictionary order`
 You might know how to look up words in a dictionary. 
 
 The word `apple` appears before `candy` in the dictionary because the starting letter `a` of `apple` appears before `c` of `candy` in the English alphabet. 

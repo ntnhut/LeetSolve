@@ -109,7 +109,7 @@ This solution first counts the total number of nodes in the linked list, and the
 * Runtime: `O(N)`.
 * Extra space: `O(1)`.
 
-## Solution 2: Slow and fast pointers
+## Solution 2: {index}`Fast and Slow` pointers
 Use two pointers to go through the linked list. 
 
 One goes one step at a time. The other goes two steps at a time. When the faster reaches the end, the slower reaches the middle.

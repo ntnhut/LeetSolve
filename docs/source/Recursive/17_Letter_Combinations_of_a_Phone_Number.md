@@ -113,5 +113,5 @@ You can use the assignment operator `'='` for `result.swap(newResult)`, i.e. `re
 
 But this assignment allocates additional memory for a copy of `newResult` before assigning it to `result`.
 
-The [`std::swap()` algorithm](https://en.cppreference.com/w/cpp/string/basic_string/swap) avoids such copying by using [`std::move()`](https://en.cppreference.com/w/cpp/utility/move). It exchanges the contents of each other without allocating additional memory.
+The [`std::swap()` algorithm](https://en.cppreference.com/w/cpp/string/basic_string/swap) avoids such copying by using {index}`std::move()`[](https://en.cppreference.com/w/cpp/utility/move). It exchanges the contents of each other without allocating additional memory.
 

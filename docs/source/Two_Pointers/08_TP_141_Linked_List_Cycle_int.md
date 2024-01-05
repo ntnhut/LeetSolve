@@ -112,7 +112,7 @@ This solution has a time complexity of `O(N)`, where `N` is the number of nodes 
 * Runtime: `O(N)`, where `N` is the length of the linked list.
 * Extra space: `O(N)`.
 
-## Solution 2: Fast and slow runners
+## Solution 2: {index}`Fast and Slow` runners
 Imagine there are two runners both start to run along the linked list from the `head`. One runs twice faster than the other. 
 
 If the linked list has a cycle in it, they will meet at some point. Otherwise, they never meet each other.

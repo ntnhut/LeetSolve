@@ -147,7 +147,7 @@ s = "aa..a|ee..e|ii..i|oo..o|uu..u",
 the problem becomes counting how many ways of putting those 4 separators `'|'` to form a string of length `n + 4`. 
 
 
-In combinatorics, the solution is $\binom{n + 4}{4}$, where $\binom{n}{k}$ is the [binomial coefficient](https://en.wikipedia.org/wiki/Binomial_coefficient):
+In combinatorics, the solution is $\binom{n + 4}{4}$, where $\binom{n}{k}$ is the {index}`binomial coefficient`[](https://en.wikipedia.org/wiki/Binomial_coefficient):
 
 $$
 \binom{n}{k} = \frac{n!}{k!(n-k)!}.

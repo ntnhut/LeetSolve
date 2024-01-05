@@ -99,7 +99,7 @@ Here's a step-by-step explanation of how the code works:
 
 9. The current position of `nums[i]` is updated in the `position` map.
 
-10. The code calculates the maximum sum using the sliding window approach. If `start` is still equal to `-1`, it means that all elements up to `nums[i]` are unique, so the maximum sum is simply `sum[i]`. Otherwise, the code calculates the maximum of the current `maxSum` and the sum of the elements between the current position `i` and the `start` position. This ensures that the subarray contains unique elements.
+10. The code calculates the maximum sum using the {index}`sliding window` approach. If `start` is still equal to `-1`, it means that all elements up to `nums[i]` are unique, so the maximum sum is simply `sum[i]`. Otherwise, the code calculates the maximum of the current `maxSum` and the sum of the elements between the current position `i` and the `start` position. This ensures that the subarray contains unique elements.
 
 11. Finally, the function returns `maxSum`, which contains the maximum sum of a subarray with unique elements.
 

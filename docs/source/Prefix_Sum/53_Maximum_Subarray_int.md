@@ -91,4 +91,4 @@ Output:
 
 ## Conclusion
 
-In summary, this code demonstrates [Kadane's algorithm](https://en.wikipedia.org/wiki/Maximum_subarray_problem#Kadane's_algorithm) to find the maximum sum of a contiguous subarray in the given array nums. The algorithm efficiently handles negative and positive values, ensuring that it finds the optimal subarray sum.
+In summary, this code demonstrates {index}`Kadane's algorithm`[](https://en.wikipedia.org/wiki/Maximum_subarray_problem#Kadane's_algorithm) to find the maximum sum of a contiguous subarray in the given array nums. The algorithm efficiently handles negative and positive values, ensuring that it finds the optimal subarray sum.

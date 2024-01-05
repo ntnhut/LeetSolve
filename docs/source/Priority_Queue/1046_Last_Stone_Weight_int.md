@@ -38,7 +38,7 @@ Output: 1
 
 ## Solution: Keeping the heaviest stones on top
 
-The only things you want at any time are the two heaviest stones. One way of keeping this condition is by using [`std::priority_queue`](https://en.cppreference.com/w/cpp/container/priority_queue).
+The only things you want at any time are the two heaviest stones. One way of keeping this condition is by using {index}`std::priority_queue`.
 
 ### Code
 

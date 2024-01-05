@@ -122,7 +122,7 @@ There is a data structure that has the property you want in this problem.
 
 It is [`std::priority_queue`](https://en.cppreference.com/w/cpp/container/priority_queue), which keeps its top element is always the largest one according to the comparison you define for the queue.
 
-By default, the "less than" comparison is used for `std::priority_queue` and the top one is always the biggest element. 
+By default, the "less than" comparison is used for {index}`std::priority_queue` and the top one is always the biggest element. 
 
 If you want the top one is always the smallest element, you can use the comparison "greater than" for your queue.
 

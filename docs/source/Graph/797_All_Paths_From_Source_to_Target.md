@@ -47,7 +47,7 @@ Output: [[0,1,2,3],[0,3]]
 * All the elements of `graph[i]` are unique.
 * The input graph is guaranteed to be a DAG.
 
-## Solution: Depth-first search (DFS)
+## Solution: {index}`Depth First Search` (DFS)
 
 This problem is exactly the [Depth-first search algorithm](https://en.wikipedia.org/wiki/Depth-first_search).
 
@@ -56,10 +56,11 @@ This problem is exactly the [Depth-first search algorithm](https://en.wikipedia.
 #include <vector>
 #include <iostream>
 using namespace std;
-void DFS(vector<vector<int>>& graph, vector<vector<int>>& paths, vector<int>& path) 
+void DFS(vector<vector<int>>& graph, 
+         vector<vector<int>>& paths, 
+         vector<int>& path) 
 {
-    for (auto& node : graph.at(path.back())) 
-    {
+    for (auto& node : graph[path.back()]) {
         path.push_back(node);
         if (node == graph.size() - 1) 
         {

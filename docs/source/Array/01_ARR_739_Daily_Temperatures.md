@@ -151,9 +151,8 @@ vector<int> dailyTemperatures(vector<int>& temperatures)
     {
         int j = i + 1;
         while (j < temperatures.size() && 
-               temperatures[j] <= temperatures[i]) 
-        {
-            // there is some temperature bigger than temperatures[j], 
+               temperatures[j] <= temperatures[i]) {
+            // some temperature is bigger than temperatures[j], 
             // go to that value 
             if (answer[j] > 0) 
             { 
@@ -227,11 +226,8 @@ The value `0` would help the `while` loop terminates very soon. On the other han
 * Extra space: `O(1)`.
 
 
-```{admonition} Tips
-:class: tip
+## Tips
 
 In some computations, you could improve the performance by using the knowledge of the results you have computed. 
 
 In this particular problem, it can be achieved by doing it in the reversed order.
-
-```

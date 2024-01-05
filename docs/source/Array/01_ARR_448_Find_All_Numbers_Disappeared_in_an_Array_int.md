@@ -152,10 +152,8 @@ This solution efficiently finds the disappeared numbers in an array by using the
 * Runtime: `O(n)`, where `n = nums.length`.
 * Extra space: `O(1)` (the returned list does not count as extra space).
 
-```{admonition} Readable code
-:class: tip
+## Readable code
+
 * Solution 2 helps to avoid allocating extra memory but it is not straightforward to understand.
     
-* Though Solution 1 requires some extra space, that memory is not much since `vector<bool>` is optimized for space efficiency. Moreover, it is easier to understand than Solution 2.
-
-```
+* Though Solution 1 requires some extra space, that memory is not much since {index}`std::vector<bool>` is optimized for space efficiency. Moreover, it is easier to understand than Solution 2.

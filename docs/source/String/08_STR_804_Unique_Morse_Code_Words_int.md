@@ -1,4 +1,4 @@
-# Unique Morse Code Words
+# Unique {index}`Morse Code` Words
 
 ## [Problem statement](https://leetcode.com/problems/unique-morse-code-words/)
 

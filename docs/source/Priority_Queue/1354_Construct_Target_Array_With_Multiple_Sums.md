@@ -65,12 +65,15 @@ For `target = [9,3,5]`:
 #include <vector>
 using namespace std;
 bool isPossible(vector<int>& target) {
-    unsigned long sum = accumulate(target.begin(), target.end(), (unsigned long) 0);
+    unsigned long sum = accumulate(target.begin(), 
+                                   target.end(), 
+                                   (unsigned long) 0);
     auto pmax = max_element(target.begin(), target.end());
     while (*pmax > 1) {
         sum -= *pmax;
         if (sum == 1) {
-            // This is the case target = [m,1], which you can always turn it to [1,1].
+            // This is the case target = [m,1], 
+            // which you can always turn it to [1,1].
             return true;
         }
         if (*pmax <= sum) {
@@ -136,7 +139,7 @@ In summary, this solution iteratively reduces the maximum element in the `target
 
 In the solution above, the position of the max element in each state is not so important as long as you update exactly it, not the other ones.
 
-That might lead to the usage of the [std::priority_queue](https://en.cppreference.com/w/cpp/container/priority_queue).
+That might lead to the usage of the {index}`std::priority_queue`.
 
 ### Code
 ```cpp
