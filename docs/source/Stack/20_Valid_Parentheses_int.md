@@ -45,34 +45,24 @@ For each character `c` of `s`:
 #include <iostream>
 #include <stack>
 using namespace std;
-bool isValid(string s) 
-{
+bool isValid(string s) {
     stack<char> stk;
-    for (char c : s) 
-    {
-        if (c == '(' || c == '[' || c == '{') 
-        {
+    for (char c : s) {
+        if (c == '(' || c == '[' || c == '{') {
             stk.push(c);
-        } 
-        else if (stk.empty()) 
-        {
+        } else if (stk.empty()) {
             return false;
-        } 
-        else if (c == ')' && stk.top() != '(' 
+        } else if (c == ')' && stk.top() != '(' 
               || c == ']' && stk.top() != '['
-              || c == '}' && stk.top() != '{') 
-        {
+              || c == '}' && stk.top() != '{') {
             return false;
-        } 
-        else 
-        {
+        } else {
             stk.pop();
         }
     }
     return stk.empty();
 }
-int main() 
-{
+int main() {
     cout << isValid("()") << endl;
     cout << isValid("(){}[]") << endl;
     cout << isValid("(]") << endl;

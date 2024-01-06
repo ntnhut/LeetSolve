@@ -68,16 +68,13 @@ We have a recursive implementation.
 #include <iostream>
 #include <vector>
 using namespace std;
-int uniquePaths(int m, int n) 
-{
-    if (m == 1 || n == 1) 
-    {
+int uniquePaths(int m, int n) {
+    if (m == 1 || n == 1) {
         return 1;
     }
     return uniquePaths(m - 1, n) + uniquePaths(m, n - 1);
 }
-int main() 
-{
+int main() {
     std::cout << uniquePaths(3,7) << std::endl;
     std::cout << uniquePaths(7,3) << std::endl;
     std::cout << uniquePaths(3,2) << std::endl;
@@ -150,20 +147,16 @@ One way of storing what has been computed is by using dynamic programming.
 #include <iostream>
 #include <vector>
 using namespace std;
-int uniquePaths(int m, int n) 
-{
+int uniquePaths(int m, int n) {
     vector<vector<int> > dp(m, vector<int>(n,1));
-    for (int i = 1; i < m; i++) 
-    {
-        for (int j = 1; j < n; j++) 
-        {
+    for (int i = 1; i < m; i++) {
+        for (int j = 1; j < n; j++) {
             dp[i][j] = dp[i - 1][j] + dp[i][j - 1];
         }
     }
     return dp[m - 1][n - 1];
 }
-int main() 
-{
+int main() {
     std::cout << uniquePaths(3,7) << std::endl;
     std::cout << uniquePaths(7,3) << std::endl;
     std::cout << uniquePaths(3,2) << std::endl;
@@ -205,20 +198,16 @@ Then you do not have to store all values of all rows.
 #include <iostream>
 #include <vector>
 using namespace std;
-int uniquePaths(int m, int n) 
-{
+int uniquePaths(int m, int n) {
     vector<int> dp(n, 1);
-    for (int i = 1; i < m; i++) 
-    {
-        for (int j = 1; j < n; j++) 
-        {
+    for (int i = 1; i < m; i++) {
+        for (int j = 1; j < n; j++) {
             dp[j] += dp[j - 1];
         }
     }
     return dp[n - 1];
 }
-int main() 
-{
+int main() {
     std::cout << uniquePaths(3,7) << std::endl;
     std::cout << uniquePaths(7,3) << std::endl;
     std::cout << uniquePaths(3,2) << std::endl;
@@ -253,6 +242,3 @@ The time complexity of this solution is `O(m*n)`, where `m` and `n` are the dime
 
 ## Final thought
 I am wondering if there is some mathematics behind this problem. Please share your finding if you find a formula for the solution to this problem.
-
-
-

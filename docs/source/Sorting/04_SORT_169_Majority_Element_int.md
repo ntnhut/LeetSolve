@@ -38,22 +38,18 @@ Could you solve the problem in linear time and in `O(1)` space?
 #include <iostream>
 #include <unordered_map>
 using namespace std;
-int majorityElement(vector<int>& nums) 
-{
+int majorityElement(vector<int>& nums) {
     unordered_map<int,int> freq;
     const int HALF = nums.size() / 2;
-    for (int a : nums) 
-    {
+    for (int a : nums) {
         freq[a]++;
-        if (freq[a] > HALF) 
-        {
+        if (freq[a] > HALF) {
             return a;
         }
     }
     return nums[0];
 }
-int main() 
-{
+int main() {
     vector<int> nums{3,2,3};
     cout << majorityElement(nums) << endl;
     nums = {2,2,1,1,1,2,2};
@@ -93,13 +89,11 @@ The code effectively counts the occurrences of each integer in the array and che
 #include <iostream>
 #include <algorithm>
 using namespace std;
-int majorityElement(vector<int>& nums) 
-{
+int majorityElement(vector<int>& nums) {
     sort(nums.begin(), nums.end());
     return nums[nums.size()/2];
 }
-int main() 
-{
+int main() {
     vector<int> nums{3,2,3};
     cout << majorityElement(nums) << endl;
     nums = {2,2,1,1,1,2,2};
@@ -137,14 +131,12 @@ Since you are interested in only the middle element after sorting, the partial s
 #include <iostream>
 #include <algorithm>
 using namespace std;
-int majorityElement(vector<int>& nums) 
-{
+int majorityElement(vector<int>& nums) {
     const int mid = nums.size() / 2;    
     nth_element(nums.begin(), nums.begin() + mid, nums.end());
     return nums[mid];
 }
-int main() 
-{
+int main() {
     vector<int> nums{3,2,3};
     cout << majorityElement(nums) << endl; // 3
     nums = {2,2,1,1,1,2,2};

@@ -47,38 +47,29 @@ Since the array `nums` is sorted, you can determine that existence by checking i
 #include <vector>
 #include <iostream>
 using namespace std;
-int removeDuplicates(vector<int>& nums) 
-{
+int removeDuplicates(vector<int>& nums) {
     int i = 2;
-    while (i < nums.size()) 
-    {
-        if (nums[i] == nums[i-2]) 
-        {
+    while (i < nums.size()) {
+        if (nums[i] == nums[i-2]) {
             int j = i;
-            while (j < nums.size() && nums[j] == nums[i]) 
-            {
+            while (j < nums.size() && nums[j] == nums[i]) {
                 j++;
             }
             nums.erase(nums.begin() + i, nums.begin() + j);
-        } 
-        else 
-        {
+        } else {
             i++;
         }
     }
     return nums.size();
 }
-void printResult(const int k, const vector<int>& nums) 
-{
+void printResult(const int k, const vector<int>& nums) {
     cout << k << ", [";
-    for (int i = 0; i < k ; i++) 
-    {
+    for (int i = 0; i < k ; i++) {
         cout << nums[i] << ",";
     }
     cout << "]\n";
 }
-int main() 
-{
+int main() {
     vector<int> nums{1,1,1,2,2,3};
     printResult(removeDuplicates(nums), nums);
     nums = {0,0,1,1,1,1,2,3,3};
@@ -144,35 +135,28 @@ You can use this invariant to **reassign** the array `nums` only the satisfied e
 #include <vector>
 #include <iostream>
 using namespace std;
-int removeDuplicates(vector<int>& nums) 
-{
-    if (nums.size() <= 2) 
-    {
+int removeDuplicates(vector<int>& nums) {
+    if (nums.size() <= 2) {
         return nums.size(); 
     } 
     int k = 2; 
     int i = 2;
-    while (i < nums.size()) 
-    {
-        if (nums[i] > nums[k - 2]) 
-        {
+    while (i < nums.size()) {
+        if (nums[i] > nums[k - 2]) {
             nums[k++] = nums[i];
         }
         i++;
     }
     return k;
 }
-void printResult(const int k, const vector<int>& nums) 
-{
+void printResult(const int k, const vector<int>& nums) {
     cout << k << ", [";
-    for (int i = 0; i < k ; i++) 
-    {
+    for (int i = 0; i < k ; i++) {
         cout << nums[i] << ",";
     }
     cout << "]\n";
 }
-int main() 
-{
+int main() {
     vector<int> nums{1,1,1,2,2,3};
     printResult(removeDuplicates(nums), nums);
     nums = {0,0,1,1,1,1,2,3,3};

@@ -56,11 +56,9 @@ Do exactly the steps the problem describes:
 #include<vector>
 #include <unordered_set>
 using namespace std;
-int numUniqueEmails(vector<string>& emails) 
-{
+int numUniqueEmails(vector<string>& emails) {
     unordered_set<string> s;
-    for (auto e: emails) 
-    {
+    for (auto e: emails) {
         auto apos = e.find('@');
 
         // extract the local name
@@ -69,8 +67,7 @@ int numUniqueEmails(vector<string>& emails)
         // ignore all characters after '+'
         local = local.substr(0, local.find('+'));   
         auto it = local.find('.');
-        while (it != string::npos) 
-        {
+        while (it != string::npos) {
             // remove each '.' found in local
             local.erase(it, 1);
             it = local.find('.');
@@ -80,8 +77,7 @@ int numUniqueEmails(vector<string>& emails)
     }
     return s.size();
 }
-int main() 
-{
+int main() {
     vector<string> emails{"test.email+alex@leetcode.com",
                         "test.e.mail+bob.cathy@leetcode.com",
                         "testemail+david@lee.tcode.com"};
@@ -131,18 +127,15 @@ The runtime of removing characters in `std::string` is not constant. To avoid th
 #include<vector>
 #include <unordered_set>
 using namespace std;
-int numUniqueEmails(vector<string>& emails) 
-{
+int numUniqueEmails(vector<string>& emails) {
     unordered_set<string> s;
     for (auto e: emails) {
         string address; 
         int i = 0;
         // the local name ends here
-        while (e[i] != '@' && e[i] != '+') 
-        {
+        while (e[i] != '@' && e[i] != '+') {
             // ignore each '.' found
-            if (e[i++] == '.') 
-            {
+            if (e[i++] == '.') {
                 continue;
             }
             // add valid characters to local name
@@ -154,8 +147,7 @@ int numUniqueEmails(vector<string>& emails)
     }        
     return s.size();
 }
-int main() 
-{
+int main() {
     vector<string> emails{"test.email+alex@leetcode.com",
                         "test.e.mail+bob.cathy@leetcode.com",
                         "testemail+david@lee.tcode.com"};

@@ -33,18 +33,15 @@ Output: false
 #include <iostream>
 #include <algorithm>
 using namespace std;
-bool isAnagram(string s, string t) 
-{
-    if (s.length() != t.length()) 
-    {
+bool isAnagram(string s, string t) {
+    if (s.length() != t.length()) {
         return false;
     }
     sort(s.begin(), s.end());
     sort(t.begin(), t.end());
     return s == t;
 }
-int main() 
-{
+int main() {
     cout << isAnagram("anagram", "nagaram") << endl;
     cout << isAnagram("rat", "car") << endl;
 }
@@ -76,33 +73,26 @@ In summary, this code determines if two strings are anagrams by comparing their 
 ```cpp
 #include <iostream>
 using namespace std;
-bool isAnagram(string s, string t) 
-{
-    if (s.length() != t.length()) 
-    {
+bool isAnagram(string s, string t) {
+    if (s.length() != t.length()) {
         return false;
     }
     int alphabet[26];
-    for (int i = 0; i < 26; i++) 
-    {
+    for (int i = 0; i < 26; i++) {
         alphabet[i] = 0;
     }
-    for (char& c : s) 
-    {
+    for (char& c : s) {
         alphabet[c - 'a']++;
     }
-    for (char& c : t) 
-    {
+    for (char& c : t) {
         alphabet[c - 'a']--;
-        if (alphabet[c - 'a'] < 0) 
-        {
+        if (alphabet[c - 'a'] < 0) {
             return false;
         }
     }
     return true;    
 }
-int main() 
-{
+int main() {
     cout << isAnagram("anagram", "nagaram") << endl;
     cout << isAnagram("rat", "car") << endl;
 }
@@ -138,29 +128,23 @@ Replace the array `alphabet` in Solution 2 with a map.
 #include <iostream>
 #include <unordered_map>
 using namespace std;
-bool isAnagram(string s, string t) 
-{
-    if (s.length() != t.length()) 
-    {
+bool isAnagram(string s, string t) {
+    if (s.length() != t.length()) {
         return false;
     }
     unordered_map<char, int> alphabet;
-    for (char& c : s) 
-    {
+    for (char& c : s) {
         alphabet[c]++;
     }
-    for (char& c : t) 
-    {
+    for (char& c : t) {
         alphabet[c]--;
-        if (alphabet[c] < 0) 
-        {
+        if (alphabet[c] < 0) {
             return false;
         }
     }
     return true;    
 }
-int main() 
-{
+int main() {
     cout << isAnagram("anagram", "nagaram") << endl;
     cout << isAnagram("rat", "car") << endl;
 }

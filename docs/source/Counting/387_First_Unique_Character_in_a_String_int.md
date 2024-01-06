@@ -34,24 +34,19 @@ Output: -1
 #include <iostream>
 #include <unordered_map>
 using namespace std;
-int firstUniqChar(string s) 
-{
+int firstUniqChar(string s) {
     unordered_map<char, int> count;
-    for (char& c : s) 
-    {
+    for (char& c : s) {
         count[c]++;
     }
-    for (int i = 0; i < s.length(); i++) 
-    {
-        if (count[s[i]] == 1) 
-        {
+    for (int i = 0; i < s.length(); i++) {
+        if (count[s[i]] == 1) {
             return i;
         }
     }
     return -1;
 }
-int main() 
-{
+int main() {
     cout << firstUniqChar("leetcode") << endl;
     cout << firstUniqChar("loveleetcode") << endl;
     cout << firstUniqChar("aabb") << endl;
@@ -94,25 +89,20 @@ From the constraints "`s` consists of only lowercase English letters", you can u
 #include <iostream>
 #include <vector>
 using namespace std;
-int firstUniqChar(string s) 
-{
+int firstUniqChar(string s) {
     // initializes an array of 26 elements, all set to zero
     std::array<int, 26> count{};
-    for (char& c : s) 
-    {
+    for (char& c : s) {
         count[c - 'a']++;
     }
-    for (int i = 0; i < s.length(); i++) 
-    {
-        if (count[s[i] - 'a'] == 1) 
-        {
+    for (int i = 0; i < s.length(); i++) {
+        if (count[s[i] - 'a'] == 1) {
             return i;
         }
     }
     return -1;
 }
-int main() 
-{
+int main() {
     cout << firstUniqChar("leetcode") << endl;
     cout << firstUniqChar("loveleetcode") << endl;
     cout << firstUniqChar("aabb") << endl;
@@ -128,5 +118,3 @@ Output:
 ### Complexity
 * Runtime: `O(n)`, where `n = s.length`.
 * Extra space: `O(1)` as the array is fixed regardless of how big `n` is.
-
-

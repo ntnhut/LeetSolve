@@ -43,20 +43,14 @@ You can store the booked events in a vector and check the intersection condition
 #include <iostream>
 #include <vector>
 using namespace std;
-class MyCalendar 
-{
+class MyCalendar {
     private:
     vector<pair<int,int>> _events;
 public:
-    MyCalendar() 
-    {
-    }
-    bool book(int start, int end) 
-    {
-        for (auto& e : _events) 
-        {
-            if (!(e.second <= start || end <= e.first)) 
-            {
+    MyCalendar() {}
+    bool book(int start, int end) {
+        for (auto& e : _events) {
+            if (!(e.second <= start || end <= e.first)) {
                 return false;
             }
         }
@@ -64,8 +58,7 @@ public:
         return true;
     }
 };
-int main() 
-{
+int main() {
     MyCalendar c;
     std::cout << c.book(10, 20) << std::endl;
     std::cout << c.book(15, 25) << std::endl;
@@ -110,29 +103,22 @@ With that in mind, you can use {index}`std::set`[](https://en.cppreference.com/w
 #include <set>
 using namespace std;
 using Event = pair<int,int>;
-struct EventCmp 
-{
-    bool operator()(const Event& lhs, const Event& rhs) const 
-    { 
+struct EventCmp {
+    bool operator()(const Event& lhs, const Event& rhs) const { 
         return lhs.second <= rhs.first; 
     }
 };
-class MyCalendar 
-{
+class MyCalendar {
     private:
     set<Event, EventCmp> _events;
 public:
-    MyCalendar() 
-    {
-    }
-    bool book(int start, int end) 
-    {
+    MyCalendar() {} 
+    bool book(int start, int end) {
         auto result = _events.insert({start, end});
         return result.second;
     }
 };
-int main() 
-{
+int main() {
     MyCalendar c;
     std::cout << c.book(10, 20) << std::endl;
     std::cout << c.book(15, 25) << std::endl;

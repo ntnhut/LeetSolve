@@ -84,18 +84,15 @@ Longer `columnTitle`s will have bigger leading exponents of `26`.
 ```cpp
 #include <iostream>
 using namespace std;
-int titleToNumber(string columnTitle) 
-{
+int titleToNumber(string columnTitle) {
     int column = 0; 
-    for (char c : columnTitle) 
-    {
+    for (char c : columnTitle) {
         // The ASCII value of 'A' is 65.
         column = 26*column + (c - 64); 
     }
     return column;
 }
-int main() 
-{
+int main() {
     cout << titleToNumber("A") << endl;
     cout << titleToNumber("AB") << endl;
     cout << titleToNumber("ZY") << endl;
@@ -145,6 +142,3 @@ The code efficiently calculates the decimal representation of the Excel column t
 
 2. To map `'A' = 1, ..., 'Z' = 26`, you can use their ASCII values (`'A' = 65, ..., 'Z' = 90`) minus `64`.
 3. The parentheses around `(c - 64)` is needed. Otherwise the value of `columnTitle = "FXSHRXW"` makes `26*column + c` exceed the limit of `int` before it substracts `64`. 
-
-
-

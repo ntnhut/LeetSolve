@@ -40,25 +40,21 @@ Count how many times each element appears in the array. Then return the one appe
 #include <iostream>
 #include <unordered_map>
 using namespace std;
-int singleNumber(vector<int>& nums) 
-{
+int singleNumber(vector<int>& nums) {
     unordered_map<int, int> count;
     for (int n : nums) {
         count[n]++;
     }
     int single;
-    for (auto& pair : count) 
-    {
-        if (pair.second == 1) 
-        {
+    for (auto& pair : count) {
+        if (pair.second == 1) {
             single = pair.first;
             break;
         }
     }
     return single;
 }
-int main() 
-{
+int main() {
     vector<int> nums{2,2,1};
     cout << singleNumber(nums) << endl;
     nums = {4,1,2,1,2};
@@ -109,17 +105,14 @@ a XOR 0 = a.
 #include <vector>
 #include <iostream>
 using namespace std;
-int singleNumber(vector<int>& nums) 
-{
+int singleNumber(vector<int>& nums) {
     int single = 0;
-    for (int n : nums) 
-    {
+    for (int n : nums) {
         single ^= n;
     }
     return single;
 }
-int main() 
-{
+int main() {
     vector<int> nums{2,2,1};
     cout << singleNumber(nums) << endl;
     nums = {4,1,2,1,2};

@@ -43,16 +43,11 @@ For `nums = [4,2,5,7]`:
 #include<vector>
 #include<iostream>
 using namespace std;
-vector<int> sortArrayByParityII(vector<int>& nums) 
-{
-    for (int i = 0; i < nums.size(); i++) 
-    {
-        if (i % 2 != nums[i] % 2) 
-        {
-            for (int j = i + 1; j < nums.size(); j++) 
-            {
-                if (nums[j] % 2 == i % 2) 
-                {
+vector<int> sortArrayByParityII(vector<int>& nums) {
+    for (int i = 0; i < nums.size(); i++) {
+        if (i % 2 != nums[i] % 2) {
+            for (int j = i + 1; j < nums.size(); j++) {
+                if (nums[j] % 2 == i % 2) {
                     swap(nums[i], nums[j]);
                     break;
                 }
@@ -61,16 +56,13 @@ vector<int> sortArrayByParityII(vector<int>& nums)
     }
     return nums;
 }
-void print(vector<int>& nums) 
-{
-    for (auto num : nums) 
-    {
+void print(vector<int>& nums) {
+    for (auto num : nums) {
         cout << num << " ";
     }
     cout << endl;
 }
-int main() 
-{
+int main() {
     vector<int> nums = {4,2,5,7};
     auto result = sortArrayByParityII(nums);
     print(result);
@@ -132,43 +124,35 @@ Here is a two-pointer approach which takes the important ***constraint*** into a
 #include <algorithm>
 #include<unordered_map>
 using namespace std;
-vector<int> sortArrayByParityII(vector<int>& nums) 
-{
+vector<int> sortArrayByParityII(vector<int>& nums) {
     int N = nums.size();
     int evenPos = 0;
     int oddPos = N - 1;
-    while (evenPos < N) 
-    {
+    while (evenPos < N) {
         // find the nums[evenPos] that is odd for swapping
-        while (evenPos < N && nums[evenPos] % 2 == 0) 
-        {
+        while (evenPos < N && nums[evenPos] % 2 == 0) {
             evenPos += 2;
         }
         // If not found, it means all even nums are in place. Done! 
-        if (evenPos >= N) 
-        {
+        if (evenPos >= N) {
             break;
         }
         // Otherwise, the problem's constraint makes sure 
         // there must be some nums[oddPos] that is even for swapping
-        while (oddPos >= 0 && nums[oddPos] % 2 == 1) 
-        {
+        while (oddPos >= 0 && nums[oddPos] % 2 == 1) {
             oddPos -= 2;
         } 
         swap(nums[evenPos], nums[oddPos]);
     }
     return nums;
 }
-void print(vector<int>& nums) 
-{
-    for (auto num : nums) 
-    {
+void print(vector<int>& nums) {
+    for (auto num : nums) {
         cout << num << " ";
     }
     cout << endl;
 }
-int main() 
-{
+int main() {
     vector<int> nums = {4,2,5,7};
     auto result = sortArrayByParityII(nums);
     print(result);

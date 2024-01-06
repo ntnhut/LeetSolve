@@ -66,26 +66,20 @@ using namespace std;
 //!         and store it to _map[i]
 //! @note nums is sorted
 vector<int> largestDivisibleSubsetOf(vector<int>& nums, 
-            int i, unordered_map<int, vector<int> >& _map) 
-{
-    if (_map.find(i) != _map.end()) 
-    {
+            int i, unordered_map<int, vector<int> >& _map) {
+    if (_map.find(i) != _map.end()) {
         return _map[i];
     }
     vector<int> maxSubset{nums[i]};
-    if (i == nums.size() - 1) 
-    {
+    if (i == nums.size() - 1) {
         _map.insert({i, maxSubset});
         return maxSubset;
     }
-    for (int j = i + 1; j < nums.size(); j++) 
-    {
-        if (nums[j] % nums[i] == 0) 
-        {
+    for (int j = i + 1; j < nums.size(); j++) {
+        if (nums[j] % nums[i] == 0) {
             auto subset = largestDivisibleSubsetOf(nums, j, _map);
             subset.push_back(nums[i]);
-            if (maxSubset.size() < subset.size()) 
-            {
+            if (maxSubset.size() < subset.size()) {
                 maxSubset = subset;
             }
         }
@@ -93,36 +87,29 @@ vector<int> largestDivisibleSubsetOf(vector<int>& nums,
     _map.insert({i, maxSubset});
     return maxSubset;
 }
-vector<int> largestDivisibleSubset(vector<int>& nums) 
-{
-    if (nums.size() <= 1) 
-    {
+vector<int> largestDivisibleSubset(vector<int>& nums) {
+    if (nums.size() <= 1) {
         return nums; 
     } 
     unordered_map<int, vector<int> > _map;
     sort(nums.begin(), nums.end());
     vector<int> answer;
-    for (int i = 0; i < nums.size(); i++) 
-    {
+    for (int i = 0; i < nums.size(); i++) {
         auto maxSubset = largestDivisibleSubsetOf(nums, i, _map);
-        if (answer.size() < maxSubset.size()) 
-        {
+        if (answer.size() < maxSubset.size()) {
             answer = maxSubset;
         }
     }
     return answer;        
 }
-void printSolution(vector<int>& result) 
-{
+void printSolution(vector<int>& result) {
     cout << "[";
-    for (auto& v : result) 
-    {
+    for (auto& v : result) {
         cout << v << ",";
     }
     cout << "]" << endl;
 }
-int main() 
-{
+int main() {
     vector<int> nums{2,1,3};
     auto answer = largestDivisibleSubset(nums);
     printSolution(answer);

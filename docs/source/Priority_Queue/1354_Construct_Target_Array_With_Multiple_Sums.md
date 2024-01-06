@@ -150,7 +150,9 @@ That might lead to the usage of the {index}`std::priority_queue`.
 using namespace std;
 bool isPossible(vector<int>& target) {
     priority_queue<int> q(target.begin(), target.end());
-    unsigned long sum = accumulate(target.begin(), target.end(), (unsigned long) 0);
+    unsigned long sum = accumulate(target.begin(), 
+                                   target.end(), 
+                                   (unsigned long) 0);
     while (q.top() > 1) {
         sum -= q.top();
         if (sum == 1) {

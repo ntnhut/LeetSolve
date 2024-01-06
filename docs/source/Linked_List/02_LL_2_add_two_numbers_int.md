@@ -44,55 +44,34 @@ Without loss of generality, let us store the result in `l1`. Then you might need
 ### Code
 ```cpp
 #include <iostream>
-struct ListNode 
-{
+struct ListNode {
     int val;
     ListNode *next;
-    ListNode() 
-    : val(0)
-    , next(nullptr) 
-    {        
-    }
-    ListNode(int x)
-    : val(x)
-    , next(nullptr) 
-    {        
-    }
-    ListNode(int x, ListNode *next) 
-    : val(x)
-    , next(next) 
-    {        
-    }
+    ListNode() : val(0), next(nullptr) {}
+    ListNode(int x) : val(x), next(nullptr) {}
+    ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
 
-ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) 
-{
+ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
     ListNode prehead;     // dummy node to hook the head of the list
     ListNode* node = l1;  // store result on l1
     prehead.next = node;
     int sum = 0;
-    while (node) 
-    {
-        if (l1) 
-        {
+    while (node) {
+        if (l1) {
             sum += l1->val;
             l1 = l1->next;
         }
-        if (l2) 
-        {
+        if (l2) {
             sum += l2->val;
             l2 = l2->next;
         }
         node->val = sum % 10;
         sum /= 10;
-        if (!l1) // l1 ends
-        {        
-            if (l2) // l1 is shorter than l2
-            {     
+        if (!l1) {      // l1 ends        
+            if (l2) {   // l1 is shorter than l2
                 node->next = l2;
-            } 
-            else if (sum == 1) 
-            {  
+            } else if (sum == 1) {  
                 // both l1 and l2 end but the remember is not zero 
                 ListNode* newNode = new ListNode(sum);
                 node->next = newNode;
@@ -102,18 +81,15 @@ ListNode* addTwoNumbers(ListNode* l1, ListNode* l2)
     }
     return prehead.next;
 }
-void printResult(ListNode* l) 
-{
+void printResult(ListNode* l) {
     std::cout << "[";
-    while (l) 
-    {
+    while (l) {
         std::cout << l->val << ",";
         l = l->next;
     }
     std::cout << "]\n";
 }
-int main() 
-{
+int main() {
     {
         ListNode three(3);
         ListNode four1(4, &three);

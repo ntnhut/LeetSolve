@@ -30,45 +30,38 @@ Explanation: Since the list has two middle nodes with values 3 and 4, we return 
 ### Code
 ```cpp
 #include <iostream>
-struct ListNode 
-{
+struct ListNode {
     int val;
     ListNode *next;
     ListNode() : val(0), next(nullptr) {}
     ListNode(int x) : val(x), next(nullptr) {}
     ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
-ListNode* middleNode(ListNode* head) 
-{
+ListNode* middleNode(ListNode* head) {
     ListNode *node = head;
     int count = 0;
-    while (node) 
-    {
+    while (node) {
         count++;
         node = node->next;
     }
     int i = 1;
     node = head;
-    while (i <= count/2) 
-    {
+    while (i <= count/2) {
         node = node->next;
         i++;
     }
     return node;        
 }
-void print(ListNode *head) 
-{
+void print(ListNode *head) {
     ListNode *node = head; 
     std::cout << "[";
-    while (node) 
-    {
+    while (node) {
         std::cout << node->val << ",";
         node = node->next;
     }
     std::cout << "]\n";
 }
-int main() 
-{
+int main() {
     ListNode five(5);
     ListNode four(4, &five);
     ListNode three(3, &four);    
@@ -117,38 +110,32 @@ One goes one step at a time. The other goes two steps at a time. When the faster
 ### Code
 ```cpp
 #include <iostream>
-struct ListNode 
-{
+struct ListNode {
     int val;
     ListNode *next;
     ListNode() : val(0), next(nullptr) {}
     ListNode(int x) : val(x), next(nullptr) {}
     ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
-ListNode* middleNode(ListNode* head) 
-{
+ListNode* middleNode(ListNode* head) {
     ListNode *slow = head;
     ListNode *fast = head;
-    while (fast && fast->next) 
-    {
+    while (fast && fast->next) {
         slow = slow->next;
         fast = fast->next->next;
     }
     return slow;        
 }
-void print(ListNode *head) 
-{
+void print(ListNode *head) {
     ListNode *node = head; 
     std::cout << "[";
-    while (node) 
-    {
+    while (node) {
         std::cout << node->val << ",";
         node = node->next;
     }
     std::cout << "]\n";
 }
-int main() 
-{
+int main() {
     ListNode five(5);
     ListNode four(4, &five);
     ListNode three(3, &four);    

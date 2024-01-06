@@ -60,8 +60,7 @@ To treat the subtraction cases easier you can iterate the string `s` backward.
 #include <iostream>
 #include <unordered_map>
 using namespace std;
-int romanToInt(string s) 
-{
+int romanToInt(string s) {
     unordered_map<char, int> value = {
         {'I', 1},
         {'V', 5},
@@ -72,21 +71,16 @@ int romanToInt(string s)
         {'M', 1000}
     };
     int result = value[s.back()];
-    for (int i = s.length() - 2; i >= 0; i--) 
-    {
-        if (value[s[i]] < value[s[i+1]])
-        {
+    for (int i = s.length() - 2; i >= 0; i--) {
+        if (value[s[i]] < value[s[i+1]]) {
             result -= value[s[i]];
-        }
-        else
-        {
+        } else {
             result += value[s[i]];
         }
     }
     return result;
 }
-int main() 
-{
+int main() {
     cout << romanToInt("III") << endl;
     cout << romanToInt("LVIII") << endl;
     cout << romanToInt("MCMXCIV") << endl;
