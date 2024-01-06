@@ -48,8 +48,7 @@ Output: [[1,4],[2,5],[3,6]]
 #include <iostream>
 #include <vector>
 using namespace std;
-vector<vector<int>> transpose(vector<vector<int>>& matrix) 
-{
+vector<vector<int>> transpose(vector<vector<int>>& matrix) {
     vector<vector<int>> mt(matrix[0].size(), 
                            vector<int>(matrix.size()));
     for (int i = 0; i < mt.size(); i++) {

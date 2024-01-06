@@ -72,7 +72,7 @@ Output:
 
 ### Code explanation
 
-1. The code initializes an {index}`unordered map` `count` where the keys are integers from `nums`, and the values represent the count of each integer's occurrence in the `nums` array.
+1. The code initializes an unordered map `count` where the keys are integers from `nums`, and the values represent the count of each integer's occurrence in the `nums` array.
 
 2. It then iterates through the `nums` array. For each element `n` in `nums`, it increments the count for that element in the `count` map.
 

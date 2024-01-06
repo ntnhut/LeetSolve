@@ -144,7 +144,7 @@ Output:
 
 ### Complexity
 * Runtime: `O(n)`.
-* Extra space: much less than `O(n)`. [{index}`std::vector<bool>`](https://en.cppreference.com/w/cpp/container/vector_bool) is optimized for space-efficient. 
+* Extra space: much less than `O(n)`. [`std::vector<bool>`](https://en.cppreference.com/w/cpp/container/vector_bool) is optimized for space-efficient. 
 
 ## Solution 3: Marking with {index}`std::bitset`
 

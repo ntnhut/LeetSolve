@@ -84,7 +84,7 @@ This solution has a time complexity of `O(n^2)`, where `n` is the number of elem
 * Runtime: `O(n^2)`, where `n = height.length`.
 * Extra space: `O(1)`.
 
-## Solution 2: {index}`Two pointers`
+## Solution 2: Two pointers
 
 Any container has left line `i` and right line `j` satisfying `0 <= i < j < height.length`. The biggest container you want to find satisfies that condition too.
 

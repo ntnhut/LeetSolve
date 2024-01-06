@@ -31,7 +31,7 @@ Output: false
 * `1 <= s.length <= 10^4`.
 * `s` consists of parentheses only `'()[]{}'`.
 
-## Solution: Using a {index}`stack`
+## Solution: Using a stack
 For each character `c` of `s`:
 
 1. If it is an open parenthesis (`'('`, `'{'`, or `'['`), push it into the stack.

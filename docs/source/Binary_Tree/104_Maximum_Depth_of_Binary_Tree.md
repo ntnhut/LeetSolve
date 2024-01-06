@@ -24,7 +24,7 @@ Output: 2
 * `-100 <= Node.val <= 100`.
 
 ## Solution
-You have the following {index}`recursive` relationship between the `root` and its children.
+You have the following recursive relationship between the `root` and its children.
 
 ```text
 maxDepth(root) = max(maxDepth(root->left), maxDepth(root->right))

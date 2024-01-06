@@ -156,4 +156,4 @@ This solution efficiently finds the disappeared numbers in an array by using the
 
 * Solution 2 helps to avoid allocating extra memory but it is not straightforward to understand.
     
-* Though Solution 1 requires some extra space, that memory is not much since {index}`std::vector<bool>` is optimized for space efficiency. Moreover, it is easier to understand than Solution 2.
+* Though Solution 1 requires some extra space, that memory is not much since `std::vector<bool>` is optimized for space efficiency. Moreover, it is easier to understand than Solution 2.

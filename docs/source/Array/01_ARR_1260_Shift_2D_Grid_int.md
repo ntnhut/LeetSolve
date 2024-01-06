@@ -111,22 +111,17 @@ For `grid = [[1,2,3],[4,5,6],[7,8,9]]`:
 #include <vector>
 #include <iostream>
 using namespace std;
-vector<vector<int>> shiftGrid(vector<vector<int>>& grid, int k) 
-{
+vector<vector<int>> shiftGrid(vector<vector<int>>& grid, int k) {
     vector<int> v;
-    for (auto& r : grid) 
-    {
+    for (auto& r : grid) {
         v.insert(v.end(), r.begin(), r.end());
     }
     const int m = grid.size();
     const int n = grid[0].size();
     int p = v.size() - (k % v.size());
-    for (int i = 0; i < m; i++) 
-    {
-        for (int j = 0; j < n; j++) 
-        {
-            if (p == v.size()) 
-            {
+    for (int i = 0; i < m; i++) {
+        for (int j = 0; j < n; j++) {
+            if (p == v.size()) {
                 p = 0;
             }
             grid[i][j] = v[p++];
@@ -134,22 +129,18 @@ vector<vector<int>> shiftGrid(vector<vector<int>>& grid, int k)
     }
     return grid;
 }
-void printResult(vector<vector<int>>& grid) 
-{
+void printResult(vector<vector<int>>& grid) {
     cout << "[";
-    for (auto& r : grid) 
-    {
+    for (auto& r : grid) {
         cout << "[";
-        for (int a: r) 
-        {
+        for (int a: r) {
             cout << a << ",";
         }
         cout << "]";
     }
     cout << "]\n";
 }
-int main() 
-{
+int main() {
     vector<vector<int>> grid{{1,2,3},{4,5,6},{7,8,9}};
     auto result = shiftGrid(grid, 1);
     printResult(result);

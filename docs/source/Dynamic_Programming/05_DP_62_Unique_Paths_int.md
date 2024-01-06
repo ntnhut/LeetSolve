@@ -48,7 +48,7 @@ Output: 6
 
 ## Solution 1: Recursive
 
-At each point, the robot has two ways of moving: right or down. Let `P(m,n)` is the wanted result. Then you have a {index}`recursive` relationship:
+At each point, the robot has two ways of moving: right or down. Let `P(m,n)` is the wanted result. Then you have a recursive relationship:
 
 ```text
 P(m,n) = P(m-1, n) + P(m, n-1)
@@ -134,7 +134,7 @@ In summary, the complexities are:
 * Runtime: `O(2^max(m,n)`, where `m x n` is the size of the grid.
 * Extra space: `O(max(m,n)`.
 
-## Solution 2: {index}`Dynamic programming`
+## Solution 2: Dynamic programming
 The recursive implementation repeats a lot of computations.
 
 For example, `uniquePaths(2,2)` was recomputed in both `uniquePaths(2,3)` and `uniquePaths(3,2)` when you compute `uniquePaths(3,3)`.
