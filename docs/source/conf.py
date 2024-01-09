@@ -42,8 +42,8 @@ intersphinx_disabled_domains = ['std']
 
 templates_path = ['_templates']
 
-# master_doc = 'index_10'
-master_doc = 'index_book1'
+master_doc = 'index_10'
+# master_doc = 'index_book1'
 exclude_patterns = ['*/index_*.rst']
 
 # -- Options for HTML output
