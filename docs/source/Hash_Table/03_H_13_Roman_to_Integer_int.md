@@ -60,22 +60,20 @@ To treat the subtraction cases easier you can iterate the string `s` backward.
 #include <iostream>
 #include <unordered_map>
 using namespace std;
+const unordered_map<char, int> value = {
+    {'I', 1},   {'V', 5},
+    {'X', 10},  {'L', 50},
+    {'C', 100}, {'D', 500},
+    {'M', 1000}
+};
 int romanToInt(string s) {
-    unordered_map<char, int> value = {
-        {'I', 1},
-        {'V', 5},
-        {'X', 10},
-        {'L', 50},
-        {'C', 100},
-        {'D', 500},
-        {'M', 1000}
-    };
-    int result = value[s.back()];
-    for (int i = s.length() - 2; i >= 0; i--) {
-        if (value[s[i]] < value[s[i+1]]) {
-            result -= value[s[i]];
+    int i = s.length() - 1;
+    int result = value.at(s[i--]);
+    while (i >= 0) {
+        if (value.at(s[i]) < value.at(s[i+1])) {
+            result -= value.at(s[i--]); 
         } else {
-            result += value[s[i]];
+            result += value.at(s[i--]);
         }
     }
     return result;
@@ -95,20 +93,21 @@ Output:
 
 ### Code explanation
 
-1. This code initializes an unordered map `value` that maps Roman numeral characters to their integer values. Each key-value pair represents a Roman numeral character and its corresponding integer value.
+1. The `unordered_map` `value` is a constant mapping from Roman numeral characters to their corresponding integer values.
 
-2. It initializes the `result` variable with the integer value of the last character in the Roman numeral string `s`. This serves as the starting point for the total value.
+2. The function `romanToInt` takes a string `s` as input, representing a Roman numeral.
 
-3. The main processing is done in a `for` loop that iterates through the Roman numeral string from the second-to-last character (index `s.length() - 2`) and goes backward to the beginning of the string (index `0`).
+3. The function initializes two variables: `i` is set to the last index of the string `s`, and `result` is initialized with the integer value of the last Roman numeral character in the string.
 
-4. Inside the loop, the code compares the value of the current Roman numeral character (`s[i]`) with the value of the next Roman numeral character (`s[i+1]`):
-   - If the value of the current character is less than the value of the next character, it means that the current character represents a subtractive combination (e.g., IV for 4 or IX for 9). In this case, subtract the value of the current character from the `result`.
-   - If the value of the current character is greater than or equal to the value of the next character, it means that the current character represents an additive combination (e.g., III for 3 or XX for 20). In this case, add the value of the current character to the `result`.
+3. A `while` loop iterates through the string from the second-to-last character to the first character.
 
-5. The result is updated in each iteration of the loop based on the comparison, and the loop continues until it processes all characters in the string.
+4. Inside the loop, the code checks if the value of the current character (`s[i]`) is less than the value of the next character (`s[i+1]`). If `true`, it subtracts the value of the current character from the result; otherwise, it adds the value.
 
-6. Finally, the function returns the `result`, which contains the total integer value corresponding to the Roman numeral string.
+5. The loop continues until it reaches the beginning of the string.
 
+6. The final result is the integer equivalent of the given Roman numeral string, and it is returned by the function.
+
+This code essentially implements the rules of Roman numeral conversion, where a smaller numeral before a larger numeral is subtracted, and a smaller numeral after a larger numeral is added.
 
 ### Complexity
 This solution efficiently converts a Roman numeral string into an integer by iterating through the string from right to left and applying the rules of Roman numerals, where subtractive combinations are subtracted and additive combinations are added to calculate the total value. The unordered map is used to look up the values of Roman numerals. 
