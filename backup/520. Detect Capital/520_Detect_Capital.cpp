@@ -1,7 +1,7 @@
+
 #include <string>
 #include <iostream>
 using namespace std;
-
 bool isValidCase(const char& c, const bool isLower) {
     if (isLower) {
         return 'a' <= c && c <= 'z';
@@ -26,10 +26,10 @@ bool detectCapitalUse(string word) {
     }
     return true;
 }
-
 int main() {
-    cout << detectCapitalUse("USA") << endl;
-    cout << detectCapitalUse("FlaG") << endl;
-    cout << detectCapitalUse("leetcode") << endl;
-    cout << detectCapitalUse("Google") << endl;
+    cout << detectCapitalUse("USA") << endl;        // 1 
+    cout << detectCapitalUse("FlaG") << endl;       // 0
+    cout << detectCapitalUse("leetcode") << endl;   // 1
+    cout << detectCapitalUse("Google") << endl;     // 1
 }
+

@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include <stack>
 using namespace std;
@@ -22,10 +23,10 @@ bool isValid(string s) {
     }
     return stk.empty();
 }
-
 int main() {
-    cout << isValid("()") << endl;
-    cout << isValid("(){}[]") << endl;
-    cout << isValid("(]") << endl;
-    cout << isValid("([)]") << endl;
+    cout << isValid("()") << endl;      // 1
+    cout << isValid("(){}[]") << endl;  // 1
+    cout << isValid("(]") << endl;      // 0
+    cout << isValid("([)]") << endl;    // 0
 }
+

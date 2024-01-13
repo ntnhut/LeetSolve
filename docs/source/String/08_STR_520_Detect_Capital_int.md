@@ -49,8 +49,7 @@ bool detectCapitalUse(string word) {
         return true;
     }
     bool isLower = true;
-    if (isValidCase(word[0], false) && isValidCase(word[1], false)) 
-    {
+    if (isValidCase(word[0], false) && isValidCase(word[1], false)) {
         isLower = false;
     }
     for (int i = 1; i < word.length(); i++) {

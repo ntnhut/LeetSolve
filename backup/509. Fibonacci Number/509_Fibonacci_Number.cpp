@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include <vector>
 
@@ -17,9 +18,9 @@ int fib(int n) {
     return f1;
 }
 
-
 int main() {
-    std::cout << fib(2) << std::endl;
-    std::cout << fib(3) << std::endl;
-    std::cout << fib(4) << std::endl;
+    std::cout << fib(2) << std::endl;   // 1
+    std::cout << fib(3) << std::endl;   // 2
+    std::cout << fib(4) << std::endl;   // 3
 }
+
