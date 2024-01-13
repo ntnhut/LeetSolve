@@ -17,12 +17,14 @@ Content
    String/index
    Stack/index
    Priority_Queue/index
+   Bit_Manipulation/index
 
 .. toctree::
    :maxdepth: 2
    :caption: Algorithms
 
    Sorting/index
+   Greedy/index
    Dynamic_Programming/index   
    Counting/index
    Prefix_Sum/index

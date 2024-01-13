@@ -14,7 +14,7 @@
 # PygmentsBridge.latex_formatter = CustomLatexFormatter
 
 project = 'LeetSolve'
-copyright = '2023, Nhut Nguyen'
+copyright = '2024, Nhut Nguyen'
 author = 'Nhut Nguyen'
 
 release = '1.2'
