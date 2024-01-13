@@ -38,10 +38,8 @@ Output: true
 ```cpp
 #include <iostream>
 using namespace std;
-bool isPowerOfFour(int n) 
-{
-    while (n % 4 == 0 && n > 0) 
-    {
+bool isPowerOfFour(int n) {
+    while (n % 4 == 0 && n > 0) {
         n /= 4;
     }
     return n == 1;
@@ -110,12 +108,10 @@ In this problem, `A < 2^31`. You can choose`A = 0x55555555`, the hexadecimal of 
 ```cpp
 #include <iostream>
 using namespace std;
-bool isPowerOfFour(int n) 
-{
+bool isPowerOfFour(int n) {
     return n > 0 && (n & (n - 1)) == 0 && (n & 0x55555555) != 0;
 }
-int main() 
-{
+int main() {
     cout << isPowerOfFour(16) << endl;
     cout << isPowerOfFour(5) << endl;
     cout << isPowerOfFour(1) << endl;
