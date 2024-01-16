@@ -1,10 +1,8 @@
 # Introduction
 
-Welcome to the world of **coding challenges**, where you'll learn how to solve exciting problems to improve your **programming skills**. Whether you're a beginner or an experienced programmer, this book will help you to **enhance your coding skills**.
+## Coding challenge
 
-> *I started solving one of the challenges in this book when changing my job during the summer of 2021. And I continued to solve at least once a week for two years. Today, I still sometimes pick a new one from LeetCode to solve for fun.*
-
-Coding challenges are a great way to practice **problem-solving**, **algorithm development**, and **logical thinking**. They showcase your **creativity** and **innovation** while improving your **coding techniques**. This book offers diverse coding challenges to help you develop your skills.
+**Coding challenges** are a great way to practice **problem-solving**, **algorithm development**, and **logical thinking**. They showcase your **creativity** and **innovation** while improving your **coding techniques**. This book offers diverse coding challenges to help you develop your skills.
 
 {index}`Coding challenges` could be **programming puzzles** or **mathematical problems** that require coding solutions. Each challenge requires different coding skills and is designed to challenge and develop a particular set of skills. This book includes coding challenges that cover **data structures**, **algorithms**, and **mathematical problems**.
 
@@ -59,4 +57,4 @@ In conclusion, readable code is an essential aspect of programming that ensures 
 ---
 
 
-> *I hope this book is an enjoyable and educational experience that will challenge and inspire you. Whether you want to enhance your skills, prepare for a technical interview, or just have fun, this book has something for you. So, get ready to put your coding skills to the test and embark on a challenging and rewarding journey through the world of coding challenges!*
+*I hope this book is an enjoyable and educational experience that will challenge and inspire you. Whether you want to enhance your skills, prepare for a technical interview, or just have fun, this book has something for you. So, get ready to put your coding skills to the test and embark on a challenging and rewarding journey through the world of coding challenges!*

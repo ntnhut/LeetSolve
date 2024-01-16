@@ -3,12 +3,15 @@ Content
 
 .. toctree::
    :maxdepth: 2
+   :titlesonly:
 
+   preface
    intro
 
 
 .. toctree::
    :maxdepth: 2
+   :numbered:
    :caption: Data Structures
 
    Array/index
@@ -21,6 +24,7 @@ Content
 
 .. toctree::
    :maxdepth: 2
+   :numbered:
    :caption: Algorithms
 
    Sorting/index
@@ -32,12 +36,14 @@ Content
 
 .. toctree::
    :maxdepth: 2
+   :numbered:
    :caption: Mathematics
 
    Mathematics/index
    
 .. toctree::
    :maxdepth: 2
+   :titlesonly:
 
    conclude
    thanks
