@@ -84,22 +84,6 @@ Output:
 [[1,4,][2,5,][3,6,]]
 ```
 
-### Code explanation
-
-1. The code initializes a new 2D vector `mt` to store the transpose of the input `matrix`. The number of rows in `mt` is equal to the number of columns in the original `matrix`, and the number of columns in `mt` is equal to the number of rows in the original `matrix`. This ensures that `mt` has the correct dimensions for the transpose.
-
-2. The outer loop iterates through the rows of the `mt` matrix. Since the number of rows in `mt` is equal to the number of columns in the original `matrix`, this loop goes through the rows of the transposed matrix.
-
-3. The inner loop iterates through the columns of the `mt` matrix. Since the number of columns in `mt` is equal to the number of rows in the original `matrix`, this loop goes through the columns of the transposed matrix.
-
-4. Inside the nested loops, it assigns the value at the current row `j` and column `i` in the original `matrix` to the corresponding row `i` and column `j` in the transposed `mt` matrix. This effectively transposes the values from the original matrix to the transposed matrix.
-
-5. After both loops have completed, the `mt` matrix contains the transpose of the original `matrix`.
-
-6. Finally, the transposed matrix `mt` is returned as the result of the function.
-
-In summary, this code computes the transpose of a given 2D matrix by creating a new matrix with swapped dimensions (rows become columns and vice versa) and copying values from the original matrix to the transposed matrix in the appropriate positions. The resulting transposed matrix is then returned.
-
 ### Complexity
 * Runtime: `O(m*n)`, where `m = matrix.length` and `n = matrix[i].length`.
 * Extra space: `O(1)`.

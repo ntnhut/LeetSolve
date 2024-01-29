@@ -2,15 +2,15 @@
 
 Welcome to **The Problem Solver's Guide To Coding**, a comprehensive journey to master **problem-solving**, **data structures**, **algorithms**, and **programming techniques** using **C++**. 
 
-This book is the result of my experiences, challenges, and successes in the programming world, which started with a discovery during a pivotal moment in my career change in the summer of 2021.
+This book is the result of my experiences, challenges, and successes in the programming world. It started with a discovery during a pivotal moment in my career change in the summer of 2021.
 
-During that transitional period, I came across **LeetCode**, a platform that became my daily companion in improving my programming skills. What began as a tool for learning new languages, specifically Golang and C#, soon evolved into a deep exploration of my most proficient language, C++. Over time, my daily practice transformed into more than 70 challenges, each accompanied by a detailed article encompassing **problem statements**, **various approaches**, **C++ code implementations**, **thorough explanations**, and **complexity analyses**.
+During that transitional period, I came across **LeetCode**, a platform that became my daily companion in improving my programming skills. What began as a tool for learning new languages, specifically Golang and C#, soon evolved into a deep exploration of my most proficient language, C++. Over time, my daily practice transformed into more than **70 challenges**, each accompanied by a detailed article encompassing **problem statements**, **various approaches**, **C++ code implementations**, **thorough explanations**, and **complexity analyses**.
 
 As I dove into the intricacies of these coding challenges, I realized that they held the potential to be more than just individual exercises. They could be woven into a comprehensive guide that could empower **aspiring programmers**, **students**, and **junior developers** to excel in **interviews** and master the craft of **problem-solving** and **algorithmic thinking**.
 
 This book is not a compilation of C++ code snippets and algorithms; it's a **roadmap** designed to **elevate your programming skills**. Each chapter represents a milestone in your journey, guiding you through the complexities of data structures, algorithms, and advanced programming techniques. Whether you're a student embarking on your programming odyssey or a junior developer seeking to sharpen your skills, this book is tailored to meet your needs.
 
-What sets this book apart is its focus on **practicality**. The challenges presented here are not just exercises; they are **real-world scenarios** that will stretch your understanding and push you to think critically. Moreover, my weekly sharing of articles with various developer communities has refined the content and established a connection with a diverse group of programming enthusiasts.
+What sets this book apart is its focus on **practicality**. The challenges presented here are not just exercises; they are **real-world scenarios** that will stretch your understanding and push you to think critically. Moreover, my weekly sharing of articles through my blog [leetsolve.com](https://leetsolve.com) with various developer communities has refined the content and established a connection with a diverse group of programming enthusiasts.
 
 By immersing yourself in the challenges and insights shared in this book, you will not only prepare for coding interviews but also cultivate a mindset beyond the scope of a job interview. You will become a **problem solver**, a **strategic thinker**, and a **proficient C++ programmer**.
 

@@ -82,27 +82,11 @@ Output:
 [1,1,0,]
 ```
 
-### Code explanation
+### Code insight
 
-1. The code initializes the `answer` vector with the same size as the `temperatures` vector, with all elements initially set to 0. This vector will store the number of days you need to wait for a warmer temperature for each day.
-
-2. The outer loop iterates through the `temperatures` vector, with `i` representing the current day for which you want to find the waiting period.
-
-3. Initially, the number of days to wait is set to 0 for the current day `i`. This is the default value in case there are no warmer days ahead.
-
-4. The inner loop iterates from the next day `i + 1` until the end of the `temperatures` vector. It is used to find a warmer day.
-
-5. A condition checks if the temperature on day `j` is higher than the temperature on day `i`. If this condition is met, it means you've found a warmer day.
-
-6. If a warmer day is found, the code calculates the number of days you need to wait by subtracting the current day `i` from the warmer day `j`. This value is then assigned to `answer[i]`.
-
-7. After finding a warmer day, the inner loop is exited because there's no need to continue searching for warmer days for the same day `i`. We move on to the next day in the outer loop.
-
-8. Finally, the `answer` vector is returned, which contains the number of days to wait for a warmer temperature for each day in the `temperatures` vector.
-
+This solution iterates through the temperatures array and, for each temperature, iterates through the remaining temperatures to find the next higher temperature. Storing the time difference between the current day and the next higher temperature day constructs the resulting array representing the number of days until warmer temperatures.
 
 ### Complexity
-This solution uses two nested loops to compare each day's temperature with the temperatures of the subsequent days to find the next warmer day. It calculates and stores the waiting period in the `answer` vector and returns it as the result. 
 
 * Runtime: `O(N^2)`, where `N = temperatures.length`.
 * Extra space: `O(1)`.
@@ -185,17 +169,7 @@ Output:
 
 ### Code explanation
 
-1. The outer loop iterates backward through the `temperatures` vector, starting from the second-to-last day and moving backwards the first day. This is because you can't find a warmer day after the last day, so there's no need to check it.
-
-2. Starting from `j = i + 1`, the inner loop iterates as long as `j` is within the bounds of the `temperatures` vector and the temperature on day `j` is less than or equal to the temperature on the current day `i`. This loop efficiently finds the next warmer day.
-
-3. If there is a non-zero value in the `answer` vector at position `j`, it means there's already a known waiting period for that day. In this case, the code skips ahead in the `temperatures` vector by the number of days stored in `answer[j]`. This is an optimization to avoid redundant checks and improve efficiency.
-   
-4. If there is no known waiting period for day `j`, it means there are no warmer days ahead. In this case, we set `j` to the end of the vector to exit the loop.
-
-5. After finding a warmer day, the code calculates the number of days you need to wait by subtracting the current day `i` from the warmer day `j`. This value is then assigned to `answer[i]`.
-
-6. Finally, the `answer` vector is returned, which contains the number of days to wait for a warmer temperature for each day in the `temperatures` vector.
+The key to this solution lies in its optimized approach to finding the next higher temperature. It utilizes a `while` loop to traverse the `temperatures` array efficiently, skipping elements if they are not potential candidates for a higher temperature. Updating the index based on previously calculated values stored in the `answer` array avoids unnecessary iterations, resulting in improved performance compared to the straightforward nested loop approach.
 
 This improved solution reduces the time complexity to `O(N)` as it iterates through the `temperatures` vector only once, resulting in a more efficient algorithm for finding the waiting periods for each day.
 

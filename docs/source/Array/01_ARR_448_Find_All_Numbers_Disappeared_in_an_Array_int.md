@@ -74,6 +74,7 @@ Output:
 ### Code explanation
 
 The code declares a vector named `exist` of type `bool` and initializes all of its values to `false`. Its size is declared as `n + 1` where `n = nums.size()` so it can mark the values ranged from `1` to `n`.
+
 Then it performs the marking of all `nums`'s elements to `true`. The ones that are `false` will belong to the result.
 
 ### Complexity
@@ -133,17 +134,7 @@ Output:
 
 ### Code explanation
 
-1. The code declares an integer `j` which will be used to store the absolute value of elements in the `nums` array.
-
-2. Inside the first loop, the code modifies the element at index `j - 1` of the `nums` array by negating its absolute value. This step marks the presence of the number `j`. If the number at index `j - 1` is positive, it means that `j` is present in the array. If it's negative, it means `j` is missing.
-
-3. After the first loop completes, the `nums` array contains negative values in positions where corresponding numbers are present and positive values where numbers are missing.
-
-4. A new vector called `result` is created to store the disappeared numbers: `vector<int> result;`.
-
-5. Inside the second loop, the code checks if the number at index `i - 1` in the `nums` array is positive. If it is, it means that the number `i` is missing because the corresponding position wasn't marked during the first loop. In this case, the code adds `i` to the `result` vector using `result.push_back(i);`.
-
-6. Finally, the function returns the `result` vector, which contains all the disappeared numbers in the `nums` array.
+The key to this solution is that it utilizes the array to mark the presence of numbers. Negating the value at the index corresponding to each number found in the input array effectively marks that number as present. Then, by iterating through the modified array, it identifies the missing numbers by checking which indices still hold positive values.
 
 ### Complexity
 

@@ -161,23 +161,7 @@ Output:
 
 ### Code explanation
 
-1. The code declares a 1D vector `v` which will be used to flatten the 2D grid into a 1D vector so that shifting the elements becomes easier.
-
-2. The first loop iterates over each row `r` in the input 2D grid `grid`. It uses the `std::vector`'s `insert` function to add all the elements in the row `r` to the end of the 1D vector `v`. This effectively flattens the 2D grid into a 1D vector.
-
-3. Two constant variables `m` and `n` are used to store the number of rows and columns in the input grid, respectively.
-
-4. Then the code calculates the starting index `p` of the flattened 1D vector `v` after shifting by `k` positions. The `%` operator is used to ensure that the value of `k` wraps around if it exceeds the length of `v`.
-
-5. The nested loops iterates over each row and each column of the original grid.
-
-6. A condition checks if `p` has reached the end of the flattened 1D vector `v`. If it has, it wraps `p` back to the beginning of the vector.
-
-7. Then it assigns the value at index `p` in the flattened vector `v` to the current cell of the 2D grid `grid[i][j]`, and then increments `p` to move to the next element in `v`.
-
-8. Finally, the modified `grid` is returned as the result of the function.
-
-In summary, this code flattens a 2D grid into a 1D vector, shifts the elements of the vector to the right by `k` positions while wrapping around, and then reshapes the 1D vector back into the original 2D grid. The result is a grid that has been shifted to the right by `k` positions.
+This solution flattens the 2D `grid` into a 1D vector `v`, representing the grid's elements in a linear sequence. Then, by calculating the new position for each element after the shift operation, it reconstructs the grid by placing the elements back into their respective positions based on the calculated indices. This approach avoids unnecessary copying or shifting of elements within the grid, optimizing both memory and time complexity.
 
 ### Complexity
 * Runtime: `O(m*n)` (the nested `for` loops), where `m = grid.length` and `n = grid[i].length`.

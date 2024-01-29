@@ -79,21 +79,9 @@ Output:
 0
 ```
 
-### Code explanation
+### Code insight
 
-1. The code begins by checking if the length of the input vector `arr` is less than 3. If it's less than 3, it's impossible for `arr` to represent a valid mountain array because such an array must have at least three elements (two slopes and a peak). In this case, the function immediately returns `false`.
-
-2. It defines a constant `N` to store the maximum index in the input vector `arr`. `N` is set to `arr.size() - 1` because array indices start from 0.
-
-3. The first loop starts from `i = 0`. This variable will be used to traverse the array and find the peak of the mountain. The loop iterates through the array as long as it hasn't reached the end of the array and the elements at `i` and `i + 1` are in strictly increasing order (the slope is going upwards). This loop moves `i` to the right until it reaches the peak of the mountain.
-
-4. After the first loop, the code checks whether `i` is either 0 (meaning we didn't find an increasing slope to the left) or `i` is equal to `N` (meaning we didn't find a decreasing slope to the right). In either of these cases, it's not a valid mountain array, so the function returns `false`.
-
-5. After finding the peak in the first loop, the second loop iterates through the array as long as `i` is less than `N` and the elements at `i` and `i + 1` are in strictly decreasing order (the slope is going downwards). This loop checks the right slope of the mountain.
-
-6. Finally, after the second loop, the code checks if `i` is equal to `N`. If this condition is true, it means we've successfully traversed both slopes of the mountain, and the function returns `true`, indicating that `arr` represents a valid mountain array.
-
-In summary, this code iteratively checks for the two slopes of a mountain array, ensuring that the elements to the left are in strictly increasing order and the elements to the right are in strictly decreasing order. If both conditions are met, the function returns `true`, indicating that the input array is a valid mountain array; otherwise, it returns `false`.
+This solution iteratively checks for the two slopes of a mountain array, ensuring that the elements to the left are strictly increasing and the elements to the right are strictly decreasing. If both conditions are met, the function returns `true`, indicating that the input array is a valid mountain array; otherwise, it returns `false`.
 
 ### Complexity
 * Runtime: `O(N)`, where `N = arr.length`.

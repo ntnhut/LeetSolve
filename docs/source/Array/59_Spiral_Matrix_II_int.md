@@ -111,26 +111,7 @@ Output:
 
 ### Code explanation 
 
-1. The code creates a 2D vector `m` of size `n x n` to represent the square matrix. It initializes it with all zeros.
-
-2. It defines variables `bottom`, `right`, `top`, and `left` to keep track of the boundaries of the matrix. Initially, they are set to the indexes of the outermost rows and columns of the matrix.
-
-3. The code initializes `row` and `col` to 0, representing the current position in the matrix.
-
-4. It creates an {index}`enum` `Direction` to represent the current direction of movement (`RIGHT`, `DOWN`, `LEFT`, `UP`). It initializes `d` to `RIGHT` to start moving to the right.
-
-5. The code initializes an integer `a` to 1, which will be used to fill the matrix with incrementing values.
-
-6. It uses a while loop to traverse the matrix and fills it with values as long as the `top` boundary is less than or equal to the `bottom` boundary and the `left` boundary is less than or equal to the `right` boundary.
-
-7. Inside the loop, it fills the current position `(row, col)` in the matrix with the value `a` and increment `a` by 1.
-
-8. The code uses a {index}`switch` statement based on the current direction `d` to determine the next move:
-   - If `d` is RIGHT, it checks if `col` has reached the `right` boundary. If it has, it moves to the next direction (`DOWN`) and update `row` accordingly; otherwise, increment `col`.
-   - Similar logic is applied for the `DOWN`, `LEFT`, and `UP` directions, adjusting `row` and `col` accordingly and changing direction when needed.
-
-9. Once the loop is complete, the matrix is filled in a spiral order, and the function returns the filled matrix.
-
+This solution uses a `Direction` `enum` and boundary variables to iteratively fill the matrix in a spiral pattern. Updating the direction of movement based on the current position and boundaries efficiently populates the matrix with sequential values, traversing in a clockwise direction from the outer layer to the inner layer.
 
 ### Complexity
 
