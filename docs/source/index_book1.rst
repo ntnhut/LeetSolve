@@ -10,7 +10,6 @@ Content
 
 .. toctree::
    :maxdepth: 2
-   :numbered:
    :caption: Data Structures
 
    Array/index
@@ -23,7 +22,6 @@ Content
 
 .. toctree::
    :maxdepth: 2
-   :numbered:
    :caption: Algorithms
 
    Sorting/index
@@ -35,7 +33,6 @@ Content
 
 .. toctree::
    :maxdepth: 2
-   :numbered:
    :caption: Mathematics
 
    Mathematics/index
