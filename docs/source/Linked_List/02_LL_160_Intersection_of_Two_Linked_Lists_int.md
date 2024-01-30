@@ -135,17 +135,7 @@ Output:
 1
 1
 ```
-### Code explanation
-
-1. An unordered map `m` is declared to store pointers to nodes from the linked list `headA`. This map is used to keep track of the nodes visited while traversing `headA`.
-
-2. The first loop iterates through the nodes of `headA` using the `node` pointer. Inside this loop, the unordered map `m` marks all `headA`'s nodes visited.
-
-3. The second iterates through the nodes of `headB` using the same `node` pointer. Inside this second loop, the unordered map `m` checks if it stores the current `node`. If it does, it means that this node is common to both `headA` and `headB`, and it represents the intersection point. The function returns this node.
-
-4. If the second loop completes without finding an intersection node, the function returns `nullptr`, indicating that there is no intersection between the two linked lists.
-
-In summary, this code uses an unordered map to store the nodes of `headA` while traversing it. Then, it traverses `headB` and checks if each node in `headB` exists in the map of nodes from `headA`. If a common node is found, it returns that node as the intersection point; otherwise, it returns `nullptr` to indicate no intersection. 
+This code uses an unordered map to store the nodes of `headA` while traversing it. Then, it traverses `headB` and checks if each node in `headB` exists in the map of nodes from `headA`. If a common node is found, it returns that node as the intersection point; otherwise, it returns `nullptr` to indicate no intersection. 
 
 ### Complexity
 * Runtime: `O(m + n)`, where `m`, `n` are the number of nodes of `listA` and `listB`.
@@ -267,25 +257,9 @@ Output:
 1
 ```
 
-### Code explanation
-
-1. The code iterates through the nodes of `headA` and `headB` to compute their length `lengthA` and `lengthB`.
-
-2. Then it checks if `nodeA` (the pointer at the end of `headA`) is not equal to `nodeB` (the pointer at the end of `headB`). If they are not equal, it means that the two linked lists do not intersect, and the function returns `nullptr`.
-
-3. If the two linked lists do intersect, the code resets `nodeA` and `nodeB` to the heads of `headA` and `headB`, respectively.
-
-4. Next, the code performs adjustments to the pointers to make them equidistant from the intersection point. It does this by traversing the longer linked list until both pointers are equidistant from the intersection. This is done using two `while` loops:
-   - If `headA` is longer than `headB`, the code advances `nodeA` and decreases `lengthA` until the lengths are equal.
-   - If `headB` is longer than `headA`, the code advances `nodeB` and decreases `lengthB` until the lengths are equal.
-
-5. Once both pointers are equidistant from the intersection point, the code enters another `while` loop: `while (nodeA != nodeB) { ... }`. This loop iterates through the linked lists using both `nodeA` and `nodeB` simultaneously until they meet at the intersection point.
-
-6. Finally, the function returns `nodeA` (or `nodeB`, which will also be the same at this point) as the intersection node.
-
+This improved solution finds the intersection of two linked lists by first determining their lengths and adjusting the pointers so that they start from the same relative position to the intersection point. Then, it iterates through both linked lists until it finds the common intersection node. 
 
 ### Complexity
-This improved solution finds the intersection of two linked lists by first determining their lengths and adjusting the pointers so that they start from the same relative position to the intersection point. Then, it iterates through both linked lists until it finds the common intersection node. 
 
 * Runtime: `O(m + n)`, where `m`, `n` are the number of nodes of `listA` and `listB`.
 * Extra space: `O(1)`.

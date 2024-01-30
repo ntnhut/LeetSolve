@@ -2,7 +2,6 @@ Content
 =======
 
 .. toctree::
-   :maxdepth: 2
    :titlesonly:
 
    preface
@@ -42,7 +41,6 @@ Content
    Mathematics/index
    
 .. toctree::
-   :maxdepth: 2
    :titlesonly:
 
    conclude

@@ -159,8 +159,6 @@ Output:
 [[1,2,3,][4,5,6,][7,8,9,]]
 ```
 
-### Code explanation
-
 This solution flattens the 2D `grid` into a 1D vector `v`, representing the grid's elements in a linear sequence. Then, by calculating the new position for each element after the shift operation, it reconstructs the grid by placing the elements back into their respective positions based on the calculated indices. This approach avoids unnecessary copying or shifting of elements within the grid, optimizing both memory and time complexity.
 
 ### Complexity

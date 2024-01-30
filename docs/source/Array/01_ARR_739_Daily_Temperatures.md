@@ -82,9 +82,7 @@ Output:
 [1,1,0,]
 ```
 
-### Code insight
-
-This solution iterates through the temperatures array and, for each temperature, iterates through the remaining temperatures to find the next higher temperature. Storing the time difference between the current day and the next higher temperature day constructs the resulting array representing the number of days until warmer temperatures.
+This solution iterates through the `temperatures` array and, for each temperature, iterates through the remaining temperatures to find the next higher temperature. Storing the time difference between the current day and the next higher temperature day constructs the resulting array representing the number of days until warmer temperatures.
 
 ### Complexity
 
@@ -166,8 +164,6 @@ Output:
 [1,1,1,0,]
 [1,1,0,]
 ```
-
-### Code explanation
 
 The key to this solution lies in its optimized approach to finding the next higher temperature. It utilizes a `while` loop to traverse the `temperatures` array efficiently, skipping elements if they are not potential candidates for a higher temperature. Updating the index based on previously calculated values stored in the `answer` array avoids unnecessary iterations, resulting in improved performance compared to the straightforward nested loop approach.
 

@@ -112,29 +112,8 @@ Output:
 [0,]
 ```
 
-### Code explanation
-
-1. The function begins with two base cases to handle situations where one of the input lists is empty:
-   - If `list1` is empty (i.e., `list1` is `nullptr`), the function simply returns `list2`. There is no need to merge anything because `list1` is empty.
-   - Similarly, if `list2` is empty (i.e., `list2` is `nullptr`), the function returns `list1`.
-
-2. A `head` pointer will be used to keep track of the merged list. The code determines which of `list1` and `list2` should be the head of the merged list. It does this by comparing the values of the first nodes in `list1` and `list2`:
-   - If the value of the first node in `list2` is less than the value of the first node in `list1`, it means that `list2` should be the new head of the merged list. The code updates the `head` pointer to point to `list2`, and it advances the `list2` pointer to the next node.
-   - If the value of the first node in `list1` is less than or equal to the value in `list2`, `list1` should be the new head. The code advances the `list1` pointer to the next node.
-
-3. The main merging process is performed using a `while` loop that continues as long as both `list1` and `list2` are not empty:
-   - Inside the loop, the code compares the values of the first nodes in `list1` and `list2`:
-     - If the value in `list1` is smaller, the code connects the current node pointed to by `node` to the node in `list1`, and advances `list1` to its next node.
-     - If the value in `list2` is smaller or equal, the code connects the current node pointed to by `node` to the node in `list2`, and advances `list2` to its next node.
-   - After connecting a node, the `node` pointer is moved to the newly connected node.
-
-4. After the `while` loop completes, one of the input lists may still have remaining elements. To ensure that all elements are included in the merged list, the code appends the remaining nodes from either `list1` or `list2` (whichever is not empty) to the end of the merged list.
-
-5. Finally, the function returns `head`, which points to the head of the merged sorted linked list.
+The key insight of this solution is merging two sorted linked lists efficiently without using extra space. It identifies the head of the merged list by comparing the values of the first nodes of the input lists. Then, it iterates through both lists, linking nodes in ascending order until one list is exhausted. Finally, it appends the remaining nodes from the non-empty list to the merged list, ensuring the resulting list remains sorted.
 
 ### Complexity
 * Runtime: `O(N)`, where `N = list1.length + list2.length`.
 * Extra space: `O(1)`.
-
-
-

@@ -79,8 +79,6 @@ Output:
 0
 ```
 
-### Code insight
-
 This solution iteratively checks for the two slopes of a mountain array, ensuring that the elements to the left are strictly increasing and the elements to the right are strictly decreasing. If both conditions are met, the function returns `true`, indicating that the input array is a valid mountain array; otherwise, it returns `false`.
 
 ### Complexity

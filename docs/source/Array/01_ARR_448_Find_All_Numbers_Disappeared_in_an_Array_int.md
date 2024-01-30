@@ -71,9 +71,7 @@ Output:
 [2,]
 ```
 
-### Code explanation
-
-The code declares a vector named `exist` of type `bool` and initializes all of its values to `false`. Its size is declared as `n + 1` where `n = nums.size()` so it can mark the values ranged from `1` to `n`.
+This code declares a vector named `exist` of type `bool` and initializes all of its values to `false`. Its size is declared as `n + 1` where `n = nums.size()` so it can mark the values ranged from `1` to `n`.
 
 Then it performs the marking of all `nums`'s elements to `true`. The ones that are `false` will belong to the result.
 
@@ -132,13 +130,9 @@ Output:
 [2,]
 ```
 
-### Code explanation
-
 The key to this solution is that it utilizes the array to mark the presence of numbers. Negating the value at the index corresponding to each number found in the input array effectively marks that number as present. Then, by iterating through the modified array, it identifies the missing numbers by checking which indices still hold positive values.
 
 ### Complexity
-
-This solution efficiently finds the disappeared numbers in an array by using the sign of elements to mark their presence or absence. It leverages the fact that the array contains numbers in the range of `1` to `n`, and it avoids using additional data structures.
 
 * Runtime: `O(n)`, where `n = nums.length`.
 * Extra space: `O(1)` (the returned list does not count as extra space).

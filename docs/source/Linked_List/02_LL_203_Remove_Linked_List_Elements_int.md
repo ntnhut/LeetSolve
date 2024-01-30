@@ -105,21 +105,9 @@ Output:
 []
 ```
 
-### Code explanation
-
-1. The first loop removes consecutive nodes with the specified `val` at the beginning of the linked list.
-
-2. After the first loop, if `head` becomes `nullptr`, it means that all nodes with the specified `val` have been removed from the beginning of the linked list. In this case, the function returns `nullptr` to indicate that the linked list is now empty.
-
-3. If `head` is not `nullptr` (indicating that there are still nodes in the linked list after removal of consecutive nodes with the specified `val` at the beginning), the code initializes a pointer `pre` to `head`. This pointer will be used to traverse the remaining nodes in the linked list.
-
-4. The second loop checks if the `val` of the next node (`pre->next->val`) matches the specified `val`. If it does, the code removes the node with the specified `val` by updating `pre->next` to point to the node after the next node (`pre->next->next`). This effectively skips the node with the specified `val`. If the `val` of the next node does not match, the `pre` pointer is simply moved to the next node in the linked list.
-
-5. Finally, the function returns `head`, which now points to the modified linked list with all nodes containing the specified `val` removed.
-
+This solution efficiently removes nodes with a specified value `val` from a linked list by using two pointers (`head` and `pre`) to traverse the list and update the `next` pointers to bypass nodes with the specified value. 
 
 ### Complexity
-This solution efficiently removes nodes with a specified value `val` from a linked list by using two pointers (`head` and `pre`) to traverse the list and update the `next` pointers to bypass nodes with the specified value. 
 
 * Runtime: `O(N)`, where `N` is the number of nodes.
 * Memory: `O(1)`.
@@ -186,9 +174,8 @@ Output:
 []
 []
 ```
-### Code explanation
 
-The code creates a `preHead` node with a value of `2023` (an arbitrary value) and sets its `next` pointer to point to the original `head` of the linked list. 
+This solution creates a `preHead` node with a value of `2023` (an arbitrary value) and sets its `next` pointer to point to the original `head` of the linked list. 
 
 The purpose of this `preHead` node is to serve as the dummy or sentinel node at the beginning of the linked list. Having a `preHead` node simplifies the code because it eliminates the need to handle the special case of removing nodes from the beginning of the list separately.
 

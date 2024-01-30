@@ -1,6 +1,6 @@
 # Introduction
 
-## Coding challenge
+## Coding challenges
 
 **Coding challenges** are a great way to practice **problem-solving**, **algorithm development**, and **logical thinking**. They showcase your **creativity** and **innovation** while improving your **coding techniques**. This book offers diverse coding challenges to help you develop your skills.
 
@@ -53,7 +53,7 @@ Finally, readable code can **save time and money**. When code is easy to underst
 
 In conclusion, readable code is an essential aspect of programming that ensures that code is accessible, error-free, and efficient. By focusing on readability when designing and implementing code, programmers can improve the quality and reliability of their code, leading to a better overall product.
 
-In this book, I focus on readable code rather than optimal one, as most of you are at the beginner level. Some of my solutions might need to be in better runtime or memory. But I keep my code in my style (convention), where readability is vital.
+In this book, I focus on readable code rather than optimal one, as most of you are at the beginner level. Some of my solutions might need to be in better runtime or memory. But I keep my code in my style or coding convention, where readability is vital.
 
 ---
 

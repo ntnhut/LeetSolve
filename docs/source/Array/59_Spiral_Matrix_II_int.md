@@ -109,8 +109,6 @@ Output:
 [[1,]]
 ```
 
-### Code explanation 
-
 This solution uses a `Direction` `enum` and boundary variables to iteratively fill the matrix in a spiral pattern. Updating the direction of movement based on the current position and boundaries efficiently populates the matrix with sequential values, traversing in a clockwise direction from the outer layer to the inner layer.
 
 ### Complexity
