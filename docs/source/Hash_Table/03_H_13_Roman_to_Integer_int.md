@@ -91,26 +91,9 @@ Output:
 1994
 ```
 
-### Code explanation
-
-1. The `unordered_map` `value` is a constant mapping from Roman numeral characters to their corresponding integer values.
-
-2. The function `romanToInt` takes a string `s` as input, representing a Roman numeral.
-
-3. The function initializes two variables: `i` is set to the last index of the string `s`, and `result` is initialized with the integer value of the last Roman numeral character in the string.
-
-3. A `while` loop iterates through the string from the second-to-last character to the first character.
-
-4. Inside the loop, the code checks if the value of the current character (`s[i]`) is less than the value of the next character (`s[i+1]`). If `true`, it subtracts the value of the current character from the result; otherwise, it adds the value.
-
-5. The loop continues until it reaches the beginning of the string.
-
-6. The final result is the integer equivalent of the given Roman numeral string, and it is returned by the function.
-
-This code essentially implements the rules of Roman numeral conversion, where a smaller numeral before a larger numeral is subtracted, and a smaller numeral after a larger numeral is added.
+This solution efficiently converts a Roman numeral string into an integer by iterating through the string from right to left and applying the rules of Roman numerals, where subtractive combinations are subtracted and additive combinations are added to calculate the total value. The unordered map is used to look up the values of Roman numerals. 
 
 ### Complexity
-This solution efficiently converts a Roman numeral string into an integer by iterating through the string from right to left and applying the rules of Roman numerals, where subtractive combinations are subtracted and additive combinations are added to calculate the total value. The unordered map is used to look up the values of Roman numerals. 
 
 * Runtime: `O(N)` where `N = s.length`.
 * Extra space: `O(1)`.

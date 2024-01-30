@@ -87,26 +87,13 @@ Output:
 3
 ```
 
-### Code explanation
+This solution efficiently finds the length of the longest substring without repeating characters. 
 
-1. **Initialization**:
-   - An unordered map `position` is used to store the most recent position (index) where each character in the string `s` was seen.
-   - `maxLen` is initialized to 0, representing the maximum substring length found so far.
-   - `start` is initialized to -1. This variable will be used to keep track of the starting index of the current substring.
+It utilizes a sliding window approach to track the starting index of the current substring and an unordered map to store the position of the characters encountered so far. By updating the starting index when a repeating character is encountered, it ensures that the current substring contains only unique characters. 
 
-2. The code iterates through each character of the input string `s`. Inside the loop, the code checks whether the current character `s.at(i)` is already in the `position` map. If the character is found in the map, it means that it has occurred previously in the current substring.
-
-3. If the character is found in the map (indicating a repeating character), the code updates the `start` index to the maximum of its current value (`start`) and the position of the character in the map (`it->second` is `position[s.at(i)]`). This step effectively "slides" the window to the right, excluding the repeating character and any characters before it.
-
-4. The code updates the `position` map with the current character's position by `position.insert({s.at(i), i})` which means setting `position[s.at(i)] = i`. This keeps track of the most recent position of each character.
-
-5. At each iteration, the code calculates the length of the current substring (`i - start`) and updates `maxLen` to be the maximum of its current value and the calculated length. This ensures that `maxLen` always stores the maximum length encountered during the traversal.
-
-5. After the loop completes, `maxLen` contains the length of the longest substring without repeating characters in the input string `s`. It is then returned as the result.
-
+This approach optimizes the computation of the length of the longest substring by efficiently handling the sliding window and updating the length accordingly, resulting in an overall efficient solution.
 
 ### Complexity
-This solution efficiently finds the length of the longest substring without repeating characters by using a sliding window approach and an unordered map to track character positions. It iterates through the string, updates the window, and calculates the maximum length. 
 
 * Runtime: `O(N)`, where `N = s.length`.
 * Extra space: `O(N)`.

@@ -77,35 +77,13 @@ Output:
 
 ### Code explanation
 
-This C++ code defines a function `maximumUniqueSubarray` that finds the maximum sum of a subarray in the given vector `nums` with the constraint that all elements must be unique. It uses two key techniques: prefix sums and a sliding window approach.
+This solution efficiently computes the maximum sum of a subarray containing unique elements. 
 
-Here's a step-by-step explanation of how the code works:
+It uses a sliding window approach to maintain a running sum of the elements encountered so far and a hashmap to keep track of the positions of previously seen elements. By updating the starting index of the window when a repeated element is encountered, it ensures that the current subarray contains only unique elements. 
 
-1. The code initializes a vector called `sum` of the same size as the input `nums`. `sum` is used to store the cumulative sums of elements in `nums`, where `sum[i]` represents the sum of the first `i` elements of `nums`. The initial value of `sum[0]` is set to `nums[0]`.
-
-2. It initializes the `maxSum` variable to the value of `sum[0]`, which represents the maximum sum found so far.
-
-3. An unordered map `position` is created to store the position (index) of each element in `nums`. This map keeps track of the most recent position where each element was encountered.
-
-4. The initial position of the first element, `nums[0]`, is set to `0` in the `position` map.
-
-5. The variable `start` is initialized to `-1`, which will be used to keep track of the starting index of the subarray with unique elements.
-
-6. The code enters a loop that iterates for each element in `nums` except the first one.
-
-7. The `sum` vector is updated with the cumulative sum up to the current element `nums[i]`. This is done to calculate the sum of any subarray later efficiently.
-
-8. Inside the loop, the code checks if the current element `nums[i]` is already in the `position` map. If `nums[i]` is found in the `position` map, it means that this element has been encountered before. In this case, the code updates the `start` variable to be the maximum of its current value and the position of `nums[i]` from the `position` map. This sliding window technique ensures that the subarray only contains unique elements.
-
-9. The current position of `nums[i]` is updated in the `position` map.
-
-10. The code calculates the maximum sum using the {index}`sliding window` approach. If `start` is still equal to `-1`, it means that all elements up to `nums[i]` are unique, so the maximum sum is simply `sum[i]`. Otherwise, the code calculates the maximum of the current `maxSum` and the sum of the elements between the current position `i` and the `start` position. This ensures that the subarray contains unique elements.
-
-11. Finally, the function returns `maxSum`, which contains the maximum sum of a subarray with unique elements.
-
+This approach optimizes the computation of the maximum sum by efficiently handling the sliding window and updating the sum accordingly, resulting in an overall efficient solution.
 
 ### Complexity
-This solution efficiently finds the maximum sum of a subarray with unique elements using a sliding window approach and prefix sums. 
 
 * Runtime: `O(N)`, where `N = nums.length`.
 * Extra space: `O(N)`.

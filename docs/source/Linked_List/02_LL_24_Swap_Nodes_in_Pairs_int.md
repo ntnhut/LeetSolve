@@ -98,7 +98,11 @@ Output:
 [5,]
 ```
 
-The key insight of this solution is to swap pairs of nodes in a linked list by adjusting the pointers accordingly. It initializes pointers to the current node (`curNode`), its next node (`nextNode`), and the previous node (`preNode`). Then, it iterates through the list, swapping pairs of nodes by adjusting their `next` pointers and updating the `preNode` pointer. This approach efficiently swaps adjacent nodes in the list without requiring additional space, effectively transforming the list by rearranging pointers.
+This solution swaps pairs of nodes in a linked list by adjusting the pointers accordingly. 
+
+It initializes pointers to the current node (`curNode`), its next node (`nextNode`), and the previous node (`preNode`). Then, it iterates through the list, swapping pairs of nodes by adjusting their `next` pointers and updating the `preNode` pointer. 
+
+This approach efficiently swaps adjacent nodes in the list without requiring additional space, effectively transforming the list by rearranging pointers.
 
 ### Complexity
 * Runtime: `O(N)`, where `N` is the number of nodes.

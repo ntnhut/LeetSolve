@@ -66,21 +66,11 @@ Output:
 3
 ```
 
-### Code explanation
-
-1. The code sorts the `nums` vector in ascending order.
-
-2. It iterates through the sorted vector, comparing each element with the one next to it.
-
-3. If it finds two adjacent elements that are equal, it returns that element as it is the duplicate.
-
-4. If no duplicate is found during the loop, it returns 0 as a default value.
-
+The code relies on sorting to bring duplicate elements together, making it easy to identify them during the linear pass.
 
 ### Complexity
-The code relies on sorting to bring duplicate elements together, making it easy to identify them during the linear pass. The time complexity is `O(n*logn)` due to the sorting operation.
 
-* Runtime: `O(n*logn)`.
+* Runtime: `O(n*logn)` (sorting).
 * Extra space: `O(1)`.
 
 ## Follow up
@@ -124,15 +114,11 @@ Output:
 3
 ```
 
-### Code explanation
+This solution utilizes a boolean array `visited` to track visited elements efficiently. 
 
-1. The code creates a Boolean vector `visited` with the same size as the `nums` vector to keep track of visited elements.
+It iterates through the elements of the input vector `nums`, marking each element as visited by setting the corresponding index in the `visited` array to true. Upon encountering a visited element, it immediately returns it as the duplicate element. 
 
-2. For each element `a` in the `nums` vector, it checks if the corresponding index in the `visited` vector is already marked as `true`. If it is, it returns `a` as it is the duplicate.
-
-3. If the element is not marked as visited, it sets the corresponding index in the `visited` vector to `true` to mark it as visited.
-
-4. If no duplicates are found during the loop, it returns 0 as a default value.
+This approach efficiently identifies the duplicate element in the vector by tracking visited elements without requiring additional space proportional to the size of the input vector.
 
 ### Complexity
 * Runtime: `O(n)`.

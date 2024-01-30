@@ -127,7 +127,11 @@ Output:
 [8,9,9,9,0,0,0,1,]
 ```
 
-The key insight of this solution is leveraging a dummy node (`prehead`) to simplify the handling of edge cases and to hook the head of the resulting list. By iterating through both input lists simultaneously and performing addition digit by digit while keeping track of carry, it efficiently computes the sum without the need for additional checks for the head of the resulting list. This approach streamlines the addition process, resulting in a concise and straightforward implementation.
+This solution leverages a dummy node (`prehead`) to simplify the handling of edge cases and to hook the head of the resulting list. 
+
+By iterating through both input lists simultaneously and performing addition digit by digit while keeping track of carry, it efficiently computes the sum without the need for additional checks for the head of the resulting list. 
+
+This approach streamlines the addition process, resulting in a concise and straightforward implementation.
 
 ### Complexity
 

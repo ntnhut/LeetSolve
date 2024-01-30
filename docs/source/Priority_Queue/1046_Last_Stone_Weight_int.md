@@ -74,23 +74,9 @@ Output:
 1
 ```
 
-### Code explanation
-
-1. We start by initializing a `priority_queue` called `q` with the given `stones` vector. A `priority_queue` is a max-heap by default, which means it always pops the largest element, making it a suitable choice for finding the heaviest stones efficiently.
-
-2. We enter a loop that continues as long as there are at least two stones in the `priority_queue`. The loop's purpose is to repeatedly smash the heaviest stones together.
-
-3. Inside the loop, we perform the following steps:
-   - We retrieve the heaviest stone `y` from the top of the priority queue and remove it using `q.pop()`.
-   - We then retrieve the second heaviest stone `x` from the top of the priority queue and remove it as well.
-   - We check if `y` and `x` have different weights (i.e., `y != x`). If they are different, it means they can be smashed together, resulting in a new stone with weight `y - x`.
-   - If `y` and `x` have the same weight, they completely destroy each other, so we don't add any new stone to the queue.
-
-4. After the loop ends, we check if the priority queue is empty. If it is, it means all stones have been smashed and no stones are left, so we return 0. Otherwise, we return the weight of the last stone remaining, which is at the top of the priority queue.
-
+This solution efficiently simulates the process of smashing stones and finding the last remaining stone by using a max-heap (priority queue) to always select the heaviest stones to smash together.
 
 ### Complexity
-This solution efficiently simulates the process of smashing stones and finding the last remaining stone by using a max-heap (priority queue) to always select the heaviest stones to smash together.
 
 * Runtime: `O(n*logn)`, where `n = stones.length`.   
 * Extra space: `O(n)`.

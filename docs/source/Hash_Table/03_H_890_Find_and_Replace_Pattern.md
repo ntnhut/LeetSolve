@@ -92,36 +92,9 @@ Output:
 [mee,aqq,]
 [a,b,c,]
 ```
-
-### Code explanation
-
-1. The code initializes an empty vector called `result`, which will store the words that match the given pattern.
-
-2. Two unordered maps (`w_to_p` and `p_to_w`) are defined to establish the bijection between characters in words and characters in the pattern. These maps are used to track the mapping relationship between characters in a word and their corresponding characters in the pattern.
-
-3. An integer variable `i` is declared to be used as an index to iterate through the characters of a word.
-
-4. The code enters a loop that iterates through each word in the `words` vector using a range-based for loop.
-
-5. Inside the loop, the maps `w_to_p` and `p_to_w` are cleared at the beginning of processing each word. This ensures that the maps are empty and ready to establish a new bijection for the current word.
-
-6. The code enters another loop that iterates through the characters of the word.
-
-7. Inside this loop, the code checks whether the character `w[i]` from the word has already been mapped to a character in the pattern:
-   - If `w[i]` is found in the `w_to_p` map, it means that `w[i]` was previously mapped to some character (let's call it `x`) in the pattern. In this case, the code checks if `x` is not equal to `pattern[i]`. If `x` is not equal to `pattern[i]`, it means that `w[i]` cannot be mapped to `pattern[i]`, so the loop is terminated by `break`.
-   - If `w[i]` is not found in the `w_to_p` map, the code checks whether `pattern[i]` has already been mapped to a character in the word:
-     - If `pattern[i]` is found in the `p_to_w` map, it means that `pattern[i]` was previously mapped to some character in the word. In this case, the loop is terminated by `break`.
-     - If neither `w[i]` nor `pattern[i]` is found in their respective maps, a bijection between `w[i]` and `pattern[i]` is established by adding entries to both maps.
-
-8. After processing all characters of the current word, the code checks if `i` has reached the length of the word. If `i` equals `w.length()`, it means that a bijection has been successfully established for the entire word, and the word matches the pattern. In this case, the word is added to the `result` vector using `result.push_back(w);`.
-
-9. After processing all words, the `result` vector contains all the words that match the pattern in terms of character bijection.
-
-12. The function returns the `result` vector, which contains the matching words.
-
+This solution efficiently finds and returns words from a vector of strings that match a given pattern in terms of character bijection. It uses two unordered maps to establish and maintain the bijection while iterating through the characters of the words and the pattern. 
 
 ### Complexity
-This solution efficiently finds and returns words from a vector of strings that match a given pattern in terms of character bijection. It uses two unordered maps to establish and maintain the bijection while iterating through the characters of the words and the pattern. 
 
 * Runtime: `O(NL)`, where `N = words.length` and `L = pattern.length`.
 * Extra space: `O(1)`. The maps `w_to_p` and `p_to_w` just map between 26 lowercase English letters.

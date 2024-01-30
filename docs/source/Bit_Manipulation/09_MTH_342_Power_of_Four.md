@@ -58,19 +58,7 @@ Output:
 1
 ```
 
-### Code explanation
-
-1. The condition `n % 4 == 0` checks if `n` is a multiple of 4.
-
-2. The condition `n > 0` ensures that we are only considering positive integers because powers of four are positive integers.
-
-3. Inside the `while` loop, `n /= 4` is used to repeatedly divide `n` by 4 as long as both conditions (`n % 4 == 0` and `n > 0`) are satisfied. This division effectively removes one factor of 4 from `n` in each iteration.
-
-4. After the `while` loop, if `n` has been reduced to 1, it means that `n` was originally a power of four. This is because repeatedly dividing a power of four by 4 will eventually lead to 1, and no other value will reach 1 under these conditions.
-
-5. If `n` is not 1 after the loop, it means that it couldn't be divided by 4 to reach 1, indicating that `n` is not a power of four.
-
-So, the code returns `true` if `n` is a power of four and `false` otherwise. It achieves this by checking divisibility by 4 and repeatedly dividing `n` by 4 until it reaches 1 or can no longer be divided evenly.
+This solution repeatedly divides the given number `n` by 4 until `n` becomes either 1 or a number that is not divisible by 4. If `n` becomes 1 after this process, it means that `n` was originally a power of 4. 
 
 ### Complexity
 * Runtime: `O(logn)`.

@@ -117,28 +117,12 @@ Output:
 0
 -1
 ```
-### Code explanation
 
-1. The function **`toVector`** is responsible for converting a version string into a vector of integers. It takes a version string as input and returns a vector of integers, where each integer corresponds to a segment of the version string separated by periods.
+This solution first converts the version strings into vectors of integers representing the individual components of the version numbers. This conversion is done by iterating through each character of the version string, accumulating digits until encountering a dot, at which point the accumulated integer is added to the revisions vector. 
 
-    - It initializes an empty vector `revisions` to store the integer segments.
-    - It iterates through the characters of the input `version` string.
-    - When it encounters a character that is not a period ('.'), it appends that character to the `revision` string.
-    - When it encounters a period, it converts the `revision` string to an integer using `stoi` and appends it to the `revisions` vector. Then, it resets `revision` to an empty string.
-    - Finally, it appends any remaining `revision` (if the string ends with digits and not a period) to the `revisions` vector.
+Once both version strings are converted into vectors, the function iterates through the vectors, comparing corresponding elements to determine the relationship between the versions. Additionally, it accounts for any remaining digits in the longer version string after the common components by summing them up and comparing the totals. 
 
-2. The function **`compareVersion`** is the main part of the code that compares two version strings.
-
-    - It calls the `toVector` function to convert both `version1` and `version2` into vectors of integers.
-    - It initializes an index `i` to traverse both vectors simultaneously.
-    - It enters a `while` loop to compare the corresponding integers at the same position in both vectors.
-        - If `r1[i]` is less than `r2[i]`, it returns -1, indicating that `version1` is less than `version2`.
-        - If `r1[i]` is greater than `r2[i]`, it returns 1, indicating that `version1` is greater than `version2`.
-        - If they are equal, it increments `i` to move on to the next segment.
-    - After comparing the common segments, it calculates the sum of the remaining segments in both vectors using `accumulate`.
-    - It then compares the remaining sums, returning -1, 1, or 0, based on whether `version1` is less than, greater than, or equal to `version2` in terms of the remaining segments.
-
-In summary, this code first converts the version strings into vectors of integers, segment by segment. Then, it compares the corresponding segments and handles the remaining segments separately. The result is -1 if `version1` is less than `version2`, 1 if `version1` is greater than `version2`, and 0 if they are equal. This code effectively handles version comparison in a format like "1.2.3" and works well for most common versioning schemes.
+This approach simplifies the comparison process by breaking down the version strings into easily comparable components.
 
 ### Complexity
 * Runtime: `O(N)` where `N = max(version1.length, version2.length)`.
