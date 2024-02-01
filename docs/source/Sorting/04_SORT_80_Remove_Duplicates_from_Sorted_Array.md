@@ -83,21 +83,6 @@ Output:
 7, [0,0,1,1,2,3,3,]
 ```
 
-### Code explanation
-
-1. Inside the loop, it checks if the element at index `i` is equal to the element two positions before it.
-    
-2. If the condition is met, there are more than two occurrences of the current element. We need to remove the excess duplicates while preserving two instances. To do this, a second while loop is used until the duplicate elements are no longer found. At this point, `j` will be the index of the first element that differs from the current element.
-    
-3. After finding the range of duplicate elements to remove (from index `i` to `j-1`, inclusive), it uses the `vector`'s `erase` function to remove these elements from the `nums` array. This effectively keeps only two instances of the current element.
-    
-4. If the condition in step 2 is not met (i.e., there are at most two occurrences of the current element), it moves the index `i` to the next unique element in the array.
-    
-5. Repeat steps 2 to 4 until `i` has traversed the entire array. The while loop removes all duplicate elements beyond two occurrences while maintaining the order of unique elements.
-    
-6. Once the loop finishes, the `nums` array contains unique elements with at most two occurrences of each. Return the size of the modified array using `nums.size()`.
-    
-
 This solution efficiently removes duplicates from the sorted array by checking for duplicates and erasing the excess occurrences while preserving two instances of each unique element. It then returns the length of the modified array.
 
 ### Complexity
@@ -171,32 +156,9 @@ Output:
 7, [0,0,1,1,2,3,3,]
 ```
 
-### Code explanation
-
-1. The code checks the size of the input array `nums`. If it has 2 or fewer elements, there's no need to perform any removals, so the function simply returns the size of the original array.
-    
-2. It initializes two variables:
-    
-    * `k`: This will represent the length of the resulting array after removing duplicates (initially set to 2 since we allow up to two occurrences of each element).
-        
-    * `i`: This is an iterator that starts from the array's third element (index 2) and is used to traverse the array.
-        
-3. It starts a loop that iterates from the third element (`i = 2`) to the end of the array.
-    
-4. Inside the loop, it compares the current element at index `i` with the element at `k - 2`. This comparison checks if the current element exceeds the previous two positions. If it is, this means it's a new element. Otherwise, it is a third occurrence of the same element, which we want to skip.
-    
-5. If the current element is greater than the element at index `k - 2`, it updates the element at index `k` with the current element. Then, it increments `k` to indicate that a new unique element has been found.
-    
-6. Continue iterating through the array by incrementing `i`.
-    
-7. Once the loop finishes, the array up to index `k - 1` contains the unique elements with at most two occurrences each, and the rest of the array can be ignored.
-    
-8. Finally, return the value of `k`, which represents the length of the resulting array.
-    
+This solution effectively modifies the input array in-place, removing duplicates that occur more than twice while maintaining the desired order of unique elements. It does so in a single pass through the array, resulting in a time complexity of `O(N)`, where `N` is the number of elements in the array.
 
 ### Complexity
-
-This solution effectively modifies the input array in-place, removing duplicates that occur more than twice while maintaining the desired order of unique elements. It does so in a single pass through the array, resulting in a time complexity of `O(N)`, where `N` is the number of elements in the array.
 
 * Runtime: `O(N)`, where `N = nums.size()`.
     

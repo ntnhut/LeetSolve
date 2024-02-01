@@ -78,27 +78,11 @@ Output:
 0 0 9 0 0
 ```
 
-### Code explanation
+This solution efficiently computes the product of all elements in an array except for the current element. 
 
-1. The code stores the length of the input vector `nums` in the variable `n`.
+It accomplishes this by first computing two arrays: `prefix` and `suffix`. The `prefix` array stores the product of all elements to the left of the current element, while the `suffix` array stores the product of all elements to the right of the current element. By multiplying the corresponding elements from `prefix` and `suffix` arrays, it effectively computes the product of all elements except for the current element at each index. 
 
-2. It initializes an empty vector called `prefix` of length `n`. The `prefix` vector will store the product of all elements to the left of the current element in `nums`.
-
-3. It initializes the first element of the `prefix` vector at index 0 to be 1. Since there are no elements to the left of the first element, its product is defined as 1.
-
-4. For each index `i` in the loop, it calculates the product of all elements to the left of `i` in `nums` and stores it in the `prefix` vector at index `i`. This is done by multiplying the previous element in the `prefix` vector with the corresponding element in `nums`.
-
-5. The code initializes another empty vector called `suffix` of the same length `n`. The `suffix` vector will store the product of all elements to the right of the current element in `nums`.
-
-6. It initializes the last element of the `suffix` vector at index `n - 1` to be 1. Since there are no elements to the right of the last element, its product is defined as 1.
-
-7. The code loops through `nums` in reverse order, starting from index `n - 2` and going down to index 0. For each index `i`, it calculates the product of all elements to the right of `i` in `nums` and store it in the `suffix` vector at index `i`.
-
-8. It initializes an empty vector called `answer` of the same length `n`. This vector will store the final result.
-
-9. For each index `i` in the loop, it calculates the final answer at that index by multiplying the corresponding elements from the `prefix` and `suffix` vectors and store it in the `answer` vector.
-
-10. The code returns the `answer` vector, which contains the desired products of all elements in `nums` except for the element at each respective index.
+This approach optimizes the computation by breaking down the problem into smaller subproblems and leveraging the precomputed prefix and suffix arrays to efficiently compute the final result.
 
 ### Complexity
 The time complexity of this code is `O(n)` because it iterates through the `nums` vector three times in separate loops, and each loop has a linear time complexity with respect to the length of `nums`. The space complexity is `O(n)` as well because it uses additional vectors (`prefix` and `suffix`) of the same length as `nums`.
@@ -149,24 +133,10 @@ Output:
 0 0 9 0 0
 ```
 
-### Code explanation
-
-1. An integer variable `n` is set to the size (number of elements) of the input vector `nums`.
-
-2. The code creates a new integer vector called `answer` of the same size as `nums`. This vector will store the final results.
-
-3. It initializes the first element of the `answer` vector at index 0 to be 1. This is because the product of all elements to the left of the first element is defined as 1.
-
-4. For each element at index `i` in the loop, it calculates the product of all elements to the left of it and store it in the `answer` vector at index `i`. This is done by multiplying the previous element in the `answer` vector with the corresponding element in `nums`.
-
-5. It initializes an integer variable `suffix` to 1. This variable will be used to keep track of the product of all elements to the right of the current element in `nums`.
-
-6. For each element at index `i` in the reverse-order loop, it calculates the product of all elements to the right of it and multiply it with the corresponding element in the `answer` vector at index `i`. It updates the `suffix` by multiplying it with the next element to the right in `nums`.
-
-7. The code returns the `answer` vector, which now contains the desired products of all elements in `nums` except for the element at each respective index.
+This code efficiently calculates the products of all elements in the `nums` vector except for the element at each index using two passes through the array. The first pass calculates products to the left of each element, and the second pass calculates products to the right of each element.
 
 ### Complexity
-This code efficiently calculates the products of all elements in the `nums` vector except for the element at each index using two passes through the array. The first pass calculates products to the left of each element, and the second pass calculates products to the right of each element. The time complexity is `O(n)`, and the space complexity is `O(1)` as it only uses a single additional integer (`suffix`) and reuses the `answer` vector to store the final results.
+The time complexity is `O(n)`, and the space complexity is `O(1)` as it only uses a single additional integer (`suffix`) and reuses the `answer` vector to store the final results.
 
 * Runtime: `O(n)`, where `n = nums.length`.
 * Extra space: `O(1)`.

@@ -66,23 +66,11 @@ Output:
 23
 ```
 
-### Code explanation
+This solution is the Kadane's algorithm, which efficiently finds the maximum sum of a contiguous subarray within a given array. 
 
-* `maxSum` is initialized to a very small value (in this case, `-10000`) to ensure that any positive sum encountered during the loop will be considered as the new maximum sum.
+It iterates through the elements of the array, updating `currSum` to either the current element or the sum of the current element and the previous `currSum`, whichever is greater. By considering whether adding the current element improves the overall sum, it effectively handles both positive and negative numbers in the array. Finally, it updates `maxSum` with the maximum value encountered during the iteration, ensuring it holds the maximum sum of any contiguous subarray within the given array. 
 
-* `currSum` is initialized to zero. This variable will be used to keep track of the sum of the current subarray being considered.
-
-* The `for` loop iterates through each element `num` in the `nums` array.
-
-* Inside the loop, the code checks whether the current sum `currSum` is negative. If it is negative, it means that including the current element in the subarray would result in a smaller sum. So, the current element `num` is taken as the new starting point for the subarray.
-
-* If `currSum` is not negative, it means that including the current element in the subarray would increase the sum. So, `currSum` is updated by adding the current element num to it.
-
-* After updating `currSum`, the code compares it with the current `maxSum` using the `max` function. This ensures that `maxSum` always holds the maximum subarray sum encountered so far.
-
-* The loop continues to iterate through the array, updating both `currSum` and `maxSum` as needed.
-
-* Once the loop completes, the function returns the final value of `maxSum`, which represents the maximum sum of a subarray within the given `nums` array.
+This approach optimizes the computation by efficiently tracking the maximum sum and dynamically updating it as it iterates through the array.
 
 ### Complexity
 * Runtime `O(n)`, where `n = nums.length`.

@@ -89,29 +89,9 @@ Output:
 2
 ```
 
-### Code explanation
-
-1. The code initializes a vector `freq` of size 26 to represent the frequency of each lowercase letter in the English alphabet. It initializes all elements to 0.
-
-2. It iterates through the characters in the input string `s`. For each character `c`, increment the corresponding frequency in the `freq` vector. This step calculates the frequency of each character in the string.
-
-3. It sorts the `freq` vector in descending order using `greater<int>()` as the sorting comparator. This sorts the frequencies from highest to lowest.
-
-4. It initializes two variables: `deletion` to keep track of the total deletions needed and `currentFreq` to keep track of the current frequency being processed.
-
-5. It iterates through the sorted `freq` vector, starting from the second element (index 1):
-
-   - If `currentFreq` becomes 0 (meaning there are no more characters with the current frequency), add the frequency of the current character to `deletion`. This is because you want to minimize the frequency and make it unique.
-
-   - If the frequency of the current character (`freq[i]`) is greater than or equal to `currentFreq`, it implies that you need to reduce the frequency to `currentFreq - 1` and add the excess characters to `deletion`. The excess is calculated as `freq[i] - currentFreq + 1`. Decrease `currentFreq` accordingly.
-
-   - If none of the above conditions apply, update `currentFreq` to the frequency of the current character since it becomes the new frequency to work with.
-
-6. It returns the `deletion` value, which represents the minimum number of character deletions required to make all character frequencies unique.
-
+This solution calculates the frequencies of characters in the input string, sorts them in descending order, and then iterates through them to determine the minimum deletions needed to achieve unique frequencies. 
 
 ### Complexity
-This solution calculates the frequencies of characters in the input string, sorts them in descending order, and then iterates through them to determine the minimum deletions needed to achieve unique frequencies. 
 
 * Runtime: `O(N)`, where `N = s.length`;
 * Extra space: `O(1)`.

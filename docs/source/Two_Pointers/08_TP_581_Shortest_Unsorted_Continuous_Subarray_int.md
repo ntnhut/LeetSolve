@@ -77,22 +77,10 @@ Output:
 0
 ```
 
-### Code explanation
-
-1. A separate vector, `sortedNums`, is created by copying the elements from the `nums` vector and sorting them in ascending order. This sorted vector will be used as a reference to identify the unsorted portion of the original array.
-
-2. Two pointers, `left` and `right`, are initialized. `left` starts from the beginning of the `nums` vector, and `right` starts from the end.
-
-3. The `left` pointer is moved to the right until it reaches an element that differs from the corresponding element in `sortedNums` or until it reaches the end of the `nums` vector. This step identifies the left boundary of the unsorted subarray.
-
-4. Similarly, the `right` pointer is moved to the left until it reaches an element that differs from the corresponding element in `sortedNums` or until it reaches the beginning of the `nums` vector. This step identifies the right boundary of the unsorted subarray.
-
-5. If `left` is greater than or equal to `right`, it means that the entire `nums` array is sorted, and there is no unsorted subarray. In this case, the function returns `0`.
-
-6. If there is an unsorted subarray, the function returns the length of that subarray, which is calculated as `(right - left + 1)`.
+This solution compares the original array with a sorted version of itself to identify the unsorted boundaries efficiently.
 
 ### Complexity
-This solution works by comparing the original array with a sorted version of itself to identify the unsorted boundaries efficiently. It has a time complexity of `O(N*logN)` due to the sorting step, where `N` is the number of elements in the `nums` vector. The subsequent linear pass to find the left and right boundaries takes `O(N)` time. Therefore, the overall time complexity is dominated by the sorting step. 
+It has a time complexity of `O(N*logN)` due to the sorting step, where `N` is the number of elements in the `nums` vector. The subsequent linear pass to find the left and right boundaries takes `O(N)` time. Therefore, the overall time complexity is dominated by the sorting step. 
 
 The space complexity is `O(N)` because it requires additional space to store the sorted version of the array.
 
@@ -153,21 +141,13 @@ Output:
 0
 ```
 
-### Code explanation
+This solution determines the boundaries of the unsorted subarray by iterating through the array from both ends. It starts by initializing the `left` boundary to the end of the array and tracking the minimum element encountered so far. It iterates from the end of the array towards the beginning, updating the `left` boundary whenever an element greater than the current minimum is encountered. This identifies the leftmost position where the array is unsorted.
 
-1. The length of the `nums` vector is stored in a constant `n`.
+Similarly, it initializes the `right` boundary to the beginning of the array and tracks the maximum element encountered so far. It iterates from the beginning of the array towards the end, updating the `right` boundary whenever an element smaller than the current maximum is encountered. This identifies the rightmost position where the array is unsorted.
 
-2. Two pointers, `left` and `right`, are initialized. `left` starts from the end of the `nums` vector, and `right` starts from the beginning.
+Finally, it returns the length of the unsorted subarray, calculated as `right - left + 1`, unless the left boundary is greater than or equal to the right boundary, in which case the array is already sorted, and it returns 0.
 
-3. A variable `min` is initialized with the value of the last element of the `nums` vector (`nums[n - 1]`), and a variable `max` is initialized with the value of the first element of the `nums` vector (`nums[0]`).
-
-4. The first loop runs from right to left (from the last element to the first element of `nums`). It checks if the current element is less than `min`. If it is, the `left` pointer is updated to the current position (`i`), indicating a potential left boundary of the unsorted subarray. Otherwise, if the current element is greater than or equal to `min`, `min` is updated to the current element.
-
-5. The second loop runs from left to right (from the first element to the last element of `nums`). It checks if the current element is greater than `max`. If it is, the `right` pointer is updated to the current position (`i`), indicating a potential right boundary of the unsorted subarray. Otherwise, if the current element is less than or equal to `max`, `max` is updated to the current element.
-
-6. After both loops, if `left` is greater than or equal to `right`, it means that the entire `nums` array is sorted, and there is no unsorted subarray. In this case, the function returns `0`.
-
-7. If there is an unsorted subarray, the function returns the length of that subarray, which is calculated as `(right - left + 1)`.
+This approach optimizes the computation by traversing the array only twice, once from the end and once from the beginning, to efficiently determine the boundaries of the unsorted subarray.
 
 ### Complexity
 This solution efficiently identifies the left and right boundaries of the unsorted subarray without explicitly sorting the entire array. It has a time complexity of `O(N)`, where `N` is the number of elements in the `nums` vector, as it performs two linear passes through the array. The space complexity is `O(1)` because it uses a constant amount of additional space regardless of the size of the input array.

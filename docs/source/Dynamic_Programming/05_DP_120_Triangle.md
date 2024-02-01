@@ -79,7 +79,6 @@ Output:
 -10
 ```
 
-### Code explanation
 
 This solution finds the minimum path sum from the top to the bottom of a triangle, represented as a vector of vectors. It uses dynamic programming to efficiently calculate the minimum path sum.
 

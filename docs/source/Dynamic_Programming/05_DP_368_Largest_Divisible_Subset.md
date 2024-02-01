@@ -124,28 +124,11 @@ Output:
 [8,4,2,1,]
 ```
 
-### Code explanation
+This solution uses dynamic programming with {index}`memoization` to efficiently find the largest divisible subset of a given set of numbers. 
 
-This solution utilizes dynamic programming and recursive functions to efficiently identify and store the largest divisible subsets.
+The `largestDivisibleSubsetOf` function recursively computes the largest divisible subset starting from a particular index `i` in the sorted array `nums`. It memoizes the computed subsets in an unordered map `_map` to avoid redundant computations. By iteratively calling `largestDivisibleSubsetOf` for each index `i` in the sorted array and updating the `answer` with the largest subset found so far, the `largestDivisibleSubset` function efficiently computes the largest divisible subset of the input array `nums`. 
 
-Here's how the code works:
-
-1. It starts by sorting the input vector `nums` in ascending order, as it simplifies the process of finding divisibility relationships.
-
-2. The `largestDivisibleSubsetOf` function is a recursive helper function. It takes three parameters: the input vector `nums`, the current index `i`, and a map `_map` that stores previously computed subsets for each index. This function aims to find the largest divisible subset starting from index `i`.
-
-3. If the function has already computed the largest divisible subset for index `i` and stored it in `_map`, it returns that precomputed subset.
-
-4. Otherwise, it initializes `maxSubset` with the current element at index `i`. If `i` is the last index in `nums`, it inserts this element into `_map` and returns it as the maximum subset.
-
-5. If `i` is not the last index, the function iterates through the elements with indices greater than `i` and checks if each element is divisible by the element at index `i`. If it is divisible, it calls `largestDivisibleSubsetOf` recursively for the next index, appends the current element to the subset obtained from the recursive call, and updates `maxSubset` if the new subset is larger.
-
-6. After processing all elements, the function inserts `maxSubset` into `_map` for index `i` and returns it.
-
-7. The `largestDivisibleSubset` function is the main function. It iterates through the sorted `nums` vector, calling `largestDivisibleSubsetOf` for each index and keeping track of the largest subset encountered so far.
-
-8. Finally, it returns the largest divisible subset found.
-
+This approach optimizes the computation by avoiding repeated calculations and leveraging dynamic programming techniques to efficiently explore the solution space.
 
 ### Complexity
 The time complexity of this solution is `O(n^2)`, where `n` is the number of elements in the `nums` vector. The recursive function may be called multiple times for each element in `nums`, leading to a quadratic time complexity. However, it optimizes the process by storing and reusing previously computed subsets using the `_map` data structure.
@@ -244,24 +227,11 @@ Output:
 [8,4,2,1,]
 ```
 
-### Code explanation
+This solution efficiently finds the largest divisible subset of a given set of numbers by dynamically updating the size of the subsets and maintaining the previous index of each element in their largest subset. 
 
-1. The code starts by sorting the input vector `nums` in ascending order. Sorting simplifies the process of finding divisibility relationships and allows us to build the largest divisible subset incrementally.
+It iterates through the sorted array of numbers, updating the size of the largest subset that ends with each element by considering the previous elements that are factors of the current element. By keeping track of the maximum subset size and the index of the largest element in the subset, it efficiently constructs the largest divisible subset. 
 
-2. The algorithm initializes some variables:
-   - `maxSize` represents the size of the largest divisible subset encountered.
-   - `maxindex` stores the index of the largest element in the largest subset.
-   - `subsetSize` is a vector where `subsetSize[i]` stores the size of the largest subset ending with `nums[i]`.
-   - `pre` is a vector where `pre[i]` stores the index of the previous element in the largest subset ending with `nums[i]`.
-
-3. It iterates through the sorted `nums` vector. For each element at index `i`, it searches for a previous element `nums[j]` (where `j < i`) such that `nums[i]` is divisible by `nums[j]` and `subsetSize[j] + 1` is greater than `subsetSize[i]`. If such a condition is met, it updates `subsetSize[i]` and `pre[i]` accordingly.
-
-4. While iterating, it also tracks the largest subset encountered by updating `maxSize` and `maxindex` whenever a larger subset is found.
-
-5. After processing all elements, the code constructs the largest divisible subset by starting from `maxindex` (the largest element) and backtracking through `pre` until it reaches -1. It appends each element to the `result` vector.
-
-6. Finally, it returns the `result` vector containing the largest divisible subset.
-
+This approach optimizes the computation by avoiding redundant calculations and leveraging dynamic programming techniques to efficiently explore the solution space.
 
 ### Complexity
 The time complexity of this solution is `O(n^2)`, where `n` is the number of elements in the `nums` vector. The nested loop searches for previous elements with divisibility relationships, which may lead to quadratic time complexity in the worst case. However, it efficiently maintains information about subset sizes and elements, reducing redundant calculations and improving performance.

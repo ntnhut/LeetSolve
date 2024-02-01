@@ -78,31 +78,7 @@ Output:
 8
 91
 ```
-### Code explanation
-
-1. The `boxTypes` vector is sorted in descending order based on the number of units per box. This is done using a lambda function as the sorting criterion. Sorting in this way ensures that the boxes with the most units per box come first in the sorted list.
-
-2. The code initializes `maxUnits` to 0. This variable will keep track of the maximum units that can be loaded onto the truck.
-
-3. It initializes an index variable `i` to 0, which will be used to iterate through the sorted `boxTypes` list.
-
-4. The code enters a loop that continues as long as there is available space on the truck (`truckSize > 0`) and there are more box types to consider (`i < boxTypes.size()`).
-
-5. It checks if the current box type (specified by `boxTypes[i]`) can be loaded entirely onto the truck without exceeding its capacity. If `boxTypes[i][0]` (the number of boxes available for this type) is less than or equal to `truckSize`, it loads all available boxes of this type onto the truck:
-   - It adds `boxTypes[i][0] * boxTypes[i][1]` to `maxUnits` (the total units loaded).
-   - It subtracts `boxTypes[i][0]` from `truckSize` (reduce the remaining truck capacity).
-
-6. If the current box type cannot be loaded entirely onto the truck without exceeding its capacity, it loads as many boxes as possible to maximize the units:
-   - It adds `truckSize * boxTypes[i][1]` to `maxUnits` (the total units loaded).
-   - It breaks out of the loop since the truck is now at full capacity.
-
-7. The code increments `i` to move to the next box type.
-
-8. After the loop finishes, `maxUnits` will contain the maximum number of units that can be loaded onto the truck without exceeding its capacity.
-
-9. The code returns the value of `maxUnits` as the result.
-
-In summary, the code optimally loads boxes onto a truck to maximize the total number of units that can be transported, considering both the number of boxes available and their units per box.
+This solution optimally loads boxes onto a truck to maximize the total number of units that can be transported, considering both the number of boxes available and their units per box.
 
 ### Complexity
 * Runtime: `O(N*logN)`, where `N = boxTypes.length`.

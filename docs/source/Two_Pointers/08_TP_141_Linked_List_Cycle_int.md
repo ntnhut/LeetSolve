@@ -92,19 +92,11 @@ Output:
 0
 ```
 
-### Code explanation
+This solution uses a hash map to track visited nodes while traversing the linked list. 
 
-This solution is designed to detect the presence of a cycle in a linked list using a hash map to keep track of visited nodes. Here's a short explanation of how it works:
+By iterating through the linked list and storing pointers to visited nodes along with a count of their occurrences in the hash map, it efficiently detects cycles in the linked list. If a node is encountered more than once, it indicates the presence of a cycle, and the function returns `true`. Otherwise, if the end of the linked list is reached without encountering any node more than once, it confirms the absence of a cycle, and the function returns `false`. 
 
-1. An unordered map `m` is used to store nodes as keys and their corresponding count of occurrences as values. This map will help in identifying whether a cycle exists in the linked list.
-
-2. The function starts traversing the linked list from the `head` node.
-
-3. In each iteration, it checks if the current `head` node exists in the map `m`. If it does, that means the same node has been encountered before, and there is a cycle in the linked list. In this case, the function returns `true`.
-
-4. If the current `head` node is not found in the map (i.e., it's encountered for the first time), it's added to the map with a count of 1.
-
-5. The `head` pointer is then moved to the next node in the list, and the process continues until either a cycle is detected (in which case the function returns `true`) or the end of the list is reached (in which case the function returns `false`).
+This approach optimizes the computation by leveraging the hash map to efficiently detect cycles in the linked list without requiring additional space proportional to the length of the list.
 
 ### Complexity
 This solution has a time complexity of `O(N)`, where `N` is the number of nodes in the linked list. In the worst case, it needs to traverse the entire linked list to detect a cycle. The space complexity is also `O(N)` because, in the worst case, it stores `N` nodes in the hash map.
@@ -177,20 +169,14 @@ Output:
 1
 0
 ```
-### Code explanation
 
-This solution is designed to determine whether a linked list has a cycle efficiently using a two-pointer approach. Here's a brief explanation of how it works:
+This solution uses two pointers, a fast pointer and a slow pointer, to efficiently detect cycles in a linked list. 
 
-1. The function first checks if the `head` of the linked list is a null pointer. If the list is empty (i.e., `head` is null), it immediately returns `false` because an empty list cannot have a cycle.
+Both pointers start from the head of the list, and the fast pointer moves two steps forward while the slow pointer moves one step forward in each iteration. By comparing the positions of the fast and slow pointers, the algorithm efficiently detects cycles in the linked list. 
 
-2. Two pointers, `fast` and `slow`, are initialized to the `head` of the linked list. These pointers will traverse the list at different speeds to detect a cycle.
+If the fast pointer catches up with the slow pointer at any point during traversal, it indicates the presence of a cycle, and the function returns `true`. Otherwise, if the fast pointer reaches the end of the list without intersecting with the slow pointer, it confirms the absence of a cycle, and the function returns `false`. 
 
-3. In a loop, both `fast` and `slow` move through the list. `fast` advances by two nodes at a time, while `slow` advances by one node at a time.
-
-4. If there is no cycle in the list, `fast` will eventually reach the end of the list (i.e., it will become null), and the loop will terminate. In this case, the function returns `false`.
-
-5. If a cycle exists, `fast` and `slow` will eventually meet or "overlap" within the cycle. This is because `fast` is moving twice as fast as `slow`, and it will eventually "catch up" to `slow` as they move around the cycle. When `fast` and `slow` meet, the loop detects the cycle and returns `true`.
-
+This approach optimizes the computation by simultaneously advancing two pointers at different speeds to efficiently detect cycles in the linked list.
 
 ### Complexity
 This solution is highly efficient with a time complexity of `O(N)`, where `N` is the number of nodes in the linked list. The space complexity is `O(1)` because it uses a constant amount of extra space, regardless of the size of the linked list. It achieves cycle detection without using additional data structures, making it an optimal solution for this problem.

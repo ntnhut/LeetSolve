@@ -69,27 +69,9 @@ Output:
 0
 ```
 
-### Code explanation
-
-1. First, the code checks if the value of `n` is zero. If `n` is zero, it means there are no flowers to plant, and the function immediately returns `true`, indicating that it's possible to place zero flowers anywhere.
-
-2. To simplify the logic when checking adjacent elements, the code adds a leading and trailing zero to the `flowerbed` vector. This ensures that the first and last positions in the flowerbed are treated as empty (zero) when checking adjacent elements.
-
-3. A loop starts from `i = 1`, representing the current position in the flowerbed. It iterates through the flowerbed, excluding the trailing zero added before. The loop continues until `i` reaches the second-to-last position in the flowerbed.
-
-4. A condition checks if the current position and its adjacent positions are all empty (represented by zeros). If this condition is met, it means we can plant a flower at the current position.
-
-5. If the condition satisfies, the code sets the current position to 1, indicating that a flower has been plantedand decrements the number of flowers to plant (`n`) because one flower has been planted at the current position.
-
-6. After planting a flower, the loop skips two positions ahead since we cannot plant another flower in the adjacent position due to the constraint.
-
-7. If the condition is not met, it means we cannot plant a flower at the current position. In this case, we simply move to the next position in the flowerbed.
-
-8. Finally, after the loop has processed all positions in the flowerbed, the code checks whether `n` has become less than or equal to zero. If `n` is less than or equal to zero, it means that all required flowers have been planted successfully, and the function returns `true`. Otherwise, it returns `false`, indicating that it was not possible to plant all the required flowers in the flowerbed while following the given constraints.
-
+This solution efficiently iterates through the flowerbed, planting flowers wherever possible while adhering to the constraints. It returns `true` if it's possible to plant all the required flowers and `false` otherwise.
 
 ### Complexity
-This solution efficiently iterates through the flowerbed, planting flowers wherever possible while adhering to the constraints. It returns `true` if it's possible to plant all the required flowers and `false` otherwise.
 
 * Runtime: `O(N)`, where `N = flowerbed.length`.
 * Extra space: `O(1)`.

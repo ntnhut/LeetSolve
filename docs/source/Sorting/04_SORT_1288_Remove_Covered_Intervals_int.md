@@ -81,29 +81,9 @@ Output:
 1
 ```
 
-### Code explanation
-
-1. The `isCovered` function checks if interval `i` is covered by interval `j` by comparing their start and end points.
-
-2. The `removeCoveredIntervals` function iterates through the list of intervals using two nested loops. The outer loop iterates through each interval, starting with the first interval, denoted by the variable `i`.
-
-3. The inner loop, denoted by the variable `j`, checks each subsequent interval against the current interval `i`.
-
-4. If `i` is covered by `j`, it is removed from the list of intervals, and a flag `erase_i` is set to `true`.
-
-5. If `j` is covered by `i`, `j` is removed from the list.
-
-6. If neither interval covers the other, the inner loop increments the variable `j`.
-
-7. After the inner loop completes, if `erase_i` is `false`, it means that `i` was not covered by any subsequent intervals, so the outer loop increments the variable `i` to check the next interval.
-
-8. The process continues until all intervals have been checked for coverage.
-
-9. Finally, the function returns the size of the modified list of intervals, which represents the count of intervals that are not covered by any other intervals.
-
+This solution effectively removes covered intervals and retains only those that do not have others covering them. The time complexity of this solution is `O(N^3)`, where `N` is the number of intervals, as it involves nested loops and potential removal of intervals from the list.
 
 ### Complexity
-This solution effectively removes covered intervals and retains only those that do not have others covering them. The time complexity of this solution is `O(N^3)`, where `N` is the number of intervals, as it involves nested loops and potential removal of intervals from the list.
 
 * Runtime: `O(N^3)`, where `N = intervals.length`.
 * Extra space: `O(1)`.
@@ -164,30 +144,7 @@ Output:
 2
 1
 ```
-
-### Code explanation
-
-1. The code sorts the intervals in ascending order based on their start times.
-
-2. It initializes `count` to 0. This variable will keep track of the number of intervals that are covered by others.
-
-3. It initializes `maxRight` to -1. This variable represents the rightmost endpoint of the intervals encountered so far.
-
-4. It initialize `preLeft` to -1. This variable represents the leftmost endpoint of the previous interval encountered.
-
-5. It iterates through the sorted intervals:
-
-   - If the current interval's right endpoint (`i[1]`) is less than or equal to `maxRight`, it means that this interval is completely covered by a previous interval. Increment `count`.
-
-   - Else if the current interval's left endpoint (`i[0]`) is equal to `preLeft`, it means that the current interval covers its exact previous interval. Increment `count`.
-
-   - Otherwise, it updates `preLeft` to the current interval's left endpoint since it becomes the new leftmost endpoint.
-
-   - It updates `maxRight` to be the maximum of its current value and the right endpoint of the current interval (`i[1]`).
-
-6. The result is obtained by subtracting `count` from the total number of intervals in the input list. This gives the count of intervals that are not covered by others.
-
-In summary, the code first sorts the intervals and then iterates through them while keeping track of whether each interval is covered by others or not. The final result is the count of intervals that are not covered, and it is returned as the output. 
+This solution first sorts the intervals and then iterates through them while keeping track of whether each interval is covered by others or not. The final result is the count of intervals that are not covered, and it is returned as the output. 
 
 ### Complexity
 The time complexity of this solution is `O(N*logN)`, where `N` is the number of intervals, due to the initial sorting step. The subsequent iteration through the sorted intervals is linear in time.

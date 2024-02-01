@@ -101,26 +101,9 @@ Output:
 [1,]
 ```
 
-### Code explanation
-
-1. The code begins by initializing an empty vector called `result`, which will be used to store the merged values.
-
-2. Next, it sets up two pointers, `i` and `j`, initially both at position `0`, to track our progress within the `nums1` and `nums2` arrays, respectively.
-
-3. Inside the loop, it handles three possible scenarios:
-   - If `j` reaches `n`, indicating that it has exhausted all elements in `nums2`, it adds the current element from `nums1` (located at index `i`) to the `result` vector, and then increments `i`.
-
-   - If `i` reaches `m`, indicating that it has exhausted all elements in `nums1`, it adds the current element from `nums2` (located at index `j`) to the `result` vector, and then increments `j`.
-
-   - If neither of the above conditions is met, it compares the current elements at `nums1[i]` and `nums2[j]`. It selects the smaller element, adds it to the `result` vector, and increments the corresponding pointer (`i` or `j`) accordingly.
-
-4. Once the while loop completes, it has successfully merged all elements from both arrays into the `result` vector.
-
-5. Finally, it replaces the contents of `nums1` with the contents of the `result` vector using the `swap` method, effectively updating `nums1` with the merged and sorted values.
-
+This solution merges two sorted arrays `nums1` and `nums2` into `nums1` while maintaining sorted order. It iterates through both arrays, comparing elements and adding them to a temporary `result` vector. After the merging is complete, it replaces the contents of `nums1` with the merged result. 
 
 ### Complexity
-This solution merges two sorted arrays `nums1` and `nums2` into `nums1` while maintaining sorted order. It iterates through both arrays, comparing elements and adding them to a temporary `result` vector. After the merging is complete, it replaces the contents of `nums1` with the merged result. 
 
 * Runtime: `O(m+n)`, where `m = nums1.length` and `n = nums2.length`.
 * Extra space: `O(m+n)`.
@@ -179,28 +162,9 @@ Output:
 [1,]
 ```
 
-### Code explanation
-
-1. The code initializes three pointers: `k`, `i`, and `j`. 
-   - `k` is initialized to `m + n - 1`, which is the last index of the merged array.
-   - `i` is initialized to `m - 1`, which is the last index of the `nums1` array.
-   - `j` is initialized to `n - 1`, which is the last index of the `nums2` array.
-
-2. Inside the loop, there are three possible scenarios to consider:
-
-   - If `j` is less than 0, it means it has already processed all elements from `nums2`. In this case, it copies the remaining elements from `nums1` to `nums1[k]`, decrements both `k` and `i`, and moves to the next element in `nums1`.
-
-   - If `i` is less than 0, it means it has already processed all elements from `nums1`. In this case, it copies the remaining elements from `nums2` to `nums1[k]`, decrements both `k` and `j`, and moves to the next element in `nums2`.
-
-   - If neither of the above conditions is met, it compares the current elements at `nums1[i]` and `nums2[j]`. It selects the larger element and places it in `nums1[k]`, effectively moving from the end of both arrays towards the beginning while preserving the sorted order. After the assignment, it decrements both `k` and the pointer (`i` or `j`) corresponding to the selected element.
-
-3. This process continues until all elements from `nums1` and `nums2` have been merged into `nums1` while maintaining the sorted order.
-
-4. When the while loop completes, `nums1` contains the merged and sorted elements of both `nums1` and `nums2`.
-
+In summary, this solution efficiently merges two sorted arrays, `nums1` and `nums2`, into `nums1` while preserving the sorted order. It uses three pointers (`k`, `i`, and `j`) to perform the merge in reverse order, which helps avoid the need for additional space. 
 
 ### Complexity
-In summary, this solution efficiently merges two sorted arrays, `nums1` and `nums2`, into `nums1` while preserving the sorted order. It uses three pointers (`k`, `i`, and `j`) to perform the merge in reverse order, which helps avoid the need for additional space. 
 
 * Runtime: `O(m+n)`, where `m = nums1.length` and `n = nums2.length`.
 * Extra space: `O(1)`.

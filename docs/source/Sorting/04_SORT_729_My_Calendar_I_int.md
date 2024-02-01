@@ -72,18 +72,6 @@ Output:
 1
 ```
 
-### Code explanation
-
-1. The private member `_events` is a vector of pairs, each representing an event with a start and end time.
-
-2. The constructor `MyCalendar()` initializes an empty `_events` vector when an instance of the class is created.
-
-3. The `book` method is used to book events. It takes two integers, `start` and `end`, representing the start and end times of the event to be booked.
-
-4. Inside the `book` method, there's a loop that iterates through the `_events` vector. For each existing event represented by `e`, it checks if there is any overlap between the new event (given by `start` and `end`) and the existing event. If any overlap is detected, it returns `false`, indicating that the booking is impossible.
-
-5. If there is no overlap with any existing events, the new event (represented by the pair `{start, end}`) is added to the `_events` vector, and the method returns `true` to indicate a successful booking.
-
 This code essentially maintains a list of events and checks for overlaps when booking a new event. If no overlaps are found, it adds the new event to the list and allows the booking.
 
 ### Complexity
@@ -132,23 +120,9 @@ Output:
 1
 ```
 
-### Code explanation
-
-1. The `Event` type is defined as a pair of integers representing an event's start and end times.
-
-2. The `EventCmp` struct defines a custom comparison function for events. It compares events based on their end times. If the end time of one event is less than or equal to the start time of another event, they are considered non-overlapping.
-
-3. The `MyCalendar` class maintains a set `_events` of events sorted according to the custom comparator. This ensures that the events are ordered by their end times for efficient overlap checking.
-
-4. The `book` method takes two integers, `start` and `end`, representing the start and end times of a new event.
-
-5. Inside the `book` method, the code attempts to insert the new event into the `_events` set using `_events.insert({start, end})`. The `insert` function returns a pair of iterators and a boolean. The boolean indicates whether the insertion was successful or not.
-
-6. If the insertion is successful (i.e., the event does not overlap with any existing events), the method returns `true`, indicating that the event has been booked.
+This solution efficiently handles event bookings by maintaining a sorted set of events based on their end times, allowing for quick overlap checks when booking new events. It has a time complexity of `O(logn)` for each booking operation, where `n` is the number of events already booked.
 
 ### Complexity
-
-This solution efficiently handles event bookings by maintaining a sorted set of events based on their end times, allowing for quick overlap checks when booking new events. It has a time complexity of `O(logn)` for each booking operation, where `n` is the number of events already booked.
 
 For the `book` method:
 * Runtime: `O(logn)`, where `n = _events.length`.

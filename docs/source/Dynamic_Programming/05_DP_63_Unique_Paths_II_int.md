@@ -87,8 +87,6 @@ Output:
 1
 ```
 
-### Code explanation
-
 This solution computes the number of unique paths in an `m x n` grid with obstacles using dynamic programming. It initializes a 2D vector `np` of the same size as `obstacleGrid` to store the number of unique paths for each cell.
 
 First, it initializes the top row and left column of `np`. If there are no obstacles in the top row or left column of `obstacleGrid`, it sets the corresponding cells in `np` to 1 because there's only one way to reach any cell in the top row or left column.

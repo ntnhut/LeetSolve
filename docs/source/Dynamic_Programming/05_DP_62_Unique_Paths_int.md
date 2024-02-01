@@ -90,21 +90,6 @@ Output:
 6
 ```
 
-### Code explanation
-
-This recursive solution calculates the number of unique paths from the top-left corner of an `m x n` grid to the bottom-right corner. 
-
-- The base cases are when either `m` or `n` is equal to 1, in which case there is only one path (either moving only horizontally or only vertically) to reach the destination.
-
-- For all other cases, the function recursively calculates the number of unique paths by summing two possibilities:
-  1. Moving one step down (decreasing `m` by 1) and staying at the same column (`n` remains the same).
-  2. Moving one step right (decreasing `n` by 1) and staying at the same row (`m` remains the same).
-
-By adding these two possibilities, you account for all the valid paths to reach the destination.
-
-
-### Complexity
-
 This is a recursive solution that breaks down the problem into two subproblems:
 
 - `uniquePaths(m-1, n)` 
@@ -113,6 +98,8 @@ This is a recursive solution that breaks down the problem into two subproblems:
 Each recursive call reduces either the `m` or `n` value by 1. 
 
 The base case is when `m == 1` or `n == 1`, where there is only 1 unique path.
+
+### Complexity
 
 To calculate the complexity, let's look at the recursion tree:
 
@@ -171,8 +158,6 @@ Output:
 3
 6
 ```
-
-### Code explanation
 
 This solution uses dynamic programming to efficiently compute the number of unique paths in an `m x n` grid. It creates a 2D vector `dp` of size `m x n` and initializes all its values to 1 because there's exactly one way to reach any cell in the first row or first column.
 

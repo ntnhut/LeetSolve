@@ -78,24 +78,11 @@ Output:
 1
 ```
 
-### Code explanation
+This solution efficiently counts the number of pairs in the given array `nums` whose sum equals the target value `k`. It utilizes an unordered map to store the frequency of each element encountered while iterating through `nums`. 
 
-1. The code initializes an unordered map `m` where keys represent the values in the array `nums`, and values represent the frequency (count) of each value.
+By examining each element `a` in `nums`, it checks if `k - a` exists in the map and if its frequency is greater than 0. If so, it increments the count of pairs and decrements the frequency of both `a` and `k - a`, ensuring that each pair is counted only once. 
 
-2. It also initializes a variable `count` to keep track of the count of valid pairs of elements.
-
-3. The loop then iterates through the elements of the `nums` array. For each element `a` encountered:
-
-   - It increments the count of `a` in the `m` map to keep track of its frequency.
-   
-   - It checks if there exists a complementary element (`k - a`) in the map `m` with a count greater than 0. If such an element exists:
-   
-     - It verifies if `a` is not equal to `k - a` (to ensure distinct elements) or if there are at least two occurrences of `a` in the array.
-     
-     - If either of the above conditions is met, it means a valid pair `(a, k - a)` can be formed. In this case, it increments the `count` and decrements the counts of both `a` and `k - a` in the map `m`. This indicates that these elements have been used in a pair.
-     
-4. After iterating through the entire array, the function returns the final count, which represents the maximum number of valid pairs of elements that sum up to `k`.
-
+This approach optimizes the computation by efficiently tracking the frequencies of elements and identifying valid pairs whose sum equals the target value without requiring additional space proportional to the size of the array.
 
 ### Complexity
 This solution has a time complexity of `O(n)`, where `n` is the number of elements in the `nums` array, as it iterates through the array once. The use of the unordered map allows efficient lookup of complementary elements. The space complexity is also `O(n)` because, in the worst case, all unique elements in `nums` are stored in the `m` map.

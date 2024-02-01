@@ -69,23 +69,11 @@ Output:
 4
 1
 ```
-
-### Code explanation
-
-1. The code initializes an unordered map `count` where the keys are integers from `nums`, and the values represent the count of each integer's occurrence in the `nums` array.
-
-2. It then iterates through the `nums` array. For each element `n` in `nums`, it increments the count for that element in the `count` map.
-
-3. Next, it initializes an integer variable `single` which will store the single number we are looking for.
-
-4. The loop goes through the `count` map. For each key-value pair in the map it checks if the count (the value in the pair) is equal to 1. If so, it means this is the number that appears only once, so it assigns that number to the `single` variable and breaks out of the loop.
-
-5. Finally, it returns the `single` variable, which contains the single number that appears only once in the `nums` array.
-
+This solution effectively finds the single number by counting the occurrences of each element in the array and selecting the one with a count of 1.
 
 ### Complexity
 
-This solution effectively finds the single number by counting the occurrences of each element in the array and selecting the one with a count of 1. It has a time complexity of `O(N)` because it iterates through the `nums` array once, and it uses additional memory to store the counts in the unordered map, resulting in a space complexity of `O(N)` in the worst case, where `N` is the number of elements in the `nums` array.
+It has a time complexity of `O(N)` because it iterates through the `nums` array once, and it uses additional memory to store the counts in the unordered map, resulting in a space complexity of `O(N)` in the worst case, where `N` is the number of elements in the `nums` array.
 
 * Runtime: `O(N)`.
 * Extra space: `O(N)`.
@@ -127,18 +115,9 @@ Output:
 4
 1
 ```
+This solution utilizes bitwise XOR operation to efficiently find the single number that appears only once in the given array of numbers. By iteratively XOR-ing all the numbers in the array, the operation cancels out the duplicate numbers, leaving only the single number in the end. 
 
-### Code explanation
-
-1. The code initializes an integer variable `single` to 0. This variable will be used to keep track of the single number we are looking for.
-
-2. The loop then iterates through the `nums` array. For each element `n` in `nums`, it performs the `XOR` (`^`) operation on `single` and `n`. The `XOR` operation returns 1 if the bits being compared are different and 0 if they are the same.
-
-3. The key insight here is that XORing the same number twice results in `0` (`A ^ A = 0`), so when XORing all elements in the array, the numbers that appear twice will effectively cancel each other out, leaving only the single number that appears once in `single`.
-
-4. After iterating through all elements in `nums`, `single` will hold the value of the single number.
-
-5. Finally, it returns the `single` variable, which contains the single number that appears only once in the `nums` array.
+This approach optimizes the computation by leveraging the properties of bitwise XOR operation, which efficiently eliminates duplicates and isolates the single number in the array.
 
 ### Complexity
 

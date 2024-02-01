@@ -85,23 +85,13 @@ Output:
 648 831 560 997 192 829 986 897 424 843
 ```
 
-### Code explanation
+This solution iteratively scans through the array and swap elements to ensure that the parity (even or odd) of each element matches its index modulo 2. 
 
-1. The code iterates through the elements of `nums` using an index variable `i`.
+The algorithm iterates over each index of the array. For each index `i`, if the parity of the element at index `i` does not match `i % 2`, it implies that the element is in the wrong position. In such cases, the algorithm searches for the next element with the correct parity (i.e., even or odd) starting from index `i + 1`. Once found, it swaps the elements at indices `i` and `j`, where `j` is the index of the next element with the correct parity. 
 
-2. For each element at index `i`, it checks if the parity (even or odd) of `i` is different from the parity of the number at index `i` in the vector. If they are different, it means that the current element is in the wrong position concerning its parity.
+By performing these swaps, the algorithm ensures that each element is at the correct position based on its parity. 
 
-3. To fix this, the code goes into a nested loop with another index variable `j`, starting from `i + 1`.
-
-4. In the inner loop, it searches for an element at index `j` whose parity matches the desired parity (which is the same as `i`'s parity).
-
-5. When such an element is found, it swaps the elements at indices `i` and `j`, ensuring that the element at index `i` now has the correct parity.
-
-6. The code continues this process for all elements in the vector until it's sorted by parity.
-
-7. Finally, it returns the sorted vector.
-
-This code ensures that even-indexed elements are even, and odd-indexed elements are odd, while preserving the original order of elements within their respective parity groups.
+This approach optimizes the sorting process by performing a single pass through the array and minimizing the number of swaps required to achieve the desired parity arrangement.
 
 ### Complexity
 * Runtime: `O(N^2)`, where `N = nums.length`.
@@ -174,21 +164,9 @@ Output:
 648 831 560 997 192 829 986 897 424 843
 ```
 
-### Code explanation
+This solution uses two pointers, one starting from the beginning of the array (`evenPos`) and the other starting from the end (`oddPos`), to efficiently identify misplaced elements. 
 
-1. The code initializes `evenPos` to 0, which will track the even positions in the array, and `oddPos` to N - 1, which will track the odd positions.
-
-2. It iterates through the array using `evenPos`. While `evenPos` is less than the length of the array (`N`), it looks for the first odd number by checking `nums[evenPos] % 2 == 0`.
-
-3. If it finds an even number at an even position, it means all even numbers are already in place (even positions). In this case, the loop breaks.
-
-4. If it finds an odd number at an even position, it switches to looking for an even number at an odd position using `oddPos`. It iterates in reverse order using `oddPos` until it finds an even number by checking `nums[oddPos] % 2 == 1`.
-
-5. When both an odd number at an even position and an even number at an odd position are found, they are swapped.
-
-6. This process continues until either all even numbers are in even positions, or the loop encounters a situation where the constraints guarantee a valid solution.
-
-By the end of this process, the array `nums` will be sorted as required, with even numbers in even positions and odd numbers in odd positions. 
+By incrementing `evenPos` by 2 until an odd element is found and decrementing `oddPos` by 2 until an even element is found, the algorithm can swap these elements to ensure that even-indexed elements contain even values and odd-indexed elements contain odd values. This process iterates until all even and odd elements are correctly positioned.
 
 ### Complexity
 
