@@ -79,6 +79,7 @@ latex_elements = {
                     \usepackage[defaultsans]{lato}
                     \usepackage{inconsolata}
                     \addto\captionsenglish{\renewcommand{\contentsname}{Contents}}
+                    \setcounter{tocdepth}{1}
                 ''',
 
     # Latex figure (float) alignment

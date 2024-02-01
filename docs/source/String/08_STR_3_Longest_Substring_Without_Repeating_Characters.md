@@ -89,7 +89,7 @@ Output:
 
 This solution efficiently finds the length of the longest substring without repeating characters. 
 
-It utilizes a sliding window approach to track the starting index of the current substring and an unordered map to store the position of the characters encountered so far. By updating the starting index when a repeating character is encountered, it ensures that the current substring contains only unique characters. 
+It utilizes a {index}`sliding window` approach to track the starting index of the current substring and an unordered map to store the position of the characters encountered so far. By updating the starting index when a repeating character is encountered, it ensures that the current substring contains only unique characters. 
 
 This approach optimizes the computation of the length of the longest substring by efficiently handling the sliding window and updating the length accordingly, resulting in an overall efficient solution.
 
