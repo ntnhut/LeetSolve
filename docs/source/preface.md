@@ -21,12 +21,18 @@ By immersing yourself in the challenges and insights shared in this book, you wi
 
 As you embark on this journey, remember that every challenge you encounter is an opportunity for growth. Embrace the complexities, learn from each solution, and let the knowledge you gain propel you to new heights in your programming career.
 
-To my invaluable previewers and proofreaders, especially Phùng Phú Tài and Alexander Volkodav. Your dedication, insights, and attention to detail have shaped The Problem Solver's Guide To Coding into its final form. Thank you for your invaluable contributions and unwavering support.
-
 Thank you for joining me on this expedition. 
 
 **May your code be elegant, your algorithms efficient, and your programming journey genuinely transformative.**
 
 Happy coding!
+
+## Acknowledgement
+
+To my invaluable previewers and proofreaders, especially Phùng Phú Tài and Alexander Volkodav. Your dedication, insights, and attention to detail have shaped The Problem Solver's Guide To Coding into its final form. 
+
+Thank you for your invaluable contributions and unwavering support.
+
+Copenhagen, February 2024.
 
 Nhut Nguyen, Ph.D.
