@@ -16,9 +16,12 @@ What sets this book apart is its focus on **practicality**. The challenges prese
 
 Moreover, my weekly sharing of articles through my blog [leetsolve.com](https://leetsolve.com) with various developer communities has refined the content and established a connection with a diverse group of programming enthusiasts.
 
+
 By immersing yourself in the challenges and insights shared in this book, you will not only prepare for coding interviews but also cultivate a mindset beyond the scope of a job interview. You will become a **problem solver**, a **strategic thinker**, and a **proficient C++ programmer**.
 
 As you embark on this journey, remember that every challenge you encounter is an opportunity for growth. Embrace the complexities, learn from each solution, and let the knowledge you gain propel you to new heights in your programming career.
+
+To my invaluable previewers and proofreaders, especially Phùng Phú Tài and Alexander Volkodav. Your dedication, insights, and attention to detail have shaped The Problem Solver's Guide To Coding into its final form. Thank you for your invaluable contributions and unwavering support.
 
 Thank you for joining me on this expedition. 
 

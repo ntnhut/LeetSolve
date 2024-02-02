@@ -79,22 +79,10 @@ Output:
 [][1,]
 ```
 
-### Code explanation
-
-1. The code initializes an empty vector of vectors called `powerset` to store the subsets. It starts with an initial subset containing an empty vector, representing the empty set: `{{}}`.
-
-2. Within the loop, it creates a new vector of vectors called `newSubsets` to store subsets that include the `i`-th element of `nums`.
-
-3. It iterates through the existing subsets in `powerset`. For each subset, it creates a copy of it (represented by the `subset` variable), adds the `i`-th element from `nums` to the copied subset, and pushes the modified subset into the `newSubsets` vector.
-
-4. After processing all existing subsets, the code adds the contents of `newSubsets` to the `powerset` vector. This effectively combines the current subsets with subsets that include the `i`-th element of `nums`.
-
-5. It repeats steps 2-4 until all elements in `nums` have been considered.
-
-6. Finally, the code returns the `powerset`, which now contains all possible subsets of `nums`.
+This solution generates subsets by iteratively adding each element of `nums` to the existing subsets and accumulating the results.
 
 ### Complexity
-This code essentially generates subsets by iteratively adding each element of `nums` to the existing subsets and accumulating the results. The time complexity of this code is `O(2^N)`, where `N` is the number of elements in `nums`, as it generates all possible subsets. The space complexity is also `O(2^N)` due to the space required to store the subsets.
+The time complexity of this code is `O(2^N)`, where `N` is the number of elements in `nums`, as it generates all possible subsets. The space complexity is also `O(2^N)` due to the space required to store the subsets.
 
 * Runtime: `O(2^N)`.
 * Extra space: `O(2^N)`.

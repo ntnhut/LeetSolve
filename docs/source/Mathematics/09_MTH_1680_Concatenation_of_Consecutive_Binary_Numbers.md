@@ -89,26 +89,10 @@ Output:
 505379714
 ```
 
-### Code explanation
-
-1. The code initializes an unsigned long long variable `result` to 1. This variable will store the concatenated binary representation.
-
-2. It starts a loop from `2` to `n` (inclusive), representing the integers to be included in the concatenated binary representation.
-
-3. The code calculates the number of bits required to represent the current integer `i` in binary using `std::log2(i) + 1`. This gives you the number of bits needed to represent `i` in binary.
-
-4. It updates the `result` as follows:
-   - Left-shifts `result` by the number of bits required for the current integer `i` using `result << num_bits`.
-   - Adds the binary representation of `i` to the left-shifted `result`.
-
-5. The code takes the result modulo `10^9 + 7` to ensure the final result fits within a specified range.
-
-6. It repeats the loop for all integers from `2 to `n`, updating the `result` in each iteration.
-
-7. Finally, return the calculated `result`.
+This solution efficiently calculates the concatenated binary representation of integers from `1` to `n`, using bitwise operations and modular arithmetic. 
 
 ### Complexity
-In summary, this code efficiently calculates the concatenated binary representation of integers from `1` to `n`, using bitwise operations and modular arithmetic. The time complexity is `O(n*logn)`, where `n` is the input integer, making it a reasonably efficient solution.
+The time complexity is `O(n*logn)`, where `n` is the input integer, making it a reasonably efficient solution.
 
 * Runtime: `O(n*logn)`.
 * Extra space: `O(1)`.

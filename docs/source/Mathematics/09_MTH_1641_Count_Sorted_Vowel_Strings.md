@@ -101,28 +101,10 @@ Output:
 15
 66045
 ```
-### Code explanation
-
-The code uses dynamic programming to calculate the count of valid vowel strings of length `n`. Here's how it works:
-
-1. It initializes five variables, `a`, `e`, `i`, `o`, and `u`, to 1. Each of these variables will represent the count of strings ending with the respective vowel ('a', 'e', 'i', 'o', 'u').
-
-2. The code enters a `while` loop that continues until `n` becomes 1. This loop calculates the counts of valid vowel strings of increasing lengths iteratively.
-
-3. In each iteration of the loop, it updates the counts of vowel strings as follows:
-   - `o += u`: The count of strings ending with `'o'` is incremented by the count of strings ending with `'u'`.
-   - `i += o`: The count of strings ending with `'i'` is incremented by the count of strings ending with `'o'`.
-   - `e += i`: The count of strings ending with `'e'` is incremented by the count of strings ending with `'i'`.
-   - `a += e`: The count of strings ending with `'a'` is incremented by the count of strings ending with `'e'`.
-
-4. It decrements `n` by 1 in each iteration to move towards calculating the counts for strings of shorter length.
-
-5. After the loop exits, the sum of counts in all five variables (`a`, `e`, `i`, `o`, and `u`) represents the total number of valid vowel strings of length `n`.
-
-6. The code returns the sum of all five variables, which is the count of valid vowel strings of length `n`.
+This solution efficiently computes the count of vowel strings of length `n` using dynamic programming, updating the counts based on the previous lengths to avoid redundant calculations. 
 
 ### Complexity
-This solution efficiently computes the count of vowel strings of length `n` using dynamic programming, updating the counts based on the previous lengths to avoid redundant calculations. The time complexity of this code is `O(n)`, making it an efficient solution for this problem.
+The time complexity of this code is `O(n)`, making it an efficient solution for this problem.
 
 * Runtime: `O(n)`.
 * Extra space: `O(1)`.
