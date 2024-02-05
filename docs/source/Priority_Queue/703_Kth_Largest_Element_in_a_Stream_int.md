@@ -96,7 +96,6 @@ Since `_nums` is sorted in non-ascending order, the `k`-th largest element is al
 This approach optimizes the `add` operation by leveraging the sorted nature of the data structure, resulting in efficient retrieval of the `k`-th largest element.
 
 ### Complexity
-The time complexity of adding an element in this implementation is `O(N)`, where `N` is the number of elements in the vector. However, finding the `k`-th largest element (after adding) is an `O(1)` operation, as you are directly accessing the `k`-th largest element from the sorted vector.
 
 * Runtime: for the constructor `O(N*logN)`, where `N = nums.length`. For the `add` method, `O(N)`.
 * Extra space: `O(1)`.
@@ -160,7 +159,6 @@ Upon initialization, the constructor populates the priority queue with the eleme
 Finally, it returns the top element of the priority queue, which represents the kth largest element. This approach leverages the properties of a min-heap to efficiently track the kth largest element in the collection, resulting in an overall efficient solution.
 
 ### Complexity
-The time complexity of adding an element is `O(logN)`, where `N` is the number of elements in the priority queue. Finding the `k`-th largest element (after adding) is an `O(1)` operation, as you are directly accessing the top element of the priority queue.
 
 * Runtime: for the constructor, `O(N*logN)`, where `N = nums.length`. For the `add` method, `O(logN)`.
 * Extra space: `O(1)`.

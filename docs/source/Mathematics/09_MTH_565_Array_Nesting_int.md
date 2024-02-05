@@ -104,8 +104,7 @@ Output:
 This solution efficiently identifies and calculates the length of array nesting sequences within the given array `nums`. It uses a boolean array `visited` to avoid revisiting elements.
 
 ### Complexity
-Its time complexity is `O(n)` where `n` is the size of the `nums` array.
 
-* Runtime: `O(n)`.
+* Runtime: `O(n)` where `n` is the size of the `nums` array.
 * Extra space: much less than `O(n)` since [`vector<bool>`](https://en.cppreference.com/w/cpp/container/vector_bool) is optimized for space efficiency.
 

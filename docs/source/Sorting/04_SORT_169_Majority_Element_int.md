@@ -133,7 +133,6 @@ Output:
 The code uses the {index}`std::nth_element` function to rearrange the elements in the `nums` vector such that the element at index `mid` will be in its correct sorted position, and all elements before it will be less than or equal to it, while all elements after it will be greater than or equal to it.
 
 ### Complexity
-By using `std::nth_element`, the code avoids fully sorting the entire vector, which makes it more efficient. 
 
 * Runtime: `O(n)`, where `n = nums.length`.
 * Extra space: `O(1)`.

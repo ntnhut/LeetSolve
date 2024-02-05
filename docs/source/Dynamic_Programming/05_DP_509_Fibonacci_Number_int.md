@@ -106,7 +106,6 @@ Output:
 This solution uses dynamic programming to avoid redundant calculations by storing and reusing previously computed Fibonacci numbers.
 
 ### Complexity
- It has a time complexity of `O(n)` because it iterates through the values from 2 to `n` once, calculating each Fibonacci number once. Additionally, it has a space complexity of `O(n)` due to the `f` array used to store intermediate results.
 
 * Runtime: `O(n)`.
 * Extra space: `O(n)`.
@@ -145,7 +144,6 @@ Output:
 This solution calculates the nth Fibonacci number iteratively using two variables to keep track of the last two Fibonacci numbers. 
 
 ### Complexity
-This solution effectively calculates the Fibonacci sequence without the need for an array to store intermediate results. It has a time complexity of `O(n)` because it iterates through the values from 2 to `n` once, calculating each Fibonacci number once. It also has a space complexity of `O(1)` because it uses only a constant amount of additional memory to store the variables `f0`, `f1`, and `f2`.
 
 * Runtime: `O(n)`.
 * Extra space: `O(1)`.

@@ -131,9 +131,8 @@ The `largestDivisibleSubsetOf` function recursively computes the largest divisib
 This approach optimizes the computation by avoiding repeated calculations and leveraging dynamic programming techniques to efficiently explore the solution space.
 
 ### Complexity
-The time complexity of this solution is `O(n^2)`, where `n` is the number of elements in the `nums` vector. The recursive function may be called multiple times for each element in `nums`, leading to a quadratic time complexity. However, it optimizes the process by storing and reusing previously computed subsets using the `_map` data structure.
 
-* Runtime: `O(n^2)`.
+* Runtime: `O(n^2)`, where `n` is the number of elements in the `nums` vector.
 * Extra space: `O(n^2)`.
 
 ## Solution 2: Store only the representative of the `maxSubset`
@@ -234,9 +233,8 @@ It iterates through the sorted array of numbers, updating the size of the larges
 This approach optimizes the computation by avoiding redundant calculations and leveraging dynamic programming techniques to efficiently explore the solution space.
 
 ### Complexity
-The time complexity of this solution is `O(n^2)`, where `n` is the number of elements in the `nums` vector. The nested loop searches for previous elements with divisibility relationships, which may lead to quadratic time complexity in the worst case. However, it efficiently maintains information about subset sizes and elements, reducing redundant calculations and improving performance.
 
-* Runtime: `O(n^2)`.
+* Runtime: `O(n^2)`, where `n` is the number of elements in the `nums` vector. The nested loop searches for previous elements with divisibility relationships, which may lead to quadratic time complexity in the worst case. However, it efficiently maintains information about subset sizes and elements, reducing redundant calculations and improving performance.
 * Extra space: `O(n)`.
 
 ## Key takeaway

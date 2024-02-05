@@ -104,7 +104,6 @@ Output:
 This solution efficiently computes the count of vowel strings of length `n` using dynamic programming, updating the counts based on the previous lengths to avoid redundant calculations. 
 
 ### Complexity
-The time complexity of this code is `O(n)`, making it an efficient solution for this problem.
 
 * Runtime: `O(n)`.
 * Extra space: `O(1)`.

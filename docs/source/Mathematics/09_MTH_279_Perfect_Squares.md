@@ -93,9 +93,8 @@ Output:
 The key idea of this algorithm is to build the solution incrementally, starting from the smallest perfect squares, and use memoization to store and retrieve intermediate results. By doing this, it efficiently finds the minimum number of perfect squares required to sum up to `n`. 
 
 ### Complexity
-The time complexity of this solution is `O(n*sqrt(n))` due to the nested loops and recursive calls, and the space complexity is `O(n)` for the memoization map `ns`.
 
-* Runtime: `O(n*sqrt(n)) = O(n^(3/2))`.
+* Runtime: `O(n*sqrt(n)) = O(n^(3/2))` due to the nested loops and recursive calls.
 * Extra space: `O(n)`.
 
 ## Solution 2: Number Theory
@@ -173,9 +172,8 @@ Output:
 This solution finds the minimum number of perfect squares required to sum up to the given integer `n` by first applying mathematical properties and Legendre's three-square theorem to simplify the problem and then using a loop to find possible combinations of two perfect squares. 
 
 ### Complexity
-The time complexity of this solution is `O(sqrt(n))`, and it does not require dynamic programming or memoization.
 
-* Runtime: `O(sqrt(n)) = O(n^(1/2))`.
+* Runtime: `O(sqrt(n)) = O(n^(1/2))`, and it does not require dynamic programming or memoization.
 * Extra space: `O(1)`.
 
 ## Solution 3: Further performance improvement

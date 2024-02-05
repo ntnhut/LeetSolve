@@ -166,7 +166,6 @@ Then, it iterates through the grid, starting from the second row and second colu
 Finally, the value at `dp[m-1][n-1]` contains the total number of unique paths to reach the bottom-right corner of the grid, which is returned as the result.
 
 ### Complexity
-The time complexity of this solution is `O(m*n)`, as it iterates through all cells of the grid once to compute the unique paths efficiently, making it a much more efficient approach compared to the recursive solution.
 
 * Runtime: `O(m*n)`, where `m x n` is the size of the grid.
 * Extra space: `O(m*n)`.
@@ -220,9 +219,8 @@ Finally, the value at `dp[n-1]` contains the total number of unique paths to rea
 
 
 ### Complexity
-The time complexity of this solution is `O(m*n)`, where `m` and `n` are the dimensions of the grid, as it iterates through all cells of the grid once to compute the unique paths efficiently. It's an optimized version of the previous solution that uses a 1D array instead of a 2D array.
 
-* Runtime `O(m*n)`.
+* Runtime `O(m*n)`, where `m x n` is the size of the grid.
 * Memory `O(n)`.
 
 ## Final thought

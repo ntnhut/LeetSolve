@@ -84,9 +84,8 @@ Output:
 This solution leverages the concept of the median to minimize the total absolute differences between each element and the median, resulting in the minimum number of moves to equalize the array. 
 
 ### Complexity
-The time complexity of this code is `O(n*logn)` due to the sorting step, where `n` is the number of elements in the `nums` array.
 
-* Runtime: `O(n*logn)`.
+* Runtime: `O(n*logn)` due to the sorting step, where `n` is the number of elements in the `nums` array.
 * Extra space: `O(1)`.
 
 
@@ -128,7 +127,6 @@ Output:
 This solution efficiently finds the median of the `nums` array in linear time using `std::nth_element` and then calculates the minimum number of moves to make all elements equal to this median. 
 
 ### Complexity
-The overall time complexity of this code is `O(n)`.
 
 * Runtime: `O(n)`, where `n = nums.length`.
 * Extra space: `O(1)`.

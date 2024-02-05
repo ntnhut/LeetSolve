@@ -92,7 +92,6 @@ Output:
 This solution efficiently calculates the concatenated binary representation of integers from `1` to `n`, using bitwise operations and modular arithmetic. 
 
 ### Complexity
-The time complexity is `O(n*logn)`, where `n` is the input integer, making it a reasonably efficient solution.
 
 * Runtime: `O(n*logn)`.
 * Extra space: `O(1)`.

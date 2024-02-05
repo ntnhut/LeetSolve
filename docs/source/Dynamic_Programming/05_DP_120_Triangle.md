@@ -90,9 +90,8 @@ The algorithm continues this process until it reaches the last row of the `trian
 
 
 ### Complexity
-The time complexity of this solution is `O(n^2)`, where `n` is the number of rows in the `triangle`. It iterates through each element in the triangle and computes the minimum path sum efficiently using dynamic programming.
 
-* Runtime: `O(n^2)`.
+* Runtime: `O(n^2)`, where `n` is the number of rows in the `triangle`.
 * Extra space: `O(n^2)`.
 
 ## Solution 2: Store only the minimum paths of each row
@@ -142,9 +141,8 @@ The algorithm continues this process until it reaches the last row of the triang
 
 
 ### Complexity
-The time complexity of this solution is `O(n^2)`, where `n` is the number of rows in the triangle. It iterates through each element in the triangle and computes the minimum path sum efficiently using dynamic programming.
 
-* Runtime: `O(n^2)`.
+* Runtime: `O(n^2)`, where `n` is the number of rows in the triangle.
 * Extra space: `O(n)`.
 
 

@@ -85,7 +85,6 @@ It accomplishes this by first computing two arrays: `prefix` and `suffix`. The `
 This approach optimizes the computation by breaking down the problem into smaller subproblems and leveraging the precomputed prefix and suffix arrays to efficiently compute the final result.
 
 ### Complexity
-The time complexity of this code is `O(n)` because it iterates through the `nums` vector three times in separate loops, and each loop has a linear time complexity with respect to the length of `nums`. The space complexity is `O(n)` as well because it uses additional vectors (`prefix` and `suffix`) of the same length as `nums`.
 
 * Runtime: `O(n)`, where `n = nums.length`.
 * Extra space: `O(n)`.
@@ -136,7 +135,6 @@ Output:
 This code efficiently calculates the products of all elements in the `nums` vector except for the element at each index using two passes through the array. The first pass calculates products to the left of each element, and the second pass calculates products to the right of each element.
 
 ### Complexity
-The time complexity is `O(n)`, and the space complexity is `O(1)` as it only uses a single additional integer (`suffix`) and reuses the `answer` vector to store the final results.
 
 * Runtime: `O(n)`, where `n = nums.length`.
 * Extra space: `O(1)`.

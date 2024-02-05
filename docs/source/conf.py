@@ -101,3 +101,12 @@ latex_documents = [
 latex_docclass = {
    'book': 'book',
 }
+
+# To build
+# use master_doc = 'index_book1'
+# \docs\source\% python -m sphinx -T -b html -d _build/doctrees -D language=en . ./html
+# \docs\source\% python -m sphinx -T -b latex -d _build/doctrees -D language=en . ./pdf
+# move Preface to \fronmatter (see leetsolve.tex)
+# put Thank you and About the author in \backmatter
+# set \date{}
+# \docs\source\pdf% latexmk -r latexmkrc -pdf -f -dvi- -ps- -jobname=leetsolve -interaction=nonstopmode

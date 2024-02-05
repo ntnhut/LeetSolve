@@ -73,8 +73,6 @@ This solution effectively finds the single number by counting the occurrences of
 
 ### Complexity
 
-It has a time complexity of `O(N)` because it iterates through the `nums` array once, and it uses additional memory to store the counts in the unordered map, resulting in a space complexity of `O(N)` in the worst case, where `N` is the number of elements in the `nums` array.
-
 * Runtime: `O(N)`.
 * Extra space: `O(N)`.
 
@@ -120,8 +118,6 @@ This solution utilizes bitwise XOR operation to efficiently find the single numb
 This approach optimizes the computation by leveraging the properties of bitwise XOR operation, which efficiently eliminates duplicates and isolates the single number in the array.
 
 ### Complexity
-
-This solution is highly efficient and has a time complexity of `O(N)`, where `N` is the number of elements in the `nums` array, because it iterates through the array once. Additionally, it has a space complexity of `O(1)` because it uses a constant amount of extra space to store the `single` variable, regardless of the size of the input array.
 
 * Runtime: `O(N)`.
 * Extra space: `O(1)`.

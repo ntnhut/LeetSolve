@@ -72,9 +72,8 @@ By considering all combinations of lines and calculating the area using the form
 This approach optimizes the computation by exhaustively considering all possible pairs of lines and efficiently computing the area without requiring additional space.
 
 ### Complexity
-This solution has a time complexity of `O(n^2)`, where `n` is the number of elements in the `height` vector. This is because it checks all possible pairs of vertical lines, resulting in a quadratic time complexity. The space complexity is `O(1)`, as it only uses a constant amount of extra space to store the `maxA` variable.
 
-* Runtime: `O(n^2)`, where `n = height.length`.
+* Runtime: `O(n^2)`, where `n = height.length`. This is because it checks all possible pairs of vertical lines, resulting in a quadratic time complexity.
 * Extra space: `O(1)`.
 
 ## Solution 2: Two pointers
@@ -150,8 +149,6 @@ At each step, it calculates the area using the formula `(min(height[i], height[j
 This approach optimizes the computation by avoiding redundant calculations and efficiently exploring the solution space using two pointers.
 
 ### Complexity
-
-This solution has a time complexity of `O(n)`, where `n` is the number of elements in the `height` vector. It iterates through the elements once using the two-pointer approach, resulting in a linear time complexity. The space complexity is `O(1)`, as it only uses a constant amount of extra space to store the `maxA`, `i`, and `j` variables.
 
 * Runtime: `O(n)`, where `n = height.length`.
 * Extra space: `O(1)`.

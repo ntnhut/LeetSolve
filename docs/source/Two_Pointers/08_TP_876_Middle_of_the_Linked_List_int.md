@@ -85,9 +85,8 @@ Output:
 This solution first counts the total number of nodes in the linked list, and then it iterates to the middle node using the `count` variable. 
 
 ### Complexity
-It has a time complexity of `O(N)`, where `N` is the number of nodes in the linked list, as it performs two passes through the list. The space complexity is `O(1)` because it uses a constant amount of additional space regardless of the size of the linked list.
 
-* Runtime: `O(N)`.
+* Runtime: `O(N)`, where `N` is the number of nodes in the linked list.
 * Extra space: `O(1)`.
 
 ## Solution 2: {index}`Fast and Slow` pointers
@@ -153,9 +152,8 @@ Finally, the algorithm returns the slow pointer, which points to the middle node
 This approach optimizes the computation by traversing the linked list only once and using two pointers to efficiently locate the middle node.
 
 ### Complexity
-This solution effectively finds the middle node in a single pass through the linked list, making it more efficient than the previous solution. It has a time complexity of `O(N)`, where `N` is the number of nodes in the linked list, and a space complexity of `O(1)` since it uses only two pointers regardless of the list's size.
 
-* Runtime: `O(N)`.
+* Runtime: `O(N)`, where `N` is the number of nodes in the linked list.
 * Extra space: `O(1)`.
 
 ## OBS!

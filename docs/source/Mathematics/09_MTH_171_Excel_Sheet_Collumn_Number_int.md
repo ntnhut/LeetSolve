@@ -108,7 +108,6 @@ Output:
 The solution calculates the decimal representation of the Excel column title by processing each character and updating the result. 
 
 ### Complexity
-It has a time complexity of `O(N)`, where `N` is the length of `columnTitle`, as it iterates through the characters once, and a space complexity of `O(1)` since it uses a constant amount of extra space.
 
 * Runtime: `O(N)`, where `N = columnTitle.length`.
 * Extra space: `O(1)`.

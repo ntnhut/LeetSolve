@@ -82,7 +82,6 @@ Output:
 This solution generates subsets by iteratively adding each element of `nums` to the existing subsets and accumulating the results.
 
 ### Complexity
-The time complexity of this code is `O(2^N)`, where `N` is the number of elements in `nums`, as it generates all possible subsets. The space complexity is also `O(2^N)` due to the space required to store the subsets.
 
-* Runtime: `O(2^N)`.
-* Extra space: `O(2^N)`.
+* Runtime: `O(2^N)`, where `N` is the number of elements in `nums`, as it generates all possible subsets.
+* Extra space: `O(2^N)` due to the space required to store the subsets.

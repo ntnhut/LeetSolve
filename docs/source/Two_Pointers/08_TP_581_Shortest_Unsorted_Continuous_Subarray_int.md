@@ -80,11 +80,8 @@ Output:
 This solution compares the original array with a sorted version of itself to identify the unsorted boundaries efficiently.
 
 ### Complexity
-It has a time complexity of `O(N*logN)` due to the sorting step, where `N` is the number of elements in the `nums` vector. The subsequent linear pass to find the left and right boundaries takes `O(N)` time. Therefore, the overall time complexity is dominated by the sorting step. 
 
-The space complexity is `O(N)` because it requires additional space to store the sorted version of the array.
-
-* Runtime: `O(N*logN)`.
+* Runtime: `O(N*logN)` due to the sorting step, where `N` is the number of elements in the `nums` vector.
 * Extra space: `O(N)`.
 
 ## Solution 2: Comparing only maximum and minimum elements
@@ -150,9 +147,8 @@ Finally, it returns the length of the unsorted subarray, calculated as `right - 
 This approach optimizes the computation by traversing the array only twice, once from the end and once from the beginning, to efficiently determine the boundaries of the unsorted subarray.
 
 ### Complexity
-This solution efficiently identifies the left and right boundaries of the unsorted subarray without explicitly sorting the entire array. It has a time complexity of `O(N)`, where `N` is the number of elements in the `nums` vector, as it performs two linear passes through the array. The space complexity is `O(1)` because it uses a constant amount of additional space regardless of the size of the input array.
 
-* Runtime: `O(N)`.
+* Runtime: `O(N)`, where `N` is the number of elements in the `nums` vector.
 * Extra space: `O(1)`.
 
 ## Conclusion

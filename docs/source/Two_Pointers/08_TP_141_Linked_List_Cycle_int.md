@@ -99,7 +99,6 @@ By iterating through the linked list and storing pointers to visited nodes along
 This approach optimizes the computation by leveraging the hash map to efficiently detect cycles in the linked list without requiring additional space proportional to the length of the list.
 
 ### Complexity
-This solution has a time complexity of `O(N)`, where `N` is the number of nodes in the linked list. In the worst case, it needs to traverse the entire linked list to detect a cycle. The space complexity is also `O(N)` because, in the worst case, it stores `N` nodes in the hash map.
 
 * Runtime: `O(N)`, where `N` is the length of the linked list.
 * Extra space: `O(N)`.
@@ -179,9 +178,8 @@ If the fast pointer catches up with the slow pointer at any point during travers
 This approach optimizes the computation by simultaneously advancing two pointers at different speeds to efficiently detect cycles in the linked list.
 
 ### Complexity
-This solution is highly efficient with a time complexity of `O(N)`, where `N` is the number of nodes in the linked list. The space complexity is `O(1)` because it uses a constant amount of extra space, regardless of the size of the linked list. It achieves cycle detection without using additional data structures, making it an optimal solution for this problem.
 
-* Runtime: `O(N)`.
+* Runtime: `O(N)`, where `N` is the number of nodes in the linked list.
 * Extra space: `O(1)`.
 
 

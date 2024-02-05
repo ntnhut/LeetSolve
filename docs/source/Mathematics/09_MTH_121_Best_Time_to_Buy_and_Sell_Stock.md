@@ -62,7 +62,6 @@ Output:
 This solution uses a brute force approach to find the maximum profit. It compares the profit obtained by buying on each day with selling on all subsequent days and keeps track of the maximum profit found. 
 
 ### Complexity
-The time complexity of this code is `O(N^2)`, where `N` is the number of days (elements in `prices`), because it involves nested loops. The space complexity is `O(1)` as it uses a constant amount of extra space.
 
 * Runtime: `O(N^2)`, where `N = prices.length`.
 * Extra space: `O(1)`.
@@ -115,7 +114,6 @@ Output:
 This solution optimally finds the maximum profit by iterating through the array only once, avoiding the need for nested loops. 
 
 ### Complexity
-The time complexity of this code is `O(N)`, where `N` is the number of days (elements in `prices`), making it more efficient than the brute force approach. The space complexity is `O(1)` as it uses only a constant amount of extra space.
 
 * Runtime: `O(N)`, where `N = prices.length`.
 * Extra space: `O(1)`.
@@ -159,7 +157,6 @@ Output:
 This solution efficiently computes the maximum profit by iterating through the array only once, maintaining the minimum buying price and updating the maximum profit accordingly.
 
 ### Complexity
-This code has a time complexity of `O(N)`, where `N` is the number of days (elements in `prices`). The space complexity is `O(1)` as it uses only a constant amount of extra space to store the variables `maxProfit` and `minPrice`.
 
 * Runtime: `O(N)`, where `N = prices.length`.
 * Extra space: `O(1)`.

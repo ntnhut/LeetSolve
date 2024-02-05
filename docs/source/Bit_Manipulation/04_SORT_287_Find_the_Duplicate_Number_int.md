@@ -157,18 +157,9 @@ Output:
 3
 ```
 
-### Code explanation
-
-1. The code creates a `bitset` named `visited` with a size of 100001, which is large enough to accommodate the possible values in the `nums` vector.
-
-2. For each element `a` in `nums`, it checks if the corresponding bit in the `visited` `bitset` is set (1). If it is, the code returns `a` as it is the duplicate.
-
-3. If the bit is not set, the code sets the corresponding bit in the `visited` `bitset` to 1 to mark it as visited.
-
-4. If no duplicates are found during the loop, it returns 0 as a default value.
+This code efficiently uses a bitset to keep track of visited elements and quickly detects any duplicate element encountered during the iteration.
 
 ### Complexity
-This code efficiently uses a bitset to keep track of visited elements and quickly detects any duplicate element encountered during the iteration. The time complexity is `O(n)` because it makes a single pass through the input vector.
 
 * Runtime: `O(n)`.
 * Extra space: `O(1)`. 

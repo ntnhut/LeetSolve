@@ -66,12 +66,9 @@ By iterating through the string and populating the unordered map with the count 
 This approach optimizes the computation by efficiently tracking the count of each character and identifying the first non-repeating character without requiring additional space proportional to the length of the string.
 
 ### Complexity
-This solution has a time complexity of `O(n)`, where `n` is the length of the string `s`, because it iterates through the string twice: once to count the characters and once to find the first unique character. 
 
-It also has a space complexity of `O(k)`, where `k` is the number of distinct characters in the string, as it stores character counts in the `count` unordered map. As the problem considers only lowercase English letters, `k = 26`, you can give it `O(1)` complexity.
-
-* Runtime: `O(n)`.
-* Extra space: `O(1)`.
+* Runtime: `O(n)`, where `n` is the length of the string `s`.
+* Extra space: `O(1)` as the problem considers only 26 lowercase English letters.
 
 ## Solution 2: Using an array to store the appearances
 

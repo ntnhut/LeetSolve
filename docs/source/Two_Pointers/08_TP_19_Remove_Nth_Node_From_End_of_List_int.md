@@ -101,7 +101,6 @@ By iterating through the linked list and storing pointers to each node in the ve
 This approach optimizes the computation by sacrificing space efficiency for simplicity of implementation and ease of manipulation of linked list elements.
 
 ### Complexity
-This solution has a time complexity of `O(N)`, where `N` is the number of nodes in the linked list. This is because it needs to traverse the entire linked list once to create the `nodes` vector. The space complexity is also `O(N)` since it uses additional space to store the nodes in the vector.
 
 * Runtime: `O(N)`, where `N` is the number of nodes in the list.
 * Extra space: `O(N)`.
@@ -180,7 +179,6 @@ Initially, both pointers start from the head of the list. The fast pointer moves
 This approach optimizes the computation by traversing the linked list only once and using two pointers to efficiently locate the node to be removed.
 
 ### Complexity
-This solution has a time complexity of `O(N)`, where `N` is the number of nodes in the linked list. It traverses the linked list twice but does so in a single pass. The space complexity is `O(1)` because it uses a constant amount of additional space, regardless of the size of the linked list.
 
 * Runtime: `O(N)`, where `N` is the number of nodes in the list.
 * Extra space: `O(1)`.

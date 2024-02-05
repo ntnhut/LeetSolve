@@ -170,7 +170,5 @@ By incrementing `evenPos` by 2 until an odd element is found and decrementing `o
 
 ### Complexity
 
-This approach has a time complexity of `O(N)`, making it more efficient than the sorting method above.
-
 * Runtime: `O(N)`, where `N = nums.length`.
 * Extra space: `O(1)`.

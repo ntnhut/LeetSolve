@@ -96,7 +96,6 @@ Then, it iterates through the grid starting from the second row and second colum
 Finally, the value at `np[row-1][col-1]` contains the total number of unique paths to reach the bottom-right corner of the grid, which is returned as the result.
 
 ### Complexity
-The time complexity of this solution is `O(m*n)`, where `m` and `n` are the dimensions of the grid, as it iterates through all cells of the grid once to compute the unique paths efficiently. The use of dynamic programming avoids redundant calculations and makes this solution efficient even for large grids.
 
-* Runtime: `O(m*n)`.
+* Runtime: `O(m*n)`, where `m` and `n` are the dimensions of the grid.
 * Extra space: `O(m*n)`.

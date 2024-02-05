@@ -147,7 +147,6 @@ Output:
 This solution first sorts the intervals and then iterates through them while keeping track of whether each interval is covered by others or not. The final result is the count of intervals that are not covered, and it is returned as the output. 
 
 ### Complexity
-The time complexity of this solution is `O(N*logN)`, where `N` is the number of intervals, due to the initial sorting step. The subsequent iteration through the sorted intervals is linear in time.
 
 * Runtime: `O(N*logN)`, where `N = intervals.length`.
 * Extra space: `O(1)`.
