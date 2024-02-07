@@ -26,7 +26,7 @@ Thank you for joining me on this expedition.
 
 **May your code be elegant, your algorithms efficient, and your programming journey genuinely transformative.**
 
-*Happy coding!*
+> *Happy coding!*
 
 
 Copenhagen, February 2024.
