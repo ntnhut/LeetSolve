@@ -79,6 +79,7 @@ latex_elements = {
                     \usepackage{inconsolata}
                     \addto\captionsenglish{\renewcommand{\contentsname}{Contents}}
                     \setcounter{tocdepth}{1}
+                    \date{}
                 ''',
 
     # Latex figure (float) alignment

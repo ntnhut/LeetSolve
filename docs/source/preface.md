@@ -2,7 +2,7 @@
 
 Welcome to **The Problem Solver's Guide To Coding**, a comprehensive journey to master **problem-solving**, **data structures**, **algorithms**, and **programming techniques** using **C++**. 
 
-This book results from my experiences, challenges, and successes in my programming career. It started with a discovery during a pivotal moment in my career change in the summer of 2021.
+This book results from my experiences, challenges, failures and successes in my programming career. It started with a discovery during a pivotal moment in my career change in the summer of 2021.
 
 During that transitional period, I came across **LeetCode**, a platform that became my daily companion in improving my programming skills. What began as a tool for practicing new languages, specifically Golang and C#, soon evolved into a deep exploration of my most proficient language, C++. 
 
@@ -12,13 +12,11 @@ As I dove into the intricacies of these coding challenges, I realized that they 
 
 This book is not a compilation of C++ code snippets and algorithms; it's a **roadmap** designed to **elevate your programming skills**. Each chapter represents a milestone in your journey, guiding you through the complexities of data structures, algorithms, and advanced programming techniques. Whether you're a student embarking on your programming odyssey or a junior developer seeking to sharpen your skills, this book is tailored to meet your needs.
 
-What sets this book apart is its focus on **practicality**. The challenges presented here are not just exercises; most of them are **real-world coding interviews** that will stretch your understanding and push you to think critically. 
+What sets this book apart is its focus on **practicality**. The challenges presented here are not just exercises; most of them are **real coding interviews** from **FAANG** companies (Facebook, Amazon, Apple, Netflix, and Google) that will stretch your understanding and push you to think critically. 
 
 Moreover, my weekly sharing of articles through my blog [leetsolve.com](https://leetsolve.com) with various developer communities has refined the content and established a connection with a diverse group of programming enthusiasts.
 
-To my invaluable previewers and proofreaders, especially Phùng Phú Tài and Alexander Volkodav. Your dedication, insights, and attention to detail have shaped The Problem Solver's Guide To Coding into its final form. 
-
-Thank you for your invaluable contributions and unwavering support.
+To my invaluable previewers, especially Phùng Phú Tài and Alexander Volkodav. Your dedication, insights, and attention to detail have shaped The Problem Solver's Guide To Coding into its final form. Thank you for your invaluable contributions and unwavering support.
 
 **Students and developers**! By immersing yourself in the challenges and insights shared in this book, you will not only prepare for **coding interviews** but also cultivate a mindset beyond the scope of a job interview. You will become a **problem solver**, a **strategic thinker**, and a **proficient C++ programmer**.
 
