@@ -30,6 +30,9 @@ In summary, LeetCode is a valuable resource for programmers and software enginee
 
 The complexity of an algorithm is usually measured in terms of its **Big O notation**, which describes the upper bound of the algorithm's running time as a function of the input size. For example, an algorithm with a time complexity of `O(n)` will have a running time proportional to the input size. In contrast, an algorithm with a time complexity of `O(n^2)` will have a running time proportional to the square of the input size.
 
+![Comparison of Algorithm Complexities in Big O Notation](bigO.png)
+
+
 Algorithm complexity is important because it helps programmers determine their algorithms' **efficiency** and **scalability**. In general, algorithms with lower complexity are more efficient, as they require less time and resources to process larger inputs. By analyzing the time complexity of an algorithm, programmers can identify potential performance bottlenecks and optimize their code accordingly.
 
 In addition to time complexity, algorithms may also have **space complexity**, which measures the **memory** required to execute the algorithm. Space complexity is also measured in Big O notation and is important for optimizing the memory usage of an algorithm.
