@@ -181,5 +181,5 @@ This approach effectively narrows down the search space by iteratively adjusting
 
 In summary:
 
-* Runtime: `O(n*logn*log(max -min))`, where `n` is the number of rows/columns of the matrix, `max` and `min` are the maximum and minimum possible values in the matrix..
+* Runtime: `O(n*logn*log(max -min))`, where `n` is the number of rows/columns of the matrix, `max` and `min` are the maximum and minimum possible values in the matrix.
 * Extra space: `O(1)`.
