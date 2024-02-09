@@ -14,6 +14,8 @@ O_2n = 2**n
 
 # Create the plot
 plt.figure(figsize=(10, 8))
+plt.rcParams['lines.linewidth'] = 3
+plt.rcParams['font.size'] = 13
 plt.plot(n, O_2n, label='O(2^n)', linestyle=(0,(5,10)))
 plt.plot(n, O_n2, label='O(n^2)', linestyle='solid')
 plt.plot(n, O_nlogn, label='O(n log n)', linestyle='dashdot')
@@ -27,10 +29,7 @@ plt.ylabel('Time complexity')
 plt.title('Comparison of Algorithm Complexities in Big O Notation')
 plt.legend()
 plt.ylim(0, 100)
-plt.grid(True)
-# plt.yscale('log')  # Use logarithmic scale for better visualization
 
 # Display the plot
-# plt.tight_layout()
 plt.savefig("complexity_graph.png")
 plt.show()
