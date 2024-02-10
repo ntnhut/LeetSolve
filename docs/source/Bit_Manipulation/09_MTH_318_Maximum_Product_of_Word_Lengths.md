@@ -102,7 +102,7 @@ You can map a `words[i]` to the bit representation of an integer `n` by their ch
 
 Then to check if two words have common letters, you just perform the bitwise operator AND on them.
 
-For Example 1:
+### Example 1:
 
 * The word `"abcw"` is mapped to `00010000000000000000000111`.
 * The word `"baz"` is mapped to `10000000000000000000000011`.

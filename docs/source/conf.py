@@ -74,12 +74,12 @@ latex_elements = {
     # Additional stuff for the LaTeX preamble.
     #
     'preamble': r'''
-                    \usepackage{charter}
-                    \usepackage[defaultsans]{lato}
-                    \usepackage{inconsolata}
-                    \addto\captionsenglish{\renewcommand{\contentsname}{Contents}}
-                    \setcounter{tocdepth}{1}
-                ''',
+    \usepackage{charter}
+    \usepackage[defaultsans]{lato}
+    \usepackage{inconsolata}
+    \addto\captionsenglish{\renewcommand{\contentsname}{Contents}}
+    \setcounter{tocdepth}{1}
+    ''',
 
     # Latex figure (float) alignment
     #
