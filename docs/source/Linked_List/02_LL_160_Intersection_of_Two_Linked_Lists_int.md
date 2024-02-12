@@ -1,6 +1,6 @@
 # Intersection of Two Linked Lists
-
-## [Problem statement](https://leetcode.com/problems/intersection-of-two-linked-lists/)
+% Easy https://leetcode.com/problems/intersection-of-two-linked-lists/
+## Problem statement
 
 You are provided with the starting nodes of two singly linked lists, `headA` and `headB`. Your task is to find the node where these two lists intersect. If there is no point of intersection, return `null`. 
 
@@ -271,3 +271,5 @@ This improved solution finds the intersection of two linked lists by first deter
 The technique used in Solution 2 is known as the *Two-pointer* technique since you use two pointers to iterate the list at the same time.
 ```
 
+## Exercise
+[Leetcode 599. Minimum Index Sum of Two Lists](https://leetcode.com/problems/minimum-index-sum-of-two-lists/)

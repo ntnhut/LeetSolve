@@ -1,6 +1,6 @@
 # Add Two Numbers
-
-## [Problem statement](https://leetcode.com/problems/add-two-numbers/)
+% Medium https://leetcode.com/problems/add-two-numbers/
+## Problem statement
 
 
 You have two linked lists that represent non-negative integers. The digits of these numbers are stored in reverse order, with each node containing a single digit. 
@@ -137,3 +137,6 @@ This approach streamlines the addition process, resulting in a concise and strai
 
 * Runtime: `O(N)`, where `N = max(l1.length, l2.length)`.
 * Extra space: `O(1)`.
+
+## Exercise
+[Leetcode 2816. Double a Number Represented as a Linked List](https://leetcode.com/problems/double-a-number-represented-as-a-linked-list/)

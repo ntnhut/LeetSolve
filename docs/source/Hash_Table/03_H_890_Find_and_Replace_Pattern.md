@@ -1,6 +1,6 @@
 # Find and Replace Pattern
-
-## [Problem statement](https://leetcode.com/problems/find-and-replace-pattern/)
+% Medium https://leetcode.com/problems/find-and-replace-pattern/
+## Problem statement
 
 You are provided with a list of strings named `words` and a string named `pattern`. Your task is to find the strings from `words` that match the given `pattern`. The order in which you return the answers does not matter.
 

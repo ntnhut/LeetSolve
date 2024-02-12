@@ -1,6 +1,8 @@
 # Merge Two Sorted Lists
 
-## [Problem statement](https://leetcode.com/problems/merge-two-sorted-lists/)
+% Easy https://leetcode.com/problems/merge-two-sorted-lists/
+
+## Problem statement
 
 Given the starting nodes of two sorted linked lists, `list1` and `list2`, your task is to combine these lists into a single sorted linked list. 
 

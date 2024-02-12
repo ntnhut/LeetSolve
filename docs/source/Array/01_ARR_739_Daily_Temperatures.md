@@ -1,6 +1,7 @@
 # Daily Temperatures
+% Medium https://leetcode.com/problems/daily-temperatures/
 
-## [Problem statement](https://leetcode.com/problems/daily-temperatures/)
+## Problem statement
 
 You are given an array of integers `temperatures`, which represents the daily temperatures. Your task is to create an array `answer` such that `answer[i]` represents the number of days you need to wait after the i-th day to experience a warmer temperature. If there is no future day with a warmer temperature, then `answer[i]` should be set to `0`. 
 
@@ -185,3 +186,6 @@ The value `0` would help the `while` loop terminates very soon. On the other han
 In some computations, you could improve the performance by using the knowledge of the results you have computed. 
 
 In this particular problem, it can be achieved by doing it in the reversed order.
+
+## Exercise
+[Leetcode 496. Next Greater Element I](https://leetcode.com/problems/next-greater-element-i/description/)

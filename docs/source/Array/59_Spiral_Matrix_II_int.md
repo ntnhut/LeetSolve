@@ -1,6 +1,7 @@
 # Spiral Matrix II
+% Medium https://leetcode.com/problems/spiral-matrix-ii/
 
-## [Problem statement](https://leetcode.com/problems/spiral-matrix-ii/)
+## Problem statement
 
 Given a positive integer `n`, generate an `n x n` matrix filled with elements from `1` to `n^2` in spiral order.
 
@@ -116,3 +117,5 @@ This solution uses a `Direction` `enum` and boundary variables to iteratively fi
 * Runtime: `O(n^2)`, where `n x n` is the size of the matrix.
 * Extra space: `O(1)`.
 
+## Exercise
+[Leetcode 54. Spiral Matrix](https://leetcode.com/problems/spiral-matrix/)

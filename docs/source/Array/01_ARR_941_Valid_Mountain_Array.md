@@ -1,6 +1,6 @@
 # Valid Mountain Array
-
-## [Problem statement](https://leetcode.com/problems/valid-mountain-array/)
+% Easy  https://leetcode.com/problems/valid-mountain-array/
+## Problem statement
 
 You are given an array of integers `arr`, and your task is to determine whether it is a valid *mountain array*.
 
@@ -84,3 +84,6 @@ This solution iteratively checks for the two slopes of a mountain array, ensurin
 ### Complexity
 * Runtime: `O(N)`, where `N = arr.length`.
 * Extra space: `O(1)`.
+
+## Exercise
+[Leetcode 2865. Beautiful Towers I](https://leetcode.com/problems/beautiful-towers-i/)

@@ -1,6 +1,6 @@
 # Roman to Integer
-
-## [Problem statement](https://leetcode.com/problems/roman-to-integer/)
+% Easy https://leetcode.com/problems/roman-to-integer/
+## Problem statement
 
 Roman numerals utilize seven symbols: `I`, `V`, `X`, `L`, `C`, `D`, and `M` to represent numbers. 
 
@@ -98,5 +98,5 @@ This solution efficiently converts a Roman numeral string into an integer by ite
 * Runtime: `O(N)` where `N = s.length`.
 * Extra space: `O(1)`.
 
-
-
+## Exercise
+[Leetcode 12. Integer to Roman](https://leetcode.com/problems/integer-to-roman/)

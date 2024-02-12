@@ -1,6 +1,6 @@
 # Maximum Erasure Value
-
-## [Problem statement](https://leetcode.com/problems/maximum-erasure-value/)
+% Medium https://leetcode.com/problems/maximum-erasure-value/
+## Problem statement
 
 You have an array of positive integers called `nums`, and you wish to remove a subarray from it that consists of distinct elements. The score you achieve by removing this subarray is the sum of its elements.
 

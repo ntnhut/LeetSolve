@@ -1,6 +1,7 @@
 # Transpose Matrix
+% Easy https://leetcode.com/problems/transpose-matrix/
 
-## [Problem statement](https://leetcode.com/problems/transpose-matrix/)
+## Problem statement
 
 You are given a 2D integer array `matrix`, and your objective is to find the transpose of the given matrix.
 

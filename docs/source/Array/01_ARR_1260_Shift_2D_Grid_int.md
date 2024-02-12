@@ -1,6 +1,7 @@
 # Shift 2D Grid
+% Easy https://leetcode.com/problems/shift-2d-grid/
 
-## [Problem statement](https://leetcode.com/problems/shift-2d-grid/)
+## Problem statement
 
 You are given a 2D `grid` with dimension `mxn` and an integer `k`. Your task is to perform `k` shift operations on the grid.
 

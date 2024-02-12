@@ -1,6 +1,7 @@
 # Find All Numbers Disappeared in an Array
+% Easy https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/
 
-## [Problem statement](https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/)
+## Problem statement
 
 You are given an array `nums` of `n` integers, where each integer `nums[i]` falls within the range `[1, n]`. Your task is to find and return an array containing all the integers in the range `[1, n]` that are not present in the given array `nums`.
 
@@ -142,3 +143,6 @@ The key to this solution is that it utilizes the array to mark the presence of n
 * Solution 2 helps to avoid allocating extra memory but it is not straightforward to understand.
     
 * Though Solution 1 requires some extra space, that memory is not much since `std::vector<bool>` is optimized for space efficiency. Moreover, it is easier to understand than Solution 2.
+
+## Exercise
+[Leetcode 442. Find All Duplicates in an Array](https://leetcode.com/problems/find-all-duplicates-in-an-array)

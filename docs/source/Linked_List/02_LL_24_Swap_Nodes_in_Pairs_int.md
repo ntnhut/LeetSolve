@@ -1,6 +1,6 @@
 # Swap Nodes in Pairs
-
-## [Problem statement](https://leetcode.com/problems/swap-nodes-in-pairs/)
+% Meidum ](https://leetcode.com/problems/swap-nodes-in-pairs/)
+## Problem statement
 
 You are provided with a linked list. Your goal is to exchange every two adjacent nodes in the list and then return the head of the modified list. 
 
@@ -107,3 +107,6 @@ This approach efficiently swaps adjacent nodes in the list without requiring add
 ### Complexity
 * Runtime: `O(N)`, where `N` is the number of nodes.
 * Extra space: `O(1)`.
+
+## Exercise
+[Leetcode 1721. Swapping Nodes in a Linked List](https://leetcode.com/problems/swapping-nodes-in-a-linked-list/)

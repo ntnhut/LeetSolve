@@ -8,7 +8,9 @@
 
 As you work through the coding challenges in this book, you'll **learn new skills**, **improve your problem-solving abilities**, and **develop your confidence as a programmer**. 
 
-The challenges in this book are picked from **leetcode.com**. You can find their links in the footnote. I chose the ones that are not too difficult and do not require much effort and determination to solve. Each challenge comes with a detailed solution, explaining the logic behind the solution and how to implement it in C++.
+The coding challenges in this book are picked from **leetcode.com**. I keep the problems' original titles so you can find them on leetcode.com. I chose the ones that are not too difficult and do not require much effort and determination to solve. Each challenge comes with a detailed solution, explaining the logic behind the solution and how to implement it in C++.
+
+At the end of some problems, I also provide similar problems on leetcode.com for you to practice solving on your own, as practicing is essential for reinforcing understanding and mastery of the concepts presented in the book. By engaging in problem-solving exercises, you can apply what you have learned, develop your problem-solving skills, and gain confidence in your ability to tackle real-world challenges.
 
 ## Why {index}`LeetCode`?
 
