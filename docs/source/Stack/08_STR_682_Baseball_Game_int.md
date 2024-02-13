@@ -1,6 +1,6 @@
 # Baseball Game
-
-## [Problem statement](https://leetcode.com/problems/baseball-game/)
+% Easy https://leetcode.com/problems/baseball-game/
+## Problem statement
 
 You are responsible for keeping score in a unique baseball game with special rules. The game involves multiple rounds where the scores of previous rounds can influence the scores of future rounds.
 
@@ -107,3 +107,6 @@ This solution simulates the baseball game by processing each round's operation a
 2. [`accumulate(stk.begin(), stk.end(), 0)`](https://en.cppreference.com/w/cpp/algorithm/accumulate) computes the sum of the vector `stk`.
 
 ```
+
+## Exercise
+[Leetcode 1598. Crawler Log Folder](https://leetcode.com/problems/crawler-log-folder/)

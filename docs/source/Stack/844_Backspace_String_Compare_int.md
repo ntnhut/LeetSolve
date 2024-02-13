@@ -1,6 +1,6 @@
 # Backspace String Compare
-
-## [Problem statement](https://leetcode.com/problems/backspace-string-compare/)
+% Easy https://leetcode.com/problems/backspace-string-compare/
+## Problem statement
 
 You are provided with two strings, `s` and `t`. Your task is to determine if these two strings are equal when typed into an empty text editor, where the character `'#'` represents a backspace action.
 
@@ -96,3 +96,6 @@ Yes, you can.
 The simplest way is just to perform the erasure directly on strings `s` and `t`. But the run time complexity of [`string::erase`](https://en.cppreference.com/w/cpp/string/basic_string/erase)  is not constant.
 
 ```
+
+## Exercise
+[Leetcode 2390. Removing Stars From a String](https://leetcode.com/problems/removing-stars-from-a-string/)

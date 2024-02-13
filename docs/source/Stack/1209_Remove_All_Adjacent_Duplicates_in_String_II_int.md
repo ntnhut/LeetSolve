@@ -1,6 +1,6 @@
 # Remove All Adjacent Duplicates in String II
-
-## [Problem statement](https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string-ii/)
+% Medium https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string-ii/
+## Problem statement
 
 You are given a string `s` and an integer `k`. A `k` duplicate removal operation involves selecting `k` adjacent and identical letters from `s` and removing them, causing the remaining portions on the left and right of the removed substring to join together.
 
@@ -115,3 +115,6 @@ The data structure `stk` you might need to solve this problem is a stack. But he
 * On the other hand, it is faster for a vector to perform the string concatenation at the end.
 
 ```
+
+## Exercise
+[Leetcode 1047. Remove All Adjacent Duplicates In String](https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/)

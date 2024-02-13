@@ -1,6 +1,6 @@
 # Valid Parentheses
-
-## [Problem statement](https://leetcode.com/problems/valid-parentheses/)
+% Easy https://leetcode.com/problems/valid-parentheses/
+## Problem statement
  
 You are given a string `s` containing only the characters `'('`, `')'`, `'{'`, `'}'`, `'['`, and `']'`. Your task is to check if the input string is valid.
 
@@ -84,3 +84,5 @@ This solution efficiently checks the validity of a string of parentheses, bracke
 * Runtime: `O(N)`, where `N = s.length`.
 * Extra space: `O(N)`.
 
+## Exercise
+[Leetcode 1003. Check If Word Is Valid After Substitutions](https://leetcode.com/problems/check-if-word-is-valid-after-substitutions/)
