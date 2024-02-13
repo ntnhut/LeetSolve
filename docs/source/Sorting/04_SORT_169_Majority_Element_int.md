@@ -1,6 +1,6 @@
 # Majority Element
-
-## [Problem statement](https://leetcode.com/problems/majority-element/)
+% Easy https://leetcode.com/problems/majority-element/
+## Problem statement
 
 You're given an array `nums` with a total of `n` elements. Your task is to find and return the majority element.
 
@@ -148,3 +148,5 @@ In other words, `nums[mid]` divides the array `nums` into two groups: all elemen
 
 Those two groups are unsorted. That is why the algorithm is called *partial* sorting. 
 
+## Exercise
+[Leetcode 2404. Most Frequent Even Element](https://leetcode.com/problems/most-frequent-even-element/)

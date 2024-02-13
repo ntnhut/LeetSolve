@@ -1,6 +1,6 @@
 # Remove Duplicates from Sorted Array II
-
-## [Problem statement](https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/)
+% Medium https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/
+## Problem statement
 
 Given an integer array `nums` already sorted in non-decreasing order, you must remove duplicates so that each unique element appears at most twice. The relative order of the elements should remain unchanged.
 
@@ -163,3 +163,6 @@ This solution effectively modifies the input array in-place, removing duplicates
 * Runtime: `O(N)`, where `N = nums.size()`.
     
 * Extra space: `O(1)`.
+
+## Exercise
+[Leetcode 26. Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)

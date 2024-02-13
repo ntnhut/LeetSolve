@@ -1,6 +1,6 @@
 # Merge Sorted Array
-
-## [Problem statement](https://leetcode.com/problems/merge-sorted-array/)
+% Easy https://leetcode.com/problems/merge-sorted-array/
+## Problem statement
 
 You're given two integer arrays, `nums1` and `nums2`, both sorted in non-decreasing order. Additionally, you have two integers, `m` and `n`, representing the number of elements in `nums1` and `nums2`, respectively.
 
@@ -168,3 +168,6 @@ In summary, this solution efficiently merges two sorted arrays, `nums1` and `num
 
 * Runtime: `O(m+n)`, where `m = nums1.length` and `n = nums2.length`.
 * Extra space: `O(1)`.
+
+## Exercise
+[Leetcode 977. Squares of a Sorted Array](https://leetcode.com/problems/squares-of-a-sorted-array/)

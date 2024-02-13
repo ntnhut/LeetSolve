@@ -1,7 +1,7 @@
 # My Calendar I
+% Medium https://leetcode.com/problems/my-calendar-i/
 
-
-## [Problem statement](https://leetcode.com/problems/my-calendar-i/)
+## Problem statement
 
 You're creating a program to use as your calendar. You can add new events to the calendar, but only if adding the event will not lead to a double booking.
 
@@ -127,3 +127,6 @@ This solution efficiently handles event bookings by maintaining a sorted set of 
 For the `book` method:
 * Runtime: `O(logn)`, where `n = _events.length`.
 * Extra space: `O(1)`.
+
+## Exercise
+[Leetcode 2446. Determine if Two Events Have Conflict](https://leetcode.com/problems/determine-if-two-events-have-conflict/)

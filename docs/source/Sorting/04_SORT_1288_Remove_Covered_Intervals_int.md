@@ -1,6 +1,6 @@
 # Remove Covered Intervals
-
-## [Problem statement](https://leetcode.com/problems/remove-covered-intervals/)
+% Medium https://leetcode.com/problems/remove-covered-intervals/
+## Problem statement
 
 You're given an array called `intervals`, where each element `intervals[i]` is a pair `[li, ri]` representing a half-open interval `[li, ri)`.
 
