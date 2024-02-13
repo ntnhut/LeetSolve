@@ -1,6 +1,7 @@
 # Hamming Distance
+% Easy https://leetcode.com/problems/hamming-distance/
 
-## [Problem statement](https://leetcode.com/problems/hamming-distance/)
+## Problem statement
 The [Hamming distance](https://en.wikipedia.org/wiki/Hamming_distance) between two integers is the number of positions at which the corresponding bits are different.
 
 Given two integers `x` and `y`, return the **Hamming distance** between them.
@@ -59,6 +60,6 @@ This solution calculates the Hamming distance by XORing the two integers to find
 * Runtime: `O(1)` as the number of bits is at most 32 as constrained.
 * Extra space: `O(1)`.
 
-
-
+## Exercise
+[Leetcode 191. Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits/)
 

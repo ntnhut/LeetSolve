@@ -1,6 +1,6 @@
 # Power of Four
-
-## [Problem statement](https://leetcode.com/problems/power-of-four/)
+% Easy https://leetcode.com/problems/power-of-four/
+## Problem statement
 Given an integer `n`, return `true` if it is a power of four. Otherwise, return `false`.
 
 An integer `n` is a power of four if there exists an integer `x` such that `n == 4^x`.
@@ -129,4 +129,5 @@ So, the code returns `true` if `n` is a positive integer that is both a power of
 * Runtime: `O(1)`.
 * Extra space: `O(1)`.
 
-
+## Exercise
+[Leetcode 231. Power of Two](https://leetcode.com/problems/power-of-two/)

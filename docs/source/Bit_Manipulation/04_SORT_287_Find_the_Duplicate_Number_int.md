@@ -1,7 +1,7 @@
 # Find the Duplicate Number
+% Medium https://leetcode.com/problems/find-the-duplicate-number/
 
-
-## [Problem statement](https://leetcode.com/problems/find-the-duplicate-number/)
+## Problem statement
 
 You have an array of integers called `nums` that contains `n + 1` integers. Each integer in the array falls within the range `[1, n]` inclusive.
 
@@ -163,3 +163,6 @@ This code efficiently uses a bitset to keep track of visited elements and quickl
 
 * Runtime: `O(n)`.
 * Extra space: `O(1)`. 
+
+## Exercise
+[Leetcode 268. Missing Number](https://leetcode.com/problems/missing-number/)
