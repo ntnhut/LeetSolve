@@ -1,6 +1,6 @@
 # Valid Anagram
-
-## [Problem statement](https://leetcode.com/problems/valid-anagram/)
+% Easy https://leetcode.com/problems/valid-anagram/
+## Problem statement
 
 You are given two strings, `s` and `t`. Your task is to determine whether `t` is an anagram of `s`. If `t` is an anagram of `s`, return `true`; otherwise, return `false`.
 
@@ -146,3 +146,5 @@ Unicode characters values are not restricted to a specific range. The `unordered
 * Runtime: `O(N)`, where `N = s.length`.
 * Extra space: `O(c)` where `c` represents the number of unique characters present in both strings `s` and `t`.
 
+## Exercise
+[Leetcode 2273. Find Resultant Array After Removing Anagrams](https://leetcode.com/problems/find-resultant-array-after-removing-anagrams/)

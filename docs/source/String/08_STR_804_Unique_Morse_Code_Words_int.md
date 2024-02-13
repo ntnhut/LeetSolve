@@ -1,6 +1,6 @@
 # Unique {index}`Morse Code` Words
-
-## [Problem statement](https://leetcode.com/problems/unique-morse-code-words/)
+% Easy https://leetcode.com/problems/unique-morse-code-words/
+## Problem statement
 
 The problem involves the International Morse Code, which defines a standard way to encode letters with dots and dashes. Each English letter corresponds to a specific sequence in Morse Code, and a full table mapping each letter is provided.
 

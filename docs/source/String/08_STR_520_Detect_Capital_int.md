@@ -1,6 +1,6 @@
 # Detect Capital 
-
-## [Problem statement](https://leetcode.com/problems/detect-capital/)
+% Easy https://leetcode.com/problems/detect-capital/
+## Problem statement
 
 The task is to determine if the usage of capital letters in a given string, `word`, is correct according to the following rules:
 
@@ -81,5 +81,6 @@ This solution efficiently checks whether a given word follows one of the specifi
 * Runtime: `O(N)`, where `N = word.length`.
 * Extra space: `O(1)`.
 
-
+## Exercise
+[Leetcode 2129. Capitalize the Title](https://leetcode.com/problems/capitalize-the-title/)
 

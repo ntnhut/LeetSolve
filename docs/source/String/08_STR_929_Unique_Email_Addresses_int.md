@@ -1,6 +1,6 @@
 # Unique Email Addresses
-
-## [Problem statement](https://leetcode.com/problems/unique-email-addresses/)
+% Easy https://leetcode.com/problems/unique-email-addresses/
+## Problem statement
 
 Each valid email address is composed of a local name and a domain name, separated by the `'@'` sign. The local name may contain lowercase letters, one or more `'.'` characters, and a plus `'+'` sign. However, the rules for dots and the plus sign do not apply to the domain name.
 

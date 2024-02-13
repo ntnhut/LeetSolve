@@ -1,6 +1,6 @@
 # Compare Version Numbers
-
-## [Problem statement](https://leetcode.com/problems/compare-version-numbers/)
+% Medium https://leetcode.com/problems/compare-version-numbers/
+## Problem statement
  
 Given two version numbers, `version1` and `version2`, your task is to compare them.
 
