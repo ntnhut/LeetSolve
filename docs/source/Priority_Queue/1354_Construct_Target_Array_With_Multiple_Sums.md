@@ -1,6 +1,6 @@
 # Construct Target Array With Multiple Sums
-
-## [Problem statement](https://leetcode.com/problems/construct-target-array-with-multiple-sums/)
+% Hard https://leetcode.com/problems/construct-target-array-with-multiple-sums/
+## Problem statement
  
 You are provided with an array of integers called `target` with `n` elements. You start with another array, `arr`, consisting of `n` elements, all initialized to `1`. You have the ability to perform the following operation:
 
@@ -175,4 +175,5 @@ This solution uses a max heap (`priority_queue`) to efficiently find and process
 * Runtime: `O(logN)`, where `N = max(target)`.
 * Extra space: `O(n)`, where `n = target.length`.
 
-
+## Exercise
+[Leetcode 2335. Minimum Amount of Time to Fill Cups](https://leetcode.com/problems/minimum-amount-of-time-to-fill-cups/)

@@ -1,6 +1,6 @@
 # Last Stone Weight
-
-## [Problem statement](https://leetcode.com/problems/last-stone-weight/)
+% Easy https://leetcode.com/problems/last-stone-weight/
+## Problem statement
 
 You are given an array of integers called `stones`, where each `stones[i]` represents the weight of the `i-th` stone.
 

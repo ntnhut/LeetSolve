@@ -1,6 +1,6 @@
 # Kth Largest Element in a Stream
-
-## [Problem statement](https://leetcode.com/problems/kth-largest-element-in-a-stream/)
+% Easy https://leetcode.com/problems/kth-largest-element-in-a-stream/
+## Problem statement
 
 Create a class that can find the `k-th` largest element in a stream of integers. This is the `k-th` largest element when the elements are arranged in sorted order, not the `k-th` distinct element.
 
@@ -162,3 +162,6 @@ Finally, it returns the top element of the priority queue, which represents the 
 
 * Runtime: for the constructor, `O(N*logN)`, where `N = nums.length`. For the `add` method, `O(logN)`.
 * Extra space: `O(1)`.
+
+## Exercise
+[Leetcode 215. Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/)

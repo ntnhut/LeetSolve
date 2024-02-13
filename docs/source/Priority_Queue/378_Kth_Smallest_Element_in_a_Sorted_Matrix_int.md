@@ -1,6 +1,6 @@
 # Kth Smallest Element in a Sorted Matrix
-
-## [Problem statement](https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/)
+% Medium https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/
+## Problem statement
 
 You are given an `n x n` matrix where each row and column is sorted in ascending order. Your task is to find the `k-th` smallest element in this matrix.
 
@@ -183,3 +183,6 @@ In summary:
 
 * Runtime: `O(n*logn*log(max -min))`, where `n` is the number of rows/columns of the matrix, `max` and `min` are the maximum and minimum possible values in the matrix.
 * Extra space: `O(1)`.
+
+## Exercise
+[Leetcode 373. Find K Pairs with Smallest Sums](https://leetcode.com/problems/find-k-pairs-with-smallest-sums/)
