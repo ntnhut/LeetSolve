@@ -41,8 +41,8 @@ intersphinx_disabled_domains = ['std']
 
 templates_path = ['_templates']
 
-# master_doc = 'index_10'
-master_doc = 'index_book1'
+master_doc = 'index_10'
+# master_doc = 'index_book1'
 exclude_patterns = ['*/index_*.rst']
 
 # -- Options for HTML output
@@ -85,7 +85,7 @@ latex_elements = {
     #
     # 'figure_align': 'htbp',        
 }
-# latex_show_urls = 'footnote'
+latex_show_urls = 'footnote'
 
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title,
