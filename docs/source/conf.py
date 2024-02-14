@@ -85,7 +85,8 @@ latex_elements = {
     #
     # 'figure_align': 'htbp',        
 }
-latex_show_urls = 'footnote'
+# turn on footnote for print book
+# latex_show_urls = 'footnote'
 
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title,

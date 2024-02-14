@@ -1,6 +1,6 @@
 # Minimum Deletions to Make Character Frequencies Unique
-
-## [Problem statement](https://leetcode.com/problems/minimum-deletions-to-make-character-frequencies-unique/)
+% Medium https://leetcode.com/problems/minimum-deletions-to-make-character-frequencies-unique/
+## Problem statement
 
 A string `s` is considered "good" if there are no two different characters in the string that have the same frequency, meaning each character appears a unique number of times.
 
@@ -95,3 +95,6 @@ This solution calculates the frequencies of characters in the input string, sort
 
 * Runtime: `O(N)`, where `N = s.length`;
 * Extra space: `O(1)`.
+
+## Exercise
+[Leetcode 2216. Minimum Deletions to Make Array Beautiful](https://leetcode.com/problems/minimum-deletions-to-make-array-beautiful/)

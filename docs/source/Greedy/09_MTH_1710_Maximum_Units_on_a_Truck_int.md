@@ -1,6 +1,6 @@
 # Maximum Units on a Truck
-
-## [Problem statement](https://leetcode.com/problems/maximum-units-on-a-truck/)
+% Easy https://leetcode.com/problems/maximum-units-on-a-truck/
+## Problem statement
 
 
 You are assigned to put some amount of boxes onto one truck. You are given a 2D array `boxTypes`, where `boxTypes[i] = [numberOfBoxes_i, numberOfUnitsPerBox_i]`:
@@ -90,3 +90,5 @@ Note that two [`vector`s](https://en.cppreference.com/w/cpp/container/vector) ca
 
 But in this case you want to sort them based on the number of units. That is why you need to define the comparison function like the code above. Otherwise, the {index}`std::sort`[](https://en.cppreference.com/w/cpp/algorithm/sort) algorithm will use the dictionary order to sort them by default.  
 
+## Exercise
+[Leetcode 2279. Maximum Bags With Full Capacity of Rocks](https://leetcode.com/problems/maximum-bags-with-full-capacity-of-rocks/)

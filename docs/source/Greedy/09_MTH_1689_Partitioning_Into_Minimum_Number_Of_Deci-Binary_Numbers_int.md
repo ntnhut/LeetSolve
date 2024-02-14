@@ -1,6 +1,6 @@
 # Partitioning Into Minimum Number Of Deci-Binary Numbers
-
-## [Problem statement](https://leetcode.com/problems/partitioning-into-minimum-number-of-deci-binary-numbers/)
+% Medium https://leetcode.com/problems/partitioning-into-minimum-number-of-deci-binary-numbers/
+## Problem statement
 
 A decimal number is called deci-binary if each of its digits is either `0` or `1` without any leading zeros. For example, `101` and `1100` are deci-binary, while `112` and `3001` are not.
 
