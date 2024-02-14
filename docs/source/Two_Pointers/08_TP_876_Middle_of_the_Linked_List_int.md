@@ -1,10 +1,11 @@
 # Middle of the Linked List
-
-## [Problem statement](https://leetcode.com/problems/middle-of-the-linked-list/)
-Given the `head` of a singly linked list, return *the middle node of the linked list*.
+% Easy 
+## Problem statement
+[^url]Given the `head` of a singly linked list, return *the middle node of the linked list*.
 
 If there are two middle nodes, return *the second middle* node.
 
+[^url]: https://leetcode.com/problems/middle-of-the-linked-list/
 ### Example 1
 ![The linked list of Example 1](08_TP_876_lc-midlist1.jpg)
 ```text
@@ -159,3 +160,6 @@ This approach optimizes the computation by traversing the linked list only once 
 ## OBS!
 * The approach using slow and fast pointers looks very nice and faster. But it is not suitable to generalize this problem to any relative position (one-third, a quarter, etc.). Moreover, long expressions like `fast->next->...->next` are not recommended. 
 * Though the counting nodes approach does not seem optimized, it is more readable, scalable and maintainable.
+
+## Exercise
+- [Delete the Middle Node of a Linked List](https://leetcode.com/problems/delete-the-middle-node-of-a-linked-list/)

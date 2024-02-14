@@ -1,13 +1,14 @@
 # Sort Array By Parity II
+% Easy
+## Problem statement
 
-## [Problem statement](https://leetcode.com/problems/sort-array-by-parity-ii/)
-
-Given an array of integers `nums`, half of the integers in `nums` are odd, and the other half are even.
+[^url]Given an array of integers `nums`, half of the integers in `nums` are odd, and the other half are even.
 
 Sort the array so that whenever `nums[i]` is odd, `i` is odd, and whenever `nums[i]` is even, `i` is even.
 
 Return any answer array that satisfies this condition. 
 
+[^url]: https://leetcode.com/problems/sort-array-by-parity-ii/
 ### Example 1
 ```plain
 Input: nums = [4,2,5,7]
@@ -172,3 +173,6 @@ By incrementing `evenPos` by 2 until an odd element is found and decrementing `o
 
 * Runtime: `O(N)`, where `N = nums.length`.
 * Extra space: `O(1)`.
+
+## Exercise
+- [Rearrange Array Elements by Sign](https://leetcode.com/problems/rearrange-array-elements-by-sign/)

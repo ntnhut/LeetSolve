@@ -1,12 +1,12 @@
 # Linked List Cycle
+% Easy
+## Problem statement
 
-## [Problem statement](https://leetcode.com/problems/linked-list-cycle/)
-
-Given `head`, the head of a linked list, determine if the linked list has a cycle in it.
+[^url]Given `head`, the head of a linked list, determine if the linked list has a cycle in it.
 
 Return `true` if there is a cycle in the linked list. Otherwise, return `false`.
 
- 
+[^url]: https://leetcode.com/problems/linked-list-cycle/
 
 ### Example 1
 ![The linked list of Example 1](08_TP_141_circularlinkedlist.png)
@@ -182,5 +182,5 @@ This approach optimizes the computation by simultaneously advancing two pointers
 * Runtime: `O(N)`, where `N` is the number of nodes in the linked list.
 * Extra space: `O(1)`.
 
-
-
+## Exercise
+- [Linked List Cycle II](https://leetcode.com/problems/linked-list-cycle-ii/)
