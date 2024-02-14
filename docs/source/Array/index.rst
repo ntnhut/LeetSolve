@@ -24,4 +24,10 @@ What this chapter covers:
     :glob:
     :maxdepth: 1
 
-    *_*
+    867_Transpose_Matrix
+    941_Valid_Mountain_Array
+    1260_Shift_2D_Grid
+    448_Find_All_Numbers_Disappeared_in_an_Array
+    48_Rotate_Image
+    59_Spiral_Matrix_II
+    739_Daily_Temperatures
