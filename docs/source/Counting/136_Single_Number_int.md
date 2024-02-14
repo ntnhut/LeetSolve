@@ -1,11 +1,12 @@
 # Single Number
+% Easy
+## Problem statement
 
-## [Problem statement](https://leetcode.com/problems/single-number/)
-
-You're provided with a non-empty array of integers called `nums`. In this array, every element occurs twice except for one element that appears only once. Your task is to identify and find that unique element.
+[^url]You're provided with a non-empty array of integers called `nums`. In this array, every element occurs twice except for one element that appears only once. Your task is to identify and find that unique element.
 
 To solve this problem, your solution needs to have a linear runtime complexity and utilize only a constant amount of extra space.
 
+[^url]: https://leetcode.com/problems/single-number/description/
 ### Example 1
 
 ```text
@@ -121,3 +122,6 @@ This approach optimizes the computation by leveraging the properties of bitwise 
 
 * Runtime: `O(N)`.
 * Extra space: `O(1)`.
+
+## Exercise
+- [Missing Number](https://leetcode.com/problems/missing-number/)

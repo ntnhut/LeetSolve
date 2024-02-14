@@ -1,9 +1,10 @@
 # First Unique Character in a String
+% Easy
+## Problem statement
 
-## [Problem statement](https://leetcode.com/problems/first-unique-character-in-a-string/)
+[^url]You have a string called `s`. Your objective is to locate the index of the first character in the string that does not repeat anywhere else in the string. If such a character doesn't exist, return `-1`.
 
-You have a string called `s`. Your objective is to locate the index of the first character in the string that does not repeat anywhere else in the string. If such a character doesn't exist, return `-1`.
-
+[^url]: https://leetcode.com/problems/first-unique-character-in-a-string/
 ### Example 1
 ```text
 Input: s = "leetcode"
@@ -108,3 +109,6 @@ Output:
 ### Complexity
 * Runtime: `O(n)`, where `n = s.length`.
 * Extra space: `O(1)` as the array is fixed regardless of how big `n` is.
+
+## Exercise
+- [First Letter to Appear Twice](https://leetcode.com/problems/first-letter-to-appear-twice/)
