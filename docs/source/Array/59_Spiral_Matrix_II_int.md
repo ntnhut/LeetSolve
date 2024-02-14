@@ -1,11 +1,11 @@
 # Spiral Matrix II
-% Medium https://leetcode.com/problems/spiral-matrix-ii/
+% Medium 
 
 ## Problem statement
 
-Given a positive integer `n`, generate an `n x n` matrix filled with elements from `1` to `n^2` in spiral order.
+[^url]Given a positive integer `n`, generate an `n x n` matrix filled with elements from `1` to `n^2` in spiral order.
 
-
+[^url]: https://leetcode.com/problems/spiral-matrix-ii/
 ### Example 1
 
 ![Example 1](59_spiraln.jpg)

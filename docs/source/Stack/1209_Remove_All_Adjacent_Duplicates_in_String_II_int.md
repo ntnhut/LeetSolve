@@ -1,11 +1,12 @@
 # Remove All Adjacent Duplicates in String II
-% Medium https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string-ii/
+% Medium
 ## Problem statement
 
-You are given a string `s` and an integer `k`. A `k` duplicate removal operation involves selecting `k` adjacent and identical letters from `s` and removing them, causing the remaining portions on the left and right of the removed substring to join together.
+[^url]You are given a string `s` and an integer `k`. A `k` duplicate removal operation involves selecting `k` adjacent and identical letters from `s` and removing them, causing the remaining portions on the left and right of the removed substring to join together.
 
 You need to perform the `k` duplicate removal operation on `s` repeatedly until it is no longer possible. After completing all such operations, return the resulting string. It is guaranteed that the answer will be unique.
 
+[^url]: https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string-ii/
 ### Example 1
 ```text
 Input: s = "abcd", k = 2

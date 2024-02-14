@@ -1,8 +1,8 @@
 # Unique {index}`Morse Code` Words
-% Easy https://leetcode.com/problems/unique-morse-code-words/
+% Easy
 ## Problem statement
 
-The problem involves the International Morse Code, which defines a standard way to encode letters with dots and dashes. Each English letter corresponds to a specific sequence in Morse Code, and a full table mapping each letter is provided.
+[^url]The problem involves the International Morse Code, which defines a standard way to encode letters with dots and dashes. Each English letter corresponds to a specific sequence in Morse Code, and a full table mapping each letter is provided.
 
 For instance, `'a'` is encoded as `".-"`, `'b'` as `"-..."`, and so on.
 
@@ -19,6 +19,7 @@ You are given an array of strings named `words`, where each word can be represen
 
 Your task is to count the number of different transformations that can be obtained from all the words in the given array.
 
+[^url]: https://leetcode.com/problems/unique-morse-code-words/
 ### Example 1
 ```text
 Input: words = ["gin","zen","gig","msg"]

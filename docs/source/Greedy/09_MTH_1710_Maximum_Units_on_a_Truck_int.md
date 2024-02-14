@@ -1,9 +1,8 @@
 # Maximum Units on a Truck
-% Easy https://leetcode.com/problems/maximum-units-on-a-truck/
+% Easy 
 ## Problem statement
 
-
-You are assigned to put some amount of boxes onto one truck. You are given a 2D array `boxTypes`, where `boxTypes[i] = [numberOfBoxes_i, numberOfUnitsPerBox_i]`:
+[^url]You are assigned to put some amount of boxes onto one truck. You are given a 2D array `boxTypes`, where `boxTypes[i] = [numberOfBoxes_i, numberOfUnitsPerBox_i]`:
 
 * `numberOfBoxes_i` is the number of boxes of type `i`.
 * `numberOfUnitsPerBox_i` is the number of units in each box of the type `i`.
@@ -12,6 +11,7 @@ You are also given an integer `truckSize`, which is the maximum number of boxes 
 
 Return the maximum total number of units that can be put on the truck.
 
+[^url]: https://leetcode.com/problems/maximum-units-on-a-truck/
 ### Example 1
 ```text
 Input: boxTypes = [[1,3],[2,2],[3,1]], truckSize = 4

@@ -1,11 +1,12 @@
 # Valid Anagram
-% Easy https://leetcode.com/problems/valid-anagram/
+% Easy
 ## Problem statement
 
-You are given two strings, `s` and `t`. Your task is to determine whether `t` is an anagram of `s`. If `t` is an anagram of `s`, return `true`; otherwise, return `false`.
+[^url]You are given two strings, `s` and `t`. Your task is to determine whether `t` is an anagram of `s`. If `t` is an anagram of `s`, return `true`; otherwise, return `false`.
 
 An **anagram** is a term that describes a word or phrase formed by rearranging the letters of another word or phrase, typically using all the original letters exactly once. 
 
+[^url]: https://leetcode.com/problems/valid-anagram/
 ### Example 1
 ```text
 Input: s = "anagram", t = "nagaram"

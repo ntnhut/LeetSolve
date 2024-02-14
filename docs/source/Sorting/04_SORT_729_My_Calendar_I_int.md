@@ -1,9 +1,9 @@
 # My Calendar I
-% Medium https://leetcode.com/problems/my-calendar-i/
+% Medium
 
 ## Problem statement
 
-You're creating a program to use as your calendar. You can add new events to the calendar, but only if adding the event will not lead to a double booking.
+[^url]You're creating a program to use as your calendar. You can add new events to the calendar, but only if adding the event will not lead to a double booking.
 
 A double booking occurs when two events have some time overlap, meaning there's a shared time period between them.
 
@@ -14,6 +14,7 @@ You need to implement the `MyCalendar` class, which has the following functions:
 1. `MyCalendar()`: Initializes the calendar object.
 2. `boolean book(int start, int end)`: This function checks if the event with the given `start` and `end` can be added to the calendar without causing a double booking. If it's possible to add the event without a double booking, the function returns `true`. Otherwise, it returns `false`, and the event is not added to the calendar. 
 
+[^url]: https://leetcode.com/problems/my-calendar-i/
 ### Example 1
 ```text
 Input

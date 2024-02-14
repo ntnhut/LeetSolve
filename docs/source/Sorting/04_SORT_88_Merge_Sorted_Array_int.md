@@ -1,8 +1,8 @@
 # Merge Sorted Array
-% Easy https://leetcode.com/problems/merge-sorted-array/
+% Easy
 ## Problem statement
 
-You're given two integer arrays, `nums1` and `nums2`, both sorted in non-decreasing order. Additionally, you have two integers, `m` and `n`, representing the number of elements in `nums1` and `nums2`, respectively.
+[^url]You're given two integer arrays, `nums1` and `nums2`, both sorted in non-decreasing order. Additionally, you have two integers, `m` and `n`, representing the number of elements in `nums1` and `nums2`, respectively.
 
 Your task is to merge the elements from `nums2` into `nums1` in a way that the resulting array is sorted in non-decreasing order.
 
@@ -11,6 +11,7 @@ However, the sorted array should not be returned as a separate result. Instead, 
 * `nums1` has a total length of `m + n`, where the first `m` elements represent the elements that should be merged, and the last `n` elements are initialized to `0` and should be ignored. 
 * The `nums2` array has a length of `n`, representing the elements to be merged from `nums2` into the final `nums1` array. 
 
+[^url]: https://leetcode.com/problems/merge-sorted-array/ 
 ### Example 1
 ```text
 Input: nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3

@@ -1,8 +1,8 @@
 # Valid Mountain Array
-% Easy  https://leetcode.com/problems/valid-mountain-array/
+% Easy  
 ## Problem statement
 
-You are given an array of integers `arr`, and your task is to determine whether it is a valid *mountain array*.
+[^url]You are given an array of integers `arr`, and your task is to determine whether it is a valid *mountain array*.
 
 A valid *mountain array* must meet the following conditions:
 
@@ -11,6 +11,7 @@ A valid *mountain array* must meet the following conditions:
 
 ![Mountain array](01_ARR_941_hint_valid_mountain_array.png)
 
+[^url]: https://leetcode.com/problems/valid-mountain-array/
 ### Example 1
 ```text
 Input: arr = [2,1]

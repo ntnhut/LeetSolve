@@ -1,13 +1,14 @@
 # Remove Covered Intervals
-% Medium https://leetcode.com/problems/remove-covered-intervals/
+% Medium
 ## Problem statement
 
-You're given an array called `intervals`, where each element `intervals[i]` is a pair `[li, ri]` representing a half-open interval `[li, ri)`.
+[^url]You're given an array called `intervals`, where each element `intervals[i]` is a pair `[li, ri]` representing a half-open interval `[li, ri)`.
 
 Your task is to remove all intervals from the list that are completely covered by another interval. An interval `[a, b)` is considered covered by the interval `[c, d)` if and only if `c` is less than or equal to `a`, and `b` is less than or equal to `d`.
 
 After removing the covered intervals, you need to return the number of remaining intervals.
 
+[^url]: https://leetcode.com/problems/remove-covered-intervals/ 
 ### Example 1
 ```text
 Input: intervals = [[1,4],[3,6],[2,8]]

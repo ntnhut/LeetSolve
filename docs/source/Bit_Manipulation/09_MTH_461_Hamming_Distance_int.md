@@ -1,10 +1,13 @@
 # Hamming Distance
-% Easy https://leetcode.com/problems/hamming-distance/
+% Easy 
 
 ## Problem statement
-The [Hamming distance](https://en.wikipedia.org/wiki/Hamming_distance) between two integers is the number of positions at which the corresponding bits are different.
+
+[^url]The [Hamming distance](https://en.wikipedia.org/wiki/Hamming_distance) between two integers is the number of positions at which the corresponding bits are different.
 
 Given two integers `x` and `y`, return the **Hamming distance** between them.
+
+[^url]: https://leetcode.com/problems/hamming-distance/
 
 ### Example 1
 ```text

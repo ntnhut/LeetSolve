@@ -1,8 +1,8 @@
 # Intersection of Two Linked Lists
-% Easy https://leetcode.com/problems/intersection-of-two-linked-lists/
+% Easy 
 ## Problem statement
 
-You are provided with the starting nodes of two singly linked lists, `headA` and `headB`. Your task is to find the node where these two lists intersect. If there is no point of intersection, return `null`. 
+[^url]You are provided with the starting nodes of two singly linked lists, `headA` and `headB`. Your task is to find the node where these two lists intersect. If there is no point of intersection, return `null`. 
 
 For example, the following two linked lists begin to intersect at node `c1`:
 
@@ -10,7 +10,7 @@ For example, the following two linked lists begin to intersect at node `c1`:
 
 Note that the linked lists do not have any cycles, and you must ensure that the original structure of the linked lists remains unchanged after solving this problem.
 
-
+[^url]: https://leetcode.com/problems/intersection-of-two-linked-lists/ 
 ### Example 1
 ![Two linked lists A and B intersect at node 8](02_LL_160_example_1_1.png)
 ```text

@@ -1,8 +1,8 @@
 # Compare Version Numbers
-% Medium https://leetcode.com/problems/compare-version-numbers/
+% Medium
 ## Problem statement
  
-Given two version numbers, `version1` and `version2`, your task is to compare them.
+[^url]Given two version numbers, `version1` and `version2`, your task is to compare them.
 
 Version numbers consist of one or more revisions joined by a dot `'.'`. Each revision is composed of digits and may contain leading zeros. Each revision has at least one character. Revisions are indexed from left to right, with the leftmost revision being revision 0, the next revision being revision 1, and so on.
 
@@ -16,6 +16,7 @@ The function should return the following:
 * If `version1` is greater than `version2`, return `1`.
 * If `version1` and `version2` are equal, return `0`. 
 
+[^url]: https://leetcode.com/problems/compare-version-numbers/
 ### Example 1
 ```text
 Input: version1 = "1.01", version2 = "1.001"

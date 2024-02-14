@@ -1,15 +1,14 @@
 # Add Two Numbers
-% Medium https://leetcode.com/problems/add-two-numbers/
+% Medium
 ## Problem statement
 
-
-You have two linked lists that represent non-negative integers. The digits of these numbers are stored in reverse order, with each node containing a single digit. 
+[^url]You have two linked lists that represent non-negative integers. The digits of these numbers are stored in reverse order, with each node containing a single digit. 
 
 Your task is to add the two numbers represented by these linked lists and return the result as a new linked list. 
 
 You can assume that the two numbers don't have leading zeros, except for the number 0 itself.
 
-
+[^url]: https://leetcode.com/problems/add-two-numbers/
 ### Example 1
 ![The linked lists of Example 1 and their addition](02_LL_2_addtwonumber1.jpg)
 ```text

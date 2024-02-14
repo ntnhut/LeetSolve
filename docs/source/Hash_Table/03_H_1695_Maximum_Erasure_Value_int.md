@@ -1,13 +1,14 @@
 # Maximum Erasure Value
-% Medium https://leetcode.com/problems/maximum-erasure-value/
+% Medium
 ## Problem statement
 
-You have an array of positive integers called `nums`, and you wish to remove a subarray from it that consists of distinct elements. The score you achieve by removing this subarray is the sum of its elements.
+[^url]You have an array of positive integers called `nums`, and you wish to remove a subarray from it that consists of distinct elements. The score you achieve by removing this subarray is the sum of its elements.
 
 Your goal is to determine the highest possible score attainable by erasing exactly one subarray from the provided array.
 
 A subarray, denoted as `b`, is considered part of another array, `a`, if it appears consecutively within `a`, i.e., if it is equivalent to `a[l], a[l+1], ..., a[r]` for some indices `(l, r)`.
 
+[^url]: https://leetcode.com/problems/maximum-erasure-value/ 
 ### Example 1
 ```text
 Input: nums = [4,2,4,5,6]

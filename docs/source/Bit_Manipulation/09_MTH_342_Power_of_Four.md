@@ -1,11 +1,12 @@
 # Power of Four
-% Easy https://leetcode.com/problems/power-of-four/
+% Easy 
 ## Problem statement
-Given an integer `n`, return `true` if it is a power of four. Otherwise, return `false`.
+
+[^url]Given an integer `n`, return `true` if it is a power of four. Otherwise, return `false`.
 
 An integer `n` is a power of four if there exists an integer `x` such that `n == 4^x`.
 
- 
+[^url]: https://leetcode.com/problems/power-of-four/ 
 
 ### Example 1
 ```text

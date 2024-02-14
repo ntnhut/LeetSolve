@@ -1,9 +1,9 @@
 # Shift 2D Grid
-% Easy https://leetcode.com/problems/shift-2d-grid/
+% Easy 
 
 ## Problem statement
 
-You are given a 2D `grid` with dimension `mxn` and an integer `k`. Your task is to perform `k` shift operations on the grid.
+[^url]You are given a 2D `grid` with dimension `mxn` and an integer `k`. Your task is to perform `k` shift operations on the grid.
 
 In each shift operation:
 
@@ -12,6 +12,8 @@ In each shift operation:
 * The element at `grid[m-1][n-1]` moves to `grid[0][0]`.
 
 After performing `k` shift operations, return the updated 2D grid.
+
+[^url]: https://leetcode.com/problems/shift-2d-grid/
 
 ### Example 1
 
