@@ -1,9 +1,10 @@
 # Concatenation of Consecutive Binary Numbers
+% Medium
+## Problem statement
 
-## [Problem statement](https://leetcode.com/problems/concatenation-of-consecutive-binary-numbers/)
+[^url]Given an integer `n`, return the decimal value of the binary string formed by concatenating the binary representations of `1` to `n` in order, modulo `10^9 + 7`.
 
-Given an integer `n`, return the decimal value of the binary string formed by concatenating the binary representations of `1` to `n` in order, modulo `10^9 + 7`.
-
+[^url]: https://leetcode.com/problems/concatenation-of-consecutive-binary-numbers/
 ### Example 1
 ```text
 Input: n = 1

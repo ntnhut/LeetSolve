@@ -1,10 +1,12 @@
 # Subsets
+% Medium
+## Problem Statement
 
-## [Problem Statement](https://leetcode.com/problems/subsets/)
-Given an integer array `nums` of unique elements, return all possible subsets (the {index}`power set`).
+[^url]Given an integer array `nums` of unique elements, return all possible subsets (the {index}`power set`).
 
 The solution set must not contain duplicate subsets. Return the solution in any order.
 
+[^url]: https://leetcode.com/problems/subsets/
 ### Example 1
 ```text
 Input: nums = [1,2,3]
@@ -85,3 +87,6 @@ This solution generates subsets by iteratively adding each element of `nums` to 
 
 * Runtime: `O(2^N)`, where `N` is the number of elements in `nums`, as it generates all possible subsets.
 * Extra space: `O(2^N)` due to the space required to store the subsets.
+
+## Exercise
+- [Subsets II](https://leetcode.com/problems/subsets-ii/)

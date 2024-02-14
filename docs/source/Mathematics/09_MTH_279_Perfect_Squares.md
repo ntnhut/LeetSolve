@@ -1,10 +1,12 @@
 # Perfect Squares
+% Medium
+## Problem statement
 
-## [Problem statement](https://leetcode.com/problems/perfect-squares/)
-Given an integer `n`, return the least number of perfect square numbers that sum to `n`.
+[^url]Given an integer `n`, return the least number of perfect square numbers that sum to `n`.
 
 A **perfect square** is an integer that is the square of an integer; in other words, it is the product of some integer with itself. For example, `1`, `4`, `9`, and `16` are perfect squares while `3` and `11` are not.
 
+[^url]: https://leetcode.com/problems/perfect-squares/
 ### Example 1
 ```text
 Input: n = 9
@@ -252,4 +254,5 @@ Hope you learn something interesting from this code challenge.
 
 *Have fun with coding and mathematics!*
 
-
+## Exercise
+- [Ways to Express an Integer as Sum of Powers](https://leetcode.com/problems/ways-to-express-an-integer-as-sum-of-powers/)

@@ -1,12 +1,13 @@
 # Minimum Moves to Equal Array Elements II
+% Medium
 
+## Problem statement
 
-## [Problem statement](https://leetcode.com/problems/minimum-moves-to-equal-array-elements-ii/)
-
-Given an integer array `nums` of size `n`, return the minimum number of moves required to make all array elements equal.
+[^url]Given an integer array `nums` of size `n`, return the minimum number of moves required to make all array elements equal.
 
 In one move, you can increment or decrement an element of the array by `1`.
 
+[^url]: https://leetcode.com/problems/minimum-moves-to-equal-array-elements-ii/
 ### Example 1
 ```text
 Input: nums = [1,2,3]
@@ -141,4 +142,5 @@ In the code of Solution 2, the partial sorting algorithm [`std::nth_element`](ht
 With this property, if `mid = nums.length / 2`, then the value of `nums[mid]` is unchanged no matter how `nums` is sorted or not.
 ```
 
-
+## Exercise
+- [Minimum Moves to Equal Array Elements](https://leetcode.com/problems/minimum-moves-to-equal-array-elements/)
