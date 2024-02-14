@@ -165,4 +165,4 @@ This code efficiently uses a bitset to keep track of visited elements and quickl
 * Extra space: `O(1)`. 
 
 ## Exercise
-[Leetcode 268. Missing Number](https://leetcode.com/problems/missing-number/)
+- [Missing Number](https://leetcode.com/problems/missing-number/)

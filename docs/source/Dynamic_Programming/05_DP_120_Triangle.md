@@ -1,11 +1,12 @@
 # Triangle
+% Medium
+## Problem statement
 
-## [Problem statement](https://leetcode.com/problems/triangle/)
-
-You're provided with a `triangle` array. Your goal is to find the smallest possible sum of a path from the top of the triangle to the bottom.
+[^url]You're provided with a `triangle` array. Your goal is to find the smallest possible sum of a path from the top of the triangle to the bottom.
 
 At each step, you have the option to move to an adjacent number in the row below. Specifically, if you're at index `i` in the current row, you can move to either index `i` or index `i + 1` in the next row. 
 
+[^url]: https://leetcode.com/problems/triangle/
 ### Example 1
 ```text
 Input: triangle = [[2],[3,4],[6,5,7],[4,1,8,3]]

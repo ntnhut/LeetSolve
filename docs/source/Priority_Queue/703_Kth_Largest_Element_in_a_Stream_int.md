@@ -164,4 +164,4 @@ Finally, it returns the top element of the priority queue, which represents the 
 * Extra space: `O(1)`.
 
 ## Exercise
-[Leetcode 215. Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/)
+- [Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/)

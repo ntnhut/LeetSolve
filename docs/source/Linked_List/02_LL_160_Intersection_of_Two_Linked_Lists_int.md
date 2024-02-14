@@ -272,4 +272,4 @@ The technique used in Solution 2 is known as the *Two-pointer* technique since y
 ```
 
 ## Exercise
-[Leetcode 599. Minimum Index Sum of Two Lists](https://leetcode.com/problems/minimum-index-sum-of-two-lists/)
+- [Minimum Index Sum of Two Lists](https://leetcode.com/problems/minimum-index-sum-of-two-lists/)

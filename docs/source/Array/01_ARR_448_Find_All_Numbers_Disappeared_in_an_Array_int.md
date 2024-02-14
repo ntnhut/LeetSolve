@@ -145,4 +145,4 @@ The key to this solution is that it utilizes the array to mark the presence of n
 * Though Solution 1 requires some extra space, that memory is not much since `std::vector<bool>` is optimized for space efficiency. Moreover, it is easier to understand than Solution 2.
 
 ## Exercise
-[Leetcode 442. Find All Duplicates in an Array](https://leetcode.com/problems/find-all-duplicates-in-an-array)
+- [Find All Duplicates in an Array](https://leetcode.com/problems/find-all-duplicates-in-an-array)

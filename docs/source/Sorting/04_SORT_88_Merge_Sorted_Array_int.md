@@ -170,4 +170,4 @@ In summary, this solution efficiently merges two sorted arrays, `nums1` and `num
 * Extra space: `O(1)`.
 
 ## Exercise
-[Leetcode 977. Squares of a Sorted Array](https://leetcode.com/problems/squares-of-a-sorted-array/)
+- [Squares of a Sorted Array](https://leetcode.com/problems/squares-of-a-sorted-array/)

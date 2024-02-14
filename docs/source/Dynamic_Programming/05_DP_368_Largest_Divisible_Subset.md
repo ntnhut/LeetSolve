@@ -1,14 +1,15 @@
 # Largest Divisible Subset
+% Medium
+## Problem statement
 
-## [Problem statement](https://leetcode.com/problems/largest-divisible-subset/)
-
-You have a collection of positive integers called `nums`, where each integer is distinct. Your task is to find the largest subset `answer` from this collection, such that for every pair of elements `(answer[i], answer[j])` within this subset:
+[^url]You have a collection of positive integers called `nums`, where each integer is distinct. Your task is to find the largest subset `answer` from this collection, such that for every pair of elements `(answer[i], answer[j])` within this subset:
 
 * Either `answer[i]` is a multiple of `answer[j]` (i.e., `answer[i] % answer[j] == 0`), or
 * `answer[j]` is a multiple of `answer[i]` (i.e., `answer[j] % answer[i] == 0`).
 
 If there are multiple possible solutions, you can return any of them.
 
+[^url]: https://leetcode.com/problems/largest-divisible-subset/
 ### Example 1
 ```text
 Input: nums = [1,2,3]

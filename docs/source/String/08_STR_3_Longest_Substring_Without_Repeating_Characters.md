@@ -100,4 +100,4 @@ This approach optimizes the computation of the length of the longest substring b
 
 ## Exercise
 
-[Leetcode 2405. Optimal Partition of String](https://leetcode.com/problems/optimal-partition-of-string/)
+- [Optimal Partition of String](https://leetcode.com/problems/optimal-partition-of-string/)

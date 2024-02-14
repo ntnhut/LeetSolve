@@ -85,4 +85,4 @@ This solution efficiently checks the validity of a string of parentheses, bracke
 * Extra space: `O(N)`.
 
 ## Exercise
-[Leetcode 1003. Check If Word Is Valid After Substitutions](https://leetcode.com/problems/check-if-word-is-valid-after-substitutions/)
+- [Check If Word Is Valid After Substitutions](https://leetcode.com/problems/check-if-word-is-valid-after-substitutions/)

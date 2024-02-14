@@ -109,4 +109,4 @@ This solution simulates the baseball game by processing each round's operation a
 ```
 
 ## Exercise
-[Leetcode 1598. Crawler Log Folder](https://leetcode.com/problems/crawler-log-folder/)
+- [Crawler Log Folder](https://leetcode.com/problems/crawler-log-folder/)

@@ -61,5 +61,5 @@ This solution calculates the Hamming distance by XORing the two integers to find
 * Extra space: `O(1)`.
 
 ## Exercise
-[Leetcode 191. Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits/)
+- [Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits/)
 

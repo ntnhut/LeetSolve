@@ -97,4 +97,4 @@ This solution calculates the frequencies of characters in the input string, sort
 * Extra space: `O(1)`.
 
 ## Exercise
-[Leetcode 2216. Minimum Deletions to Make Array Beautiful](https://leetcode.com/problems/minimum-deletions-to-make-array-beautiful/)
+- [Minimum Deletions to Make Array Beautiful](https://leetcode.com/problems/minimum-deletions-to-make-array-beautiful/)

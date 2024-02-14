@@ -91,4 +91,4 @@ Note that two [`vector`s](https://en.cppreference.com/w/cpp/container/vector) ca
 But in this case you want to sort them based on the number of units. That is why you need to define the comparison function like the code above. Otherwise, the {index}`std::sort`[](https://en.cppreference.com/w/cpp/algorithm/sort) algorithm will use the dictionary order to sort them by default.  
 
 ## Exercise
-[Leetcode 2279. Maximum Bags With Full Capacity of Rocks](https://leetcode.com/problems/maximum-bags-with-full-capacity-of-rocks/)
+- [Maximum Bags With Full Capacity of Rocks](https://leetcode.com/problems/maximum-bags-with-full-capacity-of-rocks/)

@@ -86,4 +86,4 @@ This solution iteratively checks for the two slopes of a mountain array, ensurin
 * Extra space: `O(1)`.
 
 ## Exercise
-[Leetcode 2865. Beautiful Towers I](https://leetcode.com/problems/beautiful-towers-i/)
+- [Beautiful Towers I](https://leetcode.com/problems/beautiful-towers-i/)

@@ -117,4 +117,4 @@ The data structure `stk` you might need to solve this problem is a stack. But he
 ```
 
 ## Exercise
-[Leetcode 1047. Remove All Adjacent Duplicates In String](https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/)
+- [Remove All Adjacent Duplicates In String](https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/)

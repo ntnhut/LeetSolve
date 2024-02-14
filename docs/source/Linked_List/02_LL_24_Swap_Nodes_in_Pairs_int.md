@@ -109,4 +109,4 @@ This approach efficiently swaps adjacent nodes in the list without requiring add
 * Extra space: `O(1)`.
 
 ## Exercise
-[Leetcode 1721. Swapping Nodes in a Linked List](https://leetcode.com/problems/swapping-nodes-in-a-linked-list/)
+- [Swapping Nodes in a Linked List](https://leetcode.com/problems/swapping-nodes-in-a-linked-list/)

@@ -130,4 +130,4 @@ So, the code returns `true` if `n` is a positive integer that is both a power of
 * Extra space: `O(1)`.
 
 ## Exercise
-[Leetcode 231. Power of Two](https://leetcode.com/problems/power-of-two/)
+- [Power of Two](https://leetcode.com/problems/power-of-two/)

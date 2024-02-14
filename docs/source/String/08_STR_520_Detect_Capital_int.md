@@ -82,5 +82,5 @@ This solution efficiently checks whether a given word follows one of the specifi
 * Extra space: `O(1)`.
 
 ## Exercise
-[Leetcode 2129. Capitalize the Title](https://leetcode.com/problems/capitalize-the-title/)
+- [Capitalize the Title](https://leetcode.com/problems/capitalize-the-title/)
 

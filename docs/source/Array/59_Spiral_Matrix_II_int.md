@@ -118,4 +118,4 @@ This solution uses a `Direction` `enum` and boundary variables to iteratively fi
 * Extra space: `O(1)`.
 
 ## Exercise
-[Leetcode 54. Spiral Matrix](https://leetcode.com/problems/spiral-matrix/)
+- [Spiral Matrix](https://leetcode.com/problems/spiral-matrix/)

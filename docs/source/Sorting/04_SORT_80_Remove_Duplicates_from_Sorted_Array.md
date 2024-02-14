@@ -165,4 +165,4 @@ This solution effectively modifies the input array in-place, removing duplicates
 * Extra space: `O(1)`.
 
 ## Exercise
-[Leetcode 26. Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)
+- [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)

@@ -147,4 +147,4 @@ Unicode characters values are not restricted to a specific range. The `unordered
 * Extra space: `O(c)` where `c` represents the number of unique characters present in both strings `s` and `t`.
 
 ## Exercise
-[Leetcode 2273. Find Resultant Array After Removing Anagrams](https://leetcode.com/problems/find-resultant-array-after-removing-anagrams/)
+- [Find Resultant Array After Removing Anagrams](https://leetcode.com/problems/find-resultant-array-after-removing-anagrams/)

@@ -176,4 +176,4 @@ This solution uses a max heap (`priority_queue`) to efficiently find and process
 * Extra space: `O(n)`, where `n = target.length`.
 
 ## Exercise
-[Leetcode 2335. Minimum Amount of Time to Fill Cups](https://leetcode.com/problems/minimum-amount-of-time-to-fill-cups/)
+- [Minimum Amount of Time to Fill Cups](https://leetcode.com/problems/minimum-amount-of-time-to-fill-cups/)

@@ -1,8 +1,8 @@
 # {index}`Fibonacci Number`
+% Easy
+## Problem statement
 
-## [Problem statement](https://leetcode.com/problems/fibonacci-number/)
-
-The Fibonacci numbers make up a sequence denoted as `F(n)`, known as the Fibonacci sequence. Each number in this sequence is the sum of the two preceding numbers, with the sequence starting from `0` and `1`. In other words:
+[^url]The Fibonacci numbers make up a sequence denoted as `F(n)`, known as the Fibonacci sequence. Each number in this sequence is the sum of the two preceding numbers, with the sequence starting from `0` and `1`. In other words:
 
 ```text
 F(0) = 0, F(1) = 1
@@ -11,6 +11,7 @@ F(n) = F(n - 1) + F(n - 2), for n > 1.
 
 Your task is to calculate the value of `F(n)` given an integer `n`. 
 
+[^url]: https://leetcode.com/problems/fibonacci-number/
 ### Example 1
 ```text
 Input: n = 2
@@ -148,4 +149,5 @@ This solution calculates the nth Fibonacci number iteratively using two variable
 * Runtime: `O(n)`.
 * Extra space: `O(1)`.
 
-
+## Exercise
+- [N-th Tribonacci Number](https://leetcode.com/problems/n-th-tribonacci-number/)

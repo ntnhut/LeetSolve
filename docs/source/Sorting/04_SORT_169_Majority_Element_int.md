@@ -149,4 +149,4 @@ In other words, `nums[mid]` divides the array `nums` into two groups: all elemen
 Those two groups are unsorted. That is why the algorithm is called *partial* sorting. 
 
 ## Exercise
-[Leetcode 2404. Most Frequent Even Element](https://leetcode.com/problems/most-frequent-even-element/)
+- [Most Frequent Even Element](https://leetcode.com/problems/most-frequent-even-element/)

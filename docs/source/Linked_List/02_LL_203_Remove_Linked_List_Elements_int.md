@@ -210,4 +210,4 @@ ListNode* removeElements(ListNode* head, int val) {
 * Be careful with memory leak when removing nodes of the linked list containing pointers. 
 
 ## Exercise
-[Leetcode 237. Delete Node in a Linked List](https://leetcode.com/problems/delete-node-in-a-linked-list/)
+- [Delete Node in a Linked List](https://leetcode.com/problems/delete-node-in-a-linked-list/)

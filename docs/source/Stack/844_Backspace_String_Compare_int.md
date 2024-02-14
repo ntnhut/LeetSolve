@@ -98,4 +98,4 @@ The simplest way is just to perform the erasure directly on strings `s` and `t`.
 ```
 
 ## Exercise
-[Leetcode 2390. Removing Stars From a String](https://leetcode.com/problems/removing-stars-from-a-string/)
+- [Removing Stars From a String](https://leetcode.com/problems/removing-stars-from-a-string/)
