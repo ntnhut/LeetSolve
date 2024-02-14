@@ -10,7 +10,7 @@ You can assume that the two numbers don't have leading zeros, except for the num
 
 [^url]: https://leetcode.com/problems/add-two-numbers/
 ### Example 1
-![The linked lists of Example 1 and their addition](02_LL_2_addtwonumber1.jpg)
+![The linked lists of Example 1 and their addition](2_addtwonumber1.jpg)
 ```text
 Input: l1 = [2,4,3], l2 = [5,6,4]
 Output: [7,0,8]

@@ -8,7 +8,7 @@ You must solve this problem without altering the values within the nodes; you sh
 
 [^url]: https://leetcode.com/problems/swap-nodes-in-pairs/
 ### Example 1
-![The link list and its result in Example 1.](02_LL_24_swap_ex1.jpg)
+![The link list and its result in Example 1.](24_swap_ex1.jpg)
 ```text
 Input: head = [1,2,3,4]
 Output: [2,1,4,3]
@@ -34,7 +34,7 @@ Output: [1]
 
 Draw a picture of the swapping to identify the correct order of the update.
 
-![The swapping steps.](02_LL_24_drawing_1.png)
+![The swapping steps.](24_drawing_1.png)
 
 Denote `(cur, next)` the pair of nodes you want to swap and `prev` be the previous node that links to `cur`. Here are the steps you need to perform for the swapping.
 1. Update the links between nodes.

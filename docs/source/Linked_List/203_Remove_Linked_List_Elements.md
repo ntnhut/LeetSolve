@@ -7,7 +7,7 @@
 [^url]: https://leetcode.com/problems/remove-linked-list-elements/
 ### Example 1
 
-![The linked list of Example 1 and its result after the removal.](02_LL_203_removelinked-list.jpg)
+![The linked list of Example 1 and its result after the removal.](203_removelinked-list.jpg)
 
 ```text
 Input: head = [1,2,6,3,4,5,6], val = 6

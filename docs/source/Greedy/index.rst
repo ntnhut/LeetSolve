@@ -20,4 +20,8 @@ By the end of this chapter, you'll have a comprehensive understanding of greedy 
     :glob:
     :maxdepth: 1
 
-    *_*
+    605_Can_Place_Flowers
+    1647_Minimum_Deletions_to_Make_Character_Frequencies_Unique
+    376_Wiggle_Subsequence
+    1689_Partitioning_Into_Minimum_Number_Of_Deci-Binary_Numbers
+    1710_Maximum_Units_on_a_Truck

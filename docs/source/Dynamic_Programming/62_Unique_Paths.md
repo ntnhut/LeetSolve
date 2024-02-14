@@ -10,7 +10,7 @@ The problem is to determine the number of unique paths the robot can take to rea
 
 ### Example 1
 
-![The grid of Example 1](05_DP_62_robot_maze.png)
+![The grid of Example 1](62_robot_maze.png)
 
 ```text
 Input: m = 3, n = 7

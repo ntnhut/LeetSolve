@@ -16,4 +16,6 @@ What this chapter covers:
     :glob:
     :maxdepth: 1
 
-    *_*
+    13_Roman_to_Integer
+    1695_Maximum_Erasure_Value
+    890_Find_and_Replace_Pattern

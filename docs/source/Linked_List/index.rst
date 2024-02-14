@@ -23,4 +23,8 @@ What this chapter covers:
     :glob:
     :maxdepth: 1
 
-    *_*
+    21_Merge_Two_Sorted_Lists
+    203_Remove_Linked_List_Elements
+    160_Intersection_of_Two_Linked_Lists
+    24_Swap_Nodes_in_Pairs
+    2_add_two_numbers

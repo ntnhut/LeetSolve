@@ -10,7 +10,7 @@ This merged list should be created by connecting the nodes from both `list1` and
 
 [^url]: https://leetcode.com/problems/merge-two-sorted-lists/
 ### Example 1
-![The linked lists of Example 1 and their merging](02_LL_21_merge_ex1.jpg)
+![The linked lists of Example 1 and their merging](21_merge_ex1.jpg)
 ```text
 Input: list1 = [1,2,4], list2 = [1,3,4]
 Output: [1,1,2,3,4,4]

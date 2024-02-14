@@ -12,7 +12,7 @@ Your task is to determine the number of unique paths the robot can take to reach
 It's important to note that the test cases are designed in such a way that the answer will always be less than or equal to `2 * 10^9`. 
 
 ### Example 1
-![The obstacle grid of Example 1](05_DP_63_robot1.jpg)
+![The obstacle grid of Example 1](63_robot1.jpg)
 
 ```text
 Input: obstacleGrid = [[0,0,0],[0,1,0],[0,0,0]]
@@ -24,7 +24,7 @@ There are two ways to reach the bottom-right corner:
 ```
 
 ### Example 2
-![The obstacle grid of Example 2](05_DP_63_robot2.jpg)
+![The obstacle grid of Example 2](63_robot2.jpg)
 ```text
 Input: obstacleGrid = [[0,1],[0,0]]
 Output: 1

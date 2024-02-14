@@ -20,4 +20,6 @@ What this chapter covers:
     :glob:
     :maxdepth: 1
 
-    *_*
+    136_Single_Number
+    387_First_Unique_Character_in_a_String
+    1679_Max_Number_of_K-Sum_Pairs

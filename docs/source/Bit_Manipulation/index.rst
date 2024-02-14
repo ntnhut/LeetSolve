@@ -22,4 +22,7 @@ By the end of this chapter, you'll have a solid foundation in Bit Manipulation a
     :glob:
     :maxdepth: 1
 
-    *_*
+    461_Hamming_Distance
+    342_Power_of_Four
+    287_Find_the_Duplicate_Number
+    318_Maximum_Product_of_Word_Lengths
