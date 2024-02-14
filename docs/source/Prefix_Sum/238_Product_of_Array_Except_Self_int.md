@@ -1,13 +1,14 @@
 # Product of Array Except Self
+% Medium 
+## Problem statement
 
-## [Problem statement](https://leetcode.com/problems/product-of-array-except-self/)
-Given an integer array `nums`, return an array `answer` such that `answer[i]` is equal to the product of all the elements of nums except `nums[i]`.
+[^url]Given an integer array `nums`, return an array `answer` such that `answer[i]` is equal to the product of all the elements of nums except `nums[i]`.
 
 The product of any prefix or suffix of `nums` is guaranteed to fit in a 32-bit integer.
 
 You must write an algorithm that runs in `O(n)` time and without using the division operation.
  
-
+[^url]: https://leetcode.com/problems/product-of-array-except-self/
 ### Example 1
 ```plain
 Input: nums = [1,2,3,4]
@@ -138,3 +139,6 @@ This code efficiently calculates the products of all elements in the `nums` vect
 
 * Runtime: `O(n)`, where `n = nums.length`.
 * Extra space: `O(1)`.
+
+## Exercise
+- [Construct Product Matrix](https://leetcode.com/problems/construct-product-matrix/)

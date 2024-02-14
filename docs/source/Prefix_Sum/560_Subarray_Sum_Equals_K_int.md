@@ -1,9 +1,10 @@
 # Subarray Sum Equals K
+% Medium
+## Problem Statement
 
-## [Problem Statement](https://leetcode.com/problems/subarray-sum-equals-k/)
+[^url]You have an array of integers called `nums` and an integer `k`. Your task is to determine the count of contiguous subarrays within this array, where the sum of elements in each subarray is equal to the value of `k`.
 
-You have an array of integers called `nums` and an integer `k`. Your task is to determine the count of contiguous subarrays within this array, where the sum of elements in each subarray is equal to the value of `k`.
-
+[^url]: https://leetcode.com/problems/subarray-sum-equals-k/
 ### Example 1
 ```text
 Input: nums = [1,1,1], k = 2
@@ -181,3 +182,5 @@ This improved solution uses an unordered map to efficiently track the frequency 
 * Runtime: `O(n)`, where `n = nums.length`.
 * Extra space: `O(n)`.
 
+## Exercise
+- [Find Pivot Index](https://leetcode.com/problems/find-pivot-index/)

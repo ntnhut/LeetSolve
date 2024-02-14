@@ -1,9 +1,10 @@
 # Maximum Subarray
+% Medium 
+## Problem statement
 
-## [Problem statement](https://leetcode.com/problems/maximum-subarray/)
+[^url]You're provided with an array of integers called `nums`. Your task is to identify a subarray (a consecutive sequence of numbers) that has the highest sum. Once you find this subarray, return the sum of its elements.
 
-You're provided with an array of integers called `nums`. Your task is to identify a subarray (a consecutive sequence of numbers) that has the highest sum. Once you find this subarray, return the sum of its elements.
-
+[^url]: https://leetcode.com/problems/maximum-subarray/
 ### Example 1
 ```text
 Input: nums = [-2,1,-3,4,-1,2,1,-5,4]
@@ -80,3 +81,6 @@ This approach optimizes the computation by efficiently tracking the maximum sum 
 ## Conclusion
 
 In summary, this code demonstrates {index}`Kadane's algorithm`[](https://en.wikipedia.org/wiki/Maximum_subarray_problem#Kadane's_algorithm) to find the maximum sum of a contiguous subarray in the given array nums. The algorithm efficiently handles negative and positive values, ensuring that it finds the optimal subarray sum.
+
+## Exercise
+- [Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/)
