@@ -20,4 +20,9 @@ What this chapter covers:
     :glob:
     :maxdepth: 1
 
-    *_*
+    242_Valid_Anagram
+    520_Detect_Capital
+    804_Unique_Morse_Code_Words
+    929_Unique_Email_Addresses
+    3_Longest_Substring_Without_Repeating_Characters
+    165_Compare_Version_Numbers

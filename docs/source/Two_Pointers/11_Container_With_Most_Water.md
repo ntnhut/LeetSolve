@@ -15,7 +15,7 @@ Notice that you may not slant the container.
 ### Example 1
 
 
-![The lines of Example 1 and the resulting maximum container](08_TP_11_question_11.jpg)
+![The lines of Example 1 and the resulting maximum container](11_question_11.jpg)
 ```text
 Input: height = [1,8,6,2,5,4,8,3,7]
 Output: 49

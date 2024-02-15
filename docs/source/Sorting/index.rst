@@ -18,4 +18,8 @@ What this chapter covers:
     :glob:
     :maxdepth: 1
 
-    *_*
+    169_Majority_Element
+    88_Merge_Sorted_Array
+    1288_Remove_Covered_Intervals
+    729_My_Calendar_I
+    80_Remove_Duplicates_from_Sorted_Array

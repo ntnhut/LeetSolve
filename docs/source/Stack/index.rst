@@ -25,4 +25,7 @@ As you progress through this chapter, you'll learn about the importance of stack
     :glob:
     :maxdepth: 1
 
-    *_*
+    682_Baseball_Game
+    20_Valid_Parentheses
+    844_Backspace_String_Compare
+    1209_Remove_All_Adjacent_Duplicates_in_String_II

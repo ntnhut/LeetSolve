@@ -25,4 +25,7 @@ What this chapter covers:
     :glob:
     :maxdepth: 1
 
-    *_*
+    1480_Running_Sum_of_1d_Array
+    53_Maximum_Subarray
+    238_Product_of_Array_Except_Self
+    560_Subarray_Sum_Equals_K

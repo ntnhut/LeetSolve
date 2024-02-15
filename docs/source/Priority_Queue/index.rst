@@ -1,8 +1,8 @@
 =========
-Priority Queue
+Priority Queue (Heap)
 =========
 
-This chapter explores **priority queues**, a fascinating data structure designed to manage elements with distinct levels of importance. In this chapter, we'll focus on harnessing the capabilities of C++'s ``std::priority_queue`` from the Standard Template Library (STL).
+This chapter explores **priority queues** (or **heaps**), the fascinating data structures designed to manage elements with distinct levels of importance. In this chapter, we'll focus on harnessing the capabilities of C++'s ``std::priority_queue`` from the Standard Template Library (STL).
 
 Think of a priority queue as a line at a theme park, where individuals with priority passes are served before others. Similarly, a priority queue ensures that elements with higher priority are processed ahead of those with lower priority, enabling us to address a wide range of problems that involve ordering and selection.
 
@@ -23,4 +23,7 @@ Think of a priority queue as a line at a theme park, where individuals with prio
     :glob:
     :maxdepth: 1
 
-    *_*
+    1046_Last_Stone_Weight
+    703_Kth_Largest_Element_in_a_Stream
+    378_Kth_Smallest_Element_in_a_Sorted_Matrix
+    1354_Construct_Target_Array_With_Multiple_Sums

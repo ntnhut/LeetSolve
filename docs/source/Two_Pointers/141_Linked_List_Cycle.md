@@ -9,21 +9,21 @@ Return `true` if there is a cycle in the linked list. Otherwise, return `false`.
 [^url]: https://leetcode.com/problems/linked-list-cycle/
 
 ### Example 1
-![The linked list of Example 1](08_TP_141_circularlinkedlist.png)
+![The linked list of Example 1](141_circularlinkedlist.png)
 ```text
 Input: head = [3,2,0,-4], where -4 links next to 2.
 Output: true
 ```
 
 ### Example 2
-![The linked list of Example 2](08_TP_141_circularlinkedlist_test2.png)
+![The linked list of Example 2](141_circularlinkedlist_test2.png)
 ```text
 Input: head = [1,2], where 2 links next to 1.
 Output: true
 ```
 
 ### Example 3
-![The linked list of Example 3](08_TP_141_circularlinkedlist_test3.png)
+![The linked list of Example 3](141_circularlinkedlist_test3.png)
 ```text
 Input: head = [1], and 1 links to NULL.
 Output: false

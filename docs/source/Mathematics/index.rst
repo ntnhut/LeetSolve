@@ -20,4 +20,12 @@ What this chapter covers:
     :glob:
     :maxdepth: 1
 
-    *_*
+    171_Excel_Sheet_Collumn_Number
+    326_Power_of_Three
+    121_Best_Time_to_Buy_and_Sell_Stock
+    78_Subsets
+    462_Minimum_Moves_to_Equal_Array_Elements_II
+    565_Array_Nesting
+    1641_Count_Sorted_Vowel_Strings
+    1680_Concatenation_of_Consecutive_Binary_Numbers
+    279_Perfect_Squares

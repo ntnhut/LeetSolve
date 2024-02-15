@@ -6,7 +6,7 @@
 
 [^url]: https://leetcode.com/problems/remove-nth-node-from-end-of-list/
 ### Example 1
-![The list in Example 1](08_TP_19_remove_ex1.jpg)
+![The list in Example 1](19_remove_ex1.jpg)
 ```text
 Input: head = [1,2,3,4,5], n = 2
 Output: [1,2,3,5]

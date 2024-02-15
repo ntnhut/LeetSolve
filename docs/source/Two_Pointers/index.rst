@@ -24,4 +24,9 @@ What this chapter covers:
     :glob:
     :maxdepth: 1
 
-    *_*
+    876_Middle_of_the_Linked_List
+    141_Linked_List_Cycle
+    922_Sort_Array_By_Parity_II
+    11_Container_With_Most_Water
+    19_Remove_Nth_Node_From_End_of_List
+    581_Shortest_Unsorted_Continuous_Subarray

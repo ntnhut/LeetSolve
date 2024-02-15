@@ -7,7 +7,7 @@ If there are two middle nodes, return *the second middle* node.
 
 [^url]: https://leetcode.com/problems/middle-of-the-linked-list/
 ### Example 1
-![The linked list of Example 1](08_TP_876_lc-midlist1.jpg)
+![The linked list of Example 1](876_lc-midlist1.jpg)
 ```text
 Input: head = [1,2,3,4,5]
 Output: [3,4,5]
@@ -15,7 +15,7 @@ Explanation: The middle node of the list is node 3.
 ```
 
 ### Example 2
-![The linked list of Example 2](08_TP_876_lc-midlist2.jpg)
+![The linked list of Example 2](876_lc-midlist2.jpg)
 ```text
 Input: head = [1,2,3,4,5,6]
 Output: [4,5,6]
