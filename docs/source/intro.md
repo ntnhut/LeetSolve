@@ -10,7 +10,13 @@
 
 As you work through the coding challenges in this book, you'll **learn new skills**, **improve your problem-solving abilities**, and **develop your confidence as a programmer**. 
 
-The coding challenges in this book are picked from **leetcode.com**. You can find their link in the footnote. I chose the ones that are not too difficult and do not require much effort and determination to solve. The problems in each chapter are put in order of increasing difficulty. Each challenge comes with a detailed solution, explaining the logic behind the solution and how to implement it in C++, my strongest programming language.
+The coding challenges in this book are picked from **leetcode.com**. You can find their link in the footnote. I chose the ones that are not too difficult and do not require much effort and determination to solve. You might come across some simple problems I go directly to the code without saying much about the idea (intuition) since it is straight-forward. 
+
+I also keep the problems' constraints (inputs' size, limits, etc.) as the code in this book is the one I submitted on Leetcode.com. It explains why I do not consider corner cases like `nullptr`, `NaN` or invalid inputs, etc.
+
+The problems in each chapter are put in order of increasing difficulty. Each challenge comes with a detailed solution, explaining the logic behind the solution and how to implement it in C++, my strongest programming language[^python].
+
+[^python]: As of this book is written, Python is more popular than C++. But when it comes to high-performance programming (runtime and memory), C or C++ is still the king. 
 
 At the end of some problems, I also provide similar problems on leetcode.com for you to practice solving on your own, as practicing is essential for reinforcing understanding and mastery of the concepts presented in the book. By engaging in problem-solving exercises, you can apply what you have learned, develop your problem-solving skills, and gain confidence in your ability to tackle real-world challenges.
 
