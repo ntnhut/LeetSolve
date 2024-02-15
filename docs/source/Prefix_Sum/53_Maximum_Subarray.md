@@ -67,11 +67,11 @@ Output:
 23
 ```
 
-This solution is the Kadane's algorithm, which efficiently finds the maximum sum of a contiguous subarray within a given array. 
+This solution is the Kadane's algorithm, which finds the maximum sum of a contiguous subarray within a given array. 
 
 It iterates through the elements of the array, updating `currSum` to either the current element or the sum of the current element and the previous `currSum`, whichever is greater. By considering whether adding the current element improves the overall sum, it effectively handles both positive and negative numbers in the array. Finally, it updates `maxSum` with the maximum value encountered during the iteration, ensuring it holds the maximum sum of any contiguous subarray within the given array. 
 
-This approach optimizes the computation by efficiently tracking the maximum sum and dynamically updating it as it iterates through the array.
+This approach optimizes the computation by tracking the maximum sum and dynamically updating it as it iterates through the array.
 
 ### Complexity
 * Runtime `O(n)`, where `n = nums.length`.

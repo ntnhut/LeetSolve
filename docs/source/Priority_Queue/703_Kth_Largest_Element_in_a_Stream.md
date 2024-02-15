@@ -153,11 +153,11 @@ Output:
 8
 ```
 
-The key insight of this solution is utilizing a min-heap (priority queue with the `greater` comparator) to efficiently find the kth largest element in a collection. 
+The key insight of this solution is utilizing a min-heap (priority queue with the `greater` comparator) to find the kth largest element in a collection. 
 
 Upon initialization, the constructor populates the priority queue with the elements from the input vector `nums`. When adding a new element `val`, it inserts it into the priority queue and then removes elements until the size of the priority queue is reduced to `_k`, ensuring that only the k largest elements are retained in the queue. 
 
-Finally, it returns the top element of the priority queue, which represents the kth largest element. This approach leverages the properties of a min-heap to efficiently track the kth largest element in the collection, resulting in an overall efficient solution.
+Finally, it returns the top element of the priority queue, which represents the kth largest element. This approach leverages the properties of a min-heap to track the kth largest element in the collection, resulting in an overall efficient solution.
 
 ### Complexity
 

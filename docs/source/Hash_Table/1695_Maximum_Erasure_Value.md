@@ -78,11 +78,11 @@ Output:
 
 ### Code explanation
 
-This solution efficiently computes the maximum sum of a subarray containing unique elements. 
+This solution computes the maximum sum of a subarray containing unique elements. 
 
 It uses a {index}`sliding window` approach to maintain a running sum of the elements encountered so far and a hashmap to keep track of the positions of previously seen elements. By updating the starting index of the window when a repeated element is encountered, it ensures that the current subarray contains only unique elements. 
 
-This approach optimizes the computation of the maximum sum by efficiently handling the sliding window and updating the sum accordingly, resulting in an overall efficient solution.
+This approach optimizes the computation of the maximum sum by handling the sliding window and updating the sum accordingly, resulting in an overall efficient solution.
 
 ### Complexity
 

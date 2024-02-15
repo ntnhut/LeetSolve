@@ -60,9 +60,9 @@ Output:
 -1
 ```
 
-This solution efficiently finds the index of the first non-repeating character in a string by using an unordered map to count the occurrences of each character. 
+This solution finds the index of the first non-repeating character in a string by using an unordered map to count the occurrences of each character. 
 
-By iterating through the string and populating the unordered map with the count of each character, it efficiently constructs the character count. Then, it iterates through the string again and returns the index of the first character with a count of 1, indicating that it is non-repeating. 
+By iterating through the string and populating the unordered map with the count of each character, it constructs the character count. Then, it iterates through the string again and returns the index of the first character with a count of 1, indicating that it is non-repeating. 
 
 This approach optimizes the computation by efficiently tracking the count of each character and identifying the first non-repeating character without requiring additional space proportional to the length of the string.
 

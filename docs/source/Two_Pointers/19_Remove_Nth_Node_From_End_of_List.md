@@ -97,7 +97,7 @@ Output:
 
 This solution uses a vector to store pointers to all nodes in the linked list, enabling easy access to the node to be removed and its predecessor. 
 
-By iterating through the linked list and storing pointers to each node in the vector, it efficiently constructs a representation of the linked list in an array-like structure. Then, it retrieves the node to be removed using its index from the end of the vector. Finally, it handles the removal of the node by updating the `next` pointer of its predecessor or updating the `head` pointer if the node to be removed is the head of the linked list. 
+By iterating through the linked list and storing pointers to each node in the vector, it constructs a representation of the linked list in an array-like structure. Then, it retrieves the node to be removed using its index from the end of the vector. Finally, it handles the removal of the node by updating the `next` pointer of its predecessor or updating the `head` pointer if the node to be removed is the head of the linked list. 
 
 This approach optimizes the computation by sacrificing space efficiency for simplicity of implementation and ease of manipulation of linked list elements.
 
@@ -173,7 +173,7 @@ Output:
 [4,]
 ```
 
-This solution uses two pointers, a fast pointer and a slow pointer, to efficiently remove the nth node from the end of a linked list. 
+This solution uses two pointers, a fast pointer and a slow pointer, to remove the nth node from the end of a linked list. 
 
 Initially, both pointers start from the head of the list. The fast pointer moves `n` steps ahead, effectively positioning itself `n` nodes ahead of the slow pointer. Then, while the fast pointer is not at the end of the list, both pointers move forward simultaneously. This ensures that the slow pointer stays `n` nodes behind the fast pointer, effectively reaching the node preceding the nth node from the end when the fast pointer reaches the end of the list. Finally, the nth node from the end is removed by updating the `next` pointer of the node preceding it. 
 

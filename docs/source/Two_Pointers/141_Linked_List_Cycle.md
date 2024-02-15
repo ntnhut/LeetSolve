@@ -94,7 +94,7 @@ Output:
 
 This solution uses a hash map to track visited nodes while traversing the linked list. 
 
-By iterating through the linked list and storing pointers to visited nodes along with a count of their occurrences in the hash map, it efficiently detects cycles in the linked list. If a node is encountered more than once, it indicates the presence of a cycle, and the function returns `true`. Otherwise, if the end of the linked list is reached without encountering any node more than once, it confirms the absence of a cycle, and the function returns `false`. 
+By iterating through the linked list and storing pointers to visited nodes along with a count of their occurrences in the hash map, it detects cycles in the linked list. If a node is encountered more than once, it indicates the presence of a cycle, and the function returns `true`. Otherwise, if the end of the linked list is reached without encountering any node more than once, it confirms the absence of a cycle, and the function returns `false`. 
 
 This approach optimizes the computation by leveraging the hash map to efficiently detect cycles in the linked list without requiring additional space proportional to the length of the list.
 
@@ -169,9 +169,9 @@ Output:
 0
 ```
 
-This solution uses two pointers, a fast pointer and a slow pointer, to efficiently detect cycles in a linked list. 
+This solution uses two pointers, a fast pointer and a slow pointer, to detect cycles in a linked list. 
 
-Both pointers start from the head of the list, and the fast pointer moves two steps forward while the slow pointer moves one step forward in each iteration. By comparing the positions of the fast and slow pointers, the algorithm efficiently detects cycles in the linked list. 
+Both pointers start from the head of the list, and the fast pointer moves two steps forward while the slow pointer moves one step forward in each iteration. By comparing the positions of the fast and slow pointers, the algorithm detects cycles in the linked list. 
 
 If the fast pointer catches up with the slow pointer at any point during traversal, it indicates the presence of a cycle, and the function returns `true`. Otherwise, if the fast pointer reaches the end of the list without intersecting with the slow pointer, it confirms the absence of a cycle, and the function returns `false`. 
 

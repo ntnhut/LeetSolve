@@ -166,7 +166,7 @@ Output:
 -5
 ```
 
-This solution utilizes binary search along with a counting mechanism to efficiently find the kth smallest element in a sorted matrix. The `countLessOrEqual` function counts the number of elements less than or equal to a given value `x` in the matrix, leveraging the fact that each row in the matrix is sorted. 
+This solution utilizes binary search along with a counting mechanism to find the kth smallest element in a sorted matrix. The `countLessOrEqual` function counts the number of elements less than or equal to a given value `x` in the matrix, leveraging the fact that each row in the matrix is sorted. 
 
 The `kthSmallest` function then utilizes binary search to find the smallest value `mid` such that the number of elements less than or equal to `mid` is greater than or equal to `k`. 
 

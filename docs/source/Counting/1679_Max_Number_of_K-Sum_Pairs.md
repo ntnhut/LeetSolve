@@ -79,7 +79,7 @@ Output:
 1
 ```
 
-This solution efficiently counts the number of pairs in the given array `nums` whose sum equals the target value `k`. It utilizes an unordered map to store the frequency of each element encountered while iterating through `nums`. 
+This solution counts the number of pairs in the given array `nums` whose sum equals the target value `k`. It utilizes an unordered map to store the frequency of each element encountered while iterating through `nums`. 
 
 By examining each element `a` in `nums`, it checks if `k - a` exists in the map and if its frequency is greater than 0. If so, it increments the count of pairs and decrements the frequency of both `a` and `k - a`, ensuring that each pair is counted only once. 
 

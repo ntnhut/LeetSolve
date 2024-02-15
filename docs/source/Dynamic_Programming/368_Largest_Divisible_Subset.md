@@ -125,9 +125,9 @@ Output:
 [8,4,2,1,]
 ```
 
-This solution uses dynamic programming with {index}`memoization` to efficiently find the largest divisible subset of a given set of numbers. 
+This solution uses dynamic programming with {index}`memoization` to find the largest divisible subset of a given set of numbers. 
 
-The `largestDivisibleSubsetOf` function recursively computes the largest divisible subset starting from a particular index `i` in the sorted array `nums`. It memoizes the computed subsets in an unordered map `_map` to avoid redundant computations. By iteratively calling `largestDivisibleSubsetOf` for each index `i` in the sorted array and updating the `answer` with the largest subset found so far, the `largestDivisibleSubset` function efficiently computes the largest divisible subset of the input array `nums`. 
+The `largestDivisibleSubsetOf` function recursively computes the largest divisible subset starting from a particular index `i` in the sorted array `nums`. It memoizes the computed subsets in an unordered map `_map` to avoid redundant computations. By iteratively calling `largestDivisibleSubsetOf` for each index `i` in the sorted array and updating the `answer` with the largest subset found so far, the `largestDivisibleSubset` function computes the largest divisible subset of the input array `nums`. 
 
 This approach optimizes the computation by avoiding repeated calculations and leveraging dynamic programming techniques to efficiently explore the solution space.
 
@@ -227,15 +227,15 @@ Output:
 [8,4,2,1,]
 ```
 
-This solution efficiently finds the largest divisible subset of a given set of numbers by dynamically updating the size of the subsets and maintaining the previous index of each element in their largest subset. 
+This solution finds the largest divisible subset of a given set of numbers by dynamically updating the size of the subsets and maintaining the previous index of each element in their largest subset. 
 
-It iterates through the sorted array of numbers, updating the size of the largest subset that ends with each element by considering the previous elements that are factors of the current element. By keeping track of the maximum subset size and the index of the largest element in the subset, it efficiently constructs the largest divisible subset. 
+It iterates through the sorted array of numbers, updating the size of the largest subset that ends with each element by considering the previous elements that are factors of the current element. By keeping track of the maximum subset size and the index of the largest element in the subset, it constructs the largest divisible subset. 
 
 This approach optimizes the computation by avoiding redundant calculations and leveraging dynamic programming techniques to efficiently explore the solution space.
 
 ### Complexity
 
-* Runtime: `O(n^2)`, where `n` is the number of elements in the `nums` vector. The nested loop searches for previous elements with divisibility relationships, which may lead to quadratic time complexity in the worst case. However, it efficiently maintains information about subset sizes and elements, reducing redundant calculations and improving performance.
+* Runtime: `O(n^2)`, where `n` is the number of elements in the `nums` vector. The nested loop searches for previous elements with divisibility relationships, which may lead to quadratic time complexity in the worst case. However, it maintains information about subset sizes and elements, reducing redundant calculations and improving performance.
 * Extra space: `O(n)`.
 
 ## Key takeaway

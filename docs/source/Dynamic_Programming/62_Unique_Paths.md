@@ -211,7 +211,7 @@ Output:
 
 ### Code explanation
 
-This solution efficiently computes the number of unique paths in an `m x n` grid using dynamic programming. It uses a 1D vector `dp` of size `n` to store the number of unique paths for each column.
+This solution computes the number of unique paths in an `m x n` grid using dynamic programming. It uses a 1D vector `dp` of size `n` to store the number of unique paths for each column.
 
 First, it initializes all elements of `dp` to 1, as there's exactly one way to reach any cell in the first row or first column.
 

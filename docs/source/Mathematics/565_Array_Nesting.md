@@ -103,7 +103,7 @@ Output:
 3
 ```
 
-This solution efficiently identifies and calculates the length of array nesting sequences within the given array `nums`. It uses a boolean array `visited` to avoid revisiting elements.
+This solution identifies and calculates the length of array nesting sequences within the given array `nums`. It uses a boolean array `visited` to avoid revisiting elements.
 
 ### Complexity
 

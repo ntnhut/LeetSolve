@@ -115,7 +115,7 @@ Output:
 3
 ```
 
-This solution utilizes a boolean array `visited` to track visited elements efficiently. 
+This solution utilizes a boolean array `visited` to track visited elements. 
 
 It iterates through the elements of the input vector `nums`, marking each element as visited by setting the corresponding index in the `visited` array to true. Upon encountering a visited element, it immediately returns it as the duplicate element. 
 
@@ -158,7 +158,7 @@ Output:
 3
 ```
 
-This code efficiently uses a bitset to keep track of visited elements and quickly detects any duplicate element encountered during the iteration.
+This code uses a bitset to keep track of visited elements and quickly detects any duplicate element encountered during the iteration.
 
 ### Complexity
 

@@ -80,9 +80,9 @@ Output:
 0
 ```
 
-This solution efficiently checks for common characters between pairs of words to determine their product of lengths. 
+This solution checks for common characters between pairs of words to determine their product of lengths. 
 
-It iterates through each pair of words in the input vector `words`, maintaining a boolean array `visited` to mark the presence of characters in each word. By comparing the characters of each pair of words, it efficiently identifies whether there are any common characters. If no common characters are found, it computes the product of the lengths of the two words and updates the maximum product accordingly. 
+It iterates through each pair of words in the input vector `words`, maintaining a boolean array `visited` to mark the presence of characters in each word. By comparing the characters of each pair of words, it identifies whether there are any common characters. If no common characters are found, it computes the product of the lengths of the two words and updates the maximum product accordingly. 
 
 This approach optimizes the computation of the maximum product by efficiently checking for common characters between pairs of words without requiring additional space proportional to the length of the words.
 
@@ -148,7 +148,7 @@ Output:
 
 This solution represents each word in the input vector `words` as a bitmask, where each bit represents the presence or absence of a character in the word. 
 
-By iterating through the words and constructing their corresponding bitmasks, it efficiently encodes the character information. Then, by comparing the bitmasks of pairs of words, it efficiently identifies whether there are any common characters between them. If no common characters are found, it computes the product of the lengths of the two words and updates the maximum product accordingly. 
+By iterating through the words and constructing their corresponding bitmasks, it encodes the character information. Then, by comparing the bitmasks of pairs of words, it identifies whether there are any common characters between them. If no common characters are found, it computes the product of the lengths of the two words and updates the maximum product accordingly. 
 
 This approach optimizes the computation of the maximum product by using bitwise operations to efficiently check for common characters between pairs of words without requiring additional space proportional to the length of the words.
 

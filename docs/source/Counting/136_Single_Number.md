@@ -114,7 +114,7 @@ Output:
 4
 1
 ```
-This solution utilizes bitwise XOR operation to efficiently find the single number that appears only once in the given array of numbers. By iteratively XOR-ing all the numbers in the array, the operation cancels out the duplicate numbers, leaving only the single number in the end. 
+This solution utilizes bitwise XOR operation to find the single number that appears only once in the given array of numbers. By iteratively XOR-ing all the numbers in the array, the operation cancels out the duplicate numbers, leaving only the single number in the end. 
 
 This approach optimizes the computation by leveraging the properties of bitwise XOR operation, which efficiently eliminates duplicates and isolates the single number in the array.
 

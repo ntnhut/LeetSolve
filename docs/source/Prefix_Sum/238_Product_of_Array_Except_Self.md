@@ -79,7 +79,7 @@ Output:
 0 0 9 0 0
 ```
 
-This solution efficiently computes the product of all elements in an array except for the current element. 
+This solution computes the product of all elements in an array except for the current element. 
 
 It accomplishes this by first computing two arrays: `prefix` and `suffix`. The `prefix` array stores the product of all elements to the left of the current element, while the `suffix` array stores the product of all elements to the right of the current element. By multiplying the corresponding elements from `prefix` and `suffix` arrays, it effectively computes the product of all elements except for the current element at each index. 
 
