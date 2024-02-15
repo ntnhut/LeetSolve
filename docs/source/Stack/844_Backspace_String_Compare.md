@@ -34,7 +34,8 @@ Explanation: s becomes "c" while t becomes "b".
 * `s` and `t` only contain lowercase letters and `'#'` characters.
  
 
-**Follow up**: Can you solve it in `O(n)` time and `O(1)` space?
+### Follow up
+* Can you solve it in `O(n)` time and `O(1)` space?
 
 ## Solution: Build and clean the string using the `stack`'s behaviors
 

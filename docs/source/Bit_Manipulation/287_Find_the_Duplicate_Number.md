@@ -30,7 +30,7 @@ Output: 3
 * All the integers in `nums` appear only once except for precisely one integer which appears two or more times.
  
 
-**Follow up**:
+### Follow up
 
 * How can we prove that at least one duplicate number must exist in `nums`?
 * Can you solve the problem in linear runtime complexity?

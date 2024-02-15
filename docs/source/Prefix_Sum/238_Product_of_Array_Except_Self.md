@@ -29,7 +29,8 @@ Output: [0,0,9,0,0]
 * The product of any prefix or suffix of `nums` is guaranteed to fit in a 32-bit integer.
  
 
-**Follow up**: Can you solve the problem in `O(1)` extra space complexity? (The output array does not count as extra space for space complexity analysis.)
+### Follow up
+* Can you solve the problem in `O(1)` extra space complexity? (The output array does not count as extra space for space complexity analysis.)
 
 ## Solution 1: Compute the prefix and suffix products
 

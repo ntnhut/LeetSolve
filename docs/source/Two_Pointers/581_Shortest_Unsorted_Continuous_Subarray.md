@@ -31,7 +31,8 @@ Output: 0
 * `1 <= nums.length <= 10^4`.
 * `-10^5 <= nums[i] <= 10^5`.
 
-**Follow up**: Can you solve it in`O(n)` time complexity?
+### Follow up
+* Can you solve it in`O(n)` time complexity?
 
 ## Solution 1: Sort and compare the difference
 

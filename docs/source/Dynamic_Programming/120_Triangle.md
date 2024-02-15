@@ -33,7 +33,8 @@ Output: -10
 * `-10^4 <= triangle[i][j] <= 10^4`.
  
 
-**Follow up**: Could you do this using only `O(n)` extra space, where `n` is the total number of rows in the triangle?
+### Follow up
+- Could you do this using only `O(n)` extra space, where `n` is the total number of rows in the triangle?
 
 ## Solution 1: Store all minimum paths
 

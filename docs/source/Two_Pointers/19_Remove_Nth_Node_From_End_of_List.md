@@ -32,7 +32,8 @@ Output: [1]
 * `1 <= n <= sz`.
  
 
-**Follow up**: Could you do this in one pass?
+### Follow up
+* Could you do this in one pass?
 
 ## Solution 1: Store the nodes
 

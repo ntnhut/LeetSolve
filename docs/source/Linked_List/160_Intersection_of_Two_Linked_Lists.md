@@ -39,7 +39,8 @@ Output: No intersection.
 * `1 <= m, n <= 3 * 10^4`.
 * `1 <= Node.val <= 10^5`. 
 
-**Follow up**: Could you write a solution that runs in `O(m + n)` time and use only `O(1)` memory?
+### Follow up
+* Could you write a solution that runs in `O(m + n)` time and use only `O(1)` memory?
 
 ## Solution 1: Store the nodes
 
