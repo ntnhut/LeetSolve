@@ -41,5 +41,6 @@ Content
    :titlesonly:
 
    conclude
+   best_practices
    thanks
    about

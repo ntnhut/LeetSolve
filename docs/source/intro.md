@@ -24,12 +24,13 @@ In summary, LeetCode is a valuable resource for programmers and software enginee
 
 The complexity of an algorithm is usually measured in terms of its *Big O notation*, which describes the upper bound of the algorithm's running time as a function of the input size. For example, an algorithm with a time complexity of `O(n)` will have a running time proportional to the input size. In contrast, an algorithm with a time complexity of `O(n^2)` will have a running time proportional to the square of the input size.
 
-![Comparison of Algorithm Complexities in Big O Notation](./img/complexity_graph.png)
-
 
 Algorithm complexity is important because it helps programmers determine their algorithms' efficiency and scalability. In general, algorithms with lower complexity are more efficient, as they require less time and resources to process larger inputs. By analyzing the time complexity of an algorithm, programmers can identify potential performance bottlenecks and optimize their code accordingly.
 
 In addition to time complexity, algorithms may also have space complexity, which measures the memory required to execute the algorithm. Space complexity is also measured in Big O notation and is important for optimizing the memory usage of an algorithm.
+
+![Comparison of Algorithm Complexities in Big O Notation](./img/complexity_graph.png)
+
 
 While it is important to optimize the performance of algorithms, it is also important to balance this with readability and maintainability. A highly optimized algorithm may be difficult to understand and maintain, which can lead to problems in the long run. Therefore, it is important to balance performance and readability when designing and implementing algorithms.
 
@@ -50,7 +51,8 @@ Finally, readable code can save time and money. When code is easy to understand,
 
 In conclusion, readable code is an essential aspect of programming that ensures that code is accessible, error-free, and efficient. By focusing on readability when designing and implementing code, programmers can improve the quality and reliability of their code, leading to a better overall product.
 
----
+
+\newpage
 
 
-*I hope this book is an enjoyable and educational experience that will challenge and inspire you. Whether you want to enhance your skills, prepare for a technical interview, or just have fun, this book has something for you. So, get ready to put your coding skills to the test and embark on a challenging and rewarding journey through the world of coding challenges!*
+> *I hope this book is an enjoyable and educational experience that will challenge and inspire you. Whether you want to enhance your skills, prepare for a technical interview, or just have fun, this book has something for you. So, get ready to put your coding skills to the test and embark on a challenging and rewarding journey through the world of coding challenges!*
