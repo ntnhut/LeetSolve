@@ -17,9 +17,9 @@ This book includes coding challenges that cover basic[^basic] data structures, a
 [^basic]: Such advanced topics like Tree, Graph, Back Tracking, etc. are not included in this version. 
 
 
-The coding challenges in this book are picked from leetcode.com. You can find their link in the footnote. I chose the ones that are not too difficult and do not require much effort and determination to solve. You might come across some simple problems I go directly to the code without saying much about the idea (intuition) since it is straight-forward. 
+The coding challenges in this book are picked from leetcode.com. You can find their titles on leetcode.com. I chose the ones that are not too difficult and do not require much effort and determination to solve. You might come across some simple problems I go directly to the code without saying much about the idea (intuition) since their solution is straight-forward. 
 
-I also keep the problems' original constraints (inputs' size, limits, etc.) as the code in this book is the one I submitted on Leetcode.com. It explains why I do not consider/handle corner cases or invalid inputs.
+I also keep the problems' original constraints (inputs' size, limits, etc.) as the code in this book are the ones I submitted on Leetcode.com. It explains why most of the time I do not consider/handle corner cases or invalid inputs.
 
 The problems in each chapter are also put in order of increasing difficulty. Each challenge comes with a detailed solution, explaining the logic behind the solution and how to implement it in C++, my strongest programming language[^python].
 
@@ -58,8 +58,6 @@ This book is NOT:
 To my invaluable previewers, especially Phùng Phú Tài and Alexander Volkodav. Your dedication, insights, and attention to detail have shaped The Problem Solver's Guide To Coding into its final form. 
 
 Thank you for your invaluable contributions and unwavering support.
-
-\newpage
 
 
 Students and developers! By immersing yourself in the challenges and insights shared in this book, you will not only prepare for coding interviews but also cultivate a mindset beyond the scope of a job interview. You will become a problem solver, a strategic thinker, and a proficient C++ programmer.

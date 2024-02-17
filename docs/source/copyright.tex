@@ -1,3 +1,7 @@
+% conf.py
+% master_doc = 'index_book1'
+% ------
+
 % \date{February, 2024}
 % \begin{document}
 % \frontmatter
@@ -31,7 +35,7 @@ www.nhutnguyen.com
 % \subsection*{What can you expect from this book and what not?}
 
 % \section*{Acknowledgement}
-
+% \newpage
 
 % \sphinxstepscope
 
@@ -43,7 +47,7 @@ www.nhutnguyen.com
 
 % \chapter{Introduction}
 
-
+% \newpage
 
 
 % \appendix
@@ -55,3 +59,5 @@ www.nhutnguyen.com
 
 
 % \chapter*{About the author}
+
+% docs\source\pdf> latexmk -r latexmkrc -pdf -f -dvi- -ps- -jobname=leetsolve -interaction=nonstopmode
