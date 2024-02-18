@@ -52,11 +52,16 @@ struct ListNode {
 };
 
 ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
-    ListNode prehead;     // dummy node to hook the head of the list
-    ListNode* node = l1;  // store result on l1
+    // dummy node to hook the head of the list
+    ListNode prehead;
+    
+    // let's use l1's nodes to store result
+    ListNode* node = l1;  
     prehead.next = node;
     int sum = 0;
     while (node) {
+
+        // perform the addition
         if (l1) {
             sum += l1->val;
             l1 = l1->next;
@@ -66,6 +71,8 @@ ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
             l2 = l2->next;
         }
         node->val = sum % 10;
+
+        // keep track the carry
         sum /= 10;
         if (!l1) {      // l1 ends        
             if (l2) {   // l1 is shorter than l2

@@ -40,24 +40,43 @@ You can use a map to store the position of the elements of `nums`. Then when ite
 #include <vector>
 using namespace std;
 int maximumUniqueSubarray(vector<int>& nums) {
+    // sum stores the running sum of nums
+    // i.e., sum[i] = nums[0] + ... + nums[i]
     vector<int> sum(nums.size(), 0);
     sum[0] = nums.at(0);
+
+    // store the maximum sum of the maximum subarray
     int maxSum = sum.at(0);
+
+    // position[a] keeps track of latest index i whose nums[i] = a
     unordered_map<int, int> position;
     position[nums.at(0)] = 0;
+
+    // the starting index of the current subarray
     int start = -1;
     for (int i = 1; i < nums.size(); i++) {
         sum[i] = sum.at(i - 1) + nums.at(i);
+
+        // check if the current subarray's elements are still distinct
         auto it = position.find(nums.at(i));
+        
+        // found the value nums[i] in the map position
         if (it != position.end()) {
+            // a new subarray now starts from i
             start = max(start, it->second);
+
+            // clear the latest index of the value nums[i]
+            // by updating it to i 
             it->second = i;
         } else {
+            // current subarray continues with nums[i]
             position.insert({nums.at(i), i});
         }            
         if (start == -1) {
+            // still on the first subarray nums[0]..nums[i]
             maxSum = sum.at(i);
         } else {
+            // update maxSum with the sum of subarray nums[start]..nums[i]
             maxSum = max(maxSum, sum.at(i) - sum.at(start));
         }
     }

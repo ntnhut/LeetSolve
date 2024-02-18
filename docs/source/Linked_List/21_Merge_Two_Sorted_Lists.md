@@ -56,7 +56,7 @@ ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
     } else if (list2 == nullptr) {
         return list1;
     }
-    // identify which list is head
+    // identify which list is head of the merged one
     ListNode* head = list1;
     if (list2->val < head->val) {
         head = list2;
@@ -66,6 +66,7 @@ ListNode* mergeTwoLists(ListNode* list1, ListNode* list2) {
     }
     ListNode* node = head;
     while (list1 && list2) {
+        // pick the smaller node to append to the new list.
         if (list1->val < list2->val) {
             node->next = list1;
             list1 = list1->next;

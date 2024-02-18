@@ -181,11 +181,14 @@ ListNode *getIntersectionNode(ListNode *headA, ListNode *headB)
         lengthB++;
         nodeB = nodeB->next;
     }
+    // not the same tail -> no intersection
     if (nodeA != nodeB) {
         return nullptr;
     }
     nodeA = headA;
     nodeB = headB;
+    // find the nodeA in listA and nodeB in listB
+    // that make two lists have the same length 
     while (lengthA > lengthB) {
         nodeA = nodeA->next;
         lengthA--;
@@ -194,6 +197,7 @@ ListNode *getIntersectionNode(ListNode *headA, ListNode *headB)
         nodeB = nodeB->next;
         lengthB--;
     }
+    // find the intersection
     while (nodeA != nodeB) {
         nodeA = nodeA->next;
         nodeB = nodeB->next;

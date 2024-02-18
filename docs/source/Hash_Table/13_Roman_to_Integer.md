@@ -67,10 +67,13 @@ const unordered_map<char, int> value = {
     {'C', 100}, {'D', 500},
     {'M', 1000}
 };
-int romanToInt(string s) {
+int romanToInt(string& s) {
+
+    // starting from the end character of the string s
     int i = s.length() - 1;
     int result = value.at(s[i--]);
     while (i >= 0) {
+        // In cases of subtraction
         if (value.at(s[i]) < value.at(s[i+1])) {
             result -= value.at(s[i--]); 
         } else {

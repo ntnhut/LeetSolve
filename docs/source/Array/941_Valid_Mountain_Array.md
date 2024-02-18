@@ -53,6 +53,7 @@ bool validMountainArray(vector<int>& arr) {
     while (i < N && arr[i] < arr[i + 1]) {
         i++;
     }
+    // condition: 0 < i < N - 1
     if (i == 0 || i == N) {
         return false;
     }

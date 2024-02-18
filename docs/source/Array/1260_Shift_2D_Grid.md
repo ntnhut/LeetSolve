@@ -116,17 +116,27 @@ For `grid = [[1,2,3],[4,5,6],[7,8,9]]`:
 using namespace std;
 vector<vector<int>> shiftGrid(vector<vector<int>>& grid, int k) {
     vector<int> v;
+    // store the 2D grid values into a 1D vector v
     for (auto& r : grid) {
         v.insert(v.end(), r.begin(), r.end());
     }
+    const int N = v.size();
+
+    // perform the shifting
+    int p = N - k % N;
+    
+    // number of rows
     const int m = grid.size();
-    const int n = grid[0].size();
-    int p = v.size() - (k % v.size());
+
+    // number of columns
+    const int n = grid[0].size();    
+    
     for (int i = 0; i < m; i++) {
         for (int j = 0; j < n; j++) {
-            if (p == v.size()) {
+            if (p == N) {
                 p = 0;
             }
+            // reconstruct the grid
             grid[i][j] = v[p++];
         }
     }

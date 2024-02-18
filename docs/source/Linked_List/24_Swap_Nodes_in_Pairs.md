@@ -51,6 +51,7 @@ struct ListNode {
     ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
 ListNode* swapPairs(ListNode* head) {
+    // the list does not have enough nodes to swap
     if (head == nullptr || head->next == nullptr) {
         return head;
     }
@@ -59,11 +60,17 @@ ListNode* swapPairs(ListNode* head) {
     ListNode* nextNode = head->next;  
     head = nextNode;
     while (curNode != nullptr && nextNode != nullptr) {
+
+        // swap curNode and nextNode
         curNode->next = nextNode->next;
         nextNode->next = curNode;
+
+        // update links/pointers after swap
         if (preNode) {
             preNode->next = nextNode;
         }
+
+        // update nodes for next step
         preNode = curNode;
         curNode = curNode->next;       
         if (curNode) {

@@ -56,6 +56,7 @@ struct ListNode {
     ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
 ListNode* removeElements(ListNode* head, int val) {
+    // remove head if its value matches val
     while (head && head->val == val) {
         head = head->next;
     }
@@ -63,6 +64,7 @@ ListNode* removeElements(ListNode* head, int val) {
     ListNode* pre = head;
     while (pre->next) {
         if (pre->next->val == val) {
+            // remove pre->next
             pre->next = pre->next->next;
         } else {
             pre = pre->next;
@@ -114,7 +116,7 @@ This solution efficiently removes nodes with a specified value `val` from a link
 * Memory: `O(1)`.
 
 ## Solution 2: Create a previous {index}`dummy node` for head
-`head` has no `pre`. You can create a dummy node for `head.pre`. 
+`head` has no `pre`. You can create a dummy node for `head.pre` whose values is out of the contraints. 
 
 ### Code
 ```cpp
@@ -127,6 +129,8 @@ struct ListNode {
     ListNode(int x, ListNode *next) : val(x), next(next) {}
 };
 ListNode* removeElements(ListNode* head, int val) {
+
+    // create a new head of value 2023 > 50
     ListNode preHead(2023, head);
     ListNode* pre = &preHead;
     while (pre->next) {
@@ -176,7 +180,7 @@ Output:
 []
 ```
 
-This solution creates a `preHead` node with a value of `2023` (an arbitrary value) and sets its `next` pointer to point to the original `head` of the linked list. 
+This solution creates a `preHead` node with a value of `2023` (an arbitrary value larger than `50`) and sets its `next` pointer to point to the original `head` of the linked list. 
 
 The purpose of this `preHead` node is to serve as the dummy or sentinel node at the beginning of the linked list. Having a `preHead` node simplifies the code because it eliminates the need to handle the special case of removing nodes from the beginning of the list separately.
 

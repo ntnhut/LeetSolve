@@ -39,12 +39,14 @@ You can use a vector of `bool` to mark which value appeared in the array.
 #include <iostream>
 using namespace std;
 vector<int> findDisappearedNumbers(vector<int>& nums) {        
-    vector<bool> exist(nums.size() + 1, false);        
+
+    const int n = nums.size();
+    vector<bool> exist(n + 1, false);        
     for (auto& i : nums) {
         exist[i] = true;
     }
     vector<int> result;
-    for (int i = 1; i <= nums.size(); i++) {
+    for (int i = 1; i <= n; i++) {
         if (!exist.at(i)) {
             result.push_back(i);
         }
@@ -53,8 +55,8 @@ vector<int> findDisappearedNumbers(vector<int>& nums) {
 }
 void print(vector<int>& nums) {
     cout << "[";
-    for (auto& n : nums) {
-        cout << n << ",";
+    for (auto& a : nums) {
+        cout << a << ",";
     }
     cout << "]\n";
 }
@@ -88,7 +90,17 @@ Then it performs the marking of all `nums`'s elements to `true`. The ones that a
 
 You could use the indices of the array `nums` to mark the appearances of its elements because they are just a shift (`[1, n]` vs. `[0, n-1]`).
 
-One way of marking the appearance of an index `j` is making the element `nums[j]` to be negative. Then the indices `j`'s whose `nums[j]` are unchanged (still positive) are the ones that do not appear in `nums`.
+One way of marking the appearance of a value `j` (`1 <= j <= n`) is making the element `nums[j-1]` to be negative. Then the indices `j`'s whose `nums[j-1]` are still positive are the ones that do not appear in `nums`.
+
+### Example 1
+With `nums = [4,3,2,7,8,2,3,1]`:
+
+- To indicate `4` is present, make `nums[4-1]` is negative, i.e. changing `nums[4-1] = nums[3]` to `-7`.
+- To indicate `3` is present, make `nums[3-1]` is negative, i.e. changing `nums[3-1] = nums[2]` to `-2`.
+- And so on.
+- `nums` becomes `[-4,-3,-2,-7,8,2,-3,-1]`.
+- The positive values `8` corresponds to `nums[4] = nums[5-1]`, indicates `5` was not present in `nums`.
+- Similarly, the positive values `2` corresponds to `nums[5] = nums[6-1]`, indicates `6` was not present in `nums`.
 
 ### Code
 
@@ -97,23 +109,29 @@ One way of marking the appearance of an index `j` is making the element `nums[j]
 #include <iostream>
 using namespace std;
 vector<int> findDisappearedNumbers(vector<int>& nums) {
+    const int n = nums.size();
     int j;
-    for (int i{0}; i < nums.size(); i++) {
+    for (int i{0}; i < n; i++) {
+        // make sure j is positive, 
+        // since nums[i] might be changed to be negative in previous steps
         j = abs(nums.at(i));
+
+        // Mark nums[j - 1] as negative to indicate its presence       
         nums[j - 1] = -abs(nums.at(j - 1));
     }
     vector<int> result;
-    for (int i{1}; i <= nums.size(); i++) {
-        if (nums.at(i - 1) > 0) {
-            result.push_back(i);
+    for (int j{1}; j <= n; j++) {
+        // If nums[j - 1] is positive, it means j is missing        
+        if (nums.at(j - 1) > 0) {
+            result.push_back(j);
         }
     }
     return result;
 }
 void print(vector<int>& nums) {
     cout << "[";
-    for (auto& n : nums) {
-        cout << n << ",";
+    for (auto& a : nums) {
+        cout << a << ",";
     }
     cout << "]\n";
 }
