@@ -63,8 +63,11 @@ int uniqueMorseRepresentations(vector<string>& words) {
     for (string& w : words) {
         string s{""};
         for (char& c : w) {
+            // concatnate the letter c's Morse code
             s += morse[c - 'a'];
         }
+        // only insert the transformation s to the set 
+        // if the set did not consist s yet.
         transformations.insert(s);
     }
     return transformations.size();

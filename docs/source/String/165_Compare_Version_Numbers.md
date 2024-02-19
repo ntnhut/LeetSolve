@@ -69,14 +69,21 @@ If all revisions of the shorter version are equal to the corresponding revisions
 #include <string>
 #include <numeric>
 using namespace std;
+//! @return the vector of revisions of the version 
+//! @example if version = "1.02.11", return {1,2,11}
 vector<int> toVector(const string& version) {
     vector<int> revisions;
     string revision;
     for (char c : version) {
         if (c != '.') {
+            // continue to build current revision 
             revision += c;
         } else {
+            // current revision completes
+            // uses stoi() to ignore leading zeros
             revisions.push_back(stoi(revision));
+
+            // start a new revision
             revision = "";
         }
     }
@@ -84,11 +91,12 @@ vector<int> toVector(const string& version) {
     return revisions;
 }
 
-int compareVersion(string version1, string version2) { 
+int compareVersion(string& version1, string& version2) { 
     vector<int> r1 = toVector(version1);    
     vector<int> r2 = toVector(version2);
 
     int i = 0;
+    // perform the comparison on the revisions
     while (i < r1.size() && i < r2.size()) {
         if (r1[i] < r2[i]) {
             return -1;
@@ -97,11 +105,15 @@ int compareVersion(string version1, string version2) {
         }
         i++;
     }
-    int remain1 = accumulate(r1.begin() + i, r1.end(), 0);
-    int remain2 = accumulate(r2.begin() + i, r2.end(), 0);
-    if (remain1 < remain2) {
-        return -1;
-    } else if (remain1 > remain2) {
+    if (i == r1.size()) {
+        // if version1 is not longer than version2
+        // and version2 still has some valid revisions remain
+        if (accumulate(r2.begin() + i, r2.end(), 0) > 0) {
+            return -1;
+        }
+    } else if (accumulate(r1.begin() + i, r1.end(), 0) > 0) {
+        // if version2 is not longer than version1
+        // and version1 still has some valid revisions remain
         return 1;
     }
     return 0;

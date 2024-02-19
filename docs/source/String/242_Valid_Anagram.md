@@ -35,7 +35,8 @@ Output: false
 #include <iostream>
 #include <algorithm>
 using namespace std;
-bool isAnagram(string s, string t) {
+bool isAnagram(string& s, string& t) {
+    // anagrams must have the same length
     if (s.length() != t.length()) {
         return false;
     }
@@ -67,19 +68,24 @@ This solution determines if two strings are anagrams by comparing their sorted v
 ```cpp
 #include <iostream>
 using namespace std;
-bool isAnagram(string s, string t) {
+bool isAnagram(string& s, string& t) {
     if (s.length() != t.length()) {
         return false;
     }
+    // s and t consist of only lowercase English letters
+    // you can encode 0: 'a', 1: 'b', .., 25: 'z'.
     int alphabet[26];
     for (int i = 0; i < 26; i++) {
         alphabet[i] = 0;
     }
+    // count the frequency of each letter in s
     for (char& c : s) {
         alphabet[c - 'a']++;
     }
     for (char& c : t) {
         alphabet[c - 'a']--;
+        // if s and t have the same length but are not anagrams,
+        // there must be some letter in t having higher frequency than s 
         if (alphabet[c - 'a'] < 0) {
             return false;
         }
@@ -116,6 +122,7 @@ bool isAnagram(string s, string t) {
     if (s.length() != t.length()) {
         return false;
     }
+    // this alphabet can store all UTF-8 characters
     unordered_map<char, int> alphabet;
     for (char& c : s) {
         alphabet[c]++;

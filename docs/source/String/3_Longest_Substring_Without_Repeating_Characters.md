@@ -59,18 +59,30 @@ this_start = max(previous_start, i).
 #include <iostream>
 #include <unordered_map>
 using namespace std;
-int lengthOfLongestSubstring(string s) {
+int lengthOfLongestSubstring(string& s) {
+    // keep track latest index of a character in s
     unordered_map<char, int> position;
+
+    // posible maximum length of the longest substring
     int maxLen = 0;
-    int start = -1;
+
+    // starting index of current substring
+    int start = -1; 
     for (int i = 0; i < s.length(); i++) {
         auto it = position.find(s.at(i));
+        // found this s[i] has appeared in the map
         if (it != position.end()) {
+            // start a new substring from this index i
             start = max(start, it->second);
+
+            // update latest found position of character s[i] to be i
             it->second = i;
         } else {
+
+            // keep track index of s[i] in the map
             position.insert({s.at(i), i});
         }
+        // update the maximum length
         maxLen = max(maxLen, i - start);
     }
     return maxLen;

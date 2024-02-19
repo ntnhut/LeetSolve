@@ -39,17 +39,23 @@ Otherwise, the rest is always lowercase.
 #include <string>
 #include <iostream>
 using namespace std;
+//! @return true if (c is lowercase and isLower is true) 
+//!                 or (c is uppercase and isLower is false).
+//!         false, otherwise. 
 bool isValidCase(const char& c, const bool isLower) {
     if (isLower) {
         return 'a' <= c && c <= 'z';
     }
     return 'A' <= c && c <= 'Z';
 }
-bool detectCapitalUse(string word) {
+bool detectCapitalUse(string& word) {
     if (word.length() == 1) {
         return true;
     }
     bool isLower = true;
+    
+    // if the first two characters are uppercase,
+    // the rest must be uppercase, too.
     if (isValidCase(word[0], false) && isValidCase(word[1], false)) {
         isLower = false;
     }
