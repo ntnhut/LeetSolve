@@ -47,17 +47,20 @@ using namespace std;
 string cleanString(string &s) {
     vector<char> v;
     for (int i = 0; i < s.length(); i++) {
-        if (s[i] != '#') {
+        if (s[i] != '#') { 
+            // s[i] is a normal letter
             v.push_back(s[i]);
         } else {
             if (!v.empty()) {
+                // perform the backspace
                 v.pop_back();
             }
         }
     }
+    // create a string from a vector of char
     return string(v.begin(), v.end());
 }
-bool backspaceCompare(string s, string t) {
+bool backspaceCompare(string& s, string& t) {
     return cleanString(s) == cleanString(t);
 }
 int main() {
@@ -80,10 +83,9 @@ This solution effectively handles backspace characters (`'#'`) in input strings 
 * Runtime: `O(n)`, where `n = max(s.length, t.length)`.
 * Extra space: `O(n)`. 
 
-```{admonition} Implementation notes
-:class: tip
+##  Implementation notes
 
-**Why `vector ` instead of `stack`?**
+### Why `vector ` instead of `stack`?
 
 You can use the methods [`push`](https://en.cppreference.com/w/cpp/container/stack/push) and [`pop`](https://en.cppreference.com/w/cpp/container/stack/pop) of the data structure [`stack`](https://en.cppreference.com/w/cpp/container/stack) to build and clean the strings. 
 
@@ -91,13 +93,13 @@ But [`vector`](https://en.cppreference.com/w/cpp/container/vector) has also such
 
 On the other hand, using `vector` it is easier to construct a `string` by constructor than using `stack` after cleaning.
 
-**Can you solve it in `O(n)` time and `O(1)` space?**
+### Can you solve it in `O(n)` time and `O(1)` space?
 
 Yes, you can. 
 
 The simplest way is just to perform the erasure directly on strings `s` and `t`. But the run time complexity of [`string::erase`](https://en.cppreference.com/w/cpp/string/basic_string/erase)  is not constant.
 
-```
+
 
 ## Exercise
 - [Removing Stars From a String](https://leetcode.com/problems/removing-stars-from-a-string/)

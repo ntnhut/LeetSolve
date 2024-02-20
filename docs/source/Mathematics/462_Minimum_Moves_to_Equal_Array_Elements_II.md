@@ -132,15 +132,16 @@ This solution efficiently finds the median of the `nums` array in linear time us
 * Runtime: `O(n)`, where `n = nums.length`.
 * Extra space: `O(1)`.
 
-```{admonition} Modern C++ tips
-:class: tip
+## Modern C++ tips
 
 In the code of Solution 2, the partial sorting algorithm [`std::nth_element`](https://en.cppreference.com/w/cpp/algorithm/nth_element) will make sure for all indices `i` and `j` that satisfy `0 <= i <= mid <= j < nums.length`, then
 
-    nums[i] <= nums[mid] <= nums[j].
+```
+nums[i] <= nums[mid] <= nums[j].
+```
 
 With this property, if `mid = nums.length / 2`, then the value of `nums[mid]` is unchanged no matter how `nums` is sorted or not.
-```
+
 
 ## Exercise
 - [Minimum Moves to Equal Array Elements](https://leetcode.com/problems/minimum-moves-to-equal-array-elements/)

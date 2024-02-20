@@ -57,17 +57,24 @@ For `s = "deeedbbcccbdaa"` and `k = 3`:
 #include <iostream>
 #include <vector>
 using namespace std;
-string removeDuplicates(string s, int k) {
+string removeDuplicates(string& s, int k) {
+    // stk is used as a stack
+    // all letters in each string a of stk are equal 
+    // every a's length is less than k
     vector<string> stk;
     int i = 0;
     while (i < s.length()) {
-        string a;   // to store adjacent equal letters        
-        // perform the merge
+        // a represents the current string with duplicate letters
+        string a;   
+        
         if (!stk.empty() && s[i] == stk.back().back()) {
+            // let a be the latest string in stk
+            // because its letters are equal to s[i]
             a = move(stk.back());
             stk.pop_back();
         }
         int j = i;
+        // iterate all adjacent duplicates of s[i]
         while (j < s.length() && s[j] == s[i]) {
             a += s[j];
             // remove the k-duplicate
@@ -76,11 +83,13 @@ string removeDuplicates(string s, int k) {
             }
             j++;
         }
-        if (!a.empty()) {
+        // after the loop, the number of duplicates in a is less than k
+        if (!a.empty()) {            
             stk.push_back(a);
         }
         i = j;
     }
+    // create the final result from stk
     s = "";
     for (auto& str : stk) {
         s += str;
@@ -107,15 +116,15 @@ This solution efficiently removes substrings of consecutive duplicate characters
 * Runtime: `O(N)`, where `N = s.length`.
 * Extra space: `O(N)`.
 
-```{admonition} Implementation tips
-:class: tip
+## Implementation tips
 
-The data structure `stk` you might need to solve this problem is a stack. But here are the reasons you had better use [`std::vector`](https://en.cppreference.com/w/cpp/container/vector):
+* The data structure `stk` you might need to solve this problem is a stack. But here are the reasons you had better use [`std::vector`](https://en.cppreference.com/w/cpp/container/vector):
 
 * `std::vector` also has methods [`push_back(value)`](https://en.cppreference.com/w/cpp/container/vector/push_back) and [`pop_back()`](https://en.cppreference.com/w/cpp/container/vector/pop_back) like the ones in a stack.
+
 * On the other hand, it is faster for a vector to perform the string concatenation at the end.
 
-```
+* In the expression `stk.back().back()`: `stk.back()` is the latest string `a` of `stk`. Then `stk.back().back() = a.back()` is the last character of `a`.
 
 ## Exercise
 - [Remove All Adjacent Duplicates In String](https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/)

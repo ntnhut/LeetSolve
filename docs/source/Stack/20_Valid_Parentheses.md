@@ -46,18 +46,21 @@ For each character `c` of `s`:
 #include <iostream>
 #include <stack>
 using namespace std;
-bool isValid(string s) {
+bool isValid(string& s) {
     stack<char> stk;
-    for (char c : s) {
+    for (char& c : s) {
         if (c == '(' || c == '[' || c == '{') {
             stk.push(c);
         } else if (stk.empty()) {
+            // start with a non-open parenthesis is invalid
             return false;
         } else if (c == ')' && stk.top() != '(' 
               || c == ']' && stk.top() != '['
               || c == '}' && stk.top() != '{') {
+            // the last open parenthesis does not match this closed one
             return false;
         } else {
+            // open-close match
             stk.pop();
         }
     }

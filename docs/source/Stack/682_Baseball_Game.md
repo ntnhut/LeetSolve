@@ -74,10 +74,11 @@ int calPoints(vector<string>& ops) {
             stk.push_back(stk.back()*2);
         } else if (s == "+") {
             stk.push_back(stk[stk.size() - 1] + stk[stk.size() - 2]);
-        } else {
+        } else { // s is an integer
             stk.push_back(stoi(s));
         }
     }
+    // compute the sum
     return accumulate(stk.begin(), stk.end(), 0);
 }
 int main() {
@@ -98,8 +99,7 @@ This solution simulates the baseball game by processing each round's operation a
 * Runtime: `O(N)`, where `N = ops.length`.
 * Extra space: `O(N)`.
 
-```{admonition} Implementation tips
-:class: tip
+## Implementation tips
 
 1. The data structure `stk` you might need to solve this problem is a stack. But here are the reasons you had better use [`std::vector`](https://en.cppreference.com/w/cpp/container/vector):
     * `std::vector` has also methods [`push_back(value)`](https://en.cppreference.com/w/cpp/container/vector/push_back) and [`pop_back()`](https://en.cppreference.com/w/cpp/container/vector/pop_back) like the ones in stack.
@@ -107,7 +107,6 @@ This solution simulates the baseball game by processing each round's operation a
 
 2. [`accumulate(stk.begin(), stk.end(), 0)`](https://en.cppreference.com/w/cpp/algorithm/accumulate) computes the sum of the vector `stk`.
 
-```
 
 ## Exercise
 - [Crawler Log Folder](https://leetcode.com/problems/crawler-log-folder/)
