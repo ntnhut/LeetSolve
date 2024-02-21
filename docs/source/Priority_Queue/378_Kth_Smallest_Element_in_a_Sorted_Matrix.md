@@ -49,9 +49,11 @@ You can implement exactly what Example 1 has explained.
 using namespace std;
 int kthSmallest(vector<vector<int>>& matrix, int k) {
     vector<int> m;
+    // transform the 2D matrix into a 1D array m
     for (auto& row : matrix) {
         m.insert(m.end(), row.begin(), row.end());
     }
+    // sort the array m
     sort(m.begin(), m.end());
     return m.at(k - 1);
 }
@@ -92,6 +94,7 @@ int kthSmallest(vector<vector<int>>& matrix, int k) {
     for (int row = 0; row < matrix.size(); row++) {
         for (int col = 0; col < matrix[row].size(); col++) {
             q.push(matrix[row][col]);
+            // maintain q's size does not exceed k
             if (q.size() > k) {
                 q.pop();
             }
@@ -121,7 +124,7 @@ This approach is handy for large matrices, as it doesn't require sorting the ent
 * Runtime: `O(N*logk)`, where `N = n^2` is the total number of elements of the matrix.
 * Extra space: `O(k)`.
 
-## Solution 3: Binary search
+<!-- ## Solution 3: Binary search
 
 Since the matrix is somehow sorted, you can perform the binary search algorithm. 
 
@@ -133,15 +136,20 @@ But the criteria for the searching is not the value of the element `x` of intere
 #include <vector>
 #include <algorithm>
 using namespace std;
+
+//! @return the number of elements in the matrix less than or equal to x
 int countLessOrEqual(const vector<vector<int>>& matrix, int x) {
     int count = 0;
     for (const auto& row : matrix) {
+        // count the number of target elements in this sorted row
         count += upper_bound(row.begin(), row.end(), x) - row.begin();
     }
     return count;
 }
 int kthSmallest(vector<vector<int>>& matrix, int k) {   
+    // the first element in the matrix
     int left = matrix.front().front();
+    // the last element in the matrix
     int right = matrix.back().back();
     while (left <= right) {
         int mid = left + (right - left) / 2;
@@ -183,7 +191,7 @@ This approach effectively narrows down the search space by iteratively adjusting
 In summary:
 
 * Runtime: `O(n*logn*log(max -min))`, where `n` is the number of rows/columns of the matrix, `max` and `min` are the maximum and minimum possible values in the matrix.
-* Extra space: `O(1)`.
+* Extra space: `O(1)`. -->
 
 ## Exercise
 - [Find K Pairs with Smallest Sums](https://leetcode.com/problems/find-k-pairs-with-smallest-sums/)

@@ -59,15 +59,18 @@ class KthLargest {
     int _k;
 public:
     KthLargest(int k, vector<int>& nums) : _nums(nums), _k(k) {   
+        // sort the nums when constructed
         sort(_nums.begin(), _nums.end(), std::greater());
     }
     
     int add(int val) {
         auto it = _nums.begin();
+        // find the position to insert val
         while (it != _nums.end() &&  val < *it) {
             it++;
         }
         _nums.insert(it, val);
+        // return the k-th largest element
         return *(_nums.begin() + _k - 1);
     }
 };
@@ -107,9 +110,9 @@ There is a data structure that has the property you want in this problem.
 
 It is [`std::priority_queue`](https://en.cppreference.com/w/cpp/container/priority_queue), which keeps its top element is always the largest one according to the comparison you define for the queue.
 
-By default, the "less than" comparison is used for {index}`std::priority_queue` and the top one is always the biggest element. 
+By default, the "less than" comparison is used for {index}`std::priority_queue` (heap) and the top one is always the biggest element. 
 
-If you want the top one is always the smallest element, you can use the comparison "greater than" for your queue.
+If you want the top one is always the smallest element, you can use the comparison "greater than" for your heap.
 
 ### Code
 ```cpp
@@ -121,13 +124,16 @@ class KthLargest {
     priority_queue<int, vector<int>, greater<int>> _q;
     int _k;
 public:
-    KthLargest(int k, vector<int>& nums) 
+    KthLargest(int k, vector<int>& nums)
+    // create the heap when constructed 
     : _q(nums.begin(), nums.end()), _k(k) {
 
     }
     
     int add(int val) {
         _q.push(val);
+
+        // remove elements until _q remains k elements
         while (_q.size() > _k) {
             _q.pop();
         }

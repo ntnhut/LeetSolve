@@ -55,6 +55,7 @@ int lastStoneWeight(vector<int>& stones) {
         q.pop();
         int x = q.top();
         q.pop();
+        // compare two heaviest stones
         if (y != x) {
             q.push(y - x);
         }

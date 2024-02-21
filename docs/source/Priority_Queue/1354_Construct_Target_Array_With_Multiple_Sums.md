@@ -66,30 +66,43 @@ For `target = [9,3,5]`:
 #include <vector>
 using namespace std;
 bool isPossible(vector<int>& target) {
+    // compute sum of all target's elements
     unsigned long sum = accumulate(target.begin(), 
                                    target.end(), 
                                    (unsigned long) 0);
+    // find the max element in the target
+    // pmax is the pointer to the max element,
+    // *pmax is the value that pointer points to
     auto pmax = max_element(target.begin(), target.end());
     while (*pmax > 1) {
+        // compute the remaining sum
         sum -= *pmax;
         if (sum == 1) {
             // This is the case target = [m,1], 
             // which you can always turn it to [1,1].
             return true;
-        }
+        }        
         if (*pmax <= sum) {
+            // the next subtraction leads to non-positive values
             return false;
         }
         if (sum == 0) {
+            // cannot change target
             return false;
         }
+        // perform the subtraction as much as possible
+        // and update new value for the pointer pmax
         *pmax %= sum;
         if (*pmax == 0) {
             return false;
         }
+        // compute the sum of the subtracted target
         sum += *pmax;
+        // find the max element in the subtracted target
         pmax = max_element(target.begin(), target.end());
     }
+    // if the final target = [1, .., 1],
+    // its sum equals to its length
     return sum == target.size();
 }
 int main() {
@@ -128,11 +141,14 @@ That might lead to the usage of the {index}`std::priority_queue`.
 #include <vector>
 using namespace std;
 bool isPossible(vector<int>& target) {
+    // create a heap from the target
     priority_queue<int> q(target.begin(), target.end());
+    // compute the sum of all elements
     unsigned long sum = accumulate(target.begin(), 
                                    target.end(), 
                                    (unsigned long) 0);
     while (q.top() > 1) {
+        // compute the remaining sum
         sum -= q.top();
         if (sum == 1) {
             return true;
@@ -143,12 +159,16 @@ bool isPossible(vector<int>& target) {
         if (sum == 0) {
             return false;
         }
+        // perform the subtraction as much as possible
         int pre = q.top() % sum;
         if (pre == 0) {
             return false;
         }
+        // remove the old max element
         q.pop();
+        // add subtracted element to the heap
         q.push(pre);
+        // compute the sum of the subtracted target
         sum += pre;
     }
     return sum == target.size();
