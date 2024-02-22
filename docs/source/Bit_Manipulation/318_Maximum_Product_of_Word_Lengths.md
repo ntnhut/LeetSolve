@@ -45,19 +45,26 @@ using namespace std;
 int maxProduct(vector<string>& words) {
     int maxP = 0;
     for (int i = 0; i < words.size(); i++) {
+        // visited marks all letters that appear in words[i] 
+        // words[i] consists of only 26 lowercase English letters
         vector<bool> visited(26, false);
-        for (char c : words[i]) {
+        for (char& c : words[i]) {
+            // map 'a'->0, 'b'->1, .., 'z'->25
             visited[c - 'a'] = true;
-        }        
+        }
+        // compare with all other words[j]         
         for (int j = i + 1; j < words.size(); j++) {
             bool found = false;
-            for (char c : words[j]) {              
+            for (char& c : words[j]) {              
                 if (visited[c - 'a']) {
+                    // this words[j] has common letter with words[i]
                     found = true;
                     break;
                 }
             }
+            // if words[j] disjoints words[i]
             if (!found) {
+                // compute and update max product of their lengths
                 maxP = max(maxP, (int) (words[i].length() * words[j].length()));
             } 
         }
@@ -117,13 +124,18 @@ This technique is called bit masking.
 using namespace std;
 int maxProduct(vector<string>& words) {
     int maxP = 0;
+    // initialize all elements of mask to 0
     vector<int> mask(words.size());
     for (int i = 0; i < words.size(); i++) {
-        for (char c : words[i]) {
+        // mark all characters of word[i]
+        for (char& c : words[i]) {
+            // map 'a'->0, 'b'->1, .., 'z'->25
+            // set the bit at that mapped position of mask[i] to 1
             mask[i] |= 1 << (c - 'a');
         }        
         for (int j = 0; j < i; j++) {
             if ((mask[j] & mask[i]) == 0) {
+                // there is no common bit between mask[j] and mask[i]
                 maxP = max(maxP, (int) (words[i].length() * words[j].length()));
             } 
         }

@@ -41,9 +41,11 @@ Output: true
 #include <iostream>
 using namespace std;
 bool isPowerOfFour(int n) {
+    // perform the divison by 4 repeatedly
     while (n % 4 == 0 && n > 0) {
         n /= 4;
     }
+    // if n % 4 != 0, then n > 1
     return n == 1;
 }
 int main() 
@@ -99,6 +101,9 @@ In this problem, `A < 2^31`. You can choose`A = 0x55555555`, the hexadecimal of 
 #include <iostream>
 using namespace std;
 bool isPowerOfFour(int n) {
+    // the condition of the pattern "n is a positive integer 
+    // having only one bit 1 in its binary representation and 
+    // it is located at the odd positions"
     return n > 0 && (n & (n - 1)) == 0 && (n & 0x55555555) != 0;
 }
 int main() {

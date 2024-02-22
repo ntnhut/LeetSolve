@@ -34,15 +34,24 @@ Output: 1
 ## Solution: Using bitwise operator XOR
 You could use {index}`bitwise XOR` (`^`) to get the bit positions where `x` and `y` are different. Then use {index}`bitwise AND` operator (`&`) at each position to count them.
 
+### Example 1
+```text
+x = 1   (0 0 0 1)
+y = 4   (0 1 0 0)
+z = x^y (0 1 0 1)
+```
+
 ### Code
 ```cpp
 #include <iostream>
 int hammingDistance(int x, int y) {
+    // compute the bit difference 
     int z = x ^ y;
     int count = 0;
     while (z) {
-        count += z & 1;
-        z = z >> 1;
+        count += z & 1; // e.g. '0101' & '0001'
+        // shift z to the right one position
+        z = z >> 1; // e.g. z = '0101' >> '0010'
     }
     return count;
 }
