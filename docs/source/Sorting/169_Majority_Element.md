@@ -43,7 +43,8 @@ int majorityElement(vector<int>& nums) {
     unordered_map<int,int> freq;
     const int HALF = nums.size() / 2;
     for (int a : nums) {
-        freq[a]++;
+        // count a's occurrences
+        freq[a]++; 
         if (freq[a] > HALF) {
             return a;
         }
@@ -114,15 +115,17 @@ Since you are interested in only the middle element after sorting, the partial s
 #include <algorithm>
 using namespace std;
 int majorityElement(vector<int>& nums) {
-    const int mid = nums.size() / 2;    
+    const int mid = nums.size() / 2;
+    // rearrange nums such that all elements less than or equal nums[mid] 
+    // are placed before nums[mid]
     nth_element(nums.begin(), nums.begin() + mid, nums.end());
     return nums[mid];
 }
 int main() {
     vector<int> nums{3,2,3};
-    cout << majorityElement(nums) << endl; // 3
+    cout << majorityElement(nums) << endl;
     nums = {2,2,1,1,1,2,2};
-    cout << majorityElement(nums) << endl; // 2
+    cout << majorityElement(nums) << endl;
 }
 ```
 ```text

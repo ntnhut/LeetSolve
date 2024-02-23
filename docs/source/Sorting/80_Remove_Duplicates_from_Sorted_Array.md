@@ -51,11 +51,14 @@ using namespace std;
 int removeDuplicates(vector<int>& nums) {
     int i = 2;
     while (i < nums.size()) {
+        // find the element appearing more than twice
         if (nums[i] == nums[i-2]) {
             int j = i;
+            // find all duplicates
             while (j < nums.size() && nums[j] == nums[i]) {
                 j++;
             }
+            // keep nums[i-2] and nums[i-1] remove all later duplicates 
             nums.erase(nums.begin() + i, nums.begin() + j);
         } else {
             i++;
@@ -129,6 +132,7 @@ int removeDuplicates(vector<int>& nums) {
     int i = 2;
     while (i < nums.size()) {
         if (nums[i] > nums[k - 2]) {
+            // make sure nums[k] != nums[k-2]
             nums[k++] = nums[i];
         }
         i++;

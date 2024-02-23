@@ -51,6 +51,7 @@ public:
     MyCalendar() {}
     bool book(int start, int end) {
         for (auto& e : _events) {
+            // check for overlap
             if (!(e.second <= start || end <= e.first)) {
                 return false;
             }
@@ -99,12 +100,15 @@ struct EventCmp {
 };
 class MyCalendar {
     private:
+    // declare a set with custom comparison operator
     set<Event, EventCmp> _events;
 public:
     MyCalendar() {} 
     bool book(int start, int end) {
         auto result = _events.insert({start, end});
-        return result.second;
+        // result.second stores a bool indicating 
+        // if the insertion was actually performed 
+        return result.second; 
     }
 };
 int main() {

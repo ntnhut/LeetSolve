@@ -62,9 +62,11 @@ void merge(vector<int>& nums1, int m, vector<int>& nums2, int n)
     int i = 0;
     int j = 0;
     while (i < m || j < n) {
-        if (j == n) {
+        if (j == n) { 
+            // nums2 is done, only nums1 still runs
             result.push_back(nums1[i++]);
         } else if (i == m) {
+            // nums1 is done, only nums2 still runs
             result.push_back(nums2[j++]);
         } else if (nums1[i] < nums2[j]) {
             result.push_back(nums1[i++]);
@@ -124,9 +126,11 @@ void merge(vector<int>& nums1, int m, vector<int>& nums2, int n)
     int i = m - 1;
     int j = n - 1;
     while (k >= 0) {
-        if (j < 0) {
+        if (j < 0) { 
+            // nums2 is done
             nums1[k--] = nums1[i--];
-        } else if (i < 0) {
+        } else if (i < 0) { 
+            // nums1 is done
             nums1[k--] = nums2[j--];
         } else if (nums1[i] > nums2[j]) {
             nums1[k--] = nums1[i--]; 

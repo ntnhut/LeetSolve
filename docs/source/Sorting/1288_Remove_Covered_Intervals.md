@@ -44,6 +44,7 @@ Final `intervals = [[1,4],[2,8]]`.
 #include <vector>
 #include <iostream>
 using namespace std;
+//! @return true if the interval i is covered by j
 inline bool isCovered(vector<int>& i, vector<int>& j) {
     return j[0] <= i[0] && i[1] <= j[1];
 }
@@ -54,10 +55,12 @@ int removeCoveredIntervals(vector<vector<int>>& intervals) {
         bool erase_i = false;
         while (j < intervals.size()) {
             if (isCovered(intervals[i], intervals[j])) {
+                // remove intervals[i] from intervals
                 intervals.erase(intervals.begin() + i);
                 erase_i = true;
                 break;
             } else if (isCovered(intervals[j], intervals[i])) {
+                // remove intervals[j] from intervals
                 intervals.erase(intervals.begin() + j);
             } else {
                 j++;
@@ -117,18 +120,26 @@ Remember that the left bound of interval `i` is always bigger than or equal to a
 #include <algorithm>
 using namespace std;
 int removeCoveredIntervals(vector<vector<int>>& intervals) {
+    // sort the intervals using dictionary order
     sort(intervals.begin(), intervals.end());
-    int count = 0;
-    int maxRight = -1;
-    int preLeft = -1;
+    // count the intervals to be removed 
+    int count = 0;      
+    // keep track max right bound of all previous intervals
+    int maxRight = -1;  
+    // log the left bound of the previous interval
+    int preLeft = -1;   
     for (auto& i : intervals) {
-        if (i[1] <= maxRight) { // i is covered by some previous interval
+        if (i[1] <= maxRight) { 
+            // i's right bound is less than some previous one's
             count++;
-        } else if (i[0] == preLeft) { // i covers its exact previous one
+        } else if (i[0] == preLeft) { 
+            // i's left bound is the same as exact previous one's
             count++;
         } else {
+            // update previous interval's left bound
             preLeft = i[0];
         }
+        // update max right bound
         maxRight = max(maxRight, i[1]);
     }
     return intervals.size() - count;
