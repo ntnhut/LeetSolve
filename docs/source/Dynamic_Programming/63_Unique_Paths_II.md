@@ -61,14 +61,17 @@ int uniquePathsWithObstacles(vector<vector<int>>& obstacleGrid) {
     const int col = obstacleGrid[0].size();
     vector<vector<int>> np(row, vector<int>(col, 0));    
     for (int i = 0; i < row && obstacleGrid[i][0] == 0; i++) {
+        // can move as long as there is no obstacle
         np[i][0] = 1;
     }    
     for (int j = 0; j < col && obstacleGrid[0][j] == 0; j++) {
+        // can move as long as there is no obstacle
         np[0][j] = 1;
     }
     for (int i = 1; i < row; i++) {
         for (int j = 1; j < col; j++) {
             if (obstacleGrid[i][j] == 0) {
+                // can move since there is obstacle
                 np[i][j] = np[i - 1][j] + np[i][j - 1];
             }
         }

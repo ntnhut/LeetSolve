@@ -41,7 +41,7 @@ Output: -10
 You can store all minimum paths at every positions `(i,j)` so you can compute the next ones with this relationship.
 
 ```text
-minTotal[i][j] = triangle[i][j] + min(minTotal[i - 1][j - 1], minTotal[i - 1][j]);
+minPath[i][j] = triangle[i][j] + min(minPath[i - 1][j - 1], minPath[i - 1][j]);
 ```
 
 ### Code
@@ -51,22 +51,24 @@ minTotal[i][j] = triangle[i][j] + min(minTotal[i - 1][j - 1], minTotal[i - 1][j]
 #include <algorithm>
 using namespace std;
 int minimumTotal(vector<vector<int>>& triangle) {
-    vector<vector<int>> minTotal(triangle.size());
-    minTotal[0] = triangle[0];
-    for (int i = 1; i < triangle.size(); i++) {
+    const int n = triangle.size(); // triangle's height
+    vector<vector<int>> minPath(n);
+    minPath[0] = triangle[0];
+    for (int i = 1; i < n; i++) {
         const int N = triangle[i].size();
-        minTotal[i].resize(N);
-        for (int j = 0; j < N; j++) {
-            if (j == 0) {
-                minTotal[i][j] = triangle[i][j] + minTotal[i - 1][j];
-            } else if (j == N - 1) {
-                minTotal[i][j] = triangle[i][j] + minTotal[i - 1][j - 1];
-            } else {
-                minTotal[i][j] = triangle[i][j] + min(minTotal[i - 1][j - 1], minTotal[i - 1][j]);
-            }
+        minPath[i].resize(N);
+        // left most number
+        minPath[i][0] = triangle[i][0] + minPath[i-1][0];
+        for (int j = 1; j < N - 1; j++) {
+            minPath[i][j] = triangle[i][j] + min(minPath[i-1][j-1], minPath[i-1][j]);
         }
+        // right most number
+        minPath[i][N-1] = triangle[i][N-1] + minPath[i-1][N-2];
+
     }
-    return *min_element(minTotal[triangle.size() - 1].begin(), minTotal[triangle.size() - 1].end());
+    // pick the min path among the ones (begin -> end)
+    // go to the bottom (n-1)
+    return *min_element(minPath[n-1].begin(), minPath[n-1].end());
 }
 int main() {
     vector<vector<int>> triangle{{2},{3,4},{6,5,7},{4,1,8,3}};
@@ -84,11 +86,11 @@ Output:
 
 This solution finds the minimum path sum from the top to the bottom of a triangle, represented as a vector of vectors. It uses dynamic programming to calculate the minimum path sum.
 
-The algorithm initializes a `minTotal` vector of vectors to store the minimum path sum for each element in the `triangle`. It starts by setting the first row of `minTotal` to be the same as the first row of the `triangle`.
+The algorithm initializes a `minPath` vector of vectors to store the minimum path sum for each element in the `triangle`. It starts by setting the first row of `minPath` to be the same as the first row of the `triangle`.
 
 Then, it iterates through the rows of the `triangle` starting from the second row. For each element in the current row, it calculates the minimum path sum by considering the two possible paths from the previous row that lead to that element. It takes the minimum of the two paths and adds the value of the current element. This way, it accumulates the minimum path sum efficiently.
 
-The algorithm continues this process until it reaches the last row of the `triangle`. Finally, it returns the minimum element from the last row of `minTotal`, which represents the minimum path sum from top to bottom.
+The algorithm continues this process until it reaches the last row of the `triangle`. Finally, it returns the minimum element from the last row of `minPath`, which represents the minimum path sum from top to bottom.
 
 
 ### Complexity
@@ -107,16 +109,20 @@ You do not need to store all paths for all rows. The computation of the next row
 #include <algorithm>
 using namespace std;
 int minimumTotal(vector<vector<int>>& triangle) {
-    vector<int> minTotal(triangle.size());
-    minTotal[0] = triangle[0][0];
-    for (int i = 1; i < triangle.size(); i++) {
-        minTotal[i] = triangle[i][i] + minTotal[i - 1];
+    const int n = triangle.size();
+    // store only min path for each row
+    vector<int> minPath(n);
+    minPath[0] = triangle[0][0];
+    for (int i = 1; i < n; i++) {
+        // right most number
+        minPath[i] = triangle[i][i] + minPath[i - 1];
         for (int j = i - 1; j > 0; j--) {
-            minTotal[j] = triangle[i][j] + min(minTotal[j - 1], minTotal[j]);
+            minPath[j] = triangle[i][j] + min(minPath[j - 1], minPath[j]);
         }
-        minTotal[0] = triangle[i][0] + minTotal[0];
+        // left most number
+        minPath[0] = triangle[i][0] + minPath[0];
     }
-    return *min_element(minTotal.begin(), minTotal.end());
+    return *min_element(minPath.begin(), minPath.end());
 }
 int main() {
     vector<vector<int>> triangle{{2},{3,4},{6,5,7},{4,1,8,3}};
@@ -130,17 +136,6 @@ Output:
 11
 -10
 ```
-
-### Code explanation
-
-This solution aims to find the minimum path sum from the top to the bottom of a triangle, represented as a vector of vectors. It employs dynamic programming to efficiently calculate and store the minimum path sums for each element in the triangle.
-
-The algorithm initializes a `minTotal` vector to store the minimum path sums for each row of the triangle. It starts by setting the first element of `minTotal` to the value of the top element of the triangle.
-
-Then, it iterates through the rows of the triangle starting from the second row. For each element in the current row, it calculates the minimum path sum by considering two possible paths from the previous row that lead to that element. It takes the minimum of the two paths and adds the value of the current element. It updates the `minTotal` vector as it progresses.
-
-The algorithm continues this process until it reaches the last row of the triangle. Finally, it returns the minimum element from the `minTotal` vector, which represents the minimum path sum from top to bottom.
-
 
 ### Complexity
 

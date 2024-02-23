@@ -137,6 +137,7 @@ One way of storing what has been computed is by using dynamic programming.
 #include <vector>
 using namespace std;
 int uniquePaths(int m, int n) {
+    // store what have been calculated in dp
     vector<vector<int> > dp(m, vector<int>(n,1));
     for (int i = 1; i < m; i++) {
         for (int j = 1; j < n; j++) {
@@ -185,6 +186,7 @@ Then you do not have to store all values of all rows.
 #include <vector>
 using namespace std;
 int uniquePaths(int m, int n) {
+    // store the number of unique paths for each column in each row
     vector<int> dp(n, 1);
     for (int i = 1; i < m; i++) {
         for (int j = 1; j < n; j++) {

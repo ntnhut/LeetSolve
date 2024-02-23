@@ -83,6 +83,7 @@ int fib(int n) {
     if (n <= 1) {
         return n;
     }
+    // store all computed Fibonacci numbers
     std::vector<int> f(n + 1);
     f[0] = 0;
     f[1] = 1;
@@ -120,10 +121,12 @@ int fib(int n) {
     if (n <= 1) {
         return n;
     }
+    // store only two previous Fibonacci numbers
     int f0 = 0;
     int f1 = 1;
     for (int i = 2; i <= n; i++) {
         int f2 = f1 + f0;
+        // update for next round
         f0 = f1;
         f1 = f2;
     }

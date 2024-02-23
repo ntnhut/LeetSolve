@@ -63,28 +63,35 @@ That might lead to some unnecessary recomputing. To avoid it, you could use *dyn
 #include <algorithm>
 using namespace std;
 
-//! @brief compute the maxSubset[i] starting from nums[i] 
+//! @return the max divisible subset starting from nums[i] 
 //!         and store it to _map[i]
-//! @note nums is sorted
+//! @param nums a sorted array of unique positive integers 
 vector<int> largestDivisibleSubsetOf(vector<int>& nums, 
             int i, unordered_map<int, vector<int> >& _map) {
     if (_map.find(i) != _map.end()) {
+        // already computed!
         return _map[i];
     }
-    vector<int> maxSubset{nums[i]};
+    vector<int> maxSubset{nums[i]}; // start with nums[i]
     if (i == nums.size() - 1) {
+        // largest value in nums
         _map.insert({i, maxSubset});
         return maxSubset;
     }
     for (int j = i + 1; j < nums.size(); j++) {
         if (nums[j] % nums[i] == 0) {
+            // compute the max divisble subset starting from nums[j]
             auto subset = largestDivisibleSubsetOf(nums, j, _map);
+
+            // add nums[i] to subset as it might become maxSubset
             subset.push_back(nums[i]);
             if (maxSubset.size() < subset.size()) {
+                // update maxSubset
                 maxSubset = subset;
             }
         }
     }
+    // store what have been calculated in _map
     _map.insert({i, maxSubset});
     return maxSubset;
 }
@@ -98,6 +105,7 @@ vector<int> largestDivisibleSubset(vector<int>& nums) {
     for (int i = 0; i < nums.size(); i++) {
         auto maxSubset = largestDivisibleSubsetOf(nums, i, _map);
         if (answer.size() < maxSubset.size()) {
+            // update the maximal subset
             answer = maxSubset;
         }
     }
