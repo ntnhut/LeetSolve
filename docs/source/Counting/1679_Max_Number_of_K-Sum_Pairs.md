@@ -55,9 +55,11 @@ int maxOperations(vector<int>& nums, int k) {
     unordered_map<int,int> m;
     int count = 0;
     for (int a : nums) {
-        m[a]++;
+        m[a]++; // count a's occurences
         if (m[k - a] > 0) {
+            // k-a appears in nums
             if (a != k - a || m[a] >= 2) {
+                // if a == k - a, a is required to appear at least twice
                 count++;
                 m[a]--;
                 m[k - a]--;

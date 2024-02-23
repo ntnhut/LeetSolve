@@ -81,6 +81,7 @@ From the constraints "`s` consists of only lowercase English letters", you can u
 #include <vector>
 using namespace std;
 int firstUniqChar(string& s) {
+    // map 'a'->0, 'b'->1, .., 'z'->25
     // initializes an array of 26 elements, all set to zero
     std::array<int, 26> count{};
     for (char& c : s) {
