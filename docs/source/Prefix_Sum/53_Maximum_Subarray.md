@@ -34,7 +34,7 @@ Output: 23
 The subarrays you want to find should not have negative prefix sums. A negative prefix sum would make the sum of the subarray smaller.
 
 ### Example 1
-For `nums = [-2,1,-3,4,-1,2,1,-5,4]`, `[-2]` or `[-2,1]` or `[-2,1,-3]` should not be a prefix of the  subarrays you want to find. Since it makes the sum of the result smaller.
+For `nums = [-2,1,-3,4,-1,2,1,-5,4]`, `[-2]` or `[-2,1]` or `[-2,1,-3]` should not be a prefix of the subarrays you want to find. Since it makes the sum of the result smaller.
 
 ### Code
 
@@ -43,10 +43,16 @@ For `nums = [-2,1,-3,4,-1,2,1,-5,4]`, `[-2]` or `[-2,1]` or `[-2,1,-3]` should n
 #include <iostream>
 using namespace std;
 int maxSubArray(vector<int>& nums) {
-    int maxSum = -10000;
-    int currSum = 0;
+    int maxSum = -10000; // just chose some negative number to start
+    int currSum = 0; // sum of current subarray
     for (auto& num : nums) {
-        currSum = currSum < 0 ? num : currSum + num;
+        if (currSum < 0) {
+            // start a new subarray from this num
+            currSum = num;
+        } else {
+            currSum = currSum + num;
+        }
+        // update max sum so far
         maxSum = max(maxSum, currSum);
     }
     return maxSum;

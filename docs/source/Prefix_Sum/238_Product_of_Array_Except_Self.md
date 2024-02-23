@@ -45,11 +45,13 @@ vector<int> productExceptSelf(vector<int>& nums) {
     const int n = nums.size();
     vector<int> prefix(n);
     prefix[0] = 1;
+    // compute all prefix products nums[0]*nums[1]*..*nums[i-1]
     for (int i = 1; i < n; i++) {
         prefix[i] = prefix[i - 1] * nums[i - 1];
     }
     vector<int> suffix(n);        
     suffix[n - 1] = 1;
+    // compute all suffix products nums[i+1]*nums[i+2]*..*nums[n-1]
     for (int i = n - 2; i >= 0; i--) {
         suffix[i] = suffix[i + 1] * nums[i + 1];
     }
@@ -103,11 +105,13 @@ vector<int> productExceptSelf(vector<int>& nums) {
     const int n = nums.size();
     vector<int> answer(n);
     answer[0] = 1;
+    // compute all prefix products nums[0]*nums[1]*..*nums[i-1]
     for (int i = 1; i < n; i++) {
         answer[i] = answer[i - 1] * nums[i - 1];
     }
     int suffix = 1;
     for (int i = n - 2; i >= 0; i--) {
+        // compute suffix product and the final product the same time
         suffix *= nums[i + 1];
         answer[i] *= suffix;
     }

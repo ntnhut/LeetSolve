@@ -81,7 +81,7 @@ For `nums = [1, 2, 3, 4]`. Assume the sum of the subarrays `[1], [1, 2], [1, 2, 
 * `sum([2, 3, 4]) = sum([1, 2, 3, 4]) - sum([1])`.
 * `sum([3, 4]) = sum(1, 2, 3, 4) - sum(1, 2)`.
 
-In general, assume you have computed the sum `sum[i]` for the subarray `[nums[0], nums[1], ..., nums[i]]` for all `0 <= i < nums.length`. Then the sum of the subarray `[nums[j], nums[j+1], ..., nums[i]]` for any `0 <=j <= i` can be computed as `sum[i] - sum[j]`.
+In general, assume you have computed the sum `sum[i]` for the subarray `[nums[0], nums[1], ..., nums[i]]` for all `0 <= i < nums.length`. Then the sum of the subarray `[nums[j+1], nums[j+2], ..., nums[i]]` for any `0 <= j <= i` can be computed as `sum[i] - sum[j]`.
 
 ### Code
 ```cpp
@@ -89,18 +89,22 @@ In general, assume you have computed the sum `sum[i]` for the subarray `[nums[0]
 #include <vector>
 using namespace std;
 int subarraySum(vector<int>& nums, int k) {
-    vector<int> sum(nums.size());
+    const int n = nums.size();
+    vector<int> sum(n);
     sum[0] = nums[0];
-    for (int i = 1; i < nums.size(); i++) {
+    // compute all prefix sums nums[0] + .. + nums[i]
+    for (int i = 1; i < n; i++) {
         sum[i] = sum[i-1] + nums[i];
     }
     int count = 0;
-    for (int i = 0; i < nums.size(); i++) {
+    for (int i = 0; i < n; i++) {
         if (sum[i] == k) {
+            // nums[0] + .. + nums[i] = k
             count++;
         }
         for (int j = 0; j < i; j++) {
             if (sum[i] - sum[j] == k) {
+                // nums[j+1] + nums[j+2] + .. + nums[i] = k
                 count++;
             }
         }
@@ -145,6 +149,7 @@ Now you can use an `unordered_map` to store the `sums` as indices for the fast l
 using namespace std;
 int subarraySum(vector<int>& nums, int k) {
     int count = 0;
+    // count the frequency of all subarrays' sums 
     unordered_map<int, int> sums;
     int sumi = 0;
     for (int i = 0; i < nums.size(); i++) {
@@ -154,8 +159,11 @@ int subarraySum(vector<int>& nums, int k) {
         }
         auto it = sums.find(sumi - k);
         if (it != sums.end()) {
+            // it->second is the count of j so far 
+            // having sum[j] = sum[i] - k
             count += it->second;
         }
+        // store the count of prefix sum sumi
         sums[sumi]++;
     }
     return count;
