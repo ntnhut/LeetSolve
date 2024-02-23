@@ -57,21 +57,27 @@ For `s = "ceaacbb"`, the frequencies of the characters are: `freq['a'] = 2, freq
 #include <iostream>
 #include <vector>
 using namespace std;
-int minDeletions(string s) {
+int minDeletions(string& s) {
+    // map 'a'->0, 'b'->1, ..,'z'->25
     vector<int> freq(26, 0);
     for (char& c: s) {
+        // count the frequency of character c
         freq[c - 'a']++;
     }
+    // sort freq in descending order
     sort(freq.begin(), freq.end(), greater<int>());
     int deletion = 0;
-    int currentFreq = freq.at(0);
+    int currentFreq = freq.at(0); // start with the max frequency
     for (int i = 1; i < freq.size() && freq.at(i) > 0; i++) {
         if (currentFreq == 0) {
+            // delete all remaining characters
             deletion += freq.at(i);
         } else if (freq[i] >= currentFreq) {
+            // delete just enough to make the freq[i] < currentFreq
             deletion += freq.at(i) - currentFreq + 1;
             currentFreq--;
         } else {
+            // do not delete on freq[i] < currentFreq
             currentFreq = freq.at(i);
         }
     }

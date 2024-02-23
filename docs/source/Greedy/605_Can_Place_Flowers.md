@@ -48,6 +48,7 @@ bool canPlaceFlowers(vector<int>& flowerbed, int n) {
     int i = 1;
     while (i < flowerbed.size() - 1) {
         if (flowerbed[i - 1] == 0 && flowerbed[i] == 0 && flowerbed[i + 1] == 0) {
+            // plant i if it satisfies the no-adjacent condition
             flowerbed[i] = 1;
             n--;
             i+=2;
@@ -55,7 +56,7 @@ bool canPlaceFlowers(vector<int>& flowerbed, int n) {
             i++;
         }
     }
-    return n <= 0;
+    return n <= 0; // have planted all n
 }
 int main() {
     vector<int> flowerbed{1,0,0,0,1};

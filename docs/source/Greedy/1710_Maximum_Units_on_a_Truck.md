@@ -56,9 +56,11 @@ int maximumUnits(vector<vector<int>>& boxTypes, int truckSize) {
     int i = 0;
     while (truckSize > 0 && i < boxTypes.size()) {
         if (boxTypes[i][0] <= truckSize) {
+            // put all boxTypes[i] if there is still room
             maxUnits += boxTypes[i][0] * boxTypes[i][1];
             truckSize -= boxTypes[i][0];
         } else {
+            // can put only truckSize < boxTypes[i][0] of boxTypes[i]
             maxUnits += truckSize * boxTypes[i][1];
             break;
         }
