@@ -83,6 +83,8 @@ Output:
 
 This solution generates subsets by iteratively adding each element of `nums` to the existing subsets and accumulating the results.
 
+Note that in `for (auto subset : powerset)` you should not use reference `auto&` because we do not want to change the subsets that have been created.
+
 ### Complexity
 
 * Runtime: `O(2^N)`, where `N` is the number of elements in `nums`, as it generates all possible subsets.

@@ -38,7 +38,7 @@ Output: 1
 ## Solution: Understanding the math behind
 A [permutation](https://en.wikipedia.org/wiki/Permutation) is a one-to-one mapping from a set of integers to itself.
 
-The permutation on the set `nums` in this problem is defined by the mapping `i -> nums[i]`. For instance in Example 1, the permutation is defined as following:
+The {index}`permutation` on the set `nums` in this problem is defined by the mapping `i -> nums[i]`. For instance in Example 1, the permutation is defined as following:
 ```text
 0 -> 5,
 1 -> 4,
@@ -67,13 +67,14 @@ The problem leads to finding the longest cycle of a given permutation.
 #include <algorithm>
 using namespace std;
 int arrayNesting(vector<int>& nums) {
-    int maxLen(0);
+    int maxLen{0};
     vector<bool> visited(nums.size());
-    for (auto i : nums) {
+    for (auto& i : nums) {
         if (visited[i]) {
             continue;
         }
-        int len(0);
+        int len{0};
+        // visit the cycle starting from i
         while (!visited[i]) {
             visited[i] = true;
             i = nums[i];            

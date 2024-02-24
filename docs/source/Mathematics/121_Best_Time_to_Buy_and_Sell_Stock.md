@@ -83,12 +83,17 @@ int maxProfit(vector<int>& prices) {
     int maxProfit = 0;
     int i = 0;
     while (i < prices.size()) {
+        // while prices are going down,
+        // find the bottommost one to start
         while (i < prices.size() - 1 && prices[i] >= prices[i + 1]) {
             i++;
         }
+        // find the largest price in the future
         auto imax = max_element(prices.begin() + i, prices.end());
+        // find the smallest price in the past
         auto imin = min_element(prices.begin() + i, imax);
         maxProfit = max(maxProfit, *imax - *imin);
+        // next iteration starts after the found largest price 
         i = distance(prices.begin(), imax) + 1;
     }
     return maxProfit;
@@ -130,8 +135,10 @@ Given a future day `j`, the past day `i` that gives the maximum profit is the da
 using namespace std;
 int maxProfit(vector<int>& prices) {
     int maxProfit = 0;
-    int minPrice = prices[0];
+    // keep track the minimum price so fat
+    int minPrice = prices[0]; 
     for (int i = 1; i < prices.size(); i++)  {
+        // update the minimum price
         minPrice = min(minPrice, prices[i]);
         maxProfit = max(maxProfit, prices[i] - minPrice);
     }

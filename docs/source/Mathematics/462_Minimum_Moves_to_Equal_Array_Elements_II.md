@@ -104,6 +104,8 @@ In this case, you can use [`std::nth_element`](https://en.cppreference.com/w/cpp
 using namespace std;
 int minMoves2(vector<int>& nums) {
     const int mid = nums.size() / 2;    
+    // make sure all elements that are less than or equals to nums[mid]
+    // are on the left
     std::nth_element(nums.begin(), nums.begin() + mid, nums.end());
     const int median = nums[mid];
     int moves = 0;

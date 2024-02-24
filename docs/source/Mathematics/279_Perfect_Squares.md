@@ -60,6 +60,8 @@ To improve runtime, you can apply *dynamic programming* to cache the `numSquares
 #include <cmath>
 #include <unordered_map>
 using namespace std;
+//! @return         the least number of perfect squares that sum to n
+//! @param[out] ns  a map stores all intermediate results
 int nsq(int n, unordered_map<int, int>& ns) {
     auto it = ns.find(n);
     if (it != ns.end()) {
@@ -67,13 +69,19 @@ int nsq(int n, unordered_map<int, int>& ns) {
     }
     const int sq = sqrt(n);
     if (sq * sq == n) {
+        // n is already a perfect square
         ns[n] = 1;
         return 1;
     }
+    // if n is written as 1 + 1 + .. + 1,
+    // maximum of result is n
     int result = n;
+    // finding the minimum nsq(n - i*i) across all i <= sqrt(n)
     for (int i = 1; i <= sq; i++) {
+        // 
         result = min(result, nsq(n - i*i, ns));
     }
+    // write n as imin^2 + (n - imin^2)
     ns[n] = result + 1;
     return ns[n];
 }
