@@ -51,12 +51,13 @@ struct ListNode {
     ListNode(int x) : val(x), next(NULL) {}
 };
 bool hasCycle(ListNode *head) {
-    std::unordered_map<ListNode*, int> m;
+    std::unordered_map<ListNode*, bool> m;
     while (head) {
-        if (m[head] > 0) {
+        if (m[head]) {
+            // found this node marked in the map
             return true;
         }
-        m[head]++;
+        m[head] = true; // mark this node visited
         head = head->next;
     }
     return false;
@@ -95,7 +96,7 @@ Output:
 
 This solution uses a hash map to track visited nodes while traversing the linked list. 
 
-By iterating through the linked list and storing pointers to visited nodes along with a count of their occurrences in the hash map, it detects cycles in the linked list. If a node is encountered more than once, it indicates the presence of a cycle, and the function returns `true`. Otherwise, if the end of the linked list is reached without encountering any node more than once, it confirms the absence of a cycle, and the function returns `false`. 
+By iterating through the linked list and marking pointers to visited nodes in the hash map, it detects cycles in the linked list. If a node is found marked `true` in the map, it indicates the presence of a cycle, and the function returns `true`. Otherwise, if the end of the linked list is reached without finding any node marked, it confirms the absence of a cycle, and the function returns `false`. 
 
 This approach optimizes the computation by leveraging the hash map to efficiently detect cycles in the linked list without requiring additional space proportional to the length of the list.
 

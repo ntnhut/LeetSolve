@@ -40,7 +40,7 @@ Output: 0
 Comparing `nums = [2,6,4,8,10,9,15]` with its sorted one `sortedNums = [2,4,6,8,9,10,15]`:
 
 - The first position that makes the difference is `left = 1`, where `6 != 4`.
-- The last position that makes the difference is `right = 5`, where `9 != 10`.
+- The last (right) position that makes the difference is `right = 5`, where `9 != 10`.
 - The length of that shortest subarray is `right - left + 1 = 5`.
 
 ### Code
@@ -103,22 +103,22 @@ If `nums[j]` is bigger than `min(C)`, the longer subarray `D` is not in ascendin
 using namespace std;
 int findUnsortedSubarray(vector<int>& nums) {
     const int n = nums.size();
-    int left = n - 1;
-    int min = nums[n - 1];
-    for (int i = n - 1; i >= 0; i--) {
-        if (min < nums[i]) {
-            left = i;
-        } else {
-            min = nums[i];
-        }
-    }
     int right = 0;
     int max = nums[0];
     for (int i = 0; i < nums.size(); i++) {
-        if (max > nums[i]) {
+        if (nums[i] < max) {
             right = i;
         } else {
             max = nums[i];
+        }
+    }
+    int left = n - 1;
+    int min = nums[n - 1];
+    for (int j = n - 1; j >= 0; j--) {
+        if (nums[j] > min) {
+            left = j;
+        } else {
+            min = nums[j];
         }
     }
     return left >= right ? 0 : right - left + 1;
@@ -139,9 +139,9 @@ Output:
 0
 ```
 
-This solution determines the boundaries of the unsorted subarray by iterating through the array from both ends. It starts by initializing the `left` boundary to the end of the array and tracking the minimum element encountered so far. It iterates from the end of the array towards the beginning, updating the `left` boundary whenever an element greater than the current minimum is encountered. This identifies the leftmost position where the array is unsorted.
+This solution determines the boundaries of the unsorted subarray by iterating through the array from both ends. It starts by initializing the `right` boundary to the beginning of the array and tracks the maximum element encountered so far. It iterates from the beginning of the array towards the end, updating the `right` boundary whenever an element smaller than the current maximum is encountered. This identifies the rightmost position where the array is unsorted.
 
-Similarly, it initializes the `right` boundary to the beginning of the array and tracks the maximum element encountered so far. It iterates from the beginning of the array towards the end, updating the `right` boundary whenever an element smaller than the current maximum is encountered. This identifies the rightmost position where the array is unsorted.
+Similarly, it initializes the `left` boundary to the end of the array and tracking the minimum element encountered so far. It iterates from the end of the array towards the beginning, updating the `left` boundary whenever an element greater than the current minimum is encountered. This identifies the leftmost position where the array is unsorted.
 
 Finally, it returns the length of the unsorted subarray, calculated as `right - left + 1`, unless the left boundary is greater than or equal to the right boundary, in which case the array is already sorted, and it returns 0.
 

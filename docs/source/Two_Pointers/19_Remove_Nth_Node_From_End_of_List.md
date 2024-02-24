@@ -56,9 +56,11 @@ ListNode* removeNthFromEnd(ListNode* head, int n) {
     {
         nodes.push_back(node);
         node = node->next;
-    }
+    }    
     node = nodes[nodes.size() - n];
+    
     if (node == head) {
+        // remove head if n == nodes.size()
         head = node->next;
     } else {
         ListNode* pre = nodes[nodes.size() - n - 1];
@@ -129,18 +131,20 @@ struct ListNode {
 using namespace std;
 ListNode* removeNthFromEnd(ListNode* head, int n) {
     ListNode* fast = head;
+    // let fast goes ahead n nodes 
     for (int i = 0; i < n; i++) {
         fast = fast->next;
     }
     if (fast == nullptr) {
+        // remove head if n equals the list's length
         return head->next;
     }
     ListNode* slow = head;
-    while (fast->next)
-    {
+    while (fast->next) {
         slow = slow->next;
         fast = fast->next;
     }
+    // remove slow
     slow->next = slow->next->next;
     return head;
 }

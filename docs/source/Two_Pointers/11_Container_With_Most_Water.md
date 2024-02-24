@@ -140,11 +140,7 @@ Output:
 1
 ```
 
-This solution is the two-pointer approach to compute the maximum area of water that can be trapped between two vertical lines. 
-
-By initializing two pointers `i` and `j` at the beginning and end of the array respectively, and iteratively moving them towards each other until they converge, it evaluates all possible pairs of lines. 
-
-At each step, it calculates the area using the formula `(min(height[i], height[j]) * (j - i))`, where `height[i]` and `height[j]` represent the heights of the two lines and `(j - i)` represents the width between them. By moving the pointer corresponding to the shorter line inward at each step, it ensures that the maximum possible area is considered. 
+This solution is the two-pointer approach. By initializing two pointers `i` and `j` at the beginning and end of the array respectively, and iteratively moving them towards each other until they converge, it evaluates all possible pairs of lines. At each step, it calculates the area. By moving the pointer corresponding to the shorter line inward at each step, it ensures that the maximum possible area is considered. 
 
 This approach optimizes the computation by avoiding redundant calculations and efficiently exploring the solution space using two pointers.
 

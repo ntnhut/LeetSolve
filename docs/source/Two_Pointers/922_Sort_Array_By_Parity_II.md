@@ -47,6 +47,7 @@ using namespace std;
 vector<int> sortArrayByParityII(vector<int>& nums) {
     for (int i = 0; i < nums.size(); i++) {
         if (i % 2 != nums[i] % 2) {
+            // find suitable nums[j] to swap
             for (int j = i + 1; j < nums.size(); j++) {
                 if (nums[j] % 2 == i % 2) {
                     swap(nums[i], nums[j]);
