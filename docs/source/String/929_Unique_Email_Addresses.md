@@ -150,10 +150,6 @@ Output:
 2
 ```
 
-This solution parses a list of email addresses, normalizes each email address by removing periods and ignoring characters after the plus sign in the local name, and then counts the number of unique email addresses. The use of an unordered set ensures that only unique email addresses are counted. 
-
-This solution achieves the same result as the previous solution but uses a different approach to process the email addresses.
-
 ### Complexity
 
 * Runtime: `O(N*M)`, where `N = emails.length` and `M = max(emails[i].length)`.

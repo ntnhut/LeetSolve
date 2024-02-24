@@ -118,19 +118,6 @@ Output:
 0
 1
 ```
-### Code explanation
-
-This code checks whether an integer `n` is a power of four or not using bitwise operations.
-
-Here's how the code works:
-
-1. The condition `n > 0` checks if `n` is a positive integer because powers of four are positive integers.
-
-2. `(n & (n - 1)) == 0`: This part checks if `n` is a power of two. When an integer is a power of two, it has only one bit set in its binary representation. For example, 2 is `10` in binary, 4 is `100`, 8 is `1000`, and so on. When you subtract 1 from these numbers, you get `01`, `11`, `111`, etc., respectively. The `&` ({index}`bitwise AND`) operation between `n` and `n - 1` will result in 0 if `n` is a power of two.
-
-3. `(n & 0x55555555) != 0`: This part checks if the single set bit in `n` (if `n` is a power of two) is at an odd position. In binary, `0x55555555` is `01010101010101010101010101010101`, which has alternating `1`s and `0`s. This condition ensures that the single set bit in `n` is at an odd position, which is required for it to be a power of four.
-
-So, the code returns `true` if `n` is a positive integer that is both a power of two and has its single set bit at an odd position, indicating that it's a power of four. Otherwise, it returns `false`.
 
 ### Complexity
 * Runtime: `O(1)`.

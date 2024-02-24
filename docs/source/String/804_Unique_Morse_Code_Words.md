@@ -52,13 +52,14 @@ Output: 1
 #include <vector>
 #include <unordered_set>
 using namespace std;
+const vector<string> morse{
+    ".-", "-...", "-.-.", "-..", ".", "..-.", "--.",
+    "....", "..", ".---", "-.-", ".-..", "--", "-.",
+    "---", ".--.", "--.-", ".-.", "...", "-", "..-",
+    "...-", ".--", "-..-", "-.--", "--.."
+};
+
 int uniqueMorseRepresentations(vector<string>& words) {
-    vector<string> morse{
-        ".-", "-...", "-.-.", "-..", ".", "..-.", "--.",
-        "....", "..", ".---", "-.-", ".-..", "--", "-.",
-        "---", ".--.", "--.-", ".-.", "...", "-", "..-",
-        "...-", ".--", "-..-", "-.--", "--.."
-    };
     unordered_set<string> transformations;
     for (string& w : words) {
         string s{""};

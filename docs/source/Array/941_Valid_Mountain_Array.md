@@ -50,6 +50,7 @@ bool validMountainArray(vector<int>& arr) {
     }
     const int N = arr.size() - 1;
     int i = 0;
+    // find the top of the mountain
     while (i < N && arr[i] < arr[i + 1]) {
         i++;
     }
@@ -57,6 +58,7 @@ bool validMountainArray(vector<int>& arr) {
     if (i == 0 || i == N) {
         return false;
     }
+    // going from the top to the bottom
     while (i < N && arr[i] > arr[i + 1]) {
         i++;
     }

@@ -112,8 +112,8 @@ vector<int> findDisappearedNumbers(vector<int>& nums) {
     const int n = nums.size();
     int j;
     for (int i{0}; i < n; i++) {
-        // make sure j is positive, 
-        // since nums[i] might be changed to be negative in previous steps
+        // make sure j is positive since nums[i] might be 
+        // changed to be negative in previous steps
         j = abs(nums.at(i));
 
         // Mark nums[j - 1] as negative to indicate its presence       
