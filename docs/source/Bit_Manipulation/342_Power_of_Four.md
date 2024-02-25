@@ -123,5 +123,11 @@ Output:
 * Runtime: `O(1)`.
 * Extra space: `O(1)`.
 
+## Key Takeaway
+
+Recognizing the unique properties of powers of four, such as their binary representation, can lead to efficient solutions. Solution 2 leverages bitwise operations to check if a number meets the criteria of being a power of four. 
+
+By examining the binary representation and ensuring that the only set bit is located at an odd position, Solution 2 effectively determines whether the number is a power of four in constant time complexity, without the need for division operations.
+
 ## Exercise
 - [Power of Two](https://leetcode.com/problems/power-of-two/)

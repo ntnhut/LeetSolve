@@ -152,5 +152,13 @@ This solution calculates the nth Fibonacci number iteratively using two variable
 * Runtime: `O(n)`.
 * Extra space: `O(1)`.
 
+## Key Takeaway:
+
+The Fibonacci sequence can be efficiently computed using various techniques, including recursion with memoization, bottom-up dynamic programming, or even optimizing space usage by storing only the necessary previous Fibonacci numbers. 
+
+Solutions 2 and 3 demonstrate dynamic programming approaches, where Fibonacci numbers are computed iteratively while storing intermediate results to avoid redundant computations. 
+
+Solution 3 further optimizes space usage by only storing the necessary previous Fibonacci numbers, resulting in a space complexity of `O(1)`. Understanding these different approaches and their trade-offs is essential for selecting the most appropriate solution based on the problem constraints and requirements.
+
 ## Exercise
 - [N-th Tribonacci Number](https://leetcode.com/problems/n-th-tribonacci-number/)

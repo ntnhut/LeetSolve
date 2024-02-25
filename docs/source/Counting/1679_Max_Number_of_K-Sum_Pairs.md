@@ -81,16 +81,19 @@ Output:
 1
 ```
 
-This solution counts the number of pairs in the given array `nums` whose sum equals the target value `k`. It utilizes an unordered map to store the frequency of each element encountered while iterating through `nums`. 
-
-By examining each element `a` in `nums`, it checks if `k - a` exists in the map and if its frequency is greater than 0. If so, it increments the count of pairs and decrements the frequency of both `a` and `k - a`, ensuring that each pair is counted only once. 
-
-This approach optimizes the computation by efficiently tracking the frequencies of elements and identifying valid pairs whose sum equals the target value without requiring additional space proportional to the size of the array.
 
 ### Complexity
 
 * Runtime: `O(n)`, where `n` is the number of elements in the `nums` array.
 * Extra space: `O(n)`.
+
+## Key Takeaway
+
+This solution utilizes an unordered map to store the frequency of each element encountered while iterating through `nums`. 
+
+By examining each element `a` in `nums`, it checks if `k - a` exists in the map and if its frequency is greater than 0. If so, it increments the count of pairs and decrements the frequency of both `a` and `k - a`, ensuring that each pair is counted only once. 
+
+This approach optimizes the computation by efficiently tracking the frequencies of elements and identifying valid pairs whose sum equals the target value without requiring additional space proportional to the size of the array.
 
 ## Exercise
 - [Two Sum](https://leetcode.com/problems/two-sum/)

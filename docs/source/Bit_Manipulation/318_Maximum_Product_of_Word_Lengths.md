@@ -169,3 +169,8 @@ This approach optimizes the computation of the maximum product by using bitwise 
 * Runtime: `O(n^2)`, where `n` is the number of words in the input vector.
 * Extra space: `O(n)`.
 
+## Tips
+
+Utilizing bit manipulation techniques, such as bitmasking, can significantly optimize the comparison process for determining common characters between words. 
+
+Solution 2 reduces the time complexity compared to brute force methods, particularly when dealing with large datasets, as it avoids nested loops and unnecessary character comparisons.

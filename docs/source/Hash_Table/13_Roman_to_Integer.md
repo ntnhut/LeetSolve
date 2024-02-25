@@ -95,12 +95,16 @@ Output:
 1994
 ```
 
-This solution efficiently converts a Roman numeral string into an integer by iterating through the string from right to left and applying the rules of Roman numerals, where subtractive combinations are subtracted and additive combinations are added to calculate the total value. The unordered map is used to look up the values of Roman numerals. 
-
 ### Complexity
 
 * Runtime: `O(N)` where `N = s.length`.
 * Extra space: `O(1)`.
+
+## Key Takeaway
+
+This problem can be solved using a map to store the values of each Roman numeral character. This solution iterates through the string from right to left, accumulating the integer value based on the corresponding Roman numeral characters. 
+
+By comparing the current character's value with the previous one, the solution handles cases of subtraction (e.g., IV, IX, etc.) by subtracting the value if it's smaller and adding it otherwise.
 
 ## Exercise
 - [Integer to Roman](https://leetcode.com/problems/integer-to-roman/)

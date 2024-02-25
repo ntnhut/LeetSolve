@@ -111,5 +111,11 @@ Output:
 * Runtime: `O(n)`, where `n = s.length`.
 * Extra space: `O(1)` as the array is fixed regardless of how big `n` is.
 
+## Key Takeaway
+
+Utilizing hash maps or arrays to count the frequency of characters in a string provides an efficient way to identify the first unique character. Both solutions use this approach to iterate through the string and count the occurrences of each character. 
+
+By storing the counts in a data structure indexed by the character value, the solutions achieve a linear time complexity proportional to the length of the string. Solution 2 further optimizes memory usage by employing an array with a fixed size corresponding to the lowercase English alphabet, avoiding the overhead associated with hash maps.
+
 ## Exercise
 - [First Letter to Appear Twice](https://leetcode.com/problems/first-letter-to-appear-twice/)

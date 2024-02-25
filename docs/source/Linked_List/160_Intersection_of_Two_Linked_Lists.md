@@ -269,8 +269,6 @@ This improved solution finds the intersection of two linked lists by first deter
 * Runtime: `O(m + n)`, where `m`, `n` are the number of nodes of `listA` and `listB`.
 * Extra space: `O(1)`.
 
-
-
 ## Implementation tip
 
 * The technique used in Solution 2 is known as the *Two-pointer* technique since you use two pointers to iterate the list at the same time.

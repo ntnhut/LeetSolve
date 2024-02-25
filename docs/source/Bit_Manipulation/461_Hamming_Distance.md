@@ -66,11 +66,13 @@ Output:
 1
 ```
 
-This solution calculates the Hamming distance by XORing the two integers to find their differences and then counts the number of set bits (1s) in the XOR result, which corresponds to the positions where the two numbers differ in binary representation.
-
 ### Complexity
 * Runtime: `O(1)` as the number of bits is at most 32 as constrained.
 * Extra space: `O(1)`.
+
+## Key Takeaway
+
+Utilizing bitwise operations, such as XOR (^) and bitwise AND (&), allows for efficient computation of the Hamming distance between two integers. This approach provides a straightforward and efficient method for calculating the Hamming distance without the need for complex logic or additional data structures.
 
 ## Exercise
 - [Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits/)

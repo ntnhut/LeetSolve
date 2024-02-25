@@ -96,12 +96,16 @@ Output:
 2
 ```
 
-This solution calculates the frequencies of characters in the input string, sorts them in descending order, and then iterates through them to determine the minimum deletions needed to achieve unique frequencies. 
-
 ### Complexity
 
 * Runtime: `O(N)`, where `N = s.length`;
 * Extra space: `O(1)`.
+
+## Key Takeaway
+
+The problem of determining the minimum number of deletions required to make character frequencies unique can be efficiently solved by counting the frequencies of characters and iteratively adjusting the frequencies to ensure uniqueness. 
+
+This solution achieves this by first counting the frequencies of characters and then sorting them in descending order. By iteratively processing the sorted frequencies, the solution ensures that each character frequency is unique while minimizing the number of deletions required.
 
 ## Exercise
 - [Minimum Deletions to Make Array Beautiful](https://leetcode.com/problems/minimum-deletions-to-make-array-beautiful/)

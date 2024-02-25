@@ -168,5 +168,11 @@ This code uses a bitset to keep track of visited elements and quickly detects an
 * Runtime: `O(n)`.
 * Extra space: `O(1)`. 
 
+## Key Takeaway
+
+Different strategies can be employed to detect duplicates in an array, such as sorting followed by linear search, using a hash set to track visited elements, or utilizing a bitset to mark visited indices. 
+
+Each approach has its trade-offs in terms of time complexity, space complexity, and implementation simplicity. Understanding these trade-offs is crucial for you to select the most appropriate solution based on the problem constraints and requirements.
+
 ## Exercise
 - [Missing Number](https://leetcode.com/problems/missing-number/)

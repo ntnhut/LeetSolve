@@ -89,5 +89,9 @@ This solution iteratively checks for the two slopes of a mountain array, ensurin
 * Runtime: `O(N)`, where `N = arr.length`.
 * Extra space: `O(1)`.
 
+## Coding best practices
+
+Breaking down the problem into distinct stages, like finding the peak of the mountain and then traversing down from there, can simplify the logic and improve code readability. This approach facilitates a clear understanding of the algorithm's progression and helps in handling complex conditions effectively.
+
 ## Exercise
 - [Beautiful Towers I](https://leetcode.com/problems/beautiful-towers-i/)

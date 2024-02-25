@@ -116,12 +116,14 @@ Output:
 [0,]
 ```
 
+### Complexity
+* Runtime: `O(N)`, where `N = list1.length + list2.length`.
+* Extra space: `O(1)`.
+
+## Key Takeaway
+
 This solution merges two sorted linked lists efficiently without using extra space. 
 
 It identifies the head of the merged list by comparing the values of the first nodes of the input lists. Then, it iterates through both lists, linking nodes in ascending order until one list is exhausted. 
 
 Finally, it appends the remaining nodes from the non-empty list to the merged list, ensuring the resulting list remains sorted.
-
-### Complexity
-* Runtime: `O(N)`, where `N = list1.length + list2.length`.
-* Extra space: `O(1)`.

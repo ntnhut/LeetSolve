@@ -101,11 +101,13 @@ Output:
 2
 ```
 
-This solution identifies consecutive equal elements at the beginning, sets the initial direction, and then counts the number of times the direction changes to determine the length of the wiggle subsequence.
-
 ### Complexity
 * Runtime: `O(n)`, where `n = nums.length`.
 * Extra space: `O(1)`.
 
+## Key Takeaway
 
+The problem of finding the length of the longest wiggle subsequence can be efficiently solved using a greedy approach. The solution iterates through the input array, identifying alternating extremums (peaks and valleys) to form the wiggle subsequence. 
+
+By keeping track of the current trend direction (increasing or decreasing), the solution efficiently identifies extremums and increments the count accordingly. This greedy approach ensures that each extremum contributes to increasing the length of the wiggle subsequence, maximizing its overall length.
 

@@ -133,16 +133,18 @@ Output:
 [8,9,9,9,0,0,0,1,]
 ```
 
+### Complexity
+
+* Runtime: `O(N)`, where `N = max(l1.length, l2.length)`.
+* Extra space: `O(1)`.
+
+## Key Takeaway
+
 This solution leverages a dummy node (`prehead`) to simplify the handling of edge cases and to hook the head of the resulting list. 
 
 By iterating through both input lists simultaneously and performing addition digit by digit while keeping track of carry, it efficiently computes the sum without the need for additional checks for the head of the resulting list. 
 
 This approach streamlines the addition process, resulting in a concise and straightforward implementation.
-
-### Complexity
-
-* Runtime: `O(N)`, where `N = max(l1.length, l2.length)`.
-* Extra space: `O(1)`.
 
 ## Exercise
 - [Double a Number Represented as a Linked List](https://leetcode.com/problems/double-a-number-represented-as-a-linked-list/)

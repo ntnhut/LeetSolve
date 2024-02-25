@@ -114,14 +114,17 @@ Output:
 4
 1
 ```
-This solution utilizes bitwise XOR operation to find the single number that appears only once in the given array of numbers. By iteratively XOR-ing all the numbers in the array, the operation cancels out the duplicate numbers, leaving only the single number in the end. 
-
-This approach optimizes the computation by leveraging the properties of bitwise XOR operation, which efficiently eliminates duplicates and isolates the single number in the array.
 
 ### Complexity
 
 * Runtime: `O(N)`.
 * Extra space: `O(1)`.
+
+## Key Takeaway
+
+Leveraging bitwise XOR (^) operations offers an efficient solution to find the single number in an array. Solution 2 utilizes the property of XOR where XORing a number with itself results in 0. 
+
+By XORing all the numbers in the array, Solution 2 effectively cancels out pairs of identical numbers, leaving only the single number behind. This approach achieves a linear time complexity without the need for additional data structures, providing a concise and efficient solution.
 
 ## Exercise
 - [Missing Number](https://leetcode.com/problems/missing-number/)

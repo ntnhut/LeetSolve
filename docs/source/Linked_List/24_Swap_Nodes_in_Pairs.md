@@ -106,15 +106,17 @@ Output:
 [5,]
 ```
 
+### Complexity
+* Runtime: `O(N)`, where `N` is the number of nodes.
+* Extra space: `O(1)`.
+
+## Key Takeaway
+
 This solution swaps pairs of nodes in a linked list by adjusting the pointers accordingly. 
 
 It initializes pointers to the current node (`curNode`), its next node (`nextNode`), and the previous node (`preNode`). Then, it iterates through the list, swapping pairs of nodes by adjusting their `next` pointers and updating the `preNode` pointer. 
 
 This approach efficiently swaps adjacent nodes in the list without requiring additional space, effectively transforming the list by rearranging pointers.
-
-### Complexity
-* Runtime: `O(N)`, where `N` is the number of nodes.
-* Extra space: `O(1)`.
 
 ## Exercise
 - [Swapping Nodes in a Linked List](https://leetcode.com/problems/swapping-nodes-in-a-linked-list/)

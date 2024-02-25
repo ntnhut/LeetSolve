@@ -78,8 +78,13 @@ Output:
 9
 ```
 
-This solution identifies the maximum digit in the input string `n` and returns it as the minimum number of partitions required, considering each digit as a separate partition.
 
 ### Complexity
 * Runtime: `O(N)`, where `N = n.length`.
 * Extra space: `O(1)`.
+
+## Key Takeaway
+
+This problem can be efficiently solved by identifying the maximum digit in the string. Since each deci-binary number can only contain digits from 0 to 9, the maximum digit determines the minimum number of deci-binary numbers needed. 
+
+By finding the maximum digit in the string and converting it to an integer, the solution effectively determines the minimum number of deci-binary numbers required.
