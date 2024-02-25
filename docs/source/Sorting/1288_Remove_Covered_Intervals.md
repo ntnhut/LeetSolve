@@ -45,7 +45,7 @@ Final `intervals = [[1,4],[2,8]]`.
 #include <iostream>
 using namespace std;
 //! @return true if the interval i is covered by j
-inline bool isCovered(vector<int>& i, vector<int>& j) {
+inline bool isCovered(const vector<int>& i, const vector<int>& j) {
     return j[0] <= i[0] && i[1] <= j[1];
 }
 int removeCoveredIntervals(vector<vector<int>>& intervals) {

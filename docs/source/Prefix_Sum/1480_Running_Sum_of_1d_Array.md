@@ -37,18 +37,18 @@ Output: [3,4,6,16,17]
 #include <vector>
 #include <iostream>
 using namespace std;
-vector<int> runningSum(vector<int>& nums) {
+vector<int> runningSum(const vector<int>& nums) {
     vector<int> rs;
     int s = 0;
-    for (int n : nums) {
+    for (auto& n : nums) {
         s += n;
         rs.push_back(s);
     }
     return rs;
 }
-void printResult(vector<int>& sums) {
+void printResult(const vector<int>& sums) {
     cout << "[";
-    for (int s: sums) {
+    for (auto& s: sums) {
         cout << s << ",";
     }
     cout << "]\n";
@@ -92,9 +92,9 @@ vector<int> runningSum(vector<int>& nums) {
     }
     return nums;
 }
-void printResult(vector<int>& sums) {
+void printResult(const vector<int>& sums) {
     cout << "[";
-    for (int s: sums) {
+    for (auto& s: sums) {
         cout << s << ",";
     }
     cout << "]\n";

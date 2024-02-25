@@ -74,7 +74,7 @@ using namespace std;
 vector<int> toVector(const string& version) {
     vector<int> revisions;
     string revision;
-    for (char c : version) {
+    for (auto& c : version) {
         if (c != '.') {
             // continue to build current revision 
             revision += c;
@@ -91,7 +91,7 @@ vector<int> toVector(const string& version) {
     return revisions;
 }
 
-int compareVersion(string& version1, string& version2) { 
+int compareVersion(const string& version1, const string& version2) { 
     vector<int> r1 = toVector(version1);    
     vector<int> r2 = toVector(version2);
 

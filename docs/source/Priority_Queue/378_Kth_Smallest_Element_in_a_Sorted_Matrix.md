@@ -47,7 +47,7 @@ You can implement exactly what Example 1 has explained.
 #include <vector>
 #include <algorithm>
 using namespace std;
-int kthSmallest(vector<vector<int>>& matrix, int k) {
+int kthSmallest(const vector<vector<int>>& matrix, int k) {
     vector<int> m;
     // transform the 2D matrix into a 1D array m
     for (auto& row : matrix) {
@@ -89,7 +89,7 @@ Since you need only the `k-th` smallest element, {index}`std::priority_queue`[](
 #include <vector>
 #include <queue>
 using namespace std;
-int kthSmallest(vector<vector<int>>& matrix, int k) {
+int kthSmallest(const vector<vector<int>>& matrix, int k) {
     priority_queue<int> q;
     for (int row = 0; row < matrix.size(); row++) {
         for (int col = 0; col < matrix[row].size(); col++) {

@@ -49,7 +49,7 @@ Comparing `nums = [2,6,4,8,10,9,15]` with its sorted one `sortedNums = [2,4,6,8,
 #include <iostream>
 #include <algorithm>
 using namespace std;
-int findUnsortedSubarray(vector<int>& nums) {
+int findUnsortedSubarray(const vector<int>& nums) {
     vector<int> sortedNums = nums;
     sort(sortedNums.begin(), sortedNums.end());
     int left = 0;
@@ -101,7 +101,7 @@ If `nums[j]` is bigger than `min(C)`, the longer subarray `D` is not in ascendin
 #include <iostream>
 #include <algorithm>
 using namespace std;
-int findUnsortedSubarray(vector<int>& nums) {
+int findUnsortedSubarray(const vector<int>& nums) {
     const int n = nums.size();
     int right = 0;
     int max = nums[0];

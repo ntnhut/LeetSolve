@@ -44,7 +44,7 @@ Following the conditions, we have the following implementation.
 #include <vector>
 #include <iostream>
 using namespace std;
-bool validMountainArray(vector<int>& arr) {
+bool validMountainArray(const vector<int>& arr) {
     if (arr.size() < 3) {
         return false;
     }

@@ -44,7 +44,7 @@ For each line `i`, find the line `j > i` such that it gives the maximum amount o
 #include <iostream>
 #include <vector>
 using namespace std;
-int maxArea(vector<int>& height) {
+int maxArea(const vector<int>& height) {
     int maxA = 0;
     for (int i = 0; i < height.size() - 1; i++) {
         for (int j = i + 1; j < height.size(); j++) {
@@ -112,7 +112,7 @@ For `height = [1,8,6,2,5,4,8,3,7]`:
 #include <iostream>
 #include <vector>
 using namespace std;
-int maxArea(vector<int>& height) {
+int maxArea(const vector<int>& height) {
     int maxA = 0;
     int i = 0;
     int j = height.size() - 1;

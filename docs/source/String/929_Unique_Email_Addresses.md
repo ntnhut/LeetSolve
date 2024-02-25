@@ -57,9 +57,9 @@ Do exactly the steps the problem describes:
 #include<vector>
 #include <unordered_set>
 using namespace std;
-int numUniqueEmails(vector<string>& emails) {
+int numUniqueEmails(const vector<string>& emails) {
     unordered_set<string> s;
-    for (auto e: emails) {
+    for (auto& e: emails) {
         auto apos = e.find('@');
 
         // extract the local name
@@ -112,9 +112,9 @@ The runtime of removing characters in `std::string` is not constant. To avoid th
 #include<vector>
 #include <unordered_set>
 using namespace std;
-int numUniqueEmails(vector<string>& emails) {
+int numUniqueEmails(const vector<string>& emails) {
     unordered_set<string> s;
-    for (auto e: emails) {
+    for (auto& e: emails) {
         string address; 
         int i = 0;
         // the local name ends here

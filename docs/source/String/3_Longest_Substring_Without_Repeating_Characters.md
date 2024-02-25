@@ -59,7 +59,7 @@ this_start = max(previous_start, i).
 #include <iostream>
 #include <unordered_map>
 using namespace std;
-int lengthOfLongestSubstring(string& s) {
+int lengthOfLongestSubstring(const string& s) {
     // keep track latest index of a character in s
     unordered_map<char, int> position;
 

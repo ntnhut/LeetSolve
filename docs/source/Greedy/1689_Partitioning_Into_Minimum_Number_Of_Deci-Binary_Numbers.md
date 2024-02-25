@@ -58,9 +58,9 @@ For `n = "82734"` the answer is 8 because:
 ```cpp
 #include <iostream>
 using namespace std;
-int minPartitions(string n) {
+int minPartitions(const string& n) {
     char maxDigit = '0';
-    for (char& d : n) {
+    for (auto& d : n) {
         maxDigit = max(maxDigit, d);
     }
     return maxDigit - '0';

@@ -35,9 +35,9 @@ Output: -1
 #include <iostream>
 #include <unordered_map>
 using namespace std;
-int firstUniqChar(string& s) {
+int firstUniqChar(const string& s) {
     unordered_map<char, int> count;
-    for (char& c : s) {
+    for (auto& c : s) {
         count[c]++;
     }
     for (int i = 0; i < s.length(); i++) {
@@ -80,11 +80,11 @@ From the constraints "`s` consists of only lowercase English letters", you can u
 #include <iostream>
 #include <vector>
 using namespace std;
-int firstUniqChar(string& s) {
+int firstUniqChar(const string& s) {
     // map 'a'->0, 'b'->1, .., 'z'->25
     // initializes an array of 26 elements, all set to zero
     std::array<int, 26> count{};
-    for (char& c : s) {
+    for (auto& c : s) {
         count[c - 'a']++;
     }
     for (int i = 0; i < s.length(); i++) {

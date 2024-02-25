@@ -41,7 +41,7 @@ To avoid division operation, you can compute the prefix product and the suffix o
 #include <vector>
 #include <iostream>
 using namespace std;
-vector<int> productExceptSelf(vector<int>& nums) {
+vector<int> productExceptSelf(const vector<int>& nums) {
     const int n = nums.size();
     vector<int> prefix(n);
     prefix[0] = 1;
@@ -61,7 +61,7 @@ vector<int> productExceptSelf(vector<int>& nums) {
     }
     return answer;
 }
-void print(vector<int>& nums) {
+void print(const vector<int>& nums) {
     for (auto& v : nums) {
         cout << v << " ";
     }
@@ -101,7 +101,7 @@ In the solution above you can use directly vector `answer` for `prefix` and merg
 #include <vector>
 #include <iostream>
 using namespace std;
-vector<int> productExceptSelf(vector<int>& nums) {
+vector<int> productExceptSelf(const vector<int>& nums) {
     const int n = nums.size();
     vector<int> answer(n);
     answer[0] = 1;
@@ -117,7 +117,7 @@ vector<int> productExceptSelf(vector<int>& nums) {
     }
     return answer;
 }
-void print(vector<int>& nums) {
+void print(const vector<int>& nums) {
     for (auto& v : nums) {
         cout << v << " ";
     }

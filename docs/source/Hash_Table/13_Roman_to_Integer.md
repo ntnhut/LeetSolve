@@ -67,7 +67,7 @@ const unordered_map<char, int> value = {
     {'C', 100}, {'D', 500},
     {'M', 1000}
 };
-int romanToInt(string& s) {
+int romanToInt(const string& s) {
 
     // starting from the end character of the string s
     int i = s.length() - 1;

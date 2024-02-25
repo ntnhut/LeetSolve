@@ -111,7 +111,7 @@ vector<int> largestDivisibleSubset(vector<int>& nums) {
     }
     return answer;        
 }
-void printSolution(vector<int>& result) {
+void printSolution(const vector<int>& result) {
     cout << "[";
     for (auto& v : result) {
         cout << v << ",";
@@ -213,7 +213,7 @@ vector<int> largestDivisibleSubset(vector<int>& nums) {
     }
     return result;        
 }
-void printSolution(vector<int>& result) {
+void printSolution(const vector<int>& result) {
     cout << "[";
     for (auto& v : result) {
         cout << v << ",";

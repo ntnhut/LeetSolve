@@ -142,7 +142,7 @@ vector<vector<int>> shiftGrid(vector<vector<int>>& grid, int k) {
     }
     return grid;
 }
-void printResult(vector<vector<int>>& grid) {
+void printResult(const vector<vector<int>>& grid) {
     cout << "[";
     for (auto& r : grid) {
         cout << "[";

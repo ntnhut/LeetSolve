@@ -37,7 +37,7 @@ For each day `i`, find the day `j > i` that gives maximum profit.
 #include <vector>
 #include <iostream>
 using namespace std;
-int maxProfit(vector<int>& prices) {
+int maxProfit(const vector<int>& prices) {
     int maxProfit = 0;
     for (int i = 0; i < prices.size(); i++) {        
         for (int j = i + 1; j < prices.size(); j++) {
@@ -79,7 +79,7 @@ Conversely, given a future day `j`, the past day `i < j` that gives the maximum 
 #include <iostream>
 #include <algorithm>
 using namespace std;
-int maxProfit(vector<int>& prices) {
+int maxProfit(const vector<int>& prices) {
     int maxProfit = 0;
     int i = 0;
     while (i < prices.size()) {
@@ -133,7 +133,7 @@ Given a future day `j`, the past day `i` that gives the maximum profit is the da
 #include <vector>
 #include <iostream>
 using namespace std;
-int maxProfit(vector<int>& prices) {
+int maxProfit(const vector<int>& prices) {
     int maxProfit = 0;
     // keep track the minimum price so fat
     int minPrice = prices[0]; 

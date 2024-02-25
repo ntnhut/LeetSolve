@@ -56,7 +56,7 @@ np[i][j] = np[i - 1][j] + np[i][j - 1]
 #include <vector>
 #include <iostream>
 using namespace std;
-int uniquePathsWithObstacles(vector<vector<int>>& obstacleGrid) {
+int uniquePathsWithObstacles(const vector<vector<int>>& obstacleGrid) {
     const int row = obstacleGrid.size();
     const int col = obstacleGrid[0].size();
     vector<vector<int>> np(row, vector<int>(col, 0));    

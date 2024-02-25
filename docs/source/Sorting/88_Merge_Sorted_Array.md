@@ -76,9 +76,9 @@ void merge(vector<int>& nums1, int m, vector<int>& nums2, int n)
     }
     nums1.swap(result);
 }
-void printResult(vector<int>& nums1) {
+void printResult(const vector<int>& nums1) {
     cout << "[";
-    for (int n : nums1) {
+    for (auto& n : nums1) {
         cout << n << ",";
     }
     cout << "]\n";
@@ -139,9 +139,9 @@ void merge(vector<int>& nums1, int m, vector<int>& nums2, int n)
         }
     }
 }
-void printResult(vector<int>& nums1) {
+void printResult(const vector<int>& nums1) {
     cout << "[";
-    for (int n : nums1) {
+    for (auto& n : nums1) {
         cout << n << ",";
     }
     cout << "]\n";

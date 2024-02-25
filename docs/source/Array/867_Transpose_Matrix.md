@@ -49,10 +49,10 @@ Output: [[1,4],[2,5],[3,6]]
 #include <iostream>
 #include <vector>
 using namespace std;
-vector<vector<int>> transpose(vector<vector<int>>& matrix) {
+vector<vector<int>> transpose(const vector<vector<int>>& matrix) {
     // declare the transposed matrix mt of desired size, i.e.
-    // mt's number of rows = matrix's number of columns (matrix[0].size())
-    // mt's number of columns = matrix's number of rows (matrix.size())
+    // mt's number of rows = matrix's number of columns
+    // mt's number of columns = matrix's number of rows
     vector<vector<int>> mt(matrix[0].size(), 
                            vector<int>(matrix.size()));
     for (int i = 0; i < mt.size(); i++) {
@@ -62,9 +62,9 @@ vector<vector<int>> transpose(vector<vector<int>>& matrix) {
     }
     return mt;
 }
-void printResult(vector<vector<int>>& matrix) {
+void printResult(const vector<vector<int>>& matrix) {
     cout << "[";
-    for (auto row : matrix) {
+    for (auto& row : matrix) {
         cout << "[";
         for (int m : row) {
             cout << m << ",";

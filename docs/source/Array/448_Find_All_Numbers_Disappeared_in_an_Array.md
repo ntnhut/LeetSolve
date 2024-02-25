@@ -38,12 +38,12 @@ You can use a vector of `bool` to mark which value appeared in the array.
 #include <vector>
 #include <iostream>
 using namespace std;
-vector<int> findDisappearedNumbers(vector<int>& nums) {        
+vector<int> findDisappearedNumbers(const vector<int>& nums) {        
 
     const int n = nums.size();
     vector<bool> exist(n + 1, false);        
-    for (auto& i : nums) {
-        exist[i] = true;
+    for (auto& a : nums) {
+        exist[a] = true;
     }
     vector<int> result;
     for (int i = 1; i <= n; i++) {
@@ -53,7 +53,7 @@ vector<int> findDisappearedNumbers(vector<int>& nums) {
     }
     return result;
 }
-void print(vector<int>& nums) {
+void print(const vector<int>& nums) {
     cout << "[";
     for (auto& a : nums) {
         cout << a << ",";
@@ -128,7 +128,7 @@ vector<int> findDisappearedNumbers(vector<int>& nums) {
     }
     return result;
 }
-void print(vector<int>& nums) {
+void print(const vector<int>& nums) {
     cout << "[";
     for (auto& a : nums) {
         cout << a << ",";

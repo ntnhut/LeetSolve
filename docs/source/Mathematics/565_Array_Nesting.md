@@ -66,7 +66,7 @@ The problem leads to finding the longest cycle of a given permutation.
 #include <iostream>
 #include <algorithm>
 using namespace std;
-int arrayNesting(vector<int>& nums) {
+int arrayNesting(const vector<int>& nums) {
     int maxLen{0};
     vector<bool> visited(nums.size());
     for (auto& i : nums) {

@@ -72,7 +72,7 @@ ListNode* removeElements(ListNode* head, int val) {
     }
     return head;
 }
-void print(ListNode* head) {
+void print(const ListNode* head) {
     ListNode* node = head;
     std::cout << "[";
     while (node) {
@@ -142,7 +142,7 @@ ListNode* removeElements(ListNode* head, int val) {
     }
     return preHead.next;
 }
-void print(ListNode* head) {
+void print(const ListNode* head) {
     ListNode* node = head;
     std::cout << "[";
     while (node) {

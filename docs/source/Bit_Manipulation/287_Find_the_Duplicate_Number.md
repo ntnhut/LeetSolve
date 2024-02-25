@@ -92,10 +92,10 @@ Here are a few solutions.
 #include <vector>
 #include <iostream>
 using namespace std;
-int findDuplicate(vector<int>& nums) {
+int findDuplicate(const vector<int>& nums) {
     // initialize n + 1 elements false
     vector<bool> visited(nums.size());
-    for (int a : nums) {        
+    for (auto& a : nums) {        
         if (visited.at(a)) {
             return a;
         }
@@ -136,10 +136,10 @@ Since `n <= 10^5`, you can use this size for a [`std::bitset`](https://en.cppref
 #include <iostream>
 #include <bitset>
 using namespace std;
-int findDuplicate(vector<int>& nums) {
+int findDuplicate(const vector<int>& nums) {
     // initialize visited = '000..0' with 100001 bits 0
     bitset<100001> visited;
-    for (int a : nums) {
+    for (auto& a : nums) {
         if (visited[a]) {
             return a;
         }

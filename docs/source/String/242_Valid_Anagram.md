@@ -68,7 +68,7 @@ This solution determines if two strings are anagrams by comparing their sorted v
 ```cpp
 #include <iostream>
 using namespace std;
-bool isAnagram(string& s, string& t) {
+bool isAnagram(const string& s, const string& t) {
     if (s.length() != t.length()) {
         return false;
     }
@@ -79,10 +79,10 @@ bool isAnagram(string& s, string& t) {
         alphabet[i] = 0;
     }
     // count the frequency of each letter in s
-    for (char& c : s) {
+    for (auto& c : s) {
         alphabet[c - 'a']++;
     }
-    for (char& c : t) {
+    for (auto& c : t) {
         alphabet[c - 'a']--;
         // if s and t have the same length but are not anagrams,
         // there must be some letter in t having higher frequency than s 
@@ -118,16 +118,16 @@ Replace the array `alphabet` in Solution 2 with a map.
 #include <iostream>
 #include <unordered_map>
 using namespace std;
-bool isAnagram(string s, string t) {
+bool isAnagram(const string& s, const string& t) {
     if (s.length() != t.length()) {
         return false;
     }
     // this alphabet can store all UTF-8 characters
     unordered_map<char, int> alphabet;
-    for (char& c : s) {
+    for (auto& c : s) {
         alphabet[c]++;
     }
-    for (char& c : t) {
+    for (auto& c : t) {
         alphabet[c]--;
         if (alphabet[c] < 0) {
             return false;

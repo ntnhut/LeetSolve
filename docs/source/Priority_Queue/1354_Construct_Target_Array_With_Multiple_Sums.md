@@ -65,7 +65,7 @@ For `target = [9,3,5]`:
 #include <algorithm>
 #include <vector>
 using namespace std;
-bool isPossible(vector<int>& target) {
+bool isPossible(const vector<int>& target) {
     // compute sum of all target's elements
     unsigned long sum = accumulate(target.begin(), 
                                    target.end(), 
@@ -140,7 +140,7 @@ That might lead to the usage of the {index}`std::priority_queue`.
 #include <queue>
 #include <vector>
 using namespace std;
-bool isPossible(vector<int>& target) {
+bool isPossible(const vector<int>& target) {
     // create a heap from the target
     priority_queue<int> q(target.begin(), target.end());
     // compute the sum of all elements

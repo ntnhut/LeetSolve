@@ -39,10 +39,10 @@ Could you solve the problem in linear time and in `O(1)` space?
 #include <iostream>
 #include <unordered_map>
 using namespace std;
-int majorityElement(vector<int>& nums) {
+int majorityElement(const vector<int>& nums) {
     unordered_map<int,int> freq;
     const int HALF = nums.size() / 2;
-    for (int a : nums) {
+    for (auto& a : nums) {
         // count a's occurrences
         freq[a]++; 
         if (freq[a] > HALF) {

@@ -48,7 +48,7 @@ bool isValidCase(const char& c, const bool isLower) {
     }
     return 'A' <= c && c <= 'Z';
 }
-bool detectCapitalUse(string& word) {
+bool detectCapitalUse(const string& word) {
     if (word.length() == 1) {
         return true;
     }

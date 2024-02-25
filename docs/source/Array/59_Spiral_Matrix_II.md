@@ -86,7 +86,7 @@ vector<vector<int>> generateMatrix(int n) {
     }
     return m;
 }
-void printResult(vector<vector<int>>& m) {
+void printResult(const vector<vector<int>>& m) {
     cout << "[";
     for (auto& r : m) {
         cout << "[";

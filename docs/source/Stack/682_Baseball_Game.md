@@ -65,9 +65,9 @@ Output: 1
 #include <string>
 #include <numeric>
 using namespace std;
-int calPoints(vector<string>& ops) {
+int calPoints(const vector<string>& ops) {
     vector<int> stk;
-    for (string& s : ops) {
+    for (auto& s : ops) {
         if (s == "C") {
             stk.pop_back();
         } else if (s == "D") {

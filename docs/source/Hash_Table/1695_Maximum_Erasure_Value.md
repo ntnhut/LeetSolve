@@ -39,7 +39,7 @@ You can use a map to store the position of the elements of `nums`. Then when ite
 #include <unordered_map>
 #include <vector>
 using namespace std;
-int maximumUniqueSubarray(vector<int>& nums) {
+int maximumUniqueSubarray(const vector<int>& nums) {
     // sum stores the running sum of nums
     // i.e., sum[i] = nums[0] + ... + nums[i]
     vector<int> sum(nums.size(), 0);

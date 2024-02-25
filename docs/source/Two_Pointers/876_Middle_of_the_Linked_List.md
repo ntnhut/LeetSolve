@@ -53,7 +53,7 @@ ListNode* middleNode(ListNode* head) {
     }
     return node;        
 }
-void print(ListNode *head) {
+void print(const ListNode *head) {
     ListNode *node = head; 
     std::cout << "[";
     while (node) {
@@ -114,7 +114,7 @@ ListNode* middleNode(ListNode* head) {
     }
     return slow;        
 }
-void print(ListNode *head) {
+void print(const ListNode *head) {
     ListNode *node = head; 
     std::cout << "[";
     while (node) {

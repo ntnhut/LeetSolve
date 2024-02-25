@@ -50,7 +50,7 @@ minPath[i][j] = triangle[i][j] + min(minPath[i - 1][j - 1], minPath[i - 1][j]);
 #include <vector>
 #include <algorithm>
 using namespace std;
-int minimumTotal(vector<vector<int>>& triangle) {
+int minimumTotal(const vector<vector<int>>& triangle) {
     const int n = triangle.size(); // triangle's height
     vector<vector<int>> minPath(n);
     minPath[0] = triangle[0];
@@ -108,7 +108,7 @@ You do not need to store all paths for all rows. The computation of the next row
 #include <vector>
 #include <algorithm>
 using namespace std;
-int minimumTotal(vector<vector<int>>& triangle) {
+int minimumTotal(const vector<vector<int>>& triangle) {
     const int n = triangle.size();
     // store only min path for each row
     vector<int> minPath(n);

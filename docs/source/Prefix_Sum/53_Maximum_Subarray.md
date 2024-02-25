@@ -42,7 +42,7 @@ For `nums = [-2,1,-3,4,-1,2,1,-5,4]`, `[-2]` or `[-2,1]` or `[-2,1,-3]` should n
 #include <vector>
 #include <iostream>
 using namespace std;
-int maxSubArray(vector<int>& nums) {
+int maxSubArray(const vector<int>& nums) {
     int maxSum = -10000; // just chose some negative number to start
     int currSum = 0; // sum of current subarray
     for (auto& num : nums) {

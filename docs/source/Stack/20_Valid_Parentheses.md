@@ -46,9 +46,9 @@ For each character `c` of `s`:
 #include <iostream>
 #include <stack>
 using namespace std;
-bool isValid(string& s) {
+bool isValid(const string& s) {
     stack<char> stk;
-    for (char& c : s) {
+    for (auto& c : s) {
         if (c == '(' || c == '[' || c == '{') {
             stk.push(c);
         } else if (stk.empty()) {

@@ -44,7 +44,7 @@ Explanation: s becomes "c" while t becomes "b".
 #include <iostream>
 #include <vector>
 using namespace std;
-string cleanString(string &s) {
+string cleanString(const string &s) {
     vector<char> v;
     for (int i = 0; i < s.length(); i++) {
         if (s[i] != '#') { 
@@ -60,7 +60,7 @@ string cleanString(string &s) {
     // create a string from a vector of char
     return string(v.begin(), v.end());
 }
-bool backspaceCompare(string& s, string& t) {
+bool backspaceCompare(const string& s, const string& t) {
     return cleanString(s) == cleanString(t);
 }
 int main() {

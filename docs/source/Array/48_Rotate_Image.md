@@ -83,7 +83,7 @@ void rotate(vector<vector<int>>& matrix) {
         }
     }
 }
-void printMatrix(vector<vector<int>>& matrix) {
+void printMatrix(const vector<vector<int>>& matrix) {
     cout << "[";
     for (auto& row: matrix) {
         cout << "[";

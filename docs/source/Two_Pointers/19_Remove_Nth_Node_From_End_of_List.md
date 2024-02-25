@@ -68,7 +68,7 @@ ListNode* removeNthFromEnd(ListNode* head, int n) {
     }
     return head;
 }
-void printList(ListNode *head) {
+void printList(const ListNode *head) {
     ListNode* node = head;
     cout << "[";
     while (node) {
@@ -148,7 +148,7 @@ ListNode* removeNthFromEnd(ListNode* head, int n) {
     slow->next = slow->next->next;
     return head;
 }
-void printList(ListNode *head) {
+void printList(const ListNode *head) {
     ListNode* node = head;
     cout << "[";
     while (node) {

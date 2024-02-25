@@ -37,7 +37,7 @@ For `nums = [1, -1, 0]` and `k = 0`, you get `3` subarrays for the result:
 #include <iostream>
 #include <vector>
 using namespace std;
-int subarraySum(vector<int>& nums, int k) {
+int subarraySum(const vector<int>& nums, int k) {
     int count = 0;
     for (int i = 0; i < nums.size(); i++) {
         int sum = 0;
@@ -88,7 +88,7 @@ In general, assume you have computed the sum `sum[i]` for the subarray `[nums[0]
 #include <iostream>
 #include <vector>
 using namespace std;
-int subarraySum(vector<int>& nums, int k) {
+int subarraySum(const vector<int>& nums, int k) {
     const int n = nums.size();
     vector<int> sum(n);
     sum[0] = nums[0];
@@ -147,7 +147,7 @@ Now you can use an `unordered_map` to store the `sums` as indices for the fast l
 #include <vector>
 #include <unordered_map>
 using namespace std;
-int subarraySum(vector<int>& nums, int k) {
+int subarraySum(const vector<int>& nums, int k) {
     int count = 0;
     // count the frequency of all subarrays' sums 
     unordered_map<int, int> sums;

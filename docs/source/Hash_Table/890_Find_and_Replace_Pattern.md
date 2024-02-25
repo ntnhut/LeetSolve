@@ -38,12 +38,12 @@ Output: ["a","b","c"]
 #include <vector>
 #include <unordered_map>
 using namespace std;
-vector<string> findAndReplacePattern(vector<string>& words, string pattern) {
+vector<string> findAndReplacePattern(const vector<string>& words, const string& pattern) {
     vector<string> result;  
     // need two maps for the bijection
     unordered_map<char,char> w_to_p, p_to_w;
     int i;
-    for (string& w : words) {
+    for (auto& w : words) {
         w_to_p.clear();
         p_to_w.clear();
         i = 0;
@@ -74,7 +74,7 @@ vector<string> findAndReplacePattern(vector<string>& words, string pattern) {
 }
 void printResult(const vector<string>& result) {
     cout << "[";
-    for (const string& s : result) {
+    for (auto& s : result) {
         cout << s << ",";
     }
     cout << "]\n";

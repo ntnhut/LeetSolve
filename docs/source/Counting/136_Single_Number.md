@@ -41,9 +41,9 @@ Count how many times each element appears in the array. Then return the one appe
 #include <iostream>
 #include <unordered_map>
 using namespace std;
-int singleNumber(vector<int>& nums) {
+int singleNumber(const vector<int>& nums) {
     unordered_map<int, int> count;
-    for (int n : nums) {
+    for (auto& n : nums) {
         count[n]++;
     }
     int single;
@@ -92,9 +92,9 @@ a XOR 0 = a.
 #include <vector>
 #include <iostream>
 using namespace std;
-int singleNumber(vector<int>& nums) {
+int singleNumber(const vector<int>& nums) {
     int single = 0;
-    for (int n : nums) {
+    for (auto& n : nums) {
         single ^= n;
     }
     return single;

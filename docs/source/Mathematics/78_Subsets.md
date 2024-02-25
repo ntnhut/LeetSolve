@@ -42,7 +42,7 @@ Similarly, the powerset of Example 1 was obtained from the one in Example 3 with
 #include <vector>
 #include <iostream>
 using namespace std;
-vector<vector<int>> subsets(vector<int>& nums) {
+vector<vector<int>> subsets(const vector<int>& nums) {
     vector<vector<int>> powerset = {{}};
     int i = 0;
     while (i < nums.size()) {
@@ -56,7 +56,7 @@ vector<vector<int>> subsets(vector<int>& nums) {
     }
     return powerset;
 }
-void print(vector<vector<int>>& powerset) {
+void print(const vector<vector<int>>& powerset) {
     for (auto& set : powerset ) {
         cout << "[";
         for (auto& element : set) {

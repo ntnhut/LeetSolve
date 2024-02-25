@@ -45,7 +45,7 @@ For `temperatures = [73,74,75,71,69,72,76,73]`:
 #include <vector>
 #include <iostream>
 using namespace std;
-vector<int> dailyTemperatures(vector<int>& temperatures) {
+vector<int> dailyTemperatures(const vector<int>& temperatures) {
     vector<int> answer(temperatures.size());
     for (int i = 0; i < temperatures.size(); i++) {
         answer[i] = 0;
@@ -58,7 +58,7 @@ vector<int> dailyTemperatures(vector<int>& temperatures) {
     }
     return answer;
 }
-void print(vector<int>& answer) {
+void print(const vector<int>& answer) {
     cout << "[";
     for (auto& v : answer ) {
         cout << v << ",";
@@ -121,7 +121,7 @@ To compute `answer[i = 2]` for `temperatures[2] = 75`, you need to compare it wi
 #include <vector>
 #include <iostream>
 using namespace std;
-vector<int> dailyTemperatures(vector<int>& temperatures) {
+vector<int> dailyTemperatures(const vector<int>& temperatures) {
     vector<int> answer(temperatures.size(), 0);
     for (int i = temperatures.size() - 2; i >= 0 ; i--) {
         int j = i + 1;
@@ -141,7 +141,7 @@ vector<int> dailyTemperatures(vector<int>& temperatures) {
     }
     return answer;
 }
-void print(vector<int>& answer) {
+void print(const vector<int>& answer) {
     cout << "[";
     for (auto& v : answer ) {
         cout << v << ",";

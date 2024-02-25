@@ -85,9 +85,9 @@ Longer `columnTitle`s will have bigger leading exponents of `26`.
 ```cpp
 #include <iostream>
 using namespace std;
-int titleToNumber(string& columnTitle) {
+int titleToNumber(const string& columnTitle) {
     int column = 0; 
-    for (char& c : columnTitle) {
+    for (auto& c : columnTitle) {
         // The ASCII value of 'A' is 65.
         column = 26*column + (c - 64); 
     }

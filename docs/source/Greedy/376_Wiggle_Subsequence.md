@@ -61,7 +61,7 @@ That proves the extrema subsequence is the longest wiggle one.
 #include <iostream>
 #include <vector>
 using namespace std;
-int wiggleMaxLength(vector<int>& nums) {
+int wiggleMaxLength(const vector<int>& nums) {
     // nums[0] is always the first extremum
     // start to find the second extremum
     int i = 1;

@@ -79,7 +79,7 @@ ListNode* swapPairs(ListNode* head) {
     }
     return head;
 }
-void print(ListNode* head) {
+void print(const ListNode* head) {
     ListNode* node = head;
     std::cout << "[";
     while (node != nullptr) {

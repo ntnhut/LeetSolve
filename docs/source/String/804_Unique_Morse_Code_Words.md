@@ -59,11 +59,11 @@ const vector<string> morse{
     "...-", ".--", "-..-", "-.--", "--.."
 };
 
-int uniqueMorseRepresentations(vector<string>& words) {
+int uniqueMorseRepresentations(const vector<string>& words) {
     unordered_set<string> transformations;
-    for (string& w : words) {
+    for (auto& w : words) {
         string s{""};
-        for (char& c : w) {
+        for (auto& c : w) {
             // concatnate the letter c's Morse code
             s += morse[c - 'a'];
         }

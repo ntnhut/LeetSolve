@@ -51,10 +51,10 @@ For `nums = [3,1,3,4,3]` and `k = 6`:
 #include <iostream>
 #include <unordered_map>
 using namespace std;
-int maxOperations(vector<int>& nums, int k) {
+int maxOperations(const vector<int>& nums, int k) {
     unordered_map<int,int> m;
     int count = 0;
-    for (int a : nums) {
+    for (auto& a : nums) {
         m[a]++; // count a's occurences
         if (m[k - a] > 0) {
             // k-a appears in nums
