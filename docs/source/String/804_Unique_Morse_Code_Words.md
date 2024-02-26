@@ -86,9 +86,11 @@ Output:
 1
 ```
 
-This solution converts each word into Morse code based on a predefined mapping and uses an unordered set to keep track of unique representations. By inserting each representation into the set, it automatically filters out duplicates. The final result is the size of the set, which represents the number of unique Morse code representations among the input words. 
-
 ### Complexity
 
 * Runtime: `O(N*M)`, where `N = words.length` and `M = words[i].length`.
 * Extra space: `O(N)`.
+
+## Key Takeaway
+
+This solution converts each word into Morse code based on a predefined mapping and uses an unordered set to keep track of unique representations. By inserting each representation into the set, it automatically filters out duplicates. The final result is the size of the set, which represents the number of unique Morse code representations among the input words. 

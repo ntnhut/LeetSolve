@@ -81,12 +81,14 @@ Output:
 1
 ```
 
-This solution efficiently checks whether a given word follows one of the specified capitalization rules by iterating through the characters of the word and using the `isValidCase` function to validate each character's capitalization based on the current capitalization type (`isLower`). If no violations are found, the word is considered valid, and the function returns `true`. 
-
 ### Complexity
 
 * Runtime: `O(N)`, where `N = word.length`.
 * Extra space: `O(1)`.
+
+## Key Takeaway
+
+This solution efficiently checks whether a given word follows one of the specified capitalization rules by iterating through the characters of the word and using the `isValidCase` function to validate each character's capitalization based on the current capitalization type (`isLower`). If no violations are found, the word is considered valid, and the function returns `true`. 
 
 ## Exercise
 - [Capitalize the Title](https://leetcode.com/problems/capitalize-the-title/)

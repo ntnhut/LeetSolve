@@ -115,14 +115,17 @@ Output:
 -5
 ```
 
-This solution maintains a priority queue of size `k`, allowing it to efficiently keep track of the `k`-th smallest element encountered while iterating through the matrix. 
-
-This approach is handy for large matrices, as it doesn't require sorting the entire matrix. 
-
 ### Complexity
 
 * Runtime: `O(N*logk)`, where `N = n^2` is the total number of elements of the matrix.
 * Extra space: `O(k)`.
+
+
+## Key Takeaway
+
+Solution 2 maintains a priority queue of size `k`, allowing it to efficiently keep track of the `k`-th smallest element encountered while iterating through the matrix. 
+
+This approach is handy for large matrices, as it doesn't require sorting the entire matrix. 
 
 <!-- ## Solution 3: Binary search
 

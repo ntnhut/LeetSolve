@@ -159,16 +159,18 @@ Output:
 8
 ```
 
-The key insight of this solution is utilizing a min-heap (priority queue with the `greater` comparator) to find the kth largest element in a collection. 
-
-Upon initialization, the constructor populates the priority queue with the elements from the input vector `nums`. When adding a new element `val`, it inserts it into the priority queue and then removes elements until the size of the priority queue is reduced to `_k`, ensuring that only the k largest elements are retained in the queue. 
-
-Finally, it returns the top element of the priority queue, which represents the kth largest element. This approach leverages the properties of a min-heap to track the kth largest element in the collection, resulting in an overall efficient solution.
-
 ### Complexity
 
 * Runtime: for the constructor, `O(N*logN)`, where `N = nums.length`. For the `add` method, `O(logN)`.
 * Extra space: `O(1)`.
+
+## Key Takeaway
+
+The key insight of Solution 2 is utilizing a min-heap (priority queue with the `greater` comparator) to find the kth largest element in a collection. 
+
+Upon initialization, the constructor populates the priority queue with the elements from the input vector `nums`. When adding a new element `val`, it inserts it into the priority queue and then removes elements until the size of the priority queue is reduced to `_k`, ensuring that only the k largest elements are retained in the queue. 
+
+Finally, it returns the top element of the priority queue, which represents the kth largest element. This approach leverages the properties of a min-heap to track the kth largest element in the collection, resulting in an overall efficient solution.
 
 ## Exercise
 - [Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/)

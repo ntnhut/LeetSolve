@@ -166,14 +166,16 @@ Output:
 648 831 560 997 192 829 986 897 424 843
 ```
 
-This solution uses two pointers, one starting from the beginning of the array (`evenPos`) and the other starting from the end (`oddPos`), to efficiently identify misplaced elements. 
-
-By incrementing `evenPos` by 2 until an odd element is found and decrementing `oddPos` by 2 until an even element is found, the algorithm can swap these elements to ensure that even-indexed elements contain even values and odd-indexed elements contain odd values. This process iterates until all even and odd elements are correctly positioned.
-
 ### Complexity
 
 * Runtime: `O(N)`, where `N = nums.length`.
 * Extra space: `O(1)`.
+
+## Key Takeaway
+
+Solution 2 uses two pointers, one starting from the beginning of the array (`evenPos`) and the other starting from the end (`oddPos`), to efficiently identify misplaced elements. 
+
+By incrementing `evenPos` by 2 until an odd element is found and decrementing `oddPos` by 2 until an even element is found, the algorithm can swap these elements to ensure that even-indexed elements contain even values and odd-indexed elements contain odd values. This process iterates until all even and odd elements are correctly positioned.
 
 ## Exercise
 - [Rearrange Array Elements by Sign](https://leetcode.com/problems/rearrange-array-elements-by-sign/)

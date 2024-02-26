@@ -100,14 +100,16 @@ Output:
 3
 ```
 
-This solution utilizes a {index}`sliding window` approach to track the starting index of the current substring and an unordered map to store the position of the characters encountered so far. By updating the starting index when a repeating character is encountered, it ensures that the current substring contains only unique characters. 
-
-This approach optimizes the computation of the length of the longest substring by handling the sliding window and updating the length accordingly, resulting in an overall efficient solution.
-
 ### Complexity
 
 * Runtime: `O(N)`, where `N = s.length`.
 * Extra space: `O(N)`.
+
+## Key Takeaway
+
+This solution utilizes a {index}`sliding window` approach to track the starting index of the current substring and an unordered map to store the position of the characters encountered so far. By updating the starting index when a repeating character is encountered, it ensures that the current substring contains only unique characters. 
+
+This approach optimizes the computation of the length of the longest substring by handling the sliding window and updating the length accordingly, resulting in an overall efficient solution.
 
 ## Exercise
 

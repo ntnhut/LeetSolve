@@ -118,10 +118,11 @@ Output:
 [3,4,6,16,17,]
 ```
 
-This solution directly modifies the input array `nums` to store the running sums by iteratively updating each element with the cumulative sum of the previous elements. This approach efficiently calculates the running sums in a single pass through the array.
-
 ### Complexity
 * Runtime: `O(n)`, where `n = nums.length`.
 * Extra space: `O(1)`.
 
+## Key Takeaway
+
+Solution 2 directly modifies the input array `nums` to store the running sums by iteratively updating each element with the cumulative sum of the previous elements. This approach efficiently calculates the running sums in a single pass through the array.
 

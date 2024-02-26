@@ -115,9 +115,10 @@ Output:
 
 ## Implementation tips
 
-1. The function {index}`std::swap`[](https://en.cppreference.com/w/cpp/algorithm/swap) can be used to exchange two values.
+1. The function {index}`std::swap`[^swapurl] can be used to exchange two values.
 
 2. When doing the transpose or mirroring, you could visit over only one-half of the matrix.
 
+[^swapurl]: https://en.cppreference.com/w/cpp/algorithm/swap
 ## Exercise
 - [Determine Whether Matrix Can Be Obtained By Rotation](https://leetcode.com/problems/determine-whether-matrix-can-be-obtained-by-rotation/) 

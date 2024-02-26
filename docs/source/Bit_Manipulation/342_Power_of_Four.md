@@ -129,5 +129,7 @@ Recognizing the unique properties of powers of four, such as their binary repres
 
 By examining the binary representation and ensuring that the only set bit is located at an odd position, Solution 2 effectively determines whether the number is a power of four in constant time complexity, without the need for division operations.
 
+But in term of readable code, Solution 2 is not easy to understand like Solution 1, where complexity of `O(logn)` is not too bad.
+
 ## Exercise
 - [Power of Two](https://leetcode.com/problems/power-of-two/)

@@ -161,13 +161,15 @@ Output:
 7, [0,0,1,1,2,3,3,]
 ```
 
-This solution effectively modifies the input array in-place, removing duplicates that occur more than twice while maintaining the desired order of unique elements. It does so in a single pass through the array, resulting in a time complexity of `O(N)`, where `N` is the number of elements in the array.
-
 ### Complexity
 
 * Runtime: `O(N)`, where `N = nums.size()`.
     
 * Extra space: `O(1)`.
+
+## Key Takeaway
+
+Solution 2 effectively modifies the input array in-place, removing duplicates that occur more than twice while maintaining the desired order of unique elements. It does so in a single pass through the array, resulting in a time complexity of `O(N)`, where `N` is the number of elements in the array.
 
 ## Exercise
 - [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/)

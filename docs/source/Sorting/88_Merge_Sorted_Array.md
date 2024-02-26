@@ -168,12 +168,14 @@ Output:
 [1,]
 ```
 
-This solution efficiently merges two sorted arrays, `nums1` and `nums2`, into `nums1` while preserving the sorted order. It uses three pointers (`k`, `i`, and `j`) to perform the merge in reverse order, which helps avoid the need for additional space. 
-
 ### Complexity
 
 * Runtime: `O(m+n)`, where `m = nums1.length` and `n = nums2.length`.
 * Extra space: `O(1)`.
+
+## Key Takeaway
+
+Solution 2 efficiently merges two sorted arrays, `nums1` and `nums2`, into `nums1` while preserving the sorted order. It uses three pointers (`k`, `i`, and `j`) to perform the merge in reverse order, which helps avoid the need for additional space. 
 
 ## Exercise
 - [Squares of a Sorted Array](https://leetcode.com/problems/squares-of-a-sorted-array/)

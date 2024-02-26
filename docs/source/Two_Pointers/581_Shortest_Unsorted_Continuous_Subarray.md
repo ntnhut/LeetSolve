@@ -152,7 +152,7 @@ This approach optimizes the computation by traversing the array only twice, once
 * Runtime: `O(N)`, where `N` is the number of elements in the `nums` vector.
 * Extra space: `O(1)`.
 
-## Conclusion
+## Key Takeaway
 Solution 2 helped you identify the shortest subarray (by the `left` and `right` indices) needed to be sorted in order to sort the whole array.
 
 That means in some cases you can sort an array with complexity `O(N + m*logm) < O(N*logN)` where `N` is the length of the whole array and `m` is the length of the shortest subarray.

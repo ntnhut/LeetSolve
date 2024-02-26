@@ -178,16 +178,18 @@ Output:
 [4,]
 ```
 
-This solution uses two pointers, a fast pointer and a slow pointer, to remove the nth node from the end of a linked list. 
-
-Initially, both pointers start from the head of the list. The fast pointer moves `n` steps ahead, effectively positioning itself `n` nodes ahead of the slow pointer. Then, while the fast pointer is not at the end of the list, both pointers move forward simultaneously. This ensures that the slow pointer stays `n` nodes behind the fast pointer, effectively reaching the node preceding the nth node from the end when the fast pointer reaches the end of the list. Finally, the nth node from the end is removed by updating the `next` pointer of the node preceding it. 
-
-This approach optimizes the computation by traversing the linked list only once and using two pointers to efficiently locate the node to be removed.
-
 ### Complexity
 
 * Runtime: `O(N)`, where `N` is the number of nodes in the list.
 * Extra space: `O(1)`.
+
+## Key Takeaway
+
+Solution 2 uses two pointers, a fast pointer and a slow pointer, to remove the nth node from the end of a linked list. 
+
+Initially, both pointers start from the head of the list. The fast pointer moves `n` steps ahead, effectively positioning itself `n` nodes ahead of the slow pointer. Then, while the fast pointer is not at the end of the list, both pointers move forward simultaneously. This ensures that the slow pointer stays `n` nodes behind the fast pointer, effectively reaching the node preceding the nth node from the end when the fast pointer reaches the end of the list. Finally, the nth node from the end is removed by updating the `next` pointer of the node preceding it. 
+
+This approach optimizes the computation by traversing the linked list only once and using two pointers to efficiently locate the node to be removed.
 
 ## Exercise
 - [Swapping Nodes in a Linked List](https://leetcode.com/problems/swapping-nodes-in-a-linked-list/)

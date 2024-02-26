@@ -156,7 +156,6 @@ Output:
 2
 1
 ```
-This solution first sorts the intervals and then iterates through them while keeping track of whether each interval is covered by others or not. The final result is the count of intervals that are not covered, and it is returned as the output. 
 
 ### Complexity
 
@@ -165,3 +164,4 @@ This solution first sorts the intervals and then iterates through them while kee
 
 ## Key takeaway
 * Two `std::vector`s can be compared using dictionary order.
+* Solution 2 first sorts the intervals and then iterates through them while keeping track of whether each interval is covered by others or not. The final result is the count of intervals that are not covered. 

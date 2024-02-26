@@ -104,10 +104,14 @@ Output:
 3
 ```
 
-This solution identifies and calculates the length of array nesting sequences within the given array `nums`. It uses a boolean array `visited` to avoid revisiting elements.
 
 ### Complexity
 
 * Runtime: `O(n)` where `n` is the size of the `nums` array.
 * Extra space: much less than `O(n)` since [`vector<bool>`](https://en.cppreference.com/w/cpp/container/vector_bool) is optimized for space efficiency.
 
+## Key Takeaway
+
+The problem of finding the length of the longest cycle in an array can be efficiently solved using a cycle detection approach. This solution efficiently detects cycles in the array by using a boolean array to mark visited elements. 
+
+By iterating through each element in the array and visiting the cycle starting from each unvisited element, the solution identifies the length of each cycle and updates the maximum length accordingly. This approach ensures that each cycle is visited only once and maximizes the length of the longest cycle in the array.

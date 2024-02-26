@@ -73,20 +73,17 @@ Output:
 23
 ```
 
-This solution is the Kadane's algorithm, which finds the maximum sum of a contiguous subarray within a given array. 
-
-It iterates through the elements of the array, updating `currSum` to either the current element or the sum of the current element and the previous `currSum`, whichever is greater. By considering whether adding the current element improves the overall sum, it effectively handles both positive and negative numbers in the array. Finally, it updates `maxSum` with the maximum value encountered during the iteration, ensuring it holds the maximum sum of any contiguous subarray within the given array. 
-
-This approach optimizes the computation by tracking the maximum sum and dynamically updating it as it iterates through the array.
-
 ### Complexity
 * Runtime `O(n)`, where `n = nums.length`.
 * Memory `O(1)`.
 
+## Key Takeaway
 
-## Conclusion
+This solution is the {index}`Kadane's algorithm`[](https://en.wikipedia.org/wiki/Maximum_subarray_problem#Kadane's_algorithm) to find the maximum sum of a contiguous subarray in the given array nums. 
 
-In summary, this code demonstrates {index}`Kadane's algorithm`[](https://en.wikipedia.org/wiki/Maximum_subarray_problem#Kadane's_algorithm) to find the maximum sum of a contiguous subarray in the given array nums. The algorithm efficiently handles negative and positive values, ensuring that it finds the optimal subarray sum.
+It iterates through the elements of the array, updating `currSum` to either the current element or the sum of the current element and the previous `currSum`, whichever is greater. By considering whether adding the current element improves the overall sum, it effectively handles both positive and negative numbers in the array. Finally, it updates `maxSum` with the maximum value encountered during the iteration, ensuring it holds the maximum sum of any contiguous subarray within the given array. 
+
+This approach optimizes the computation by tracking the maximum sum and dynamically updating it as it iterates through the array.
 
 ## Exercise
 - [Maximum Product Subarray](https://leetcode.com/problems/maximum-product-subarray/)

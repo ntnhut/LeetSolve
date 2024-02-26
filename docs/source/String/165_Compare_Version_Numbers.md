@@ -131,18 +131,21 @@ Output:
 -1
 ```
 
+### Complexity
+* Runtime: `O(N)` where `N = max(version1.length, version2.length)`.
+* Extra space: `O(N)`.
+
+## Key Takeaway
+
 This solution first converts the version strings into vectors of integers representing the individual components of the version numbers. This conversion is done by iterating through each character of the version string, accumulating digits until encountering a dot, at which point the accumulated integer is added to the revisions vector. 
 
 Once both version strings are converted into vectors, the function iterates through the vectors, comparing corresponding elements to determine the relationship between the versions. Additionally, it accounts for any remaining digits in the longer version string after the common components by summing them up and comparing the totals. 
 
 This approach simplifies the comparison process by breaking down the version strings into easily comparable components.
 
-### Complexity
-* Runtime: `O(N)` where `N = max(version1.length, version2.length)`.
-* Extra space: `O(N)`.
+### C++ Notes
+* {index}`std::stoi`[^stoiurl] is used to convert a `string` to an `int`. It ignores the leading zeros for you.
+* {index}`std::accumulate`[^acuurl] is used to compute the sum of a container. 
 
-## C++ Notes
-* [`std::stoi(string)`](https://en.cppreference.com/w/cpp/string/basic_string/stol) is used to convert a `string` to an `int`. It ignores the leading zeros for you.
-* [`std::accumulate(firstIter, lastIter, initValue)`](https://en.cppreference.com/w/cpp/algorithm/accumulate) is used to compute the sum of a container. 
-
-
+[^stoiurl]: https://en.cppreference.com/w/cpp/string/basic_string/stol
+[^acuurl]: https://en.cppreference.com/w/cpp/algorithm/accumulate

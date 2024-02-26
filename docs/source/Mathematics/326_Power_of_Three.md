@@ -100,5 +100,9 @@ This solution effectively checks whether `n` is a power of three by verifying if
 * Runtime: `O(1)`.
 * Extra space: `O(1)`.
 
+## Readable code
+
+Though Solution 2 offers a direct approach without the need for iteration, it is not easy to understand like Solution 1, where complexity of `O(logn)` is not too bad.
+
 ## Exercise
 - [Check if Number is a Sum of Powers of Three](https://leetcode.com/problems/check-if-number-is-a-sum-of-powers-of-three/)

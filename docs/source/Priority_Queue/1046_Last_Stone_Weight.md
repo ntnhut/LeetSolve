@@ -76,12 +76,11 @@ Output:
 1
 ```
 
-This solution efficiently simulates the process of smashing stones and finding the last remaining stone by using a max-heap (priority queue) to always select the heaviest stones to smash together.
-
 ### Complexity
 
 * Runtime: `O(n*logn)`, where `n = stones.length`.   
 * Extra space: `O(n)`.
     
-    
-    
+## Key Takeaway    
+
+This solution efficiently simulates the process of smashing stones and finding the last remaining stone by using a max-heap (priority queue) to always select the heaviest stones to smash together.

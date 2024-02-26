@@ -125,13 +125,15 @@ Output:
 1
 ```
 
-This solution efficiently handles event bookings by maintaining a sorted set of events based on their end times, allowing for quick overlap checks when booking new events. It has a time complexity of `O(logn)` for each booking operation, where `n` is the number of events already booked.
-
 ### Complexity
 
 For the `book` method:
 * Runtime: `O(logn)`, where `n = _events.length`.
 * Extra space: `O(1)`.
+
+## Key Takeaway
+
+Solution 2 efficiently handles event bookings by maintaining a sorted set of events based on their end times, allowing for quick overlap checks when booking new events.
 
 ## Exercise
 - [Determine if Two Events Have Conflict](https://leetcode.com/problems/determine-if-two-events-have-conflict/)

@@ -95,5 +95,5 @@ Output:
 
 ## Implementation note
 
-Note that the matrix might not be square, you cannot just swap the elements using for example the function [`std::swap`](https://en.cppreference.com/w/cpp/algorithm/swap).
+Note that the matrix might not be square, you cannot just swap the elements using for example the function `std::swap`.
 

@@ -169,5 +169,11 @@ This solution efficiently computes the maximum profit by iterating through the a
 * Runtime: `O(N)`, where `N = prices.length`.
 * Extra space: `O(1)`.
 
+## Key Takeaway
+
+The problem of finding the maximum profit that can be achieved by buying and selling a stock can be efficiently solved using different approaches. Solutions 1, 2, and 3 each offer a different approach to solving the problem, including brute-force iteration, finding local minima and maxima, and maintaining a running minimum price. 
+
+Solution 3 stands out as the most efficient approach, achieving a linear time complexity by iterating through the prices only once and updating the minimum price seen so far. This approach avoids unnecessary comparisons and achieves the desired result in a single pass through the array.
+
 ## Exercise
 - [Best Time to Buy and Sell Stock II](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/)

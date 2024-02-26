@@ -81,12 +81,14 @@ Output:
 0
 ```
 
-This solution efficiently checks the validity of a string of parentheses, brackets, and curly braces by using a stack to ensure that each opening bracket is correctly matched with its corresponding closing bracket. 
-
 ### Complexity:
 
 * Runtime: `O(N)`, where `N = s.length`.
 * Extra space: `O(N)`.
+
+## Key Takeaway
+
+This solution efficiently checks the validity of a string of parentheses, brackets, and curly braces by using a stack to ensure that each opening bracket is correctly matched with its corresponding closing bracket. 
 
 ## Exercise
 - [Check If Word Is Valid After Substitutions](https://leetcode.com/problems/check-if-word-is-valid-after-substitutions/)

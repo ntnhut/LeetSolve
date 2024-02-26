@@ -146,14 +146,16 @@ Output:
 0
 ```
 
-Instead of relying on a fixed-size array like the ASCII-based solutions, this solution uses an `unordered_map` to store character frequencies. Each character is used as a key in the map, and the count of occurrences is stored as the associated value.
-
-Unicode characters values are not restricted to a specific range. The `unordered_map` approach accommodates this variability by allowing any character to be a key.
-
 ### Complexity
 
 * Runtime: `O(N)`, where `N = s.length`.
 * Extra space: `O(c)` where `c` represents the number of unique characters present in both strings `s` and `t`.
+
+## Key Takeaway
+
+Instead of relying on a fixed-size array like the ASCII-based solutions, Solution 3 uses an `unordered_map` to store character frequencies. Each character is used as a key in the map, and the count of occurrences is stored as the associated value.
+
+Unicode characters values are not restricted to a specific range. The `unordered_map` approach accommodates this variability by allowing any character to be a key.
 
 ## Exercise
 - [Find Resultant Array After Removing Anagrams](https://leetcode.com/problems/find-resultant-array-after-removing-anagrams/)

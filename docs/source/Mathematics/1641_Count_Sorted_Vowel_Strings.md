@@ -165,5 +165,9 @@ Output:
 * Runtime: `O(1)`.
 * Extra space: `O(1)`.
 
+## Key Takeaway
 
+The problem of counting the number of strings of length `n` that consist of the vowels 'a', 'e', 'i', 'o', and 'u' in sorted order can be efficiently solved using combinatorial techniques. Solution 1 uses dynamic programming to iteratively calculate the count of strings for each length up to `n`, updating the counts based on the previous counts. This approach efficiently computes the count of sorted vowel strings for the given length `n` without requiring excessive memory usage or computational overhead.
+
+Solution 2 offers a more direct approach by utilizing a combinatorial formula to calculate the count of sorted vowel strings directly based on the given length `n`. By leveraging the combinatorial formula, this solution avoids the need for iterative calculations and achieves the desired result more efficiently.
 

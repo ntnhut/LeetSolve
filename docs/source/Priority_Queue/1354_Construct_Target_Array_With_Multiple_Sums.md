@@ -189,12 +189,14 @@ Output:
 1
 ```
 
-This solution uses a max heap (`priority_queue`) to efficiently find and process the maximum element in the `target` array while keeping track of the total sum. It checks various conditions to determine whether it's possible to reach an array consisting of only 1s. If all conditions are satisfied, it returns `true`; otherwise, it returns `false`.
-
 ### Complexity
 
 * Runtime: `O(logN)`, where `N = max(target)`.
 * Extra space: `O(n)`, where `n = target.length`.
+
+## Key Takeaway
+
+Solution 2 uses a max heap (`priority_queue`) to efficiently find and process the maximum element in the `target` array while keeping track of the total sum. It checks various conditions to determine whether it's possible to reach an array consisting of only 1s. 
 
 ## Exercise
 - [Minimum Amount of Time to Fill Cups](https://leetcode.com/problems/minimum-amount-of-time-to-fill-cups/)
