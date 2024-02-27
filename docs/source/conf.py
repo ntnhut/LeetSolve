@@ -41,8 +41,8 @@ intersphinx_disabled_domains = ['std']
 
 templates_path = ['_templates']
 
-# master_doc = 'index_10'
-master_doc = 'index_book1'
+master_doc = 'index_10'
+# master_doc = 'index_book1'
 exclude_patterns = ['*/index_*.rst']
 
 # -- Options for HTML output
@@ -64,12 +64,12 @@ source_suffix = {
 latex_elements = {
     # The paper size ('letterpaper' or 'a4paper').
     #
-    'papersize': 'letterpaper',
+    # 'papersize': 'letterpaper',
     # 'sphinxsetup': 'hmargin={1in,1in}, vmargin={1in,1in}',
 
     # The font size ('10pt', '11pt' or '12pt').
     #
-    'pointsize': '12pt',
+    'pointsize': '11pt',
 
     # Additional stuff for the LaTeX preamble.
     #
