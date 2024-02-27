@@ -111,7 +111,7 @@ Output:
 * Runtime: `O(n)`, where `n = s.length`.
 * Extra space: `O(1)` as the array is fixed regardless of how big `n` is.
 
-## Key Takeaway
+## Conclusion
 
 Utilizing hash maps or arrays to count the frequency of characters in a string provides an efficient way to identify the first unique character. Both solutions use this approach to iterate through the string and count the occurrences of each character. 
 

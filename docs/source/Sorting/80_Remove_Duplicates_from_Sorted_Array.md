@@ -167,7 +167,7 @@ Output:
     
 * Extra space: `O(1)`.
 
-## Key Takeaway
+## Conclusion
 
 Solution 2 effectively modifies the input array in-place, removing duplicates that occur more than twice while maintaining the desired order of unique elements. It does so in a single pass through the array, resulting in a time complexity of `O(N)`, where `N` is the number of elements in the array.
 

@@ -41,8 +41,8 @@ intersphinx_disabled_domains = ['std']
 
 templates_path = ['_templates']
 
-master_doc = 'index_10'
-# master_doc = 'index_book1'
+# master_doc = 'index_10'
+master_doc = 'index_book1'
 exclude_patterns = ['*/index_*.rst']
 
 # -- Options for HTML output
@@ -65,7 +65,7 @@ latex_elements = {
     # The paper size ('letterpaper' or 'a4paper').
     #
     'papersize': 'letterpaper',
-    'sphinxsetup': 'hmargin={1.2in,1.2in}, vmargin={1.2in,1.2in}',
+    # 'sphinxsetup': 'hmargin={1in,1in}, vmargin={1in,1in}',
 
     # The font size ('10pt', '11pt' or '12pt').
     #
@@ -77,6 +77,7 @@ latex_elements = {
     \usepackage{charter}
     \usepackage[defaultsans]{lato}
     \usepackage{inconsolata}
+    \usepackage[paperwidth=7.5in,paperheight=9.25in]{geometry}
     \addto\captionsenglish{\renewcommand{\contentsname}{Contents}}
     \setcounter{tocdepth}{1}
     ''',

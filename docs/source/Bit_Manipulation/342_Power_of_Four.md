@@ -123,7 +123,7 @@ Output:
 * Runtime: `O(1)`.
 * Extra space: `O(1)`.
 
-## Key Takeaway
+## Conclusion
 
 Recognizing the unique properties of powers of four, such as their binary representation, can lead to efficient solutions. Solution 2 leverages bitwise operations to check if a number meets the criteria of being a power of four. 
 

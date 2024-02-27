@@ -120,7 +120,7 @@ Output:
 * Runtime: `O(N)`, where `N = list1.length + list2.length`.
 * Extra space: `O(1)`.
 
-## Key Takeaway
+## Conclusion
 
 This solution merges two sorted linked lists efficiently without using extra space. 
 

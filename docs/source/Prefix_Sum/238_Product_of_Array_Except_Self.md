@@ -145,7 +145,7 @@ This code efficiently calculates the products of all elements in the `nums` vect
 * Runtime: `O(n)`, where `n = nums.length`.
 * Extra space: `O(1)`.
 
-## Key Takeaway
+## Conclusion
 
 The problem of computing the product of all elements in an array except the element at the current index can be efficiently solved using different approaches. Solution 1 utilizes two separate passes through the array to compute prefix and suffix products independently. By first computing prefix products from left to right and then suffix products from right to left, this solution efficiently calculates the product of all elements except the one at the current index.
 

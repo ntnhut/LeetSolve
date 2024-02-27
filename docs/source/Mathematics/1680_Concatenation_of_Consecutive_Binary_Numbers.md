@@ -95,7 +95,7 @@ Output:
 * Runtime: `O(n*logn)`.
 * Extra space: `O(1)`.
 
-## Key Takeaway
+## Conclusion
 This solution efficiently calculates the concatenated binary representation of integers from `1` to `n`, using bitwise operations and modular arithmetic. Note that `a << t` is equivalent to ` a * 2^t`.
 
 

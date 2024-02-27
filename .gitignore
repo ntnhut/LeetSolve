@@ -3,3 +3,7 @@ docs/build/*
 docs/source/_build/*
 docs/source/html/*
 docs/source/pdf/*
+leetsolve.aux
+leetsolve.fdb_latexmk
+leetsolve.fls
+leetsolve.log

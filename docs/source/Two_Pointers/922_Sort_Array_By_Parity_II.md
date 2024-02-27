@@ -171,7 +171,7 @@ Output:
 * Runtime: `O(N)`, where `N = nums.length`.
 * Extra space: `O(1)`.
 
-## Key Takeaway
+## Conclusion
 
 Solution 2 uses two pointers, one starting from the beginning of the array (`evenPos`) and the other starting from the end (`oddPos`), to efficiently identify misplaced elements. 
 

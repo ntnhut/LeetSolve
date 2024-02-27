@@ -135,7 +135,7 @@ Output:
 * Runtime: `O(N)` where `N = max(version1.length, version2.length)`.
 * Extra space: `O(N)`.
 
-## Key Takeaway
+## Conclusion
 
 This solution first converts the version strings into vectors of integers representing the individual components of the version numbers. This conversion is done by iterating through each character of the version string, accumulating digits until encountering a dot, at which point the accumulated integer is added to the revisions vector. 
 

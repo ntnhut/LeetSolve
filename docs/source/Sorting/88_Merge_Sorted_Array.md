@@ -173,7 +173,7 @@ Output:
 * Runtime: `O(m+n)`, where `m = nums1.length` and `n = nums2.length`.
 * Extra space: `O(1)`.
 
-## Key Takeaway
+## Conclusion
 
 Solution 2 efficiently merges two sorted arrays, `nums1` and `nums2`, into `nums1` while preserving the sorted order. It uses three pointers (`k`, `i`, and `j`) to perform the merge in reverse order, which helps avoid the need for additional space. 
 

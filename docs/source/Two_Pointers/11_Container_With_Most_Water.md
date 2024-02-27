@@ -145,7 +145,7 @@ Output:
 * Runtime: `O(n)`, where `n = height.length`.
 * Extra space: `O(1)`.
 
-## Key Takeaway
+## Conclusion
 
 Solution 2 is the two-pointer approach. By initializing two pointers `i` and `j` at the beginning and end of the array respectively, and iteratively moving them towards each other until they converge, it evaluates all possible pairs of lines. At each step, it calculates the area. By moving the pointer corresponding to the shorter line inward at each step, it ensures that the maximum possible area is considered. 
 

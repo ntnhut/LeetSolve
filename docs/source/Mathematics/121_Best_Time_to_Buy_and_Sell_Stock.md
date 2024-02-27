@@ -169,7 +169,7 @@ This solution efficiently computes the maximum profit by iterating through the a
 * Runtime: `O(N)`, where `N = prices.length`.
 * Extra space: `O(1)`.
 
-## Key Takeaway
+## Conclusion
 
 The problem of finding the maximum profit that can be achieved by buying and selling a stock can be efficiently solved using different approaches. Solutions 1, 2, and 3 each offer a different approach to solving the problem, including brute-force iteration, finding local minima and maxima, and maintaining a running minimum price. 
 

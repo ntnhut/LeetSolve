@@ -138,7 +138,7 @@ Output:
 * Runtime: `O(N)`, where `N = max(l1.length, l2.length)`.
 * Extra space: `O(1)`.
 
-## Key Takeaway
+## Conclusion
 
 This solution leverages a dummy node (`prehead`) to simplify the handling of edge cases and to hook the head of the resulting list. 
 

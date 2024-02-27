@@ -152,7 +152,7 @@ This solution calculates the nth Fibonacci number iteratively using two variable
 * Runtime: `O(n)`.
 * Extra space: `O(1)`.
 
-## Key Takeaway:
+## Conclusion
 
 The Fibonacci sequence can be efficiently computed using various techniques, including recursion with memoization, bottom-up dynamic programming, or even optimizing space usage by storing only the necessary previous Fibonacci numbers. 
 

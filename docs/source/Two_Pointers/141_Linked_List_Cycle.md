@@ -176,7 +176,7 @@ Output:
 * Runtime: `O(N)`, where `N` is the number of nodes in the linked list.
 * Extra space: `O(1)`.
 
-## Key Takeaway
+## Conclusion
 
 Solution 2 uses two pointers, a fast pointer and a slow pointer, to detect cycles in a linked list. 
 

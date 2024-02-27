@@ -188,7 +188,7 @@ Output:
 * Runtime: `O(n)`, where `n = nums.length`.
 * Extra space: `O(n)`.
 
-## Key Takeaway
+## Conclusion
 
 Solution 3 uses an unordered map to efficiently track the frequency of cumulative sums. It utilizes the concept of complement sums to identify subarrays with the desired sum and adds their counts to the overall count. This approach significantly improves the time complexity compared to the brute-force solution.
 

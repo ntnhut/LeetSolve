@@ -105,7 +105,7 @@ Output:
 * Runtime: `O(n)`, where `n = nums.length`.
 * Extra space: `O(1)`.
 
-## Key Takeaway
+## Conclusion
 
 The problem of finding the length of the longest wiggle subsequence can be efficiently solved using a greedy approach. The solution iterates through the input array, identifying alternating extremums (peaks and valleys) to form the wiggle subsequence. 
 

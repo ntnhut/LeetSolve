@@ -77,7 +77,7 @@ Output:
 * Runtime `O(n)`, where `n = nums.length`.
 * Memory `O(1)`.
 
-## Key Takeaway
+## Conclusion
 
 This solution is the {index}`Kadane's algorithm`[](https://en.wikipedia.org/wiki/Maximum_subarray_problem#Kadane's_algorithm) to find the maximum sum of a contiguous subarray in the given array nums. 
 

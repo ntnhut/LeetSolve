@@ -70,7 +70,7 @@ Output:
 * Runtime: `O(1)` as the number of bits is at most 32 as constrained.
 * Extra space: `O(1)`.
 
-## Key Takeaway
+## Conclusion
 
 Utilizing bitwise operations, such as XOR (^) and bitwise AND (&), allows for efficient computation of the Hamming distance between two integers. This approach provides a straightforward and efficient method for calculating the Hamming distance without the need for complex logic or additional data structures.
 

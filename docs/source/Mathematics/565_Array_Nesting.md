@@ -110,7 +110,7 @@ Output:
 * Runtime: `O(n)` where `n` is the size of the `nums` array.
 * Extra space: much less than `O(n)` since [`vector<bool>`](https://en.cppreference.com/w/cpp/container/vector_bool) is optimized for space efficiency.
 
-## Key Takeaway
+## Conclusion
 
 The problem of finding the length of the longest cycle in an array can be efficiently solved using a cycle detection approach. This solution efficiently detects cycles in the array by using a boolean array to mark visited elements. 
 

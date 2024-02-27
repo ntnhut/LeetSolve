@@ -120,7 +120,7 @@ Output:
 * Runtime: `O(N)`.
 * Extra space: `O(1)`.
 
-## Key Takeaway
+## Conclusion
 
 Leveraging bitwise XOR (^) operations offers an efficient solution to find the single number in an array. Solution 2 utilizes the property of XOR where XORing a number with itself results in 0. 
 

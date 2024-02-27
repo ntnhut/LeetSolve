@@ -86,7 +86,7 @@ Output:
 * Runtime: `O(N)`, where `N = s.length`.
 * Extra space: `O(N)`.
 
-## Key Takeaway
+## Conclusion
 
 This solution efficiently checks the validity of a string of parentheses, brackets, and curly braces by using a stack to ensure that each opening bracket is correctly matched with its corresponding closing bracket. 
 

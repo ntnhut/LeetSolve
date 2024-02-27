@@ -121,7 +121,7 @@ Output:
 * Extra space: `O(k)`.
 
 
-## Key Takeaway
+## Conclusion
 
 Solution 2 maintains a priority queue of size `k`, allowing it to efficiently keep track of the `k`-th smallest element encountered while iterating through the matrix. 
 

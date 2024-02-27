@@ -101,7 +101,7 @@ Output:
 * Runtime: `O(N)`, where `N = s.length`;
 * Extra space: `O(1)`.
 
-## Key Takeaway
+## Conclusion
 
 The problem of determining the minimum number of deletions required to make character frequencies unique can be efficiently solved by counting the frequencies of characters and iteratively adjusting the frequencies to ensure uniqueness. 
 

@@ -83,7 +83,7 @@ Output:
 * Runtime: `O(N)`, where `N = n.length`.
 * Extra space: `O(1)`.
 
-## Key Takeaway
+## Conclusion
 
 This problem can be efficiently solved by identifying the maximum digit in the string. Since each deci-binary number can only contain digits from 0 to 9, the maximum digit determines the minimum number of deci-binary numbers needed. 
 

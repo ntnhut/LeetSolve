@@ -86,7 +86,7 @@ Output:
 * Runtime: `O(2^N)`, where `N` is the number of elements in `nums`, as it generates all possible subsets.
 * Extra space: `O(2^N)` due to the space required to store the subsets.
 
-## Key Takeaway
+## Conclusion
 
 This solution generates subsets by iteratively adding each element of `nums` to the existing subsets and accumulating the results.
 

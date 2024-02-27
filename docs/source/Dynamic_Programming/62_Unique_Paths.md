@@ -216,7 +216,7 @@ Output:
 * Runtime `O(m*n)`, where `m x n` is the size of the grid.
 * Memory `O(n)`.
 
-## Key Takeaway
+## Conclusion
 
 Solution 3 uses only a 1D vector `dp` of size `n` to store the number of unique paths for each column.
 

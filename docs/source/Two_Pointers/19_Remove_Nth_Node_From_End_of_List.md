@@ -183,7 +183,7 @@ Output:
 * Runtime: `O(N)`, where `N` is the number of nodes in the list.
 * Extra space: `O(1)`.
 
-## Key Takeaway
+## Conclusion
 
 Solution 2 uses two pointers, a fast pointer and a slow pointer, to remove the nth node from the end of a linked list. 
 

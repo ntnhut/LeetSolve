@@ -81,6 +81,6 @@ Output:
 * Runtime: `O(n*logn)`, where `n = stones.length`.   
 * Extra space: `O(n)`.
     
-## Key Takeaway    
+## Conclusion    
 
 This solution efficiently simulates the process of smashing stones and finding the last remaining stone by using a max-heap (priority queue) to always select the heaviest stones to smash together.

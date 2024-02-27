@@ -194,7 +194,7 @@ Output:
 * Runtime: `O(logN)`, where `N = max(target)`.
 * Extra space: `O(n)`, where `n = target.length`.
 
-## Key Takeaway
+## Conclusion
 
 Solution 2 uses a max heap (`priority_queue`) to efficiently find and process the maximum element in the `target` array while keeping track of the total sum. It checks various conditions to determine whether it's possible to reach an array consisting of only 1s. 
 

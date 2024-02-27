@@ -87,7 +87,7 @@ Output:
 * Runtime: `O(n)`, where `n` is the number of elements in the `nums` array.
 * Extra space: `O(n)`.
 
-## Key Takeaway
+## Conclusion
 
 This solution utilizes an unordered map to store the frequency of each element encountered while iterating through `nums`. 
 

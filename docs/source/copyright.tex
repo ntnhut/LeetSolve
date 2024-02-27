@@ -2,9 +2,11 @@
 % master_doc = 'index_book1'
 % ------
 
-% \date{February, 2024}
+\usepackage[paperwidth=7.5in,paperheight=9.25in]{geometry}
+
+\date{February, 2024}
 % \begin{document}
-% \frontmatter
+\frontmatter
 
 % \pagestyle{empty}
 % \sphinxmaketitle
@@ -13,7 +15,7 @@
 
 \textbf{First edition. February, 2024.} 
 
-ISBN 9788797517406
+ISBN 9788797517413 (PDF)
 
 Copyright © 2024 Nhut Nguyen.
 
@@ -21,22 +23,25 @@ All rights reserved.
 
 www.nhutnguyen.com
 
+\newpage
+\begin{center}
+    \textit{To my dearest mother, Nguyen Thi Kim Sa.}
+\end{center}
+
 \sphinxstepscope
 
 
 % \pagestyle{plain}
 
-% \chapter*{Preface}
+\chapter*{Preface}
 
-% \subsection*{The book’s overview}
+\subsection*{The book’s overview}
 
-% \subsection*{Who is this book for?}
+\subsection*{Who is this book for?}
 
-% \subsection*{What can you expect from this book and what not?}
+\section*{Acknowledgement}
 
-% \section*{Acknowledgement}
-
-% \newpage
+\newpage
 
 %  Students and developers! By immersing yourself
 
@@ -44,23 +49,23 @@ www.nhutnguyen.com
 % \sphinxtableofcontents
 % \pagestyle{normal}
 
-% \mainmatter
+\mainmatter
 
 % \chapter{Introduction}
 
-% \newpage
+\newpage
 % \begin{quote}
 
 % I hope this book is an enjoyable and educational
 
-% \appendix
+\appendix
 % \chapter{Coding challenge best practices}
 
-% \pagestyle{plain}
-% \backmatter
-% \chapter*{Thank you!}
+\pagestyle{plain}
+\backmatter
+\chapter*{Thank you!}
 
 
-% \chapter*{About the author}
+\chapter*{About the author}
 
 % docs\source\pdf> latexmk -r latexmkrc -pdf -f -dvi- -ps- -jobname=leetsolve -interaction=nonstopmode

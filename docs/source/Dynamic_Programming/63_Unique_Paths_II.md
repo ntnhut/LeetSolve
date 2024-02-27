@@ -97,7 +97,7 @@ Output:
 * Runtime: `O(m*n)`, where `m` and `n` are the dimensions of the grid.
 * Extra space: `O(m*n)`.
 
-## Key Takeaway
+## Conclusion
 
 This solution computes the number of unique paths in an `m x n` grid with obstacles using dynamic programming. It initializes a 2D vector `np` of the same size as `obstacleGrid` to store the number of unique paths for each cell.
 

@@ -164,7 +164,7 @@ Output:
 * Runtime: for the constructor, `O(N*logN)`, where `N = nums.length`. For the `add` method, `O(logN)`.
 * Extra space: `O(1)`.
 
-## Key Takeaway
+## Conclusion
 
 The key insight of Solution 2 is utilizing a min-heap (priority queue with the `greater` comparator) to find the kth largest element in a collection. 
 

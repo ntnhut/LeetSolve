@@ -100,7 +100,7 @@ Output:
 * Runtime: `O(N)` where `N = s.length`.
 * Extra space: `O(1)`.
 
-## Key Takeaway
+## Conclusion
 
 This problem can be solved using a map to store the values of each Roman numeral character. This solution iterates through the string from right to left, accumulating the integer value based on the corresponding Roman numeral characters. 
 

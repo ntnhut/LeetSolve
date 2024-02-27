@@ -110,7 +110,7 @@ Output:
 * Runtime: `O(N)`, where `N` is the number of nodes.
 * Extra space: `O(1)`.
 
-## Key Takeaway
+## Conclusion
 
 This solution swaps pairs of nodes in a linked list by adjusting the pointers accordingly. 
 
