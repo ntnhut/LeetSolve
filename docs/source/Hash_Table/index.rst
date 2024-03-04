@@ -8,7 +8,7 @@ With hash-based data structures, you can store and retrieve information quickly,
 
 What this chapter covers:
 
-1. **Exploring std::unordered_map:** Dive into the C++ Standard Template Library's `std::unordered_map` container, learning how to use it effectively for mapping keys to values.
+1. **Exploring std::unordered_map:** Dive into the C++ Standard Template Library's ``std::unordered_map`` container, learning how to use it effectively for mapping keys to values.
 
 2. **Problem-Solving with Hash Tables:** Learn strategies for solving many problems using hash tables, including frequency counting, anagram detection, and more.
 

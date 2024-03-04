@@ -49,6 +49,7 @@ exclude_patterns = ['*/index_*.rst']
 
 html_theme = "furo"
 html_logo = "img/logo_name.svg"
+# pygments_style = 'bw' # bw stands for black and white, for print
 html_theme_options = {
     # 'logo_only': True,
     "sidebar_hide_name": True,
@@ -77,10 +78,15 @@ latex_elements = {
     \usepackage{charter}
     \usepackage[defaultsans]{lato}
     \usepackage{inconsolata}
+    
     \usepackage[paperwidth=7.5in,paperheight=9.25in]{geometry}
     \addto\captionsenglish{\renewcommand{\contentsname}{Contents}}
     \setcounter{tocdepth}{1}
     ''',
+    # add to preamble
+    # \definecolor{TitleColor}{rgb}{0,0,0}
+    # \definecolor{InnerLinkColor}{rgb}{0,0,0}
+
 
     # Latex figure (float) alignment
     #
