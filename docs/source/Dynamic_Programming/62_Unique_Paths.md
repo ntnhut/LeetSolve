@@ -231,4 +231,6 @@ Finally, the value at `dp[n-1]` contains the total number of unique paths to rea
 I am wondering if there is some mathematics behind this problem. Please share your finding if you find a formula for the solution to this problem.
 
 ## Exercise
-- [Minimum Path Sum](https://leetcode.com/problems/minimum-path-sum/)
+- Minimum Path Sum[^ex].
+
+[^ex]: https://leetcode.com/problems/minimum-path-sum/

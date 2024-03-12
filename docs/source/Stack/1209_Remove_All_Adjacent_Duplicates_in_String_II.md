@@ -118,13 +118,15 @@ This solution efficiently removes substrings of consecutive duplicate characters
 
 ## Implementation tips
 
-* The data structure `stk` you might need to solve this problem is a stack. But here are the reasons you had better use [`std::vector`](https://en.cppreference.com/w/cpp/container/vector):
+* The data structure `stk` you might need to solve this problem is a stack. But here are the reasons you had better use `std::vector`:
 
-* `std::vector` also has methods [`push_back(value)`](https://en.cppreference.com/w/cpp/container/vector/push_back) and [`pop_back()`](https://en.cppreference.com/w/cpp/container/vector/pop_back) like the ones in a stack.
+* `std::vector` also has methods `push_back(value)` and `pop_back()` like the ones in a stack.
 
 * On the other hand, it is faster for a vector to perform the string concatenation at the end.
 
 * In the expression `stk.back().back()`: `stk.back()` is the latest string `a` of `stk`. Then `stk.back().back() = a.back()` is the last character of `a`.
 
 ## Exercise
-- [Remove All Adjacent Duplicates In String](https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/)
+- Remove All Adjacent Duplicates In String[^ex].
+
+[^ex]: https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/

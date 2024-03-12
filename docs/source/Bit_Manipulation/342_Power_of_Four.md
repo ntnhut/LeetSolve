@@ -132,4 +132,6 @@ By examining the binary representation and ensuring that the only set bit is loc
 But in term of readable code, Solution 2 is not easy to understand like Solution 1, where complexity of `O(logn)` is not too bad.
 
 ## Exercise
-- [Power of Two](https://leetcode.com/problems/power-of-two/)
+- Power of Two.[^ex].
+
+[^ex]: https://leetcode.com/problems/power-of-two/

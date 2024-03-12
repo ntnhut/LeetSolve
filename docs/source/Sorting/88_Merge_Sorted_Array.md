@@ -178,4 +178,6 @@ Output:
 Solution 2 efficiently merges two sorted arrays, `nums1` and `nums2`, into `nums1` while preserving the sorted order. It uses three pointers (`k`, `i`, and `j`) to perform the merge in reverse order, which helps avoid the need for additional space. 
 
 ## Exercise
-- [Squares of a Sorted Array](https://leetcode.com/problems/squares-of-a-sorted-array/)
+- Squares of a Sorted Array[^ex].
+
+[^ex]: https://leetcode.com/problems/squares-of-a-sorted-array/

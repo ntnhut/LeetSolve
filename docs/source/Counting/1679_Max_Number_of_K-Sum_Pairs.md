@@ -96,4 +96,6 @@ By examining each element `a` in `nums`, it checks if `k - a` exists in the map 
 This approach optimizes the computation by efficiently tracking the frequencies of elements and identifying valid pairs whose sum equals the target value without requiring additional space proportional to the size of the array.
 
 ## Exercise
-- [Two Sum](https://leetcode.com/problems/two-sum/)
+- Two Sum[^ex].
+
+[^ex]: https://leetcode.com/problems/two-sum/

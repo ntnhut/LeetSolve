@@ -274,4 +274,6 @@ This improved solution finds the intersection of two linked lists by first deter
 * The technique used in Solution 2 is known as the *Two-pointer* technique since you use two pointers to iterate the list at the same time.
 
 ## Exercise
-- [Minimum Index Sum of Two Lists](https://leetcode.com/problems/minimum-index-sum-of-two-lists/)
+- Minimum Index Sum of Two Lists[^ex].
+
+[^ex]: https://leetcode.com/problems/minimum-index-sum-of-two-lists/

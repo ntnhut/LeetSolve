@@ -122,4 +122,6 @@ This solution uses a `Direction` `enum` and boundary variables to iteratively fi
 Enumerating directions with an enum (like `Direction`) can enhance code readability and maintainability, especially in algorithms involving traversal or movement. It aids in clearly defining and referencing the possible directions within the problem domain.
 
 ## Exercise
-- [Spiral Matrix](https://leetcode.com/problems/spiral-matrix/)
+- Spiral Matrix[^ex].
+
+[^ex]: https://leetcode.com/problems/spiral-matrix/

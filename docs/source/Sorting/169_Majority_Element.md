@@ -106,7 +106,7 @@ This code leverages the property of a majority element, which guarantees that it
 
 ## Solution 3: {index}`Partial sort`
 
-Since you are interested in only the middle element after sorting, the partial sorting algorithm [`std::nth_element`](https://en.cppreference.com/w/cpp/algorithm/nth_element) can be used in this case to reduce the cost of the full sorting.
+Since you are interested in only the middle element after sorting, the partial sorting algorithm `std::nth_element` can be used in this case to reduce the cost of the full sorting.
 
 ### Code
 ```cpp
@@ -144,7 +144,7 @@ The code uses the {index}`std::nth_element` function to rearrange the elements i
 
 ## Modern C++ tips
 
-In the code of Solution 3, the partial sorting algorithm [`std::nth_element`](https://en.cppreference.com/w/cpp/algorithm/nth_element) will make sure for all indices `i` and `j` that satisfy `0 <= i <= mid <= j < nums.length`,
+In the code of Solution 3, the partial sorting algorithm `std::nth_element` will make sure for all indices `i` and `j` that satisfy `0 <= i <= mid <= j < nums.length`,
 
     nums[i] <= nums[mid] <= nums[j].
 
@@ -153,4 +153,6 @@ In other words, `nums[mid]` divides the array `nums` into two groups: all elemen
 Those two groups are unsorted. That is why the algorithm is called *partial* sorting. 
 
 ## Exercise
-- [Most Frequent Even Element](https://leetcode.com/problems/most-frequent-even-element/)
+- Most Frequent Even Element[^ex].
+
+[^ex]: https://leetcode.com/problems/most-frequent-even-element/

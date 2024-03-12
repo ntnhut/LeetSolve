@@ -10,7 +10,7 @@ One day, I decided to write an article for each challenge and share it on my blo
 
 As I delved into these coding challenges, I realized their potential to empower aspiring programmers, students, and junior developers **to excel in interviews and master problem-solving and algorithmic thinking**.
 
-### Overview of the book
+### The book's overview
 
 *The Problem Solver's Guide to Coding* presents challenges covering **fundamental** data structures, algorithms, and mathematical problems. Challenges are grouped in topics, starting with the simplest data structure - Array. Most are arranged in order of increasing difficulty, but you can pick any chapter or any challenge to start since I write each independently to the other. 
 
@@ -53,6 +53,6 @@ Thank you for joining me on this expedition.
 > *Happy coding!*
 
 
-Copenhagen, February 2024.
+Copenhagen, March 2024.
 
 Nhut Nguyen, Ph.D.

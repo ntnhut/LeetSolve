@@ -37,7 +37,9 @@ First, moving elements of an unsorted array and moving a sorted one are the same
 
 Second, `M` must be in between the minimum element and the maximum one. Apparently!
 
-We will prove that `M` will be the [median](https://en.wikipedia.org/wiki/Median) of `nums`, which is `nums[n/2]` of the sorted `nums`. 
+We will prove that `M` will be the median[^med] of `nums`, which is `nums[n/2]` of the sorted `nums`. 
+
+[^med]: https://en.wikipedia.org/wiki/Median
 
 In other words, we will prove that if you choose `M` a value different from `nums[n/2]`, then the number of moves will be increased.
 
@@ -94,7 +96,9 @@ This solution leverages the concept of the median to minimize the total absolute
 
 What you only need in Solution 1 is the median value. Computing the total number of moves in the `for` loop does not require the array `nums` to be fully sorted. 
 
-In this case, you can use [`std::nth_element`](https://en.cppreference.com/w/cpp/algorithm/nth_element) to reduce the runtime complexity.
+In this case, you can use `std::nth_element`[^ne] to reduce the runtime complexity.
+
+[^ne]: https://en.cppreference.com/w/cpp/algorithm/nth_element
 
 ### Code
 ```cpp
@@ -136,7 +140,7 @@ This solution efficiently finds the median of the `nums` array in linear time us
 
 ## Modern C++ tips
 
-In the code of Solution 2, the partial sorting algorithm [`std::nth_element`](https://en.cppreference.com/w/cpp/algorithm/nth_element) will make sure for all indices `i` and `j` that satisfy `0 <= i <= mid <= j < nums.length`, then
+In the code of Solution 2, the partial sorting algorithm `std::nth_element` will make sure for all indices `i` and `j` that satisfy `0 <= i <= mid <= j < nums.length`, then
 
 ```
 nums[i] <= nums[mid] <= nums[j].
@@ -146,4 +150,6 @@ With this property, if `mid = nums.length / 2`, then the value of `nums[mid]` is
 
 
 ## Exercise
-- [Minimum Moves to Equal Array Elements](https://leetcode.com/problems/minimum-moves-to-equal-array-elements/)
+- Minimum Moves to Equal Array Elements[^ex].
+
+[^ex]: https://leetcode.com/problems/minimum-moves-to-equal-array-elements/

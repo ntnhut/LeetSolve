@@ -41,15 +41,15 @@ intersphinx_disabled_domains = ['std']
 
 templates_path = ['_templates']
 
-master_doc = 'index_10'
-# master_doc = 'index_book1'
+# master_doc = 'index_10'
+master_doc = 'index_book1'
 exclude_patterns = ['*/index_*.rst']
 
 # -- Options for HTML output
 
 html_theme = "furo"
 html_logo = "img/logo_name.svg"
-# pygments_style = 'bw' # bw stands for black and white, for print
+pygments_style = 'bw' # bw stands for black and white, for print
 html_theme_options = {
     # 'logo_only': True,
     "sidebar_hide_name": True,
@@ -78,12 +78,13 @@ latex_elements = {
     \usepackage{charter}
     \usepackage[defaultsans]{lato}
     \usepackage{inconsolata}
-    
+    \definecolor{TitleColor}{rgb}{0,0,0}
+    \definecolor{InnerLinkColor}{rgb}{0,0,0}
     \usepackage[paperwidth=7.5in,paperheight=9.25in]{geometry}
     \addto\captionsenglish{\renewcommand{\contentsname}{Contents}}
     \setcounter{tocdepth}{1}
     ''',
-    # add to preamble
+    # uncomment these in preamble for print
     # \definecolor{TitleColor}{rgb}{0,0,0}
     # \definecolor{InnerLinkColor}{rgb}{0,0,0}
 
@@ -93,7 +94,7 @@ latex_elements = {
     # 'figure_align': 'htbp',        
 }
 # turn on footnote for print book
-# latex_show_urls = 'footnote'
+latex_show_urls = 'footnote'
 
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title,

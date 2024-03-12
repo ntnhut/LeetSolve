@@ -82,7 +82,9 @@ This solution efficiently iterates through the flowerbed, planting flowers where
 
 * In this implementation, you could insert element `0` to the front and the back of vector `flowerbed` to avoid writing extra code for checking the no-adjacent-flowers rule at `i = 0` and `i = flowerbed.size() - 1`.
 
-* There are a few ways to insert an element to a vector. Here you can see an example of using the methods [`insert`](https://en.cppreference.com/w/cpp/container/vector/insert) and [`push_back`](https://en.cppreference.com/w/cpp/container/vector/push_back) of a [`std::vector`](https://en.cppreference.com/w/cpp/container/vector).
+* There are a few ways to insert an element to a vector. Here you can see an example of using the methods `insert` and `push_back` of a `std::vector`.
 
 ## Ecercise
-- [Teemo Attacking](https://leetcode.com/problems/teemo-attacking/)
+- Teemo Attacking[^ex].
+
+[^ex]: https://leetcode.com/problems/teemo-attacking/

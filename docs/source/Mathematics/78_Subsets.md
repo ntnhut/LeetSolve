@@ -93,4 +93,6 @@ This solution generates subsets by iteratively adding each element of `nums` to 
 Note that in `for (auto subset : powerset)` you should not use reference `auto&` because we do not want to change the subsets that have been created.
 
 ## Exercise
-- [Subsets II](https://leetcode.com/problems/subsets-ii/)
+- Subsets II[^ex].
+
+[^ex]: https://leetcode.com/problems/subsets-ii/

@@ -108,4 +108,6 @@ The problem of determining the minimum number of deletions required to make char
 This solution achieves this by first counting the frequencies of characters and then sorting them in descending order. By iteratively processing the sorted frequencies, the solution ensures that each character frequency is unique while minimizing the number of deletions required.
 
 ## Exercise
-- [Minimum Deletions to Make Array Beautiful](https://leetcode.com/problems/minimum-deletions-to-make-array-beautiful/)
+- Minimum Deletions to Make Array Beautiful[^ex].
+
+[^ex]: https://leetcode.com/problems/minimum-deletions-to-make-array-beautiful/

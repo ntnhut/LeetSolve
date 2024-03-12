@@ -161,4 +161,6 @@ Solutions 2 and 3 demonstrate dynamic programming approaches, where Fibonacci nu
 Solution 3 further optimizes space usage by only storing the necessary previous Fibonacci numbers, resulting in a space complexity of `O(1)`. Understanding these different approaches and their trade-offs is essential for selecting the most appropriate solution based on the problem constraints and requirements.
 
 ## Exercise
-- [N-th Tribonacci Number](https://leetcode.com/problems/n-th-tribonacci-number/)
+- N-th Tribonacci Number[^ex].
+
+[^ex]: https://leetcode.com/problems/n-th-tribonacci-number/

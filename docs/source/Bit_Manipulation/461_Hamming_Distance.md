@@ -3,12 +3,12 @@
 
 ## Problem statement
 
-[^url]The [Hamming distance](https://en.wikipedia.org/wiki/Hamming_distance) between two integers is the number of positions at which the corresponding bits are different.
+[^url]The **Hamming distance**[^hd] between two integers is the number of positions at which the corresponding bits are different.
 
-Given two integers `x` and `y`, return the **Hamming distance** between them.
+Given two integers `x` and `y`, return the Hamming distance between them.
 
 [^url]: https://leetcode.com/problems/hamming-distance/
-
+[^hd]: https://en.wikipedia.org/wiki/Hamming_distance
 ### Example 1
 ```text
 Input: x = 1, y = 4
@@ -75,5 +75,7 @@ Output:
 Utilizing bitwise operations, such as XOR (^) and bitwise AND (&), allows for efficient computation of the Hamming distance between two integers. This approach provides a straightforward and efficient method for calculating the Hamming distance without the need for complex logic or additional data structures.
 
 ## Exercise
-- [Number of 1 Bits](https://leetcode.com/problems/number-of-1-bits/)
+- Number of 1 Bits[^ex].
+
+[^ex]: https://leetcode.com/problems/number-of-1-bits/
 

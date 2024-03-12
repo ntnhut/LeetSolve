@@ -9,4 +9,4 @@ Nhut's passion for helping aspiring software engineers succeed led him to write 
 
 With a strong background in mathematics and computer science and a deep understanding of the industry, Nhut is dedicated to empowering individuals to unlock their full potential, land their dream jobs and live happy lives.
 
-Learn more at https://nhutnguyen.com.
+Learn more at nhutnguyen.com.

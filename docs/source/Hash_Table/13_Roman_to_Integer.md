@@ -107,4 +107,6 @@ This problem can be solved using a map to store the values of each Roman numeral
 By comparing the current character's value with the previous one, the solution handles cases of subtraction (e.g., IV, IX, etc.) by subtracting the value if it's smaller and adding it otherwise.
 
 ## Exercise
-- [Integer to Roman](https://leetcode.com/problems/integer-to-roman/)
+- Integer to Roman[^ex].
+
+[^ex]: https://leetcode.com/problems/integer-to-roman/

@@ -108,4 +108,6 @@ Then, it iterates through the grid starting from the second row and second colum
 Finally, the value at `np[row-1][col-1]` contains the total number of unique paths to reach the bottom-right corner of the grid, which is returned as the result.
 
 ## Exercise
-- [Minimum Path Cost in a Grid](https://leetcode.com/problems/minimum-path-cost-in-a-grid/)
+- Minimum Path Cost in a Grid[^ex].
+
+[^ex]: https://leetcode.com/problems/minimum-path-cost-in-a-grid/

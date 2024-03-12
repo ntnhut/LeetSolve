@@ -36,7 +36,9 @@ Output: 1
 * All the values of `nums` are unique.
 
 ## Solution: Understanding the math behind
-A [permutation](https://en.wikipedia.org/wiki/Permutation) is a one-to-one mapping from a set of integers to itself.
+A permutation[^per] is a one-to-one mapping from a set of integers to itself.
+
+[^per]: https://en.wikipedia.org/wiki/Permutation
 
 The {index}`permutation` on the set `nums` in this problem is defined by the mapping `i -> nums[i]`. For instance in Example 1, the permutation is defined as following:
 ```text
@@ -108,7 +110,7 @@ Output:
 ### Complexity
 
 * Runtime: `O(n)` where `n` is the size of the `nums` array.
-* Extra space: much less than `O(n)` since [`vector<bool>`](https://en.cppreference.com/w/cpp/container/vector_bool) is optimized for space efficiency.
+* Extra space: much less than `O(n)` since `vector<bool>` is optimized for space efficiency.
 
 ## Conclusion
 

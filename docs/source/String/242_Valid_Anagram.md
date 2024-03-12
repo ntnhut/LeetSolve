@@ -158,4 +158,6 @@ Instead of relying on a fixed-size array like the ASCII-based solutions, Solutio
 Unicode characters values are not restricted to a specific range. The `unordered_map` approach accommodates this variability by allowing any character to be a key.
 
 ## Exercise
-- [Find Resultant Array After Removing Anagrams](https://leetcode.com/problems/find-resultant-array-after-removing-anagrams/)
+- Find Resultant Array After Removing Anagrams[^ex].
+
+[^ex]: https://leetcode.com/problems/find-resultant-array-after-removing-anagrams/

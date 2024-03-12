@@ -113,4 +113,6 @@ This approach optimizes the computation of the length of the longest substring b
 
 ## Exercise
 
-- [Optimal Partition of String](https://leetcode.com/problems/optimal-partition-of-string/)
+- Optimal Partition of String[^ex].
+
+[^ex]: https://leetcode.com/problems/optimal-partition-of-string/

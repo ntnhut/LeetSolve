@@ -192,4 +192,6 @@ Initially, both pointers start from the head of the list. The fast pointer moves
 This approach optimizes the computation by traversing the linked list only once and using two pointers to efficiently locate the node to be removed.
 
 ## Exercise
-- [Swapping Nodes in a Linked List](https://leetcode.com/problems/swapping-nodes-in-a-linked-list/)
+- Swapping Nodes in a Linked List[^ex].
+
+[^ex]: https://leetcode.com/problems/swapping-nodes-in-a-linked-list/

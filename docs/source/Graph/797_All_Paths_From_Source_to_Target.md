@@ -1,9 +1,11 @@
 # All Paths From Source to Target
 
-## [Problem statement](https://leetcode.com/problems/all-paths-from-source-to-target/)
-Given a *directed acyclic graph* (DAG) of `n` nodes labeled from `0` to `n - 1`, find all possible paths from node `0` to node `n - 1` and return them in any order.
+## Problem statement
+[^url]Given a *directed acyclic graph* (DAG) of `n` nodes labeled from `0` to `n - 1`, find all possible paths from node `0` to node `n - 1` and return them in any order.
 
 The graph is given as follows: `graph[i]` is a list of all nodes you can visit from node `i` (i.e., there is a directed edge from node `i` to node `graph[i][j]`).
+
+[^url]: https://leetcode.com/problems/all-paths-from-source-to-target/
 
 ### Example 1
 ![Example 1](797_all_1.jpg)
@@ -49,7 +51,9 @@ Output: [[0,1,2,3],[0,3]]
 
 ## Solution: {index}`Depth First Search` (DFS)
 
-This problem is exactly the [Depth-first search algorithm](https://en.wikipedia.org/wiki/Depth-first_search).
+This problem is exactly the Depth-first search algorithm[^dfs].
+
+[^dfs]: https://en.wikipedia.org/wiki/Depth-first_search
 
 ### Code
 ```cpp

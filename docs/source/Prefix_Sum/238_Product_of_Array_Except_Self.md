@@ -152,4 +152,6 @@ The problem of computing the product of all elements in an array except the elem
 Solution 2 offers a more concise approach by combining the computation of prefix and suffix products into a single pass through the array. By iteratively updating a variable to compute suffix products while simultaneously updating the elements of the answer array, this solution achieves the desired result more efficiently with only one pass through the array.
 
 ## Exercise
-- [Construct Product Matrix](https://leetcode.com/problems/construct-product-matrix/)
+- Construct Product Matrix[^ex].
+
+[^ex]: https://leetcode.com/problems/construct-product-matrix/

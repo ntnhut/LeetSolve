@@ -162,4 +162,6 @@ This approach optimizes the computation by traversing the linked list only once 
 * Though the counting nodes approach does not seem optimized, it is more readable, scalable and maintainable.
 
 ## Exercise
-- [Delete the Middle Node of a Linked List](https://leetcode.com/problems/delete-the-middle-node-of-a-linked-list/)
+- Delete the Middle Node of a Linked List[^ex].
+
+[^ex]: https://leetcode.com/problems/delete-the-middle-node-of-a-linked-list/

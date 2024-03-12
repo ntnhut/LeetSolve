@@ -178,4 +178,6 @@ Solution 2 uses two pointers, one starting from the beginning of the array (`eve
 By incrementing `evenPos` by 2 until an odd element is found and decrementing `oddPos` by 2 until an even element is found, the algorithm can swap these elements to ensure that even-indexed elements contain even values and odd-indexed elements contain odd values. This process iterates until all even and odd elements are correctly positioned.
 
 ## Exercise
-- [Rearrange Array Elements by Sign](https://leetcode.com/problems/rearrange-array-elements-by-sign/)
+- Rearrange Array Elements by Sign[^ex].
+
+[^ex]: https://leetcode.com/problems/rearrange-array-elements-by-sign/

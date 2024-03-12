@@ -78,9 +78,11 @@ The code relies on sorting to bring duplicate elements together, making it easy 
 
 ### How can we prove that at least one duplicate number must exist in `nums`?
 
-Due to [Pigeonhole principle](https://en.wikipedia.org/wiki/Pigeonhole_principle):
+Due to Pigeonhole principle[^php]:
 
 Here there are `n + 1` pigeons in `n` holes. The pigeonhole principle says that at least one hole has more than one pigeon.
+
+[^php]: https://en.wikipedia.org/wiki/Pigeonhole_principle
 
 ### Can you solve the problem in linear runtime complexity?
 Here are a few solutions.
@@ -124,11 +126,13 @@ This approach efficiently identifies the duplicate element in the vector by trac
 
 ### Complexity
 * Runtime: `O(n)`.
-* Extra space: much less than `O(n)`. [`std::vector<bool>`](https://en.cppreference.com/w/cpp/container/vector_bool) is optimized for space-efficient. 
+* Extra space: much less than `O(n)` since  `std::vector<bool>` is optimized for space-efficient. 
 
 ## Solution 3: Marking with {index}`std::bitset`
 
-Since `n <= 10^5`, you can use this size for a [`std::bitset`](https://en.cppreference.com/w/cpp/utility/bitset) to do the marking. 
+Since `n <= 10^5`, you can use this size for a `std::bitset`[^bitset] to do the marking. 
+
+[^bitset]: https://en.cppreference.com/w/cpp/utility/bitset
 
 ### Code
 ```cpp
@@ -175,4 +179,6 @@ Different strategies can be employed to detect duplicates in an array, such as s
 Each approach has its trade-offs in terms of time complexity, space complexity, and implementation simplicity. To me, Solution 2 balances all the trade-offs. What do you think?
 
 ## Exercise
-- [Missing Number](https://leetcode.com/problems/missing-number/)
+- Missing Number[^ex].
+
+[^ex]: https://leetcode.com/problems/missing-number/

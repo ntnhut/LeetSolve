@@ -88,9 +88,15 @@ This solution optimally loads boxes onto a truck to maximize the total number of
 
 ## Modern C++ STL notes
 
-Note that two [`vector`s](https://en.cppreference.com/w/cpp/container/vector) can be compared. That is why you can sort them.
+Note that two `vector`s[^vector] can be compared. That is why you can sort them.
 
-But in this case you want to sort them based on the number of units. That is why you need to define the comparison function like the code above. Otherwise, the {index}`std::sort`[](https://en.cppreference.com/w/cpp/algorithm/sort) algorithm will use the dictionary order to sort them by default.  
+But in this case you want to sort them based on the number of units. That is why you need to define the comparison function like the code above. Otherwise, the {index}`std::sort`[^sort] algorithm will use the dictionary order to sort them by default.  
 
 ## Exercise
-- [Maximum Bags With Full Capacity of Rocks](https://leetcode.com/problems/maximum-bags-with-full-capacity-of-rocks/)
+- Maximum Bags With Full Capacity of Rocks[^ex].
+
+[^ex]: https://leetcode.com/problems/maximum-bags-with-full-capacity-of-rocks/
+
+[^vector]: https://en.cppreference.com/w/cpp/container/vector
+
+[^sort]: https://en.cppreference.com/w/cpp/algorithm/sort

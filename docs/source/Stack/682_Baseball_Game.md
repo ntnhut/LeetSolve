@@ -101,12 +101,17 @@ This solution simulates the baseball game by processing each round's operation a
 
 ## Implementation tips
 
-1. The data structure `stk` you might need to solve this problem is a stack. But here are the reasons you had better use [`std::vector`](https://en.cppreference.com/w/cpp/container/vector):
-    * `std::vector` has also methods [`push_back(value)`](https://en.cppreference.com/w/cpp/container/vector/push_back) and [`pop_back()`](https://en.cppreference.com/w/cpp/container/vector/pop_back) like the ones in stack.
+1. The data structure `stk` you might need to solve this problem is a stack. But here are the reasons you had better use `std::vector`:
+    * `std::vector` has also methods `push_back(value)` and `pop_back()` like the ones in stack.
     * On the other hand, a stack does not give easy access to the second last element for the operator `"+"` in this problem.
 
-2. [`accumulate(stk.begin(), stk.end(), 0)`](https://en.cppreference.com/w/cpp/algorithm/accumulate) computes the sum of the vector `stk`.
+2. `accumulate(stk.begin(), stk.end(), 0)`[^acu] computes the sum of the vector `stk`.
 
 
 ## Exercise
-- [Crawler Log Folder](https://leetcode.com/problems/crawler-log-folder/)
+- Crawler Log Folder[^ex].
+
+[^ex]: https://leetcode.com/problems/crawler-log-folder/
+
+
+[^acu]: https://en.cppreference.com/w/cpp/algorithm/accumulate

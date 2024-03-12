@@ -121,4 +121,6 @@ Output:
 
 [^swapurl]: https://en.cppreference.com/w/cpp/algorithm/swap
 ## Exercise
-- [Determine Whether Matrix Can Be Obtained By Rotation](https://leetcode.com/problems/determine-whether-matrix-can-be-obtained-by-rotation/) 
+- Determine Whether Matrix Can Be Obtained By Rotation[^ex].
+
+[^ex]: https://leetcode.com/problems/determine-whether-matrix-can-be-obtained-by-rotation/

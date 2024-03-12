@@ -61,15 +61,18 @@
 
 
 
-    \usepackage{charter}
-    \usepackage[defaultsans]{lato}
-    \usepackage{inconsolata}
-    \addto\captionsenglish{\renewcommand{\contentsname}{Contents}}
-    \setcounter{tocdepth}{1}
+\usepackage{charter}
+\usepackage[defaultsans]{lato}
+\usepackage{inconsolata}
+\definecolor{TitleColor}{rgb}{0,0,0}
+\definecolor{InnerLinkColor}{rgb}{0,0,0}
+
+\addto\captionsenglish{\renewcommand{\contentsname}{Contents}}
+\setcounter{tocdepth}{1}
     
 
 \title{The Problem Solver's Guide To Coding}
-\date{February, 2024}
+\date{March, 2024}
 \release{}
 \author{Nhut Nguyen, Ph. D.}
 \newcommand{\sphinxlogo}{\vbox{}}
@@ -84,11 +87,13 @@
 
 \pagestyle{empty}
 \sphinxmaketitle
+
 \textit{The Problem Solver's Guide To Coding} 
 
 \textbf{First edition. February, 2024.} 
 
 ISBN 9788797517413 (PDF)
+ISBN 9788797517406 (paperback)
 
 Copyright © 2024 Nhut Nguyen.
 
@@ -100,10 +105,10 @@ www.nhutnguyen.com
 \begin{center}
     \textit{To my dearest mother, Nguyen Thi Kim Sa.}
 \end{center}
-
 \sphinxstepscope
 
 \pagestyle{plain}
+
 \chapter*{Preface}
 \label{\detokenize{preface:preface}}\label{\detokenize{preface::doc}}
 \sphinxAtStartPar
@@ -122,7 +127,7 @@ One day, I decided to write an article for each challenge and share it on my blo
 As I delved into these coding challenges, I realized their potential to empower aspiring programmers, students, and junior developers \sphinxstylestrong{to excel in interviews and master problem\sphinxhyphen{}solving and algorithmic thinking}.
 
 
-\section*{Overview of the book}
+\subsection*{Overview of the book}
 \label{\detokenize{preface:overview-of-the-book}}
 \sphinxAtStartPar
 \sphinxstyleemphasis{The Problem Solver’s Guide to Coding} presents challenges covering \sphinxstylestrong{fundamental} data structures, algorithms, and mathematical problems. Challenges are grouped in topics, starting with the simplest data structure \sphinxhyphen{} Array. Most are arranged in order of increasing difficulty, but you can pick any chapter or any challenge to start since I write each independently to the other.
@@ -146,7 +151,7 @@ In this book, I focus on readable code rather than optimal one, as most of you a
 Moreover, my weekly sharing of articles with various developer communities has refined the content and established a connection with a diverse group of programming enthusiasts.
 
 
-\section*{Who is this book for?}
+\subsection*{Who is this book for?}
 \label{\detokenize{preface:who-is-this-book-for}}
 \sphinxAtStartPar
 This book is tailored to benefit a wide audience, from \sphinxstylestrong{students} beginning their programming journey to \sphinxstylestrong{experienced developers} looking to enhance their skills. Regardless of your experience level, whether you’re \sphinxstylestrong{preparing for coding interviews} or simply seeking to \sphinxstylestrong{improve your problem\sphinxhyphen{}solving abilities}, this book is designed to meet your needs.
@@ -205,7 +210,6 @@ Nhut Nguyen, Ph.D.
 \sphinxstepscope
 
 \mainmatter
-
 
 \chapter{Introduction}
 \label{\detokenize{intro:introduction}}\label{\detokenize{intro::doc}}
@@ -280,9 +284,8 @@ Finally, readable code can save time and money. When code is easy to understand,
 
 \sphinxAtStartPar
 In conclusion, readable code is an essential aspect of programming that ensures that code is accessible, error\sphinxhyphen{}free, and efficient. By focusing on readability when designing and implementing code, programmers can improve the quality and reliability of their code, leading to a better overall product.
+
 \newpage
-
-
 \begin{quote}
 
 \sphinxAtStartPar
@@ -2020,8 +2023,8 @@ Extra space: \sphinxcode{\sphinxupquote{O(1)}}.
 \end{itemize}
 
 
-\subsection{Key Takeaway}
-\label{\detokenize{Linked_List/21_Merge_Two_Sorted_Lists:key-takeaway}}
+\subsection{Conclusion}
+\label{\detokenize{Linked_List/21_Merge_Two_Sorted_Lists:conclusion}}
 \sphinxAtStartPar
 This solution merges two sorted linked lists efficiently without using extra space.
 
@@ -2903,8 +2906,8 @@ Extra space: \sphinxcode{\sphinxupquote{O(1)}}.
 \end{itemize}
 
 
-\subsection{Key Takeaway}
-\label{\detokenize{Linked_List/24_Swap_Nodes_in_Pairs:key-takeaway}}
+\subsection{Conclusion}
+\label{\detokenize{Linked_List/24_Swap_Nodes_in_Pairs:conclusion}}
 \sphinxAtStartPar
 This solution swaps pairs of nodes in a linked list by adjusting the pointers accordingly.
 
@@ -3112,8 +3115,8 @@ Extra space: \sphinxcode{\sphinxupquote{O(1)}}.
 \end{itemize}
 
 
-\subsection{Key Takeaway}
-\label{\detokenize{Linked_List/2_add_two_numbers:key-takeaway}}
+\subsection{Conclusion}
+\label{\detokenize{Linked_List/2_add_two_numbers:conclusion}}
 \sphinxAtStartPar
 This solution leverages a dummy node (\sphinxcode{\sphinxupquote{prehead}}) to simplify the handling of edge cases and to hook the head of the resulting list.
 
@@ -3153,7 +3156,7 @@ What this chapter covers:
 \sphinxsetlistlabels{\arabic}{enumi}{enumii}{}{.}%
 \item {} 
 \sphinxAtStartPar
-\sphinxstylestrong{Exploring std::unordered\_map:} Dive into the C++ Standard Template Library’s \sphinxtitleref{std::unordered\_map} container, learning how to use it effectively for mapping keys to values.
+\sphinxstylestrong{Exploring std::unordered\_map:} Dive into the C++ Standard Template Library’s \sphinxcode{\sphinxupquote{std::unordered\_map}} container, learning how to use it effectively for mapping keys to values.
 
 \item {} 
 \sphinxAtStartPar
@@ -3316,8 +3319,8 @@ Extra space: \sphinxcode{\sphinxupquote{O(1)}}.
 \end{itemize}
 
 
-\subsection{Key Takeaway}
-\label{\detokenize{Hash_Table/13_Roman_to_Integer:key-takeaway}}
+\subsection{Conclusion}
+\label{\detokenize{Hash_Table/13_Roman_to_Integer:conclusion}}
 \sphinxAtStartPar
 This problem can be solved using a map to store the values of each Roman numeral character. This solution iterates through the string from right to left, accumulating the integer value based on the corresponding Roman numeral characters.
 
@@ -3474,8 +3477,8 @@ Extra space: \sphinxcode{\sphinxupquote{O(N)}}.
 \end{itemize}
 
 
-\subsection{Key Takeaway}
-\label{\detokenize{Hash_Table/1695_Maximum_Erasure_Value:key-takeaway}}
+\subsection{Conclusion}
+\label{\detokenize{Hash_Table/1695_Maximum_Erasure_Value:conclusion}}
 \sphinxAtStartPar
 This solution computes the maximum sum of a subarray containing unique elements.
 
@@ -3631,8 +3634,8 @@ Extra space: \sphinxcode{\sphinxupquote{O(1)}}. The maps \sphinxcode{\sphinxupqu
 \end{itemize}
 
 
-\subsection{Key Takeaway}
-\label{\detokenize{Hash_Table/890_Find_and_Replace_Pattern:key-takeaway}}
+\subsection{Conclusion}
+\label{\detokenize{Hash_Table/890_Find_and_Replace_Pattern:conclusion}}
 \sphinxAtStartPar
 This solution efficiently finds and returns words from a vector of strings that match a given pattern in terms of character bijection. It uses two unordered maps to establish and maintain the bijection while iterating through the characters of the words and the pattern.
 
@@ -4048,8 +4051,8 @@ Extra space: \sphinxcode{\sphinxupquote{O(1)}}.
 \end{itemize}
 
 
-\subsection{Key Takeaway}
-\label{\detokenize{String/520_Detect_Capital:key-takeaway}}
+\subsection{Conclusion}
+\label{\detokenize{String/520_Detect_Capital:conclusion}}
 \sphinxAtStartPar
 This solution efficiently checks whether a given word follows one of the specified capitalization rules by iterating through the characters of the word and using the \sphinxcode{\sphinxupquote{isValidCase}} function to validate each character’s capitalization based on the current capitalization type (\sphinxcode{\sphinxupquote{isLower}}). If no violations are found, the word is considered valid, and the function returns \sphinxcode{\sphinxupquote{true}}.
 
@@ -4199,8 +4202,8 @@ Extra space: \sphinxcode{\sphinxupquote{O(N)}}.
 \end{itemize}
 
 
-\subsection{Key Takeaway}
-\label{\detokenize{String/804_Unique_Morse_Code_Words:key-takeaway}}
+\subsection{Conclusion}
+\label{\detokenize{String/804_Unique_Morse_Code_Words:conclusion}}
 \sphinxAtStartPar
 This solution converts each word into Morse code based on a predefined mapping and uses an unordered set to keep track of unique representations. By inserting each representation into the set, it automatically filters out duplicates. The final result is the size of the set, which represents the number of unique Morse code representations among the input words.
 
@@ -4663,8 +4666,8 @@ Extra space: \sphinxcode{\sphinxupquote{O(N)}}.
 \end{itemize}
 
 
-\subsection{Key Takeaway}
-\label{\detokenize{String/3_Longest_Substring_Without_Repeating_Characters:key-takeaway}}
+\subsection{Conclusion}
+\label{\detokenize{String/3_Longest_Substring_Without_Repeating_Characters:conclusion}}
 \sphinxAtStartPar
 This solution utilizes a \index{sliding window@\spxentry{sliding window}}sliding window approach to track the starting index of the current substring and an unordered map to store the position of the characters encountered so far. By updating the starting index when a repeating character is encountered, it ensures that the current substring contains only unique characters.
 
@@ -4884,8 +4887,8 @@ Extra space: \sphinxcode{\sphinxupquote{O(N)}}.
 \end{itemize}
 
 
-\subsection{Key Takeaway}
-\label{\detokenize{String/165_Compare_Version_Numbers:key-takeaway}}
+\subsection{Conclusion}
+\label{\detokenize{String/165_Compare_Version_Numbers:conclusion}}
 \sphinxAtStartPar
 This solution first converts the version strings into vectors of integers representing the individual components of the version numbers. This conversion is done by iterating through each character of the version string, accumulating digits until encountering a dot, at which point the accumulated integer is added to the revisions vector.
 
@@ -4926,7 +4929,7 @@ https://en.cppreference.com/w/cpp/algorithm/accumulate
 \chapter{Stack}
 \label{\detokenize{Stack/index:stack}}\label{\detokenize{Stack/index::doc}}
 \sphinxAtStartPar
-This chapter explores the \sphinxstylestrong{stack} data structure, a useful tool for managing data in a Last\sphinxhyphen{}In\sphinxhyphen{}First\sphinxhyphen{}Out (LIFO) way. We’ll investigate the basics of stacks and examine how they work using C++’s \sphinxtitleref{std::stack\textasciigrave{}} and \sphinxcode{\sphinxupquote{std::vector}} from the Standard Template Library (STL).
+This chapter explores the \sphinxstylestrong{stack} data structure, a useful tool for managing data in a Last\sphinxhyphen{}In\sphinxhyphen{}First\sphinxhyphen{}Out (LIFO) way. We’ll investigate the basics of stacks and examine how they work using C++’s \sphinxcode{\sphinxupquote{std::stack}} and \sphinxcode{\sphinxupquote{std::vector}} from the Standard Template Library (STL).
 
 \sphinxAtStartPar
 Stacks in programming are like a stack of books where you add and remove books from the top. They provide a structured way to manage data, making them ideal for handling temporary information, tracking function calls, and solving various algorithmic challenges.
@@ -4941,11 +4944,11 @@ What this chapter covers:
 
 \item {} 
 \sphinxAtStartPar
-\sphinxstylestrong{Leveraging \textasciigrave{}std::stack\textasciigrave{}:} Dive into the STL’s powerful \sphinxtitleref{std::stack} container, mastering its usage and versatility for stack\sphinxhyphen{}based operations.
+\sphinxstylestrong{Leveraging std::stack:} Dive into the STL’s powerful \sphinxcode{\sphinxupquote{std::stack}} container, mastering its usage and versatility for stack\sphinxhyphen{}based operations.
 
 \item {} 
 \sphinxAtStartPar
-\sphinxstylestrong{Exploring \textasciigrave{}std::vector\textasciigrave{}:} Discover the capabilities of \sphinxtitleref{std::vector} in context with stacks, exploiting its dynamic array nature to create flexible stack structures.
+\sphinxstylestrong{Exploring std::vector:} Discover the capabilities of \sphinxcode{\sphinxupquote{std::vector}} in context with stacks, exploiting its dynamic array nature to create flexible stack structures.
 
 \item {} 
 \sphinxAtStartPar
@@ -4958,7 +4961,7 @@ What this chapter covers:
 \end{enumerate}
 
 \sphinxAtStartPar
-As you progress through this chapter, you’ll learn about the importance of stacks and how \sphinxtitleref{std::stack} and \sphinxtitleref{std::vector} can help you solve problems more efficiently. By the end of the chapter, you’ll thoroughly understand the stack data structure’s Last\sphinxhyphen{}In\sphinxhyphen{}First\sphinxhyphen{}Out (LIFO) principle and how you can leverage \sphinxtitleref{std::stack} and \sphinxtitleref{std::vector} to manage data effectively. Let’s embark on this enlightening journey through stacks and uncover their potential for simplifying complex operations and algorithmic problems!
+As you progress through this chapter, you’ll learn about the importance of stacks and how \sphinxcode{\sphinxupquote{std::stack}} and \sphinxcode{\sphinxupquote{std::vector}} can help you solve problems more efficiently. By the end of the chapter, you’ll thoroughly understand the stack data structure’s Last\sphinxhyphen{}In\sphinxhyphen{}First\sphinxhyphen{}Out (LIFO) principle and how you can leverage \sphinxcode{\sphinxupquote{std::stack}} and \sphinxcode{\sphinxupquote{std::vector}} to manage data effectively. Let’s embark on this enlightening journey through stacks and uncover their potential for simplifying complex operations and algorithmic problems!
 
 \sphinxstepscope
 
@@ -5309,8 +5312,8 @@ Extra space: \sphinxcode{\sphinxupquote{O(N)}}.
 \end{itemize}
 
 
-\subsection{Key Takeaway}
-\label{\detokenize{Stack/20_Valid_Parentheses:key-takeaway}}
+\subsection{Conclusion}
+\label{\detokenize{Stack/20_Valid_Parentheses:conclusion}}
 \sphinxAtStartPar
 This solution efficiently checks the validity of a string of parentheses, brackets, and curly braces by using a stack to ensure that each opening bracket is correctly matched with its corresponding closing bracket.
 
@@ -5869,8 +5872,8 @@ Extra space: \sphinxcode{\sphinxupquote{O(n)}}.
 \end{itemize}
 
 
-\subsection{Key Takeaway}
-\label{\detokenize{Priority_Queue/1046_Last_Stone_Weight:key-takeaway}}
+\subsection{Conclusion}
+\label{\detokenize{Priority_Queue/1046_Last_Stone_Weight:conclusion}}
 \sphinxAtStartPar
 This solution efficiently simulates the process of smashing stones and finding the last remaining stone by using a max\sphinxhyphen{}heap (priority queue) to always select the heaviest stones to smash together.
 
@@ -6136,8 +6139,8 @@ Extra space: \sphinxcode{\sphinxupquote{O(1)}}.
 \end{itemize}
 
 
-\subsection{Key Takeaway}
-\label{\detokenize{Priority_Queue/703_Kth_Largest_Element_in_a_Stream:key-takeaway}}
+\subsection{Conclusion}
+\label{\detokenize{Priority_Queue/703_Kth_Largest_Element_in_a_Stream:conclusion}}
 \sphinxAtStartPar
 The key insight of Solution 2 is utilizing a min\sphinxhyphen{}heap (priority queue with the \sphinxcode{\sphinxupquote{greater}} comparator) to find the kth largest element in a collection.
 
@@ -6348,8 +6351,8 @@ Extra space: \sphinxcode{\sphinxupquote{O(k)}}.
 \end{itemize}
 
 
-\subsection{Key Takeaway}
-\label{\detokenize{Priority_Queue/378_Kth_Smallest_Element_in_a_Sorted_Matrix:key-takeaway}}
+\subsection{Conclusion}
+\label{\detokenize{Priority_Queue/378_Kth_Smallest_Element_in_a_Sorted_Matrix:conclusion}}
 \sphinxAtStartPar
 Solution 2 maintains a priority queue of size \sphinxcode{\sphinxupquote{k}}, allowing it to efficiently keep track of the \sphinxcode{\sphinxupquote{k}}\sphinxhyphen{}th smallest element encountered while iterating through the matrix.
 
@@ -6657,8 +6660,8 @@ Extra space: \sphinxcode{\sphinxupquote{O(n)}}, where \sphinxcode{\sphinxupquote
 \end{itemize}
 
 
-\subsection{Key Takeaway}
-\label{\detokenize{Priority_Queue/1354_Construct_Target_Array_With_Multiple_Sums:key-takeaway}}
+\subsection{Conclusion}
+\label{\detokenize{Priority_Queue/1354_Construct_Target_Array_With_Multiple_Sums:conclusion}}
 \sphinxAtStartPar
 Solution 2 uses a max heap (\sphinxcode{\sphinxupquote{priority\_queue}}) to efficiently find and process the maximum element in the \sphinxcode{\sphinxupquote{target}} array while keeping track of the total sum. It checks various conditions to determine whether it’s possible to reach an array consisting of only 1s.
 
@@ -6816,8 +6819,8 @@ Extra space: \sphinxcode{\sphinxupquote{O(1)}}.
 \end{itemize}
 
 
-\subsection{Key Takeaway}
-\label{\detokenize{Bit_Manipulation/461_Hamming_Distance:key-takeaway}}
+\subsection{Conclusion}
+\label{\detokenize{Bit_Manipulation/461_Hamming_Distance:conclusion}}
 \sphinxAtStartPar
 Utilizing bitwise operations, such as XOR (\textasciicircum{}) and bitwise AND (\&), allows for efficient computation of the Hamming distance between two integers. This approach provides a straightforward and efficient method for calculating the Hamming distance without the need for complex logic or additional data structures.
 
@@ -7019,8 +7022,8 @@ Extra space: \sphinxcode{\sphinxupquote{O(1)}}.
 \end{itemize}
 
 
-\subsection{Key Takeaway}
-\label{\detokenize{Bit_Manipulation/342_Power_of_Four:key-takeaway}}
+\subsection{Conclusion}
+\label{\detokenize{Bit_Manipulation/342_Power_of_Four:conclusion}}
 \sphinxAtStartPar
 Recognizing the unique properties of powers of four, such as their binary representation, can lead to efficient solutions. Solution 2 leverages bitwise operations to check if a number meets the criteria of being a power of four.
 
@@ -7302,7 +7305,7 @@ Extra space: \sphinxcode{\sphinxupquote{O(1)}}.
 Different strategies can be employed to detect duplicates in an array, such as sorting followed by linear search, using a hash set to track visited elements, or utilizing a bitset to mark visited indices.
 
 \sphinxAtStartPar
-Each approach has its trade\sphinxhyphen{}offs in terms of time complexity, space complexity, and implementation simplicity. Understanding these trade\sphinxhyphen{}offs is crucial for you to select the most appropriate solution based on the problem constraints and requirements.
+Each approach has its trade\sphinxhyphen{}offs in terms of time complexity, space complexity, and implementation simplicity. To me, Solution 2 balances all the trade\sphinxhyphen{}offs. What do you think?
 
 
 \subsection{Exercise}
@@ -8095,8 +8098,8 @@ Extra space: \sphinxcode{\sphinxupquote{O(1)}}.
 \end{itemize}
 
 
-\subsection{Key Takeaway}
-\label{\detokenize{Sorting/88_Merge_Sorted_Array:key-takeaway}}
+\subsection{Conclusion}
+\label{\detokenize{Sorting/88_Merge_Sorted_Array:conclusion}}
 \sphinxAtStartPar
 Solution 2 efficiently merges two sorted arrays, \sphinxcode{\sphinxupquote{nums1}} and \sphinxcode{\sphinxupquote{nums2}}, into \sphinxcode{\sphinxupquote{nums1}} while preserving the sorted order. It uses three pointers (\sphinxcode{\sphinxupquote{k}}, \sphinxcode{\sphinxupquote{i}}, and \sphinxcode{\sphinxupquote{j}}) to perform the merge in reverse order, which helps avoid the need for additional space.
 
@@ -8816,8 +8819,8 @@ Extra space: \sphinxcode{\sphinxupquote{O(1)}}.
 \end{itemize}
 
 
-\subsection{Key Takeaway}
-\label{\detokenize{Sorting/80_Remove_Duplicates_from_Sorted_Array:key-takeaway}}
+\subsection{Conclusion}
+\label{\detokenize{Sorting/80_Remove_Duplicates_from_Sorted_Array:conclusion}}
 \sphinxAtStartPar
 Solution 2 effectively modifies the input array in\sphinxhyphen{}place, removing duplicates that occur more than twice while maintaining the desired order of unique elements. It does so in a single pass through the array, resulting in a time complexity of \sphinxcode{\sphinxupquote{O(N)}}, where \sphinxcode{\sphinxupquote{N}} is the number of elements in the array.
 
@@ -9179,8 +9182,8 @@ Extra space: \sphinxcode{\sphinxupquote{O(1)}}.
 \end{itemize}
 
 
-\subsection{Key Takeaway}
-\label{\detokenize{Greedy/1647_Minimum_Deletions_to_Make_Character_Frequencies_Unique:key-takeaway}}
+\subsection{Conclusion}
+\label{\detokenize{Greedy/1647_Minimum_Deletions_to_Make_Character_Frequencies_Unique:conclusion}}
 \sphinxAtStartPar
 The problem of determining the minimum number of deletions required to make character frequencies unique can be efficiently solved by counting the frequencies of characters and iteratively adjusting the frequencies to ensure uniqueness.
 
@@ -9363,8 +9366,8 @@ Extra space: \sphinxcode{\sphinxupquote{O(1)}}.
 \end{itemize}
 
 
-\subsection{Key Takeaway}
-\label{\detokenize{Greedy/376_Wiggle_Subsequence:key-takeaway}}
+\subsection{Conclusion}
+\label{\detokenize{Greedy/376_Wiggle_Subsequence:conclusion}}
 \sphinxAtStartPar
 The problem of finding the length of the longest wiggle subsequence can be efficiently solved using a greedy approach. The solution iterates through the input array, identifying alternating extremums (peaks and valleys) to form the wiggle subsequence.
 
@@ -9503,8 +9506,8 @@ Extra space: \sphinxcode{\sphinxupquote{O(1)}}.
 \end{itemize}
 
 
-\subsection{Key Takeaway}
-\label{\detokenize{Greedy/1689_Partitioning_Into_Minimum_Number_Of_Deci-Binary_Numbers:key-takeaway}}
+\subsection{Conclusion}
+\label{\detokenize{Greedy/1689_Partitioning_Into_Minimum_Number_Of_Deci-Binary_Numbers:conclusion}}
 \sphinxAtStartPar
 This problem can be efficiently solved by identifying the maximum digit in the string. Since each deci\sphinxhyphen{}binary number can only contain digits from 0 to 9, the maximum digit determines the minimum number of deci\sphinxhyphen{}binary numbers needed.
 
@@ -9926,8 +9929,8 @@ Extra space: \sphinxcode{\sphinxupquote{O(1)}}.
 \end{itemize}
 
 
-\subsection{Key Takeaway:}
-\label{\detokenize{Dynamic_Programming/509_Fibonacci_Number:key-takeaway}}
+\subsection{Conclusion}
+\label{\detokenize{Dynamic_Programming/509_Fibonacci_Number:conclusion}}
 \sphinxAtStartPar
 The Fibonacci sequence can be efficiently computed using various techniques, including recursion with memoization, bottom\sphinxhyphen{}up dynamic programming, or even optimizing space usage by storing only the necessary previous Fibonacci numbers.
 
@@ -10268,8 +10271,8 @@ Memory \sphinxcode{\sphinxupquote{O(n)}}.
 \end{itemize}
 
 
-\subsection{Key Takeaway}
-\label{\detokenize{Dynamic_Programming/62_Unique_Paths:key-takeaway}}
+\subsection{Conclusion}
+\label{\detokenize{Dynamic_Programming/62_Unique_Paths:conclusion}}
 \sphinxAtStartPar
 Solution 3 uses only a 1D vector \sphinxcode{\sphinxupquote{dp}} of size \sphinxcode{\sphinxupquote{n}} to store the number of unique paths for each column.
 
@@ -10992,8 +10995,8 @@ Extra space: \sphinxcode{\sphinxupquote{O(m*n)}}.
 \end{itemize}
 
 
-\subsection{Key Takeaway}
-\label{\detokenize{Dynamic_Programming/63_Unique_Paths_II:key-takeaway}}
+\subsection{Conclusion}
+\label{\detokenize{Dynamic_Programming/63_Unique_Paths_II:conclusion}}
 \sphinxAtStartPar
 This solution computes the number of unique paths in an \sphinxcode{\sphinxupquote{m x n}} grid with obstacles using dynamic programming. It initializes a 2D vector \sphinxcode{\sphinxupquote{np}} of the same size as \sphinxcode{\sphinxupquote{obstacleGrid}} to store the number of unique paths for each cell.
 
@@ -11228,8 +11231,8 @@ Extra space: \sphinxcode{\sphinxupquote{O(1)}}.
 \end{itemize}
 
 
-\subsection{Key Takeaway}
-\label{\detokenize{Counting/136_Single_Number:key-takeaway}}
+\subsection{Conclusion}
+\label{\detokenize{Counting/136_Single_Number:conclusion}}
 \sphinxAtStartPar
 Leveraging bitwise XOR (\textasciicircum{}) operations offers an efficient solution to find the single number in an array. Solution 2 utilizes the property of XOR where XORing a number with itself results in 0.
 
@@ -11414,8 +11417,8 @@ Extra space: \sphinxcode{\sphinxupquote{O(1)}} as the array is fixed regardless 
 \end{itemize}
 
 
-\subsection{Key Takeaway}
-\label{\detokenize{Counting/387_First_Unique_Character_in_a_String:key-takeaway}}
+\subsection{Conclusion}
+\label{\detokenize{Counting/387_First_Unique_Character_in_a_String:conclusion}}
 \sphinxAtStartPar
 Utilizing hash maps or arrays to count the frequency of characters in a string provides an efficient way to identify the first unique character. Both solutions use this approach to iterate through the string and count the occurrences of each character.
 
@@ -11585,8 +11588,8 @@ Extra space: \sphinxcode{\sphinxupquote{O(n)}}.
 \end{itemize}
 
 
-\subsection{Key Takeaway}
-\label{\detokenize{Counting/1679_Max_Number_of_K-Sum_Pairs:key-takeaway}}
+\subsection{Conclusion}
+\label{\detokenize{Counting/1679_Max_Number_of_K-Sum_Pairs:conclusion}}
 \sphinxAtStartPar
 This solution utilizes an unordered map to store the frequency of each element encountered while iterating through \sphinxcode{\sphinxupquote{nums}}.
 
@@ -11826,8 +11829,8 @@ Extra space: \sphinxcode{\sphinxupquote{O(1)}}.
 \end{itemize}
 
 
-\subsection{Key Takeaway}
-\label{\detokenize{Prefix_Sum/1480_Running_Sum_of_1d_Array:key-takeaway}}
+\subsection{Conclusion}
+\label{\detokenize{Prefix_Sum/1480_Running_Sum_of_1d_Array:conclusion}}
 \sphinxAtStartPar
 Solution 2 directly modifies the input array \sphinxcode{\sphinxupquote{nums}} to store the running sums by iteratively updating each element with the cumulative sum of the previous elements. This approach efficiently calculates the running sums in a single pass through the array.
 
@@ -11953,8 +11956,8 @@ Memory \sphinxcode{\sphinxupquote{O(1)}}.
 \end{itemize}
 
 
-\subsection{Key Takeaway}
-\label{\detokenize{Prefix_Sum/53_Maximum_Subarray:key-takeaway}}
+\subsection{Conclusion}
+\label{\detokenize{Prefix_Sum/53_Maximum_Subarray:conclusion}}
 \sphinxAtStartPar
 This solution is the \index{Kadane\textquotesingle{}s algorithm@\spxentry{Kadane\textquotesingle{}s algorithm}}Kadane’s algorithm\sphinxhref{https://en.wikipedia.org/wiki/Maximum\_subarray\_problem\#Kadane's\_algorithm}{} to find the maximum sum of a contiguous subarray in the given array nums.
 
@@ -12185,8 +12188,8 @@ Extra space: \sphinxcode{\sphinxupquote{O(1)}}.
 \end{itemize}
 
 
-\subsection{Key Takeaway}
-\label{\detokenize{Prefix_Sum/238_Product_of_Array_Except_Self:key-takeaway}}
+\subsection{Conclusion}
+\label{\detokenize{Prefix_Sum/238_Product_of_Array_Except_Self:conclusion}}
 \sphinxAtStartPar
 The problem of computing the product of all elements in an array except the element at the current index can be efficiently solved using different approaches. Solution 1 utilizes two separate passes through the array to compute prefix and suffix products independently. By first computing prefix products from left to right and then suffix products from right to left, this solution efficiently calculates the product of all elements except the one at the current index.
 
@@ -12497,8 +12500,8 @@ Extra space: \sphinxcode{\sphinxupquote{O(n)}}.
 \end{itemize}
 
 
-\subsection{Key Takeaway}
-\label{\detokenize{Prefix_Sum/560_Subarray_Sum_Equals_K:key-takeaway}}
+\subsection{Conclusion}
+\label{\detokenize{Prefix_Sum/560_Subarray_Sum_Equals_K:conclusion}}
 \sphinxAtStartPar
 Solution 3 uses an unordered map to efficiently track the frequency of cumulative sums. It utilizes the concept of complement sums to identify subarrays with the desired sum and adds their counts to the overall count. This approach significantly improves the time complexity compared to the brute\sphinxhyphen{}force solution.
 
@@ -12578,7 +12581,7 @@ If there are two middle nodes, return \sphinxstyleemphasis{the second middle} no
 \subsubsection{Example 1}
 \label{\detokenize{Two_Pointers/876_Middle_of_the_Linked_List:example-1}}
 \sphinxAtStartPar
-\sphinxincludegraphics{{876_lc-midlist1}.jpg}
+\sphinxincludegraphics{{876_lc-midlist1}.png}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 Input: head = [1,2,3,4,5]
@@ -12590,7 +12593,7 @@ Explanation: The middle node of the list is node 3.
 \subsubsection{Example 2}
 \label{\detokenize{Two_Pointers/876_Middle_of_the_Linked_List:example-2}}
 \sphinxAtStartPar
-\sphinxincludegraphics{{876_lc-midlist2}.jpg}
+\sphinxincludegraphics{{876_lc-midlist2}.png}
 
 \begin{sphinxVerbatim}[commandchars=\\\{\}]
 Input: head = [1,2,3,4,5,6]
@@ -13048,8 +13051,8 @@ Extra space: \sphinxcode{\sphinxupquote{O(1)}}.
 \end{itemize}
 
 
-\subsection{Key Takeaway}
-\label{\detokenize{Two_Pointers/141_Linked_List_Cycle:key-takeaway}}
+\subsection{Conclusion}
+\label{\detokenize{Two_Pointers/141_Linked_List_Cycle:conclusion}}
 \sphinxAtStartPar
 Solution 2 uses two pointers, a fast pointer and a slow pointer, to detect cycles in a linked list.
 
@@ -13338,8 +13341,8 @@ Extra space: \sphinxcode{\sphinxupquote{O(1)}}.
 \end{itemize}
 
 
-\subsection{Key Takeaway}
-\label{\detokenize{Two_Pointers/922_Sort_Array_By_Parity_II:key-takeaway}}
+\subsection{Conclusion}
+\label{\detokenize{Two_Pointers/922_Sort_Array_By_Parity_II:conclusion}}
 \sphinxAtStartPar
 Solution 2 uses two pointers, one starting from the beginning of the array (\sphinxcode{\sphinxupquote{evenPos}}) and the other starting from the end (\sphinxcode{\sphinxupquote{oddPos}}), to efficiently identify misplaced elements.
 
@@ -13577,8 +13580,8 @@ Extra space: \sphinxcode{\sphinxupquote{O(1)}}.
 \end{itemize}
 
 
-\subsection{Key Takeaway}
-\label{\detokenize{Two_Pointers/11_Container_With_Most_Water:key-takeaway}}
+\subsection{Conclusion}
+\label{\detokenize{Two_Pointers/11_Container_With_Most_Water:conclusion}}
 \sphinxAtStartPar
 Solution 2 is the two\sphinxhyphen{}pointer approach. By initializing two pointers \sphinxcode{\sphinxupquote{i}} and \sphinxcode{\sphinxupquote{j}} at the beginning and end of the array respectively, and iteratively moving them towards each other until they converge, it evaluates all possible pairs of lines. At each step, it calculates the area. By moving the pointer corresponding to the shorter line inward at each step, it ensures that the maximum possible area is considered.
 
@@ -13840,8 +13843,8 @@ Extra space: \sphinxcode{\sphinxupquote{O(1)}}.
 \end{itemize}
 
 
-\subsection{Key Takeaway}
-\label{\detokenize{Two_Pointers/19_Remove_Nth_Node_From_End_of_List:key-takeaway}}
+\subsection{Conclusion}
+\label{\detokenize{Two_Pointers/19_Remove_Nth_Node_From_End_of_List:conclusion}}
 \sphinxAtStartPar
 Solution 2 uses two pointers, a fast pointer and a slow pointer, to remove the nth node from the end of a linked list.
 
@@ -14768,8 +14771,8 @@ Extra space: \sphinxcode{\sphinxupquote{O(1)}}.
 \end{itemize}
 
 
-\subsection{Key Takeaway}
-\label{\detokenize{Mathematics/121_Best_Time_to_Buy_and_Sell_Stock:key-takeaway}}
+\subsection{Conclusion}
+\label{\detokenize{Mathematics/121_Best_Time_to_Buy_and_Sell_Stock:conclusion}}
 \sphinxAtStartPar
 The problem of finding the maximum profit that can be achieved by buying and selling a stock can be efficiently solved using different approaches. Solutions 1, 2, and 3 each offer a different approach to solving the problem, including brute\sphinxhyphen{}force iteration, finding local minima and maxima, and maintaining a running minimum price.
 
@@ -14921,8 +14924,8 @@ Extra space: \sphinxcode{\sphinxupquote{O(2\textasciicircum{}N)}} due to the spa
 \end{itemize}
 
 
-\subsection{Key Takeaway}
-\label{\detokenize{Mathematics/78_Subsets:key-takeaway}}
+\subsection{Conclusion}
+\label{\detokenize{Mathematics/78_Subsets:conclusion}}
 \sphinxAtStartPar
 This solution generates subsets by iteratively adding each element of \sphinxcode{\sphinxupquote{nums}} to the existing subsets and accumulating the results.
 
@@ -15345,8 +15348,8 @@ Extra space: much less than \sphinxcode{\sphinxupquote{O(n)}} since \sphinxhref{
 \end{itemize}
 
 
-\subsection{Key Takeaway}
-\label{\detokenize{Mathematics/565_Array_Nesting:key-takeaway}}
+\subsection{Conclusion}
+\label{\detokenize{Mathematics/565_Array_Nesting:conclusion}}
 \sphinxAtStartPar
 The problem of finding the length of the longest cycle in an array can be efficiently solved using a cycle detection approach. This solution efficiently detects cycles in the array by using a boolean array to mark visited elements.
 
@@ -15640,8 +15643,8 @@ Extra space: \sphinxcode{\sphinxupquote{O(1)}}.
 \end{itemize}
 
 
-\subsection{Key Takeaway}
-\label{\detokenize{Mathematics/1641_Count_Sorted_Vowel_Strings:key-takeaway}}
+\subsection{Conclusion}
+\label{\detokenize{Mathematics/1641_Count_Sorted_Vowel_Strings:conclusion}}
 \sphinxAtStartPar
 The problem of counting the number of strings of length \sphinxcode{\sphinxupquote{n}} that consist of the vowels ‘a’, ‘e’, ‘i’, ‘o’, and ‘u’ in sorted order can be efficiently solved using combinatorial techniques. Solution 1 uses dynamic programming to iteratively calculate the count of strings for each length up to \sphinxcode{\sphinxupquote{n}}, updating the counts based on the previous counts. This approach efficiently computes the count of sorted vowel strings for the given length \sphinxcode{\sphinxupquote{n}} without requiring excessive memory usage or computational overhead.
 
@@ -15796,8 +15799,8 @@ Extra space: \sphinxcode{\sphinxupquote{O(1)}}.
 \end{itemize}
 
 
-\subsection{Key Takeaway}
-\label{\detokenize{Mathematics/1680_Concatenation_of_Consecutive_Binary_Numbers:key-takeaway}}
+\subsection{Conclusion}
+\label{\detokenize{Mathematics/1680_Concatenation_of_Consecutive_Binary_Numbers:conclusion}}
 \sphinxAtStartPar
 This solution efficiently calculates the concatenated binary representation of integers from \sphinxcode{\sphinxupquote{1}} to \sphinxcode{\sphinxupquote{n}}, using bitwise operations and modular arithmetic. Note that \sphinxcode{\sphinxupquote{a \textless{}\textless{} t}} is equivalent to \sphinxcode{\sphinxupquote{ a * 2\textasciicircum{}t}}.
 
@@ -16308,10 +16311,7 @@ In conclusion, coding challenges are a great way to improve your coding skills a
 \chapter*{Thank you!}
 \label{\detokenize{thanks:thank-you}}\label{\detokenize{thanks::doc}}
 \sphinxAtStartPar
-Thank you for taking the time to read this book.
-
-\sphinxAtStartPar
-I would love to hear your thought about this book. Visit my blog leetsolve.com and find how to do a review on this book.
+Thank you for taking the time to read my first published book. I would love to hear your thought about this book.
 
 \sphinxAtStartPar
 I hope it has been a valuable experience and that you are excited to continue your coding journey. Best of luck with your coding challenges, and remember to have fun along the way!

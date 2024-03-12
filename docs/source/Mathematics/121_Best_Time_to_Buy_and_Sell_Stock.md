@@ -176,4 +176,6 @@ The problem of finding the maximum profit that can be achieved by buying and sel
 Solution 3 stands out as the most efficient approach, achieving a linear time complexity by iterating through the prices only once and updating the minimum price seen so far. This approach avoids unnecessary comparisons and achieves the desired result in a single pass through the array.
 
 ## Exercise
-- [Best Time to Buy and Sell Stock II](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/)
+- Best Time to Buy and Sell Stock II[^ex].
+
+[^ex]: https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/

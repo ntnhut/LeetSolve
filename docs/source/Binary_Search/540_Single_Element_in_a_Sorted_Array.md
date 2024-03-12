@@ -1,14 +1,14 @@
 # Single Element in a Sorted Array
 
-## [Problem statement](https://leetcode.com/problems/single-element-in-a-sorted-array/)
+## Problem statement
 
-You are given a sorted array consisting of only integers where every element appears exactly twice, except for one element which appears exactly once.
+[^url]You are given a sorted array consisting of only integers where every element appears exactly twice, except for one element which appears exactly once.
 
 *Return the single element that appears only once.*
 
 Your solution must run in `O(logn)` time and `O(1)` space.
 
- 
+[^url]: https://leetcode.com/problems/single-element-in-a-sorted-array/
 
 ### Example 1
 ```text

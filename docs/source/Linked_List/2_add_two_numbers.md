@@ -147,4 +147,6 @@ By iterating through both input lists simultaneously and performing addition dig
 This approach streamlines the addition process, resulting in a concise and straightforward implementation.
 
 ## Exercise
-- [Double a Number Represented as a Linked List](https://leetcode.com/problems/double-a-number-represented-as-a-linked-list/)
+- Double a Number Represented as a Linked List[^ex].
+
+[^ex]: https://leetcode.com/problems/double-a-number-represented-as-a-linked-list/

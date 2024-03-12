@@ -110,11 +110,13 @@ The key idea of this algorithm is to build the solution incrementally, starting 
 ## Solution 2: Number Theory
 The dynamic programming solution above is good enough. But for those who are interested in Algorithmic Number Theory, there is a very interesting theorem that can solve the problem directly without recursion.
 
-It is called [Lagrange's Four-Square Theorem](https://en.wikipedia.org/wiki/Lagrange%27s_four-square_theorem), which states
+It is called Lagrange's Four-Square Theorem[^La], which states
 
 > *every natural number can be represented as the sum of four integer squares.*
 
 It was proven by Lagrange in 1770.
+
+[^La]: https://en.wikipedia.org/wiki/Lagrange%27s_four-square_theorem
 ### Example 4
 `n = 12 = 4 + 4 + 4 + 0` or `12 = 1 + 1 + 1 + 9`.
 
@@ -125,7 +127,7 @@ It turns into the problem of
 
 Here are the cases.
 1. If `n` is a perfect square, `numSquares(n) = 1`.
-2. There is another theorem, [Legendre's Three-Square Theorem](https://en.wikipedia.org/wiki/Legendre%27s_three-square_theorem), which states that
+2. There is another theorem, Legendre's Three-Square Theorem[^Le], which states that
 `numSquares(n)` cannot be 1, 2, or 3 if `n` can be expressed as
 
 $$
@@ -135,6 +137,8 @@ $$
 where $a$, $b$ are nonnegative integers. 
 
 In other words, `numSquares(n) = 4` if `n` is of this form.
+
+[^Le]: https://en.wikipedia.org/wiki/Legendre%27s_three-square_theorem
 
 ### Example 3
 $n = 7 = 4^0(8\cdot 0 + 7)$. It can only be written as `7 = 4 + 1 + 1 + 1`.
@@ -263,4 +267,6 @@ Hope you learn something interesting from this code challenge.
 *Have fun with coding and mathematics!*
 
 ## Exercise
-- [Ways to Express an Integer as Sum of Powers](https://leetcode.com/problems/ways-to-express-an-integer-as-sum-of-powers/)
+- Ways to Express an Integer as Sum of Powers[^ex].
+
+[^ex]: https://leetcode.com/problems/ways-to-express-an-integer-as-sum-of-powers/

@@ -193,4 +193,6 @@ Output:
 Solution 3 uses an unordered map to efficiently track the frequency of cumulative sums. It utilizes the concept of complement sums to identify subarrays with the desired sum and adds their counts to the overall count. This approach significantly improves the time complexity compared to the brute-force solution.
 
 ## Exercise
-- [Find Pivot Index](https://leetcode.com/problems/find-pivot-index/)
+- Find Pivot Index[^ex].
+
+[^ex]: https://leetcode.com/problems/find-pivot-index/

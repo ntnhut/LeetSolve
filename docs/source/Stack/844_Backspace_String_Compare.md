@@ -87,19 +87,25 @@ This solution effectively handles backspace characters (`'#'`) in input strings 
 
 ### Why `vector ` instead of `stack`?
 
-You can use the methods [`push`](https://en.cppreference.com/w/cpp/container/stack/push) and [`pop`](https://en.cppreference.com/w/cpp/container/stack/pop) of the data structure [`stack`](https://en.cppreference.com/w/cpp/container/stack) to build and clean the strings. 
+You can use the methods `push` and `pop` of the data structure `stack`[^stk] to build and clean the strings. 
 
-But [`vector`](https://en.cppreference.com/w/cpp/container/vector) has also such methods: [`push_back`](https://en.cppreference.com/w/cpp/container/vector/push_back) and [`pop_back`](https://en.cppreference.com/w/cpp/container/vector/pop_back).
+But `vector` has also such methods: `push_back` and `pop_back`.
 
 On the other hand, using `vector` it is easier to construct a `string` by constructor than using `stack` after cleaning.
+
+[^stk]: https://en.cppreference.com/w/cpp/container/stack
 
 ### Can you solve it in `O(n)` time and `O(1)` space?
 
 Yes, you can. 
 
-The simplest way is just to perform the erasure directly on strings `s` and `t`. But the run time complexity of [`string::erase`](https://en.cppreference.com/w/cpp/string/basic_string/erase)  is not constant.
+The simplest way is just to perform the erasure directly on strings `s` and `t`. But the run time complexity of `string::erase`[^erase]  is not constant.
 
 
 
 ## Exercise
-- [Removing Stars From a String](https://leetcode.com/problems/removing-stars-from-a-string/)
+- Removing Stars From a String[^ex].
+
+[^ex]: https://leetcode.com/problems/removing-stars-from-a-string/
+
+[^erase]: https://en.cppreference.com/w/cpp/string/basic_string/erase

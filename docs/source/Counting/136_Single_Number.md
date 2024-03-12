@@ -127,4 +127,6 @@ Leveraging bitwise XOR (^) operations offers an efficient solution to find the s
 By XORing all the numbers in the array, Solution 2 effectively cancels out pairs of identical numbers, leaving only the single number behind. This approach achieves a linear time complexity without the need for additional data structures, providing a concise and efficient solution.
 
 ## Exercise
-- [Missing Number](https://leetcode.com/problems/missing-number/)
+- Missing Number[^ex].
+
+[^ex]: https://leetcode.com/problems/missing-number/

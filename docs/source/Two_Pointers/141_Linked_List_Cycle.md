@@ -187,4 +187,6 @@ If the fast pointer catches up with the slow pointer at any point during travers
 This approach optimizes the computation by simultaneously advancing two pointers at different speeds to efficiently detect cycles in the linked list.
 
 ## Exercise
-- [Linked List Cycle II](https://leetcode.com/problems/linked-list-cycle-ii/)
+- Linked List Cycle II[^ex].
+
+[^ex]: https://leetcode.com/problems/linked-list-cycle-ii/

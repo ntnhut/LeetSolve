@@ -91,4 +91,6 @@ Output:
 This solution efficiently checks the validity of a string of parentheses, brackets, and curly braces by using a stack to ensure that each opening bracket is correctly matched with its corresponding closing bracket. 
 
 ## Exercise
-- [Check If Word Is Valid After Substitutions](https://leetcode.com/problems/check-if-word-is-valid-after-substitutions/)
+- Check If Word Is Valid After Substitutions[^ex].
+
+[^ex]: https://leetcode.com/problems/check-if-word-is-valid-after-substitutions/

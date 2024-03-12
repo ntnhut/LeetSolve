@@ -181,6 +181,8 @@ This solution flattens the 2D `grid` into a 1D vector `v`, representing the grid
 
 ## Key takeaway
 
-1. To convert a 2D matrix into a 1D vector, you can use the `std::vector`'s function [`insert()`](https://en.cppreference.com/w/cpp/container/vector/insert).
+1. To convert a 2D matrix into a 1D vector, you can use the `std::vector`'s function `insert()`[^insert].
 
 2. The modulo operator `%` is usually used to ensure the index is inbound.
+
+[^insert]: https://en.cppreference.com/w/cpp/container/vector/insert

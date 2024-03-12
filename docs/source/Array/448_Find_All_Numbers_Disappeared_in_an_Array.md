@@ -83,8 +83,7 @@ Then it performs the marking of all `nums`'s elements to `true`. The ones that a
 
 * Runtime: `O(n)`, where `n = nums.length`.
     
-* Extra space: much less than `O(n)`. [`vector<bool>`](https://en.cppreference.com/w/cpp/container/vector_bool) is optimized for space efficiency; it stores single bits.
-    
+* Extra space: much less than `O(n)`. `vector<bool>` is optimized for space efficiency; it stores single bits.
 
 ## Solution 2: Marking the appearances by sign
 
@@ -161,7 +160,12 @@ The key to this solution is that it utilizes the array to mark the presence of n
 
 * Solution 2 helps to avoid allocating extra memory but it is not straightforward to understand.
     
-* Though Solution 1 requires some extra space, that memory is not much since `std::vector<bool>` is optimized for space efficiency. Moreover, it is easier to understand than Solution 2.
+* Though Solution 1 requires some extra space, that memory is not much since `std::vector<bool>`[^vecbool] is optimized for space efficiency. Moreover, it is easier to understand than Solution 2.
 
 ## Exercise
-- [Find All Duplicates in an Array](https://leetcode.com/problems/find-all-duplicates-in-an-array)
+- Find All Duplicates in an Array[^ex].
+
+[^ex]: https://leetcode.com/problems/find-all-duplicates-in-an-array
+
+    
+[^vecbool]: https://en.cppreference.com/w/cpp/container/vector_bool

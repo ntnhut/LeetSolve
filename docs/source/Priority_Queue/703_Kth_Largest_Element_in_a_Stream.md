@@ -108,7 +108,7 @@ This approach optimizes the `add` operation by leveraging the sorted nature of t
 
 There is a data structure that has the property you want in this problem. 
 
-It is [`std::priority_queue`](https://en.cppreference.com/w/cpp/container/priority_queue), which keeps its top element is always the largest one according to the comparison you define for the queue.
+It is `std::priority_queue`, which keeps its top element is always the largest one according to the comparison you define for the queue.
 
 By default, the "less than" comparison is used for {index}`std::priority_queue` (heap) and the top one is always the biggest element. 
 
@@ -173,4 +173,6 @@ Upon initialization, the constructor populates the priority queue with the eleme
 Finally, it returns the top element of the priority queue, which represents the kth largest element. This approach leverages the properties of a min-heap to track the kth largest element in the collection, resulting in an overall efficient solution.
 
 ## Exercise
-- [Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/)
+- Kth Largest Element in an Array[^ex].
+
+[^ex]: https://leetcode.com/problems/kth-largest-element-in-an-array/

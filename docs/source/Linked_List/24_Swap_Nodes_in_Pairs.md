@@ -119,4 +119,6 @@ It initializes pointers to the current node (`curNode`), its next node (`nextNod
 This approach efficiently swaps adjacent nodes in the list without requiring additional space, effectively transforming the list by rearranging pointers.
 
 ## Exercise
-- [Swapping Nodes in a Linked List](https://leetcode.com/problems/swapping-nodes-in-a-linked-list/)
+- Swapping Nodes in a Linked List[^ex].
+
+[^ex]: https://leetcode.com/problems/swapping-nodes-in-a-linked-list/

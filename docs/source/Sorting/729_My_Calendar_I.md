@@ -85,7 +85,9 @@ For the `book` method:
 
 Since the events have no intersection, they can be sorted. You can also consider two events to be the same if they intersect.
 
-With that in mind, you can use {index}`std::set`[](https://en.cppreference.com/w/cpp/container/set) to store the sorted unique events.
+With that in mind, you can use {index}`std::set`[^set] to store the sorted unique events.
+
+[^set]: https://en.cppreference.com/w/cpp/container/set
 
 ### Code
 ```cpp
@@ -136,4 +138,6 @@ For the `book` method:
 Solution 2 efficiently handles event bookings by maintaining a sorted set of events based on their end times, allowing for quick overlap checks when booking new events.
 
 ## Exercise
-- [Determine if Two Events Have Conflict](https://leetcode.com/problems/determine-if-two-events-have-conflict/)
+- Determine if Two Events Have Conflict[^ex].
+
+[^ex]: https://leetcode.com/problems/determine-if-two-events-have-conflict/

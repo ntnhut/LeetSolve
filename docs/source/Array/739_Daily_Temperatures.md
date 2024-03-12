@@ -189,4 +189,6 @@ In some computations, you could improve the performance by using the knowledge o
 In this particular problem, it can be achieved by doing it in the reversed order.
 
 ## Exercise
-- [Next Greater Element I](https://leetcode.com/problems/next-greater-element-i/description/)
+- Next Greater Element I[^ex].
+
+[^ex]: https://leetcode.com/problems/next-greater-element-i/description/
