@@ -1,0 +1,84 @@
+% conf.py
+master_doc = 'index_book1'
+% for print:
+pygments_style = 'bw' # bw stands for black and white
+% add to preamble
+% 'preamble': r'''
+\definecolor{TitleColor}{rgb}{0,0,0}
+\definecolor{InnerLinkColor}{rgb}{0,0,0}
+% '''
+latex_show_urls = 'footnote'
+
+% ------
+
+% \fvset{fontsize=auto}
+\usepackage[paperwidth=7.5in,paperheight=9.25in]{geometry}
+
+\date{March, 2024}
+% \begin{document}
+\frontmatter
+
+% \pagestyle{empty}
+% \sphinxmaketitle
+
+\textit{The Problem Solver's Guide To Coding} 
+
+\textbf{First edition. March, 2024.} 
+
+ISBN 978-87-975174-0-6 (paperback)
+
+ISBN 978-87-975174-1-3 (PDF)
+
+
+Copyright © 2024 Nhut Nguyen.
+
+All rights reserved.
+
+www.nhutnguyen.com
+
+\newpage
+\begin{center}
+    \textit{To my dearest mother, Nguyen Thi Kim Sa.}
+\end{center}
+
+\sphinxstepscope
+
+
+% \pagestyle{plain}
+
+\chapter*{Preface}
+
+\subsection*{The book’s overview}
+
+\subsection*{Who is this book for?}
+
+\section*{Acknowledgement}
+
+\newpage
+
+%  Students and developers! By immersing yourself
+
+
+% \sphinxtableofcontents
+% \pagestyle{normal}
+
+\mainmatter
+
+% \chapter{Introduction}
+
+\newpage
+% \begin{quote}
+
+% I hope this book is an enjoyable and educational
+
+\appendix
+% \chapter{Coding challenge best practices}
+
+\pagestyle{plain}
+\backmatter
+\chapter*{Thank you!}
+
+
+\chapter*{About the author}
+
+% docs\source\pdf> latexmk -r latexmkrc -pdf -f -dvi- -ps- -jobname=leetsolve -interaction=nonstopmode
