@@ -17,7 +17,7 @@ project = 'LeetSolve'
 copyright = '2024, Nhut Nguyen'
 author = 'Nhut Nguyen'
 
-version = '1.2.3'
+version = '1.3.0'
 
 # -- General configuration
 
@@ -66,11 +66,11 @@ latex_elements = {
     # The paper size ('letterpaper' or 'a4paper').
     #
     # 'papersize': 'letterpaper',
-    # 'sphinxsetup': 'hmargin={1in,1in}, vmargin={1in,1in}',
+    'sphinxsetup': 'hmargin={2cm,2cm}, vmargin={2cm,2cm}',
 
     # The font size ('10pt', '11pt' or '12pt').
     #
-    'pointsize': '11pt',
+    'pointsize': '10pt',
 
     # Additional stuff for the LaTeX preamble.
     #
@@ -80,7 +80,7 @@ latex_elements = {
     \usepackage{inconsolata}
     \definecolor{TitleColor}{rgb}{0,0,0}
     \definecolor{InnerLinkColor}{rgb}{0,0,0}
-    \usepackage[paperwidth=7.5in,paperheight=9.25in]{geometry}
+    \usepackage[paperwidth=17cm,paperheight=22cm]{geometry}
     \addto\captionsenglish{\renewcommand{\contentsname}{Contents}}
     \setcounter{tocdepth}{1}
     ''',
