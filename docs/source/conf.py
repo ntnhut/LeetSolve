@@ -41,20 +41,30 @@ intersphinx_disabled_domains = ['std']
 
 templates_path = ['_templates']
 
-# master_doc = 'index_10'
-master_doc = 'index_book1'
+# book_format = 'html'
+# book_format = 'paperback'
+book_format = 'pdf'
+
+if book_format is 'html':
+    master_doc = 'index_10'
+else:
+    master_doc = 'index_book1'
+    
+
 exclude_patterns = ['*/index_*.rst']
 
 # -- Options for HTML output
 
 html_theme = "furo"
 html_logo = "img/logo_name.svg"
-pygments_style = 'bw' # bw stands for black and white, for print
+if book_format is 'paperback':
+    pygments_style = 'bw' # bw stands for black and white, for print
+
 html_theme_options = {
     # 'logo_only': True,
     "sidebar_hide_name": True,
     # 'nosidebar': True,
-    # "announcement": "Support my work by buying this book <a href='https://store.nhutnguyen.com/l/leetsolve'  target='_blank'>here</a>!", 
+    "announcement": "Support my work by buying my book <a href='https://theproblemsolversguidetocoding.com'  target='_blank'>here</a>!", 
 }
 
 source_suffix = {
@@ -94,7 +104,8 @@ latex_elements = {
     # 'figure_align': 'htbp',        
 }
 # turn on footnote for print book
-latex_show_urls = 'footnote'
+if book_format is 'paperback':
+    latex_show_urls = 'footnote'
 
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title,

@@ -1,18 +1,16 @@
-% conf.py
-master_doc = 'index_book1'
-% for print:
-pygments_style = 'bw' # bw stands for black and white
-% add to preamble
-% 'preamble': r'''
+% if book_format is paperback
 \definecolor{TitleColor}{rgb}{0,0,0}
 \definecolor{InnerLinkColor}{rgb}{0,0,0}
-% '''
-latex_show_urls = 'footnote'
+% otherwise, comment them out
 
 % ------
 
 % \fvset{fontsize=auto}
+% for bod
 \usepackage[paperwidth=17cm,paperheight=22cm]{geometry}
+% for D2D
+\usepackage[paperwidth=7.5in,paperheight=9.25in]{geometry}
+
 
 \date{March, 2024}
 % \begin{document}
