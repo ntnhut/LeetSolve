@@ -11,6 +11,7 @@ For example, the following two linked lists begin to intersect at node `c1`:
 Note that the linked lists do not have any cycles, and you must ensure that the original structure of the linked lists remains unchanged after solving this problem.
 
 [^url]: https://leetcode.com/problems/intersection-of-two-linked-lists/ 
+
 ### Example 1
 ![Two linked lists A and B intersect at node 8](160_example_1_1.png)
 ```text

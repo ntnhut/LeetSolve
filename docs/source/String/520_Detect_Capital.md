@@ -11,6 +11,7 @@
 If the capitalization in the given word adheres to these rules, the function should return `true`; otherwise, it should return `false`. 
 
 [^url]: https://leetcode.com/problems/detect-capital/
+
 ### Example 1
 ```text
 Input: word = "USA"

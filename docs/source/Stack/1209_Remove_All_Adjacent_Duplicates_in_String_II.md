@@ -7,6 +7,7 @@
 You need to perform the `k` duplicate removal operation on `s` repeatedly until it is no longer possible. After completing all such operations, return the resulting string. It is guaranteed that the answer will be unique.
 
 [^url]: https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string-ii/
+
 ### Example 1
 ```text
 Input: s = "abcd", k = 2

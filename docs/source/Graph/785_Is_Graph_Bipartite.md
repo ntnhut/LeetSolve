@@ -108,4 +108,5 @@ Output:
 * The stack's methods needed in the DFS algorithm are only `push` and `pop`. There are similar ones in `std::vector`. They are `push_back`[^pub] and `pop_back`[^pob] which you could use well in this case.
 
 [^pub]: https://en.cppreference.com/w/cpp/container/vector/push_back
+
 [^pob]: https://en.cppreference.com/w/cpp/container/vector/pop_back

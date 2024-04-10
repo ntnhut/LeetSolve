@@ -22,6 +22,7 @@ The transpose of a matrix involves flipping the matrix over its main diagonal, e
 \end{equation*}
 
 [^url]: https://leetcode.com/problems/transpose-matrix/ 
+
 ### Example 1
 ```text
 Input: matrix = [[1,2,3],[4,5,6],[7,8,9]]

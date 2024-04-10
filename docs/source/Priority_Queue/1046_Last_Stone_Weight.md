@@ -12,6 +12,7 @@ A game is played with these stones as follows: In each turn, we choose the two h
 The game continues until there is at most one stone left. Your task is to determine the smallest possible weight of the remaining stone after the game ends. If there are no stones left, return `0`.
 
 [^url]: https://leetcode.com/problems/last-stone-weight/
+
 ### Example 1
 
 ```text

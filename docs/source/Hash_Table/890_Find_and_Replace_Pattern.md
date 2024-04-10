@@ -9,6 +9,7 @@ A word is considered to match the pattern if there is a mapping `p` of the lette
 Keep in mind that a permutation of letters is a one-to-one correspondence from letters to letters, where each letter is mapped to a distinct letter, and no two letters are mapped to the same letter. 
 
 [^url]: https://leetcode.com/problems/find-and-replace-pattern/
+
 ### Example 1
 ```text
 Input: words = ["abc","deq","mee","aqq","dkd","ccc"], pattern = "abb"

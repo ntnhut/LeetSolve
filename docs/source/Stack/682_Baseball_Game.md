@@ -14,6 +14,7 @@ At the beginning of the game, your record is empty. You are given a list of oper
 Your task is to calculate and return the sum of all the scores in the record after performing all the operations. 
 
 [^url]: https://leetcode.com/problems/baseball-game/
+
 ### Example 1
 ```text
 Input: ops = ["5","2","C","D","+"]

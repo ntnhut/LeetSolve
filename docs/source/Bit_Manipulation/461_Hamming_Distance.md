@@ -8,7 +8,9 @@
 Given two integers `x` and `y`, return the Hamming distance between them.
 
 [^url]: https://leetcode.com/problems/hamming-distance/
+
 [^hd]: https://en.wikipedia.org/wiki/Hamming_distance
+
 ### Example 1
 ```text
 Input: x = 1, y = 4

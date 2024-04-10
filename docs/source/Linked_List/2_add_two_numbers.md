@@ -9,6 +9,7 @@ Your task is to add the two numbers represented by these linked lists and return
 You can assume that the two numbers don't have leading zeros, except for the number 0 itself.
 
 [^url]: https://leetcode.com/problems/add-two-numbers/
+
 ### Example 1
 ![The linked lists of Example 1 and their addition](2_addtwonumber1.jpg)
 ```text

@@ -7,6 +7,7 @@
 An **anagram** is a term that describes a word or phrase formed by rearranging the letters of another word or phrase, typically using all the original letters exactly once. 
 
 [^url]: https://leetcode.com/problems/valid-anagram/
+
 ### Example 1
 ```text
 Input: s = "anagram", t = "nagaram"

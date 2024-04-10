@@ -17,6 +17,7 @@ The function should return the following:
 * If `version1` and `version2` are equal, return `0`. 
 
 [^url]: https://leetcode.com/problems/compare-version-numbers/
+
 ### Example 1
 ```text
 Input: version1 = "1.01", version2 = "1.001"
@@ -148,4 +149,5 @@ This approach simplifies the comparison process by breaking down the version str
 * {index}`std::accumulate`[^acuurl] is used to compute the sum of a container. 
 
 [^stoiurl]: https://en.cppreference.com/w/cpp/string/basic_string/stol
+
 [^acuurl]: https://en.cppreference.com/w/cpp/algorithm/accumulate

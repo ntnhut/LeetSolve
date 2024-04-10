@@ -9,6 +9,7 @@ Sort the array so that whenever `nums[i]` is odd, `i` is odd, and whenever `nums
 Return any answer array that satisfies this condition. 
 
 [^url]: https://leetcode.com/problems/sort-array-by-parity-ii/
+
 ### Example 1
 ```plain
 Input: nums = [4,2,5,7]

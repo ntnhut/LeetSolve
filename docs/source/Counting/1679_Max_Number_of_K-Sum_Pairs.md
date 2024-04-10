@@ -5,6 +5,7 @@
 [^url]You're provided with an array of integers called `nums` and an integer `k`. Each operation involves selecting two numbers from the array whose sum is equal to `k`, and then removing them from the array. Your goal is to determine the maximum count of such operations you can perform on the array. 
 
 [^url]: https://leetcode.com/problems/max-number-of-k-sum-pairs/
+
 ### Example 1
 ```text
 Input: nums = [1,2,3,4], k = 5

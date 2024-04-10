@@ -20,6 +20,7 @@ You are given an array of strings named `words`, where each word can be represen
 Your task is to count the number of different transformations that can be obtained from all the words in the given array.
 
 [^url]: https://leetcode.com/problems/unique-morse-code-words/
+
 ### Example 1
 ```text
 Input: words = ["gin","zen","gig","msg"]

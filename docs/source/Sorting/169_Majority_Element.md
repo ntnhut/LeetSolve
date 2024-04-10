@@ -9,6 +9,7 @@ The majority element is the element that appears more frequently in the array th
 You can assume that the majority element always exists in the given array.
 
 [^url]: https://leetcode.com/problems/majority-element/
+
 ### Example 1
 ```text
 Input: nums = [3,2,3]

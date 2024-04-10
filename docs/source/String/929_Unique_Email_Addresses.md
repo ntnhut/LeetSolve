@@ -19,6 +19,7 @@ It is possible to use both of these rules at the same time.
 Given an array of strings `emails`, where each element is an email address to which an email is sent, your task is to determine the number of different addresses that will actually receive the emails after applying the rules described above.
 
 [^url]: https://leetcode.com/problems/unique-email-addresses/ 
+
 ### Example 1
 ```text
 Input: emails = ["test.email+alex@leetcode.com","test.e.mail+bob.cathy@leetcode.com","testemail+david@lee.tcode.com"]
@@ -185,4 +186,5 @@ cout << address.substr(0, address.find('@'));   // "name"
 * Do not blindly/lazily use `string.find(something)`. If you know where to start the search, use `string.find(something, pos)` with a **specific** `pos`.
 
 [^uset]: https://en.cppreference.com/w/cpp/container/unordered_set
+
 [^umap]: https://en.cppreference.com/w/cpp/container/unordered_map

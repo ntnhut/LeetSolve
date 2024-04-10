@@ -13,6 +13,7 @@ You should build a set `s[k] = {nums[k], nums[nums[k]], nums[nums[nums[k]]], ...
 Return the length of the longest set `s[k]`. 
 
 [^url]: https://leetcode.com/problems/array-nesting/
+
 ### Example 1
 ```text
 Input: nums = [5,4,0,3,1,6,2]

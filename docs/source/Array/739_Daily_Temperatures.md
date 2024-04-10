@@ -6,6 +6,7 @@
 [^url]You are given an array of integers `temperatures`, which represents the daily temperatures. Your task is to create an array `answer` such that `answer[i]` represents the number of days you need to wait after the i-th day to experience a warmer temperature. If there is no future day with a warmer temperature, then `answer[i]` should be set to `0`. 
 
 [^url]: https://leetcode.com/problems/daily-temperatures/
+
 ### Example 1
 ```text
 Input: temperatures = [73,74,75,71,69,72,76,73]

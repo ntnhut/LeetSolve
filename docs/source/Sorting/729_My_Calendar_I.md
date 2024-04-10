@@ -15,6 +15,7 @@ You need to implement the `MyCalendar` class, which has the following functions:
 2. `boolean book(int start, int end)`: This function checks if the event with the given `start` and `end` can be added to the calendar without causing a double booking. If it's possible to add the event without a double booking, the function returns `true`. Otherwise, it returns `false`, and the event is not added to the calendar. 
 
 [^url]: https://leetcode.com/problems/my-calendar-i/
+
 ### Example 1
 ```text
 Input

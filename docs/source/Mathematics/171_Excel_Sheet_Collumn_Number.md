@@ -17,6 +17,7 @@ AB -> 28
 ``` 
 
 [^url]: https://leetcode.com/problems/excel-sheet-column-number/
+
 ### Example 1
 ```text
 Input: columnTitle = "A"

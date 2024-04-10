@@ -9,6 +9,7 @@ Your task is to remove all intervals from the list that are completely covered b
 After removing the covered intervals, you need to return the number of remaining intervals.
 
 [^url]: https://leetcode.com/problems/remove-covered-intervals/ 
+
 ### Example 1
 ```text
 Input: intervals = [[1,4],[3,6],[2,8]]

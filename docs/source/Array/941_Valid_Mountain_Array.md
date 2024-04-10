@@ -12,6 +12,7 @@ A valid *mountain array* must meet the following conditions:
 ![Mountain array](941_hint_valid_mountain_array.png)
 
 [^url]: https://leetcode.com/problems/valid-mountain-array/
+
 ### Example 1
 ```text
 Input: arr = [2,1]

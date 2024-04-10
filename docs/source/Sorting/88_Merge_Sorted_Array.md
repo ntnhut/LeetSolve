@@ -12,6 +12,7 @@ However, the sorted array should not be returned as a separate result. Instead, 
 * The `nums2` array has a length of `n`, representing the elements to be merged from `nums2` into the final `nums1` array. 
 
 [^url]: https://leetcode.com/problems/merge-sorted-array/ 
+
 ### Example 1
 ```text
 Input: nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3

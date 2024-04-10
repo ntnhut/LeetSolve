@@ -6,6 +6,7 @@
 [^url]You are given an array `nums` of `n` integers, where each integer `nums[i]` falls within the range `[1, n]`. Your task is to find and return an array containing all the integers in the range `[1, n]` that are not present in the given array `nums`.
 
 [^url]: https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/ 
+
 ### Example 1
 ```text
 Input: nums = [4,3,2,7,8,2,3,1]

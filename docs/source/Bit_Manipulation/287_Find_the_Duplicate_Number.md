@@ -10,6 +10,7 @@ Within this array, there is only one number that appears more than once. Your ta
 Importantly, you must solve this problem without making any modifications to the original array `nums`, and you are only allowed to use a constant amount of extra space. 
 
 [^url]: https://leetcode.com/problems/find-the-duplicate-number/
+
 ### Example 1
 ```text
 Input: nums = [1,3,4,2,2]

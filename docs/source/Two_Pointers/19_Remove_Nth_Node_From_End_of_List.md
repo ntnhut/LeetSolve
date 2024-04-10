@@ -5,6 +5,7 @@
 [^url]Given the `head` of a linked list, remove the `n-th` node from the end of the list and return its head.
 
 [^url]: https://leetcode.com/problems/remove-nth-node-from-end-of-list/
+
 ### Example 1
 ![The list in Example 1](19_remove_ex1.jpg)
 ```text

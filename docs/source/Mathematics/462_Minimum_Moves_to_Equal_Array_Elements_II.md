@@ -8,6 +8,7 @@
 In one move, you can increment or decrement an element of the array by `1`.
 
 [^url]: https://leetcode.com/problems/minimum-moves-to-equal-array-elements-ii/
+
 ### Example 1
 ```text
 Input: nums = [1,2,3]

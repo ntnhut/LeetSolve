@@ -7,6 +7,7 @@
 A **perfect square** is an integer that is the square of an integer; in other words, it is the product of some integer with itself. For example, `1`, `4`, `9`, and `16` are perfect squares while `3` and `11` are not.
 
 [^url]: https://leetcode.com/problems/perfect-squares/
+
 ### Example 1
 ```text
 Input: n = 9
@@ -117,6 +118,7 @@ It is called Lagrange's Four-Square Theorem[^La], which states
 It was proven by Lagrange in 1770.
 
 [^La]: https://en.wikipedia.org/wiki/Lagrange%27s_four-square_theorem
+
 ### Example 4
 `n = 12 = 4 + 4 + 4 + 0` or `12 = 1 + 1 + 1 + 9`.
 

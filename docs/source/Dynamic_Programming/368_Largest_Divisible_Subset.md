@@ -10,6 +10,7 @@
 If there are multiple possible solutions, you can return any of them.
 
 [^url]: https://leetcode.com/problems/largest-divisible-subset/
+
 ### Example 1
 ```text
 Input: nums = [1,2,3]

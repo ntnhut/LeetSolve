@@ -12,6 +12,7 @@ F(n) = F(n - 1) + F(n - 2), for n > 1.
 Your task is to calculate the value of `F(n)` given an integer `n`. 
 
 [^url]: https://leetcode.com/problems/fibonacci-number/
+
 ### Example 1
 ```text
 Input: n = 2

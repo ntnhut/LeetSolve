@@ -5,6 +5,7 @@
 [^url]You are given the starting node, `head`, of a linked list, and an integer `val`. Your task is to eliminate all nodes from the linked list that have a value equal to `val`. After removing these nodes, return the new starting node of the modified linked list.
 
 [^url]: https://leetcode.com/problems/remove-linked-list-elements/
+
 ### Example 1
 
 ![The linked list of Example 1 and its result after the removal.](203_removelinked-list.jpg)

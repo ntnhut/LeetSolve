@@ -7,6 +7,7 @@
 To solve this problem, your solution needs to have a linear runtime complexity and utilize only a constant amount of extra space.
 
 [^url]: https://leetcode.com/problems/single-number/description/
+
 ### Example 1
 
 ```text

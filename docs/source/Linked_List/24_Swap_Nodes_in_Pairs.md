@@ -7,6 +7,7 @@
 You must solve this problem without altering the values within the nodes; you should only modify the arrangement of the nodes themselves. 
 
 [^url]: https://leetcode.com/problems/swap-nodes-in-pairs/
+
 ### Example 1
 ![The link list and its result in Example 1.](24_swap_ex1.jpg)
 ```text

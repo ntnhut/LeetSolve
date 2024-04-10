@@ -9,6 +9,7 @@ You're given a string `s`, and your task is to determine the minimum number of c
 The frequency of a character in a string is the count of times that character appears in the string. For instance, in the string `"aab"`, the frequency of `'a'` is `2`, and the frequency of `'b'` is `1`.
 
 [^url]: https://leetcode.com/problems/minimum-deletions-to-make-character-frequencies-unique/ 
+
 ### Example 1
 ```text
 Input: s = "aab"

@@ -7,6 +7,7 @@
 Note that applying a backspace action to an empty text does not change the text; it remains empty. Your function should return `true` if the two strings become equal after considering the backspace actions, otherwise return `false`. 
 
 [^url]: https://leetcode.com/problems/backspace-string-compare/ 
+
 ### Example 1
 ```text
 Input: s = "ab#c", t = "ad#c"

@@ -6,6 +6,7 @@
 If there are two middle nodes, return *the second middle* node.
 
 [^url]: https://leetcode.com/problems/middle-of-the-linked-list/
+
 ### Example 1
 ![The linked list of Example 1](876_lc-midlist1.png)
 ```text

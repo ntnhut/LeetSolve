@@ -7,6 +7,7 @@
 Your task is to determine if it is possible to plant `n` new flowers in the `flowerbed` without violating the rule of no-adjacent-flowers. If it is possible, return `true`; otherwise, return `false`.
 
 [^url]: https://leetcode.com/problems/can-place-flowers/ 
+
 ### Example 1
 ```text
 Input: flowerbed = [1,0,0,0,1], n = 1

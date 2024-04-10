@@ -10,6 +10,7 @@ A string is considered valid if the following conditions are satisfied:
 2. Opening brackets must be closed in the correct order, meaning that the innermost opening bracket should be closed before its surrounding brackets.
 
 [^url]: https://leetcode.com/problems/valid-parentheses/
+
 ### Example 1
 ```text
 Input: s = "()"

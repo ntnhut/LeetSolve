@@ -5,6 +5,7 @@
 [^url]You're provided with an array of integers called `nums`. Your task is to identify a subarray (a consecutive sequence of numbers) that has the highest sum. Once you find this subarray, return the sum of its elements.
 
 [^url]: https://leetcode.com/problems/maximum-subarray/
+
 ### Example 1
 ```text
 Input: nums = [-2,1,-3,4,-1,2,1,-5,4]

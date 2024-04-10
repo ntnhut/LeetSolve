@@ -9,6 +9,7 @@ Your goal is to determine the highest possible score attainable by erasing exact
 A subarray, denoted as `b`, is considered part of another array, `a`, if it appears consecutively within `a`, i.e., if it is equivalent to `a[l], a[l+1], ..., a[r]` for some indices `(l, r)`.
 
 [^url]: https://leetcode.com/problems/maximum-erasure-value/ 
+
 ### Example 1
 ```text
 Input: nums = [4,2,4,5,6]

@@ -7,6 +7,7 @@
 Return the shortest such subarray and output its length.
 
 [^url]: https://leetcode.com/problems/shortest-unsorted-continuous-subarray/
+
 ### Example 1
 ```text
 Input: nums = [2,6,4,8,10,9,15]

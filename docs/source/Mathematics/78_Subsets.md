@@ -7,6 +7,7 @@
 The solution set must not contain duplicate subsets. Return the solution in any order.
 
 [^url]: https://leetcode.com/problems/subsets/
+
 ### Example 1
 ```text
 Input: nums = [1,2,3]

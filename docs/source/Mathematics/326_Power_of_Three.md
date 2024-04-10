@@ -7,6 +7,7 @@
 An integer `n` is a power of three, if there exists an integer `x` such that `n == 3^x`.
 
 [^url]: https://leetcode.com/problems/power-of-three/
+
 ### Example 1
 ```text
 Input: n = 27

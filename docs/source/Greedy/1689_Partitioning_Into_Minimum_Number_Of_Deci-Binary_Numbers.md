@@ -8,6 +8,7 @@
 Given a string `n` that represents a positive decimal integer, return the minimum number of positive deci-binary numbers needed so that they sum up to `n`.
 
 [^url]: https://leetcode.com/problems/partitioning-into-minimum-number-of-deci-binary-numbers/
+
 ### Example 1
 ```text
 Input: n = "32"

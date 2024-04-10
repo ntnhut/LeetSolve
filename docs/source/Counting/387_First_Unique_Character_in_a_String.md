@@ -5,6 +5,7 @@
 [^url]You have a string called `s`. Your objective is to locate the index of the first character in the string that does not repeat anywhere else in the string. If such a character doesn't exist, return `-1`.
 
 [^url]: https://leetcode.com/problems/first-unique-character-in-a-string/
+
 ### Example 1
 ```text
 Input: s = "leetcode"
