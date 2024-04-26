@@ -25,4 +25,4 @@ As you progress through this chapter, you'll not only learn about the importance
     :glob:
     :maxdepth: 1
 
-    *_*_int*
+    *_*

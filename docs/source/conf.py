@@ -45,26 +45,23 @@ book_format = 'html'
 # book_format = 'paperback'
 # book_format = 'pdf'
 
-if book_format is 'html':
-    master_doc = 'index_10'
+if book_format == 'html':
+    master_doc = 'index_all'
 else:
     master_doc = 'index_book1'
     
-
-exclude_patterns = ['*/index_*.rst']
-
 # -- Options for HTML output
 
 html_theme = "furo"
 html_logo = "img/logo_name.svg"
-if book_format is 'paperback':
+if book_format == 'paperback':
     pygments_style = 'bw' # bw stands for black and white, for print
 
 html_theme_options = {
     # 'logo_only': True,
     "sidebar_hide_name": True,
     # 'nosidebar': True,
-    "announcement": "Support my work by buying my book <a href='https://theproblemsolversguidetocoding.com'  target='_blank'>here</a>!", 
+    "announcement": "Support my work by buying <a href='https://theproblemsolversguidetocoding.com'  target='_blank'>my book</a>!", 
 }
 
 source_suffix = {
@@ -104,7 +101,7 @@ latex_elements = {
     # 'figure_align': 'htbp',        
 }
 # turn on footnote for print book
-if book_format is 'paperback':
+if book_format == 'paperback':
     latex_show_urls = 'footnote'
 
 # Grouping the document tree into LaTeX files. List of tuples

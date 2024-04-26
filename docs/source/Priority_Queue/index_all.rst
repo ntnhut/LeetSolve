@@ -23,4 +23,4 @@ Think of a priority queue as a line at a theme park, where individuals with prio
     :glob:
     :maxdepth: 1
 
-    *_*_int*
+    *_*

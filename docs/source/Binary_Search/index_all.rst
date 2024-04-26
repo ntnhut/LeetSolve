@@ -6,4 +6,4 @@ Binary Search
     :glob:
     :maxdepth: 1
 
-    *_*_int*
+    *_*
