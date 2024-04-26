@@ -41,9 +41,9 @@ intersphinx_disabled_domains = ['std']
 
 templates_path = ['_templates']
 
-# book_format = 'html'
+book_format = 'html'
 # book_format = 'paperback'
-book_format = 'pdf'
+# book_format = 'pdf'
 
 if book_format is 'html':
     master_doc = 'index_10'
