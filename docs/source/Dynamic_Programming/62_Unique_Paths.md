@@ -1,12 +1,10 @@
 # Unique Paths
 % Medium https://leetcode.com/problems/unique-paths/
-## Problem statement
+## [Problem statement](https://leetcode.com/problems/unique-paths/)
 
-[^url]A robot starts at the top-left corner of a grid with dimensions `m x n`. It can move either down or right at each step. The robot's goal is to reach the bottom-right corner of the grid.
+A robot starts at the top-left corner of a grid with dimensions `m x n`. It can move either down or right at each step. The robot's goal is to reach the bottom-right corner of the grid.
 
 The problem is to determine the number of unique paths the robot can take to reach the bottom-right corner.
-
-[^url]: https://leetcode.com/problems/unique-paths/
 
 ### Example 1
 

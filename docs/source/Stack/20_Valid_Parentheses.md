@@ -1,15 +1,13 @@
 # Valid Parentheses
 % Easy
-## Problem statement
+## [Problem statement](https://leetcode.com/problems/valid-parentheses/)
  
-[^url]You are given a string `s` containing only the characters `'('`, `')'`, `'{'`, `'}'`, `'['`, and `']'`. Your task is to check if the input string is valid.
+You are given a string `s` containing only the characters `'('`, `')'`, `'{'`, `'}'`, `'['`, and `']'`. Your task is to check if the input string is valid.
 
 A string is considered valid if the following conditions are satisfied:
 
 1. Opening brackets must be closed by the same type of brackets.
 2. Opening brackets must be closed in the correct order, meaning that the innermost opening bracket should be closed before its surrounding brackets.
-
-[^url]: https://leetcode.com/problems/valid-parentheses/
 
 ### Example 1
 ```text

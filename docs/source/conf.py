@@ -46,7 +46,7 @@ book_format = 'html'
 # book_format = 'pdf'
 
 if book_format == 'html':
-    master_doc = 'index_all'
+    master_doc = 'index'
 else:
     master_doc = 'index_book1'
     
@@ -90,6 +90,7 @@ latex_elements = {
     \usepackage[paperwidth=17cm,paperheight=22cm]{geometry}
     \addto\captionsenglish{\renewcommand{\contentsname}{Contents}}
     \setcounter{tocdepth}{1}
+    \renewcommand\sphinxthefootnotemark[2]{#1}
     ''',
     # uncomment these in preamble for print
     # \definecolor{TitleColor}{rgb}{0,0,0}

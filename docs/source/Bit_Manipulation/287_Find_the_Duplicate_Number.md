@@ -1,15 +1,13 @@
 # Find the Duplicate Number
 % Medium
 
-## Problem statement
+## [Problem statement](https://leetcode.com/problems/find-the-duplicate-number/)
 
-[^url]You have an array of integers called `nums` that contains `n + 1` integers. Each integer in the array falls within the range `[1, n]` inclusive.
+You have an array of integers called `nums` that contains `n + 1` integers. Each integer in the array falls within the range `[1, n]` inclusive.
 
 Within this array, there is only one number that appears more than once. Your task is to find and return this repeated number.
 
 Importantly, you must solve this problem without making any modifications to the original array `nums`, and you are only allowed to use a constant amount of extra space. 
-
-[^url]: https://leetcode.com/problems/find-the-duplicate-number/
 
 ### Example 1
 ```text

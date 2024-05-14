@@ -1,8 +1,8 @@
 # Excel Sheet Column Number
 % Easy 
-## Problem statement
+## [Problem statement](https://leetcode.com/problems/excel-sheet-column-number/)
 
-[^url]Given a string `columnTitle` that represents the column title as appears in an Excel sheet, return its corresponding column number.
+Given a string `columnTitle` that represents the column title as appears in an Excel sheet, return its corresponding column number.
 
 For example:
 ```text
@@ -15,8 +15,6 @@ AA -> 27
 AB -> 28 
 ...
 ``` 
-
-[^url]: https://leetcode.com/problems/excel-sheet-column-number/
 
 ### Example 1
 ```text

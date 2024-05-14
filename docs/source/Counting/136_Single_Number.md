@@ -1,12 +1,10 @@
 # Single Number
 % Easy
-## Problem statement
+## [Problem statement](https://leetcode.com/problems/single-number/description/)
 
-[^url]You're provided with a non-empty array of integers called `nums`. In this array, every element occurs twice except for one element that appears only once. Your task is to identify and find that unique element.
+You're provided with a non-empty array of integers called `nums`. In this array, every element occurs twice except for one element that appears only once. Your task is to identify and find that unique element.
 
 To solve this problem, your solution needs to have a linear runtime complexity and utilize only a constant amount of extra space.
-
-[^url]: https://leetcode.com/problems/single-number/description/
 
 ### Example 1
 

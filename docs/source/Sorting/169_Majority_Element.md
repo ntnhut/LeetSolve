@@ -1,14 +1,12 @@
 # Majority Element
 % Easy
-## Problem statement
+## [Problem statement](https://leetcode.com/problems/majority-element/)
 
-[^url]You're given an array `nums` with a total of `n` elements. Your task is to find and return the majority element.
+You're given an array `nums` with a total of `n` elements. Your task is to find and return the majority element.
 
 The majority element is the element that appears more frequently in the array than any other element, specifically, it appears more than `n / 2` times.
 
 You can assume that the majority element always exists in the given array.
-
-[^url]: https://leetcode.com/problems/majority-element/
 
 ### Example 1
 ```text
