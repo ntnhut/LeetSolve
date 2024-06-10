@@ -1,10 +1,9 @@
 # Letter Combinations of a Phone Number
 
-## Problem statement
+## [Problem statement](https://leetcode.com/problems/letter-combinations-of-a-phone-number/)
 
-[^url]Given a string containing digits from `2-9` inclusive, return all possible letter combinations that the number could represent. Return the answer in any order.
+Given a string containing digits from `2-9` inclusive, return all possible letter combinations that the number could represent. Return the answer in any order.
 
-[^url]: https://leetcode.com/problems/letter-combinations-of-a-phone-number/
 
 A mapping of digits to letters (just like on the telephone buttons) is given below. Note that `1` does not map to any letters.
 
@@ -115,9 +114,4 @@ You can use the assignment operator `'='` for `result.swap(newResult)`, i.e. `re
 
 But this assignment allocates additional memory for a copy of `newResult` before assigning it to `result`.
 
-The `std::swap()`[^swap] algorithm avoids such copying by using {index}`std::move()`[^move]. It exchanges the contents of each other without allocating additional memory.
-
-
-[^swap]: https://en.cppreference.com/w/cpp/string/basic_string/swap
-
-[^move]: https://en.cppreference.com/w/cpp/utility/move
+The `std::swap()` algorithm avoids such copying by using [`std::move()`](https://en.cppreference.com/w/cpp/utility/move). It exchanges the contents of each other without allocating additional memory.

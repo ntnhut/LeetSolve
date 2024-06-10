@@ -1,9 +1,9 @@
 # Shift 2D Grid
 % Easy 
 
-## Problem statement
+## [Problem statement](https://leetcode.com/problems/shift-2d-grid/)
 
-[^url]You are given a 2D `grid` with dimension `mxn` and an integer `k`. Your task is to perform `k` shift operations on the grid.
+You are given a 2D `grid` with dimension `mxn` and an integer `k`. Your task is to perform `k` shift operations on the grid.
 
 In each shift operation:
 
@@ -12,8 +12,6 @@ In each shift operation:
 * The element at `grid[m-1][n-1]` moves to `grid[0][0]`.
 
 After performing `k` shift operations, return the updated 2D grid.
-
-[^url]: https://leetcode.com/problems/shift-2d-grid/
 
 ### Example 1
 
@@ -181,8 +179,6 @@ This solution flattens the 2D `grid` into a 1D vector `v`, representing the grid
 
 ## Key takeaway
 
-1. To convert a 2D matrix into a 1D vector, you can use the `std::vector`'s function `insert()`[^insert].
+1. To convert a 2D matrix into a 1D vector, you can use the `std::vector`'s function [`insert()`](https://en.cppreference.com/w/cpp/container/vector/insert).
 
 2. The modulo operator `%` is usually used to ensure the index is inbound.
-
-[^insert]: https://en.cppreference.com/w/cpp/container/vector/insert

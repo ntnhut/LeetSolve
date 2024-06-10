@@ -1,11 +1,9 @@
 # Find All Numbers Disappeared in an Array
 % Easy 
 
-## Problem statement
+## [Problem statement](https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array)
 
-[^url]You are given an array `nums` of `n` integers, where each integer `nums[i]` falls within the range `[1, n]`. Your task is to find and return an array containing all the integers in the range `[1, n]` that are not present in the given array `nums`.
-
-[^url]: https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/ 
+You are given an array `nums` of `n` integers, where each integer `nums[i]` falls within the range `[1, n]`. Your task is to find and return an array containing all the integers in the range `[1, n]` that are not present in the given array `nums`.
 
 ### Example 1
 ```text
@@ -161,12 +159,7 @@ The key to this solution is that it utilizes the array to mark the presence of n
 
 * Solution 2 helps to avoid allocating extra memory but it is not straightforward to understand.
     
-* Though Solution 1 requires some extra space, that memory is not much since `std::vector<bool>`[^vecbool] is optimized for space efficiency. Moreover, it is easier to understand than Solution 2.
+* Though Solution 1 requires some extra space, that memory is not much since [`std::vector<bool>`](https://en.cppreference.com/w/cpp/container/vector_bool) is optimized for space efficiency. Moreover, it is easier to understand than Solution 2.
 
 ## Exercise
-- Find All Duplicates in an Array[^ex].
-
-[^ex]: https://leetcode.com/problems/find-all-duplicates-in-an-array
-
-    
-[^vecbool]: https://en.cppreference.com/w/cpp/container/vector_bool
+- [Find All Duplicates in an Array](https://leetcode.com/problems/find-all-duplicates-in-an-array).

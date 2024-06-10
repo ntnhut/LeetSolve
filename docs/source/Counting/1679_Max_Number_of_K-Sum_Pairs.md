@@ -1,10 +1,9 @@
 # Max Number of K-Sum Pairs
 % Medium
-## Problem statement
 
-[^url]You're provided with an array of integers called `nums` and an integer `k`. Each operation involves selecting two numbers from the array whose sum is equal to `k`, and then removing them from the array. Your goal is to determine the maximum count of such operations you can perform on the array. 
+## [Problem statement](https://leetcode.com/problems/max-number-of-k-sum-pairs/)
 
-[^url]: https://leetcode.com/problems/max-number-of-k-sum-pairs/
+You're provided with an array of integers called `nums` and an integer `k`. Each operation involves selecting two numbers from the array whose sum is equal to `k`, and then removing them from the array. Your goal is to determine the maximum count of such operations you can perform on the array. 
 
 ### Example 1
 ```text
@@ -97,6 +96,4 @@ By examining each element `a` in `nums`, it checks if `k - a` exists in the map 
 This approach optimizes the computation by efficiently tracking the frequencies of elements and identifying valid pairs whose sum equals the target value without requiring additional space proportional to the size of the array.
 
 ## Exercise
-- Two Sum[^ex].
-
-[^ex]: https://leetcode.com/problems/two-sum/
+- [Two Sum](https://leetcode.com/problems/two-sum/).

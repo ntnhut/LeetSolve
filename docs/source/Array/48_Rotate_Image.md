@@ -1,11 +1,9 @@
 # Rotate Image
 % Medium 
 
-## Problem statement
+## [Problem statement](https://leetcode.com/problems/rotate-image/)
 
-[^url]Given an `n x n` 2D matrix representing an image, your task is to rotate the image by 90 degrees clockwise. The rotation must be performed in-place, meaning you need to modify the original input 2D matrix directly. It is not allowed to create another 2D matrix for the rotation.
-
-[^url]: https://leetcode.com/problems/rotate-image/
+Given an `n x n` 2D matrix representing an image, your task is to rotate the image by 90 degrees clockwise. The rotation must be performed in-place, meaning you need to modify the original input 2D matrix directly. It is not allowed to create another 2D matrix for the rotation.
 
 ### Example 1
 
@@ -116,13 +114,9 @@ Output:
 
 ## Implementation tips
 
-1. The function {index}`std::swap`[^swapurl] can be used to exchange two values.
+1. The function [`std::swap`](https://en.cppreference.com/w/cpp/algorithm/swap) can be used to exchange two values.
 
 2. When doing the transpose or mirroring, you could visit over only one-half of the matrix.
 
-[^swapurl]: https://en.cppreference.com/w/cpp/algorithm/swap
-
 ## Exercise
-- Determine Whether Matrix Can Be Obtained By Rotation[^ex].
-
-[^ex]: https://leetcode.com/problems/determine-whether-matrix-can-be-obtained-by-rotation/
+- [Determine Whether Matrix Can Be Obtained By Rotation](https://leetcode.com/problems/determine-whether-matrix-can-be-obtained-by-rotation/).

@@ -1,8 +1,8 @@
 # Valid Mountain Array
-% Easy  
-## Problem statement
+% Easy
+## [Problem statement](https://leetcode.com/problems/valid-mountain-array/)
 
-[^url]You are given an array of integers `arr`, and your task is to determine whether it is a valid *mountain array*.
+You are given an array of integers `arr`, and your task is to determine whether it is a valid *mountain array*.
 
 A valid *mountain array* must meet the following conditions:
 
@@ -11,7 +11,6 @@ A valid *mountain array* must meet the following conditions:
 
 ![Mountain array](941_hint_valid_mountain_array.png)
 
-[^url]: https://leetcode.com/problems/valid-mountain-array/
 
 ### Example 1
 ```text
@@ -95,6 +94,5 @@ This solution iteratively checks for the two slopes of a mountain array, ensurin
 Breaking down the problem into distinct stages, like finding the peak of the mountain and then traversing down from there, can simplify the logic and improve code readability. This approach facilitates a clear understanding of the algorithm's progression and helps in handling complex conditions effectively.
 
 ## Exercise
-- Beautiful Towers I[^ex].
+- [Beautiful Towers I](https://leetcode.com/problems/beautiful-towers-i/).
 
-[^ex]: https://leetcode.com/problems/beautiful-towers-i/

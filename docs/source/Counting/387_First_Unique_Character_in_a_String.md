@@ -1,10 +1,9 @@
 # First Unique Character in a String
 % Easy
-## Problem statement
 
-[^url]You have a string called `s`. Your objective is to locate the index of the first character in the string that does not repeat anywhere else in the string. If such a character doesn't exist, return `-1`.
+## [Problem statement](https://leetcode.com/problems/first-unique-character-in-a-string/)
 
-[^url]: https://leetcode.com/problems/first-unique-character-in-a-string/
+You have a string called `s`. Your objective is to locate the index of the first character in the string that does not repeat anywhere else in the string. If such a character doesn't exist, return `-1`.
 
 ### Example 1
 ```text
@@ -119,6 +118,5 @@ Utilizing hash maps or arrays to count the frequency of characters in a string p
 By storing the counts in a data structure indexed by the character value, the solutions achieve a linear time complexity proportional to the length of the string. Solution 2 further optimizes memory usage by employing an array with a fixed size corresponding to the lowercase English alphabet, avoiding the overhead associated with hash maps.
 
 ## Exercise
-- First Letter to Appear Twice[^ex].
+- [First Letter to Appear Twice](https://leetcode.com/problems/first-letter-to-appear-twice/).
 
-[^ex]: https://leetcode.com/problems/first-letter-to-appear-twice/

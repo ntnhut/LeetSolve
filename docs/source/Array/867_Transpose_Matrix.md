@@ -1,9 +1,9 @@
 # Transpose Matrix
 % Easy 
 
-## Problem statement
+## [Problem statement](https://leetcode.com/problems/transpose-matrix/)
 
-[^url]You are given a 2D integer array `matrix`, and your objective is to find the transpose of the given matrix.
+You are given a 2D integer array `matrix`, and your objective is to find the transpose of the given matrix.
 
 The transpose of a matrix involves flipping the matrix over its main diagonal, effectively swapping its row and column indices.
  
@@ -21,7 +21,7 @@ The transpose of a matrix involves flipping the matrix over its main diagonal, e
 \end{bmatrix}
 \end{equation*}
 
-[^url]: https://leetcode.com/problems/transpose-matrix/ 
+ 
 
 ### Example 1
 ```text

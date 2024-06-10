@@ -100,5 +100,3 @@ This solution uses a recursive algorithm to calculate the maximum depth of a bin
 
 * Runtime: `O(n)`, where `n` is the number of nodes.
 * Extra space: `O(h)`, where `h` is the height of the tree.
-
-

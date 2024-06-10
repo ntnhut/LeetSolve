@@ -1,5 +1,6 @@
 # Single Number
 % Easy
+
 ## [Problem statement](https://leetcode.com/problems/single-number/description/)
 
 You're provided with a non-empty array of integers called `nums`. In this array, every element occurs twice except for one element that appears only once. Your task is to identify and find that unique element.
@@ -126,6 +127,5 @@ Leveraging bitwise XOR (^) operations offers an efficient solution to find the s
 By XORing all the numbers in the array, Solution 2 effectively cancels out pairs of identical numbers, leaving only the single number behind. This approach achieves a linear time complexity without the need for additional data structures, providing a concise and efficient solution.
 
 ## Exercise
-- Missing Number[^ex].
+- [Missing Number](https://leetcode.com/problems/missing-number/).
 
-[^ex]: https://leetcode.com/problems/missing-number/
