@@ -1,8 +1,8 @@
 # Maximum Units on a Truck
-% Easy 
-## Problem statement
 
-[^url]You are assigned to put some amount of boxes onto one truck. You are given a 2D array `boxTypes`, where `boxTypes[i] = [numberOfBoxes_i, numberOfUnitsPerBox_i]`:
+## [Problem statement](https://leetcode.com/problems/maximum-units-on-a-truck/)
+
+You are assigned to put some amount of boxes onto one truck. You are given a 2D array `boxTypes`, where `boxTypes[i] = [numberOfBoxes_i, numberOfUnitsPerBox_i]`:
 
 * `numberOfBoxes_i` is the number of boxes of type `i`.
 * `numberOfUnitsPerBox_i` is the number of units in each box of the type `i`.
@@ -11,7 +11,7 @@ You are also given an integer `truckSize`, which is the maximum number of boxes 
 
 Return the maximum total number of units that can be put on the truck.
 
-[^url]: https://leetcode.com/problems/maximum-units-on-a-truck/
+
 
 ### Example 1
 ```text
@@ -89,15 +89,11 @@ This solution optimally loads boxes onto a truck to maximize the total number of
 
 ## Modern C++ STL notes
 
-Note that two `vector`s[^vector] can be compared. That is why you can sort them.
+Note that two `vector`s can be compared. That is why you can sort them.
 
-But in this case you want to sort them based on the number of units. That is why you need to define the comparison function like the code above. Otherwise, the {index}`std::sort`[^sort] algorithm will use the dictionary order to sort them by default.  
+But in this case you want to sort them based on the number of units. That is why you need to define the comparison function like the code above. Otherwise, the {index}`std::sort` algorithm will use the dictionary order to sort them by default.  
 
 ## Exercise
-- Maximum Bags With Full Capacity of Rocks[^ex].
+- [Maximum Bags With Full Capacity of Rocks](https://leetcode.com/problems/maximum-bags-with-full-capacity-of-rocks/).
 
-[^ex]: https://leetcode.com/problems/maximum-bags-with-full-capacity-of-rocks/
 
-[^vector]: https://en.cppreference.com/w/cpp/container/vector
-
-[^sort]: https://en.cppreference.com/w/cpp/algorithm/sort

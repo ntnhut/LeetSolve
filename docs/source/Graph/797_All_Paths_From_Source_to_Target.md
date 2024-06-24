@@ -1,11 +1,9 @@
 # All Paths From Source to Target
 
-## Problem statement
-[^url]Given a *directed acyclic graph* (DAG) of `n` nodes labeled from `0` to `n - 1`, find all possible paths from node `0` to node `n - 1` and return them in any order.
+## [Problem statement](https://leetcode.com/problems/all-paths-from-source-to-target/)
+Given a *directed acyclic graph* (DAG) of `n` nodes labeled from `0` to `n - 1`, find all possible paths from node `0` to node `n - 1` and return them in any order.
 
 The graph is given as follows: `graph[i]` is a list of all nodes you can visit from node `i` (i.e., there is a directed edge from node `i` to node `graph[i][j]`).
-
-[^url]: https://leetcode.com/problems/all-paths-from-source-to-target/
 
 ### Example 1
 ![Example 1](797_all_1.jpg)
@@ -49,11 +47,9 @@ Output: [[0,1,2,3],[0,3]]
 * All the elements of `graph[i]` are unique.
 * The input graph is guaranteed to be a DAG.
 
-## Solution: {index}`Depth First Search` (DFS)
+## Solution: Depth First Search (DFS)
 
-This problem is exactly the Depth-first search algorithm[^dfs].
-
-[^dfs]: https://en.wikipedia.org/wiki/Depth-first_search
+This problem is exactly the [Depth-first search algorithm](https://en.wikipedia.org/wiki/Depth-first_search).
 
 ### Code
 ```cpp
@@ -62,45 +58,36 @@ This problem is exactly the Depth-first search algorithm[^dfs].
 using namespace std;
 void DFS(vector<vector<int>>& graph, 
          vector<vector<int>>& paths, 
-         vector<int>& path) 
-{
+         vector<int>& path) {
     for (auto& node : graph[path.back()]) {
         path.push_back(node);
-        if (node == graph.size() - 1) 
-        {
+        if (node == graph.size() - 1) {
             paths.push_back(path);
             path.pop_back();
-        } 
-        else 
-        {
+        } else {
             DFS(graph, paths, path);
         }
     }
     path.pop_back();
 }
-vector<vector<int>> allPathsSourceTarget(vector<vector<int>>& graph) 
-{
+vector<vector<int>> allPathsSourceTarget(vector<vector<int>>& graph) {
     vector<vector<int>> paths;
     vector<int> path = {0};
     DFS(graph, paths, path);
     return paths;
 }
-void printPaths(vector<vector<int>>& paths) 
-{
+void printPaths(vector<vector<int>>& paths) {
     cout << "[";
-    for (auto& p : paths) 
-    {
+    for (auto& p : paths) {
         cout << "[";
-        for (auto& node : p) 
-        {
+        for (auto& node : p) {
             cout << node << ",";
         }
         cout << "],";
     }
     cout << "]\n";
 }
-int main() 
-{
+int main() {
     vector<vector<int>> graph = {{1,2},{3},{3},{}};
     auto paths = allPathsSourceTarget(graph);
     printPaths(paths);
@@ -117,7 +104,7 @@ Output:
 
 ### Code explanation
 
-This code performs a Depth-First Search (DFS) to find all possible paths from the source node (0) to the target node (`graph.size() - 1`) in a given directed graph represented as an adjacency list. 
+This code performs a {index}`Depth First Search` (DFS) to find all possible paths from the source node (0) to the target node (`graph.size() - 1`) in a given directed graph represented as an adjacency list. 
 
 The `DFS` function explores the graph starting from the current node, and if it reaches the target node, it adds the path to the `paths` vector. Otherwise, it continues the DFS exploration from the neighboring nodes. 
 

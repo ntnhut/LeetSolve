@@ -1,5 +1,4 @@
 # Shift 2D Grid
-% Easy 
 
 ## [Problem statement](https://leetcode.com/problems/shift-2d-grid/)
 

@@ -1,14 +1,14 @@
 # Find and Replace Pattern
-% Medium
-## Problem statement
 
-[^url]You are provided with a list of strings named `words` and a string named `pattern`. Your task is to find the strings from `words` that match the given `pattern`. The order in which you return the answers does not matter.
+## [Problem statement](https://leetcode.com/problems/find-and-replace-pattern/)
+
+You are provided with a list of strings named `words` and a string named `pattern`. Your task is to find the strings from `words` that match the given `pattern`. The order in which you return the answers does not matter.
 
 A word is considered to match the pattern if there is a mapping `p` of the letters such that, when each letter `x` in the pattern is replaced with `p(x)`, the word is formed.
 
 Keep in mind that a permutation of letters is a one-to-one correspondence from letters to letters, where each letter is mapped to a distinct letter, and no two letters are mapped to the same letter. 
 
-[^url]: https://leetcode.com/problems/find-and-replace-pattern/
+
 
 ### Example 1
 ```text

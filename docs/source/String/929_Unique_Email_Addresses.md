@@ -1,8 +1,8 @@
 # Unique Email Addresses
-% Easy
-## Problem statement
 
-[^url]Each valid email address is composed of a local name and a domain name, separated by the `'@'` sign. The local name may contain lowercase letters, one or more `'.'` characters, and a plus `'+'` sign. However, the rules for dots and the plus sign do not apply to the domain name.
+## [Problem statement](https://leetcode.com/problems/unique-email-addresses/)
+
+Each valid email address is composed of a local name and a domain name, separated by the `'@'` sign. The local name may contain lowercase letters, one or more `'.'` characters, and a plus `'+'` sign. However, the rules for dots and the plus sign do not apply to the domain name.
 
 For example, in the email `"alice@leetcode.com"`, `"alice"` is the local name, and `"leetcode.com"` is the domain name.
 
@@ -18,7 +18,7 @@ It is possible to use both of these rules at the same time.
 
 Given an array of strings `emails`, where each element is an email address to which an email is sent, your task is to determine the number of different addresses that will actually receive the emails after applying the rules described above.
 
-[^url]: https://leetcode.com/problems/unique-email-addresses/ 
+ 
 
 ### Example 1
 ```text
@@ -165,9 +165,9 @@ std::string address = "name";
 address += '@';             // "name@"
 address += "domain.com";    // "name@domain.com"
 ```
-* `string::substr(pos = 0, count = npos)`[^subs] returns the substring of length `count` starting from the position `pos` of the string `string`.
+* [`string::substr(pos = 0, count = npos)`](https://en.cppreference.com/w/cpp/string/basic_string/substr) returns the substring of length `count` starting from the position `pos` of the string `string`.
 
-[^subs]: https://en.cppreference.com/w/cpp/string/basic_string/substr
+
 
 ```cpp
 std::string address = "name@domain.com";
@@ -175,16 +175,14 @@ cout << address.substr(address.find('.'));      // ".com"
 cout << address.substr(0, address.find('@'));   // "name"
 ```
 
-* `string::find(char, pos=0)`[^find] returns the position of the first `char` which appears in the string `string` starting from `pos`.
+* [`string::find(char, pos=0)`](https://en.cppreference.com/w/cpp/string/basic_string/find) returns the position of the first `char` which appears in the string `string` starting from `pos`.
 
-[^find]: https://en.cppreference.com/w/cpp/string/basic_string/find
+
 
 ## High-performance C++
 
-* Do not use `std::set` or `std::map` unless you want the keys to be *in order* (*sorted*). Use *unordered containers* like `std::unordered_set`[^uset] or `std::unordered_map`[^umap] instead. They use hashed keys for faster lookup.
+* Do not use `std::set` or `std::map` unless you want the keys to be *in order* (*sorted*). Use *unordered containers* like [`std::unordered_set`](https://en.cppreference.com/w/cpp/container/unordered_set) or [`std::unordered_map`](https://en.cppreference.com/w/cpp/container/unordered_map) instead. They use hashed keys for faster lookup.
 
 * Do not blindly/lazily use `string.find(something)`. If you know where to start the search, use `string.find(something, pos)` with a **specific** `pos`.
 
-[^uset]: https://en.cppreference.com/w/cpp/container/unordered_set
 
-[^umap]: https://en.cppreference.com/w/cpp/container/unordered_map

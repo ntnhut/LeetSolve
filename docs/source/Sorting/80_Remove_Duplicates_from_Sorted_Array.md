@@ -1,8 +1,8 @@
 # Remove Duplicates from Sorted Array II
-% Medium
-## Problem statement
 
-[^url]Given an integer array `nums` already sorted in non-decreasing order, you must remove duplicates so that each unique element appears at most twice. The relative order of the elements should remain unchanged.
+## [Problem statement](https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/)
+
+Given an integer array `nums` already sorted in non-decreasing order, you must remove duplicates so that each unique element appears at most twice. The relative order of the elements should remain unchanged.
 
 Since changing the array's length in some programming languages is impossible, you must place the result in the first part of the `nums` array. In other words, if there are `k` elements after removing the duplicates, the first `k` elements of `nums` should contain the final result. Anything beyond the first `k` elements is not important.
 
@@ -10,7 +10,7 @@ You should return the value of `k` after placing the final result in the first `
 
 The key requirement is to accomplish this task without using extra space for another array. It must be done by modifying the input array `nums` in-place, using only `O(1)` extra memory.
 
-[^url]: https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/ 
+ 
 
 ### Example 1
 
@@ -94,7 +94,7 @@ This solution efficiently removes duplicates from the sorted array by checking f
 
 * Runtime:
     
-    * Worst case: `O(N^2/3)`, where `N = nums.size()`. The complexity of the `erase()`[^erase] method is linear in `N`. The worst case is when `erase()` is called maximum `N/3` times.
+    * Worst case: `O(N^2/3)`, where `N = nums.size()`. The complexity of the [`erase()`](https://en.cppreference.com/w/cpp/container/vector/erase) method is linear in `N`. The worst case is when `erase()` is called maximum `N/3` times.
         
     
     ```text
@@ -107,7 +107,7 @@ This solution efficiently removes duplicates from the sorted array by checking f
 * Extra space: `O(1)`.
     
 
-[^erase]: https://en.cppreference.com/w/cpp/container/vector/erase
+
 
 ## Solution 2: Reassigning the satisfying elements
 
@@ -175,6 +175,5 @@ Output:
 Solution 2 effectively modifies the input array in-place, removing duplicates that occur more than twice while maintaining the desired order of unique elements. It does so in a single pass through the array, resulting in a time complexity of `O(N)`, where `N` is the number of elements in the array.
 
 ## Exercise
-- Remove Duplicates from Sorted Array[^ex].
+- [Remove Duplicates from Sorted Array](https://leetcode.com/problems/remove-duplicates-from-sorted-array/).
 
-[^ex]: https://leetcode.com/problems/remove-duplicates-from-sorted-array/

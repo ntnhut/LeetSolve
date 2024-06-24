@@ -1,12 +1,10 @@
 # Valid Anagram
-% Easy
-## Problem statement
 
-[^url]You are given two strings, `s` and `t`. Your task is to determine whether `t` is an anagram of `s`. If `t` is an anagram of `s`, return `true`; otherwise, return `false`.
+## [Problem statement](https://leetcode.com/problems/valid-anagram/)
+
+You are given two strings, `s` and `t`. Your task is to determine whether `t` is an anagram of `s`. If `t` is an anagram of `s`, return `true`; otherwise, return `false`.
 
 An **anagram** is a term that describes a word or phrase formed by rearranging the letters of another word or phrase, typically using all the original letters exactly once. 
-
-[^url]: https://leetcode.com/problems/valid-anagram/
 
 ### Example 1
 ```text
@@ -159,6 +157,5 @@ Instead of relying on a fixed-size array like the ASCII-based solutions, Solutio
 Unicode characters values are not restricted to a specific range. The `unordered_map` approach accommodates this variability by allowing any character to be a key.
 
 ## Exercise
-- Find Resultant Array After Removing Anagrams[^ex].
+- [Find Resultant Array After Removing Anagrams](https://leetcode.com/problems/find-resultant-array-after-removing-anagrams/).
 
-[^ex]: https://leetcode.com/problems/find-resultant-array-after-removing-anagrams/

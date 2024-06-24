@@ -1,14 +1,14 @@
 # Sort Array By Parity II
-% Easy
-## Problem statement
 
-[^url]Given an array of integers `nums`, half of the integers in `nums` are odd, and the other half are even.
+## [Problem statement](https://leetcode.com/problems/sort-array-by-parity-ii/)
+
+Given an array of integers `nums`, half of the integers in `nums` are odd, and the other half are even.
 
 Sort the array so that whenever `nums[i]` is odd, `i` is odd, and whenever `nums[i]` is even, `i` is even.
 
 Return any answer array that satisfies this condition. 
 
-[^url]: https://leetcode.com/problems/sort-array-by-parity-ii/
+
 
 ### Example 1
 ```plain
@@ -35,6 +35,7 @@ For each `0 <= i < nums.length`, if `nums[i]` has the same parity with `i`, you 
 
 ### Example 1
 For `nums = [4,2,5,7]`:
+
 * `nums[0] = 4` is even like `i = 0`.
 * `nums[1] = 2` is even, unlike `i = 1` is odd. Found `nums[2] = 5` is odd. Swap `nums[1] <-> nums[2]`. `nums[2]` becomes `2` while `nums[1]` becomes `5` is odd like `i = 1`.
 * `nums[2] = 2` is even, like `i = 2`.
@@ -179,6 +180,5 @@ Solution 2 uses two pointers, one starting from the beginning of the array (`eve
 By incrementing `evenPos` by 2 until an odd element is found and decrementing `oddPos` by 2 until an even element is found, the algorithm can swap these elements to ensure that even-indexed elements contain even values and odd-indexed elements contain odd values. This process iterates until all even and odd elements are correctly positioned.
 
 ## Exercise
-- Rearrange Array Elements by Sign[^ex].
+- [Rearrange Array Elements by Sign](https://leetcode.com/problems/rearrange-array-elements-by-sign/).
 
-[^ex]: https://leetcode.com/problems/rearrange-array-elements-by-sign/
