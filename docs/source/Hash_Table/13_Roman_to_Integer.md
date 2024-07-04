@@ -1,8 +1,8 @@
 # Roman to Integer
-% Easy
-## Problem statement
 
-[^url]Roman numerals utilize seven symbols: `I`, `V`, `X`, `L`, `C`, `D`, and `M` to represent numbers. 
+## [Problem statement](https://leetcode.com/problems/roman-to-integer/)
+
+Roman numerals utilize seven symbols: `I`, `V`, `X`, `L`, `C`, `D`, and `M` to represent numbers. 
 
 ```text
 Symbol       Value
@@ -23,9 +23,7 @@ Roman numerals are generally written from the largest value to the smallest valu
 - `X` before `L` (`50`) or `C` (`100`) forms `40` and `90`.
 - `C` before `D` (`500`) or `M` (`1000`) forms `400` and `900`.
 
-Your task is to convert a given Roman numeral into its equivalent integer value. 
-
-[^url]: https://leetcode.com/problems/roman-to-integer/ 
+Your task is to convert a given Roman numeral into its equivalent integer value.  
 
 ### Example 1
 ```text
@@ -108,6 +106,5 @@ This problem can be solved using a map to store the values of each Roman numeral
 By comparing the current character's value with the previous one, the solution handles cases of subtraction (e.g., IV, IX, etc.) by subtracting the value if it's smaller and adding it otherwise.
 
 ## Exercise
-- Integer to Roman[^ex].
+- [Integer to Roman](https://leetcode.com/problems/integer-to-roman/).
 
-[^ex]: https://leetcode.com/problems/integer-to-roman/

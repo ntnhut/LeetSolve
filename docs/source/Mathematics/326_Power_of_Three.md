@@ -1,12 +1,12 @@
 # Power of Three
-% Easy
-## Problem statement
 
-[^url]Given an integer `n`, return `true` if it is a power of three. Otherwise, return `false`.
+## [Problem statement](https://leetcode.com/problems/power-of-three/)
+
+Given an integer `n`, return `true` if it is a power of three. Otherwise, return `false`.
 
 An integer `n` is a power of three, if there exists an integer `x` such that `n == 3^x`.
 
-[^url]: https://leetcode.com/problems/power-of-three/
+
 
 ### Example 1
 ```text
@@ -106,6 +106,5 @@ This solution effectively checks whether `n` is a power of three by verifying if
 Though Solution 2 offers a direct approach without the need for iteration, it is not easy to understand like Solution 1, where complexity of `O(logn)` is not too bad.
 
 ## Exercise
-- Check if Number is a Sum of Powers of Three[^ex].
+- [Check if Number is a Sum of Powers of Three](https://leetcode.com/problems/check-if-number-is-a-sum-of-powers-of-three/).
 
-[^ex]: https://leetcode.com/problems/check-if-number-is-a-sum-of-powers-of-three/

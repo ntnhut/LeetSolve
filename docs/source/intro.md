@@ -6,9 +6,7 @@ Coding challenges are a great way to practice problem-solving, algorithm develop
 
 {index}`Coding challenges` could be programming puzzles or mathematical problems that require coding solutions. Each challenge requires different coding skills and is designed to challenge and develop a particular set of skills. 
 
-The coding challenges in this book are picked from LeetCode[^leetcode]. It is a popular online platform for programmers and software engineers that provides many coding challenges and problems. The website was launched in 2015 and has since grown to become one of the go-to resources for coding practice, technical interview preparation, and skills enhancement.
-
-[^leetcode]: https://leetcode.com
+The coding challenges in this book are picked from [LeetCode](https://leetcode.com). It is a popular online platform for programmers and software engineers that provides many coding challenges and problems. The website was launched in 2015 and has since grown to become one of the go-to resources for coding practice, technical interview preparation, and skills enhancement.
 
 LeetCode offers diverse coding challenges, ranging from easy to hard, covering a wide range of topics such as algorithms, data structures, databases, system design, and more. The problems are created by industry experts and are designed to simulate real-world scenarios, allowing you to gain practical experience in problem-solving.
 

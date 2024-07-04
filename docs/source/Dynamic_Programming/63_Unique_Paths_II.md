@@ -1,10 +1,8 @@
 # Unique Paths II
-% Medium
-## Problem statement
 
-[^url]You're given an `m x n` grid represented as an integer array called `grid`. In this grid, there is a robot initially located at the top-left corner (i.e., `grid[0][0]`). The robot's goal is to move to the bottom-right corner (i.e., `grid[m-1][n-1]`). The robot is allowed to move only downwards or to the right at any given point.
+## [Problem statement](https://leetcode.com/problems/unique-paths-ii/)
 
-[^url]: https://leetcode.com/problems/unique-paths-ii/
+You're given an `m x n` grid represented as an integer array called `grid`. In this grid, there is a robot initially located at the top-left corner (i.e., `grid[0][0]`). The robot's goal is to move to the bottom-right corner (i.e., `grid[m-1][n-1]`). The robot is allowed to move only downwards or to the right at any given point.
 
 The grid contains obstacles and empty spaces, which are marked as `1` or `0` respectively. The robot cannot pass through squares marked as obstacles.
 
@@ -109,6 +107,4 @@ Then, it iterates through the grid starting from the second row and second colum
 Finally, the value at `np[row-1][col-1]` contains the total number of unique paths to reach the bottom-right corner of the grid, which is returned as the result.
 
 ## Exercise
-- Minimum Path Cost in a Grid[^ex].
-
-[^ex]: https://leetcode.com/problems/minimum-path-cost-in-a-grid/
+- [Minimum Path Cost in a Grid](https://leetcode.com/problems/minimum-path-cost-in-a-grid/).

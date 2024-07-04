@@ -1,10 +1,10 @@
 # Running Sum of 1d Array
-% Easy
-## Problem statement
 
-[^url]Given an array called `nums`, calculate the running sum of its elements and return the resulting array. The running sum at index `i` is the sum of elements from index `0` to `i` in the `nums` array.
+## [Problem statement](https://leetcode.com/problems/running-sum-of-1d-array/)
 
-[^url]: https://leetcode.com/problems/running-sum-of-1d-array/
+Given an array called `nums`, calculate the running sum of its elements and return the resulting array. The running sum at index `i` is the sum of elements from index `0` to `i` in the `nums` array.
+
+
 
 ### Example 1
 ```text

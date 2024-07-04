@@ -1,13 +1,12 @@
 # Minimum Moves to Equal Array Elements II
-% Medium
 
-## Problem statement
+## [Problem statement](https://leetcode.com/problems/minimum-moves-to-equal-array-elements-ii/)
 
-[^url]Given an integer array `nums` of size `n`, return the minimum number of moves required to make all array elements equal.
+Given an integer array `nums` of size `n`, return the minimum number of moves required to make all array elements equal.
 
 In one move, you can increment or decrement an element of the array by `1`.
 
-[^url]: https://leetcode.com/problems/minimum-moves-to-equal-array-elements-ii/
+
 
 ### Example 1
 ```text
@@ -38,9 +37,9 @@ First, moving elements of an unsorted array and moving a sorted one are the same
 
 Second, `M` must be in between the minimum element and the maximum one. Apparently!
 
-We will prove that `M` will be the median[^med] of `nums`, which is `nums[n/2]` of the sorted `nums`. 
+We will prove that `M` will be the [median](https://en.wikipedia.org/wiki/Median) of `nums`, which is `nums[n/2]` of the sorted `nums`. 
 
-[^med]: https://en.wikipedia.org/wiki/Median
+
 
 In other words, we will prove that if you choose `M` a value different from `nums[n/2]`, then the number of moves will be increased.
 
@@ -97,11 +96,12 @@ This solution leverages the concept of the median to minimize the total absolute
 
 What you only need in Solution 1 is the median value. Computing the total number of moves in the `for` loop does not require the array `nums` to be fully sorted. 
 
-In this case, you can use `std::nth_element`[^ne] to reduce the runtime complexity.
+In this case, you can use [`std::nth_element`](https://en.cppreference.com/w/cpp/algorithm/nth_element) to reduce the runtime complexity.
 
-[^ne]: https://en.cppreference.com/w/cpp/algorithm/nth_element
+
 
 ### Code
+
 ```cpp
 #include <iostream>
 #include <vector>
@@ -151,6 +151,5 @@ With this property, if `mid = nums.length / 2`, then the value of `nums[mid]` is
 
 
 ## Exercise
-- Minimum Moves to Equal Array Elements[^ex].
+- [Minimum Moves to Equal Array Elements](https://leetcode.com/problems/minimum-moves-to-equal-array-elements/).
 
-[^ex]: https://leetcode.com/problems/minimum-moves-to-equal-array-elements/

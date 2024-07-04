@@ -1,15 +1,15 @@
 # Kth Largest Element in a Stream
-% Easy 
-## Problem statement
 
-[^url]Create a class that can find the `k-th` largest element in a stream of integers. This is the `k-th` largest element when the elements are arranged in sorted order, not the `k-th` distinct element.
+## [Problem statement](https://leetcode.com/problems/kth-largest-element-in-a-stream/)
+
+Create a class that can find the `k-th` largest element in a stream of integers. This is the `k-th` largest element when the elements are arranged in sorted order, not the `k-th` distinct element.
 
 The `KthLargest` class needs to support the following operations:
 
 1. `KthLargest(int k, int[] nums)`: This initializes the object with an integer `k` and a stream of integers `nums`.
 2. `int add(int val)`: This method adds the integer `val` to the stream and returns the element representing the `k-th` largest element in the stream. 
 
-[^url]: https://leetcode.com/problems/kth-largest-element-in-a-stream/
+
 
 ### Example 1
 ```text
@@ -174,6 +174,5 @@ Upon initialization, the constructor populates the priority queue with the eleme
 Finally, it returns the top element of the priority queue, which represents the kth largest element. This approach leverages the properties of a min-heap to track the kth largest element in the collection, resulting in an overall efficient solution.
 
 ## Exercise
-- Kth Largest Element in an Array[^ex].
+- [Kth Largest Element in an Array](https://leetcode.com/problems/kth-largest-element-in-an-array/).
 
-[^ex]: https://leetcode.com/problems/kth-largest-element-in-an-array/

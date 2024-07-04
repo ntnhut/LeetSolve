@@ -1,12 +1,12 @@
 # Count Sorted Vowel Strings
-% Medium
-## Problem statement
 
-[^url]Given an integer `n`, return the number of strings of length `n` that consist only of vowels (`a`, `e`, `i`, `o`, `u`) and are lexicographically sorted.
+## [Problem statement](https://leetcode.com/problems/count-sorted-vowel-strings/)
+
+Given an integer `n`, return the number of strings of length `n` that consist only of vowels (`a`, `e`, `i`, `o`, `u`) and are lexicographically sorted.
 
 A string `s` is lexicographically sorted if for all valid `i`, `s[i]` is the same as or comes before `s[i+1]` in the alphabet.
 
-[^url]: https://leetcode.com/problems/count-sorted-vowel-strings/
+
 
 ### Example 1
 ```text
@@ -128,9 +128,9 @@ s = "aa..a|ee..e|ii..i|oo..o|uu..u",
 the problem becomes counting how many ways of putting those 4 separators `'|'` to form a string of length `n + 4`. 
 
 
-In combinatorics, the solution is $\binom{n + 4}{4}$, where $\binom{n}{k}$ is the {index}`binomial coefficient`[^binom]:
+In combinatorics, the solution is $\binom{n + 4}{4}$, where $\binom{n}{k}$ is the [binomial coefficient](https://en.wikipedia.org/wiki/Binomial_coefficient):
 
-[^binom]: https://en.wikipedia.org/wiki/Binomial_coefficient
+
 
 $$
 \binom{n}{k} = \frac{n!}{k!(n-k)!}.

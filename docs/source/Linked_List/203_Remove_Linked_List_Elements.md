@@ -1,10 +1,8 @@
 # Remove Linked List Elements
-% Easy 
-## Problem statement
 
-[^url]You are given the starting node, `head`, of a linked list, and an integer `val`. Your task is to eliminate all nodes from the linked list that have a value equal to `val`. After removing these nodes, return the new starting node of the modified linked list.
+## [Problem statement](https://leetcode.com/problems/remove-linked-list-elements/)
 
-[^url]: https://leetcode.com/problems/remove-linked-list-elements/
+You are given the starting node, `head`, of a linked list, and an integer `val`. Your task is to eliminate all nodes from the linked list that have a value equal to `val`. After removing these nodes, return the new starting node of the modified linked list.
 
 ### Example 1
 
@@ -216,6 +214,6 @@ ListNode* removeElements(ListNode* head, int val) {
 * Be careful with memory leak when removing nodes of the linked list containing pointers. 
 
 ## Exercise
-- Delete Node in a Linked List[^ex].
+- [Delete Node in a Linked List](https://leetcode.com/problems/delete-node-in-a-linked-list/).
 
-[^ex]: https://leetcode.com/problems/delete-node-in-a-linked-list/
+

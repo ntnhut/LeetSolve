@@ -1,12 +1,11 @@
 # Swap Nodes in Pairs
-% Meidum 
-## Problem statement
 
-[^url]You are provided with a linked list. Your goal is to exchange every two adjacent nodes in the list and then return the head of the modified list. 
+## [Problem statement](https://leetcode.com/problems/swap-nodes-in-pairs/)
+
+You are provided with a linked list. Your goal is to exchange every two adjacent nodes in the list and then return the head of the modified list. 
 
 You must solve this problem without altering the values within the nodes; you should only modify the arrangement of the nodes themselves. 
 
-[^url]: https://leetcode.com/problems/swap-nodes-in-pairs/
 
 ### Example 1
 ![The link list and its result in Example 1.](24_swap_ex1.jpg)
@@ -120,6 +119,5 @@ It initializes pointers to the current node (`curNode`), its next node (`nextNod
 This approach efficiently swaps adjacent nodes in the list without requiring additional space, effectively transforming the list by rearranging pointers.
 
 ## Exercise
-- Swapping Nodes in a Linked List[^ex].
+- [Swapping Nodes in a Linked List](https://leetcode.com/problems/swapping-nodes-in-a-linked-list/).
 
-[^ex]: https://leetcode.com/problems/swapping-nodes-in-a-linked-list/

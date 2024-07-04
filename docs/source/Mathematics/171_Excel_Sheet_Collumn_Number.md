@@ -127,6 +127,5 @@ The solution calculates the decimal representation of the Excel column title by 
 3. The parentheses around `(c - 64)` is needed. Otherwise the value of `columnTitle = "FXSHRXW"` makes `26*column + c` exceed the limit of `int` before it subtracts `64`. 
 
 ## Exercise
-- Excel Sheet Column Title[^ex].
+- [Excel Sheet Column Title](https://leetcode.com/problems/excel-sheet-column-title/).
 
-[^ex]: https://leetcode.com/problems/excel-sheet-column-title/

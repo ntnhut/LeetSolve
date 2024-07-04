@@ -1,14 +1,13 @@
 # Best Time to Buy and Sell Stock
-% Easy
-## Problem statement
 
-[^url]You are given an array `prices` where `prices[i]` is the price of a given stock on the `i-th` day.
+## [Problem statement](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/)
+
+You are given an array `prices` where `prices[i]` is the price of a given stock on the `i-th` day.
 
 You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.
 
 Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.
 
-[^url]: https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
 
 ### Example 1
 ```text
@@ -177,6 +176,5 @@ The problem of finding the maximum profit that can be achieved by buying and sel
 Solution 3 stands out as the most efficient approach, achieving a linear time complexity by iterating through the prices only once and updating the minimum price seen so far. This approach avoids unnecessary comparisons and achieves the desired result in a single pass through the array.
 
 ## Exercise
-- Best Time to Buy and Sell Stock II[^ex].
+- [Best Time to Buy and Sell Stock II](https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/).
 
-[^ex]: https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/
