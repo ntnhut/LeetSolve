@@ -1,10 +1,10 @@
 # Longest Substring Without Repeating Characters
-% Medium
-## Problem statement
 
-[^url]Given a string `s`, your task is to determine the length of the longest substring within `s` that does not contain any repeating characters.
+## [Problem statement](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
 
-[^url]: https://leetcode.com/problems/longest-substring-without-repeating-characters/
+Given a string `s`, your task is to determine the length of the longest substring within `s` that does not contain any repeating characters.
+
+
 
 ### Example 1
 ```text
@@ -114,6 +114,6 @@ This approach optimizes the computation of the length of the longest substring b
 
 ## Exercise
 
-- Optimal Partition of String[^ex].
+- [Optimal Partition of String](https://leetcode.com/problems/optimal-partition-of-string/).
 
-[^ex]: https://leetcode.com/problems/optimal-partition-of-string/
+

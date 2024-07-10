@@ -1,12 +1,12 @@
 # Shortest Unsorted Continuous Subarray
-% Medium 
-## Problem statement
 
-[^url]Given an integer array `nums`, you need to find one continuous subarray that if you only sort this subarray in ascending order, then the whole array will be sorted in ascending order.
+## [Problem statement](https://leetcode.com/problems/shortest-unsorted-continuous-subarray/)
+
+Given an integer array `nums`, you need to find one continuous subarray that if you only sort this subarray in ascending order, then the whole array will be sorted in ascending order.
 
 Return the shortest such subarray and output its length.
 
-[^url]: https://leetcode.com/problems/shortest-unsorted-continuous-subarray/
+
 
 ### Example 1
 ```text

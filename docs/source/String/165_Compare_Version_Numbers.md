@@ -1,8 +1,8 @@
 # Compare Version Numbers
-% Medium
-## Problem statement
+
+## [Problem statement](https://leetcode.com/problems/compare-version-numbers/)
  
-[^url]Given two version numbers, `version1` and `version2`, your task is to compare them.
+Given two version numbers, `version1` and `version2`, your task is to compare them.
 
 Version numbers consist of one or more revisions joined by a dot `'.'`. Each revision is composed of digits and may contain leading zeros. Each revision has at least one character. Revisions are indexed from left to right, with the leftmost revision being revision 0, the next revision being revision 1, and so on.
 
@@ -16,7 +16,7 @@ The function should return the following:
 * If `version1` is greater than `version2`, return `1`.
 * If `version1` and `version2` are equal, return `0`. 
 
-[^url]: https://leetcode.com/problems/compare-version-numbers/
+
 
 ### Example 1
 ```text
@@ -145,9 +145,7 @@ Once both version strings are converted into vectors, the function iterates thro
 This approach simplifies the comparison process by breaking down the version strings into easily comparable components.
 
 ### C++ Notes
-* {index}`std::stoi`[^stoiurl] is used to convert a `string` to an `int`. It ignores the leading zeros for you.
-* {index}`std::accumulate`[^acuurl] is used to compute the sum of a container. 
 
-[^stoiurl]: https://en.cppreference.com/w/cpp/string/basic_string/stol
+* [`std::stoi`](https://en.cppreference.com/w/cpp/string/basic_string/stol) is used to convert a `string` to an `int`. It ignores the leading zeros for you.
 
-[^acuurl]: https://en.cppreference.com/w/cpp/algorithm/accumulate
+* [`std::accumulate`](https://en.cppreference.com/w/cpp/algorithm/accumulate) is used to compute the sum of a container. 

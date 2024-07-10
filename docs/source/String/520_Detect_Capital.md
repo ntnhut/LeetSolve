@@ -1,8 +1,8 @@
 # Detect Capital 
-% Easy
-## Problem statement
 
-[^url]The task is to determine if the usage of capital letters in a given string, `word`, is correct according to the following rules:
+## [Problem statement](https://leetcode.com/problems/detect-capital/)
+
+The task is to determine if the usage of capital letters in a given string, `word`, is correct according to the following rules:
 
 1. All letters in the word are capital, like "USA".
 2. All letters in the word are not capital, like "leetcode".
@@ -10,7 +10,7 @@
 
 If the capitalization in the given word adheres to these rules, the function should return `true`; otherwise, it should return `false`. 
 
-[^url]: https://leetcode.com/problems/detect-capital/
+
 
 ### Example 1
 ```text
@@ -92,7 +92,7 @@ Output:
 This solution efficiently checks whether a given word follows one of the specified capitalization rules by iterating through the characters of the word and using the `isValidCase` function to validate each character's capitalization based on the current capitalization type (`isLower`). If no violations are found, the word is considered valid, and the function returns `true`. 
 
 ## Exercise
-- Capitalize the Title[^ex].
+- [Capitalize the Title](https://leetcode.com/problems/capitalize-the-title/).
 
-[^ex]: https://leetcode.com/problems/capitalize-the-title/
+
 

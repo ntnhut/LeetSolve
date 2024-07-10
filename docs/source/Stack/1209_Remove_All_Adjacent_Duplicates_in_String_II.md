@@ -1,12 +1,12 @@
 # Remove All Adjacent Duplicates in String II
-% Medium
-## Problem statement
 
-[^url]You are given a string `s` and an integer `k`. A `k` duplicate removal operation involves selecting `k` adjacent and identical letters from `s` and removing them, causing the remaining portions on the left and right of the removed substring to join together.
+## [Problem statement](https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string-ii/)
+
+You are given a string `s` and an integer `k`. A `k` duplicate removal operation involves selecting `k` adjacent and identical letters from `s` and removing them, causing the remaining portions on the left and right of the removed substring to join together.
 
 You need to perform the `k` duplicate removal operation on `s` repeatedly until it is no longer possible. After completing all such operations, return the resulting string. It is guaranteed that the answer will be unique.
 
-[^url]: https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string-ii/
+
 
 ### Example 1
 ```text
@@ -128,6 +128,5 @@ This solution efficiently removes substrings of consecutive duplicate characters
 * In the expression `stk.back().back()`: `stk.back()` is the latest string `a` of `stk`. Then `stk.back().back() = a.back()` is the last character of `a`.
 
 ## Exercise
-- Remove All Adjacent Duplicates In String[^ex].
+- [Remove All Adjacent Duplicates In String](https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/).
 
-[^ex]: https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/

@@ -1,12 +1,12 @@
 # Backspace String Compare
-% Easy
-## Problem statement
 
-[^url]You are provided with two strings, `s` and `t`. Your task is to determine if these two strings are equal when typed into an empty text editor, where the character `'#'` represents a backspace action.
+## [Problem statement](https://leetcode.com/problems/backspace-string-compare/)
+
+You are provided with two strings, `s` and `t`. Your task is to determine if these two strings are equal when typed into an empty text editor, where the character `'#'` represents a backspace action.
 
 Note that applying a backspace action to an empty text does not change the text; it remains empty. Your function should return `true` if the two strings become equal after considering the backspace actions, otherwise return `false`. 
 
-[^url]: https://leetcode.com/problems/backspace-string-compare/ 
+ 
 
 ### Example 1
 ```text
@@ -88,25 +88,24 @@ This solution effectively handles backspace characters (`'#'`) in input strings 
 
 ### Why `vector ` instead of `stack`?
 
-You can use the methods `push` and `pop` of the data structure `stack`[^stk] to build and clean the strings. 
+You can use the methods `push` and `pop` of the data structure [`stack`](https://en.cppreference.com/w/cpp/container/stack) to build and clean the strings. 
 
 But `vector` has also such methods: `push_back` and `pop_back`.
 
 On the other hand, using `vector` it is easier to construct a `string` by constructor than using `stack` after cleaning.
 
-[^stk]: https://en.cppreference.com/w/cpp/container/stack
+
 
 ### Can you solve it in `O(n)` time and `O(1)` space?
 
 Yes, you can. 
 
-The simplest way is just to perform the erasure directly on strings `s` and `t`. But the run time complexity of `string::erase`[^erase]  is not constant.
+The simplest way is just to perform the erasure directly on strings `s` and `t`. But the run time complexity of [`string::erase`](https://en.cppreference.com/w/cpp/string/basic_string/erase)  is not constant.
 
 
 
 ## Exercise
-- Removing Stars From a String[^ex].
+- [Removing Stars From a String](https://leetcode.com/problems/removing-stars-from-a-string/).
 
-[^ex]: https://leetcode.com/problems/removing-stars-from-a-string/
 
-[^erase]: https://en.cppreference.com/w/cpp/string/basic_string/erase
+

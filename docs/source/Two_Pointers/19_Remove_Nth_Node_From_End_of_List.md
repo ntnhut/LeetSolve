@@ -1,10 +1,10 @@
 # Remove Nth Node From End of List
-% Medium
-## Problem statement
 
-[^url]Given the `head` of a linked list, remove the `n-th` node from the end of the list and return its head.
+## [Problem statement](https://leetcode.com/problems/remove-nth-node-from-end-of-list/)
 
-[^url]: https://leetcode.com/problems/remove-nth-node-from-end-of-list/
+Given the `head` of a linked list, remove the `n-th` node from the end of the list and return its head.
+
+
 
 ### Example 1
 ![The list in Example 1](19_remove_ex1.jpg)
@@ -193,6 +193,6 @@ Initially, both pointers start from the head of the list. The fast pointer moves
 This approach optimizes the computation by traversing the linked list only once and using two pointers to efficiently locate the node to be removed.
 
 ## Exercise
-- Swapping Nodes in a Linked List[^ex].
+- [Swapping Nodes in a Linked List](https://leetcode.com/problems/swapping-nodes-in-a-linked-list/).
 
-[^ex]: https://leetcode.com/problems/swapping-nodes-in-a-linked-list/
+

@@ -1,8 +1,8 @@
 # Baseball Game
-% Easy
-## Problem statement
 
-[^url]You are responsible for keeping score in a unique baseball game with special rules. The game involves multiple rounds where the scores of previous rounds can influence the scores of future rounds.
+## [Problem statement](https://leetcode.com/problems/baseball-game/)
+
+You are responsible for keeping score in a unique baseball game with special rules. The game involves multiple rounds where the scores of previous rounds can influence the scores of future rounds.
 
 At the beginning of the game, your record is empty. You are given a list of operations called `ops`, where each `ops[i]` is one of the following:
 
@@ -13,7 +13,7 @@ At the beginning of the game, your record is empty. You are given a list of oper
 
 Your task is to calculate and return the sum of all the scores in the record after performing all the operations. 
 
-[^url]: https://leetcode.com/problems/baseball-game/
+
 
 ### Example 1
 ```text
@@ -106,13 +106,12 @@ This solution simulates the baseball game by processing each round's operation a
     * `std::vector` has also methods `push_back(value)` and `pop_back()` like the ones in stack.
     * On the other hand, a stack does not give easy access to the second last element for the operator `"+"` in this problem.
 
-2. `accumulate(stk.begin(), stk.end(), 0)`[^acu] computes the sum of the vector `stk`.
+2. [`accumulate(stk.begin(), stk.end(), 0)`](https://en.cppreference.com/w/cpp/algorithm/accumulate) computes the sum of the vector `stk`.
 
 
 ## Exercise
-- Crawler Log Folder[^ex].
-
-[^ex]: https://leetcode.com/problems/crawler-log-folder/
+- [Crawler Log Folder](https://leetcode.com/problems/crawler-log-folder/).
 
 
-[^acu]: https://en.cppreference.com/w/cpp/algorithm/accumulate
+
+
