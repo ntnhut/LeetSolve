@@ -3,7 +3,7 @@ Welcome to LeetSolve!
 
 Hi! It's Nhut.
 
-This docs shares my C++ solutions to selected coding challenges from LeetCode.com.
+This docs acts as an archive for `LeetSolve newsletter<https://leetsolve.com/newsletter>`_. Here, the articles are put in topics.
 
 I aim to provide a resource for you - aspiring programmers, hobbyists, and professionals - to learn from my approach to these challenges and improve your problem-solving skills. 
 
@@ -18,10 +18,12 @@ If you want to improve your programming skills and learn new techniques, this do
 Feel free to share your thoughts, feedback, and suggestions. I'm always looking for ways to improve and provide better content for you. Just drop me a message at nhut@nhutnguyen.com.
 
 Happy coding!
-Nhut Nguyen, Ph.D.
+
+`Nhut Nguyen, Ph.D. <https://nhutnguyen.com>`_
 
 .. seealso::
-   Most of the challenges are compiled into a book. `Check it out <https://theproblemsolversguidetocoding.com>`_.
+   * My Book `The Problem Solver's Guide To Coding <https://theproblemsolversguidetocoding.com>`_
+   * My Newsletter `LeetSolve <https://leetsolve.com/newsletter>`_
 
 .. toctree::
    :maxdepth: 2
