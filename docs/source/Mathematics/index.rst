@@ -2,7 +2,7 @@
 Mathematics
 ===================
 
-This chapter will explore how mathematics and programming create efficient solutions. We'll cover mathematical concepts and show how they can be integrated into coding to enhance problem-solving skills.
+This chapter will explore how mathematics and programming create efficient solutions. You'll cover mathematical concepts and show how they can be integrated into coding to enhance problem-solving skills.
 
 Mathematics and programming complement each other and can lead to innovative outcomes. By applying mathematical principles, you can refine algorithms, identify patterns, streamline processes, and better understand your code's underlying logic.
 

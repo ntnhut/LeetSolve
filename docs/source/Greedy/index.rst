@@ -4,13 +4,13 @@ Greedy Algorithm
 
 This chapter will explore a fascinating and highly practical problem-solving approach known as **greedy algorithms**. Greedy algorithms are powerful tools for making decisions at each step of an optimization problem, often leading to efficient and near-optimal solutions.
 
-In this chapter, we'll dive deep into the world of greedy algorithms, learning how to apply them to a wide range of real-world scenarios. Here's what you can look forward to:
+In this chapter, you'll dive deep into the world of greedy algorithms, learning how to apply them to a wide range of real-world scenarios. Here's what you can look forward to:
 
-1. **Understanding Greedy Algorithms**: We'll begin by establishing a solid foundation in greedy algorithms. You'll understand this approach's key principles, advantages, and limitations.
+1. **Understanding Greedy Algorithms**: You'll begin by establishing a solid foundation in greedy algorithms. You'll understand this approach's key principles, advantages, and limitations.
 
 2. **The Greedy Choice Property**: Discover the core characteristic of greedy algorithms—the greedy choice property. Learn how it guides us in making locally optimal decisions at each step.
 
-3. **Greedy for Searching**: Greedy algorithms can also be applied to search problems. We'll delve into graph traversal algorithms and heuristic search methods.
+3. **Greedy for Searching**: Greedy algorithms can also be applied to search problems. You'll delve into graph traversal algorithms and heuristic search methods.
 
 4. **Exercises and Problems**: Reinforce your understanding of greedy algorithms with exercises and LeetCode problems covering a wide range of greedy-based challenges. Practice is essential for mastering this problem-solving technique.
 

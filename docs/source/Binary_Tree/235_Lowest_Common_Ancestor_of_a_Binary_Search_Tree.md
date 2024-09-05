@@ -4,7 +4,7 @@
 
 Given a binary search tree (BST), find the lowest common ancestor (LCA) node of two given nodes in the BST.
 
-According to the definition of [LCA](https://en.wikipedia.org/wiki/Lowest_common_ancestor) on Wikipedia: "The lowest common ancestor is defined between two nodes `p` and `q` as the lowest node in `T` that has both `p` and `q` as descendants (where we allow a node to be a descendant of itself)."
+According to the definition of [LCA](https://en.wikipedia.org/wiki/Lowest_common_ancestor) on Wikipedia: "The lowest common ancestor is defined between two nodes `p` and `q` as the lowest node in `T` that has both `p` and `q` as descendants (where a node is allowed to be a descendant of itself)."
 
 
 ### Example 1
@@ -95,7 +95,7 @@ Output:
 
 ### Code explanation
 
-1. The function takes three arguments: `root`, `p`, and `q`. `root` represents the root node of the BST, while `p` and `q` represent the two nodes for which we want to find the lowest common ancestor.
+1. The function takes three arguments: `root`, `p`, and `q`. `root` represents the root node of the BST, while `p` and `q` represent the two nodes for which you want to find the lowest common ancestor.
 
 2. The code starts with a recursive approach and a divide-and-conquer strategy. It checks whether the values of `p` and `q` are less than the value of the current `root` node or greater than the value of the current `root` node. These comparisons are made using the values stored in `p->val`, `q->val`, and `root->val`.
 

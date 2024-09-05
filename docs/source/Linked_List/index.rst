@@ -2,7 +2,7 @@
 Linked List
 ===========
 
-In this chapter, we'll learn about **linked list** - a unique and dynamic data structure that challenges our understanding of sequential data. 
+In this chapter, you'll learn about **linked list** - a unique and dynamic data structure that challenges our understanding of sequential data. 
 
 Unlike *arrays*, linked lists do not impose a fixed size or continuous memory block. Rather, they consist of nodes that contain data and a reference to the next node. This seemingly simple concept unlocks many possibilities, from creating efficient insertions and deletions to creatively solving problems that may seem specifically designed for linked list manipulation. 
 

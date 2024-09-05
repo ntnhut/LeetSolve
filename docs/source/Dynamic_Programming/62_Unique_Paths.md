@@ -60,7 +60,7 @@ If the grid has only one row or only one column, then there is only one possible
 P(1, n) = P(m, 1) = 1.
 ```
 
-We have a recursive implementation.
+Here's a recursive implementation.
 
 ### Code
 

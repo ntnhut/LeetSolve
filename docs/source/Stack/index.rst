@@ -2,7 +2,7 @@
 Stack
 =========
 
-This chapter explores the **stack** data structure, a useful tool for managing data in a Last-In-First-Out (LIFO) way. We'll investigate the basics of stacks and examine how they work using C++'s ``std::stack`` and ``std::vector`` from the Standard Template Library (STL). 
+This chapter explores the **stack** data structure, a useful tool for managing data in a Last-In-First-Out (LIFO) way. You'll investigate the basics of stacks and examine how they work using C++'s ``std::stack`` and ``std::vector`` from the Standard Template Library (STL). 
 
 Stacks in programming are like a stack of books where you add and remove books from the top. They provide a structured way to manage data, making them ideal for handling temporary information, tracking function calls, and solving various algorithmic challenges.
 

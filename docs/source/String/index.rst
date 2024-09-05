@@ -2,7 +2,7 @@
 String
 ===================
 
-In this chapter, we'll learn about the importance of **strings** in programming. Strings help us work with text and are essential for many tasks, from processing data to creating better communication between programs and people. By understanding strings, you'll be better equipped to solve problems and make things easier for users.
+In this chapter, you'll learn about the importance of **strings** in programming. Strings help us work with text and are essential for many tasks, from processing data to creating better communication between programs and people. By understanding strings, you'll be better equipped to solve problems and make things easier for users.
 
 What this chapter covers:
 

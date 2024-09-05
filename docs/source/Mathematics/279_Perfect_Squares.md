@@ -196,7 +196,7 @@ This solution finds the minimum number of perfect squares required to sum up to 
 
 Lagrange's Four-Square Theorem and Legendre's Three-Square Theorem are so powerful to solve this problem. But you can still do a little more algebra to improve further the runtime of the implementation above.
 
-Instead of looping over `sqrt(n)` in the final `for` loop, we will prove that this loop over `sqrt(m)` is enough. That will improve runtime a lot since `m` is much less than `n`.
+Instead of looping over `sqrt(n)` in the final `for` loop, you can prove that this loop over `sqrt(m)` is enough. That will improve runtime a lot since `m` is much less than `n`.
 
 Let `m` be the reduced value of `n` after the Legendre's `while` loop. It satisfies
 

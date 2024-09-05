@@ -133,7 +133,7 @@ Output:
 
 2. The code enters a `while` loop that continues as long as `left` is less than `right`. This loop aims to narrow down the search range to eventually find the single element.
 
-3. Inside the loop, the code calculates the `mid` index using the formula `(right + left) / 4 * 2`. This calculation ensures that `mid` is even because the elements in the array are sorted in pairs, and we need to compare elements in pairs. The division by 4 followed by multiplication by 2 essentially rounds `mid` down to the nearest even number.
+3. Inside the loop, the code calculates the `mid` index using the formula `(right + left) / 4 * 2`. This calculation ensures that `mid` is even because the elements in the array are sorted in pairs, and you need to compare elements in pairs. The division by 4 followed by multiplication by 2 essentially rounds `mid` down to the nearest even number.
 
 4. The code checks if the element at index `mid` is not equal to the element at index `mid + 1`. If this condition is true, it means that the single element is on the left side of the current `mid`. Therefore, the code updates `right` to `mid`, effectively narrowing the search range to the left half of the array.
 

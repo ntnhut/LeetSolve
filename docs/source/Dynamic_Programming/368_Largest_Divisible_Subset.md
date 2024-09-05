@@ -248,6 +248,6 @@ This approach optimizes the computation by avoiding redundant calculations and l
 * Extra space: `O(n)`.
 
 ## Key takeaway
-In this interesting problem, we use index mapping to simplify everything. That improves the performance in both runtime and memory.
+In this interesting problem, the index mapping is used to simplify everything. That improves the performance in both runtime and memory.
 
 

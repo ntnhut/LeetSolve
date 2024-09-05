@@ -75,7 +75,7 @@ The code relies on sorting to bring duplicate elements together, making it easy 
 
 ## Follow up
 
-### How can we prove that at least one duplicate number must exist in `nums`?
+### How can you prove that at least one duplicate number must exist in `nums`?
 
 Due to [Pigeonhole principle](https://en.wikipedia.org/wiki/Pigeonhole_principle):
 

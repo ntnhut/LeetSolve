@@ -37,7 +37,7 @@ Output: true
 
 ## Solution
 
-Following the conditions, we have the following implementation.
+Following the conditions, you might implement like the following.
 
 ### Code
 ```cpp

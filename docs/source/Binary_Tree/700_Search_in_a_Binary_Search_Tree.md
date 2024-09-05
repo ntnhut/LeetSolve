@@ -39,7 +39,7 @@ To solve this problem, you can leverage the properties of a binary search tree. 
 
 * The right subtree contains only nodes with values greater than the node's value.
 
-Given this property, we can use a recursive approach to search for the node:
+Given this property, you can use a recursive approach to search for the node:
 
 1. Start at the root node.
 2. If the `root` is `null`, return `null` (base case).
@@ -105,8 +105,8 @@ Output:
 
 ### Complexity
 
-* Runtime: `O(log n)`, where `n` is the number of nodes in the tree. This is because, in the best case, we halve the search space at each step.
-* Extra memory: `O(1)`as we are not using any additional data structures that grow with the input size.
+* Runtime: `O(log n)`, where `n` is the number of nodes in the tree. This is because, in the best case, you halve the search space at each step.
+* Extra memory: `O(1)`as you are not using any additional data structures that grow with the input size.
 
 ### Summary 
 
