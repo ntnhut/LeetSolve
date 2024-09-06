@@ -1,0 +1,700 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
+    
+    
+      
+        <title>Count Sorted Vowel Strings - LeetSolve</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.35f28582.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#count-sorted-vowel-strings" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="LeetSolve" class="md-header__button md-logo" aria-label="LeetSolve" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LeetSolve
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Count Sorted Vowel Strings
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="LeetSolve" class="md-nav__button md-logo" aria-label="LeetSolve" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    LeetSolve
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../index.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Arrays
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Arrays
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Arrays/2_Add_Two_Numbers.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Strings
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Strings
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Strings/3_Longest_Substring_Without_Repeating_Characters/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 Longest Substring Without Repeating Characters
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#problem-statement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problem statement
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Problem statement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 3
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      Constraints
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solution-1-finding-the-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solution 1: Finding the pattern
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Solution 1: Finding the pattern">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 3
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#findings" class="md-nav__link">
+    <span class="md-ellipsis">
+      Findings
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Complexity
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solution-2-the-math-behind-the-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solution 2: The math behind the problem
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Solution 2: The math behind the problem">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#code_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complexity_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Complexity
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="count-sorted-vowel-strings">Count Sorted Vowel Strings</h1>
+<h2 id="problem-statement"><a href="https://leetcode.com/problems/count-sorted-vowel-strings/">Problem statement</a></h2>
+<p>Given an integer <code>n</code>, return the number of strings of length <code>n</code> that consist only of vowels (<code>a</code>, <code>e</code>, <code>i</code>, <code>o</code>, <code>u</code>) and are lexicographically sorted.</p>
+<p>A string <code>s</code> is lexicographically sorted if for all valid <code>i</code>, <code>s[i]</code> is the same as or comes before <code>s[i+1]</code> in the alphabet.</p>
+<h3 id="example-1">Example 1</h3>
+<pre><code class="language-text">Input: n = 1
+Output: 5
+Explanation: The 5 sorted strings that consist of vowels only are [&quot;a&quot;,&quot;e&quot;,&quot;i&quot;,&quot;o&quot;,&quot;u&quot;].
+</code></pre>
+<h3 id="example-2">Example 2</h3>
+<pre><code class="language-text">Input: n = 2
+Output: 15
+Explanation: The 15 sorted strings that consist of vowels only are
+[&quot;aa&quot;,&quot;ae&quot;,&quot;ai&quot;,&quot;ao&quot;,&quot;au&quot;,&quot;ee&quot;,&quot;ei&quot;,&quot;eo&quot;,&quot;eu&quot;,&quot;ii&quot;,&quot;io&quot;,&quot;iu&quot;,&quot;oo&quot;,&quot;ou&quot;,&quot;uu&quot;].
+Note that &quot;ea&quot; is not a valid string since 'e' comes after 'a' in the alphabet.
+</code></pre>
+<h3 id="example-3">Example 3</h3>
+<pre><code class="language-text">Input: n = 33
+Output: 66045
+</code></pre>
+<h3 id="constraints">Constraints</h3>
+<ul>
+<li><code>1 &lt;= n &lt;= 50</code>. </li>
+</ul>
+<h2 id="solution-1-finding-the-pattern">Solution 1: Finding the pattern</h2>
+<p>Let us find the relationship of the strings between the vowels.</p>
+<h3 id="example-3_1">Example 3</h3>
+<p>For <code>n = 3</code>:</p>
+<ul>
+<li>There is (always) only one string starting from <code>u</code>, which is <code>uuu</code>.</li>
+<li>There are 3 strings starting from <code>o</code>: <code>ooo</code>, <code>oou</code> and <code>ouu</code>.</li>
+<li>There are 6 strings starting from <code>i</code>: <code>iii</code>, <code>iio</code>, <code>iiu</code>, <code>ioo</code>, <code>iou</code>, <code>iuu</code>.</li>
+<li>There are 10 strings starting from <code>e</code>: <code>eee</code>, <code>eei</code>, <code>eeo</code>, <code>eeu</code>, <code>eii</code>, <code>eio</code>, <code>eiu</code>, <code>eoo</code>, <code>eou</code>, <code>euu</code>.</li>
+<li>There are 15 strings starting from <code>a</code>: <code>aaa</code>, <code>aae</code>, <code>aai</code>, <code>aao</code>, <code>aau</code>, <code>aee</code>, <code>aei</code>, <code>aeo</code>, <code>aeu</code>, <code>aii</code>, <code>aio</code>, <code>aiu</code>, <code>aoo</code>, <code>aou</code>, <code>auu</code>.</li>
+<li>In total: there are 35 strings that satisfy the problem.</li>
+</ul>
+<h3 id="findings">Findings</h3>
+<p>In Example 3, if you ignore the leading vowel of those strings, then the shorted strings of the line above all appear in the ones of the line below and the remaining strings of the line below come from <code>n = 2</code>.</p>
+<p>More precisely:</p>
+<ul>
+<li>All the shorted strings <code>oo</code>, <code>ou</code> and <code>uu</code> starting from <code>o</code> appear on the ones starting from <code>i</code>. The remaining <code>ii</code>, <code>io</code>, <code>iu</code> starting from <code>i</code> come from the strings of length <code>n = 2</code> (see Example 2).</li>
+<li>Similarly, all shorted strings <code>ii</code>, <code>io</code>, <code>iu</code>, <code>oo</code>, <code>ou</code>, <code>uu</code> starting from <code>i</code> appear on the ones starting from <code>e</code>. The remaining <code>ee</code>, <code>ei</code>, <code>eo</code>, <code>eu</code> come from <code>n = 2</code>.</li>
+<li>And so on.</li>
+</ul>
+<p>That leads to the following recursive relationship.</p>
+<p>Let <code>S(x, n)</code> be the number of strings of length <code>n</code> starting from a vowel <code>x</code>.  Then</p>
+<ul>
+<li><code>S('o', n) = S('o', n - 1) + S('u', n)</code> for all <code>n &gt; 1</code>.</li>
+<li><code>S('i', n) = S('i', n - 1) + S('o', n)</code> for all <code>n &gt; 1</code>.</li>
+<li><code>S('e', n) = S('e', n - 1) + S('i', n)</code> for all <code>n &gt; 1</code>.</li>
+<li><code>S('a', n) = S('a', n - 1) + S('e', n)</code> for all <code>n &gt; 1</code>.</li>
+<li><code>S(x, 1) = 1</code> for all vowels <code>x</code>.</li>
+<li><code>S('u', n) = 1</code> for all <code>n &gt;= 1</code>.</li>
+</ul>
+<p>For this problem, you want to compute </p>
+<pre><code class="language-text">S(n) = S('a', n) + S('e', n) + S('i', n) + S('o', n) + S('u', n).
+</code></pre>
+<h3 id="code">Code</h3>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+int countVowelStrings(int n) {
+    int a, e, i, o, u;
+    a = e = i = o = u = 1;
+    while (n &gt; 1) {
+        o += u;
+        i += o;
+        e += i;
+        a += e;
+        n--;
+    }
+    return a + e + i + o + u;
+}
+int main() {
+    cout &lt;&lt; countVowelStrings(1) &lt;&lt; endl;
+    cout &lt;&lt; countVowelStrings(2) &lt;&lt; endl;
+    cout &lt;&lt; countVowelStrings(33) &lt;&lt; endl;
+}
+</code></pre>
+<pre><code class="language-text">Output:
+5
+15
+66045
+</code></pre>
+<p>This solution efficiently computes the count of vowel strings of length <code>n</code> using dynamic programming, updating the counts based on the previous lengths to avoid redundant calculations. </p>
+<h3 id="complexity">Complexity</h3>
+<ul>
+<li>Runtime: <code>O(n)</code>.</li>
+<li>Extra space: <code>O(1)</code>.</li>
+</ul>
+<h2 id="solution-2-the-math-behind-the-problem">Solution 2: The math behind the problem</h2>
+<p>The strings of length <code>n</code> you want to count are formed by a number of <code>'a'</code>, then some number of <code>'e'</code>, then some number of  <code>'i'</code>, then some number of <code>'o'</code> and finally some number of <code>'u'</code>. </p>
+<p>So it looks like this</p>
+<pre><code class="language-text">s = &quot;aa..aee..eii..ioo..ouu..u&quot;.
+</code></pre>
+<p>And you want to count how many possibilities of such strings of length <code>n</code>.</p>
+<p>One way to count it is using combinatorics in mathematics. </p>
+<p>If you separate the groups of vowels by <code>'|'</code> like this </p>
+<pre><code class="language-text">s = &quot;aa..a|ee..e|ii..i|oo..o|uu..u&quot;,
+</code></pre>
+<p>the problem becomes counting how many ways of putting those 4 separators <code>'|'</code> to form a string of length <code>n + 4</code>. </p>
+<p>In combinatorics, the solution is $\binom{n + 4}{4}$, where $\binom{n}{k}$ is the <a href="https://en.wikipedia.org/wiki/Binomial_coefficient">binomial coefficient</a>:</p>
+<p>$$
+\binom{n}{k} = \frac{n!}{k!(n-k)!}.
+$$</p>
+<p>The final number of strings is</p>
+<p>$$
+\binom{n + 4}{4} = \frac{(n + 4)!}{4!n!} = \frac{(n+1)(n+2)(n+3)(n+4)}{24}.
+$$</p>
+<h3 id="code_1">Code</h3>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+using namespace std;
+int countVowelStrings(int n) {    
+    return (n + 1) * (n + 2) * (n + 3) * (n + 4) / 24;
+}
+int main() {
+    cout &lt;&lt; countVowelStrings(1) &lt;&lt; endl;
+    cout &lt;&lt; countVowelStrings(2) &lt;&lt; endl;
+    cout &lt;&lt; countVowelStrings(33) &lt;&lt; endl;
+}
+</code></pre>
+<pre><code class="language-text">Output:
+5
+15
+66045
+</code></pre>
+<h3 id="complexity_1">Complexity</h3>
+<ul>
+<li>Runtime: <code>O(1)</code>.</li>
+<li>Extra space: <code>O(1)</code>.</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>The problem of counting the number of strings of length <code>n</code> that consist of the vowels 'a', 'e', 'i', 'o', and 'u' in sorted order can be efficiently solved using combinatorial techniques. Solution 1 uses dynamic programming to iteratively calculate the count of strings for each length up to <code>n</code>, updating the counts based on the previous counts. This approach efficiently computes the count of sorted vowel strings for the given length <code>n</code> without requiring excessive memory usage or computational overhead.</p>
+<p>Solution 2 offers a more direct approach by utilizing a combinatorial formula to calculate the count of sorted vowel strings directly based on the given length <code>n</code>. By leveraging the combinatorial formula, this solution avoids the need for iterative calculations and achieves the desired result more efficiently.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+    
+  </body>
+</html>

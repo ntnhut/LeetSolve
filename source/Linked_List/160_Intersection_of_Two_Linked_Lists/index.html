@@ -1,0 +1,842 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
+    
+    
+      
+        <title>Intersection of Two Linked Lists - LeetSolve</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.35f28582.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#intersection-of-two-linked-lists" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="LeetSolve" class="md-header__button md-logo" aria-label="LeetSolve" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LeetSolve
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Intersection of Two Linked Lists
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="LeetSolve" class="md-nav__button md-logo" aria-label="LeetSolve" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    LeetSolve
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../index.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Arrays
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Arrays
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Arrays/2_Add_Two_Numbers.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Strings
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Strings
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Strings/3_Longest_Substring_Without_Repeating_Characters/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 Longest Substring Without Repeating Characters
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#problem-statement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problem statement
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Problem statement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 3
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      Constraints
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#follow-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      Follow up
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solution-1-store-the-nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solution 1: Store the nodes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Solution 1: Store the nodes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Complexity
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solution-2-reiterating-the-two-lists-at-the-same-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solution 2: Reiterating the two lists at the same time
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Solution 2: Reiterating the two lists at the same time">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complexity_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Complexity
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-tip" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation tip
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercise
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="intersection-of-two-linked-lists">Intersection of Two Linked Lists</h1>
+<h2 id="problem-statement"><a href="https://leetcode.com/problems/intersection-of-two-linked-lists/">Problem statement</a></h2>
+<p>You are provided with the starting nodes of two singly linked lists, <code>headA</code> and <code>headB</code>. Your task is to find the node where these two lists intersect. If there is no point of intersection, return <code>null</code>. </p>
+<p>For example, the following two linked lists begin to intersect at node <code>c1</code>:</p>
+<p><img alt="Two linked lists A and B intersect at node c1" src="../160_statement.png" /></p>
+<p>Note that the linked lists do not have any cycles, and you must ensure that the original structure of the linked lists remains unchanged after solving this problem.</p>
+<h3 id="example-1">Example 1</h3>
+<p><img alt="Two linked lists A and B intersect at node 8" src="../160_example_1_1.png" /></p>
+<pre><code class="language-text">Input: listA = [4,1,8,4,5], listB = [5,6,1,8,4,5].
+Output: Intersected at '8'
+</code></pre>
+<h3 id="example-2">Example 2</h3>
+<p><img alt="Two linked lists A and B intersect at node 2" src="../160_example_2.png" /></p>
+<pre><code class="language-text">Input: listA = [1,9,1,2,4], listB = [3,2,4]
+Output: Intersected at '2'
+</code></pre>
+<h3 id="example-3">Example 3</h3>
+<p><img alt="Two linked lists A and B do not intersect" src="../160_example_3.png" /></p>
+<pre><code class="language-text">Input: listA = [2,6,4], listB = [1,5]
+Output: No intersection.
+</code></pre>
+<h3 id="constraints">Constraints</h3>
+<ul>
+<li>The number of nodes of <code>listA</code> is in the <code>m</code>.</li>
+<li>The number of nodes of <code>listB</code> is in the <code>n</code>.</li>
+<li><code>1 &lt;= m, n &lt;= 3 * 10^4</code>.</li>
+<li><code>1 &lt;= Node.val &lt;= 10^5</code>. </li>
+</ul>
+<h3 id="follow-up">Follow up</h3>
+<ul>
+<li>Could you write a solution that runs in <code>O(m + n)</code> time and use only <code>O(1)</code> memory?</li>
+</ul>
+<h2 id="solution-1-store-the-nodes">Solution 1: Store the nodes</h2>
+<p>You can store all nodes of <code>listA</code> then iterate <code>listB</code> to determine which node is the intersection. If none is found, the two lists have no intersection.</p>
+<h3 id="example-1_1">Example 1</h3>
+<ul>
+<li>Store all nodes of <code>listA = [4,1,8,4,5]</code> in a map.</li>
+<li>Iterate <code>listB</code> and found node <code>'8'</code> was stored.</li>
+<li>Return <code>'8'</code>.</li>
+</ul>
+<h3 id="code">Code</h3>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;unordered_map&gt;
+using namespace std;
+struct ListNode {
+    int val;
+    ListNode *next;
+    ListNode(int x) : val(x), next(NULL) {}
+};
+
+ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) {
+    unordered_map&lt;ListNode*, bool&gt; m;
+    ListNode *node = headA;
+    while (node != nullptr) {
+        m[node] = true;
+        node = node-&gt;next;
+    }
+    node = headB;
+    while (node != nullptr) {
+        if (m.find(node) != m.end()) {
+            return node;
+        }
+        node = node-&gt;next;
+    }
+    return nullptr;
+}
+int main() {
+    {   // Example 1
+        ListNode five(5);
+        ListNode four(4);
+        four.next = &amp;five;
+        ListNode eight(8);
+        eight.next = &amp;four;
+
+        ListNode one1(1);
+        one1.next = &amp;eight;
+        ListNode four1(4);
+        four1.next = &amp;one1;
+
+        ListNode one2(1);
+        one2.next = &amp;eight;
+        ListNode six2(6);
+        six2.next = &amp;one2;
+        ListNode five2(5);
+        five2.next = &amp;six2;
+        cout &lt;&lt; (getIntersectionNode(&amp;four1, &amp;five2) == &amp;eight) &lt;&lt; endl;
+    }
+    {   // Example 2
+        ListNode four(4);
+        ListNode two(2);
+        two.next = &amp;four;
+
+        ListNode one12(1);
+        one12.next = &amp;two;
+        ListNode nine1(9);
+        nine1.next = &amp;one12;
+        ListNode one11(1);
+        one11.next = &amp;nine1;
+
+        ListNode three2(3);
+        three2.next = &amp;two;
+        cout &lt;&lt; (getIntersectionNode(&amp;one11, &amp;three2) == &amp;two) &lt;&lt; endl;
+    }
+    {   // Example 3
+        ListNode four(4);
+        ListNode six(6);
+        six.next = &amp;four;
+        ListNode two(2);
+        two.next = &amp;six;
+
+        ListNode five(5);
+        ListNode one(1);
+        one.next = &amp;five;
+        cout &lt;&lt; (getIntersectionNode(&amp;two, &amp;one) == nullptr) &lt;&lt; endl;
+    }
+}
+</code></pre>
+<pre><code class="language-text">Output:
+1
+1
+1
+</code></pre>
+<p>This code uses an unordered map to store the nodes of <code>headA</code> while traversing it. Then, it traverses <code>headB</code> and checks if each node in <code>headB</code> exists in the map of nodes from <code>headA</code>. If a common node is found, it returns that node as the intersection point; otherwise, it returns <code>nullptr</code> to indicate no intersection. </p>
+<h3 id="complexity">Complexity</h3>
+<ul>
+<li>Runtime: <code>O(m + n)</code>, where <code>m</code>, <code>n</code> are the number of nodes of <code>listA</code> and <code>listB</code>.</li>
+<li>Extra space: <code>O(m)</code>.</li>
+</ul>
+<h2 id="solution-2-reiterating-the-two-lists-at-the-same-time">Solution 2: Reiterating the two lists at the same time</h2>
+<p>If the two lists do not share the same tail, they have no intersection. Otherwise, they must intersect at some node.</p>
+<p>After iterating to find the tail node, you know the length of the two lists. That information gives you a hint of how to reiterate to find the intersection node. </p>
+<h3 id="example-1_2">Example 1</h3>
+<ul>
+<li>After iterating <code>listA = [4,1,8,4,5]</code>, you find the tail node is <code>'5'</code> and <code>listA.length = 5</code>. </li>
+<li>After iterating <code>listB = [5,6,1,8,4,5]</code>, you find the tail node is the last <code>'5'</code> and <code>listB.length = 6</code>.</li>
+<li>The two lists share the same tail. They must intersect at some node.</li>
+<li>To find that intersection node, you have to reiterate the two lists.</li>
+<li>Since <code>listB.length = 6 &gt; 5 = listA.length</code>, you can start iterating <code>listB</code> first until the number of its remaining nodes is the same as <code>listA</code>. In this case, it is the node <code>'6'</code> of <code>listB</code>.</li>
+<li>Now you can iterate them at the same time to find which node is shared.</li>
+<li>Found and return the intersection node <code>'8'</code>.</li>
+</ul>
+<h3 id="code_1">Code</h3>
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;unordered_map&gt;
+using namespace std;
+struct ListNode {
+    int val;
+    ListNode *next;
+    ListNode(int x) : val(x), next(NULL) {}
+};
+ListNode *getIntersectionNode(ListNode *headA, ListNode *headB) 
+{
+    int lengthA = 0;
+    ListNode *nodeA = headA;
+    while (nodeA-&gt;next != nullptr) {
+        lengthA++;
+        nodeA = nodeA-&gt;next;
+    }
+    int lengthB = 0;
+    ListNode *nodeB = headB;
+    while (nodeB-&gt;next != nullptr) {
+        lengthB++;
+        nodeB = nodeB-&gt;next;
+    }
+    // not the same tail -&gt; no intersection
+    if (nodeA != nodeB) {
+        return nullptr;
+    }
+    nodeA = headA;
+    nodeB = headB;
+    // find the nodeA in listA and nodeB in listB
+    // that make two lists have the same length 
+    while (lengthA &gt; lengthB) {
+        nodeA = nodeA-&gt;next;
+        lengthA--;
+    }
+    while (lengthB &gt; lengthA) {
+        nodeB = nodeB-&gt;next;
+        lengthB--;
+    }
+    // find the intersection
+    while (nodeA != nodeB) {
+        nodeA = nodeA-&gt;next;
+        nodeB = nodeB-&gt;next;
+    }
+    return nodeA;
+}
+int main() {
+    {   // Example 1
+        ListNode five(5);
+        ListNode four(4);
+        four.next = &amp;five;
+        ListNode eight(8);
+        eight.next = &amp;four;
+
+        ListNode one1(1);
+        one1.next = &amp;eight;
+        ListNode four1(4);
+        four1.next = &amp;one1;
+
+        ListNode one2(1);
+        one2.next = &amp;eight;
+        ListNode six2(6);
+        six2.next = &amp;one2;
+        ListNode five2(5);
+        five2.next = &amp;six2;
+        cout &lt;&lt; (getIntersectionNode(&amp;four1, &amp;five2) == &amp;eight) &lt;&lt; endl;
+    }
+    {   // Example 2
+        ListNode four(4);
+        ListNode two(2);
+        two.next = &amp;four;
+
+        ListNode one12(1);
+        one12.next = &amp;two;
+        ListNode nine1(9);
+        nine1.next = &amp;one12;
+        ListNode one11(1);
+        one11.next = &amp;nine1;
+
+        ListNode three2(3);
+        three2.next = &amp;two;
+        cout &lt;&lt; (getIntersectionNode(&amp;one11, &amp;three2) == &amp;two) &lt;&lt; endl;
+    }
+    {   // Example 3
+        ListNode four(4);
+        ListNode six(6);
+        six.next = &amp;four;
+        ListNode two(2);
+        two.next = &amp;six;
+
+        ListNode five(5);
+        ListNode one(1);
+        one.next = &amp;five;
+        cout &lt;&lt; (getIntersectionNode(&amp;two, &amp;one) == nullptr) &lt;&lt; endl;
+    }
+}
+</code></pre>
+<pre><code class="language-text">Output:
+1
+1
+1
+</code></pre>
+<p>This improved solution finds the intersection of two linked lists by first determining their lengths and adjusting the pointers so that they start from the same relative position to the intersection point. Then, it iterates through both linked lists until it finds the common intersection node. </p>
+<h3 id="complexity_1">Complexity</h3>
+<ul>
+<li>Runtime: <code>O(m + n)</code>, where <code>m</code>, <code>n</code> are the number of nodes of <code>listA</code> and <code>listB</code>.</li>
+<li>Extra space: <code>O(1)</code>.</li>
+</ul>
+<h2 id="implementation-tip">Implementation tip</h2>
+<ul>
+<li>The technique used in Solution 2 is known as the <em>Two-pointer</em> technique since you use two pointers to iterate the list at the same time.</li>
+</ul>
+<h2 id="exercise">Exercise</h2>
+<ul>
+<li><a href="https://leetcode.com/problems/minimum-index-sum-of-two-lists/">Minimum Index Sum of Two Lists</a>.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+    
+  </body>
+</html>

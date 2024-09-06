@@ -1,0 +1,715 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
+    
+    
+      
+        <title>Find All Numbers Disappeared in an Array - LeetSolve</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.35f28582.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#find-all-numbers-disappeared-in-an-array" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="LeetSolve" class="md-header__button md-logo" aria-label="LeetSolve" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LeetSolve
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Find All Numbers Disappeared in an Array
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="LeetSolve" class="md-nav__button md-logo" aria-label="LeetSolve" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    LeetSolve
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../index.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Arrays
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Arrays
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Arrays/2_Add_Two_Numbers.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Strings
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Strings
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Strings/3_Longest_Substring_Without_Repeating_Characters/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 Longest Substring Without Repeating Characters
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#problem-statement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problem statement
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Problem statement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      Constraints
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#follow-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      Follow up
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solution-1-marking-the-appearances-by-bool" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solution 1: Marking the appearances by bool
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Solution 1: Marking the appearances by bool">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Complexity
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solution-2-marking-the-appearances-by-sign" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solution 2: Marking the appearances by sign
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Solution 2: Marking the appearances by sign">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complexity_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Complexity
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#readable-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Readable code
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercise" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercise
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="find-all-numbers-disappeared-in-an-array">Find All Numbers Disappeared in an Array</h1>
+<p>% Easy </p>
+<h2 id="problem-statement"><a href="https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array">Problem statement</a></h2>
+<p>You are given an array <code>nums</code> of <code>n</code> integers, where each integer <code>nums[i]</code> falls within the range <code>[1, n]</code>. Your task is to find and return an array containing all the integers in the range <code>[1, n]</code> that are not present in the given array <code>nums</code>.</p>
+<h3 id="example-1">Example 1</h3>
+<pre><code class="language-text">Input: nums = [4,3,2,7,8,2,3,1]
+Output: [5,6]
+</code></pre>
+<h3 id="example-2">Example 2</h3>
+<pre><code class="language-text">Input: nums = [1,1]
+Output: [2]
+</code></pre>
+<h3 id="constraints">Constraints</h3>
+<ul>
+<li><code>n == nums.length</code>.</li>
+<li><code>1 &lt;= n &lt;= 10^5</code>.</li>
+<li><code>1 &lt;= nums[i] &lt;= n</code>.</li>
+</ul>
+<h3 id="follow-up">Follow up</h3>
+<p>Can you solve the problem without using additional memory and achieve a linear runtime complexity? You can assume that the list you return does not count as extra space.</p>
+<h2 id="solution-1-marking-the-appearances-by-bool">Solution 1: Marking the appearances by <code>bool</code></h2>
+<p>You can use a vector of <code>bool</code> to mark which value appeared in the array.</p>
+<h3 id="code">Code</h3>
+<pre><code class="language-cpp">#include &lt;vector&gt;
+#include &lt;iostream&gt;
+using namespace std;
+vector&lt;int&gt; findDisappearedNumbers(const vector&lt;int&gt;&amp; nums) {        
+
+    const int n = nums.size();
+    vector&lt;bool&gt; exist(n + 1, false);        
+    for (auto&amp; a : nums) {
+        exist[a] = true;
+    }
+    vector&lt;int&gt; result;
+    for (int i = 1; i &lt;= n; i++) {
+        if (!exist.at(i)) {
+            result.push_back(i);
+        }
+    }
+    return result;
+}
+void print(const vector&lt;int&gt;&amp; nums) {
+    cout &lt;&lt; &quot;[&quot;;
+    for (auto&amp; a : nums) {
+        cout &lt;&lt; a &lt;&lt; &quot;,&quot;;
+    }
+    cout &lt;&lt; &quot;]\n&quot;;
+}
+int main() {
+    vector&lt;int&gt; nums = {4,3,2,7,8,2,3,1};
+    auto result = findDisappearedNumbers(nums);
+    print(result);
+    nums = {1,1};
+    result = findDisappearedNumbers(nums);
+    print(result);
+}
+</code></pre>
+<pre><code class="language-text">Output:
+[5,6,]
+[2,]
+</code></pre>
+<p>This code declares a vector named <code>exist</code> of type <code>bool</code> and initializes all of its values to <code>false</code>. Its size is declared as <code>n + 1</code> where <code>n = nums.size()</code> so it can mark the values ranged from <code>1</code> to <code>n</code>.</p>
+<p>Then it performs the marking of all <code>nums</code>'s elements to <code>true</code>. The ones that are <code>false</code> will belong to the result.</p>
+<h3 id="complexity">Complexity</h3>
+<ul>
+<li>
+<p>Runtime: <code>O(n)</code>, where <code>n = nums.length</code>.</p>
+</li>
+<li>
+<p>Extra space: much less than <code>O(n)</code>. <code>vector&lt;bool&gt;</code> is optimized for space efficiency; it stores single bits.</p>
+</li>
+</ul>
+<h2 id="solution-2-marking-the-appearances-by-sign">Solution 2: Marking the appearances by sign</h2>
+<p>You could use the indices of the array <code>nums</code> to mark the appearances of its elements because they are just a shift (<code>[1, n]</code> vs. <code>[0, n-1]</code>).</p>
+<p>One way of marking the appearance of a value <code>j</code> (<code>1 &lt;= j &lt;= n</code>) is making the element <code>nums[j-1]</code> to be negative. Then the indices <code>j</code>'s whose <code>nums[j-1]</code> are still positive are the ones that do not appear in <code>nums</code>.</p>
+<h3 id="example-1_1">Example 1</h3>
+<p>With <code>nums = [4,3,2,7,8,2,3,1]</code>:</p>
+<ul>
+<li>To indicate <code>4</code> is present, make <code>nums[4-1]</code> is negative, i.e. changing <code>nums[4-1] = nums[3]</code> to <code>-7</code>.</li>
+<li>To indicate <code>3</code> is present, make <code>nums[3-1]</code> is negative, i.e. changing <code>nums[3-1] = nums[2]</code> to <code>-2</code>.</li>
+<li>And so on.</li>
+<li><code>nums</code> becomes <code>[-4,-3,-2,-7,8,2,-3,-1]</code>.</li>
+<li>The positive values <code>8</code> corresponds to <code>nums[4] = nums[5-1]</code>, indicates <code>5</code> was not present in <code>nums</code>.</li>
+<li>Similarly, the positive values <code>2</code> corresponds to <code>nums[5] = nums[6-1]</code>, indicates <code>6</code> was not present in <code>nums</code>.</li>
+</ul>
+<h3 id="code_1">Code</h3>
+<pre><code class="language-cpp">#include &lt;vector&gt;
+#include &lt;iostream&gt;
+using namespace std;
+vector&lt;int&gt; findDisappearedNumbers(vector&lt;int&gt;&amp; nums) {
+    const int n = nums.size();
+    int j;
+    for (int i{0}; i &lt; n; i++) {
+        // make sure j is positive since nums[i] might be 
+        // changed to be negative in previous steps
+        j = abs(nums.at(i));
+
+        // Mark nums[j - 1] as negative to indicate its presence       
+        nums[j - 1] = -abs(nums.at(j - 1));
+    }
+    vector&lt;int&gt; result;
+    for (int j{1}; j &lt;= n; j++) {
+        // If nums[j - 1] is positive, it means j is missing        
+        if (nums.at(j - 1) &gt; 0) {
+            result.push_back(j);
+        }
+    }
+    return result;
+}
+void print(const vector&lt;int&gt;&amp; nums) {
+    cout &lt;&lt; &quot;[&quot;;
+    for (auto&amp; a : nums) {
+        cout &lt;&lt; a &lt;&lt; &quot;,&quot;;
+    }
+    cout &lt;&lt; &quot;]\n&quot;;
+}
+int main() {
+    vector&lt;int&gt; nums = {4,3,2,7,8,2,3,1};
+    auto result = findDisappearedNumbers(nums);
+    print(result);
+    nums = {1,1};
+    result = findDisappearedNumbers(nums);
+    print(result);
+}
+</code></pre>
+<pre><code class="language-text">Output:
+[5,6,]
+[2,]
+</code></pre>
+<p>The key to this solution is that it utilizes the array to mark the presence of numbers. Negating the value at the index corresponding to each number found in the input array effectively marks that number as present. Then, by iterating through the modified array, it identifies the missing numbers by checking which indices still hold positive values.</p>
+<h3 id="complexity_1">Complexity</h3>
+<ul>
+<li>Runtime: <code>O(n)</code>, where <code>n = nums.length</code>.</li>
+<li>Extra space: <code>O(1)</code> (the returned list does not count as extra space).</li>
+</ul>
+<h2 id="readable-code">Readable code</h2>
+<ul>
+<li>
+<p>Solution 2 helps to avoid allocating extra memory but it is not straightforward to understand.</p>
+</li>
+<li>
+<p>Though Solution 1 requires some extra space, that memory is not much since <a href="https://en.cppreference.com/w/cpp/container/vector_bool"><code>std::vector&lt;bool&gt;</code></a> is optimized for space efficiency. Moreover, it is easier to understand than Solution 2.</p>
+</li>
+</ul>
+<h2 id="exercise">Exercise</h2>
+<ul>
+<li><a href="https://leetcode.com/problems/find-all-duplicates-in-an-array">Find All Duplicates in an Array</a>.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+    
+  </body>
+</html>

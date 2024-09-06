@@ -1,0 +1,704 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
+    
+    
+      
+        <title>Single Element in a Sorted Array - LeetSolve</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.35f28582.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#single-element-in-a-sorted-array" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="LeetSolve" class="md-header__button md-logo" aria-label="LeetSolve" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LeetSolve
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Single Element in a Sorted Array
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="LeetSolve" class="md-nav__button md-logo" aria-label="LeetSolve" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    LeetSolve
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../index.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Arrays
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Arrays
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Arrays/2_Add_Two_Numbers.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Strings
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Strings
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Strings/3_Longest_Substring_Without_Repeating_Characters/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 Longest Substring Without Repeating Characters
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#problem-statement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problem statement
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Problem statement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      Constraints
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solution-1-bruteforce" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solution 1: Bruteforce
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Solution 1: Bruteforce">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code-explanation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code explanation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Complexity
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solution-2-binary-search" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solution 2: Binary search
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Solution 2: Binary search">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code-explanation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code explanation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complexity_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Complexity
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="single-element-in-a-sorted-array">Single Element in a Sorted Array</h1>
+<h2 id="problem-statement"><a href="https://leetcode.com/problems/single-element-in-a-sorted-array/">Problem statement</a></h2>
+<p>You are given a sorted array consisting of only integers where every element appears exactly twice, except for one element which appears exactly once.</p>
+<p><em>Return the single element that appears only once.</em></p>
+<p>Your solution must run in <code>O(logn)</code> time and <code>O(1)</code> space.</p>
+<h3 id="example-1">Example 1</h3>
+<pre><code class="language-text">Input: nums = [1,1,2,3,3,4,4,8,8]
+Output: 2
+</code></pre>
+<h3 id="example-2">Example 2</h3>
+<pre><code class="language-text">Input: nums = [3,3,7,7,10,11,11]
+Output: 10
+</code></pre>
+<h3 id="constraints">Constraints</h3>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 10^5</code>.</li>
+<li><code>0 &lt;= nums[i] &lt;= 10^5</code>.</li>
+</ul>
+<h2 id="solution-1-bruteforce">Solution 1: Bruteforce</h2>
+<h3 id="code">Code</h3>
+<pre><code class="language-cpp">#include &lt;vector&gt;
+#include &lt;iostream&gt;
+using namespace std;
+int singleNonDuplicate(vector&lt;int&gt;&amp; nums) {
+    for (int i = 0; i &lt; nums.size() - 1; i += 2) {
+        if (nums[i] != nums[i + 1]) {
+            return nums[i];
+        }
+    }
+    return nums[0];
+}
+int  main() {
+    vector&lt;int&gt; nums{1,1,2,3,3,4,4,8,8};
+    cout &lt;&lt; singleNonDuplicate(nums) &lt;&lt; endl;
+    nums = {3,3,7,7,10,11,11};
+    cout &lt;&lt; singleNonDuplicate(nums) &lt;&lt; endl;
+    nums = {3};
+    cout &lt;&lt; singleNonDuplicate(nums) &lt;&lt; endl;
+}
+</code></pre>
+<pre><code class="language-text">Output:
+2
+10
+3
+</code></pre>
+<h3 id="code-explanation">Code explanation</h3>
+<ol>
+<li>
+<p>The code uses a simple loop to iterate through the array <code>nums</code>.</p>
+</li>
+<li>
+<p>Inside the loop, it checks if the current element <code>nums[i]</code> is equal to the next element <code>nums[i + 1]</code>.</p>
+</li>
+<li>
+<p>If the current element and the next element are not equal, it means that <code>nums[i]</code> is the single element because all other elements in the sorted array appear twice. In this case, the code immediately returns <code>nums[i]</code> as the result.</p>
+</li>
+<li>
+<p>If the current element and the next element are equal, it means that the single element has not been found yet, and the loop continues to the next pair of elements.</p>
+</li>
+<li>
+<p>The loop continues until <code>i</code> reaches the second-to-last element in the array. This is because the code compares elements in pairs, and there's no "next element" to compare with the last element.</p>
+</li>
+<li>
+<p>If the loop completes without finding the single element, it means that the single element is the first element in the array (since it hasn't been found in any pair). Therefore, the code returns <code>nums[0]</code> as the result.</p>
+</li>
+</ol>
+<p>In summary, this code takes advantage of the sorted nature of the array to find the single element efficiently. It iterates through the array by comparing elements in pairs, and as soon as it finds a pair of elements that are not equal, it returns the first element of that pair as the result. If no such pair is found, it returns the first element as the single element. </p>
+<h3 id="complexity">Complexity</h3>
+<ul>
+<li>Runtime <code>O(n)</code>, where <code>n = nums.length</code>.</li>
+<li>Memory <code>O(1)</code>.</li>
+</ul>
+<h2 id="solution-2-binary-search">Solution 2: Binary search</h2>
+<p>Since <code>nums</code> is sorted, you can perform a binary search on it.</p>
+<p>Let us divide <code>nums</code> into two halves.</p>
+<p>If the single element belongs to the right half, all elements of the left half satisfy <code>nums[2*i] == nums[2*i + 1]</code>.</p>
+<p>Conversely, if the single element belongs to the left half, that condition is violated at the middle element of <code>nums</code> (the middle one with an even index).</p>
+<h3 id="example-1_1">Example 1</h3>
+<p>For <code>nums = [1,1,2,3,3,4,4,8,8]</code>:</p>
+<ul>
+<li>The middle element with even index is <code>nums[4] = 3</code>. It is not equal to <code>nums[4 + 1] = 4</code>. So the single element must be somewhere in the left half <code>[1,1,2,3,3]</code>.</li>
+<li>The middle element of <code>nums = [1,1,2,3,3]</code> with even index is <code>nums[2] = 2</code>, which is not equal to <code>nums[2 + 1] = 3</code>. So the single element must be somewhere in the left half <code>[1,1,2]</code>.</li>
+<li>The middle element of <code>nums = [1,1,2]</code> with even index is <code>nums[0] = 1 == nums[0 + 1]</code>. So the single element must be somewhere in the right half <code>[2]</code>.</li>
+<li><code>nums = [2]</code> contains only one element. So <code>2</code> is the result.</li>
+</ul>
+<h3 id="code_1">Code</h3>
+<pre><code class="language-cpp">#include &lt;vector&gt;
+#include &lt;iostream&gt;
+using namespace std;
+int singleNonDuplicate(vector&lt;int&gt;&amp; nums) {
+    int left = 0;
+    int right = nums.size() - 1;
+    while (left &lt; right) {
+        int mid = (right + left)/4 * 2; // to make sure mid is even
+        if (nums[mid] != nums[mid + 1]) {
+            right = mid;
+        } else {
+            left = mid + 2;
+        }
+    }
+    return nums[right];
+}
+int  main() {
+    vector&lt;int&gt; nums{1,1,2,3,3,4,4,8,8};
+    cout &lt;&lt; singleNonDuplicate(nums) &lt;&lt; endl;
+    nums = {3,3,7,7,10,11,11};
+    cout &lt;&lt; singleNonDuplicate(nums) &lt;&lt; endl;
+    nums = {3};
+    cout &lt;&lt; singleNonDuplicate(nums) &lt;&lt; endl;
+}
+</code></pre>
+<pre><code class="language-text">Output:
+2
+10
+3
+</code></pre>
+<h3 id="code-explanation_1">Code explanation</h3>
+<ol>
+<li>
+<p>Two integer variables, <code>left</code> and <code>right</code>, are initialized. <code>left</code> is set to <code>0</code>, and <code>right</code> is set to <code>nums.size() - 1</code>, which represents the range of indices to search within the array.</p>
+</li>
+<li>
+<p>The code enters a <code>while</code> loop that continues as long as <code>left</code> is less than <code>right</code>. This loop aims to narrow down the search range to eventually find the single element.</p>
+</li>
+<li>
+<p>Inside the loop, the code calculates the <code>mid</code> index using the formula <code>(right + left) / 4 * 2</code>. This calculation ensures that <code>mid</code> is even because the elements in the array are sorted in pairs, and you need to compare elements in pairs. The division by 4 followed by multiplication by 2 essentially rounds <code>mid</code> down to the nearest even number.</p>
+</li>
+<li>
+<p>The code checks if the element at index <code>mid</code> is not equal to the element at index <code>mid + 1</code>. If this condition is true, it means that the single element is on the left side of the current <code>mid</code>. Therefore, the code updates <code>right</code> to <code>mid</code>, effectively narrowing the search range to the left half of the array.</p>
+</li>
+<li>
+<p>If the elements at index <code>mid</code> and <code>mid + 1</code> are equal, it means that the single element is on the right side of the current <code>mid</code>. Therefore, the code updates <code>left</code> to <code>mid + 2</code> (skipping the pair of elements). This narrows the search range to the right half of the array.</p>
+</li>
+<li>
+<p>The loop continues to iterate, adjusting the <code>left</code> and <code>right</code> pointers, until they meet. When they meet, <code>left</code> will be pointing to the single element in the array.</p>
+</li>
+<li>
+<p>Finally, the code returns <code>nums[right]</code>, which is the single element found after the binary search.</p>
+</li>
+</ol>
+<p>In summary, this solution uses a binary search approach to efficiently find the single element in the sorted array. It takes advantage of the sorted nature of the array and compares elements in pairs, narrowing down the search range until the single element is located. </p>
+<h3 id="complexity_1">Complexity</h3>
+<ul>
+<li>Runtime <code>O(logn)</code>, where <code>n = nums.length</code>.</li>
+<li>Memory <code>O(1)</code>.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,694 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
+    
+    
+      
+        <title>Shift 2D Grid - LeetSolve</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.35f28582.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#shift-2d-grid" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="LeetSolve" class="md-header__button md-logo" aria-label="LeetSolve" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LeetSolve
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Shift 2D Grid
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="LeetSolve" class="md-nav__button md-logo" aria-label="LeetSolve" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    LeetSolve
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../index.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Arrays
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Arrays
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Arrays/2_Add_Two_Numbers.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Strings
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Strings
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Strings/3_Longest_Substring_Without_Repeating_Characters/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 Longest Substring Without Repeating Characters
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#problem-statement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problem statement
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Problem statement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 3
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      Constraints
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solution-convert-a-2d-array-into-a-1d-one" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solution: Convert a 2D array into a 1D one
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Solution: Convert a 2D array into a 1D one">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Complexity
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaway" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key takeaway
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="shift-2d-grid">Shift 2D Grid</h1>
+<h2 id="problem-statement"><a href="https://leetcode.com/problems/shift-2d-grid/">Problem statement</a></h2>
+<p>You are given a 2D <code>grid</code> with dimension <code>mxn</code> and an integer <code>k</code>. Your task is to perform <code>k</code> shift operations on the grid.</p>
+<p>In each shift operation:</p>
+<ul>
+<li>The element at <code>grid[i][j]</code> moves to <code>grid[i][j+1]</code>.</li>
+<li>The element at <code>grid[i][n-1]</code> moves to <code>grid[i+1][0]</code>.</li>
+<li>The element at <code>grid[m-1][n-1]</code> moves to <code>grid[0][0]</code>.</li>
+</ul>
+<p>After performing <code>k</code> shift operations, return the updated 2D grid.</p>
+<h3 id="example-1">Example 1</h3>
+<p>\begin{equation<em>}
+\begin{bmatrix}
+1 &amp; 2 &amp; 3 \
+4 &amp; 5 &amp; 6 \
+7 &amp; 8 &amp; 9
+\end{bmatrix}
+\longrightarrow
+\begin{bmatrix}
+9 &amp; 1 &amp; 2 \
+3 &amp; 4 &amp; 5 \
+6 &amp; 7 &amp; 8
+\end{bmatrix}
+\end{equation</em>}</p>
+<pre><code class="language-text">Input: grid = [[1,2,3],[4,5,6],[7,8,9]], k = 1
+Output: [[9,1,2],[3,4,5],[6,7,8]]
+</code></pre>
+<h3 id="example-2">Example 2</h3>
+<p>\begin{equation<em>}
+\begin{bmatrix}
+3 &amp; 8 &amp; 1 &amp; 9 \
+19 &amp; 7 &amp; 2 &amp; 5 \
+4 &amp; 6 &amp; 11 &amp; 10 \
+12 &amp; 0 &amp; 21 &amp; 13
+\end{bmatrix}
+\rightarrow
+\begin{bmatrix}
+13 &amp; 3 &amp; 8 &amp; 1 \
+9 &amp; 19 &amp; 7 &amp; 2 \
+5 &amp; 4 &amp; 6 &amp; 11 \
+10 &amp; 12 &amp; 0 &amp; 21
+\end{bmatrix}
+\rightarrow
+\begin{bmatrix}
+21 &amp; 13 &amp; 3 &amp; 8 \
+1 &amp; 9 &amp; 19 &amp; 7 \
+2 &amp; 5 &amp; 4 &amp; 6  \
+11 &amp; 10 &amp; 12 &amp; 0 
+\end{bmatrix} \
+\end{equation</em>}
+\begin{equation<em>}
+\rightarrow
+\begin{bmatrix}
+0 &amp; 21 &amp; 13 &amp; 3 \
+8 &amp; 1 &amp; 9 &amp; 19 \
+7 &amp; 2 &amp; 5 &amp; 4 \
+6 &amp; 11 &amp; 10 &amp; 12
+\end{bmatrix}
+\rightarrow
+\begin{bmatrix}
+12 &amp; 0 &amp; 21 &amp; 13 \
+3 &amp; 8 &amp; 1 &amp; 9 \
+19 &amp; 7 &amp; 2 &amp; 5 \
+4 &amp; 6 &amp; 11 &amp; 10
+\end{bmatrix}
+\end{equation</em>}</p>
+<pre><code class="language-text">Input: grid = [[3,8,1,9],[19,7,2,5],[4,6,11,10],[12,0,21,13]], k = 4
+Output: [[12,0,21,13],[3,8,1,9],[19,7,2,5],[4,6,11,10]]
+</code></pre>
+<h3 id="example-3">Example 3</h3>
+<pre><code class="language-text">Input: grid = [[1,2,3],[4,5,6],[7,8,9]], k = 9
+Output: [[1,2,3],[4,5,6],[7,8,9]]
+</code></pre>
+<h3 id="constraints">Constraints</h3>
+<ul>
+<li><code>1 &lt;= grid.length &lt;= 50</code>.</li>
+<li><code>1 &lt;= grid[i].length &lt;= 50</code>.</li>
+<li><code>-1000 &lt;= grid[i][j] &lt;= 1000</code>.</li>
+<li><code>0 &lt;= k &lt;= 100</code>.</li>
+</ul>
+<h2 id="solution-convert-a-2d-array-into-a-1d-one">Solution: Convert a 2D array into a 1D one</h2>
+<p>You can convert the 2D <code>grid</code> into a 1D vector <code>v</code> to perform the shifting easier. One way of doing this is concatenating the rows of the matrix.</p>
+<ul>
+<li>If you shift the grid <code>k = i*N</code> times where <code>N = v.size()</code> and <code>i</code> is any non-negative integer, you go back to the original grid; i.e. you did not shift it.</li>
+<li>If you shift the grid <code>k</code> times with <code>0 &lt; k &lt; N</code>, the first element of the result starts from <code>v[N-k]</code>.</li>
+<li>In general, the first element of the result starts from <code>v[N - k%N]</code>.</li>
+</ul>
+<h3 id="example-1_1">Example 1</h3>
+<p>For <code>grid = [[1,2,3],[4,5,6],[7,8,9]]</code>:</p>
+<ul>
+<li>It can be converted into a 1D vector <code>v = [1,2,3,4,5,6,7,8,9]</code> of size <code>m*n = 9</code>.</li>
+<li>With <code>k = 1</code> the shifted <code>grid</code> now starts from <code>v[9-1] = 9</code>.</li>
+<li>The final result is <code>grid = [[9,1,2][3,4,5][6,7,8]]</code>.</li>
+</ul>
+<h3 id="code">Code</h3>
+<pre><code class="language-cpp">#include &lt;vector&gt;
+#include &lt;iostream&gt;
+using namespace std;
+vector&lt;vector&lt;int&gt;&gt; shiftGrid(vector&lt;vector&lt;int&gt;&gt;&amp; grid, int k) {
+    vector&lt;int&gt; v;
+    // store the 2D grid values into a 1D vector v
+    for (auto&amp; r : grid) {
+        v.insert(v.end(), r.begin(), r.end());
+    }
+    const int N = v.size();
+
+    // perform the shifting
+    int p = N - k % N;
+
+    // number of rows
+    const int m = grid.size();
+
+    // number of columns
+    const int n = grid[0].size();    
+
+    for (int i = 0; i &lt; m; i++) {
+        for (int j = 0; j &lt; n; j++) {
+            if (p == N) {
+                p = 0;
+            }
+            // reconstruct the grid
+            grid[i][j] = v[p++];
+        }
+    }
+    return grid;
+}
+void printResult(const vector&lt;vector&lt;int&gt;&gt;&amp; grid) {
+    cout &lt;&lt; &quot;[&quot;;
+    for (auto&amp; r : grid) {
+        cout &lt;&lt; &quot;[&quot;;
+        for (int a: r) {
+            cout &lt;&lt; a &lt;&lt; &quot;,&quot;;
+        }
+        cout &lt;&lt; &quot;]&quot;;
+    }
+    cout &lt;&lt; &quot;]\n&quot;;
+}
+int main() {
+    vector&lt;vector&lt;int&gt;&gt; grid{{1,2,3},{4,5,6},{7,8,9}};
+    auto result = shiftGrid(grid, 1);
+    printResult(result);
+    grid = {{3,8,1,9},{19,7,2,5},{4,6,11,10},{12,0,21,13}};
+    result = shiftGrid(grid, 4);
+    printResult(result);
+    grid = {{1,2,3},{4,5,6},{7,8,9}};
+    result = shiftGrid(grid, 9);
+    printResult(result);
+}
+</code></pre>
+<pre><code class="language-text">Output:
+[[9,1,2,][3,4,5,][6,7,8,]]
+[[12,0,21,13,][3,8,1,9,][19,7,2,5,][4,6,11,10,]]
+[[1,2,3,][4,5,6,][7,8,9,]]
+</code></pre>
+<p>This solution flattens the 2D <code>grid</code> into a 1D vector <code>v</code>, representing the grid's elements in a linear sequence. Then, by calculating the new position for each element after the shift operation, it reconstructs the grid by placing the elements back into their respective positions based on the calculated indices. This approach avoids unnecessary copying or shifting of elements within the grid, optimizing both memory and time complexity.</p>
+<h3 id="complexity">Complexity</h3>
+<ul>
+<li>Runtime: <code>O(m*n)</code> (the nested <code>for</code> loops), where <code>m = grid.length</code> and <code>n = grid[i].length</code>.</li>
+<li>Extra space: <code>O(m*n)</code> (the vector <code>v</code>).</li>
+</ul>
+<h2 id="key-takeaway">Key takeaway</h2>
+<ol>
+<li>
+<p>To convert a 2D matrix into a 1D vector, you can use the <code>std::vector</code>'s function <a href="https://en.cppreference.com/w/cpp/container/vector/insert"><code>insert()</code></a>.</p>
+</li>
+<li>
+<p>The modulo operator <code>%</code> is usually used to ensure the index is inbound.</p>
+</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+    
+  </body>
+</html>

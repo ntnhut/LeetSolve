@@ -1,0 +1,697 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.34">
+    
+    
+      
+        <title>Shortest Unsorted Continuous Subarray - LeetSolve</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.35f28582.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#shortest-unsorted-continuous-subarray" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="LeetSolve" class="md-header__button md-logo" aria-label="LeetSolve" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LeetSolve
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Shortest Unsorted Continuous Subarray
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="LeetSolve" class="md-nav__button md-logo" aria-label="LeetSolve" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    LeetSolve
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../index.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Arrays
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Arrays
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Arrays/2_Add_Two_Numbers.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    None
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Strings
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Strings
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Strings/3_Longest_Substring_Without_Repeating_Characters/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3 Longest Substring Without Repeating Characters
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#problem-statement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problem statement
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Problem statement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 2
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 3
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      Constraints:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#follow-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      Follow up
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solution-1-sort-and-compare-the-difference" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solution 1: Sort and compare the difference
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Solution 1: Sort and compare the difference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example 1
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Complexity
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solution-2-comparing-only-maximum-and-minimum-elements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Solution 2: Comparing only maximum and minimum elements
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Solution 2: Comparing only maximum and minimum elements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#code_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Code
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complexity_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Complexity
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaway" class="md-nav__link">
+    <span class="md-ellipsis">
+      Key Takeaway
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="shortest-unsorted-continuous-subarray">Shortest Unsorted Continuous Subarray</h1>
+<h2 id="problem-statement"><a href="https://leetcode.com/problems/shortest-unsorted-continuous-subarray/">Problem statement</a></h2>
+<p>Given an integer array <code>nums</code>, you need to find one continuous subarray that if you only sort this subarray in ascending order, then the whole array will be sorted in ascending order.</p>
+<p>Return the shortest such subarray and output its length.</p>
+<h3 id="example-1">Example 1</h3>
+<pre><code class="language-text">Input: nums = [2,6,4,8,10,9,15]
+Output: 5
+Explanation: You need to sort [6, 4, 8, 10, 9] in ascending order to make the whole array sorted in ascending order.
+</code></pre>
+<h3 id="example-2">Example 2</h3>
+<pre><code class="language-text">Input: nums = [1,2,3,4]
+Output: 0
+</code></pre>
+<h3 id="example-3">Example 3</h3>
+<pre><code class="language-text">Input: nums = [1]
+Output: 0
+</code></pre>
+<h3 id="constraints">Constraints:</h3>
+<ul>
+<li><code>1 &lt;= nums.length &lt;= 10^4</code>.</li>
+<li><code>-10^5 &lt;= nums[i] &lt;= 10^5</code>.</li>
+</ul>
+<h3 id="follow-up">Follow up</h3>
+<ul>
+<li>Can you solve it in<code>O(n)</code> time complexity?</li>
+</ul>
+<h2 id="solution-1-sort-and-compare-the-difference">Solution 1: Sort and compare the difference</h2>
+<h3 id="example-1_1">Example 1</h3>
+<p>Comparing <code>nums = [2,6,4,8,10,9,15]</code> with its sorted one <code>sortedNums = [2,4,6,8,9,10,15]</code>:</p>
+<ul>
+<li>The first position that makes the difference is <code>left = 1</code>, where <code>6 != 4</code>.</li>
+<li>The last (right) position that makes the difference is <code>right = 5</code>, where <code>9 != 10</code>.</li>
+<li>The length of that shortest subarray is <code>right - left + 1 = 5</code>.</li>
+</ul>
+<h3 id="code">Code</h3>
+<pre><code class="language-cpp">#include &lt;vector&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+int findUnsortedSubarray(const vector&lt;int&gt;&amp; nums) {
+    vector&lt;int&gt; sortedNums = nums;
+    sort(sortedNums.begin(), sortedNums.end());
+    int left = 0;
+    while (left &lt; nums.size() &amp;&amp; nums[left] == sortedNums[left]) {
+        left++;
+    }
+    int right = nums.size() - 1;
+    while (right &gt;= 0 &amp;&amp; nums[right] == sortedNums[right]) {
+        right--;
+    }
+    return left &gt;= right ? 0 : right - left + 1;
+}
+int main() {
+    vector&lt;int&gt; nums{2,6,4,8,10,9,15};
+    cout &lt;&lt; findUnsortedSubarray(nums) &lt;&lt; endl;
+    nums = {1,2,3,4};
+    cout &lt;&lt; findUnsortedSubarray(nums) &lt;&lt; endl;
+    nums = {1};
+    cout &lt;&lt; findUnsortedSubarray(nums) &lt;&lt; endl;
+}
+</code></pre>
+<pre><code class="language-text">Output:
+5
+0
+0
+</code></pre>
+<p>This solution compares the original array with a sorted version of itself to identify the unsorted boundaries efficiently.</p>
+<h3 id="complexity">Complexity</h3>
+<ul>
+<li>Runtime: <code>O(N*logN)</code> due to the sorting step, where <code>N</code> is the number of elements in the <code>nums</code> vector.</li>
+<li>Extra space: <code>O(N)</code>.</li>
+</ul>
+<h2 id="solution-2-comparing-only-maximum-and-minimum-elements">Solution 2: Comparing only maximum and minimum elements</h2>
+<p>Assume the subarray <code>A = [nums[0], ..., nums[i - 1]]</code> is sorted. What would be the wanted <code>right</code> position for the subarray <code>B = [nums[0], ..., nums[i - 1], nums[i]]</code>? </p>
+<p>If <code>nums[i]</code> is smaller than <code>max(A)</code>, the longer subarray <code>B</code> is not in ascending order. You might need to sort it, which means <code>right = i</code>.</p>
+<p>Similarly, assume the subarray <code>C = [nums[j + 1], ..., nums[n - 1]]</code> is sorted. What would be the wanted <code>left</code> position for the subarray <code>D = [nums[j], nums[j + 1], ..., nums[n - 1]]</code>?</p>
+<p>If <code>nums[j]</code> is bigger than <code>min(C)</code>, the longer subarray <code>D</code> is not in ascending order. You might need to sort it,  which means <code>left = j</code></p>
+<h3 id="code_1">Code</h3>
+<pre><code class="language-cpp">#include &lt;vector&gt;
+#include &lt;iostream&gt;
+#include &lt;algorithm&gt;
+using namespace std;
+int findUnsortedSubarray(const vector&lt;int&gt;&amp; nums) {
+    const int n = nums.size();
+    int right = 0;
+    int max = nums[0];
+    for (int i = 0; i &lt; nums.size(); i++) {
+        if (nums[i] &lt; max) {
+            right = i;
+        } else {
+            max = nums[i];
+        }
+    }
+    int left = n - 1;
+    int min = nums[n - 1];
+    for (int j = n - 1; j &gt;= 0; j--) {
+        if (nums[j] &gt; min) {
+            left = j;
+        } else {
+            min = nums[j];
+        }
+    }
+    return left &gt;= right ? 0 : right - left + 1;
+}
+int main() {
+    vector&lt;int&gt; nums{2,6,4,8,10,9,15};
+    cout &lt;&lt; findUnsortedSubarray(nums) &lt;&lt; endl;
+    nums = {1,2,3,4};
+    cout &lt;&lt; findUnsortedSubarray(nums) &lt;&lt; endl;
+    nums = {1};
+    cout &lt;&lt; findUnsortedSubarray(nums) &lt;&lt; endl;
+}
+</code></pre>
+<pre><code class="language-text">Output:
+5
+0
+0
+</code></pre>
+<p>This solution determines the boundaries of the unsorted subarray by iterating through the array from both ends. It starts by initializing the <code>right</code> boundary to the beginning of the array and tracks the maximum element encountered so far. It iterates from the beginning of the array towards the end, updating the <code>right</code> boundary whenever an element smaller than the current maximum is encountered. This identifies the rightmost position where the array is unsorted.</p>
+<p>Similarly, it initializes the <code>left</code> boundary to the end of the array and tracking the minimum element encountered so far. It iterates from the end of the array towards the beginning, updating the <code>left</code> boundary whenever an element greater than the current minimum is encountered. This identifies the leftmost position where the array is unsorted.</p>
+<p>Finally, it returns the length of the unsorted subarray, calculated as <code>right - left + 1</code>, unless the left boundary is greater than or equal to the right boundary, in which case the array is already sorted, and it returns 0.</p>
+<p>This approach optimizes the computation by traversing the array only twice, once from the end and once from the beginning, to efficiently determine the boundaries of the unsorted subarray.</p>
+<h3 id="complexity_1">Complexity</h3>
+<ul>
+<li>Runtime: <code>O(N)</code>, where <code>N</code> is the number of elements in the <code>nums</code> vector.</li>
+<li>Extra space: <code>O(1)</code>.</li>
+</ul>
+<h2 id="key-takeaway">Key Takeaway</h2>
+<p>Solution 2 helped you identify the shortest subarray (by the <code>left</code> and <code>right</code> indices) needed to be sorted in order to sort the whole array.</p>
+<p>That means in some cases you can sort an array with complexity <code>O(N + m*logm) &lt; O(N*logN)</code> where <code>N</code> is the length of the whole array and <code>m</code> is the length of the shortest subarray.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.07f07601.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.56dfad97.min.js"></script>
+      
+    
+  </body>
+</html>
