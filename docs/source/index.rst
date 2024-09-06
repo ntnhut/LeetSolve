@@ -3,7 +3,7 @@ Welcome to LeetSolve as a Doc!
 
 Hi! It's Nhut.
 
-This doc acts as an archive for `LeetSolve newsletter <https://leetsolve.com/>`_. Here, the articles are put in topics.
+This document acts as an archive for `LeetSolve blog <https://leetsolve.com/>`_. The articles are grouped by topic here.
 
 .. seealso::
    * My Book `The Problem Solver's Guide To Coding <https://theproblemsolversguidetocoding.com>`_.
