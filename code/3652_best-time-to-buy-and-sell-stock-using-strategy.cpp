@@ -6,17 +6,28 @@ using namespace std;
 long long maxProfit(vector<int>& prices, vector<int>& strategy, int k) {
 
     const int N = prices.size();
-    vector<long long> sum(N + 1, 0);
-    for (int i = 1; i <= N; ++i) {
-        sum[i] = sum[i - 1] + prices[i - 1] * strategy[i - 1];
-    }
-    long long max_profit = sum[N];
-    const int end = N - k;
+    long long remaining_profit = 0;
+    long long half_k_profit = 0;
     const int half_k = k / 2;
-    long long half_k_prices = accumulate(prices.begin() + half_k - 1, prices.begin() + k - 1, 0LL);
-    for (int i = 0; i <= end; ++i) {
-        half_k_prices = half_k_prices - prices[i + half_k - 1] + prices[i + k - 1];
-        max_profit = max(max_profit, sum[i] + half_k_prices + sum[N] - sum[i + k]);
+    long long first_k_profit = 0;
+    for (int i = 0; i < N; ++i) {
+        auto v = prices[i] * strategy[i];
+        if (i < k) {
+            first_k_profit += v;
+            if (i >= half_k) {
+                half_k_profit += prices[i];
+            }
+        }
+        else {
+            remaining_profit += v;
+        }
+    }
+    long long max_profit = max(first_k_profit, half_k_profit) + remaining_profit;
+   
+    for (int i = k; i < N; ++i) {
+        half_k_profit += prices[i] - prices[i - half_k];
+        remaining_profit += prices[i - k] * strategy[i - k] - prices[i] * strategy[i];
+        max_profit = max(max_profit, remaining_profit + half_k_profit);
     }
     return max_profit;
 }
