@@ -26,12 +26,7 @@ public:
     
     void flip() {
         for (auto& c : bits) {
-            if (c == '1') {
-                c = '0';
-            }
-            else {
-                c = '1';
-            }
+            c ^= 1;
         }
         count_ = bits.size() - count_;
     }
