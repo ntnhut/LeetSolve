@@ -11,17 +11,13 @@ public:
     }
     
     void fix(int idx) {
-        if (bits[idx] == '0') {
-            bits[idx] = '1';
-            count_++;
-        }        
+        count_ += (bits[idx] == '0');
+        bits[idx] = '1';        
     }
     
     void unfix(int idx) {
-        if (bits[idx] == '1') {
-            bits[idx] = '0';
-            count_--;
-        }
+        count_ -= (bits[idx] == '1');
+        bits[idx] = '0';        
     }
     
     void flip() {
