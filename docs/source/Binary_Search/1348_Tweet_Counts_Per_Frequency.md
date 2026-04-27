@@ -1,6 +1,6 @@
 # Tweet Counts Per Frequency
 
-## [Problem statement](https://leetcode.com/problems/tweet-counts-per-frequency/description/)
+## Problem statement
 A social media company is trying to monitor activity on their site by analyzing the number of tweets that occur in select periods of time. These periods can be partitioned into smaller time chunks based on a certain frequency (every minute, hour, or day).
 
 For example, the period `[10, 10000]` (in seconds) would be partitioned into the following time chunks with these frequencies:
@@ -48,13 +48,15 @@ tweetCounts.getTweetCountsPerFrequency("hour", "tweet3", 0, 210);  // return [4]
 
 ## First thoughts
 
-At first glance, the problem feels a little abstract. One thing worth noting is that tweets are not necessarily recorded in chronological order — for instance, a tweet at time 10 can be recorded after one at time 60. Keeping that in mind is essential to designing a correct solution.
+At first glance, the problem feels a little abstract. One thing worth noting is that tweets are not necessarily recorded in chronological order. For instance, a tweet at time 10 can be recorded after one at time 60. Keeping that in mind is essential to designing a correct solution.
 
 ## Minimum design
 
-The core requirement is straightforward: we need a data structure that maps each `tweetName` to a collection of recorded timestamps. Whenever `recordTweet(tweetName, time)` is called, the timestamp is added to that collection. Then, when `getTweetCountsPerFrequency` is called, we look up the timestamps for the given `tweetName` and count how many fall into each time chunk.
+The core requirement is straightforward: we need a data structure that maps each `tweetName` to a collection of recorded timestamps. Whenever `recordTweet(tweetName, time)` is called, the timestamp is added to that collection. 
 
-The outer map does not need to maintain any particular order over tweet names, so an `unordered_map` is a natural fit. The more interesting design decision is what collection to use for storing the timestamps — and that's where the three solutions below differ.
+Then, when `getTweetCountsPerFrequency` is called, we look up the timestamps for the given `tweetName` and count how many fall into each time chunk.
+
+The outer map does not need to maintain any particular order over tweet names, so an `unordered_map` is a natural fit. The more interesting design decision is what collection to use for storing the timestamps. And that's where the three solutions below differ.
 
 ## Solution 1: List
 
@@ -68,6 +70,13 @@ int idx = (*it - startTime) / numSeconds;
 
 ```cpp
 class TweetCounts {
+private:
+    unordered_map<string, list<int>> tweetTimes;
+    const unordered_map<string, int> numOfSeconds = {
+        {"minute", 60},
+        {"hour", 3600},
+        {"day", 86400}
+    };
 public:
     TweetCounts() {}
     
@@ -95,13 +104,6 @@ public:
         }
         return chunks;
     }
-private:
-    unordered_map<string, list<int>> tweetTimes;
-    const unordered_map<string, int> numOfSeconds = {
-        {"minute", 60},
-        {"hour", 3600},
-        {"day", 86400}
-    };
 };
 ```
 
@@ -110,7 +112,7 @@ A `list` is used here instead of a `vector` to avoid the cost of memory realloca
 ### Runtime analysis
 
 * `recordTweet()` takes `O(1)`.
-* `getTweetCountsPerFrequency()` takes `O(N)` where N is the number of recorded timestamps for the given tweet name.
+* `getTweetCountsPerFrequency()` takes `O(N)` where `N` is the number of recorded timestamps for the given tweet name.
 
 ## Solution 2: Multiset
 
@@ -122,6 +124,13 @@ A `multiset` maintains sorted order while allowing duplicate values. Its `lower_
 
 ```cpp
 class TweetCounts {
+private:
+    unordered_map<string, multiset<int>> tweetTimes;
+    const unordered_map<string, int> numOfSeconds = {
+        {"minute", 60},
+        {"hour", 3600},
+        {"day", 86400}
+    };
 public:
     TweetCounts() {}
     
@@ -147,13 +156,6 @@ public:
         }
         return chunks;
     }
-private:
-    unordered_map<string, multiset<int>> tweetTimes;
-    const unordered_map<string, int> numOfSeconds = {
-        {"minute", 60},
-        {"hour", 3600},
-        {"day", 86400}
-    };
 };
 ```
 
@@ -164,11 +166,20 @@ private:
 
 ## Solution 3: Map
 
-Some test cases on LeetCode contain many duplicate timestamps. While this may seem unusual in a real-world context, it is worth optimizing for. With a `multiset`, duplicate timestamps are stored and iterated over individually. A `map` from timestamp to count avoids this by collapsing all duplicates into a single entry.
+Some test cases on LeetCode contain many duplicate timestamps. While this may seem unusual in a real-world context, it is worth optimizing for. 
+
+With a `multiset`, duplicate timestamps are stored and iterated over individually. A `map` from timestamp to count avoids this by collapsing all duplicates into a single entry.
 
 ### Code
 ```cpp
 class TweetCounts {
+private:
+    unordered_map<string, map<int, int>> tweetTimes;
+    const unordered_map<string, int> numOfSeconds = {
+        {"minute", 60},
+        {"hour", 3600},
+        {"day", 86400}
+    };
 public:
     TweetCounts() {}
     
@@ -194,13 +205,6 @@ public:
         }
         return chunks;
     }
-private:
-    unordered_map<string, map<int, int>> tweetTimes;
-    const unordered_map<string, int> numOfSeconds = {
-        {"minute", 60},
-        {"hour", 3600},
-        {"day", 86400}
-    };
 };
 ```
 
@@ -208,14 +212,21 @@ Since each unique timestamp is stored only once alongside its count, the query l
 
 ### Runtime analysis
 
-`getTweetCountsPerFrequency()` takes `O(log N + M)` where `N` is the number of unique timestamps and `M` is the number of unique timestamps within `[startTime, endTime]`. In the presence of many duplicates, this is a meaningful improvement over Solution 2.
+`getTweetCountsPerFrequency()` takes `O(log N + M)` where `N` is the number of unique timestamps and `M` is the ones within `[startTime, endTime]`. In the presence of many duplicates, this is a meaningful improvement over Solution 2.
 
 ## Key takeaways
 
 The three solutions illustrate a classic trade-off in data structure design: the way you store data shapes how efficiently you can query it.
 
-- **Solution 1 (list)** is the most straightforward. Recording a tweet is O(1), but every query requires a full scan. It works, but leaves performance on the table.
-- **Solution 2 (multiset)** improves query performance by keeping timestamps sorted. Using `lower_bound` lets us skip directly to the relevant window, reducing query time from O(N) to O(log N + M). The cost is that insertion becomes O(log N), and duplicates are still stored individually.
+- **Solution 1 (list)** is the most straightforward. Recording a tweet is `O(1)`, but every query requires a full scan. It works, but leaves performance on the table.
+- **Solution 2 (multiset)** improves query performance by keeping timestamps sorted. Using `lower_bound` lets us skip directly to the relevant window, reducing query time from `O(N)` to `O(log N + M)`. The cost is that insertion becomes `O(log N)`, and duplicates are still stored individually.
 - **Solution 3 (map)** goes one step further by collapsing duplicate timestamps into a count. When duplicates are frequent, this reduces both the memory footprint and the number of iterations during a query.
 
 A recurring pattern across all three solutions is the chunk index formula `(time - startTime) / numSeconds`, which neatly maps any timestamp to its corresponding bucket regardless of the frequency. It is a small detail, but it is the mathematical core that makes the whole approach work.
+
+## References
+
+* [1348. Tweet Counts Per Frequency](https://leetcode.com/problems/tweet-counts-per-frequency/description/)
+* [std::multiset](https://en.cppreference.com/cpp/container/multiset)
+* [std::map](https://en.cppreference.com/cpp/container/map)
+* [std::multiset::lower_bound](https://en.cppreference.com/cpp/container/multiset/lower_bound)
