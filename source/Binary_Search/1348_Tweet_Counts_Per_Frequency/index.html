@@ -1,0 +1,875 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Tweet Counts Per Frequency - LeetSolve</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tweet-counts-per-frequency" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="LeetSolve" class="md-header__button md-logo" aria-label="LeetSolve" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LeetSolve
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Tweet Counts Per Frequency
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="LeetSolve" class="md-nav__button md-logo" aria-label="LeetSolve" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    LeetSolve
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arrays
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Arrays
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Arrays/2_Add_Two_Numbers.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    None
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Strings
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Strings
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Strings/3_Longest_Substring_Without_Repeating_Characters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Longest Substring Without Repeating Characters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#problem-statement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem statement
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Problem statement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example:
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Constraints:
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#first-thoughts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        First thoughts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#minimum-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Minimum design
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solution-1-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solution 1: List
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Solution 1: List">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#runtime-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Runtime analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solution-2-multiset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solution 2: Multiset
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Solution 2: Multiset">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#code_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#runtime-analysis_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Runtime analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solution-3-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solution 3: Map
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Solution 3: Map">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#code_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#runtime-analysis_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Runtime analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key takeaways
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="tweet-counts-per-frequency">Tweet Counts Per Frequency</h1>
+<h2 id="problem-statement">Problem statement</h2>
+<p>A social media company is trying to monitor activity on their site by analyzing the number of tweets that occur in select periods of time. These periods can be partitioned into smaller time chunks based on a certain frequency (every minute, hour, or day).</p>
+<p>For example, the period <code>[10, 10000]</code> (in seconds) would be partitioned into the following time chunks with these frequencies:</p>
+<ul>
+<li>Every minute (60-second chunks): <code>[10,69]</code>, <code>[70,129]</code>, <code>[130,189]</code>, ..., <code>[9970,10000]</code></li>
+<li>Every hour (3600-second chunks): <code>[10,3609]</code>, <code>[3610,7209]</code>, <code>[7210,10000]</code></li>
+<li>Every day (86400-second chunks): <code>[10,10000]</code></li>
+</ul>
+<p>Notice that the last chunk may be shorter than the specified frequency's chunk size and will always end with the end time of the period (10000 in the above example).</p>
+<p>Design and implement an API to help the company with their analysis.</p>
+<p>Implement the <code>TweetCounts</code> class:</p>
+<ul>
+<li><code>TweetCounts()</code> Initializes the <code>TweetCounts</code> object.</li>
+<li><code>void recordTweet(String tweetName, int time)</code> Stores the <code>tweetName</code> at the recorded time (in seconds).</li>
+<li><code>List&lt;Integer&gt; getTweetCountsPerFrequency(String freq, String tweetName, int startTime, int endTime)</code> Returns a list of integers representing the number of tweets with <code>tweetName</code> in each time chunk for the given period of time <code>[startTime, endTime]</code> (in seconds) and frequency <code>freq</code>.
+<code>freq</code> is one of <code>"minute"</code>, <code>"hour"</code>, or <code>"day"</code> representing a frequency of every minute, hour, or day respectively.</li>
+</ul>
+<h3 id="example">Example:</h3>
+<pre><code>Input
+[&quot;TweetCounts&quot;,&quot;recordTweet&quot;,&quot;recordTweet&quot;,&quot;recordTweet&quot;,&quot;getTweetCountsPerFrequency&quot;,&quot;getTweetCountsPerFrequency&quot;,&quot;recordTweet&quot;,&quot;getTweetCountsPerFrequency&quot;]
+[[],[&quot;tweet3&quot;,0],[&quot;tweet3&quot;,60],[&quot;tweet3&quot;,10],[&quot;minute&quot;,&quot;tweet3&quot;,0,59],[&quot;minute&quot;,&quot;tweet3&quot;,0,60],[&quot;tweet3&quot;,120],[&quot;hour&quot;,&quot;tweet3&quot;,0,210]]
+
+Output
+[null,null,null,null,[2],[2,1],null,[4]]
+
+Explanation
+TweetCounts tweetCounts = new TweetCounts();
+tweetCounts.recordTweet(&quot;tweet3&quot;, 0);                              // New tweet &quot;tweet3&quot; at time 0
+tweetCounts.recordTweet(&quot;tweet3&quot;, 60);                             // New tweet &quot;tweet3&quot; at time 60
+tweetCounts.recordTweet(&quot;tweet3&quot;, 10);                             // New tweet &quot;tweet3&quot; at time 10
+tweetCounts.getTweetCountsPerFrequency(&quot;minute&quot;, &quot;tweet3&quot;, 0, 59); // return [2]; chunk [0,59] had 2 tweets
+tweetCounts.getTweetCountsPerFrequency(&quot;minute&quot;, &quot;tweet3&quot;, 0, 60); // return [2,1]; chunk [0,59] had 2 tweets, chunk [60,60] had 1 tweet
+tweetCounts.recordTweet(&quot;tweet3&quot;, 120);                            // New tweet &quot;tweet3&quot; at time 120
+tweetCounts.getTweetCountsPerFrequency(&quot;hour&quot;, &quot;tweet3&quot;, 0, 210);  // return [4]; chunk [0,210] had 4 tweets
+</code></pre>
+<h3 id="constraints">Constraints:</h3>
+<ul>
+<li><code>0 &lt;= time, startTime, endTime &lt;= 10^9</code></li>
+<li><code>0 &lt;= endTime - startTime &lt;= 10^4</code></li>
+<li>There will be at most <code>10^4</code> calls in total to <code>recordTweet</code> and <code>getTweetCountsPerFrequency</code>.</li>
+</ul>
+<h2 id="first-thoughts">First thoughts</h2>
+<p>At first glance, the problem feels a little abstract. One thing worth noting is that tweets are not necessarily recorded in chronological order. For instance, a tweet at time 10 can be recorded after one at time 60. Keeping that in mind is essential to designing a correct solution.</p>
+<h2 id="minimum-design">Minimum design</h2>
+<p>The core requirement is straightforward: we need a data structure that maps each <code>tweetName</code> to a collection of recorded timestamps. Whenever <code>recordTweet(tweetName, time)</code> is called, the timestamp is added to that collection. </p>
+<p>Then, when <code>getTweetCountsPerFrequency</code> is called, we look up the timestamps for the given <code>tweetName</code> and count how many fall into each time chunk.</p>
+<p>The outer map does not need to maintain any particular order over tweet names, so an <code>unordered_map</code> is a natural fit. The more interesting design decision is what collection to use for storing the timestamps. And that's where the three solutions below differ.</p>
+<h2 id="solution-1-list">Solution 1: List</h2>
+<p>The simplest approach is to store timestamps in an unsorted list. When querying, we iterate through every recorded timestamp and determine which chunk it belongs to using this formula:</p>
+<pre><code class="language-cpp">int idx = (*it - startTime) / numSeconds;
+</code></pre>
+<h3 id="code">Code</h3>
+<pre><code class="language-cpp">class TweetCounts {
+private:
+    unordered_map&lt;string, list&lt;int&gt;&gt; tweetTimes;
+    const unordered_map&lt;string, int&gt; numOfSeconds = {
+        {&quot;minute&quot;, 60},
+        {&quot;hour&quot;, 3600},
+        {&quot;day&quot;, 86400}
+    };
+public:
+    TweetCounts() {}
+
+    void recordTweet(const string&amp; tweetName, int time) {
+        tweetTimes[tweetName].push_back(time);
+    }
+
+    vector&lt;int&gt; getTweetCountsPerFrequency(const string&amp; freq, const string&amp; tweetName, int startTime, int endTime) {
+        auto tweetTimesIt = tweetTimes.find(tweetName);
+        if (tweetTimesIt == tweetTimes.end()) return {};
+
+        auto&amp; recordedTimes = tweetTimesIt-&gt;second;
+        if (recordedTimes.empty()) return {};
+        const int numSeconds = numOfSeconds.at(freq);
+        const int numOfChunks = (endTime - startTime) / numSeconds + 1;
+        vector&lt;int&gt; chunks(numOfChunks);
+
+        auto it = recordedTimes.begin();
+        while (it != recordedTimes.end()) {
+            if (startTime &lt;= *it &amp;&amp; *it &lt;= endTime) {
+                int idx = (*it - startTime) / numSeconds;
+                chunks[idx]++;                
+            }
+            it++;
+        }
+        return chunks;
+    }
+};
+</code></pre>
+<p>A <code>list</code> is used here instead of a <code>vector</code> to avoid the cost of memory reallocation as new timestamps are appended.</p>
+<h3 id="runtime-analysis">Runtime analysis</h3>
+<ul>
+<li><code>recordTweet()</code> takes <code>O(1)</code>.</li>
+<li><code>getTweetCountsPerFrequency()</code> takes <code>O(N)</code> where <code>N</code> is the number of recorded timestamps for the given tweet name.</li>
+</ul>
+<h2 id="solution-2-multiset">Solution 2: Multiset</h2>
+<p>The weakness of Solution 1 is that we always scan the entire collection, even when the query window <code>[startTime, endTime]</code> covers only a small range of timestamps. If we keep the timestamps sorted, we can skip directly to the relevant portion.</p>
+<p>A <code>multiset</code> maintains sorted order while allowing duplicate values. Its <code>lower_bound</code> method performs a binary search to find the first timestamp that is at least <code>startTime</code>, so we only iterate over the timestamps that actually fall within the query window.</p>
+<h3 id="code_1">Code</h3>
+<pre><code class="language-cpp">class TweetCounts {
+private:
+    unordered_map&lt;string, multiset&lt;int&gt;&gt; tweetTimes;
+    const unordered_map&lt;string, int&gt; numOfSeconds = {
+        {&quot;minute&quot;, 60},
+        {&quot;hour&quot;, 3600},
+        {&quot;day&quot;, 86400}
+    };
+public:
+    TweetCounts() {}
+
+    void recordTweet(const string&amp; tweetName, int time) {
+        tweetTimes[tweetName].insert(time);
+    }
+
+    vector&lt;int&gt; getTweetCountsPerFrequency(const string&amp; freq, const string&amp; tweetName, int startTime, int endTime) {
+        auto tweetTimesIt = tweetTimes.find(tweetName);
+        if (tweetTimesIt == tweetTimes.end()) return {};
+
+        auto&amp; recordedTimes = tweetTimesIt-&gt;second;
+        if (recordedTimes.empty()) return {};
+        const int numSeconds = numOfSeconds.at(freq);
+        const int numOfChunks = (endTime - startTime) / numSeconds + 1;
+        vector&lt;int&gt; chunks(numOfChunks);
+
+        auto it = recordedTimes.lower_bound(startTime);
+        while (it != recordedTimes.end() &amp;&amp; *it &lt;= endTime) {
+            int idx = (*it - startTime) / numSeconds;
+            chunks[idx]++;
+            it++;                
+        }
+        return chunks;
+    }
+};
+</code></pre>
+<h3 id="runtime-analysis_1">Runtime analysis</h3>
+<ul>
+<li><code>recordTweet()</code> takes <code>O(log N)</code> where <code>N</code> is the current size of the multiset.</li>
+<li><code>getTweetCountsPerFrequency()</code> takes <code>O(log N + M)</code> where <code>N</code> is the total number of stored timestamps and <code>M</code> is the number of timestamps that fall within <code>[startTime, endTime]</code>.</li>
+</ul>
+<h2 id="solution-3-map">Solution 3: Map</h2>
+<p>Some test cases on LeetCode contain many duplicate timestamps. While this may seem unusual in a real-world context, it is worth optimizing for. </p>
+<p>With a <code>multiset</code>, duplicate timestamps are stored and iterated over individually. A <code>map</code> from timestamp to count avoids this by collapsing all duplicates into a single entry.</p>
+<h3 id="code_2">Code</h3>
+<pre><code class="language-cpp">class TweetCounts {
+private:
+    unordered_map&lt;string, map&lt;int, int&gt;&gt; tweetTimes;
+    const unordered_map&lt;string, int&gt; numOfSeconds = {
+        {&quot;minute&quot;, 60},
+        {&quot;hour&quot;, 3600},
+        {&quot;day&quot;, 86400}
+    };
+public:
+    TweetCounts() {}
+
+    void recordTweet(const string&amp; tweetName, int time) {
+        tweetTimes[tweetName][time]++;
+    }
+
+    vector&lt;int&gt; getTweetCountsPerFrequency(const string&amp; freq, const string&amp; tweetName, int startTime, int endTime) {
+        auto tweetTimesIt = tweetTimes.find(tweetName);
+        if (tweetTimesIt == tweetTimes.end()) return {};
+
+        auto&amp; recordedTimes = tweetTimesIt-&gt;second;
+        if (recordedTimes.empty()) return {};
+        const int numSeconds = numOfSeconds.at(freq);
+        const int numOfChunks = (endTime - startTime) / numSeconds + 1;
+        vector&lt;int&gt; chunks(numOfChunks);
+
+        auto it = recordedTimes.lower_bound(startTime);
+        while (it != recordedTimes.end() &amp;&amp; it-&gt;first &lt;= endTime) {
+            int idx = (it-&gt;first - startTime) / numSeconds;
+            chunks[idx] += it-&gt;second;
+            it++;                
+        }
+        return chunks;
+    }
+};
+</code></pre>
+<p>Since each unique timestamp is stored only once alongside its count, the query loop skips over all duplicates in a single step.</p>
+<h3 id="runtime-analysis_2">Runtime analysis</h3>
+<p><code>getTweetCountsPerFrequency()</code> takes <code>O(log N + M)</code> where <code>N</code> is the number of unique timestamps and <code>M</code> is the ones within <code>[startTime, endTime]</code>. In the presence of many duplicates, this is a meaningful improvement over Solution 2.</p>
+<h2 id="key-takeaways">Key takeaways</h2>
+<p>The three solutions illustrate a classic trade-off in data structure design: the way you store data shapes how efficiently you can query it.</p>
+<ul>
+<li><strong>Solution 1 (list)</strong> is the most straightforward. Recording a tweet is <code>O(1)</code>, but every query requires a full scan. It works, but leaves performance on the table.</li>
+<li><strong>Solution 2 (multiset)</strong> improves query performance by keeping timestamps sorted. Using <code>lower_bound</code> lets us skip directly to the relevant window, reducing query time from <code>O(N)</code> to <code>O(log N + M)</code>. The cost is that insertion becomes <code>O(log N)</code>, and duplicates are still stored individually.</li>
+<li><strong>Solution 3 (map)</strong> goes one step further by collapsing duplicate timestamps into a count. When duplicates are frequent, this reduces both the memory footprint and the number of iterations during a query.</li>
+</ul>
+<p>A recurring pattern across all three solutions is the chunk index formula <code>(time - startTime) / numSeconds</code>, which neatly maps any timestamp to its corresponding bucket regardless of the frequency. It is a small detail, but it is the mathematical core that makes the whole approach work.</p>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://leetcode.com/problems/tweet-counts-per-frequency/description/">1348. Tweet Counts Per Frequency</a></li>
+<li><a href="https://en.cppreference.com/cpp/container/multiset">std::multiset</a></li>
+<li><a href="https://en.cppreference.com/cpp/container/map">std::map</a></li>
+<li><a href="https://en.cppreference.com/cpp/container/multiset/lower_bound">std::multiset::lower_bound</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
