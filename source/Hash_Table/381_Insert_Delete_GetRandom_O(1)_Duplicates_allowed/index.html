@@ -1,0 +1,965 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>381. Insert Delete GetRandom O(1) - Duplicates Allowed - LeetSolve</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#381-insert-delete-getrandom-o1-duplicates-allowed" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="LeetSolve" class="md-header__button md-logo" aria-label="LeetSolve" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LeetSolve
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              381. Insert Delete GetRandom O(1) - Duplicates Allowed
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="LeetSolve" class="md-nav__button md-logo" aria-label="LeetSolve" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    LeetSolve
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arrays
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Arrays
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Arrays/2_Add_Two_Numbers.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    None
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Strings
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Strings
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Strings/3_Longest_Substring_Without_Repeating_Characters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Longest Substring Without Repeating Characters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#problem-statement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem Statement
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Problem Statement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Constraints
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#first-intuition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        First Intuition
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#approach-1-unordered_multiset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Approach 1: unordered_multiset
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Approach 1: unordered_multiset">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#idea" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Idea
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complexity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limitations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#approach-2-vector-map-of-priority-queues" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Approach 2: Vector + Map of Priority Queues
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Approach 2: Vector + Map of Priority Queues">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#idea_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Idea
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complexity_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complexity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limitations_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limitations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#approach-3-vector-map-of-unordered-sets-optimal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Approach 3: Vector + Map of Unordered Sets (Optimal)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Approach 3: Vector + Map of Unordered Sets (Optimal)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#idea_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Idea
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-the-order-of-updates-matters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why the Order of Updates Matters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complexity_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complexity
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references-and-further-reading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References and Further Reading
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="References and Further Reading">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#related-leetcode-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related LeetCode Problems
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patterns-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Patterns Used
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#concepts-worth-reviewing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepts Worth Reviewing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="381-insert-delete-getrandom-o1-duplicates-allowed">381. Insert Delete GetRandom O(1) - Duplicates Allowed</h1>
+<h2 id="problem-statement">Problem Statement</h2>
+<p><code>RandomizedCollection</code> is a data structure that contains a collection of numbers, possibly with duplicates (i.e., a multiset). It should support inserting and removing specific elements and also reporting a random element.</p>
+<p>Implement the <code>RandomizedCollection</code> class:</p>
+<ul>
+<li><code>RandomizedCollection()</code>: Initializes the empty <code>RandomizedCollection</code> object.</li>
+<li><code>bool insert(int val)</code>: Inserts an item <code>val</code> into the multiset, even if the item is already present. Returns <code>true</code> if the item was not present, <code>false</code> otherwise.</li>
+<li><code>bool remove(int val)</code>: Removes an item <code>val</code> from the multiset if present. Returns <code>true</code> if the item is present, <code>false</code> otherwise. Note that if <code>val</code> has multiple occurrences, only one is removed.</li>
+<li><code>int getRandom()</code>: Returns a random element from the current multiset. The probability of each element being returned is linearly proportional to its count in the multiset.</li>
+</ul>
+<p>Each function must work in <strong>average</strong> <code>O(1)</code> time complexity.</p>
+<h3 id="example">Example</h3>
+<pre><code>Input:
+[&quot;RandomizedCollection&quot;, &quot;insert&quot;, &quot;insert&quot;, &quot;insert&quot;, &quot;getRandom&quot;, &quot;remove&quot;, &quot;getRandom&quot;]
+[[], [1], [1], [2], [], [1], []]
+
+Output:
+[null, true, false, true, 2, true, 1]
+
+Explanation:
+insert(1) → true  (1 not present before)
+insert(1) → false (1 already exists; collection is now [1, 1])
+insert(2) → true  (2 not present before; collection is now [1, 1, 2])
+getRandom() → returns 1 with probability 2/3, or 2 with probability 1/3
+remove(1)  → true (removes one 1; collection is now [1, 2])
+getRandom() → returns 1 or 2, each with probability 1/2
+</code></pre>
+<h3 id="constraints">Constraints</h3>
+<ul>
+<li><code>-2^31 &lt;= val &lt;= 2^31 - 1</code></li>
+<li>At most <code>2 * 10^5</code> calls total to <code>insert</code>, <code>remove</code>, and <code>getRandom</code></li>
+<li><code>getRandom</code> is only called when there is at least one element present</li>
+</ul>
+<hr />
+<h2 id="first-intuition">First Intuition</h2>
+<p>When you first read this problem, <code>insert</code> and <code>remove</code> feel manageable. The one that stops you is <code>getRandom</code>.</p>
+<p>For <code>getRandom</code> to return elements with probabilities proportional to their frequency, the simplest mental model is: imagine laying out all elements in a flat list, and just picking a random index. If <code>1</code> appears twice and <code>2</code> appears once in your list <code>[1, 1, 2]</code>, picking a random index naturally gives <code>1</code> a 2/3 probability. That's exactly the right behavior.</p>
+<p>So the question becomes: can you maintain a flat array of all elements (with duplicates), where any index can be picked uniformly at random, while still supporting <code>O(1)</code> insert and remove?</p>
+<p>Insert into an array is easy: just append to the end. That's <code>O(1)</code>.</p>
+<p>Remove is the hard part. Removing from an arbitrary position in an array is <code>O(N)</code> because you'd need to shift elements. The classic trick to avoid this is the <strong>swap-with-last</strong> technique: instead of shifting, swap the element you want to remove with the last element, then pop the last element off. Now removal is <code>O(1)</code>, as long as you can find the element's index quickly.</p>
+<p>That's the core insight the whole solution is built around. Everything else is bookkeeping to make that index lookup fast.</p>
+<hr />
+<h2 id="approach-1-unordered_multiset">Approach 1: <code>unordered_multiset</code></h2>
+<h3 id="idea">Idea</h3>
+<p>The most natural starting point is to reach for a data structure that handles duplicates out of the box: <code>unordered_multiset</code>. It supports insert, find, and erase by value directly.</p>
+<p>For <code>getRandom</code>, you advance an iterator from the beginning by a random offset.</p>
+<pre><code class="language-cpp">class RandomizedCollection {
+    unordered_multiset&lt;int&gt; s;
+public:
+    RandomizedCollection() {}
+
+    bool insert(int val) {
+        auto it = s.find(val);
+        s.insert(it, val);
+        return it == s.end();
+    }
+
+    bool remove(int val) {
+        auto it = s.find(val);
+        if (it == s.end()) return false;
+        s.erase(it);
+        return true;
+    }
+
+    int getRandom() {
+        auto it = s.begin();
+        advance(it, rand() % s.size());
+        return *it;        
+    }
+};
+</code></pre>
+<h3 id="complexity">Complexity</h3>
+<ul>
+<li><strong>Time:</strong> <code>insert</code> and <code>remove</code> are <code>O(1)</code> average. But <code>getRandom</code> calls <code>std::advance</code>, which walks the iterator forward one step at a time, that's <code>O(N)</code>.</li>
+<li><strong>Space:</strong> <code>O(N)</code> for the multiset.</li>
+</ul>
+<h3 id="limitations">Limitations</h3>
+<p>The bottleneck is <code>getRandom</code>. An unordered container doesn't support random access by index, so you're forced to traverse from the beginning. This immediately disqualifies the approach for large inputs.</p>
+<p>The key realization: you need a structure that supports true <code>O(1)</code> random access. That points directly to a plain array (or vector).</p>
+<hr />
+<h2 id="approach-2-vector-map-of-priority-queues">Approach 2: Vector + Map of Priority Queues</h2>
+<h3 id="idea_1">Idea</h3>
+<p>Now the core data structure is a <code>vector&lt;int&gt;</code> holding all values (with duplicates). <code>getRandom</code> becomes trivial: just pick <code>vals[rand() % vals.size()]</code>.</p>
+<p>The challenge shifts to <code>remove</code>. You need to:
+1. Find an index where <code>val</code> lives in the vector.
+2. Swap that element with the last element.
+3. Update the bookkeeping so the swapped element's new index is tracked.
+4. Pop the last element off.</p>
+<p>To find indices quickly, maintain an <code>unordered_map&lt;int, ...&gt;</code> that maps each value to its set of positions in the vector. Since <code>remove</code> only needs to pick one valid index (and you want to avoid index conflicts when swapping), a max-heap (priority queue) is used here to always grab the largest known index.</p>
+<pre><code class="language-cpp">class RandomizedCollection {
+    vector&lt;int&gt; vals;
+    unordered_map&lt;int, priority_queue&lt;int&gt;&gt; m;
+public:
+    RandomizedCollection() {}
+
+    bool insert(int val) {
+        bool rs = m.find(val) == m.end();
+        vals.push_back(val);
+        m[val].push(vals.size() - 1);
+        return rs;
+    }
+
+    bool remove(int val) {
+        auto it = m.find(val);
+        if (it == m.end()) return false;
+
+        // 1. Pick one index of val to remove (max index from heap)
+        int idx_to_remove = it-&gt;second.top();
+
+        // 2. Read the last element in the array
+        int last = vals.back();
+
+        // 3. Move last element into idx_to_remove
+        //    Remove old last index from its heap, then add new index
+        m[last].pop();
+        m[last].push(idx_to_remove);
+        vals[idx_to_remove] = last;
+
+        // 4. Remove one occurrence of val from its heap
+        it-&gt;second.pop();
+
+        // 5. Clean up and shrink the array
+        if (it-&gt;second.empty()) m.erase(it);
+        vals.pop_back();
+        return true;
+    }
+
+    int getRandom() {
+        return vals[rand() % vals.size()];
+    }
+};
+</code></pre>
+<h3 id="complexity_1">Complexity</h3>
+<ul>
+<li><strong>Time:</strong> <code>insert</code> is <code>O(log N)</code> due to the heap push. <code>remove</code> is also <code>O(log N)</code>. <code>getRandom</code> is <code>O(1)</code>.</li>
+<li><strong>Space:</strong> <code>O(N)</code>.</li>
+</ul>
+<h3 id="limitations_1">Limitations</h3>
+<p>Using a max-heap was a reasonable instinct (always grab the farthest index to swap from), but heap operations are inherently <code>O(log N)</code>. We don't actually need ordering here. We just need <em>any</em> valid index for the value we're removing. A set, or even just any constant-time container, would be enough.</p>
+<p>The "aha" is: drop the heap, use an <code>unordered_set</code> instead.</p>
+<hr />
+<h2 id="approach-3-vector-map-of-unordered-sets-optimal">Approach 3: Vector + Map of Unordered Sets (Optimal)</h2>
+<h3 id="idea_2">Idea</h3>
+<p>Replace the priority queue with an <code>unordered_set&lt;int&gt;</code>. For each value, track all indices where it appears in the vector. When removing, just grab any index from the set (using <code>.begin()</code>), swap with the last element, and update the index sets.</p>
+<p>The only tricky case is when the value being removed happens to be the same as the last element. In that case, you need to be careful: insert the new index before erasing the old one, or the set might become empty prematurely and you'd erase a wrong entry.</p>
+<pre><code class="language-cpp">class RandomizedCollection {
+    vector&lt;int&gt; vals;
+    unordered_map&lt;int, unordered_set&lt;int&gt;&gt; m;
+
+public:
+    RandomizedCollection() {}
+
+    bool insert(int val) {
+        bool is_new = m.find(val) == m.end() || m[val].empty();
+        vals.push_back(val);
+        m[val].insert(vals.size() - 1);
+        return is_new;
+    }
+
+    bool remove(int val) {
+        if (m.find(val) == m.end() || m[val].empty()) return false;
+
+        // 1. Pick any index of the value to remove
+        int idx_to_remove = *m[val].begin();
+        m[val].erase(idx_to_remove);
+
+        // 2. Grab the last element
+        int last_val = vals.back();
+
+        // 3. Move last element into the removed slot
+        vals[idx_to_remove] = last_val;
+
+        // 4. Update the index set for the moved element
+        //    Insert new index before erasing old one, handles val == last_val correctly
+        m[last_val].insert(idx_to_remove);
+        m[last_val].erase(vals.size() - 1);
+
+        // 5. Remove the last slot
+        vals.pop_back();
+
+        if (m[val].empty()) m.erase(val);
+
+        return true;
+    }
+
+    int getRandom() {
+        return vals[rand() % vals.size()];
+    }
+};
+</code></pre>
+<h3 id="why-the-order-of-updates-matters">Why the Order of Updates Matters</h3>
+<p>Step 4 has a subtle but important ordering requirement. If <code>val == last_val</code> (the element you're removing is the same as the last element), and you erase the old index before inserting the new one, you might accidentally empty the set and then try to update a value that's no longer tracked. Inserting first guarantees the set is never transiently empty during the swap.</p>
+<h3 id="complexity_2">Complexity</h3>
+<ul>
+<li><strong>Time:</strong> <code>insert</code> is <code>O(1)</code> average. <code>remove</code> is <code>O(1)</code> average (unordered set insert/erase/lookup are all <code>O(1)</code> average). <code>getRandom</code> is <code>O(1)</code>.</li>
+<li><strong>Space:</strong> <code>O(N)</code> for the vector and the map.</li>
+</ul>
+<p>This is the optimal solution. All three operations run in <code>O(1)</code> average time.</p>
+<hr />
+<h2 id="key-takeaways">Key Takeaways</h2>
+<ul>
+<li>The <strong>swap-with-last</strong> pattern is a fundamental trick for <code>O(1)</code> deletion from an array. When you see "remove in O(1) from a collection where order doesn't matter," think of this immediately.</li>
+<li><strong><code>getRandom</code> in O(1)</strong> requires a flat, index-accessible container like a vector. Any iterator-based traversal (as in <code>unordered_multiset</code>) will cost you <code>O(N)</code>.</li>
+<li>When you need to track multiple positions for duplicate values, a map of sets is the natural pairing with the swap-with-last strategy.</li>
+<li>The <code>val == last_val</code> edge case is easy to miss. Whenever you have a swap that updates two overlapping data structures simultaneously, think carefully about the order of operations.</li>
+<li>Upgrading from a priority queue to an unordered set is a meaningful optimization when you don't actually need ordering, it drops <code>O(log N)</code> to <code>O(1)</code>.</li>
+</ul>
+<hr />
+<h2 id="references-and-further-reading">References and Further Reading</h2>
+<h3 id="related-leetcode-problems">Related LeetCode Problems</h3>
+<ul>
+<li><a href="https://leetcode.com/problems/insert-delete-getrandom-o1/">380. Insert Delete GetRandom O(1)</a>: The no-duplicates version; a good warm-up before this problem</li>
+<li><a href="https://leetcode.com/problems/random-pick-with-blacklist/">710. Random Pick with Blacklist</a>: Another problem requiring weighted/constrained random selection in <code>O(1)</code></li>
+</ul>
+<h3 id="patterns-used">Patterns Used</h3>
+<ul>
+<li>Swap-with-last for <code>O(1)</code> deletion from unordered collections</li>
+<li>Index bookkeeping with hash maps to support fast lookups</li>
+<li>Multiset simulation using a vector and auxiliary map</li>
+</ul>
+<h3 id="concepts-worth-reviewing">Concepts Worth Reviewing</h3>
+<ul>
+<li>Amortized <code>O(1)</code> operations in hash-based containers</li>
+<li>Why random access requires contiguous memory (arrays vs. linked structures)</li>
+<li>Edge case handling in in-place swap operations with overlapping state</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1191 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>295. Find Median from Data Stream - LeetSolve</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#295-find-median-from-data-stream" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="LeetSolve" class="md-header__button md-logo" aria-label="LeetSolve" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LeetSolve
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              295. Find Median from Data Stream
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="LeetSolve" class="md-nav__button md-logo" aria-label="LeetSolve" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    LeetSolve
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arrays
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Arrays
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Arrays/2_Add_Two_Numbers.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    None
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Strings
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Strings
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Strings/3_Longest_Substring_Without_Repeating_Characters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Longest Substring Without Repeating Characters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#problem-statement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem Statement
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Problem Statement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Constraints
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#follow-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Follow-up
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#intuition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intuition
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solution-1-sorted-vector-brute-force" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solution 1: Sorted Vector — Brute Force
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Solution 1: Sorted Vector — Brute Force">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#complexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complexity
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solution-2-stdnth_element-partial-sort" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solution 2: std::nth_element() — Partial Sort
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Solution 2: std::nth_element() — Partial Sort">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#complexity_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complexity
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solution-3-stdmultiset-always-sorted" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solution 3: std::multiset — Always Sorted
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Solution 3: std::multiset — Always Sorted">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#complexity_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complexity
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solution-4-two-heaps-optimal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solution 4: Two Heaps — Optimal
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Solution 4: Two Heaps — Optimal">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-the-insertion-order-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why the insertion order works
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complexity_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complexity
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solution-comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Solution Comparison
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#follow-up_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Follow-up
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Follow-up">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-all-numbers-in-0-100" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. All numbers in [0, 100]
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-99-of-numbers-in-0-100" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. 99% of numbers in [0, 100]
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="295-find-median-from-data-stream">295. Find Median from Data Stream</h1>
+<h2 id="problem-statement">Problem Statement</h2>
+<p>The median is the middle value in an ordered integer list. If the size of the list is even, there is no middle value, and the median is the mean of the two middle values.</p>
+<ul>
+<li>For example, for <code>arr = [2, 3, 4]</code>, the median is <code>3</code>.</li>
+<li>For example, for <code>arr = [2, 3]</code>, the median is <code>(2 + 3) / 2 = 2.5</code>.</li>
+</ul>
+<p>Implement the <code>MedianFinder</code> class:</p>
+<ul>
+<li><code>MedianFinder()</code> initializes the <code>MedianFinder</code> object.</li>
+<li><code>void addNum(int num)</code> adds the integer <code>num</code> from the data stream to the data structure.</li>
+<li><code>double findMedian()</code> returns the median of all elements so far. Answers within <code>10^-5</code> of the actual answer will be accepted.</li>
+</ul>
+<h3 id="example-1">Example 1</h3>
+<pre><code>Input
+[&quot;MedianFinder&quot;, &quot;addNum&quot;, &quot;addNum&quot;, &quot;findMedian&quot;, &quot;addNum&quot;, &quot;findMedian&quot;]
+[[], [1], [2], [], [3], []]
+Output
+[null, null, null, 1.5, null, 2.0]
+
+Explanation
+MedianFinder medianFinder = new MedianFinder();
+medianFinder.addNum(1);    // arr = [1]
+medianFinder.addNum(2);    // arr = [1, 2]
+medianFinder.findMedian(); // return 1.5 (i.e., (1 + 2) / 2)
+medianFinder.addNum(3);    // arr = [1, 2, 3]
+medianFinder.findMedian(); // return 2.0
+</code></pre>
+<h3 id="constraints">Constraints</h3>
+<ul>
+<li><code>-10^5 &lt;= num &lt;= 10^5</code></li>
+<li>There will be at least one element in the data structure before calling <code>findMedian</code>.</li>
+<li>At most <code>5 * 10^4</code> calls will be made to <code>addNum</code> and <code>findMedian</code>.</li>
+</ul>
+<h3 id="follow-up">Follow-up</h3>
+<ul>
+<li>If all integer numbers from the stream are in the range <code>[0, 100]</code>, how would you optimize your solution?</li>
+<li>If 99% of all integer numbers from the stream are in the range <code>[0, 100]</code>, how would you optimize your solution?</li>
+</ul>
+<hr />
+<h2 id="intuition">Intuition</h2>
+<p>The brute-force idea is simple: keep all elements in a list, sort it on every <code>findMedian()</code> call, and read off the middle value(s). This works, but sorting is expensive — it throws away all prior ordering work on every call.</p>
+<p>From there, the natural question becomes: <strong>can we keep the list sorted at all times?</strong> If so, <code>findMedian()</code> becomes a cheap index lookup, and we pay only for the cost of inserting each new element in the right place.</p>
+<p>Pushing further: do we actually need <em>every</em> element sorted? The median only cares about the one or two values right in the middle of the ordered sequence. That observation leads to the most elegant solution — splitting the data into a <strong>left half</strong> and a <strong>right half</strong>, maintaining only their extremes (max of left, min of right) using heaps.</p>
+<p>Let's walk through each approach in order of increasing sophistication.</p>
+<hr />
+<h2 id="solution-1-sorted-vector-brute-force">Solution 1: Sorted Vector — Brute Force</h2>
+<p>The simplest approach: just append every new number and sort the entire array whenever <code>findMedian()</code> is called.</p>
+<pre><code class="language-cpp">class MedianFinder {
+private:
+    vector&lt;int&gt; arr;
+public:
+    MedianFinder() {
+        arr.reserve(50000);
+    }
+
+    void addNum(int num) {
+        arr.push_back(num);
+    }
+
+    double findMedian() {
+        std::sort(arr.begin(), arr.end());
+        int midIdx = arr.size() / 2;
+        if (arr.size() % 2 == 1) {
+            return arr[midIdx];
+        } else {
+            return (static_cast&lt;double&gt;(arr[midIdx]) + arr[midIdx - 1]) / 2.0;
+        }
+    }
+};
+</code></pre>
+<p><code>arr.reserve(50000)</code> pre-allocates the maximum possible capacity upfront, eliminating all heap reallocations during <code>push_back</code>. Since the problem guarantees at most <code>5 × 10^4</code> calls, this is safe and avoids the hidden O(N) cost of reallocation.</p>
+<h3 id="complexity">Complexity</h3>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>Time</th>
+<th>Space</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>addNum</code></td>
+<td>O(1) amortized</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>findMedian</code></td>
+<td>O(N log N)</td>
+<td>O(N)</td>
+</tr>
+</tbody>
+</table>
+<p>The bottleneck is <code>findMedian()</code>: every call re-sorts the full array from scratch, discarding all previous ordering work. This is wasteful — if you call <code>findMedian()</code> frequently, you are doing <code>O(N log N)</code> work each time.</p>
+<hr />
+<h2 id="solution-2-stdnth_element-partial-sort">Solution 2: <code>std::nth_element()</code> — Partial Sort</h2>
+<p>A key insight: the median only depends on the value(s) at the middle index (or two middle indices). We don't need every element in sorted order — we just need the correct element placed at the correct position.</p>
+<p><code>std::nth_element()</code> does exactly this. It partially rearranges the array so that:
+- The element at position <code>n</code> is the element that would be there if the array were fully sorted.
+- All elements to its left are ≤ it, and all elements to its right are ≥ it (but neither side is necessarily sorted).</p>
+<p>This runs in <strong>O(N)</strong> average time — much faster than O(N log N) full sort.</p>
+<pre><code class="language-cpp">class MedianFinder {
+private:
+    vector&lt;int&gt; arr;
+public:
+    MedianFinder() {
+        arr.reserve(50000);
+    }
+
+    void addNum(int num) {
+        arr.push_back(num);
+    }
+
+    double findMedian() {
+        int midIdx = arr.size() / 2;
+        std::nth_element(arr.begin(), arr.begin() + midIdx, arr.end());
+        double median = arr[midIdx];
+
+        if (arr.size() % 2 == 1) {
+            return median;
+        } else {
+            // For the even case, we also need arr[midIdx - 1].
+            // We only need to partition the LEFT half of the array,
+            // since arr[midIdx] is already in place.
+            std::nth_element(arr.begin(), arr.begin() + midIdx - 1, arr.begin() + midIdx);
+            return (static_cast&lt;double&gt;(arr[midIdx - 1]) + median) / 2.0;
+        }
+    }
+};
+</code></pre>
+<p>For the even-length case, we call <code>nth_element</code> a second time to find <code>arr[midIdx - 1]</code>. The key optimization is the third argument: <code>arr.begin() + midIdx</code> instead of <code>arr.end()</code>. This restricts the second partition to only the left half of the array, reducing work from O(N) to O(N/2).</p>
+<h3 id="complexity_1">Complexity</h3>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>Time</th>
+<th>Space</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>addNum</code></td>
+<td>O(1) amortized</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>findMedian</code></td>
+<td>O(N) average (O(1.5N) with the range optimization)</td>
+<td>O(N)</td>
+</tr>
+</tbody>
+</table>
+<p>Note that <code>std::nth_element</code> uses introselect internally, guaranteeing O(N) worst-case on modern implementations, not just on average.</p>
+<hr />
+<h2 id="solution-3-stdmultiset-always-sorted">Solution 3: <code>std::multiset</code> — Always Sorted</h2>
+<p>What if we keep the elements sorted at all times, so <code>findMedian()</code> never has to sort anything? A <code>std::multiset</code> (a balanced BST) does this: every insertion maintains sorted order in O(log N).</p>
+<pre><code class="language-cpp">class MedianFinder {
+private:
+    multiset&lt;int&gt; arr;
+public:
+    MedianFinder() {}
+
+    void addNum(int num) {
+        arr.insert(num);
+    }
+
+    double findMedian() {
+        int N = arr.size();
+        auto it = arr.begin();
+        std::advance(it, N / 2);
+        double median = *it;
+
+        if (N % 2 == 1) {
+            return median;
+        } else {
+            std::advance(it, -1);
+            return (static_cast&lt;double&gt;(*it) + median) / 2.0;
+        }
+    }
+};
+</code></pre>
+<p><code>std::advance(it, N/2)</code> walks the iterator forward by N/2 steps. Unlike a vector, a <code>multiset</code> is backed by a tree with non-contiguous memory, so there is no O(1) random access. You cannot write <code>*(arr.begin() + arr.size() / 2)</code> — iterators must be stepped one node at a time.</p>
+<h3 id="complexity_2">Complexity</h3>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>Time</th>
+<th>Space</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>addNum</code></td>
+<td>O(log N)</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>findMedian</code></td>
+<td>O(N/2) = O(N)</td>
+<td>O(N)</td>
+</tr>
+</tbody>
+</table>
+<p><code>addNum</code> is now faster than before, but <code>findMedian</code> is still O(N) due to the iterator traversal. In practice, the pointer-chasing through a non-contiguous BST is also cache-unfriendly, making constant factors worse than a vector-based approach despite the same asymptotic complexity.</p>
+<hr />
+<h2 id="solution-4-two-heaps-optimal">Solution 4: Two Heaps — Optimal</h2>
+<p>Let's think about what the median really is structurally:</p>
+<ul>
+<li>It is the <strong>maximum</strong> of the left half of the sorted array.</li>
+<li>It is the <strong>minimum</strong> of the right half of the sorted array.</li>
+</ul>
+<p>We don't need the entire sorted order — we only need the top of each half. This is exactly what heaps provide in O(1).</p>
+<p>The idea: maintain two heaps that together partition all elements seen so far.
+- <code>left</code>: a <strong>max-heap</strong> holding the smaller half of all elements.
+- <code>right</code>: a <strong>min-heap</strong> holding the larger half of all elements.</p>
+<p><strong>Invariants we maintain:</strong>
+1. Every element in <code>left</code> ≤ every element in <code>right</code>.
+2. <code>left.size()</code> is either equal to <code>right.size()</code> (even total) or exactly one more (odd total).</p>
+<p>Under these invariants:
+- If odd total: median = <code>left.top()</code>.
+- If even total: median = <code>(left.top() + right.top()) / 2.0</code>.</p>
+<p><strong>Insertion logic</strong> to maintain both invariants:</p>
+<pre><code>push num → left (max-heap)
+move left.top() → right    // ensures cross-heap ordering
+if right.size() &gt; left.size():
+    move right.top() → left  // re-balance size
+</code></pre>
+<p>This three-step dance ensures that after every insertion, the size and ordering invariants are preserved.</p>
+<pre><code class="language-cpp">class MedianFinder {
+private:
+    priority_queue&lt;int&gt; left;                               // max-heap
+    priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt;&gt; right;  // min-heap
+public:
+    MedianFinder() {}
+
+    void addNum(int num) {
+        left.push(num);
+        right.push(left.top());
+        left.pop();
+        if (left.size() &lt; right.size()) {
+            left.push(right.top());
+            right.pop();
+        }
+    }
+
+    double findMedian() {
+        if (left.size() == right.size())
+            return (static_cast&lt;double&gt;(left.top()) + right.top()) / 2.0;
+        return left.top();
+    }
+};
+</code></pre>
+<h3 id="why-the-insertion-order-works">Why the insertion order works</h3>
+<p>Pushing <code>num</code> to <code>left</code> first and then immediately moving <code>left.top()</code> to <code>right</code> — rather than deciding which heap to push to directly — is a clean trick that avoids branching. It guarantees the ordering invariant: whatever <code>num</code> is, the largest element of the left half always flows to the right heap first, keeping <code>left.top() ≤ right.top()</code> without an explicit comparison.</p>
+<h3 id="complexity_3">Complexity</h3>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>Time</th>
+<th>Space</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>addNum</code></td>
+<td>O(log N)</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>findMedian</code></td>
+<td><strong>O(1)</strong></td>
+<td>O(N)</td>
+</tr>
+</tbody>
+</table>
+<p>This is the optimal solution for the general case. <code>findMedian</code> is now constant time, and each insertion costs only O(log N) — comparable to <code>multiset</code> but with much better cache performance due to the contiguous heap storage.</p>
+<hr />
+<h2 id="solution-comparison">Solution Comparison</h2>
+<table>
+<thead>
+<tr>
+<th>Solution</th>
+<th><code>addNum</code></th>
+<th><code>findMedian</code></th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sorted vector</td>
+<td>O(1)</td>
+<td>O(N log N)</td>
+<td>Simple, slow for frequent median queries</td>
+</tr>
+<tr>
+<td><code>nth_element</code></td>
+<td>O(1)</td>
+<td>O(N)</td>
+<td>Better; rearranges array in-place</td>
+</tr>
+<tr>
+<td><code>multiset</code></td>
+<td>O(log N)</td>
+<td>O(N)</td>
+<td>Always sorted; slow iterator traversal</td>
+</tr>
+<tr>
+<td>Two heaps</td>
+<td>O(log N)</td>
+<td><strong>O(1)</strong></td>
+<td>Optimal for general case</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="follow-up_1">Follow-up</h2>
+<h3 id="1-all-numbers-in-0-100">1. All numbers in <code>[0, 100]</code></h3>
+<p>When the value range is bounded and small, we can replace heaps with a <strong>counting array</strong> (bucket array). Keep an array <code>cnt[101]</code> where <code>cnt[x]</code> is the number of times <code>x</code> has appeared.</p>
+<p><strong>Idea:</strong> To find the median, walk the cumulative count until you reach the middle rank(s). Since the range is fixed at 101 values, this scan is always O(101) = O(1) in practice.</p>
+<pre><code class="language-cpp">class MedianFinder {
+private:
+    int cnt[101] = {};
+    int total = 0;
+public:
+    MedianFinder() {}
+
+    void addNum(int num) {
+        cnt[num]++;
+        total++;
+    }
+
+    double findMedian() {
+        int mid1 = (total + 1) / 2;   // lower median rank (1-indexed)
+        int mid2 = (total + 2) / 2;   // upper median rank (same as mid1 if odd)
+
+        int running = 0;
+        int val1 = -1, val2 = -1;
+        for (int i = 0; i &lt;= 100; i++) {
+            running += cnt[i];
+            if (val1 == -1 &amp;&amp; running &gt;= mid1) val1 = i;
+            if (val2 == -1 &amp;&amp; running &gt;= mid2) val2 = i;
+            if (val1 != -1 &amp;&amp; val2 != -1) break;
+        }
+        return (val1 + val2) / 2.0;
+    }
+};
+</code></pre>
+<p><strong>Why this is better:</strong>
+- <code>addNum</code>: O(1) — just increment a counter.
+- <code>findMedian</code>: O(101) = O(1) — fixed-range scan.
+- Space: O(101) = O(1) — constant regardless of stream length.
+- Cache-friendly: sequential array access is extremely fast in practice.</p>
+<h3 id="2-99-of-numbers-in-0-100">2. 99% of numbers in <code>[0, 100]</code></h3>
+<p>When a small fraction of numbers fall outside <code>[0, 100]</code>, use a <strong>hybrid</strong> approach:
+- A <code>cnt[101]</code> bucket array for in-range numbers <code>[0, 100]</code>.
+- A max-heap <code>leftOutliers</code> for numbers <code>&lt; 0</code>.
+- A min-heap <code>rightOutliers</code> for numbers <code>&gt; 100</code>.
+- A running <code>total</code> count.</p>
+<pre><code class="language-cpp">class MedianFinder {
+private:
+    int cnt[101] = {};
+    priority_queue&lt;int&gt; leftOutliers;                               // max-heap for &lt; 0
+    priority_queue&lt;int, vector&lt;int&gt;, greater&lt;int&gt;&gt; rightOutliers;  // min-heap for &gt; 100
+    int total = 0;
+
+public:
+    MedianFinder() {}
+
+    void addNum(int num) {
+        if (num &lt; 0)        leftOutliers.push(num);
+        else if (num &gt; 100) rightOutliers.push(num);
+        else                cnt[num]++;
+        total++;
+    }
+
+    double findMedian() {
+        int mid1 = (total + 1) / 2;
+        int mid2 = (total + 2) / 2;
+
+        // Helper lambda: find the value at a given rank (1-indexed)
+        auto findRank = [&amp;](int rank) -&gt; double {
+            // Check left outliers (negatives, stored as max-heap)
+            // We need to count how many left outliers exist
+            int leftCount = (int)leftOutliers.size();
+            if (rank &lt;= leftCount) {
+                // Need the rank-th smallest among left outliers.
+                // Since we only need the median, and 99% are in-range,
+                // outliers are rare — copy and sort for simplicity.
+                vector&lt;int&gt; tmp;
+                auto pq = leftOutliers;
+                while (!pq.empty()) { tmp.push_back(pq.top()); pq.pop(); }
+                std::sort(tmp.begin(), tmp.end());
+                return tmp[rank - 1];
+            }
+            rank -= leftCount;
+
+            // Check in-range bucket [0, 100]
+            for (int i = 0; i &lt;= 100; i++) {
+                if (rank &lt;= cnt[i]) return i;
+                rank -= cnt[i];
+            }
+
+            // Check right outliers (positives &gt; 100, stored as min-heap)
+            vector&lt;int&gt; tmp;
+            auto pq = rightOutliers;
+            while (!pq.empty()) { tmp.push_back(pq.top()); pq.pop(); }
+            std::sort(tmp.begin(), tmp.end());
+            return tmp[rank - 1];
+        };
+
+        return (findRank(mid1) + findRank(mid2)) / 2.0;
+    }
+};
+</code></pre>
+<p><strong>Complexity:</strong>
+- <code>addNum</code>: O(1) for in-range values; O(log M) for outliers (where M = number of outliers).
+- <code>findMedian</code>: O(101) in the common case (99% of the time, the median falls inside <code>[0, 100]</code>). Rare O(M log M) for edge cases where the median falls in the outlier region.</p>
+<p><strong>Practical takeaway:</strong>
+- For strict <code>[0, 100]</code>: the counting array is optimal.
+- For 99% in-range: the hybrid approach gives near-O(1) median queries while correctly handling outliers.</p>
+<hr />
+<h2 id="key-takeaways">Key Takeaways</h2>
+<ul>
+<li>
+<p><strong>Know your data structure trade-offs.</strong> <code>std::multiset</code> keeps elements sorted on every insert (O(log N)), but its tree-based non-contiguous memory makes random access impossible — you must use <code>std::advance()</code> and pay O(N) to reach the middle element. <code>std::priority_queue</code> uses a contiguous heap array, making <code>top()</code> an O(1) operation and benefiting from CPU cache locality.</p>
+</li>
+<li>
+<p><strong>Partial algorithms beat full algorithms when you don't need full information.</strong> <code>std::nth_element()</code> is a powerful primitive that places the k-th element correctly in O(N), without sorting the rest of the array. Reach for it whenever you only need rank-based values (median, percentiles) rather than a fully sorted sequence.</p>
+</li>
+<li>
+<p><strong>Invariant-driven design simplifies complex data structures.</strong> The two-heap solution is built on one simple invariant: the max of the left half is always ≤ the min of the right half, and the sizes differ by at most one. Maintaining this invariant on every <code>addNum</code> makes <code>findMedian</code> trivially O(1).</p>
+</li>
+<li>
+<p><strong>Bounded input ranges unlock O(1) algorithms.</strong> When values are constrained to a small fixed range, counting arrays replace comparison-based structures entirely. Scanning 101 buckets is not just asymptotically O(1) — it is also cache-optimal and branch-predictor friendly in practice.</p>
+</li>
+<li>
+<p><strong>Hybrid structures handle the 99%/1% case elegantly.</strong> When most inputs are bounded but outliers exist, combining a fast in-range structure (counting array) with small auxiliary structures (heaps) for edge cases is a practical engineering pattern. The common path stays fast; the rare path handles correctness.</p>
+</li>
+<li>
+<p><strong><code>std::advance()</code> vs. pointer arithmetic.</strong> With contiguous containers like <code>vector</code>, you can use <code>*(begin + k)</code> for O(1) access. With node-based containers like <code>multiset</code>, <code>list</code>, or <code>map</code>, you must use <code>std::advance(it, k)</code>, which steps the iterator one node at a time — O(k) cost. This distinction matters enormously at scale.</p>
+</li>
+</ul>
+<hr />
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://leetcode.com/problems/find-median-from-data-stream/">LeetCode 295 — Find Median from Data Stream</a></li>
+<li><a href="https://en.cppreference.com/w/cpp/algorithm/nth_element">cppreference — <code>std::nth_element</code></a></li>
+<li><a href="https://en.cppreference.com/w/cpp/container/multiset">cppreference — <code>std::multiset</code></a></li>
+<li><a href="https://en.cppreference.com/w/cpp/container/priority_queue">cppreference — <code>std::priority_queue</code></a></li>
+<li><a href="https://en.cppreference.com/w/cpp/iterator/advance">cppreference — <code>std::advance</code></a></li>
+<li><a href="https://en.wikipedia.org/wiki/Order_statistic">Wikipedia — Order statistic</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Introselect">Wikipedia — Introselect (nth_element algorithm)</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

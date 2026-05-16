@@ -1,0 +1,989 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>146. LRU Cache - LeetSolve</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#146-lru-cache" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="LeetSolve" class="md-header__button md-logo" aria-label="LeetSolve" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LeetSolve
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              146. LRU Cache
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="LeetSolve" class="md-nav__button md-logo" aria-label="LeetSolve" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    LeetSolve
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arrays
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Arrays
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Arrays/2_Add_Two_Numbers.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    None
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Strings
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Strings
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Strings/3_Longest_Substring_Without_Repeating_Characters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Longest Substring Without Repeating Characters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#problem-statement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem Statement
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#first-intuition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        First Intuition
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#approach-1-aging-the-keys" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Approach 1: Aging the Keys
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Approach 1: Aging the Keys">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#idea" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Idea
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complexity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limitations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#approach-2-linked-list-for-ordering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Approach 2: Linked List for Ordering
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Approach 2: Linked List for Ordering">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#idea_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Idea
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complexity_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complexity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limitations_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limitations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#approach-3-doubly-linked-list-with-direct-node-pointers-optimal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Approach 3: Doubly Linked List with Direct Node Pointers (Optimal)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Approach 3: Doubly Linked List with Direct Node Pointers (Optimal)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#idea_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Idea
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complexity_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complexity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why it works
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references-further-reading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References &amp; Further Reading
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="146-lru-cache">146. LRU Cache</h1>
+<h2 id="problem-statement">Problem Statement</h2>
+<p>Design a data structure that follows the constraints of a <strong>Least Recently Used (LRU)</strong> cache.</p>
+<p>Implement the <code>LRUCache</code> class:</p>
+<ul>
+<li><code>LRUCache(int capacity)</code> — Initialize the LRU cache with positive size <code>capacity</code>.</li>
+<li><code>int get(int key)</code> — Return the value of the key if it exists, otherwise return <code>-1</code>.</li>
+<li><code>void put(int key, int value)</code> — Update the value if the key exists. Otherwise, add the key-value pair. If the number of keys exceeds capacity, <strong>evict the least recently used key</strong>.</li>
+</ul>
+<p>Both <code>get</code> and <code>put</code> must each run in <strong><code>O(1)</code> average time complexity</strong>.</p>
+<p><strong>Example:</strong></p>
+<pre><code>Input:
+[&quot;LRUCache&quot;, &quot;put&quot;, &quot;put&quot;, &quot;get&quot;, &quot;put&quot;, &quot;get&quot;, &quot;put&quot;, &quot;get&quot;, &quot;get&quot;, &quot;get&quot;]
+[[2], [1, 1], [2, 2], [1], [3, 3], [2], [4, 4], [1], [3], [4]]
+
+Output:
+[null, null, null, 1, null, -1, null, -1, 3, 4]
+
+Explanation:
+LRUCache lRUCache = new LRUCache(2);
+lRUCache.put(1, 1); // cache is {1=1}
+lRUCache.put(2, 2); // cache is {1=1, 2=2}
+lRUCache.get(1);    // return 1
+lRUCache.put(3, 3); // LRU key was 2, evicts key 2, cache is {1=1, 3=3}
+lRUCache.get(2);    // returns -1 (not found)
+lRUCache.put(4, 4); // LRU key was 1, evicts key 1, cache is {4=4, 3=3}
+lRUCache.get(1);    // return -1 (not found)
+lRUCache.get(3);    // return 3
+lRUCache.get(4);    // return 4
+</code></pre>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= capacity &lt;= 3000</code></li>
+<li><code>0 &lt;= key &lt;= 10^4</code></li>
+<li><code>0 &lt;= value &lt;= 10^5</code></li>
+<li>At most <code>2 * 10^5</code> calls will be made to <code>get</code> and <code>put</code>.</li>
+</ul>
+<hr />
+<h2 id="first-intuition">First Intuition</h2>
+<p>Before we jump to code, let's make sure we fully understand what "least recently used" actually means in practice.</p>
+<p><strong>Two things to internalize first:</strong></p>
+<ul>
+<li>"Used" includes both <code>get()</code> and <code>put()</code>. Any interaction with a key counts as a recent use.</li>
+<li>At any point in time, the cache has a clear ordering: some key was touched most recently, and some key was touched longest ago. The one touched longest ago is the LRU candidate.</li>
+</ul>
+<p>So the core challenge is: how do you efficiently track that ordering, and how do you remove a key from it quickly when eviction happens?</p>
+<p>The most natural first instinct is something like: <em>just stamp each key with a timestamp every time it's used, and when you need to evict, find the one with the oldest timestamp.</em> That's intuitive, and it works conceptually. It's exactly the kind of thinking that leads to a real solution — it's just not fast enough yet.</p>
+<p>From there, the thought process naturally evolves: can we maintain an explicit ordering instead of scanning timestamps? That leads us toward a linked list. And once we see that removing from the middle of a list is slow, we start thinking about how to make that <code>O(1)</code> too — which leads us to a doubly linked list with direct node pointers.</p>
+<p>Let's follow that progression.</p>
+<hr />
+<h2 id="approach-1-aging-the-keys">Approach 1: Aging the Keys</h2>
+<h3 id="idea">Idea</h3>
+<p>The simplest implementation of "track how recently each key was used" is to assign an age to every key. Keep a global counter (<code>lastAge</code>) that increments on every operation. Every time a key is accessed or inserted, update its age to the current counter value.</p>
+<p>When eviction is needed, scan all keys and find the one with the lowest age. That's your LRU candidate.</p>
+<p>The data structures are simple:
+- <code>caches</code>: a hash map from key to value
+- <code>cacheAges</code>: a hash map from key to its last-used timestamp</p>
+<p>Every <code>get</code> or <code>put</code> stamps the key with <code>lastAge++</code>, making sure the most recently used key always has the highest age value.</p>
+<h3 id="code">Code</h3>
+<pre><code class="language-cpp">class LRUCache {
+    private:
+    unordered_map&lt;int, int&gt; caches;
+    unordered_map&lt;int, int&gt; cacheAges;
+    int capacity;
+    int lastAge;
+public:
+    LRUCache(int capacity) : capacity(capacity), lastAge(0) {}
+
+    int get(int key) {
+        auto it = caches.find(key);
+        if (it != caches.end()) {
+            cacheAges[key] = lastAge++;
+            return it-&gt;second;
+        }
+        return -1;
+    }
+
+    void put(int key, int value) {
+        if (caches.find(key) == caches.end() &amp;&amp; caches.size() == capacity) {
+            int LRUkey = caches.begin()-&gt;first;
+            int LRUage = cacheAges[LRUkey];
+            for (auto&amp; p : caches) {
+                if (cacheAges.at(p.first) &lt; LRUage) {
+                    LRUkey = p.first;
+                    LRUage = cacheAges.at(LRUkey);
+                }
+            }
+            caches.erase(caches.find(LRUkey));
+            cacheAges.erase(cacheAges.find(LRUkey));
+        }
+        caches[key] = value;
+        cacheAges[key] = lastAge++;
+    }
+};
+</code></pre>
+<h3 id="complexity">Complexity</h3>
+<ul>
+<li><strong>Time:</strong> <code>get</code> is <code>O(1)</code>. <code>put</code> is <code>O(N)</code> in the worst case because we scan all keys to find the minimum age.</li>
+<li><strong>Space:</strong> <code>O(N)</code> for the two hash maps.</li>
+</ul>
+<h3 id="limitations">Limitations</h3>
+<p>This approach is clean and easy to reason about, but it violates the <code>O(1)</code> requirement for <code>put</code>. Every eviction requires a full scan. With up to <code>2 * 10^5</code> operations, this adds up fast. We need a way to find the LRU key without scanning everything.</p>
+<hr />
+<h2 id="approach-2-linked-list-for-ordering">Approach 2: Linked List for Ordering</h2>
+<h3 id="idea_1">Idea</h3>
+<p>The key insight here: instead of storing ages and scanning for the minimum, why not <em>maintain the order explicitly</em>?</p>
+<p>If we keep a list where the front is always the least recently used key and the back is always the most recently used, then:</p>
+<ul>
+<li>Eviction is just popping the front — <code>O(1)</code>.</li>
+<li>Marking a key as recently used means moving it to the back.</li>
+</ul>
+<p>Every <code>get</code> or <code>put</code> removes the key from wherever it is in the list and appends it to the back. The front of the list is always your LRU candidate.</p>
+<pre><code>Least Recent  &lt;-- [key_A, key_B, key_C, key_D] --&gt; Most Recent
+                   ^                               ^
+                 evict from here              append here
+</code></pre>
+<h3 id="code_1">Code</h3>
+<pre><code class="language-cpp">class LRUCache {
+    private:
+    unordered_map&lt;int, int&gt; caches;
+    list&lt;int&gt; keys;
+    int capacity;
+public:
+    LRUCache(int capacity) : capacity(capacity) {}
+
+    int get(int key) {
+        auto it = caches.find(key);
+        if (it != caches.end()) {
+            keys.remove(key);
+            keys.push_back(key);
+            return it-&gt;second;
+        }
+        return -1;
+    }
+
+    void put(int key, int value) {
+        if (caches.find(key) != caches.end()) {
+            keys.remove(key);
+        } else if (caches.size() == capacity) {
+            int lru_key = keys.front();
+            keys.pop_front();
+            caches.erase(lru_key);
+        }
+        caches[key] = value;
+        keys.push_back(key);
+    }
+};
+</code></pre>
+<h3 id="complexity_1">Complexity</h3>
+<ul>
+<li><strong>Time:</strong> Both <code>get</code> and <code>put</code> call <code>keys.remove(key)</code>, which is <code>O(N)</code> because <code>std::list::remove</code> scans the list to find the element.</li>
+<li><strong>Space:</strong> <code>O(N)</code>.</li>
+</ul>
+<h3 id="limitations_1">Limitations</h3>
+<p>Better conceptually, but <code>list::remove</code> is still <code>O(N)</code>. We're doing a linear scan to find the position of the key before we can move it. The ordering idea is right; the removal mechanism is the bottleneck.</p>
+<p>To fix this, we need to jump directly to the node in the list without scanning. And for that, we need to store pointers.</p>
+<hr />
+<h2 id="approach-3-doubly-linked-list-with-direct-node-pointers-optimal">Approach 3: Doubly Linked List with Direct Node Pointers (Optimal)</h2>
+<h3 id="idea_2">Idea</h3>
+<p>The "aha moment" here is this: if we store a pointer to the list node directly in the hash map, we can jump to any node in <code>O(1)</code> and unlink it in <code>O(1)</code> — no searching required.</p>
+<p>We build a doubly linked list manually (rather than using <code>std::list</code>) so we have full control over node pointers. We use two sentinel nodes, <code>head</code> and <code>tail</code>, to avoid edge-case handling for empty lists or boundary insertions:</p>
+<pre><code>head &lt;-&gt; [node_A] &lt;-&gt; [node_B] &lt;-&gt; [node_C] &lt;-&gt; tail
+          ^LRU                        ^MRU
+</code></pre>
+<ul>
+<li>The hash map stores: <code>key -&gt; Cache* (pointer to the node)</code></li>
+<li><code>push_back</code>: insert a node just before <code>tail</code></li>
+<li><code>unlink</code>: detach a node from its neighbors</li>
+<li><code>move_to_back</code>: unlink then push_back (marks a key as recently used)</li>
+</ul>
+<p>When evicting, the LRU node is always <code>head-&gt;next</code> — <code>O(1)</code> access. A nice optimization in the eviction path: instead of deleting the node and allocating a new one, we reuse the existing node by overwriting its key and value, then moving it to the back.</p>
+<h3 id="code_2">Code</h3>
+<pre><code class="language-cpp">class LRUCache {
+    private:
+    struct Cache {
+        int key;
+        int value;
+        Cache* next;
+        Cache* prev;
+        Cache(int k, int v, Cache* p = nullptr, Cache* n = nullptr)
+            : key(k), value(v), prev(p), next(n) {}
+    };
+    unordered_map&lt;int, Cache*&gt; caches;
+    Cache* head;
+    Cache* tail;
+    int capacity;
+
+    void unlink(Cache* cache) {
+        cache-&gt;prev-&gt;next = cache-&gt;next;
+        cache-&gt;next-&gt;prev = cache-&gt;prev;
+    }
+
+    void push_back(Cache* cache) {
+        tail-&gt;prev-&gt;next = cache;
+        cache-&gt;prev = tail-&gt;prev;
+        cache-&gt;next = tail;
+        tail-&gt;prev = cache;
+    }
+
+    void move_to_back(Cache* cache) {
+        unlink(cache);
+        push_back(cache);
+    }
+
+public:
+    LRUCache(int capacity) : capacity(capacity) {
+        head = new Cache(-1, -1);
+        tail = new Cache(-1, -1);
+        head-&gt;next = tail;
+        tail-&gt;prev = head;
+    }
+
+    ~LRUCache() {
+        Cache* cache = head;
+        while (cache) {
+            Cache* next = cache-&gt;next;
+            delete cache;
+            cache = next;
+        }
+    }
+
+    int get(int key) {
+        auto it = caches.find(key);
+        if (it != caches.end()) {
+            Cache* cache = it-&gt;second;
+            move_to_back(cache);
+            return cache-&gt;value;
+        }
+        return -1;
+    }
+
+    void put(int key, int value) {
+        if (caches.find(key) != caches.end()) {
+            Cache* cache = caches[key];
+            cache-&gt;value = value;
+            move_to_back(cache);
+            caches[key] = cache;
+        } else if (caches.size() == capacity) {
+            Cache* lru_cache = head-&gt;next;
+            caches.erase(lru_cache-&gt;key);
+            lru_cache-&gt;key = key;
+            lru_cache-&gt;value = value;
+            move_to_back(lru_cache);
+            caches[key] = lru_cache;
+        } else {
+            Cache* new_cache = new Cache(key, value);
+            push_back(new_cache);
+            caches[key] = new_cache;
+        }
+    }
+};
+</code></pre>
+<h3 id="complexity_2">Complexity</h3>
+<ul>
+<li><strong>Time:</strong> Both <code>get</code> and <code>put</code> are <code>O(1)</code>. Hash map lookup is <code>O(1)</code>, and all linked list operations (unlink, push_back) are <code>O(1)</code> pointer manipulations.</li>
+<li><strong>Space:</strong> <code>O(N)</code> for the hash map and the linked list nodes.</li>
+</ul>
+<h3 id="why-it-works">Why it works</h3>
+<p>Every operation touches exactly one node. We go directly to it via the hash map, adjust at most four pointers to move it, and update one hash map entry. No scanning anywhere.</p>
+<p>The sentinel nodes (<code>head</code> and <code>tail</code>) are a small but elegant trick. They eliminate every boundary check: there's never a "is this the first node?" or "is the list empty?" branch in the pointer logic. The list always has at least two nodes, so <code>unlink</code> and <code>push_back</code> are always safe to call.</p>
+<hr />
+<h2 id="key-takeaways">Key Takeaways</h2>
+<ul>
+<li><strong>Hash map + doubly linked list</strong> is the classic combo for <code>O(1)</code> ordered data structures. Whenever you need both fast lookup and fast ordered eviction, think of this pair.</li>
+<li><strong>Sentinel nodes</strong> simplify linked list pointer logic significantly. Always worth adding a dummy head and tail to avoid edge cases.</li>
+<li><strong>Store pointers, not values</strong> in the hash map when you need direct access to list nodes. This is what enables <code>O(1)</code> removal.</li>
+<li><strong>Reuse nodes on eviction</strong> instead of delete + new. It's a minor optimization but avoids unnecessary allocations.</li>
+<li>The progression here is a good mental model: timestamps -&gt; explicit ordering -&gt; pointer-based ordering. Each step removes one bottleneck.</li>
+</ul>
+<hr />
+<h2 id="references-further-reading">References &amp; Further Reading</h2>
+<p><strong>Related LeetCode Problems:</strong></p>
+<ul>
+<li><a href="https://leetcode.com/problems/lfu-cache/">460. LFU Cache</a> — The next level: evict by frequency, not recency</li>
+<li><a href="https://leetcode.com/problems/insert-delete-getrandom-o1/">380. Insert Delete GetRandom <code>O(1)</code></a> — Similar "<code>O(1)</code> for everything" constraint</li>
+<li><a href="https://leetcode.com/problems/all-oone-data-structure/">432. All O`one Data Structure</a> — Combines ordered eviction with frequency tracking</li>
+</ul>
+<p><strong>Patterns &amp; Concepts:</strong></p>
+<ul>
+<li>Doubly linked list with sentinel nodes</li>
+<li>Hash map + linked list (a recurring pattern in cache design problems)</li>
+<li>Amortized <code>O(1)</code> data structure design</li>
+<li>Memory management with manual node reuse</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

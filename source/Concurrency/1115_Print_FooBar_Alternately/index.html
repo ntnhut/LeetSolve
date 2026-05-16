@@ -1,0 +1,965 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>1115. Print FooBar Alternately - LeetSolve</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1115-print-foobar-alternately" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="LeetSolve" class="md-header__button md-logo" aria-label="LeetSolve" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LeetSolve
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              1115. Print FooBar Alternately
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="LeetSolve" class="md-nav__button md-logo" aria-label="LeetSolve" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    LeetSolve
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arrays
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Arrays
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Arrays/2_Add_Two_Numbers.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    None
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Strings
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Strings
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Strings/3_Longest_Substring_Without_Repeating_Characters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Longest Substring Without Repeating Characters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#problem-statement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem Statement
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Problem Statement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Constraints
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#first-intuition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        First Intuition
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#approach-1-condition-variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Approach 1: Condition Variable
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Approach 1: Condition Variable">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#idea" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Idea
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complexity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limitation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limitation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#approach-2-semaphore-c20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Approach 2: Semaphore (C++20)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Approach 2: Semaphore (C++20)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#idea_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Idea
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complexity_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complexity
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Key Takeaways">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mutual-exclusion-and-ordering-are-different-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mutual exclusion and ordering are different problems
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-if-approach-fails-silently" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The if approach fails silently
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#condition_variable-is-the-right-tool-when-a-thread-needs-to-wait-on-a-changing-predicate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        condition_variable is the right tool when a thread needs to wait on a changing predicate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#semaphore-is-the-right-tool-for-token-handoff" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Semaphore is the right tool for token handoff
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notify-after-releasing-the-lock" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notify after releasing the lock
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references-and-further-reading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References and Further Reading
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="References and Further Reading">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#related-leetcode-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related LeetCode Problems
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#concepts-to-explore" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepts to Explore
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="1115-print-foobar-alternately">1115. Print FooBar Alternately</h1>
+<h2 id="problem-statement">Problem Statement</h2>
+<p>Suppose you are given the following code:</p>
+<pre><code class="language-cpp">class FooBar {
+  public void foo() {
+    for (int i = 0; i &lt; n; i++) {
+      print(&quot;foo&quot;);
+    }
+  }
+
+  public void bar() {
+    for (int i = 0; i &lt; n; i++) {
+      print(&quot;bar&quot;);
+    }
+  }
+}
+</code></pre>
+<p>The same instance of <code>FooBar</code> will be passed to two different threads:</p>
+<ul>
+<li>thread A will call <code>foo()</code>, while</li>
+<li>thread B will call <code>bar()</code>.</li>
+</ul>
+<p>Modify the given program to output <code>"foobar"</code> n times.</p>
+<h3 id="example-1">Example 1</h3>
+<pre><code>Input: n = 1
+Output: &quot;foobar&quot;
+</code></pre>
+<h3 id="example-2">Example 2</h3>
+<pre><code>Input: n = 2
+Output: &quot;foobarfoobar&quot;
+</code></pre>
+<h3 id="constraints">Constraints</h3>
+<ul>
+<li><code>1 &lt;= n &lt;= 1000</code></li>
+</ul>
+<hr />
+<h2 id="first-intuition">First Intuition</h2>
+<p>When you first see this problem, the setup feels familiar. Two threads, one shared object, some output that needs to come out in a specific order. Your brain immediately jumps to the classic tool for protecting shared data: a mutex.</p>
+<p>So the natural first sketch looks something like this: keep a boolean flag <code>fooTurn</code>, lock the mutex before checking it, and only print if it is your turn.</p>
+<pre><code class="language-cpp">void foo(function&lt;void()&gt; printFoo) {
+  for (int i = 0; i &lt; n; i++) {
+    unique_lock&lt;mutex&gt; l(m);
+    if (fooTurn) {
+      printFoo();
+      fooTurn = false;
+    }
+  }
+}
+
+void bar(function&lt;void()&gt; printBar) {
+  for (int i = 0; i &lt; n; i++) {
+    unique_lock&lt;mutex&gt; l(m);
+    if (!fooTurn) {
+      printBar();
+      fooTurn = true;
+    }
+  }
+}
+</code></pre>
+<p>It looks reasonable. The mutex protects <code>fooTurn</code>, so reads and writes are safe. But there is a subtle and fatal flaw here.</p>
+<p>The <code>if</code> branch does not wait. If <code>foo</code> gets scheduled and <code>fooTurn</code> happens to be <code>false</code> at that moment, it just skips the iteration entirely. The loop counter still advances. That thread has now wasted one of its <code>n</code> turns doing nothing.</p>
+<p>Imagine <code>n = 3</code> and the scheduler decides to run <code>foo</code> three times in a row before <code>bar</code> gets a chance. All three iterations of <code>foo</code> might fire when <code>fooTurn</code> is false, and the output ends up shorter than expected or completely wrong.</p>
+<p>The root issue here is that <strong>mutual exclusion and turn-based waiting are two different problems.</strong> A mutex solves the first. It does nothing for the second.</p>
+<p>What we actually need is a way for a thread to say: "this is not my turn yet, put me to sleep and wake me up when the situation changes." That is precisely what <code>condition_variable</code> is designed for.</p>
+<hr />
+<h2 id="approach-1-condition-variable">Approach 1: Condition Variable</h2>
+<h3 id="idea">Idea</h3>
+<p>A <code>condition_variable</code> lets a thread sleep inside a lock and wake up only when a predicate becomes true. This is the exact pattern we need:</p>
+<ol>
+<li>Lock the shared state.</li>
+<li>If it is not my turn, sleep and release the lock atomically.</li>
+<li>Get woken up when the other thread signals a change.</li>
+<li>Re-check the condition (to handle spurious wakeups).</li>
+<li>Do the work, flip the flag, and notify the other thread.</li>
+</ol>
+<p>The key call is <code>cv.wait(lock, predicate)</code>. It does not just check once. It atomically releases the lock, parks the thread, and when woken, re-acquires the lock and checks the predicate again before proceeding. This handles spurious wakeups transparently.</p>
+<h3 id="code">Code</h3>
+<pre><code class="language-cpp">class FooBar {
+private:
+  int n;
+  bool fooTurn = true;
+  mutex m;
+  condition_variable cv;
+
+public:
+  FooBar(int n) : n(n) {}
+
+  void foo(function&lt;void()&gt; printFoo) {
+    for (int i = 0; i &lt; n; i++) {
+      {
+        unique_lock&lt;mutex&gt; l(m);
+        cv.wait(l, [this]{ return fooTurn; });
+        printFoo();
+        fooTurn = false;
+      }
+      cv.notify_one();
+    }
+  }
+
+  void bar(function&lt;void()&gt; printBar) {
+    for (int i = 0; i &lt; n; i++) {
+      {
+        unique_lock&lt;mutex&gt; l(m);
+        cv.wait(l, [this]{ return !fooTurn; });
+        printBar();
+        fooTurn = true;
+      }
+      cv.notify_one();
+    }
+  }
+};
+</code></pre>
+<p>A few design details worth noting:</p>
+<ul>
+<li><code>fooTurn = true</code> means <code>foo</code> gets the first turn by default.</li>
+<li>The inner braces around the <code>unique_lock</code> scope ensure the lock is released before <code>notify_one()</code> is called. This is good practice. Notifying while still holding the lock works, but it can cause the woken thread to immediately block again waiting to re-acquire the lock. Releasing first gives the other thread a cleaner path to run.</li>
+<li>Each thread flips <code>fooTurn</code> after printing, then notifies. The other side wakes up, checks its predicate, and proceeds.</li>
+</ul>
+<h3 id="complexity">Complexity</h3>
+<ul>
+<li>Time: <code>O(n)</code> prints per function, <code>O(n)</code> total synchronization steps.</li>
+<li>Space: <code>O(1)</code> extra.</li>
+</ul>
+<h3 id="limitation">Limitation</h3>
+<p>The condition variable approach is correct and efficient, but it requires a bit of ceremony: a mutex, a flag, a condition variable, and a predicate. For a problem that is fundamentally about handing off a token between two threads, there is a cleaner mental model available.</p>
+<hr />
+<h2 id="approach-2-semaphore-c20">Approach 2: Semaphore (C++20)</h2>
+<h3 id="idea_1">Idea</h3>
+<p>Step back and think about the problem in terms of <em>permits</em> rather than predicates.</p>
+<ul>
+<li><code>foo</code> should be allowed to run first. Give it one permit upfront.</li>
+<li><code>bar</code> should be blocked initially. Give it zero permits.</li>
+<li>After <code>foo</code> prints, it hands one permit to <code>bar</code>.</li>
+<li>After <code>bar</code> prints, it hands one permit back to <code>foo</code>.</li>
+</ul>
+<p>This is a strict token handoff: <code>foo -&gt; bar -&gt; foo -&gt; bar -&gt; ...</code></p>
+<p>That mental model maps directly onto a semaphore. A semaphore holds a count of available permits. <code>acquire()</code> blocks until a permit is available and then consumes it. <code>release()</code> adds a permit and wakes a waiting thread.</p>
+<p>No explicit mutex needed. No predicate. No flag. The semaphore counts are the entire shared state.</p>
+<h3 id="code_1">Code</h3>
+<pre><code class="language-cpp">#include &lt;functional&gt;
+#include &lt;semaphore&gt;
+using namespace std;
+
+class FooBar {
+private:
+  int n;
+  binary_semaphore fooSem{1}; // foo goes first
+  binary_semaphore barSem{0}; // bar must wait
+
+public:
+  FooBar(int n) : n(n) {}
+
+  void foo(function&lt;void()&gt; printFoo) {
+    for (int i = 0; i &lt; n; i++) {
+      fooSem.acquire();
+      printFoo();
+      barSem.release();
+    }
+  }
+
+  void bar(function&lt;void()&gt; printBar) {
+    for (int i = 0; i &lt; n; i++) {
+      barSem.acquire();
+      printBar();
+      fooSem.release();
+    }
+  }
+};
+</code></pre>
+<p>The structure here is almost elegant in its simplicity. Each method is three lines: acquire your permit, do the work, release the other thread's permit. The alternation is enforced by the semaphore counts alone.</p>
+<p><code>binary_semaphore</code> is used here because the count never needs to exceed 1. Exactly one thread holds the token at any given time.</p>
+<p>Note that <code>binary_semaphore</code> requires C++20 and the <code>&lt;semaphore&gt;</code> header. If your environment does not support it, the condition variable approach is the right fallback.</p>
+<h3 id="complexity_1">Complexity</h3>
+<ul>
+<li>Time: <code>O(n)</code> per method.</li>
+<li>Space: <code>O(1)</code> extra.</li>
+</ul>
+<hr />
+<h2 id="key-takeaways">Key Takeaways</h2>
+<h3 id="mutual-exclusion-and-ordering-are-different-problems">Mutual exclusion and ordering are different problems</h3>
+<p>A mutex prevents data races. It does not enforce which thread runs next. Confusing the two is a very common mistake in early concurrency work.</p>
+<h3 id="the-if-approach-fails-silently">The <code>if</code> approach fails silently</h3>
+<p>Threads skip iterations instead of waiting, which leads to output that is shorter than expected with no crash or error to signal the bug.</p>
+<h3 id="condition_variable-is-the-right-tool-when-a-thread-needs-to-wait-on-a-changing-predicate"><code>condition_variable</code> is the right tool when a thread needs to wait on a changing predicate</h3>
+<p>The <code>wait(lock, predicate)</code> overload handles spurious wakeups automatically and is almost always what you want.</p>
+<h3 id="semaphore-is-the-right-tool-for-token-handoff">Semaphore is the right tool for token handoff</h3>
+<p>When the problem is "thread A runs, then thread B runs, then thread A again," semaphores express that intent more directly than a flag plus a condition variable.</p>
+<h3 id="notify-after-releasing-the-lock">Notify after releasing the lock</h3>
+<p>It is not strictly required, but it reduces unnecessary contention and is generally considered good practice.</p>
+<hr />
+<h2 id="references-and-further-reading">References and Further Reading</h2>
+<h3 id="related-leetcode-problems">Related LeetCode Problems</h3>
+<ul>
+<li><a href="https://leetcode.com/problems/print-in-order/">1114. Print in Order</a> -- simpler version, three threads in fixed sequence</li>
+<li><a href="https://leetcode.com/problems/print-zero-even-odd/">1116. Print Zero Even Odd</a> -- three-thread coordination with similar techniques</li>
+<li><a href="https://leetcode.com/problems/building-h2o/">1117. Building H2O</a> -- semaphore-heavy problem with more complex ratios</li>
+</ul>
+<h3 id="concepts-to-explore">Concepts to Explore</h3>
+<ul>
+<li><code>std::condition_variable</code> -- <a href="https://en.cppreference.com/w/cpp/thread/condition_variable">cppreference</a></li>
+<li><code>std::semaphore</code> (C++20) -- <a href="https://en.cppreference.com/w/cpp/thread/counting_semaphore">cppreference</a></li>
+<li>Spurious wakeups and why predicates matter</li>
+<li>The monitor pattern in concurrent programming</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

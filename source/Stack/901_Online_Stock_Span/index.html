@@ -1,0 +1,969 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>901. Online Stock Span - LeetSolve</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#901-online-stock-span" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="LeetSolve" class="md-header__button md-logo" aria-label="LeetSolve" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LeetSolve
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              901. Online Stock Span
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="LeetSolve" class="md-nav__button md-logo" aria-label="LeetSolve" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    LeetSolve
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arrays
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Arrays
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Arrays/2_Add_Two_Numbers.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    None
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Strings
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Strings
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Strings/3_Longest_Substring_Without_Repeating_Characters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Longest Substring Without Repeating Characters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#problem-statement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem Statement
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Problem Statement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example 2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interface-to-implement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interface to implement
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-trace" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example trace
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Constraints
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#first-intuition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        First Intuition
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#approach-1-linked-list-brute-force" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Approach 1: Linked List (Brute Force)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Approach 1: Linked List (Brute Force)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#idea" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Idea
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complexity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limitations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#approach-2-fixed-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Approach 2: Fixed Array
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Approach 2: Fixed Array">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#idea_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Idea
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complexity_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complexity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limitations_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limitations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#approach-3-monotonic-stack-optimal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Approach 3: Monotonic Stack (Optimal)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Approach 3: Monotonic Stack (Optimal)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#idea_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Idea
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complexity_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complexity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-aha-moment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The "aha moment"
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references-further-reading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References &amp; Further Reading
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="References &amp; Further Reading">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#related-leetcode-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related LeetCode problems
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patterns-to-study" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Patterns to study
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="901-online-stock-span">901. Online Stock Span</h1>
+<h2 id="problem-statement">Problem Statement</h2>
+<p>Design an algorithm that collects daily price quotes for some stock and returns the <strong>span</strong> of that stock's price for the current day.</p>
+<p>The span of the stock's price in one day is the maximum number of <strong>consecutive days</strong> (starting from that day and going backward) for which the stock price was <strong>less than or equal to</strong> the price of that day.</p>
+<h3 id="example-1">Example 1</h3>
+<p>If the prices of the stock in the last four days is <code>[7, 2, 1, 2]</code> and the price today is <code>2</code>, then the span is <code>4</code>: all four days (including today) have a price ≤ 2.</p>
+<h3 id="example-2">Example 2</h3>
+<p>If the prices of the last four days is <code>[7, 34, 1, 2]</code> and the price today is <code>8</code>, then the span is <code>3</code>: today (8), the day before (2), and the day before that (1) are all ≤ 8. But day four had price 34 &gt; 8, so we stop.</p>
+<h3 id="interface-to-implement">Interface to implement</h3>
+<pre><code>StockSpanner()           // Initializes the object
+int next(int price)      // Returns the span for today's price
+</code></pre>
+<h3 id="example-trace">Example trace</h3>
+<pre><code>Input:  [100, 80, 60, 70, 60, 75, 85]
+Output: [  1,  1,  1,  2,  1,  4,  6]
+</code></pre>
+<h3 id="constraints">Constraints</h3>
+<ul>
+<li><code>1 &lt;= price &lt;= 10^5</code></li>
+<li>At most <code>10^4</code> calls will be made to <code>next</code></li>
+</ul>
+<hr />
+<h2 id="first-intuition">First Intuition</h2>
+<p>When you read this problem, the first thing that feels natural is: <em>look backward</em>.</p>
+<p>For each new price, you want to count how many consecutive previous prices are ≤ today's price. That's the definition of span. And the most direct way to answer "how many things satisfy this condition looking backward?" is to just... look backward. Iterate from the current day toward the past and count as long as the condition holds.</p>
+<p>This is a completely reasonable starting point. If you've ever counted a winning streak in sports stats, or tracked how many days in a row the temperature was above some threshold, you've done exactly this kind of backward scan.</p>
+<p>The naive idea: keep a history of all prices, and every time a new price comes in, scan backward through that history until you hit a price that breaks the ≤ condition.</p>
+<p>It works. But you'll quickly realize that in the worst case, you're scanning the entire history for every new price. That's <code>O(N)</code> per call, and <code>O(N^2)</code> overall if you make <code>N</code> calls. For <code>N = 10^4</code>, that's 100 million operations, acceptable perhaps, but far from elegant.</p>
+<p>The interesting question is: <em>can we avoid re-scanning the same prices over and over?</em></p>
+<p>That's where the insight starts to build.</p>
+<hr />
+<h2 id="approach-1-linked-list-brute-force">Approach 1: Linked List (Brute Force)</h2>
+<h3 id="idea">Idea</h3>
+<p>The most direct implementation of the naive intuition: maintain a list of all prices seen so far, and for each new price, iterate from the most recent backward, counting how many consecutive prices are ≤ today's price.</p>
+<p>We use a <code>std::list</code> with front-insertion so the most recent price is always at the beginning. Then we walk the list forward (which corresponds to walking backward in time) as long as <code>*it &lt;= price</code>.</p>
+<h3 id="code">Code</h3>
+<pre><code class="language-cpp">class StockSpanner {
+private:
+    list&lt;int&gt; prices;
+public:
+    StockSpanner() {}
+
+    int next(int price) {
+        prices.push_front(price);
+        int span = 0;
+        auto it = prices.begin();
+        while (it != prices.end() &amp;&amp; *it &lt;= price) {
+            span++;
+            it++;
+        }
+        return span;
+    }
+};
+</code></pre>
+<h3 id="complexity">Complexity</h3>
+<ul>
+<li><strong>Time:</strong> <code>O(N)</code> per <code>next()</code> call in the worst case (e.g., prices are strictly increasing). Over <code>N</code> calls, that's <code>O(N^2)</code> total.</li>
+<li><strong>Space:</strong> <code>O(N)</code> to store all prices.</li>
+</ul>
+<h3 id="limitations">Limitations</h3>
+<p>This approach is correct but inefficient. The linked list has poor cache locality compared to arrays, and every call potentially scans the entire history. We can do better on both fronts.</p>
+<hr />
+<h2 id="approach-2-fixed-array">Approach 2: Fixed Array</h2>
+<h3 id="idea_1">Idea</h3>
+<p>Same logic as before, but we replace the linked list with a plain fixed-size array. Since the problem guarantees at most <code>10^4</code> calls, we can preallocate <code>prices[10000]</code> and maintain an index <code>i</code>.</p>
+<p>For each new price, we store it at <code>prices[i]</code>, then scan backward from index <code>i</code> counting as long as <code>prices[k] &lt;= price</code>.</p>
+<h3 id="code_1">Code</h3>
+<pre><code class="language-cpp">class StockSpanner {
+private:
+    int prices[10000];
+    int i;
+public:
+    StockSpanner() : i(0) {}
+
+    int next(int price) {
+        prices[i] = price;
+        int span = 0;
+        for (int k = i; k != -1 &amp;&amp; prices[k] &lt;= price; k--) {
+            span++;
+        }
+        i++;
+        return span;
+    }
+};
+</code></pre>
+<h3 id="complexity_1">Complexity</h3>
+<ul>
+<li><strong>Time:</strong> Still <code>O(N)</code> per call in the worst case. The logic is identical to Approach 1.</li>
+<li><strong>Space:</strong> <code>O(N)</code> fixed allocation upfront, no dynamic memory overhead.</li>
+</ul>
+<h3 id="limitations_1">Limitations</h3>
+<p>This is cleaner and faster in practice (better cache behavior, no pointer chasing), but it still doesn't solve the fundamental algorithmic inefficiency. We're still re-examining prices that we've already "accounted for."</p>
+<p>That's the key observation that leads to the optimal approach.</p>
+<hr />
+<h2 id="approach-3-monotonic-stack-optimal">Approach 3: Monotonic Stack (Optimal)</h2>
+<h3 id="idea_2">Idea</h3>
+<p>Here's the insight that unlocks the efficient solution.</p>
+<p>Think about what happens when a new price comes in and it's <em>larger</em> than several previous prices. Say the history ends in <code>[50, 30, 20, 40]</code> and the new price is <code>60</code>. We scan back: <code>40 &lt;= 60</code> ✓, <code>20 &lt;= 60</code> ✓, <code>30 &lt;= 60</code> ✓, <code>50 &lt;= 60</code> ✓. All four contribute to the span.</p>
+<p>Now here's the thing: once <code>60</code> is in the history and a future price of, say, <code>65</code> arrives, those four days behind <code>60</code> will <em>again</em> be included in <code>65</code>'s span. We're recounting them.</p>
+<p>What if, instead of storing just the raw price, we stored <em>[price, how many days this price already covers]</em>? That way, when <code>65</code> arrives and asks "does <code>60</code> qualify?", we don't just get <code>yes</code>, we get "yes, and <code>60</code> already covers 5 days behind it." We can skip directly past all of them.</p>
+<p>This is exactly the monotonic stack approach. We maintain a stack of <code>(price, span)</code> pairs. The stack stays <strong>monotonically decreasing</strong> in price: if a new price comes in that's &gt;= the stack top, we pop that entry and absorb its span into ours.</p>
+<pre><code>Prices seen:     100  80   60   70   60   75   85
+                  ↑    ↑    ↑    ↑    ↑    ↑    ↑
+
+After next(100): stack = [(100, 1)]              → span = 1
+After next(80):  stack = [(100,1), (80,1)]       → span = 1
+After next(60):  stack = [(100,1), (80,1),(60,1)]→ span = 1
+After next(70):  pop (60,1) → span = 1 + 1 = 2
+                 stack = [(100,1),(80,1),(70,2)] → span = 2
+After next(60):  stack = [(100,1),(80,1),(70,2),(60,1)]→ span = 1
+After next(75):  pop (60,1)→ span=2, pop (70,2)→ span=4
+                 stack = [(100,1),(80,1),(75,4)] → span = 4
+After next(85):  pop (75,4)→ span=5, pop (80,1)→ span=6
+                 stack = [(100,1),(85,6)]        → span = 6
+</code></pre>
+<p>Notice that prices that are "covered" by a later larger price get popped off entirely. They'll never be individually revisited again.</p>
+<h3 id="code_2">Code</h3>
+<pre><code class="language-cpp">class StockSpanner {
+private:
+    stack&lt;pair&lt;int, int&gt;&gt; prices_spans;
+public:
+    StockSpanner() {}
+
+    int next(int price) {
+        int span = 1;
+        while (!prices_spans.empty() &amp;&amp; price &gt;= prices_spans.top().first) {
+            span += prices_spans.top().second;
+            prices_spans.pop();
+        }
+        prices_spans.push({price, span});
+        return span;
+    }
+};
+</code></pre>
+<h3 id="complexity_2">Complexity</h3>
+<ul>
+<li><strong>Time:</strong> <code>O(1)</code> amortized per <code>next()</code> call. Each price is pushed onto the stack exactly once and popped at most once. So across <code>N</code> calls, the total number of push/pop operations is at most <code>2N</code>, that's <code>O(N)</code> total, or <code>O(1)</code> amortized per call.</li>
+<li><strong>Space:</strong> <code>O(N)</code> in the worst case (when prices are strictly decreasing, nothing ever gets popped).</li>
+</ul>
+<h3 id="the-aha-moment">The "aha moment"</h3>
+<p>The key insight is that you don't need individual price history if you can compress it. Once a price has been "absorbed" into a larger span, it will never be the bottleneck again, the larger price already carries that information forward. The monotonic stack is just a way to maintain only the prices that are still <em>potentially</em> relevant as future blockers.</p>
+<hr />
+<h2 id="key-takeaways">Key Takeaways</h2>
+<ul>
+<li>
+<p><strong>Monotonic stacks are the right tool when you need "next greater/smaller" relationships</strong> or when you're aggregating backward spans. If you ever find yourself re-scanning the same region of an array, a monotonic structure can often help you skip it.</p>
+</li>
+<li>
+<p><strong>Storing computed results alongside the raw value</strong> (like storing <code>span</code> with <code>price</code>) is a powerful trick. It lets later queries skip over large chunks of already-processed history in a single step.</p>
+</li>
+<li>
+<p><strong>Amortized analysis matters here.</strong> The individual worst-case for a single <code>next()</code> call is <code>O(N)</code> (if the stack is full and everything gets popped). But since each element is pushed/popped at most once across all calls, the <em>total</em> work is <code>O(N)</code>, making the per-call <em>amortized</em> cost <code>O(1)</code>.</p>
+</li>
+<li>
+<p><strong>Progressive refinement pays off.</strong> Starting with the brute-force scan (Approach 1), moving to a cleaner array (Approach 2), and then observing the redundant re-scanning (Approach 3) is a natural thought process. Don't skip directly to the optimal, the earlier steps show you <em>why</em> the optimization is needed.</p>
+</li>
+<li>
+<p><strong>Common pitfall:</strong> Forgetting to initialize <code>span = 1</code> before the while loop. Today's price always spans at least itself.</p>
+</li>
+</ul>
+<hr />
+<h2 id="references-further-reading">References &amp; Further Reading</h2>
+<h3 id="related-leetcode-problems">Related LeetCode problems</h3>
+<ul>
+<li><a href="https://leetcode.com/problems/daily-temperatures/">739. Daily Temperatures</a>: "next greater element" using a monotonic stack; nearly identical pattern</li>
+<li><a href="https://leetcode.com/problems/next-greater-element-i/">496. Next Greater Element I</a>: foundational monotonic stack problem</li>
+<li><a href="https://leetcode.com/problems/largest-rectangle-in-histogram/">84. Largest Rectangle in Histogram</a>: classic hard-level monotonic stack application</li>
+<li><a href="https://leetcode.com/problems/sum-of-subarray-minimums/">907. Sum of Subarray Minimums</a>: aggregating span-like contributions across subarrays</li>
+</ul>
+<h3 id="patterns-to-study">Patterns to study</h3>
+<ul>
+<li><strong>Monotonic Stack</strong>: used whenever you need efficient "previous/next greater or smaller" queries; amortized <code>O(1)</code> per element</li>
+<li><strong>Amortized Analysis</strong>: understanding why an <code>O(N)</code> worst-case single call can still yield <code>O(1)</code> average across all calls</li>
+<li><strong>Online Algorithms</strong>: processing input one element at a time without seeing the future; this problem is a classic example</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

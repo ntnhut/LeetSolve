@@ -1,0 +1,685 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>2526. Find Consecutive Integers from a Data Stream - LeetSolve</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#2526-find-consecutive-integers-from-a-data-stream" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="LeetSolve" class="md-header__button md-logo" aria-label="LeetSolve" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LeetSolve
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2526. Find Consecutive Integers from a Data Stream
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="LeetSolve" class="md-nav__button md-logo" aria-label="LeetSolve" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    LeetSolve
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arrays
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Arrays
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Arrays/2_Add_Two_Numbers.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    None
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Strings
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Strings
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Strings/3_Longest_Substring_Without_Repeating_Characters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Longest Substring Without Repeating Characters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#problem-statement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem Statement
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#first-intuition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        First Intuition
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#approach-counter-streak-tracking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Approach: Counter (Streak Tracking)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Approach: Counter (Streak Tracking)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#idea" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Idea
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complexity
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-this-is-better-than-a-sliding-window" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why This Is Better Than a Sliding Window
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references-further-reading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References &amp; Further Reading
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="2526-find-consecutive-integers-from-a-data-stream">2526. Find Consecutive Integers from a Data Stream</h1>
+<h2 id="problem-statement">Problem Statement</h2>
+<p>For a stream of integers, implement a data structure that checks if the last <code>k</code> integers parsed in the stream are equal to <code>value</code>.</p>
+<p>Implement the <code>DataStream</code> class:</p>
+<ul>
+<li><code>DataStream(int value, int k)</code> Initializes the object with an empty integer stream and the two integers <code>value</code> and <code>k</code>.</li>
+<li><code>boolean consec(int num)</code> Adds <code>num</code> to the stream of integers. Returns <code>true</code> if the last <code>k</code> integers are equal to <code>value</code>, and <code>false</code> otherwise. If there are fewer than <code>k</code> integers, the condition does not hold true, so returns <code>false</code>.</li>
+</ul>
+<p><strong>Example 1:</strong></p>
+<pre><code>Input
+[&quot;DataStream&quot;, &quot;consec&quot;, &quot;consec&quot;, &quot;consec&quot;, &quot;consec&quot;]
+[[4, 3], [4], [4], [4], [3]]
+Output
+[null, false, false, true, false]
+
+Explanation
+DataStream dataStream = new DataStream(4, 3); // value = 4, k = 3
+dataStream.consec(4); // Only 1 integer is parsed, so returns False.
+dataStream.consec(4); // Only 2 integers are parsed.
+                      // Since 2 is less than k, returns False.
+dataStream.consec(4); // The 3 integers parsed are all equal to value, so returns True.
+dataStream.consec(3); // The last k integers parsed in the stream are [4,4,3].
+                      // Since 3 is not equal to value, it returns False.
+</code></pre>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= value, num &lt;= 10^9</code></li>
+<li><code>1 &lt;= k &lt;= 10^5</code></li>
+<li>At most <code>10^5</code> calls will be made to <code>consec</code>.</li>
+</ul>
+<h2 id="first-intuition">First Intuition</h2>
+<p>When you read "last <code>k</code> integers are all equal to <code>value</code>", the first instinct is to store everything. Just keep a queue or array of the last <code>k</code> elements, and on each call, check if all of them match <code>value</code>. That's the most direct translation of the problem description into code.</p>
+<p>And honestly, that's not a bad starting point. It mirrors how you'd think about it by hand: slide a window of size <code>k</code> along the stream, peek inside, and check.</p>
+<p>But pause for a second. You don't actually care <em>what</em> the last <code>k</code> numbers are. You only care <em>how many of them in a row</em> have been equal to <code>value</code>. That's a subtle but important shift. The moment a non-<code>value</code> number appears, the streak is broken and it doesn't matter what came before. You can throw away all that history.</p>
+<p>This is the key insight: the problem reduces to tracking a <strong>streak</strong>, not a <strong>window</strong>.</p>
+<h2 id="approach-counter-streak-tracking">Approach: Counter (Streak Tracking)</h2>
+<h3 id="idea">Idea</h3>
+<p>Instead of storing the last <code>k</code> numbers, just keep a running counter of how many consecutive <code>value</code>s you've seen so far.</p>
+<p>Every time <code>consec(num)</code> is called:</p>
+<ul>
+<li>If <code>num == value</code>, increment the counter.</li>
+<li>If <code>num != value</code>, reset the counter to <code>0</code>.</li>
+</ul>
+<p>Then simply check if the counter has reached <code>k</code>. If it has, the last <code>k</code> integers were all <code>value</code>, so return <code>true</code>. Otherwise, return <code>false</code>.</p>
+<p>This works because the counter always reflects the current streak length. The moment a different number breaks the streak, the counter drops to zero and you start fresh. No memory of old values needed.</p>
+<p>Here's how this plays out with the example:</p>
+<pre><code>value = 4, k = 3
+
+consec(4) → count = 1 → 1 &gt;= 3? No  → false
+consec(4) → count = 2 → 2 &gt;= 3? No  → false
+consec(4) → count = 3 → 3 &gt;= 3? Yes → true
+consec(3) → count = 0 → 0 &gt;= 3? No  → false
+</code></pre>
+<p>Clean and intuitive.</p>
+<h3 id="code">Code</h3>
+<pre><code class="language-cpp">class DataStream {
+    int value;
+    int k;
+    int count;
+
+public:
+    DataStream(int value, int k) : value(value), k(k), count(0) {
+
+    }
+
+    bool consec(int num) {
+        count = num == value ? count + 1 : 0;
+        return count &gt;= k;
+    }
+};
+</code></pre>
+<h3 id="complexity">Complexity</h3>
+<ul>
+<li><strong>Time complexity:</strong> <code>O(1)</code> per <code>consec</code> call. There's no loop, no traversal. Each call does a single comparison, an increment or reset, and another comparison. Constant work regardless of <code>k</code> or how many numbers have been streamed.</li>
+<li><strong>Space complexity:</strong> <code>O(1)</code>. You store exactly three integers: <code>value</code>, <code>k</code>, and <code>count</code>. No array, no queue, no window buffer.</li>
+</ul>
+<h2 id="why-this-is-better-than-a-sliding-window">Why This Is Better Than a Sliding Window</h2>
+<p>The naive sliding window approach would store a deque of the last <code>k</code> elements, push the new number in, pop the oldest one out, and scan to verify all elements match. That's <code>O(k)</code> space to hold the window and potentially <code>O(k)</code> time per call if you scan the whole window.</p>
+<p>The counter approach gets you <code>O(1)</code> time and space by exploiting the structure of the problem. "All equal to <code>value</code>" is equivalent to "the streak hasn't been broken in the last <code>k</code> steps," and streaks only need a single number to track.</p>
+<p>It's a good reminder that the most literal translation of a problem into code isn't always the best one. Reading more carefully often reveals that you need far less information than you think.</p>
+<h2 id="key-takeaways">Key Takeaways</h2>
+<ul>
+<li>When a problem asks about "the last <code>k</code> elements all satisfying some condition," consider whether tracking a <strong>streak counter</strong> is sufficient instead of maintaining an actual window.</li>
+<li>A sliding window is useful when you need to know <em>what</em> the elements are. A counter is enough when you only need to know <em>how many in a row</em> pass a condition.</li>
+<li>Resetting a counter on failure is a classic pattern for consecutive/contiguous problems. It shows up in problems like "longest subarray with all 1s", "max consecutive ones", and similar variants.</li>
+<li><code>O(1)</code> space is often achievable in streaming problems because streams are infinite by nature, and storing the full history is rarely necessary or feasible.</li>
+</ul>
+<hr />
+<h2 id="references-further-reading">References &amp; Further Reading</h2>
+<p><strong>Related LeetCode Problems:</strong></p>
+<ul>
+<li><a href="https://leetcode.com/problems/max-consecutive-ones/">485. Max Consecutive Ones</a> — direct application of the same streak counter pattern</li>
+<li><a href="https://leetcode.com/problems/max-consecutive-ones-iii/">1004. Max Consecutive Ones III</a> — streak tracking with a tolerance for flips</li>
+<li><a href="https://leetcode.com/problems/consecutive-characters/">1446. Consecutive Characters</a> — longest streak of a single repeated character</li>
+<li><a href="https://leetcode.com/problems/number-of-zero-filled-subarrays/">2348. Number of Zero-Filled Subarrays</a> — counting subarrays using streak length math</li>
+</ul>
+<p><strong>Patterns:</strong></p>
+<ul>
+<li><strong>Streak / Run-length tracking:</strong> Maintaining a counter that resets on failure is a fundamental pattern for any problem about "consecutive" or "in a row" elements.</li>
+<li><strong>Sliding window:</strong> Worth knowing as the baseline comparison. When the window's actual contents matter, use it. When only its length or a property of the streak matters, the counter suffices.</li>
+<li><strong>Streaming / online algorithms:</strong> Problems in a stream context reward <code>O(1)</code> space solutions. Storing history is often the wrong instinct.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

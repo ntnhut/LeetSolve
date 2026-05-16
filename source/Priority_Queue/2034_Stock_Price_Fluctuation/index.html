@@ -1,0 +1,879 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>2034. Stock Price Fluctuation - LeetSolve</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#2034-stock-price-fluctuation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="LeetSolve" class="md-header__button md-logo" aria-label="LeetSolve" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LeetSolve
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2034. Stock Price Fluctuation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="LeetSolve" class="md-nav__button md-logo" aria-label="LeetSolve" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    LeetSolve
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arrays
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Arrays
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Arrays/2_Add_Two_Numbers.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    None
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Strings
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Strings
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Strings/3_Longest_Substring_Without_Repeating_Characters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Longest Substring Without Repeating Characters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#problem-statement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem Statement
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#first-intuition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        First Intuition
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#approach-1-hashmap-linear-scan" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Approach 1: HashMap + Linear Scan
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Approach 1: HashMap + Linear Scan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#idea" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Idea
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-i-thought-about-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How I Thought About It
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complexity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limitations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#approach-2-hashmap-sorted-multiset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Approach 2: HashMap + Sorted Multiset
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Approach 2: HashMap + Sorted Multiset">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-improves" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Improves
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-i-thought-about-it_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How I Thought About It
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complexity_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complexity
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#final-optimal-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Final Optimal Approach
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references-and-further-reading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References and Further Reading
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="2034-stock-price-fluctuation">2034. Stock Price Fluctuation</h1>
+<h2 id="problem-statement">Problem Statement</h2>
+<p>You are given a stream of records about a particular stock. Each record contains a timestamp and the corresponding price of the stock at that timestamp.</p>
+<p>Unfortunately, due to the volatile nature of the stock market, the records do not come in order. </p>
+<p>Even worse, some records may be incorrect. Another record with the same timestamp may appear later in the stream correcting the price of the previous wrong record.</p>
+<p>Design an algorithm that:</p>
+<ul>
+<li>Updates the price of the stock at a particular timestamp, correcting the price from any previous records at the timestamp.</li>
+<li>Finds the latest price of the stock based on the current records.</li>
+<li>Finds the maximum price the stock has been based on the current records.</li>
+<li>Finds the minimum price the stock has been based on the current records.</li>
+</ul>
+<p><strong>Implement the <code>StockPrice</code> class:</strong></p>
+<ul>
+<li><code>StockPrice()</code>: Initializes the object with no price records.</li>
+<li><code>void update(int timestamp, int price)</code>: Updates the price of the stock at the given timestamp.</li>
+<li><code>int current()</code>: Returns the latest price of the stock.</li>
+<li><code>int maximum()</code>: Returns the maximum price of the stock.</li>
+<li><code>int minimum()</code>: Returns the minimum price of the stock.</li>
+</ul>
+<p><strong>Example:</strong></p>
+<pre><code>Input:
+[&quot;StockPrice&quot;, &quot;update&quot;, &quot;update&quot;, &quot;current&quot;, &quot;maximum&quot;, &quot;update&quot;, &quot;maximum&quot;, &quot;update&quot;, &quot;minimum&quot;]
+[[], [1, 10], [2, 5], [], [], [1, 3], [], [4, 2], []]
+
+Output:
+[null, null, null, 5, 10, null, 5, null, 2]
+</code></pre>
+<p><strong>Constraints:</strong></p>
+<ul>
+<li><code>1 &lt;= timestamp, price &lt;= 10^9</code></li>
+<li>At most <code>10^5</code> calls will be made in total to <code>update</code>, <code>current</code>, <code>maximum</code>, and <code>minimum</code>.</li>
+<li><code>current</code>, <code>maximum</code>, and <code>minimum</code> will be called only after <code>update</code> has been called at least once.</li>
+</ul>
+<hr />
+<h2 id="first-intuition">First Intuition</h2>
+<p>When you first read this problem, a few things stand out immediately.</p>
+<p>The stock prices arrive out of order, and a timestamp can be corrected by a later record. So you can't just keep a running max or min; they might be invalidated at any point. </p>
+<p>That rules out any approach where you incrementally update a single value and never look back.</p>
+<p>The most natural structure that comes to mind for storing timestamp-to-price mappings is a hash map. </p>
+<p>You probably thought: <em>"Let me just store every timestamp with its latest known price."</em> </p>
+<p>That's the right starting point. A hash map gives you <code>O(1)</code> updates and lets you handle corrections easily: just overwrite the old value.</p>
+<p>For <code>current()</code>, you also need to track the latest timestamp. </p>
+<p>That's straightforward: keep a variable and update it whenever a new record comes in with a timestamp greater than or equal to what you've seen.</p>
+<p>The challenge is <code>maximum()</code> and <code>minimum()</code>. Your first honest thought is probably: <em>"Just scan all the prices."</em> </p>
+<p>And that's a completely reasonable place to start. It works correctly. </p>
+<p>The question is only whether it's fast enough, and the answer depends on how often those calls are made.</p>
+<p>Let's walk through both approaches.</p>
+<hr />
+<h2 id="approach-1-hashmap-linear-scan">Approach 1: HashMap + Linear Scan</h2>
+<h3 id="idea">Idea</h3>
+<p>Store all timestamp-price pairs in an unordered map. Track the latest timestamp and its price as you go. </p>
+<p>For <code>maximum()</code> and <code>minimum()</code>, just iterate over the entire map and find the answer.</p>
+<h3 id="how-i-thought-about-it">How I Thought About It</h3>
+<p>The update logic is clean. If a timestamp already exists in the map, the new price simply overwrites it. If the incoming timestamp is greater than or equal to <code>latest</code>, update <code>current</code>.</p>
+<p>The <code>maximum()</code> and <code>minimum()</code> functions are honest brute force. There's no smarter structure here; just loop through every stored price and return the best one.</p>
+<p>The reason this makes sense as a first attempt is that it requires almost no design overhead. You're solving the problem first, and worrying about optimization second.</p>
+<h3 id="code">Code</h3>
+<pre><code class="language-cpp">class StockPrice {
+private:
+    unordered_map&lt;int, int&gt; timedPrices;
+    int cur, latest;
+
+public:
+    StockPrice() : cur(0), latest(0) {}
+
+    void update(int timestamp, int price) {
+        timedPrices[timestamp] = price;
+        if (timestamp &gt;= latest) {
+            cur = price;
+            latest = timestamp;
+        }
+    }
+
+    int current() {
+        return cur;
+    }
+
+    int maximum() {
+        int max = cur;
+        for (auto&amp; t : timedPrices)
+            if (t.second &gt; max) max = t.second;
+        return max;
+    }
+
+    int minimum() {
+        int min = cur;
+        for (auto&amp; t : timedPrices)
+            if (t.second &lt; min) min = t.second;
+        return min;
+    }
+};
+</code></pre>
+<h3 id="complexity">Complexity</h3>
+<ul>
+<li><strong>Time:</strong></li>
+<li><code>update()</code>: <code>O(1)</code> average for the hash map insertion.</li>
+<li><code>current()</code>: <code>O(1)</code>.</li>
+<li><code>maximum()</code> / <code>minimum()</code>: <code>O(N)</code> where <code>N</code> is the number of unique timestamps stored.</li>
+<li><strong>Space:</strong> <code>O(N)</code> for the hash map.</li>
+</ul>
+<h3 id="limitations">Limitations</h3>
+<p>With up to 10^5 total calls, and if <code>maximum()</code> and <code>minimum()</code> are called frequently, you're looking at a lot of <code>O(N)</code> scans. </p>
+<p>In the worst case, alternating updates and max/min queries hits you hard. You need a way to answer min and max in sub-linear time.</p>
+<hr />
+<h2 id="approach-2-hashmap-sorted-multiset">Approach 2: HashMap + Sorted Multiset</h2>
+<h3 id="what-improves">What Improves</h3>
+<p>The key insight is simple: if you maintain the prices in a sorted order at all times, <code>maximum()</code> and <code>minimum()</code> become <code>O(1)</code>, just peek at the two ends.</p>
+<p>The tricky part is handling corrections. When a timestamp is updated, the old price must be removed from the sorted structure and the new price inserted. </p>
+<p>This is where a <code>multiset</code> shines. It keeps elements sorted, supports duplicates (multiple timestamps can have the same price), and allows <code>O(log N)</code> insertion and deletion.</p>
+<h3 id="how-i-thought-about-it_1">How I Thought About It</h3>
+<p>You still need the hash map. Without it, when a correction comes in for a timestamp, you have no way of knowing what the old price was and you need the old price to remove it from the sorted structure.</p>
+<p>So the flow during <code>update()</code> becomes:</p>
+<ol>
+<li>Check if the timestamp already exists in the map.</li>
+<li>If it does, remove the old price from the <code>multiset</code>.</li>
+<li>Insert the new price into the <code>multiset</code>.</li>
+<li>Update the map and track the latest timestamp as before.</li>
+</ol>
+<p>One subtle but important point: when erasing from a <code>multiset</code>, use <code>sortedPrices.erase(sortedPrices.find(oldPrice))</code> instead of <code>sortedPrices.erase(oldPrice)</code>. </p>
+<p>The latter removes <strong>all</strong> elements with that value, which would incorrectly delete prices belonging to other timestamps.</p>
+<pre><code>Before update(1, 3):
+  timedPrices: {1: 10, 2: 5}
+  sortedPrices: {5, 10}
+
+After update(1, 3):
+  Remove 10 (old price for timestamp 1) from sortedPrices
+  Insert 3
+  timedPrices: {1: 3, 2: 5}
+  sortedPrices: {3, 5}
+
+maximum() -&gt; *rbegin() = 5  (correct)
+minimum() -&gt; *begin()  = 3  (correct)
+</code></pre>
+<h3 id="code_1">Code</h3>
+<pre><code class="language-cpp">class StockPrice {
+private:
+    unordered_map&lt;int, int&gt; timedPrices;
+    multiset&lt;int&gt; sortedPrices;
+    int cur, latest;
+
+public:
+    StockPrice() : cur(0), latest(0) {}
+
+    void update(int timestamp, int price) {
+        auto timeIt = timedPrices.find(timestamp);
+
+        if (timeIt != timedPrices.end()) {
+            sortedPrices.erase(sortedPrices.find(timeIt-&gt;second));
+        }
+        sortedPrices.insert(price);
+
+        timedPrices[timestamp] = price;
+        if (timestamp &gt;= latest) {
+            cur = price;
+            latest = timestamp;
+        }
+    }
+
+    int current() {
+        return cur;
+    }
+
+    int maximum() {
+        assert(!sortedPrices.empty());
+        return *sortedPrices.rbegin();
+    }
+
+    int minimum() {
+        assert(!sortedPrices.empty());
+        return *sortedPrices.begin();
+    }
+};
+</code></pre>
+<h3 id="complexity_1">Complexity</h3>
+<ul>
+<li><strong>Time:</strong></li>
+<li><code>update()</code>: <code>O(log N)</code> for <code>multiset</code> find, erase, and insert.</li>
+<li><code>current()</code>: <code>O(1)</code>.</li>
+<li><code>maximum()</code> / <code>minimum()</code>: <code>O(1)</code> by reading from the ends of the <code>multiset</code>.</li>
+<li><strong>Space:</strong> <code>O(N)</code> for both the hash map and the multiset, each storing <code>N</code> prices.</li>
+</ul>
+<hr />
+<h2 id="final-optimal-approach">Final Optimal Approach</h2>
+<p>The second approach is the optimal one here. </p>
+<p>The key insight that unlocks it is recognizing that <strong>you're solving two problems at once</strong>: a lookup problem (what was the old price for this timestamp?) and a range problem (what is the current min/max?).</p>
+<p>The hash map solves the lookup in <code>O(1)</code>. The <code>multiset</code> solves the range queries in <code>O(1)</code> and handles insertions/deletions in <code>O(log N)</code>. Together, they complement each other perfectly.</p>
+<p>The trade-off is space: you're storing prices twice, once in the map and once in the set. But given the constraints (at most 10^5 entries), this is entirely acceptable.</p>
+<p>The <code>multiset</code> is a natural fit here because prices are not unique, multiple timestamps can share the same price, and you need to handle each independently. </p>
+<p>A regular <code>set</code> would collapse duplicates and give wrong answers during removal.</p>
+<hr />
+<h2 id="key-takeaways">Key Takeaways</h2>
+<ul>
+<li><strong>When min/max queries need to be fast on a dynamic dataset, think sorted structures.</strong> A <code>multiset</code>, sorted array, or heap can maintain order as data changes.</li>
+<li><strong>Corrections are the subtle challenge here.</strong> The moment a problem allows values to be updated retroactively, you need to track what the old value was before overwriting it.</li>
+<li><strong>Use <code>multiset::find()</code> before erasing, not <code>multiset::erase(value)</code>.</strong> Erasing by value removes all duplicates. Erasing by iterator removes exactly one.</li>
+<li><strong>Two data structures serving different purposes can work together.</strong> The hash map owns the ground truth; the multiset serves range queries. Neither is redundant.</li>
+<li><strong>Start with the brute-force.</strong> The <code>O(N)</code> scan approach is correct and worth implementing first. It clarifies what information you actually have, which makes the optimization much clearer.</li>
+</ul>
+<hr />
+<h2 id="references-and-further-reading">References and Further Reading</h2>
+<p><strong>Related LeetCode problems:</strong></p>
+<ul>
+<li><a href="https://leetcode.com/problems/find-median-from-data-stream/">295. Find Median from Data Stream</a>: Maintaining order in a dynamic stream using heaps.</li>
+<li><a href="https://leetcode.com/problems/minimize-deviation-in-array/">1675. Minimize Deviation in Array</a>: Using <code>multiset</code> to track and reduce range dynamically.</li>
+<li><a href="https://leetcode.com/problems/the-skyline-problem/">218. The Skyline Problem</a>: Another problem where a sorted multiset is the key tool.</li>
+</ul>
+<p><strong>Patterns to review:</strong></p>
+<ul>
+<li>Sorted containers (<code>multiset</code>, <code>std::set</code>) for dynamic order statistics.</li>
+<li>The "two data structures" design pattern: one for <code>O(1)</code> lookup, one for efficient range queries.</li>
+<li>Heap-based approaches as an alternative when only one extreme (max or min) is needed.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
