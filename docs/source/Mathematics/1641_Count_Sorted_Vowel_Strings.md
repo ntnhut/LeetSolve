@@ -1,14 +1,13 @@
-# Count Sorted Vowel Strings
+# 1641. Count Sorted Vowel Strings
 
-## [Problem statement](https://leetcode.com/problems/count-sorted-vowel-strings/)
+## Problem Statement
 
 Given an integer `n`, return the number of strings of length `n` that consist only of vowels (`a`, `e`, `i`, `o`, `u`) and are lexicographically sorted.
 
-A string `s` is lexicographically sorted if for all valid `i`, `s[i]` is the same as or comes before `s[i+1]` in the alphabet.
-
-
+A string `s` is lexicographically sorted if for all valid `i`, `s[i]` is the same as or comes before `s[i + 1]` in the alphabet.
 
 ### Example 1
+
 ```text
 Input: n = 1
 Output: 5
@@ -16,6 +15,7 @@ Explanation: The 5 sorted strings that consist of vowels only are ["a","e","i","
 ```
 
 ### Example 2
+
 ```text
 Input: n = 2
 Output: 15
@@ -25,61 +25,64 @@ Note that "ea" is not a valid string since 'e' comes after 'a' in the alphabet.
 ```
 
 ### Example 3
+
 ```text
 Input: n = 33
 Output: 66045
-``` 
+```
 
 ### Constraints
 
-* `1 <= n <= 50`. 
+- `1 <= n <= 50`
 
-## Solution 1: Finding the pattern
+---
 
-Let us find the relationship of the strings between the vowels.
+## First Intuition
 
-### Example 3
-For `n = 3`:
+The sorted-order requirement is restrictive, but it also gives us a useful structure: once a string moves from one vowel to a later vowel, it can never move back. Every valid string is therefore made of some number of `a`s, followed by some number of `e`s, then `i`s, `o`s, and `u`s.
 
-* There is (always) only one string starting from `u`, which is `uuu`.
-* There are 3 strings starting from `o`: `ooo`, `oou` and `ouu`.
-* There are 6 strings starting from `i`: `iii`, `iio`, `iiu`, `ioo`, `iou`, `iuu`.
-* There are 10 strings starting from `e`: `eee`, `eei`, `eeo`, `eeu`, `eii`, `eio`, `eiu`, `eoo`, `eou`, `euu`.
-* There are 15 strings starting from `a`: `aaa`, `aae`, `aai`, `aao`, `aau`, `aee`, `aei`, `aeo`, `aeu`, `aii`, `aio`, `aiu`, `aoo`, `aou`, `auu`.
-* In total: there are 35 strings that satisfy the problem.
+For example, a length-three string might be `"aai"` or `"ouu"`. It cannot be `"eai"`, because the letters move backward from `e` to `a`.
 
-### Findings
-In Example 3, if you ignore the leading vowel of those strings, then the shorted strings of the line above all appear in the ones of the line below and the remaining strings of the line below come from `n = 2`.
- 
-More precisely:
+A natural first step is to count strings by their first vowel. Strings starting with `u` are easy: there is only `"uuu..."`. Strings starting with `o` can use only `o` and `u`, while strings starting with `i` can use `i`, `o`, and `u`. This suggests a recurrence: count the strings that continue with the same first vowel, then add the strings whose next vowel is the first letter instead.
 
-* All the shorted strings `oo`, `ou` and `uu` starting from `o` appear on the ones starting from `i`. The remaining `ii`, `io`, `iu` starting from `i` come from the strings of length `n = 2` (see Example 2).
-* Similarly, all shorted strings `ii`, `io`, `iu`, `oo`, `ou`, `uu` starting from `i` appear on the ones starting from `e`. The remaining `ee`, `ei`, `eo`, `eu` come from `n = 2`.
-* And so on.
+We can compute those counts from the smallest length upward and keep only a few running totals. That gives a compact dynamic-programming solution. Before settling for iteration, though, the block structure of each string also suggests a direct combinatorial count.
 
-That leads to the following recursive relationship.
+---
 
-Let `S(x, n)` be the number of strings of length `n` starting from a vowel `x`.  Then
+## Approach 1: Dynamic Programming
 
-* `S('o', n) = S('o', n - 1) + S('u', n)` for all `n > 1`.
-* `S('i', n) = S('i', n - 1) + S('o', n)` for all `n > 1`.
-* `S('e', n) = S('e', n - 1) + S('i', n)` for all `n > 1`.
-* `S('a', n) = S('a', n - 1) + S('e', n)` for all `n > 1`.
-* `S(x, 1) = 1` for all vowels `x`.
-* `S('u', n) = 1` for all `n >= 1`.
+### Idea
 
-For this problem, you want to compute 
+Let `S(v, n)` be the number of valid strings of length `n` that start with vowel `v`.
+
+For a vowel other than `u`, a valid string starting with `v` has two possibilities after its first character:
+
+1. The rest of the string starts with `v` too.
+2. The rest starts with a vowel later than `v`.
+
+The second case can be counted as `S(next(v), n)`: a length-`n` string starting with the next vowel corresponds to a length-`n - 1` suffix that starts with that vowel or anything after it. Thus:
+
 ```text
-S(n) = S('a', n) + S('e', n) + S('i', n) + S('o', n) + S('u', n).
+S(v, n) = S(v, n - 1) + S(next(v), n)
 ```
 
+The smallest case is `S(v, 1) = 1` for every vowel. Also, `S(u, n) = 1` for every `n`, since a string starting with `u` can contain only `u`s.
+
+We need the sum of the counts for all five starting vowels. Instead of storing a table for every length, we update five variables in place. Each update uses the value for the vowel immediately to its right, so we process from `u` toward `a`.
+
 ### Code
+
 ```cpp
 #include <iostream>
 using namespace std;
+
 int countVowelStrings(int n) {
-    int a, e, i, o, u;
-    a = e = i = o = u = 1;
+    int a = 1;
+    int e = 1;
+    int i = 1;
+    int o = 1;
+    int u = 1;
+
     while (n > 1) {
         o += u;
         i += o;
@@ -87,75 +90,85 @@ int countVowelStrings(int n) {
         a += e;
         n--;
     }
+
     return a + e + i + o + u;
 }
+
 int main() {
     cout << countVowelStrings(1) << endl;
     cout << countVowelStrings(2) << endl;
     cout << countVowelStrings(33) << endl;
 }
 ```
+
 ```text
 Output:
 5
 15
 66045
 ```
-This solution efficiently computes the count of vowel strings of length `n` using dynamic programming, updating the counts based on the previous lengths to avoid redundant calculations. 
 
 ### Complexity
 
-* Runtime: `O(n)`.
-* Extra space: `O(1)`.
+- **Time:** `O(n)`, because each iteration advances the string length by one.
+- **Space:** `O(1)`, since the algorithm keeps only five counts.
 
-## Solution 2: The math behind the problem 
+### Limitations
 
-The strings of length `n` you want to count are formed by a number of `'a'`, then some number of `'e'`, then some number of  `'i'`, then some number of `'o'` and finally some number of `'u'`. 
+This solution is already efficient and uses constant space, but it still performs `n - 1` iterations. The recurrence also hides a simpler counting interpretation: instead of building counts by length, we can count how many ways there are to distribute the characters among the five vowels.
 
-So it looks like this
-```text
-s = "aa..aee..eii..ioo..ouu..u".
-```
-And you want to count how many possibilities of such strings of length `n`.
+---
 
-One way to count it is using combinatorics in mathematics. 
+## Approach 2: Combinatorics with Stars and Bars
 
-If you separate the groups of vowels by `'|'` like this 
+### Idea
+
+Every sorted string is determined by how many times each vowel appears. Let those counts be `a`, `e`, `i`, `o`, and `u`. They are nonnegative integers satisfying:
 
 ```text
-s = "aa..a|ee..e|ii..i|oo..o|uu..u",
+a + e + i + o + u = n
 ```
-the problem becomes counting how many ways of putting those 4 separators `'|'` to form a string of length `n + 4`. 
 
+For instance, the counts `(2, 0, 1, 0, 0)` represent `"aai"`. This is a one-to-one mapping: each choice of five counts gives exactly one sorted string, and every sorted string gives one choice of counts.
 
-In combinatorics, the solution is $\binom{n + 4}{4}$, where $\binom{n}{k}$ is the [binomial coefficient](https://en.wikipedia.org/wiki/Binomial_coefficient):
+So the problem becomes counting the nonnegative integer solutions to an equation with five variables. The stars-and-bars method represents the `n` vowel occurrences as stars and separates the five groups with four bars:
 
+```text
+**| |*||
+```
 
+Adjacent bars and bars at either end are allowed. They represent vowels that do not appear in the string.
 
-$$
-\binom{n}{k} = \frac{n!}{k!(n-k)!}.
-$$
+There are `n + 4` total positions for the stars and bars. Choosing which four positions contain the bars gives:
 
-The final number of strings is
+```text
+C(n + 4, 4)
+```
 
+Using the binomial coefficient formula:
 
-$$
-\binom{n + 4}{4} = \frac{(n + 4)!}{4!n!} = \frac{(n+1)(n+2)(n+3)(n+4)}{24}.
-$$
+```text
+C(n + 4, 4) = (n + 4)! / (4! * n!)
+            = (n + 1)(n + 2)(n + 3)(n + 4) / 24
+```
 
 ### Code
+
 ```cpp
 #include <iostream>
 using namespace std;
-int countVowelStrings(int n) {    
+
+int countVowelStrings(int n) {
     return (n + 1) * (n + 2) * (n + 3) * (n + 4) / 24;
 }
+
 int main() {
     cout << countVowelStrings(1) << endl;
     cout << countVowelStrings(2) << endl;
     cout << countVowelStrings(33) << endl;
 }
 ```
+
 ```text
 Output:
 5
@@ -164,12 +177,39 @@ Output:
 ```
 
 ### Complexity
-* Runtime: `O(1)`.
-* Extra space: `O(1)`.
 
-## Conclusion
+- **Time:** `O(1)`, since the formula uses a fixed number of arithmetic operations.
+- **Space:** `O(1)`, since it uses no additional storage.
 
-The problem of counting the number of strings of length `n` that consist of the vowels 'a', 'e', 'i', 'o', and 'u' in sorted order can be efficiently solved using combinatorial techniques. Solution 1 uses dynamic programming to iteratively calculate the count of strings for each length up to `n`, updating the counts based on the previous counts. This approach efficiently computes the count of sorted vowel strings for the given length `n` without requiring excessive memory usage or computational overhead.
+### Why This Works
 
-Solution 2 offers a more direct approach by utilizing a combinatorial formula to calculate the count of sorted vowel strings directly based on the given length `n`. By leveraging the combinatorial formula, this solution avoids the need for iterative calculations and achieves the desired result more efficiently.
+The sorted order means the positions of all occurrences of each vowel are fixed once their counts are known. We do not need to choose an ordering for the characters; we only need to choose five nonnegative counts that add up to `n`.
 
+The stars-and-bars formula counts exactly those choices. With `n <= 50`, the intermediate product and final answer both fit in a 32-bit signed integer.
+
+---
+
+## Key Takeaways
+
+- When a sequence must stay in sorted order, try describing it by the counts of each distinct value.
+- A sorted vowel string is uniquely determined by five nonnegative counts whose sum is `n`.
+- Stars and bars counts ways to distribute identical items among groups when groups may be empty.
+- Dynamic programming is useful when a recurrence is easy to derive; look for a direct counting argument when the state has a simple combinatorial interpretation.
+- In stars-and-bars problems, remember that zero-count groups are allowed. Consecutive bars and bars at the ends represent those empty groups.
+
+---
+
+## References and Further Reading
+
+- [LeetCode 1641. Count Sorted Vowel Strings](https://leetcode.com/problems/count-sorted-vowel-strings/)
+
+### Related LeetCode Problems
+
+- [62. Unique Paths](https://leetcode.com/problems/unique-paths/): Counts paths using a binomial coefficient.
+- [118. Pascal's Triangle](https://leetcode.com/problems/pascals-triangle/): Builds binomial coefficients that appear in combinations.
+
+### Patterns Used
+
+- Dynamic programming with rolling state
+- Stars and bars
+- Combinations and binomial coefficients
