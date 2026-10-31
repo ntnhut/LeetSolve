@@ -1,0 +1,88 @@
+% docs/source> python -m sphinx -T -b html -d _build/doctrees -D language=en . ./html
+% docs\source> python -m sphinx -T -b latex -d _build/doctrees -D language=en . ./pdf
+% modify pdf\leetsove.tex
+% if book_format is paperback
+\definecolor{TitleColor}{rgb}{0,0,0}
+\definecolor{InnerLinkColor}{rgb}{0,0,0}
+% otherwise, comment them out
+
+% ------
+
+% \fvset{fontsize=auto}
+% replace \usepackage{geometry} with
+% for bod
+\usepackage[paperwidth=17cm,paperheight=22cm]{geometry}
+% for D2D
+\usepackage[paperwidth=7.5in,paperheight=9.25in]{geometry}
+
+
+\date{March, 2024}
+% \begin{document}
+\frontmatter
+
+% \pagestyle{empty}
+% \sphinxmaketitle
+
+\textit{The Problem Solver's Guide To Coding} 
+
+\textbf{First edition. March, 2024.} 
+
+ISBN 978-87-975174-0-6 (paperback)
+
+ISBN 978-87-975174-1-3 (PDF)
+
+ISBN 978-87-430-5777-2 (hardcover)
+
+
+Copyright © 2024 Nhut Nguyen.
+
+All rights reserved.
+
+www.nhutnguyen.com
+
+\newpage
+\begin{center}
+    \textit{To my dearest mother, Nguyen Thi Kim Sa.}
+\end{center}
+
+\sphinxstepscope
+
+
+% \pagestyle{plain}
+
+\chapter*{Preface}
+
+\subsection*{The book’s overview}
+
+\subsection*{Who is this book for?}
+
+\section*{Acknowledgement}
+
+\newpage
+
+%  Students and developers! By immersing yourself
+
+
+% \sphinxtableofcontents
+% \pagestyle{normal}
+
+\mainmatter
+
+% \chapter{Introduction}
+
+\newpage
+% \begin{quote}
+
+% I hope this book is an enjoyable and educational
+
+\appendix
+% \chapter{Coding challenge best practices}
+
+\pagestyle{plain}
+\backmatter
+\chapter*{Thank you!}
+
+
+\chapter*{About the author}
+
+% docs\source\pdf> latexmk -r latexmkrc -pdf -f -dvi- -ps- -jobname=leetsolve -interaction=nonstopmode

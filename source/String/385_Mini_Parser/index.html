@@ -1,0 +1,837 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.0">
+    
+    
+      
+        <title>385. Mini Parser - LeetSolve</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.57a0d79d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#385-mini-parser" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="LeetSolve" class="md-header__button md-logo" aria-label="LeetSolve" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            LeetSolve
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              385. Mini Parser
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="LeetSolve" class="md-nav__button md-logo" aria-label="LeetSolve" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    LeetSolve
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Arrays
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Arrays
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Arrays/2_Add_Two_Numbers.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    None
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Strings
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Strings
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Strings/3_Longest_Substring_Without_Repeating_Characters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3 Longest Substring Without Repeating Characters
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#problem-statement" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Problem Statement
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Problem Statement">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Constraints
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#first-intuition" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        First Intuition
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#approach-1-recursive-with-substr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Approach 1: Recursive with substr
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Approach 1: Recursive with substr">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#idea" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Idea
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complexity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complexity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Limitations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#approach-2-recursive-with-string_view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Approach 2: Recursive with string_view
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Approach 2: Recursive with string_view">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#idea_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Idea
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#complexity_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Complexity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-this-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why This Works
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#key-takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Takeaways
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references-and-further-reading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References and Further Reading
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="References and Further Reading">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#related-leetcode-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Related LeetCode Problems
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#patterns-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Patterns Used
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#concepts-worth-reviewing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Concepts Worth Reviewing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="385-mini-parser">385. Mini Parser</h1>
+<h2 id="problem-statement">Problem Statement</h2>
+<p>Given a string <code>s</code> representing the serialization of a nested list, implement a parser to deserialize it and return the deserialized <code>NestedInteger</code>.</p>
+<p>Each element is either an integer or a list whose elements may also be integers or other lists.</p>
+<pre><code>Example 1:
+Input: s = &quot;324&quot;
+Output: 324
+Explanation: Return a NestedInteger object containing a single integer 324.
+
+Example 2:
+Input: s = &quot;[123,[456,[789]]]&quot;
+Output: [123,[456,[789]]]
+Explanation: Return a NestedInteger object containing a nested list with 2 elements:
+  1. An integer containing value 123.
+  2. A nested list containing two elements:
+       i.  An integer containing value 456.
+       ii. A nested list with one element:
+             a. An integer containing value 789.
+</code></pre>
+<h3 id="constraints">Constraints</h3>
+<ul>
+<li><code>1 &lt;= s.length &lt;= 5 * 10^4</code></li>
+<li><code>s</code> consists of digits, square brackets <code>[]</code>, negative sign <code>-</code>, and commas <code>,</code>.</li>
+<li><code>s</code> is the serialization of a valid <code>NestedInteger</code>.</li>
+<li>All values are in the range <code>[-10^6, 10^6]</code>.</li>
+</ul>
+<p>The <code>NestedInteger</code> interface you're given looks like this:</p>
+<pre><code class="language-cpp">class NestedInteger {
+  public:
+    NestedInteger();               // empty nested list
+    NestedInteger(int value);      // single integer
+
+    bool isInteger() const;
+    int getInteger() const;
+    void setInteger(int value);
+    void add(const NestedInteger &amp;ni);
+    const vector&lt;NestedInteger&gt; &amp;getList() const;
+};
+</code></pre>
+<hr />
+<h2 id="first-intuition">First Intuition</h2>
+<p>The first thing to notice is that the structure of this string is recursive. A <code>NestedInteger</code> is either a plain integer like <code>"324"</code>, or a bracketed list like <code>"[123,[456,[789]]]"</code> where each comma-separated element is itself a <code>NestedInteger</code>.</p>
+<p>That observation almost writes the solution for you. If the string doesn't start with <code>[</code>, it's a plain integer: just parse it and return. If it does start with <code>[</code>, strip the outer brackets and split on commas, then recursively parse each piece.</p>
+<p>The catch is that splitting on commas naively doesn't work. In <code>"[123,[456,[789]]]"</code>, the comma between <code>123</code> and <code>[456,[789]]</code> is a top-level separator, but the comma between <code>456</code> and <code>[789]</code> is nested one level deep. You can't split on every comma. You need to split only on the commas that sit at depth zero, i.e., not inside any brackets.</p>
+<p>Tracking bracket depth with a counter solves that cleanly. Every <code>[</code> increments the counter, every <code>]</code> decrements it, and you only treat a comma as a separator when the counter is zero. This is a well-worn pattern for balanced-bracket parsing and it's the foundation of both approaches here.</p>
+<hr />
+<h2 id="approach-1-recursive-with-substr">Approach 1: Recursive with <code>substr</code></h2>
+<h3 id="idea">Idea</h3>
+<p>The recursive structure of the problem maps naturally to a recursive function. The base case is a plain integer string (no leading <code>[</code>), handled with <code>stoi</code>. The recursive case strips the outer brackets, then scans character by character to find top-level comma separators.</p>
+<p>When the depth counter hits zero at a comma, you've found a boundary. Extract the substring from the last boundary to this comma, recurse on it, and add the result to the current <code>NestedInteger</code>. After the loop, don't forget to handle the last segment, which has no trailing comma to trigger the extraction.</p>
+<pre><code class="language-cpp">class Solution {
+public:
+    NestedInteger deserialize(string s) {
+        if (s.empty()) return NestedInteger();
+        if (s[0] != '[') return NestedInteger(stoi(s));
+
+        NestedInteger result;
+        assert(s[0] == '[' &amp;&amp; s[s.length()-1] == ']');
+        int start = 1;
+        int openb = 0;
+        for (int i = start; i &lt; s.length() - 1; i++) {
+            if (s[i] == '[') openb++;
+            else if (s[i] == ']') openb--;
+            else if (s[i] == ',' &amp;&amp; openb == 0) {
+                result.add(deserialize(s.substr(start, i - start)));
+                start = i + 1;
+            }
+        }
+        if (start &lt; s.length() - 1)
+            result.add(deserialize(s.substr(start, s.length() - 1 - start)));
+        return result;
+    }
+};
+</code></pre>
+<h3 id="complexity">Complexity</h3>
+<ul>
+<li><strong>Time:</strong> <code>O(N^2)</code> in the worst case. Each recursive call invokes <code>substr</code>, which copies a portion of the string. For a deeply nested input, you end up copying substrings at every level of recursion, and the total work adds up to quadratic.</li>
+<li><strong>Space:</strong> <code>O(N)</code> for the recursion stack and the string copies.</li>
+</ul>
+<h3 id="limitations">Limitations</h3>
+<p>The logic is correct, but <code>substr</code> is the bottleneck. Every time you recurse, you're allocating and copying a new string. For large inputs or deeply nested structures, this gets expensive fast.</p>
+<p>The fix is to stop copying. If you can pass a view into the original string rather than a new copy, you get the same recursive structure with <code>O(1)</code> substring operations.</p>
+<hr />
+<h2 id="approach-2-recursive-with-string_view">Approach 2: Recursive with <code>string_view</code></h2>
+<h3 id="idea_1">Idea</h3>
+<p><code>std::string_view</code> is a non-owning reference to a portion of a string. Calling <code>.substr()</code> on a <code>string_view</code> doesn't allocate anything, it just adjusts a pointer and a length. Swapping <code>string</code> for <code>string_view</code> throughout makes the recursive structure identical to before, but without any copying.</p>
+<p>The only other change worth noting is the integer parsing. <code>std::stoi</code> requires a <code>std::string</code>, so passing a <code>string_view</code> directly would force a conversion and defeat the purpose. <code>std::from_chars</code> is the right tool here: it works directly on a character range, no allocation needed.</p>
+<pre><code class="language-cpp">int strvtoi(string_view s) {
+    int result;
+    std::from_chars(s.data(), s.data() + s.size(), result);
+    return result;
+}
+
+class Solution {
+    NestedInteger parse(string_view s) {
+        if (s.empty()) return NestedInteger();
+        if (s[0] != '[') return NestedInteger(strvtoi(s));
+
+        NestedInteger result;
+        size_t start = 1;
+        int openb = 0;
+        for (int i = start; i &lt; s.length(); i++) {
+            if (s[i] == '[') openb++;
+            else if (s[i] == ']') openb--;
+            else if (s[i] == ',' &amp;&amp; openb == 0) {
+                result.add(parse(s.substr(start, i - start)));
+                start = i + 1;
+            }
+        }
+        if (start &lt; s.length() - 1)
+            result.add(parse(s.substr(start, s.length() - 1 - start)));
+        return result;
+    }
+
+public:
+    NestedInteger deserialize(const string&amp; s) {
+        return parse(s);
+    }
+};
+</code></pre>
+<h3 id="complexity_1">Complexity</h3>
+<ul>
+<li><strong>Time:</strong> <code>O(N)</code>. Each character is visited a constant number of times across all levels of recursion. <code>string_view::substr</code> is <code>O(1)</code>, so there's no hidden linear cost per call anymore.</li>
+<li><strong>Space:</strong> <code>O(D)</code> for the recursion stack, where <code>D</code> is the maximum nesting depth. In the worst case this is <code>O(N)</code>, but for typical inputs it's much smaller. No extra heap allocations for string copies.</li>
+</ul>
+<h3 id="why-this-works">Why This Works</h3>
+<p>The recursive structure is unchanged. The only difference is that instead of handing each recursive call a freshly allocated copy of a substring, you hand it a lightweight view into the original buffer. The <code>string_view::substr</code> call just moves a pointer, so the "copying" cost that made Approach 1 quadratic is gone entirely.</p>
+<hr />
+<h2 id="key-takeaways">Key Takeaways</h2>
+<ul>
+<li><strong>Bracket depth tracking</strong> is the standard technique for finding top-level delimiters in nested string formats. Increment on <code>[</code>, decrement on <code>]</code>, act only at depth zero.</li>
+<li><strong><code>string_view</code> is a drop-in optimization</strong> for recursive string parsing. If your algorithm passes substrings around recursively and <code>substr</code> is the bottleneck, switching from <code>std::string</code> to <code>std::string_view</code> is often all it takes to go from <code>O(N^2)</code> to <code>O(N)</code>.</li>
+<li><strong><code>std::from_chars</code> pairs naturally with <code>string_view</code></strong>. It works on raw character ranges with no allocation, which is exactly what you want when avoiding copies.</li>
+<li><strong>Recursive structure mirrors problem structure.</strong> When a problem is defined recursively (nested lists, nested expressions, tree-shaped input), a recursive parser is often the clearest and most natural solution.</li>
+<li>Watch out for the <strong>off-by-one in the final segment</strong>. After the loop ends, there's always a last element between <code>start</code> and the closing <code>]</code> that never triggered a comma. Don't forget to add it.</li>
+</ul>
+<hr />
+<h2 id="references-and-further-reading">References and Further Reading</h2>
+<ul>
+<li><a href="https://leetcode.com/problems/mini-parser/">LeetCode 385. Mini Parser</a></li>
+</ul>
+<h3 id="related-leetcode-problems">Related LeetCode Problems</h3>
+<ul>
+<li><a href="https://leetcode.com/problems/decode-string/">394. Decode String</a>: Bracket-balanced parsing with repetition counts, same depth-tracking pattern</li>
+<li><a href="https://leetcode.com/problems/number-of-atoms/">726. Number of Atoms</a>: Recursive parsing of a structured string with nested groups</li>
+<li><a href="https://leetcode.com/problems/flatten-nested-list-iterator/">341. Flatten Nested List Iterator</a>: Works with the same <code>NestedInteger</code> interface</li>
+</ul>
+<h3 id="patterns-used">Patterns Used</h3>
+<ul>
+<li>Bracket depth counting for top-level delimiter detection</li>
+<li>Recursive descent parsing on structured strings</li>
+<li>Non-owning string views for zero-copy substring operations</li>
+</ul>
+<h3 id="concepts-worth-reviewing">Concepts Worth Reviewing</h3>
+<ul>
+<li><code>std::string_view</code> and why it avoids allocation</li>
+<li><code>std::from_chars</code> as an allocation-free alternative to <code>stoi</code></li>
+<li>How recursive parsing relates to formal grammars (this problem's input follows a simple context-free grammar)</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.c21346df.min.js"></script>
+      
+    
+  </body>
+</html>
